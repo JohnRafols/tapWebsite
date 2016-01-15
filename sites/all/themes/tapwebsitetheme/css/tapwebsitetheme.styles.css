@@ -9,7 +9,8 @@ html {
   margin: 0px; }
 
 footer {
-  background: darkgreen; }
+  background: darkgreen;
+  height: 100px; }
 
 ul.menu {
   padding: 0;
