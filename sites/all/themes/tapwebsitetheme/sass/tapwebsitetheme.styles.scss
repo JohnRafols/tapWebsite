@@ -29,6 +29,13 @@ $grey : #CCCCCC;
 
     }
 
+    //Get Rid of the title page (?)
+    //Should use a module instead?..
+    .l-content{
+        h1{
+            text-align: center;
+        }
+    }
 
     //The Navigation bar styling:
     #block-system-main-menu{       
@@ -41,16 +48,26 @@ $grey : #CCCCCC;
             margin-right: 1%;
             text-color: $text-color;
             display: nowrap;
-            li a.active {
+            li a{
+                &:link {
+                    //background-color: ($mainColor);
+                }
+                &:visited {
+                    background-color: ($mainColor * 0.80);
+                }
+                &:active {
+                    background-color: ($mainColor * 1.20);
                 &:focus {
-                     background-color: ($mainColor * 1.20);
+                    background-color: ($mainColor * 1.20);
                 }
                 &:hover{
-                     background-color: ($mainColor * 0.80);
+                    background-color: ($mainColor * 0.80);
                 }
             }
          }
+         }
     }
+
      .nav.navbar-nav.navbar-right li a {
         color: $textColor;
         display: nowrap;
@@ -61,38 +78,14 @@ $grey : #CCCCCC;
     }
 
 
-    // ul.menu li a {
-    //      padding: 10px 20px;
-    //      text-decoration: none;
-    //     & a:hover {
-    //         background-color: ($mainColor * 1.20);
-    //     }
-    // }
-
-    
-
-    // ul.menu{
-    //     align: center;
-    // }
-
 // 2.) Home Page Styling
 
 
 //The Registration Buttons:
-.registrationButtonClient{
+.registrationButtonClient , .registrationButtonFreelancer{
     background-color: $mainColor;
     border: $mainColor * 0.80;
-    //Change the color of the button when it is selected or focused.
-        &:focus {
-            background-color: ($mainColor * 1.20);
-        }
-        &:hover{
-             background-color: ($mainColor * 0.80);
-        }
-}
-.registrationButtonFreelancer{
-    background-color: $mainColor;
-    border: $mainColor * 0.80;
+    color: $text-color;
     //Change the color of the button when it is selected or focused.
         &:focus {
             background-color: ($mainColor * 1.20);
@@ -127,13 +120,21 @@ $grey : #CCCCCC;
     color: $mainColor;
 }
 
+// #landingPageServices{
+//     width: 75%;
+//     margin: 0 auto; 
+//     padding: 5%;
+//     background-color: gray;
+//     text-align: center;
+// }
+
 #landingPageServices{
-    width: 75%;
-    margin: 0 auto; 
-    padding: 5%;
-    background-color: gray;
-    text-align: center;
+    //text-align: center;
+    div{
+        @extend .well;
+    }
 }
+
 
 
 footer{
