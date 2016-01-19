@@ -5,16 +5,107 @@
 //@import "base/{YOUR FILE NAME HERE}";
 //@import "components/{YOUR FILE NAME HERE}";
 
-body{
-    font-family: Cabin;
-    margin-top: 0px;
-    padding-top: 0px;
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "bootstrap";
+
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// 1.) Styling for the Whole Website
+
+    //Get ride of all margin and padding
+    * {
+        font-family: Cabin;
+        text-color: $textColor;
+        //Get ride of all margin and padding to make them easy to manipulate
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+    //The Navigation bar styling:
+    #block-system-main-menu{       
+        @extend .navbar;
+        @extend .navbar-inverse;
+        background-color: $mainColor;
+        ul {
+            @extend .nav;
+            @extend .navbar-nav;
+            @extend .navbar-right;
+            li a.active {
+                &,
+                &:hover,
+                &:focus {
+                    background-color: ($mainColor*0.50);
+                }
+            }
+    }
+
+    }
+    
+    nav .block__title{
+        display: none;
+    }
+
+
+    ul.menu li a {
+         //background: black;
+         // color: white;
+         padding: 10px 20px;
+         text-decoration: none;
+        // border-radius: 4px 4px 0 0;
+    }
+
+    ul.menu li a:hover {
+        background-color: orange;
+    }
+
+    // ul.menu{
+    //     align: center;
+    // }
+
+// 2.) Home Page Styling
+
+
+#landingPageWelcomeSection{
+    height: 300px;
+
+    //Center everything
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    margin: 0 auto; 
+    padding: 5%;
+    background-color: gray;
+    text-align: center;
+    //url's are local to the css folder
+    background: url('images/ocean.jpg') no-repeat;
+    //background-size: cover;
+    background-size: 100% 100%;
 }
 
-html{
-    padding: 0px;
-    margin: 0px;
+.landingPageHR{
+    width: 75%;
+    margin: 0 auto; 
+    height: 2px;
+    color: $mainColor;
 }
+
+#landingPageServices{
+    width: 75%;
+    margin: 0 auto; 
+    padding: 5%;
+    background-color: gray;
+    text-align: center;
+}
+
 
 footer{
 	background:darkgreen;
@@ -22,61 +113,35 @@ footer{
     color: #000000;
 }
 
-ul.menu {
-    padding: 0;
-    margin:40px auto;
+.l-content{
+    h1{
+        display:hidden;
+        //font-size: 12px;
+    }
 }
 
-ul.menu li {
-    display: inline;
-}
+// #block-system-main-menu{
 
-ul.menu li a {
-     //background: black;
-     color: white;
-     padding: 10px 20px;
-     text-decoration: none;
-    // border-radius: 4px 4px 0 0;
-}
+// }
 
-ul.menu li a:hover {
-    background-color: orange;
-}
 
-ul.menu{
-	align: center;
-}
 
-#block-system-main-menu{
+// #welcome-section{
+//     text-align: center;
+//     font-weight: bold;
+//     background: lightgray;
+// }
 
-}
+// .tap-keyword{
+//     font-size: 200%;
+// }
 
-@import url(https://fonts.googleapis.com/css?family=Cabin);
+// .theme-color{
+//     color: #FFBF28;
+// }
 
-.field__item{
-    margin: auto 20%;
-}
-
-#welcome-section{
-    text-align: center;
-    font-weight: bold;
-    background: lightgray;
-}
-
-.tap-keyword{
-    font-size: 200%;
-}
-
-.theme-color{
-    color: #FFBF28;
-}
-
-nav{
-    background: #FFBF28;
-    height: 80px;
-}
-
-nav .block__title{
-    display: none;
-}
+// nav{
+//     background: #FFBF28;
+//     height: 80px;
+// }
 
