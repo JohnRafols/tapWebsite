@@ -7,8 +7,9 @@
 
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 //@import "compass";
+@import "variables";
 @import "bootstrap";
-
+//@import "theme";
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
@@ -32,21 +33,29 @@ $grey : #CCCCCC;
     //The Navigation bar styling:
     #block-system-main-menu{       
         @extend .navbar;
-        @extend .navbar-inverse;
         background-color: $mainColor;
         ul {
             @extend .nav;
             @extend .navbar-nav;
             @extend .navbar-right;
+            margin-right: 1%;
+            text-color: $text-color;
+            display: nowrap;
             li a.active {
                 &,
                 &:hover,
                 &:focus {
-                    background-color: ($mainColor*0.50);
+                    background-color: ($mainColor * 0.80);
+                    //margin-right: 5%;
+                    
                 }
             }
+        //Change the color of the navigation bar
+         }
     }
-
+     .nav.navbar-nav.navbar-right li a {
+        color: $textColor;
+        display: nowrap;
     }
     
     nav .block__title{

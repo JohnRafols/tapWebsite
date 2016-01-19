@@ -3964,68 +3964,66 @@ tbody.collapse.in {
     fieldset[disabled] .navbar-default .btn-link:focus {
       color: #ccc; }
 
-.navbar-inverse, #block-system-main-menu {
+.navbar-inverse {
   background-color: #222;
   border-color: #090909; }
-  .navbar-inverse .navbar-brand, #block-system-main-menu .navbar-brand {
+  .navbar-inverse .navbar-brand {
     color: #9d9d9d; }
-    .navbar-inverse .navbar-brand:hover, #block-system-main-menu .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, #block-system-main-menu .navbar-brand:focus {
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
       color: #fff;
       background-color: transparent; }
-  .navbar-inverse .navbar-text, #block-system-main-menu .navbar-text {
+  .navbar-inverse .navbar-text {
     color: #9d9d9d; }
-  .navbar-inverse .navbar-nav > li > a, #block-system-main-menu .navbar-nav > li > a, #block-system-main-menu .navbar-inverse ul > li > a, #block-system-main-menu ul > li > a {
+  .navbar-inverse .navbar-nav > li > a, .navbar-inverse #block-system-main-menu ul > li > a, #block-system-main-menu .navbar-inverse ul > li > a {
     color: #9d9d9d; }
-    .navbar-inverse .navbar-nav > li > a:hover, #block-system-main-menu .navbar-nav > li > a:hover, #block-system-main-menu .navbar-inverse ul > li > a:hover, #block-system-main-menu ul > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, #block-system-main-menu .navbar-nav > li > a:focus, #block-system-main-menu .navbar-inverse ul > li > a:focus, #block-system-main-menu ul > li > a:focus {
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse #block-system-main-menu ul > li > a:hover, #block-system-main-menu .navbar-inverse ul > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse #block-system-main-menu ul > li > a:focus, #block-system-main-menu .navbar-inverse ul > li > a:focus {
       color: #fff;
       background-color: transparent; }
-  .navbar-inverse .navbar-nav > .active > a, #block-system-main-menu .navbar-nav > .active > a, #block-system-main-menu .navbar-inverse ul > .active > a, #block-system-main-menu ul > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, #block-system-main-menu .navbar-nav > .active > a:hover, #block-system-main-menu .navbar-inverse ul > .active > a:hover, #block-system-main-menu ul > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, #block-system-main-menu .navbar-nav > .active > a:focus, #block-system-main-menu .navbar-inverse ul > .active > a:focus, #block-system-main-menu ul > .active > a:focus {
+  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse #block-system-main-menu ul > .active > a, #block-system-main-menu .navbar-inverse ul > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse #block-system-main-menu ul > .active > a:hover, #block-system-main-menu .navbar-inverse ul > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse #block-system-main-menu ul > .active > a:focus, #block-system-main-menu .navbar-inverse ul > .active > a:focus {
     color: #fff;
     background-color: #090909; }
-  .navbar-inverse .navbar-nav > .disabled > a, #block-system-main-menu .navbar-nav > .disabled > a, #block-system-main-menu .navbar-inverse ul > .disabled > a, #block-system-main-menu ul > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, #block-system-main-menu .navbar-nav > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul > .disabled > a:hover, #block-system-main-menu ul > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, #block-system-main-menu .navbar-nav > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul > .disabled > a:focus, #block-system-main-menu ul > .disabled > a:focus {
+  .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse #block-system-main-menu ul > .disabled > a, #block-system-main-menu .navbar-inverse ul > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul > .disabled > a:focus {
     color: #444;
     background-color: transparent; }
-  .navbar-inverse .navbar-toggle, #block-system-main-menu .navbar-toggle {
+  .navbar-inverse .navbar-toggle {
     border-color: #333; }
-    .navbar-inverse .navbar-toggle:hover, #block-system-main-menu .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, #block-system-main-menu .navbar-toggle:focus {
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
       background-color: #333; }
-    .navbar-inverse .navbar-toggle .icon-bar, #block-system-main-menu .navbar-toggle .icon-bar {
+    .navbar-inverse .navbar-toggle .icon-bar {
       background-color: #fff; }
-  .navbar-inverse .navbar-collapse, #block-system-main-menu .navbar-collapse,
-  .navbar-inverse .navbar-form, #block-system-main-menu .navbar-form {
+  .navbar-inverse .navbar-collapse,
+  .navbar-inverse .navbar-form {
     border-color: #101010; }
-  .navbar-inverse .navbar-nav > .open > a, #block-system-main-menu .navbar-nav > .open > a, #block-system-main-menu .navbar-inverse ul > .open > a, #block-system-main-menu ul > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, #block-system-main-menu .navbar-nav > .open > a:hover, #block-system-main-menu .navbar-inverse ul > .open > a:hover, #block-system-main-menu ul > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, #block-system-main-menu .navbar-nav > .open > a:focus, #block-system-main-menu .navbar-inverse ul > .open > a:focus, #block-system-main-menu ul > .open > a:focus {
+  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse #block-system-main-menu ul > .open > a, #block-system-main-menu .navbar-inverse ul > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse #block-system-main-menu ul > .open > a:hover, #block-system-main-menu .navbar-inverse ul > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse #block-system-main-menu ul > .open > a:focus, #block-system-main-menu .navbar-inverse ul > .open > a:focus {
     background-color: #090909;
     color: #fff; }
   @media (max-width: 767px) {
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header, #block-system-main-menu .navbar-nav .open .dropdown-menu > .dropdown-header, #block-system-main-menu ul .open .dropdown-menu > .dropdown-header {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .dropdown-header, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .dropdown-header {
       border-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu .divider, #block-system-main-menu .navbar-nav .open .dropdown-menu .divider, #block-system-main-menu ul .open .dropdown-menu .divider {
+    .navbar-inverse .navbar-nav .open .dropdown-menu .divider, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu .divider, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu .divider {
       background-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu ul .open .dropdown-menu > li > a {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a {
       color: #9d9d9d; }
-      .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-nav .open .dropdown-menu > li > a:hover, #block-system-main-menu ul .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-nav .open .dropdown-menu > li > a:focus, #block-system-main-menu ul .open .dropdown-menu > li > a:focus {
+      .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:focus {
         color: #fff;
         background-color: transparent; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-nav .open .dropdown-menu > .active > a, #block-system-main-menu ul .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-nav .open .dropdown-menu > .active > a:hover, #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-nav .open .dropdown-menu > .active > a:focus, #block-system-main-menu ul .open .dropdown-menu > .active > a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:focus {
       color: #fff;
       background-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-nav .open .dropdown-menu > .disabled > a, #block-system-main-menu ul .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-nav .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-nav .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:focus {
       color: #444;
       background-color: transparent; } }
-  .navbar-inverse .navbar-link, #block-system-main-menu .navbar-link {
+  .navbar-inverse .navbar-link {
     color: #9d9d9d; }
-    .navbar-inverse .navbar-link:hover, #block-system-main-menu .navbar-link:hover {
+    .navbar-inverse .navbar-link:hover {
       color: #fff; }
-  .navbar-inverse .btn-link, #block-system-main-menu .btn-link {
+  .navbar-inverse .btn-link {
     color: #9d9d9d; }
-    .navbar-inverse .btn-link:hover, #block-system-main-menu .btn-link:hover, .navbar-inverse .btn-link:focus, #block-system-main-menu .btn-link:focus {
+    .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
       color: #fff; }
-    .navbar-inverse .btn-link[disabled]:hover, #block-system-main-menu .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, #block-system-main-menu .btn-link[disabled]:focus,
+    .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus,
     fieldset[disabled] .navbar-inverse .btn-link:hover,
-    fieldset[disabled] #block-system-main-menu .btn-link:hover,
-    fieldset[disabled] .navbar-inverse .btn-link:focus,
-    fieldset[disabled] #block-system-main-menu .btn-link:focus {
+    fieldset[disabled] .navbar-inverse .btn-link:focus {
       color: #444; }
 
 .breadcrumb {
@@ -5760,8 +5758,16 @@ button.close {
 
 #block-system-main-menu {
   background-color: #FFBF28; }
-  #block-system-main-menu ul li a.active, #block-system-main-menu ul li a.active:hover, #block-system-main-menu ul li a.active:focus {
-    background-color: #806014; }
+  #block-system-main-menu ul {
+    margin-right: 1%;
+    text-color: #333333;
+    display: nowrap; }
+    #block-system-main-menu ul li a.active, #block-system-main-menu ul li a.active:hover, #block-system-main-menu ul li a.active:focus {
+      background-color: #cc9920; }
+
+.nav.navbar-nav.navbar-right li a, #block-system-main-menu ul li a {
+  color: #000000;
+  display: nowrap; }
 
 nav .block__title {
   display: none; }
