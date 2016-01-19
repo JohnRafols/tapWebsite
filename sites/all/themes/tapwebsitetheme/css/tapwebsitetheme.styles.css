@@ -5762,7 +5762,9 @@ button.close {
     margin-right: 1%;
     text-color: #333333;
     display: nowrap; }
-    #block-system-main-menu ul li a.active, #block-system-main-menu ul li a.active:hover, #block-system-main-menu ul li a.active:focus {
+    #block-system-main-menu ul li a.active:focus {
+      background-color: #ffe530; }
+    #block-system-main-menu ul li a.active:hover {
       background-color: #cc9920; }
 
 .nav.navbar-nav.navbar-right li a, #block-system-main-menu ul li a {
@@ -5772,15 +5774,24 @@ button.close {
 nav .block__title {
   display: none; }
 
-ul.menu li a {
-  padding: 10px 20px;
-  text-decoration: none; }
+.registrationButtonClient {
+  background-color: #FFBF28;
+  border: #cc9920; }
+  .registrationButtonClient:focus {
+    background-color: #ffe530; }
+  .registrationButtonClient:hover {
+    background-color: #cc9920; }
 
-ul.menu li a:hover {
-  background-color: orange; }
+.registrationButtonFreelancer {
+  background-color: #FFBF28;
+  border: #cc9920; }
+  .registrationButtonFreelancer:focus {
+    background-color: #ffe530; }
+  .registrationButtonFreelancer:hover {
+    background-color: #cc9920; }
 
 #landingPageWelcomeSection {
-  height: 300px;
+  height: 500px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

@@ -42,15 +42,13 @@ $grey : #CCCCCC;
             text-color: $text-color;
             display: nowrap;
             li a.active {
-                &,
-                &:hover,
                 &:focus {
-                    background-color: ($mainColor * 0.80);
-                    //margin-right: 5%;
-                    
+                     background-color: ($mainColor * 1.20);
+                }
+                &:hover{
+                     background-color: ($mainColor * 0.80);
                 }
             }
-        //Change the color of the navigation bar
          }
     }
      .nav.navbar-nav.navbar-right li a {
@@ -63,17 +61,15 @@ $grey : #CCCCCC;
     }
 
 
-    ul.menu li a {
-         //background: black;
-         // color: white;
-         padding: 10px 20px;
-         text-decoration: none;
-        // border-radius: 4px 4px 0 0;
-    }
+    // ul.menu li a {
+    //      padding: 10px 20px;
+    //      text-decoration: none;
+    //     & a:hover {
+    //         background-color: ($mainColor * 1.20);
+    //     }
+    // }
 
-    ul.menu li a:hover {
-        background-color: orange;
-    }
+    
 
     // ul.menu{
     //     align: center;
@@ -82,8 +78,32 @@ $grey : #CCCCCC;
 // 2.) Home Page Styling
 
 
+//The Registration Buttons:
+.registrationButtonClient{
+    background-color: $mainColor;
+    border: $mainColor * 0.80;
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($mainColor * 1.20);
+        }
+        &:hover{
+             background-color: ($mainColor * 0.80);
+        }
+}
+.registrationButtonFreelancer{
+    background-color: $mainColor;
+    border: $mainColor * 0.80;
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($mainColor * 1.20);
+        }
+        &:hover{
+             background-color: ($mainColor * 0.80);
+        }
+}
+
 #landingPageWelcomeSection{
-    height: 300px;
+    height: 500px;
 
     //Center everything
     display: flex;
