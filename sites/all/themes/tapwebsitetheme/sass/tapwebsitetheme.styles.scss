@@ -172,7 +172,6 @@ footer{
 // }
 
 
-
 // #welcome-section{
 //     text-align: center;
 //     font-weight: bold;
@@ -191,4 +190,23 @@ footer{
 //     background: #FFBF28;
 //     height: 80px;
 // }
+
+//Experimentation, moving the sidebar
+// .l-main{
+//     @extend .container;
+//     .l-content{
+//     @include make-sm-column(9);
+//     }
+//     .l-region--sidebar-first{
+//      @include make-sm-column(3);
+//     }
+// }
+
+
+
+
+
+
+
+
 
