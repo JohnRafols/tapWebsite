@@ -119,6 +119,11 @@ $grey : #CCCCCC;
     color: $mainColor;
 }
 
+.well{
+    //background: none;
+    //border: none;
+}
+
 // #landingPageServices{
 //     width: 75%;
 //     margin: 0 auto; 
@@ -127,7 +132,8 @@ $grey : #CCCCCC;
 //     text-align: center;
 // }
 
-#landingPageServices, #landingPage_whoAreWe, #landingPage_theCreativeProcess{
+#landingPageServices, #landingPage_whoAreWe, 
+#landingPage_howThisWorks ,#landingPage_theCreativeProcess{
     //text-align: center;
     div{
         @extend .well;
@@ -137,7 +143,16 @@ $grey : #CCCCCC;
     }
 }
 
+// #landingPageServices{
+//     //text-align: center;
+//     div{
+//         @extend .well;
+//         background: none;
+// }
 
+#landingPage_bulletPointList{
+    margin-left: 4%; 
+}
 
 footer{
 	background:darkgreen;
