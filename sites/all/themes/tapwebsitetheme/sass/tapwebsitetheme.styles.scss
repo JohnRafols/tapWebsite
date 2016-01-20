@@ -57,6 +57,7 @@ $grey : #CCCCCC;
                 }
                 &:active {
                     background-color: ($mainColor * 1.20);
+
                 &:focus {
                     background-color: ($mainColor * 1.20);
                 }
@@ -97,7 +98,7 @@ $grey : #CCCCCC;
 
 #landingPageWelcomeSection{
     height: 500px;
-
+    
     //Center everything
     display: flex;
     justify-content: center;
@@ -114,8 +115,6 @@ $grey : #CCCCCC;
 }
 
 .landingPageHR{
-    width: 75%;
-    margin: 0 auto; 
     height: 2px;
     color: $mainColor;
 }
@@ -128,10 +127,13 @@ $grey : #CCCCCC;
 //     text-align: center;
 // }
 
-#landingPageServices{
+#landingPageServices, #landingPage_whoAreWe, #landingPage_theCreativeProcess{
     //text-align: center;
     div{
         @extend .well;
+        li{
+            display: list-item;
+        }
     }
 }
 
