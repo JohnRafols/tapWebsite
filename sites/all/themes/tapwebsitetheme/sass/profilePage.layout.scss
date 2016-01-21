@@ -1,0 +1,94 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// 1.) Styling for the Whole Website
+
+    //Get ride of all margin and padding
+    * {
+        font-family: Cabin;
+        text-color: $textColor;
+        //Get ride of all margin and padding to make them easy to manipulate
+        margin: 0;
+        padding: 0;
+
+    }
+
+// Each page has a class associated with it attached to the body tag, 
+// think the css class is based on the url. So for a page with url 
+// mysite.com/mypage you could make your CSS selector more specific 
+// like: body.page-mypage #page-title { display:none };
+
+//This removes the block titles for all user pages
+body.page-user .block__title { 
+    display:none 
+};
+
+.views-label-field-about-me{
+    font-size: 1.5em;
+}
+
+.profilePage-sideBar, .profilePage-header, .profilePage-myProjects{
+    div{
+       // @extend .well;
+    }
+}
+
+.profilePage-header{
+    div{
+        div{
+            div{
+                div{
+                    @extend .well;
+                    float: left;
+                    display:inline;
+                }
+            }
+        }
+    }  
+}
+
+.profilePage-sideBar{
+    margin-left: 5%;
+    div{
+        div{
+            div{
+                // Field title
+                @extend .well;
+                div{
+                    @extend .well;
+                }
+            }
+        }
+    }  
+}
+
+
+//This is how to arrange the regions via bootstrap. It uses a 12 grid system
+//Keep in mind, you may need to change profilePage-layout.tpl.php if you want certain regions generated before or after another.
+
+.l-main{
+    @extend .container;
+    @extend .well;
+    //Have the first sidebar as one giant column
+    .l-region--sidebar-first{   
+        @include make-sm-column(12);
+    }
+    //Manage content and the second sidebar beside each other
+    .l-content{
+        @include make-sm-column(9);
+    }
+    .l-region--sidebar-second{
+        @include make-sm-column(3);
+    }
+   
+}
