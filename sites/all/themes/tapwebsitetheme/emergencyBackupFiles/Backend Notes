@@ -17,5 +17,6 @@ Back-end stuff I did.
 
 5.) Applied SASS to remove all block__title, and other misc sass code. 
 
-6.) 
+6.) Changed the fields in the view "My Projects" to display thumbnails.
 
+7.) Projects in the project view are now arranged as a HTML list with the class name .profilePage-projectsRow. Elements are named .profilePage-projectsElement

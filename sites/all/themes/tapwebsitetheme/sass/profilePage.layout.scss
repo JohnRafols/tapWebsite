@@ -11,17 +11,16 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
-// 1.) Styling for the Whole Website
+// Styling for the Whole Website
 
-    //Get ride of all margin and padding
-    * {
-        font-family: Cabin;
-        text-color: $textColor;
-        //Get ride of all margin and padding to make them easy to manipulate
-        margin: 0;
-        padding: 0;
-
-    }
+//Get ride of all margin and padding
+* {
+    font-family: Cabin;
+    text-color: $textColor;
+    //Get ride of all margin and padding to make them easy to manipulate
+    margin: 0;
+    padding: 0;
+}
 
 // Each page has a class associated with it attached to the body tag, 
 // think the css class is based on the url. So for a page with url 
@@ -33,62 +32,140 @@ body.page-user .block__title {
     display:none 
 };
 
-.views-label-field-about-me{
-    font-size: 1.5em;
-}
-
-.profilePage-sideBar, .profilePage-header, .profilePage-myProjects{
-    div{
-       // @extend .well;
-    }
-}
-
-.profilePage-header{
-    div{
-        div{
-            div{
-                div{
-                    @extend .well;
-                    float: left;
-                    display:inline;
-                }
-            }
-        }
-    }  
-}
-
-.profilePage-sideBar{
-    margin-left: 5%;
-    div{
-        div{
-            div{
-                // Field title
-                @extend .well;
-                div{
-                    @extend .well;
-                }
-            }
-        }
-    }  
-}
 
 
-//This is how to arrange the regions via bootstrap. It uses a 12 grid system
+//This is how to arrange the regions via bootstrap. It uses a 12 point grid system
 //Keep in mind, you may need to change profilePage-layout.tpl.php if you want certain regions generated before or after another.
 
 .l-main{
     @extend .container;
     @extend .well;
-    //Have the first sidebar as one giant column
+
+    //Have the first sidebar as one giant column (12)
     .l-region--sidebar-first{   
         @include make-sm-column(12);
+        border-bottom: 5px solid seagreen; 
+        margin-bottom: 20px; 
+
+        //1.) The header (The user's name and profile picture go here)
+           
+        div .item-list{    
+            // This aligns all of what is within the header sidebar inline
+            // The elements seem to be centered vertically already 
+            .views-row{
+                 div {
+                    display:inline-block;
+                    margin-top: 5px;
+                }
+            }   
+        }   
+
+
+            .views-field-field-profile-photo{
+                img{
+                    border-radius: 999px;
+                    height: 100px;
+                    width: 100px;
+                    border: 5px solid seagreen;
+                }
+                 margin-right: 5%;
+            }
+            .views-field-field-first-name{
+                 margin-right: 5px;
+            }
+            .views-field-field-name{
+ 
+            }
     }
-    //Manage content and the second sidebar beside each other
+
+
+
+    //Manage content and the second sidebar beside each other (9 and 3)
     .l-content{
         @include make-sm-column(9);
+            text-align: center;
+            margin: 0 auto;
+
+        //These are all the seperate views on profiles pages:
+        // 2.) My Projects
+        .profilePage-myProjects{
+          //  margin: 0 auto;
+            div{
+                div{
+                    div{
+                        img{
+                            //
+                            // max-width: 100%;
+                            // height: auto;
+                            // display:inline;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .profilePage-projectsRow{
+            // @extend .well;
+            // //display: inline;
+            // max-width: 35%;
+            // height: auto;
+            // display:inline;
+            // div {
+            // }
+
+            padding-bottom: 20px;
+            border-bottom: 5px solid seagreen;  
+        }
+
+        .profilePage_projectsElement{
+            li{
+                display:inline-block;
+                margin-left: 1%;
+                margin-right: 1%;
+                max-width: 96%;
+            }  
+            //align: center;
+          
+            // padding-bottom: 20px;
+            // border-bottom: 5px solid seagreen;
+        }
+
     }
     .l-region--sidebar-second{
         @include make-sm-column(3);
+
+        //3.) The side-bar (Information of the user such as about me, skills, etc.)
+        .profilePage-sideBar{
+
+            .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
+                font-size: 1.5em;
+            }
+            .views-row{
+                div{
+                    //@extend .well;
+
+                }
+            }
+
+            //This is for alligning the elements under the "Industry experience" portion of user profiles.
+            .views-field-field-industry-experience-years-{
+                //display:inline-block;
+                //All parent elements need these two lines to center their children elements vertically. 
+                display: flex;
+                align-items: center;
+                //This here is the label (Years in Industry)
+                .views-label-field-industry-experience-years-{
+                    @include make-sm-column(5);
+                    text-align: center;
+                }
+                //This here is the number of years
+                .field-content{       
+                    @include make-sm-column-offset(1);
+                    @include make-sm-column(6);
+               }
+            }              
+        }
     }
-   
 }
+
