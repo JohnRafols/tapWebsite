@@ -34,47 +34,64 @@ body.page-user .block__title {
 
 
 
-//This is how to arrange the regions via bootstrap. It uses a 12 point grid system
+//I have arrange the regions via bootstrap-sass. It uses a 12 point grid system
 //Keep in mind, you may need to change profilePage-layout.tpl.php if you want certain regions generated before or after another.
-
 .l-main{
     @extend .container;
-    @extend .well;
+   // @extend .well;
 
-    //Have the first sidebar as one giant column (12)
+    //1.) This is the header region for profile pages. the first sidebar as one giant column (12)
     .l-region--sidebar-first{   
-        @include make-sm-column(12);
-        border-bottom: 5px solid seagreen; 
+        @include make-sm-column(12,0);
+        border-bottom: 2px solid $mainColor; 
         margin-bottom: 20px; 
-
+        margin-top: -20px; 
+        //When moving children around, best to make the parent relative and the children absolute. 
+        position: relative;
+        height: 110px; 
         //1.) The header (The user's name and profile picture go here)
-           
-        div .item-list{    
-            // This aligns all of what is within the header sidebar inline
-            // The elements seem to be centered vertically already 
-            .views-row{
-                 div {
-                    display:inline-block;
-                    margin-top: 5px;
+             .views-row{
+                //@include make-row();
+                position: absolute; 
+                height: 120px; 
+                display: flex;
+                align-items: center;
+                .views-field{
+                    margin-bottom: 20px;
+                    //@extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                    //This is for actual content.
+                    .field-content{
+                        //margin-top: 10px;
+                        //padding-top: 50px;
+                    }
                 }
-            }   
-        }   
+            }
 
 
             .views-field-field-profile-photo{
+
                 img{
                     border-radius: 999px;
-                    height: 100px;
-                    width: 100px;
-                    border: 5px solid seagreen;
+                    height: 80px;
+                    width: 80px;
+                    border: 2px solid $mainColor; 
                 }
-                 margin-right: 5%;
+                // @include make-sm-column(2);
+                margin-right:15px;
             }
             .views-field-field-first-name{
-                 margin-right: 5px;
+                //@include make-sm-column-offset(1);
+                //@include make-sm-column(3);
+                font-size: 2.5em;
+                margin-right:7px;
+                font-weight: bold;
             }
             .views-field-field-name{
- 
+                //@include make-sm-column(3);
+                font-size: 2.5em;
+                font-weight: bold;
             }
     }
 
@@ -83,27 +100,16 @@ body.page-user .block__title {
     //Manage content and the second sidebar beside each other (9 and 3)
     .l-content{
         @include make-sm-column(9);
-            text-align: center;
-            margin: 0 auto;
-
+        //text-align: center;
+        //margin: 0 auto;
+        //border-bottom: 2px solid $mainColor; 
         //These are all the seperate views on profiles pages:
         // 2.) My Projects
         .profilePage-myProjects{
           //  margin: 0 auto;
-            div{
-                div{
-                    div{
-                        img{
-                            //
-                            // max-width: 100%;
-                            // height: auto;
-                            // display:inline;
-
-                        }
-                    }
-                }
-            }
+            
         }
+
 
         .profilePage-projectsRow{
             // @extend .well;
@@ -115,7 +121,7 @@ body.page-user .block__title {
             // }
 
             padding-bottom: 20px;
-            border-bottom: 5px solid seagreen;  
+            border-bottom: 2px solid $mainColor; 
         }
 
         .profilePage_projectsElement{
@@ -138,13 +144,22 @@ body.page-user .block__title {
         //3.) The side-bar (Information of the user such as about me, skills, etc.)
         .profilePage-sideBar{
 
-            .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
-                font-size: 1.5em;
-            }
             .views-row{
-                div{
-                    //@extend .well;
-
+                .views-field{
+                    @include make-row();
+                    margin-bottom: 20px;
+                    @extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
+                        font-size: 1.4em;
+                        //margin: 20px;
+                        font-weight: bold;
+                    }
+                    //This is for actual content.
+                    .field-content{
+                        margin-top: 10px;
+                    }
                 }
             }
 
@@ -154,13 +169,17 @@ body.page-user .block__title {
                 //All parent elements need these two lines to center their children elements vertically. 
                 display: flex;
                 align-items: center;
-                //This here is the label (Years in Industry)
+                 //This here is the label (Years in Industry)
                 .views-label-field-industry-experience-years-{
-                    @include make-sm-column(5);
-                    text-align: center;
+                    font-weight: bold;
+                    font-size: 1.4em;
+                    @include make-sm-column(5, 0);
                 }
                 //This here is the number of years
-                .field-content{       
+                .field-content{ 
+                    //I added a margin on all content, this negates it for this one
+                    margin-bottom: 10px;
+                    margin-left: 5px;
                     @include make-sm-column-offset(1);
                     @include make-sm-column(6);
                }

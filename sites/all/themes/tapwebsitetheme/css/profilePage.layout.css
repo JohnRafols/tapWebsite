@@ -4970,7 +4970,7 @@ button.list-group-item-danger {
 .embed-responsive-4by3 {
   padding-bottom: 75%; }
 
-.well, .l-main {
+.well, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -4978,7 +4978,7 @@ button.list-group-item-danger {
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .well blockquote, .l-main blockquote {
+  .well blockquote, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field blockquote {
     border-color: #ddd;
     border-color: rgba(0, 0, 0, 0.15); }
 
@@ -5762,41 +5762,55 @@ body.page-user .block__title {
 .l-main .l-region--sidebar-first {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom: 5px solid seagreen;
-  margin-bottom: 20px; }
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 2px solid #FFBF28;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  position: relative;
+  height: 110px; }
   @media (min-width: 768px) {
     .l-main .l-region--sidebar-first {
       float: left;
       width: 100%; } }
-  .l-main .l-region--sidebar-first div .item-list .views-row div {
-    display: inline-block;
-    margin-top: 5px; }
+  .l-main .l-region--sidebar-first .views-row {
+    position: absolute;
+    height: 120px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .l-main .l-region--sidebar-first .views-row .views-field {
+      margin-bottom: 20px; }
   .l-main .l-region--sidebar-first .views-field-field-profile-photo {
-    margin-right: 5%; }
+    margin-right: 15px; }
     .l-main .l-region--sidebar-first .views-field-field-profile-photo img {
       border-radius: 999px;
-      height: 100px;
-      width: 100px;
-      border: 5px solid seagreen; }
+      height: 80px;
+      width: 80px;
+      border: 2px solid #FFBF28; }
   .l-main .l-region--sidebar-first .views-field-field-first-name {
-    margin-right: 5px; }
+    font-size: 2.5em;
+    margin-right: 7px;
+    font-weight: bold; }
+  .l-main .l-region--sidebar-first .views-field-field-name {
+    font-size: 2.5em;
+    font-weight: bold; }
 
 .l-main .l-content {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  margin: 0 auto; }
+  padding-right: 15px; }
   @media (min-width: 768px) {
     .l-main .l-content {
       float: left;
       width: 75%; } }
   .l-main .l-content .profilePage-projectsRow {
     padding-bottom: 20px;
-    border-bottom: 5px solid seagreen; }
+    border-bottom: 2px solid #FFBF28; }
   .l-main .l-content .profilePage_projectsElement li {
     display: inline-block;
     margin-left: 1%;
@@ -5812,8 +5826,20 @@ body.page-user .block__title {
     .l-main .l-region--sidebar-second {
       float: left;
       width: 25%; } }
-  .l-main .l-region--sidebar-second .profilePage-sideBar .views-label-field-about-me, .l-main .l-region--sidebar-second .profilePage-sideBar .views-label-field-skills, .l-main .l-region--sidebar-second .profilePage-sideBar .views-label-field-qualifications, .l-main .l-region--sidebar-second .profilePage-sideBar .views-label-field-interest, .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- {
-    font-size: 1.5em; }
+  .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 20px; }
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:before, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after {
+      content: " ";
+      display: table; }
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after {
+      clear: both; }
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-about-me, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-skills, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-qualifications, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-interest, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-field-field-industry-experience-years- {
+      font-size: 1.4em;
+      font-weight: bold; }
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .field-content {
+      margin-top: 10px; }
   .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -5822,16 +5848,19 @@ body.page-user .block__title {
         -ms-flex-align: center;
             align-items: center; }
     .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
+      font-weight: bold;
+      font-size: 1.4em;
       position: relative;
       min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      text-align: center; }
+      padding-left: 0;
+      padding-right: 0; }
       @media (min-width: 768px) {
         .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
           float: left;
           width: 41.66667%; } }
     .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .field-content {
+      margin-bottom: 10px;
+      margin-left: 5px;
       position: relative;
       min-height: 1px;
       padding-left: 15px;
