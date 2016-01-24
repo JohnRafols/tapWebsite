@@ -4970,8 +4970,7 @@ button.list-group-item-danger {
 .embed-responsive-4by3 {
   padding-bottom: 75%; }
 
-.well, #landingPageServices div, #landingPage_whoAreWe div,
-#landingPage_howThisWorks div, #landingPage_theCreativeProcess div {
+.well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -4979,8 +4978,7 @@ button.list-group-item-danger {
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .well blockquote, #landingPageServices div blockquote, #landingPage_whoAreWe div blockquote,
-  #landingPage_howThisWorks div blockquote, #landingPage_theCreativeProcess div blockquote {
+  .well blockquote {
     border-color: #ddd;
     border-color: rgba(0, 0, 0, 0.15); }
 
@@ -5758,9 +5756,6 @@ button.close {
   margin: 0;
   padding: 0; }
 
-.l-content h1 {
-  text-align: center; }
-
 #block-system-main-menu {
   background-color: #FFBF28; }
   #block-system-main-menu ul {
@@ -5803,20 +5798,134 @@ nav .block__title {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: #CCCCCC;
   margin: 0 auto;
   padding: 5%;
   background-color: gray;
   text-align: center;
-  background: url("images/ocean.jpg") no-repeat;
+  background: url("images/BannerBeta.png") no-repeat;
   background-size: 100% 100%; }
 
 .landingPageHR {
   height: 2px;
   color: #FFBF28; }
 
-#landingPageServices div li, #landingPage_whoAreWe div li,
-#landingPage_howThisWorks div li, #landingPage_theCreativeProcess div li {
-  display: list-item; }
+#landingPageServices, #landingPage_whoAreWe,
+#landingPage_howThisWorks, #landingPage_theCreativeProcess {
+  margin-bottom: 50px; }
+  #landingPageServices div li, #landingPage_whoAreWe div li,
+  #landingPage_howThisWorks div li, #landingPage_theCreativeProcess div li {
+    display: list-item; }
+
+.landingPage_titles {
+  font-size: 1.4em;
+  text-align: left; }
+
+#landingPageServices {
+  text-align: center; }
+  #landingPageServices #landingPageServices_graphicDesign_Icon {
+    background: url("images/Services/GraphicDesign.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_artAndIllustration_Icon {
+    background: url("images/Services/ArtAndIllustration.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_branding_Icon {
+    background: url("images/Services/Branding.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_webAndApp_Icon {
+    background: url("images/Services/WebAndApp.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_motionGraphics_Icon {
+    background: url("images/Services/MotionGraphics.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_creativeConsulting_Icon {
+    background: url("images/Services/CreativeConsulting.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPageServices_photography_Icon {
+    background: url("images/Services/Photography.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+  #landingPageServices #landingPage_viewAllServices {
+    font-size: 1.4em;
+    height: 150px;
+    line-height: 150px;
+    white-space: nowrap; }
+
+#landingPageServices_uploadYourProject_Icon {
+  background: url("images/ClientProcess/UploadYourProject.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_getMatchedToTalent_Icon {
+  background: url("images/ClientProcess/GetMatchedToTalent.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_communicate_Icon {
+  background: url("images/ClientProcess/Communicate.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_implementNewDesign_Icon {
+  background: url("images/ClientProcess/ImplementNewDesign.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_createAPortfolio_Icon {
+  background: url("images/CreativeProcess/CreateAPortfolio.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_getMatched_Icon {
+  background: url("images/CreativeProcess/GetMatched.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_startWorking_Icon {
+  background: url("images/CreativeProcess/StartWorking.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
+
+#landingPageServices_getPaid_Icon {
+  background: url("images/CreativeProcess/GetPaid.png") no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+  margin: 0 auto; }
 
 #landingPage_bulletPointList {
   margin-left: 4%;

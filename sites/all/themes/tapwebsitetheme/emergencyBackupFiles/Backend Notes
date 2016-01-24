@@ -18,9 +18,15 @@ Back-end stuff I did.
 5.) Applied SASS to remove all block__title, and other misc sass code. 
 
 6.) Changed the fields in the view "My Projects" to display thumbnails.
+- Also everything is arranged as an unordered list, will need to talk with Denny.
 
 7.) Projects in the project view are now arranged as a HTML list with the class name .profilePage-projectsRow. Elements are named .profilePage-projectsElement
 
 8.) Added a class name to the label for Years of Experience. 
 
 9.) Some of the fields under the sidebar, are assigned as unordered lists. 
+
+10.) Added context and context omega module that helps changing layout
+- Add a new context
+- Condition: User Page
+- Reactions: Blocks and Omeha, layout: profilePage

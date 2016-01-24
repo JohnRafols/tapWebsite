@@ -42,9 +42,9 @@ body.page-user .block__title {
 
     //1.) This is the header region for profile pages. the first sidebar as one giant column (12)
     .l-region--sidebar-first{   
-        @include make-sm-column(12,0);
+        @include make-sm-column(12);
         border-bottom: 2px solid $mainColor; 
-        margin-bottom: 20px; 
+        margin-bottom: 30px; 
         margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
         position: relative;
@@ -100,42 +100,37 @@ body.page-user .block__title {
     //Manage content and the second sidebar beside each other (9 and 3)
     .l-content{
         @include make-sm-column(9);
-        //text-align: center;
-        //margin: 0 auto;
-        //border-bottom: 2px solid $mainColor; 
-        //These are all the seperate views on profiles pages:
         // 2.) My Projects
-        .profilePage-myProjects{
-          //  margin: 0 auto;
-            
-        }
-
-
-        .profilePage-projectsRow{
-            // @extend .well;
-            // //display: inline;
-            // max-width: 35%;
-            // height: auto;
-            // display:inline;
-            // div {
-            // }
-
-            padding-bottom: 20px;
-            border-bottom: 2px solid $mainColor; 
-        }
-
-        .profilePage_projectsElement{
-            li{
+        //margin-left: 20px;
+         .views-row{
+               
+                //@extend .well;
                 display:inline-block;
-                margin-left: 1%;
-                margin-right: 1%;
-                max-width: 96%;
-            }  
-            //align: center;
-          
-            // padding-bottom: 20px;
-            // border-bottom: 5px solid seagreen;
-        }
+                //margin-left: 1%;
+                margin-right: 2%;
+                //max-width: 96%;
+                
+                .views-field{
+                    //@include make-row();
+                    //margin-bottom: 20px;
+                    //@extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                     
+                    //This is for actual content.
+                    .field-content{
+                       // margin-top: 10px;
+                    }
+                }
+            }
+
+        .views-field-field-type-of-work{
+            .field-content{
+                       // margin-top: 10px;
+                  color: $grey;
+                }
+        }  
+ 
 
     }
     .l-region--sidebar-second{
@@ -148,7 +143,7 @@ body.page-user .block__title {
                 .views-field{
                     @include make-row();
                     margin-bottom: 20px;
-                    @extend .well;
+                    //@extend .well;
                     //These are all the labels under the sidebar
                     //Note that I am calling out the default classes
                     .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
@@ -159,31 +154,43 @@ body.page-user .block__title {
                     //This is for actual content.
                     .field-content{
                         margin-top: 10px;
+                        color: $grey;
                     }
                 }
-            }
 
-            //This is for alligning the elements under the "Industry experience" portion of user profiles.
-            .views-field-field-industry-experience-years-{
-                //display:inline-block;
-                //All parent elements need these two lines to center their children elements vertically. 
-                display: flex;
-                align-items: center;
-                 //This here is the label (Years in Industry)
-                .views-label-field-industry-experience-years-{
-                    font-weight: bold;
-                    font-size: 1.4em;
-                    @include make-sm-column(5, 0);
+                //Specific Fields
+                .views-field-field-skills{
+                    .field-content{ 
+                        font-size: 1.4em;
+                        font-weight: bold;
+                        color: $mainColor;
+                   }
                 }
-                //This here is the number of years
-                .field-content{ 
-                    //I added a margin on all content, this negates it for this one
-                    margin-bottom: 10px;
-                    margin-left: 5px;
-                    @include make-sm-column-offset(1);
-                    @include make-sm-column(6);
-               }
-            }              
+
+                //This is for alligning the elements under the "Industry experience" portion of user profiles.
+                .views-field-field-industry-experience-years-{
+                    //display:inline-block;
+                    //All parent elements need these two lines to center their children elements vertically. 
+                    display: flex;
+                    align-items: center;
+                     //This here is the label (Years in Industry)
+                    .views-label-field-industry-experience-years-{
+                        font-weight: bold;
+                        font-size: 1.4em;
+                        @include make-sm-column(5, 0);
+                    }
+                    //This here is the number of years
+                    .field-content{ 
+                        //I added a margin on all content, this negates it for this one
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        //@include make-sm-column-offset(1);
+                        //@include make-sm-column(6);
+                        font-size: 2.5em;
+                        color: $mainColor;
+                   }
+                }  
+            }     
         }
     }
 }

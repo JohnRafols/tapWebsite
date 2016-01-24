@@ -4970,7 +4970,7 @@ button.list-group-item-danger {
 .embed-responsive-4by3 {
   padding-bottom: 75%; }
 
-.well, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field {
+.well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -4978,7 +4978,7 @@ button.list-group-item-danger {
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .well blockquote, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field blockquote {
+  .well blockquote {
     border-color: #ddd;
     border-color: rgba(0, 0, 0, 0.15); }
 
@@ -5762,10 +5762,10 @@ body.page-user .block__title {
 .l-main .l-region--sidebar-first {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
   border-bottom: 2px solid #FFBF28;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-top: -20px;
   position: relative;
   height: 110px; }
@@ -5808,14 +5808,11 @@ body.page-user .block__title {
     .l-main .l-content {
       float: left;
       width: 75%; } }
-  .l-main .l-content .profilePage-projectsRow {
-    padding-bottom: 20px;
-    border-bottom: 2px solid #FFBF28; }
-  .l-main .l-content .profilePage_projectsElement li {
+  .l-main .l-content .views-row {
     display: inline-block;
-    margin-left: 1%;
-    margin-right: 1%;
-    max-width: 96%; }
+    margin-right: 2%; }
+  .l-main .l-content .views-field-field-type-of-work .field-content {
+    color: #CCCCCC; }
 
 .l-main .l-region--sidebar-second {
   position: relative;
@@ -5839,15 +5836,20 @@ body.page-user .block__title {
       font-size: 1.4em;
       font-weight: bold; }
     .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .field-content {
-      margin-top: 10px; }
-  .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- {
+      margin-top: 10px;
+      color: #CCCCCC; }
+  .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-skills .field-content {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFBF28; }
+  .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
       font-weight: bold;
       font-size: 1.4em;
       position: relative;
@@ -5855,22 +5857,13 @@ body.page-user .block__title {
       padding-left: 0;
       padding-right: 0; }
       @media (min-width: 768px) {
-        .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
+        .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
           float: left;
           width: 41.66667%; } }
-    .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .field-content {
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .field-content {
       margin-bottom: 10px;
       margin-left: 5px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 768px) {
-        .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .field-content {
-          margin-left: 8.33333%; } }
-      @media (min-width: 768px) {
-        .l-main .l-region--sidebar-second .profilePage-sideBar .views-field-field-industry-experience-years- .field-content {
-          float: left;
-          width: 50%; } }
+      font-size: 2.5em;
+      color: #FFBF28; }
 
 /*# sourceMappingURL=profilePage.layout.css.map */
