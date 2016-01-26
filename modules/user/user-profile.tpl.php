@@ -34,6 +34,6 @@
  * @ingroup themeable
  */
 ?>
-<div class="profile"<?php print $attributes; ?>>
-  <?php print render($user_profile); ?>
-</div>
+ <div class="profile"<?php print $attributes; ?>>
+   <!-- <?php// print render($user_profile); ?>  -->
+ </div> 

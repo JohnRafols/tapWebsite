@@ -1,0 +1,206 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// Styling for the Whole Website
+
+//Get ride of all margin and padding
+* {
+    font-family: Cabin;
+    text-color: $textColor;
+    //Get ride of all margin and padding to make them easy to manipulate
+    margin: 0;
+    padding: 0;
+}
+
+// Each page has a class associated with it attached to the body tag, 
+// think the css class is based on the url. So for a page with url 
+// mysite.com/mypage you could make your CSS selector more specific 
+// like: body.page-mypage #page-title { display:none };
+
+//This removes the block titles for all user pages
+body.page-user .block__title { 
+    display:none 
+};
+
+
+
+//I have arrange the regions via bootstrap-sass. It uses a 12 point grid system
+//Keep in mind, you may need to change profilePage-layout.tpl.php if you want certain regions generated before or after another.
+.l-main{
+    @extend .container;
+   // @extend .well;
+
+    //1.) This is the header region for profile pages. the first sidebar as one giant column (12)
+    .l-region--sidebar-first{   
+        @include make-sm-column(12);
+        border-bottom: 2px solid $mainColor; 
+        margin-bottom: 30px; 
+        margin-top: -20px; 
+        //When moving children around, best to make the parent relative and the children absolute. 
+        position: relative;
+        height: 110px; 
+        //1.) The header (The user's name and profile picture go here)
+             .views-row{
+                //@include make-row();
+                position: absolute; 
+                height: 120px; 
+                display: flex;
+                align-items: center;
+                .views-field{
+                    margin-bottom: 20px;
+                    //@extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                    //This is for actual content.
+                    .field-content{
+                        //margin-top: 10px;
+                        //padding-top: 50px;
+                    }
+                }
+            }
+
+
+            .views-field-picture{
+
+                img{
+                    border-radius: 999px;
+                    height: 80px;
+                    width: 80px;
+                    border: 2px solid $mainColor; 
+                }
+                // @include make-sm-column(2);
+                margin-right:15px;
+            }
+
+            .views-field-field-first-name{
+                //@include make-sm-column-offset(1);
+                //@include make-sm-column(3);
+                font-size: 2.5em;
+                margin-right:7px;
+                font-weight: bold;
+            }
+            .views-field-field-name{
+                //@include make-sm-column(3);
+                font-size: 2.5em;
+                font-weight: bold;
+            }
+    }
+
+
+
+    //Manage content and the second sidebar beside each other (9 and 3)
+    .l-content{
+        @include make-sm-column(9);
+        // 2.) My Projects
+        //margin-left: 20px;
+         .views-row{
+               
+                //@extend .well;
+                display:inline-block;
+                //margin-left: 1%;
+                margin-right: 2%;
+                //max-width: 96%;
+                
+                .views-field{
+                    //@include make-row();
+                    //margin-bottom: 20px;
+                    //@extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                     
+                    //This is for actual content.
+                    .field-content{
+                       // margin-top: 10px;
+                    }
+                }
+            }
+
+        .views-field-field-type-of-work{
+            .field-content{
+                       // margin-top: 10px;
+                  color: $grey;
+                }
+        }  
+ 
+
+    }
+    .l-region--sidebar-second{
+        @include make-sm-column(3);
+
+        //3.) The side-bar (Information of the user such as about me, skills, etc.)
+        .profilePage-sideBar{
+
+            .views-row{
+                .views-field{
+                    @include make-row();
+                    margin-bottom: 20px;
+                    //@extend .well;
+                    //These are all the labels under the sidebar
+                    //Note that I am calling out the default classes
+                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
+                        font-size: 1.4em;
+                        //margin: 20px;
+                        font-weight: bold;
+                    }
+                    //This is for actual content.
+                    .field-content{
+                        margin-top: 10px;
+                        color: $grey;
+                    }
+                }
+
+                //Specific Fields
+                .views-field-field-skills{
+                    .field-content{ 
+                        font-size: 1.4em;
+                        font-weight: bold;
+                        color: $mainColor;
+                   }
+                }
+
+                //This is for alligning the elements under the "Industry experience" portion of user profiles.
+                .views-field-field-industry-experience-years-{
+                    //display:inline-block;
+                    //All parent elements need these two lines to center their children elements vertically. 
+                    display: flex;
+                    align-items: center;
+                     //This here is the label (Years in Industry)
+                    .views-label-field-industry-experience-years-{
+                        font-weight: bold;
+                        font-size: 1.4em;
+                        @include make-sm-column(5, 0);
+                    }
+                    //This here is the number of years
+                    .field-content{ 
+                        //I added a margin on all content, this negates it for this one
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        //@include make-sm-column-offset(1);
+                        //@include make-sm-column(6);
+                        font-size: 2.5em;
+                        color: $mainColor;
+                   }
+                }  
+            }     
+        }
+    }    
+}
+
+
+#profilePage_passwordChangeLink, #profilePage_editFieldLink{
+    a{
+        @extend .btn;
+        background: $mainColor;
+        color: $textColor;
+    }
+}

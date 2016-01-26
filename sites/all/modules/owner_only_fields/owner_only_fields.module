@@ -1,0 +1,94 @@
+<?php 
+
+function owner_only_fields_help($path, $arg) {
+	file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r("i got called in help2", TRUE));
+	switch ($path) {
+		case "admin/help#owner_only_fields":
+			return '<p>' . t("Lets only the profile owner see his/her personal fields.") . '</p>';
+		break;
+	}
+}
+
+function owner_only_fields_views_pre_render(&$view){
+	file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r($view, TRUE));
+	shuffle($view->result);
+
+	global $user;
+	if($view->name == "profile_showusers") {
+		$uid = arg(1);
+		if( arg(0) == 'user' && is_numeric($uid)){		
+			if($user->uid==$uid){		
+				//file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r($user->uid, TRUE));
+				$freelancer="freelancer";
+				$admin="administrator";
+				$user_roles = array_values($user->roles);
+
+				for ($i = 0; $i < count($user_roles); ++$i) {
+			        $user_roles[$i]=strtolower($user_roles[$i]);
+			    }
+
+				$editPath='<h4 id="profilePage_passwordChangeLink" style="margin-top: 0;"><a href="/tapwebsite/user/'.$user->uid.'/edit/">Change Email/Password</a></h4>';	
+				if (in_array($freelancer, $user_roles)){
+  					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/freelancer">Edit Profile</a></h4>';
+				}else if (in_array($admin, $user_roles)){
+  					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/admin">Edit Profile</a></h4>';			  		
+				}
+
+				
+
+
+
+				$view->attachment_before =  $editPath;
+			}
+		}
+ 	}	
+}
+
+	
+
+function owner_only_fields_menu_alter(&$items) {
+	// unset($items["user/password"]);
+// print current_path();
+// 	if(current_path() == 'user/login'){
+// 		unset($items['user/register']);
+// 		unset($items['user/password']);
+// 	}else if(current_path() == 'user/password'){
+// 		unset($items["user"]);
+// 		unset($items["user/register"]);	
+// 	}
+file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r(current_path(), TRUE));	
+
+
+ unset($items['user/register']);
+
+	return $items;
+}
+
+
+function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
+	file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r($form, TRUE));	
+	$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;
+
+}
+
+function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
+	if($form["#form_id"] != "user_profile_form"){
+		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
+		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
+		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
+		$form['profile_freelancer']['field_about_me']['#access'] = FALSE;
+		$form['profile_freelancer']['field_add']['und']['0']['locality_block']['dependent_locality']['#access'] = FALSE;
+		
+		$form['field_skills']['#disabled'] = TRUE;
+		hide($form['field_skills']);
+		unset($form['picture']);
+		file_put_contents('C:\Users\pc\Desktop\debug4.txt', print_r($form, TRUE));		
+	}
+	
+}
+
+
+function owner_only_fields_menu_local_tasks_alter(&$data, $router_item, $root_path){
+	file_put_contents('C:\Users\pc\Desktop\debug6.txt', print_r($data, TRUE));	
+
+}

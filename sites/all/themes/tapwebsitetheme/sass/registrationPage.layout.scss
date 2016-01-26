@@ -1,0 +1,38 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+body.page-freelancer-register{ 
+    //@extend .container;
+};
+
+.block__title{
+    display:none;
+}
+
+.l-main{
+    @extend .container;
+}
+
+
+//This is a temporary layout for portfolios
+body.node-type-portfolio{
+
+
+
+    // Portfolio Pages
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}

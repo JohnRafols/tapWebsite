@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+body {
+  font-family: Cabin;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+footer {
+  background: darkgreen;
+  height: 100px;
+  color: #000000;
+}
+
+ul.menu {
+  padding: 0;
+  margin: 40px auto;
+}
+
+ul.menu li {
+  display: inline;
+}
+
+ul.menu li a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+ul.menu li a:hover {
+  background-color: orange;
+}
+
+ul.menu {
+  align: center;
+}
+
+.field__item {
+  margin: auto 20%;
+}
+
+#welcome-section {
+  text-align: center;
+  font-weight: bold;
+  background: lightgray;
+}
+
+.tap-keyword {
+  font-size: 200%;
+}
+
+.theme-color {
+  color: #FFBF28;
+}
+
+nav {
+  background: blacks;
+  height: 80px;
+}
+
+nav .block__title {
+  display: none;
+}

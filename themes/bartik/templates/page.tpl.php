@@ -190,7 +190,9 @@
       <!-- Added this to remove Landing page node title -->
       <?php if (($title) && strcmp(strtolower($title), "landing page")!=0): ?>
         <h1 class="title" id="page-title">
-          <?php print $title; ?>
+          <?php if (arg(0)!='user'): ?>
+            <?php print $title; ?>
+          <?php endif; ?> 
         </h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>

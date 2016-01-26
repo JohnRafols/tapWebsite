@@ -1,0 +1,3 @@
+name = owner_only_fields
+description = Only lets profile owners see particular Views fields e.g. Profile edit link field.
+core = 7.x
