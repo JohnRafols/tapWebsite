@@ -7,20 +7,20 @@ Back-end stuff I did.
 - Years in Industry
 - Interests
 
-2.)Changed the profilePage-layout.tpl.php. Moved the first sidebar above context
+//2.)Changed the profilePage-layout.tpl.php. Moved the first sidebar above context
 
 3.) Added new View called Profile Header
 - Contextually filtered everything much like the sidebar
 - Removed all fields labels
 
-4.) Removed field labels in second sidebar
+//4.) Removed field labels in second sidebar
 
-5.) Applied SASS to remove all block__title, and other misc sass code. 
+//5.) Applied SASS to remove all block__title, and other misc sass code. 
 
 6.) Changed the fields in the view "My Projects" to display thumbnails.
 - Also everything is arranged as an unordered list, will need to talk with Denny.
 
-7.) Projects in the project view are now arranged as a HTML list with the class name .profilePage-projectsRow. Elements are named .profilePage-projectsElement
+//7.) Projects in the project view are now arranged as a HTML list with the class name .profilePage-projectsRow. Elements are named .profilePage-projectsElement
 
 8.) Added a class name to the label for Years of Experience. 
 
@@ -30,3 +30,8 @@ Back-end stuff I did.
 - Add a new context
 - Condition: User Page
 - Reactions: Blocks and Omeha, layout: profilePage
+
+
+- user login
+- freelancer reg
+- 

@@ -74,7 +74,6 @@ $grey : #CCCCCC;
 
 // 2.) Home Page Styling
 
-
 //The Registration Buttons:
 .registrationButtonClient , .registrationButtonFreelancer{
     background-color: $mainColor;
@@ -89,6 +88,7 @@ $grey : #CCCCCC;
         }
 }
 
+//The Banner 
 #landingPageWelcomeSection{
     height: 500px;
     
@@ -107,30 +107,50 @@ $grey : #CCCCCC;
     background-size: 100% 100%;
 }
 
-.landingPageHR{
-    height: 2px;
-    color: $mainColor;
+
+//The Margin for all sections
+#landingPageServices, #landingPage_whoAreWe, 
+#landingPage_howThisWorks ,#landingPage_theCreativeProcess{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+//These are for the "Half" borders in the Who Are We section
+.landingPage_whoAreWe_content{
+    position: relative;
+    //margin-bottom: 50px;
+    .landingPage_whoAreWe_contentBorder{
+        position: absolute;
+        border-top: 2px solid $mainColor;
+        left: 5%;
+        right: 50%;
+        margin-top: 10px;
+    }
 }
 
 
-#landingPageServices, #landingPage_whoAreWe, 
-#landingPage_howThisWorks ,#landingPage_theCreativeProcess{
-    //text-align: center;
-    margin-bottom: 50px;
-    div{
-                   // @extend .well;
-
-        li{
-            display: list-item;
-        }
-    }
+.landingPage_howThisWorks_content{
+    text-align: center;
 }
 
 .landingPage_titles{
     font-size: 1.4em;
     text-align: left;
+    border-bottom: 1px solid $mainColor; 
 }
 
+.landingPage_emphasizedText{
+    font-size: 1.4em;
+    color: $mainColor;
+    width: 60%;
+}
+
+ #landingPageServices_description, #landingPage_theCreativeProcess_description{
+    font-size: 1.4em;
+    color: $mainColor;
+ }
+
+//Icons
 #landingPageServices{
     text-align: center;
     //Services Icons:
@@ -262,10 +282,14 @@ $grey : #CCCCCC;
     margin: 0 auto;
 }
 
+#landingPageServices_secondRow{
+    display:flex;
+    align-items: center;
+}
 
-
-#landingPage_bulletPointList{
-    margin-left: 4%; 
+.landingPage_bulletPointList{
+    display: list-item;
+    margin-left: 30px; 
     list-style-type:disc
 }
 
@@ -281,6 +305,5 @@ footer{
         //font-size: 12px;
     }
 }
-
 
 
