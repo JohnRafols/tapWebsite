@@ -91,7 +91,6 @@ $grey : #CCCCCC;
 //The Banner 
 #landingPageWelcomeSection{
     height: 500px;
-    
     //Center everything
     display: flex;
     justify-content: center;
@@ -105,6 +104,7 @@ $grey : #CCCCCC;
     background: url('images/BannerBeta.png') no-repeat;
     //background-size: cover;
     background-size: 100% 100%;
+    margin-top: -20px;
 }
 
 
@@ -293,13 +293,29 @@ $grey : #CCCCCC;
     list-style-type:disc
 }
 
-footer{
-	background:darkgreen;
-    height:100px;
-    color: #000000;
+
+.l-region--footer{
+    #block-block-4{
+        @extend .container;
+        padding-top: 20px;
+    }    
+
+    margin-top:200px;
+	background: $grey;
+    p{
+
+        margin:0;
+        padding:5px;
+        
+            
+    }
+    padding-bottom:60px;
 }
 
+
+
 .l-content{
+    //@extend .container;
     h1{
         display:hidden;
         //font-size: 12px;
@@ -307,3 +323,80 @@ footer{
 }
 
 
+
+#myAccountPage_editFieldLink, #myAccountPage_passwordChangeLink{
+    color: black;
+    a{
+        @extend .btn;
+        background: $mainColor;
+        color:black;
+    }
+}
+
+
+
+//View and Edit tabs on my-account page.
+.tabs--primary{
+    display: none;
+    li{
+        display: none;
+        a{
+            display: none;
+        }
+    }
+
+}
+
+ #addPortfolioButton{
+   
+        @extend .btn;
+        background: $mainColor;
+        color: $textColor;
+    
+}
+
+.l-footer{
+    margin-bottom:0;
+    margin-top: 30%;
+}
+
+
+// -----------CSS Sticky Footer--------------//
+// .l-main, body{
+//     height: 100%;
+// }
+
+// .l-content {
+//     min-height: 100%;
+//     height: auto !important;
+//     height: 100%;
+//     margin: 0 auto -4em;
+// }
+// .l-footer {
+//     height: 4em;
+// }
+
+// -----------------------------------------//
+
+.views-label-field-first-name, .views-label-field-name, .views-label-field-add, #passwordField,#paymentDetailField{
+    font-size: 1.4em;
+    //margin: 20px;
+    font-weight: bold;
+}
+
+#paymentDetailField{
+    display: inline-block;
+    background: rgba(233, 230, 230, .5);
+    color: rgba(0, 0, 0, .3);
+}
+
+#edit-submit{
+    @extend .btn;
+    background: $mainColor;
+}
+
+#edit-cancel{
+    @extend .btn;
+    background: red;
+    margin-left: 5px;
+}

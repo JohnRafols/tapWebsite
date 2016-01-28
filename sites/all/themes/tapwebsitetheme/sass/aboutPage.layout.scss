@@ -1,0 +1,356 @@
+// Import variables, abstractions, base styles and components.
+// Uncomment the next lines and adjust them to your needs.
+//@import "variables/{YOUR FILE NAME HERE}";
+//@import "abstractions/{YOUR FILE NAME HERE}";
+//@import "base/{YOUR FILE NAME HERE}";
+//@import "components/{YOUR FILE NAME HERE}";
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// 1.) Styling for the Whole Website
+
+    //Get ride of all margin and padding
+    * {
+        font-family: Cabin;
+        text-color: $textColor;
+        //Get ride of all margin and padding to make them easy to manipulate
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+    //The Navigation bar styling:
+    #block-system-main-menu{       
+        @extend .navbar;
+        background-color: $mainColor;
+        ul {
+            @extend .nav;
+            @extend .navbar-nav;
+            @extend .navbar-right;
+            margin-right: 1%;
+            text-color: $text-color;
+            display: nowrap;
+            li a{
+                &:link {
+                    //background-color: ($mainColor);
+                }
+                &:visited {
+                    background-color: ($mainColor * 0.80);
+                }
+                &:active {
+                    background-color: ($mainColor * 1.20);
+
+                &:focus {
+                    background-color: ($mainColor * 1.20);
+                }
+                &:hover{
+                    background-color: ($mainColor * 0.80);
+                }
+            }
+         }
+         }
+    }
+
+     .nav.navbar-nav.navbar-right li a {
+        color: $textColor;
+        display: nowrap;
+    }
+    
+    nav .block__title{
+        display: none;
+    }
+
+
+// 2.) Home Page Styling
+
+//The Registration Buttons:
+.registrationButtonClient , .registrationButtonFreelancer{
+    background-color: $mainColor;
+    border: $mainColor * 0.80;
+    color: $text-color;
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($mainColor * 1.20);
+        }
+        &:hover{
+             background-color: ($mainColor * 0.80);
+        }
+}
+
+//The Banner 
+#landingPageWelcomeSection{
+    height: 500px;
+    //Center everything
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $grey;
+    margin: 0 auto; 
+    padding: 5%;
+    background-color: gray;
+    text-align: center;
+    //url's are local to the css folder
+    background: url('images/BannerBeta.png') no-repeat;
+    //background-size: cover;
+    background-size: 100% 100%;
+    margin-top: -20px;
+}
+
+
+//The Margin for all sections
+#landingPageServices, #landingPage_whoAreWe, 
+#landingPage_howThisWorks ,#landingPage_theCreativeProcess{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+//These are for the "Half" borders in the Who Are We section
+.landingPage_whoAreWe_content{
+    position: relative;
+    //margin-bottom: 50px;
+    .landingPage_whoAreWe_contentBorder{
+        position: absolute;
+        border-top: 2px solid $mainColor;
+        left: 5%;
+        right: 50%;
+        margin-top: 10px;
+    }
+}
+
+
+.landingPage_howThisWorks_content{
+    text-align: center;
+}
+
+.landingPage_titles{
+    font-size: 1.4em;
+    text-align: left;
+    border-bottom: 1px solid $mainColor; 
+}
+
+.landingPage_emphasizedText{
+    font-size: 1.4em;
+    color: $mainColor;
+    width: 60%;
+}
+
+ #landingPageServices_description, #landingPage_theCreativeProcess_description{
+    font-size: 1.4em;
+    color: $mainColor;
+ }
+
+//Icons
+#landingPageServices{
+    text-align: center;
+    //Services Icons:
+    #landingPageServices_graphicDesign_Icon{
+        background: url('images/Services/GraphicDesign.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_artAndIllustration_Icon{
+        background: url('images/Services/ArtAndIllustration.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_branding_Icon{
+        background: url('images/Services/Branding.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_webAndApp_Icon{
+        background: url('images/Services/WebAndApp.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_motionGraphics_Icon{
+        background: url('images/Services/MotionGraphics.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_creativeConsulting_Icon{
+        background: url('images/Services/CreativeConsulting.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+
+    #landingPageServices_photography_Icon{
+        background: url('images/Services/Photography.png') no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+     
+    #landingPage_viewAllServices{
+        font-size: 1.4em;
+        height: 150px;
+        line-height: 150px;
+        white-space: nowrap;
+    }
+}
+
+//Icons for Clients
+
+#landingPageServices_uploadYourProject_Icon{
+    background: url('images/ClientProcess/UploadYourProject.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+#landingPageServices_getMatchedToTalent_Icon{
+    background: url('images/ClientProcess/GetMatchedToTalent.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+#landingPageServices_communicate_Icon{
+    background: url('images/ClientProcess/Communicate.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+#landingPageServices_implementNewDesign_Icon{
+    background: url('images/ClientProcess/ImplementNewDesign.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+
+//Icons for Freelancers/Creatives
+
+#landingPageServices_createAPortfolio_Icon{
+    background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+#landingPageServices_getMatched_Icon{
+    background: url('images/CreativeProcess/GetMatched.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+#landingPageServices_startWorking_Icon{
+    background: url('images/CreativeProcess/StartWorking.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+#landingPageServices_getPaid_Icon{
+    background: url('images/CreativeProcess/GetPaid.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+#landingPageServices_secondRow{
+    display:flex;
+    align-items: center;
+}
+
+.landingPage_bulletPointList{
+    display: list-item;
+    margin-left: 30px; 
+    list-style-type:disc
+}
+
+
+.l-region--footer{
+    #block-block-4{
+        @extend .container;
+        padding-top: 20px;
+    }    
+
+    margin-top:150px;
+	background: $grey;
+    p{
+
+        margin:0;
+        padding:5px;
+        
+            
+    }
+    padding-bottom:60px;
+}
+
+
+
+.l-content{
+    //@extend .container;
+    h1{
+        display:hidden;
+        //font-size: 12px;
+    }
+}
+
+
+
+#myAccountPage_editFieldLink, #myAccountPage_passwordChangeLink{
+    color: black;
+    a{
+        @extend .btn;
+        background: $mainColor;
+        color:black;
+    }
+}
+
+
+
+//View and Edit tabs on my-account page.
+.tabs--primary{
+    display: none;
+    li{
+        display: none;
+        a{
+            display: none;
+        }
+    }
+
+}
+
+ #addPortfolioButton{
+   
+        @extend .btn;
+        background: $mainColor;
+        color: $textColor;
+    
+}

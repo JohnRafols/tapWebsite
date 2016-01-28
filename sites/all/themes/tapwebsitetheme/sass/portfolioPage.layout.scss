@@ -1,0 +1,132 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// Each page has a class associated with it attached to the body tag, 
+// think the css class is based on the url. So for a page with url 
+// mysite.com/mypage you could make your CSS selector more specific 
+// like: body.page-mypage #page-title { display:none };
+
+//This removes the block titles 
+.block__title { 
+    display:none 
+};
+//block__title
+
+
+.l-main{
+    @extend .container;
+    //1.) This is the header region 
+    .l-region--sidebar-first{   
+        @include make-sm-column(12);
+        
+        border-bottom: 2px solid $mainColor; 
+        margin-bottom: 30px; 
+        margin-top: -20px; 
+        //When moving children around, best to make the parent relative and the children absolute. 
+        //position: relative;
+        height: 110px; 
+        //1.) The header (The user's name and profile picture go here)
+             .views-row{
+                //@include make-row();
+                //position: absolute; 
+                height: 120px; 
+                display: flex;
+                align-items: center;
+            }
+
+
+            .views-field-title{
+                font-size: 2.5em;
+                font-weight: bold;
+                @include make-sm-column(4);
+            }
+
+            .views-field-picture{                 
+                img{
+                    border-radius: 999px;
+                    height: 80px;
+                    width: 80px;
+                    border: 2px solid $mainColor; 
+                }
+                @include make-sm-column-offset(4);
+                @include make-sm-column(1);
+                margin-right:15px;
+            }
+
+
+            .views-field-field-first-name{
+                //@include make-sm-column(2);
+                //@extend .well;
+                font-size: 2.0em;
+                margin-right:7px;
+                font-weight: bold;
+            }
+            .views-field-field-name{
+                 //@include make-sm-column(3); 
+                font-size: 2.0em;
+                font-weight: bold;
+            }
+
+
+    }
+
+
+
+    //Manage content and the second sidebar beside each other (9 and 3)
+    .l-content{
+        @include make-sm-column(9);
+        //Force all images into content
+        img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px; 
+        }
+
+
+
+ 
+
+    }
+    .l-region--sidebar-second{
+        @include make-sm-column(3);
+         .views-row{
+                .views-field{
+                    @include make-row();
+                    margin-bottom: 20px;
+                  
+                }
+
+                .views-field-body{
+                    font-size: 1.0em;
+                    //font-weight: bold;
+                    color: $grey;
+                }
+                //Specific Fields
+                .views-field-field-skills-taxanomy{
+                    .views-label-field-skills-taxanomy{
+                        font-size: 1.4em;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                    }
+                    .field-content{ 
+                        font-size: 1.4em;
+                        color: $mainColor;
+                        a{
+                            color: $mainColor;
+                        }
+                   }
+                }
+        }     
+    }         
+}
+

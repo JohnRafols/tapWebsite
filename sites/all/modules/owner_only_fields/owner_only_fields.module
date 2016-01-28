@@ -14,7 +14,7 @@ function owner_only_fields_views_pre_render(&$view){
 	shuffle($view->result);
 
 	global $user;
-	if($view->name == "profile_showusers") {
+	if($view->name == "profile_showusers" ) {
 		$uid = arg(1);
 		if( arg(0) == 'user' && is_numeric($uid)){		
 			if($user->uid==$uid){		
@@ -27,40 +27,39 @@ function owner_only_fields_views_pre_render(&$view){
 			        $user_roles[$i]=strtolower($user_roles[$i]);
 			    }
 
-				$editPath='<h4 id="profilePage_passwordChangeLink" style="margin-top: 0;"><a href="/tapwebsite/user/'.$user->uid.'/edit/">Change Email/Password</a></h4>';	
+				$editPath="";
 				if (in_array($freelancer, $user_roles)){
   					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/freelancer">Edit Profile</a></h4>';
 				}else if (in_array($admin, $user_roles)){
   					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/admin">Edit Profile</a></h4>';			  		
 				}
 
-				
-
-
-
 				$view->attachment_before =  $editPath;
 			}
 		}
+ 	}else if($view->name == "my_account"){
+ 		$freelancer="freelancer";
+		$admin="administrator";
+		$user_roles = array_values($user->roles);
+
+		for ($i = 0; $i < count($user_roles); ++$i){
+	        $user_roles[$i]=strtolower($user_roles[$i]);
+	    }
+
+		$editPath='<h4 id="myAccountPage_passwordChangeLink" style="margin-top: 0;"><a href="/tapwebsite/user/'.$user->uid.'/edit/">Change Account Settings</a></h4>';	
+
+		$view->attachment_before =  $editPath; 		
+
+		$view->attachment_after = "<div id=\"passwordField\">Password:</div><div>&bull;&bull;</div><div id=\"paymentDetailField\">Payment details: (Coming soon...)</div>";
+	
  	}	
 }
 
 	
 
 function owner_only_fields_menu_alter(&$items) {
-	// unset($items["user/password"]);
-// print current_path();
-// 	if(current_path() == 'user/login'){
-// 		unset($items['user/register']);
-// 		unset($items['user/password']);
-// 	}else if(current_path() == 'user/password'){
-// 		unset($items["user"]);
-// 		unset($items["user/register"]);	
-// 	}
-file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r(current_path(), TRUE));	
-
-
- unset($items['user/register']);
-
+	file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r(current_path(), TRUE));	
+	unset($items['user/register']);
 	return $items;
 }
 
@@ -90,5 +89,10 @@ function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){
 
 function owner_only_fields_menu_local_tasks_alter(&$data, $router_item, $root_path){
 	file_put_contents('C:\Users\pc\Desktop\debug6.txt', print_r($data, TRUE));	
+
+}
+
+function owner_only_fields_views_pre_view(&$view, &$display_id, &$args){
+	file_put_contents('C:\Users\pc\Desktop\debug10.txt', print_r($view, TRUE));		
 
 }

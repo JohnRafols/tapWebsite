@@ -102,9 +102,10 @@
        <!-- <?php //print $breadcrumb; ?> -->
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
-      
-      <?php if ($title): ?>
-        <h1 id="testtitle">
+  
+
+      <?php if(($title) && drupal_get_path_alias(current_path())!="about"): ?>
+       <h1 id="testtitle">
           <?php print $title; ?>
         </h1>
       <?php endif; ?>

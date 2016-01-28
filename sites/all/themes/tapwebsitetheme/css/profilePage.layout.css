@@ -223,9 +223,10 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret, #profilePage_passwordChangeLink a > .caret, #profilePage_editFieldLink a > .caret,
+  .btn > .caret, #profilePage_passwordChangeLink a > .caret, #profilePage_editFieldLink a > .caret, #addPortfolioButton a > .caret,
   .dropup > .btn > .caret, #profilePage_passwordChangeLink
   .dropup > a > .caret, #profilePage_editFieldLink
+  .dropup > a > .caret, #addPortfolioButton
   .dropup > a > .caret {
     border-top-color: #000 !important; }
   .label {
@@ -2468,10 +2469,12 @@ fieldset[disabled]
   .input-group-lg > .form-control-static.input-group-addon,
   .input-group-lg > .input-group-btn > .form-control-static.btn, #profilePage_passwordChangeLink
   .input-group-lg > .input-group-btn > a.form-control-static, #profilePage_editFieldLink
+  .input-group-lg > .input-group-btn > a.form-control-static, #addPortfolioButton
   .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
   .input-group-sm > .input-group-btn > .form-control-static.btn, #profilePage_passwordChangeLink
   .input-group-sm > .input-group-btn > a.form-control-static, #profilePage_editFieldLink
+  .input-group-sm > .input-group-btn > a.form-control-static, #addPortfolioButton
   .input-group-sm > .input-group-btn > a.form-control-static {
     padding-left: 0;
     padding-right: 0; }
@@ -2480,6 +2483,7 @@ fieldset[disabled]
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn, #profilePage_passwordChangeLink
 .input-group-sm > .input-group-btn > a, #profilePage_editFieldLink
+.input-group-sm > .input-group-btn > a, #addPortfolioButton
 .input-group-sm > .input-group-btn > a {
   height: 30px;
   padding: 5px 10px;
@@ -2528,6 +2532,7 @@ select[multiple].input-sm,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn, #profilePage_passwordChangeLink
 .input-group-lg > .input-group-btn > a, #profilePage_editFieldLink
+.input-group-lg > .input-group-btn > a, #addPortfolioButton
 .input-group-lg > .input-group-btn > a {
   height: 46px;
   padding: 10px 16px;
@@ -2593,6 +2598,7 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback, #profilePage_passwordChangeLink
 .input-group-lg > .input-group-btn > a + .form-control-feedback, #profilePage_editFieldLink
+.input-group-lg > .input-group-btn > a + .form-control-feedback, #addPortfolioButton
 .input-group-lg > .input-group-btn > a + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
@@ -2604,6 +2610,7 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback, #profilePage_passwordChangeLink
 .input-group-sm > .input-group-btn > a + .form-control-feedback, #profilePage_editFieldLink
+.input-group-sm > .input-group-btn > a + .form-control-feedback, #addPortfolioButton
 .input-group-sm > .input-group-btn > a + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
@@ -2783,7 +2790,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn, #profilePage_passwordChangeLink a, #profilePage_editFieldLink a {
+.btn, #profilePage_passwordChangeLink a, #profilePage_editFieldLink a, #addPortfolioButton a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2803,33 +2810,37 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, #profilePage_passwordChangeLink a:focus, #profilePage_editFieldLink a:focus, .btn.focus, #profilePage_passwordChangeLink a.focus, #profilePage_editFieldLink a.focus, .btn:active:focus, #profilePage_passwordChangeLink a:active:focus, #profilePage_editFieldLink a:active:focus, .btn:active.focus, #profilePage_passwordChangeLink a:active.focus, #profilePage_editFieldLink a:active.focus, .btn.active:focus, #profilePage_passwordChangeLink a.active:focus, #profilePage_editFieldLink a.active:focus, .btn.active.focus, #profilePage_passwordChangeLink a.active.focus, #profilePage_editFieldLink a.active.focus {
+  .btn:focus, #profilePage_passwordChangeLink a:focus, #profilePage_editFieldLink a:focus, #addPortfolioButton a:focus, .btn.focus, #profilePage_passwordChangeLink a.focus, #profilePage_editFieldLink a.focus, #addPortfolioButton a.focus, .btn:active:focus, #profilePage_passwordChangeLink a:active:focus, #profilePage_editFieldLink a:active:focus, #addPortfolioButton a:active:focus, .btn:active.focus, #profilePage_passwordChangeLink a:active.focus, #profilePage_editFieldLink a:active.focus, #addPortfolioButton a:active.focus, .btn.active:focus, #profilePage_passwordChangeLink a.active:focus, #profilePage_editFieldLink a.active:focus, #addPortfolioButton a.active:focus, .btn.active.focus, #profilePage_passwordChangeLink a.active.focus, #profilePage_editFieldLink a.active.focus, #addPortfolioButton a.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, #profilePage_passwordChangeLink a:hover, #profilePage_editFieldLink a:hover, .btn:focus, #profilePage_passwordChangeLink a:focus, #profilePage_editFieldLink a:focus, .btn.focus, #profilePage_passwordChangeLink a.focus, #profilePage_editFieldLink a.focus {
+  .btn:hover, #profilePage_passwordChangeLink a:hover, #profilePage_editFieldLink a:hover, #addPortfolioButton a:hover, .btn:focus, #profilePage_passwordChangeLink a:focus, #profilePage_editFieldLink a:focus, #addPortfolioButton a:focus, .btn.focus, #profilePage_passwordChangeLink a.focus, #profilePage_editFieldLink a.focus, #addPortfolioButton a.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, #profilePage_passwordChangeLink a:active, #profilePage_editFieldLink a:active, .btn.active, #profilePage_passwordChangeLink a.active, #profilePage_editFieldLink a.active {
+  .btn:active, #profilePage_passwordChangeLink a:active, #profilePage_editFieldLink a:active, #addPortfolioButton a:active, .btn.active, #profilePage_passwordChangeLink a.active, #profilePage_editFieldLink a.active, #addPortfolioButton a.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, #profilePage_passwordChangeLink a.disabled, #profilePage_editFieldLink a.disabled, .btn[disabled], #profilePage_passwordChangeLink a[disabled], #profilePage_editFieldLink a[disabled],
+  .btn.disabled, #profilePage_passwordChangeLink a.disabled, #profilePage_editFieldLink a.disabled, #addPortfolioButton a.disabled, .btn[disabled], #profilePage_passwordChangeLink a[disabled], #profilePage_editFieldLink a[disabled], #addPortfolioButton a[disabled],
   fieldset[disabled] .btn,
   fieldset[disabled] #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink
   fieldset[disabled] a,
   fieldset[disabled] #profilePage_editFieldLink a, #profilePage_editFieldLink
+  fieldset[disabled] a,
+  fieldset[disabled] #addPortfolioButton a, #addPortfolioButton
   fieldset[disabled] a {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled, #profilePage_passwordChangeLink a.disabled, #profilePage_editFieldLink a.disabled,
+a.btn.disabled, #profilePage_passwordChangeLink a.disabled, #profilePage_editFieldLink a.disabled, #addPortfolioButton a.disabled,
 fieldset[disabled] a.btn,
 fieldset[disabled] #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink
 fieldset[disabled] a,
 fieldset[disabled] #profilePage_editFieldLink a, #profilePage_editFieldLink
+fieldset[disabled] a,
+fieldset[disabled] #addPortfolioButton a, #addPortfolioButton
 fieldset[disabled] a {
   pointer-events: none; }
 
@@ -3075,19 +3086,19 @@ fieldset[disabled] a {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, #profilePage_passwordChangeLink .btn-group-lg > a, #profilePage_editFieldLink .btn-group-lg > a {
+.btn-lg, .btn-group-lg > .btn, #profilePage_passwordChangeLink .btn-group-lg > a, #profilePage_editFieldLink .btn-group-lg > a, #addPortfolioButton .btn-group-lg > a {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn, #profilePage_passwordChangeLink .btn-group-sm > a, #profilePage_editFieldLink .btn-group-sm > a {
+.btn-sm, .btn-group-sm > .btn, #profilePage_passwordChangeLink .btn-group-sm > a, #profilePage_editFieldLink .btn-group-sm > a, #addPortfolioButton .btn-group-sm > a {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn, #profilePage_passwordChangeLink .btn-group-xs > a, #profilePage_editFieldLink .btn-group-xs > a {
+.btn-xs, .btn-group-xs > .btn, #profilePage_passwordChangeLink .btn-group-xs > a, #profilePage_editFieldLink .btn-group-xs > a, #addPortfolioButton .btn-group-xs > a {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3265,37 +3276,46 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn, #profilePage_passwordChangeLink .btn-group > a, #profilePage_editFieldLink .btn-group > a,
+  .btn-group > .btn, #profilePage_passwordChangeLink .btn-group > a, #profilePage_editFieldLink .btn-group > a, #addPortfolioButton .btn-group > a,
   .btn-group-vertical > .btn, #profilePage_passwordChangeLink
   .btn-group-vertical > a, #profilePage_editFieldLink
+  .btn-group-vertical > a, #addPortfolioButton
   .btn-group-vertical > a {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, #profilePage_passwordChangeLink .btn-group > a:hover, #profilePage_editFieldLink .btn-group > a:hover, .btn-group > .btn:focus, #profilePage_passwordChangeLink .btn-group > a:focus, #profilePage_editFieldLink .btn-group > a:focus, .btn-group > .btn:active, #profilePage_passwordChangeLink .btn-group > a:active, #profilePage_editFieldLink .btn-group > a:active, .btn-group > .btn.active, #profilePage_passwordChangeLink .btn-group > a.active, #profilePage_editFieldLink .btn-group > a.active,
+    .btn-group > .btn:hover, #profilePage_passwordChangeLink .btn-group > a:hover, #profilePage_editFieldLink .btn-group > a:hover, #addPortfolioButton .btn-group > a:hover, .btn-group > .btn:focus, #profilePage_passwordChangeLink .btn-group > a:focus, #profilePage_editFieldLink .btn-group > a:focus, #addPortfolioButton .btn-group > a:focus, .btn-group > .btn:active, #profilePage_passwordChangeLink .btn-group > a:active, #profilePage_editFieldLink .btn-group > a:active, #addPortfolioButton .btn-group > a:active, .btn-group > .btn.active, #profilePage_passwordChangeLink .btn-group > a.active, #profilePage_editFieldLink .btn-group > a.active, #addPortfolioButton .btn-group > a.active,
     .btn-group-vertical > .btn:hover, #profilePage_passwordChangeLink
     .btn-group-vertical > a:hover, #profilePage_editFieldLink
+    .btn-group-vertical > a:hover, #addPortfolioButton
     .btn-group-vertical > a:hover,
     .btn-group-vertical > .btn:focus, #profilePage_passwordChangeLink
     .btn-group-vertical > a:focus, #profilePage_editFieldLink
+    .btn-group-vertical > a:focus, #addPortfolioButton
     .btn-group-vertical > a:focus,
     .btn-group-vertical > .btn:active, #profilePage_passwordChangeLink
     .btn-group-vertical > a:active, #profilePage_editFieldLink
+    .btn-group-vertical > a:active, #addPortfolioButton
     .btn-group-vertical > a:active,
     .btn-group-vertical > .btn.active, #profilePage_passwordChangeLink
     .btn-group-vertical > a.active, #profilePage_editFieldLink
+    .btn-group-vertical > a.active, #addPortfolioButton
     .btn-group-vertical > a.active {
       z-index: 2; }
 
-.btn-group .btn + .btn, .btn-group #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .btn-group a + .btn, .btn-group #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .btn-group a + .btn, .btn-group #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .btn-group .btn + a, .btn-group #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .btn-group a + a, .btn-group #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .btn-group .btn + a, .btn-group #profilePage_editFieldLink a + a, #profilePage_editFieldLink .btn-group a + a,
+.btn-group .btn + .btn, .btn-group #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .btn-group a + .btn, .btn-group #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .btn-group a + .btn, .btn-group #addPortfolioButton a + .btn, #addPortfolioButton .btn-group a + .btn, .btn-group #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .btn-group .btn + a, .btn-group #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .btn-group a + a, .btn-group #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .btn-group .btn + a, .btn-group #profilePage_editFieldLink a + a, #profilePage_editFieldLink .btn-group a + a, .btn-group #addPortfolioButton .btn + a, #addPortfolioButton .btn-group .btn + a, .btn-group #addPortfolioButton a + a, #addPortfolioButton .btn-group a + a,
 .btn-group .btn + .btn-group,
 .btn-group #profilePage_passwordChangeLink a + .btn-group, #profilePage_passwordChangeLink
 .btn-group a + .btn-group,
 .btn-group #profilePage_editFieldLink a + .btn-group, #profilePage_editFieldLink
 .btn-group a + .btn-group,
+.btn-group #addPortfolioButton a + .btn-group, #addPortfolioButton
+.btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group #profilePage_passwordChangeLink .btn-group + a, #profilePage_passwordChangeLink
 .btn-group .btn-group + a,
 .btn-group #profilePage_editFieldLink .btn-group + a, #profilePage_editFieldLink
+.btn-group .btn-group + a,
+.btn-group #addPortfolioButton .btn-group + a, #addPortfolioButton
 .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
@@ -3307,25 +3327,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn, .btn-toolbar #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .btn-toolbar a, .btn-toolbar #profilePage_editFieldLink a, #profilePage_editFieldLink .btn-toolbar a,
+  .btn-toolbar .btn, .btn-toolbar #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .btn-toolbar a, .btn-toolbar #profilePage_editFieldLink a, #profilePage_editFieldLink .btn-toolbar a, .btn-toolbar #addPortfolioButton a, #addPortfolioButton .btn-toolbar a,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn, #profilePage_passwordChangeLink .btn-toolbar > a, #profilePage_editFieldLink .btn-toolbar > a,
+  .btn-toolbar > .btn, #profilePage_passwordChangeLink .btn-toolbar > a, #profilePage_editFieldLink .btn-toolbar > a, #addPortfolioButton .btn-toolbar > a,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #profilePage_passwordChangeLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), #profilePage_editFieldLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #profilePage_passwordChangeLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), #profilePage_editFieldLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), #addPortfolioButton .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, #profilePage_passwordChangeLink .btn-group > a:first-child, #profilePage_editFieldLink .btn-group > a:first-child {
+.btn-group > .btn:first-child, #profilePage_passwordChangeLink .btn-group > a:first-child, #profilePage_editFieldLink .btn-group > a:first-child, #addPortfolioButton .btn-group > a:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #profilePage_passwordChangeLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), #profilePage_editFieldLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #profilePage_passwordChangeLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), #profilePage_editFieldLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), #addPortfolioButton .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), #profilePage_passwordChangeLink .btn-group > a:last-child:not(:first-child), #profilePage_editFieldLink .btn-group > a:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), #profilePage_passwordChangeLink .btn-group > a:last-child:not(:first-child), #profilePage_editFieldLink .btn-group > a:last-child:not(:first-child), #addPortfolioButton .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3333,15 +3353,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #profilePage_passwordChangeLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, #profilePage_editFieldLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #profilePage_passwordChangeLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, #profilePage_editFieldLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, #addPortfolioButton .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #profilePage_passwordChangeLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, #profilePage_editFieldLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #profilePage_passwordChangeLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, #profilePage_editFieldLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, #addPortfolioButton .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #profilePage_passwordChangeLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, #profilePage_editFieldLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #profilePage_passwordChangeLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, #profilePage_editFieldLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, #addPortfolioButton .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3349,11 +3369,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle, #profilePage_passwordChangeLink .btn-group > a + .dropdown-toggle, #profilePage_editFieldLink .btn-group > a + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, #profilePage_passwordChangeLink .btn-group > a + .dropdown-toggle, #profilePage_editFieldLink .btn-group > a + .dropdown-toggle, #addPortfolioButton .btn-group > a + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #profilePage_passwordChangeLink .btn-group-lg.btn-group > a + .dropdown-toggle, #profilePage_editFieldLink .btn-group-lg.btn-group > a + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #profilePage_passwordChangeLink .btn-group-lg.btn-group > a + .dropdown-toggle, #profilePage_editFieldLink .btn-group-lg.btn-group > a + .dropdown-toggle, #addPortfolioButton .btn-group-lg.btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3362,20 +3382,21 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret, #profilePage_passwordChangeLink a .caret, #profilePage_editFieldLink a .caret {
+.btn .caret, #profilePage_passwordChangeLink a .caret, #profilePage_editFieldLink a .caret, #addPortfolioButton a .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, #profilePage_passwordChangeLink .btn-group-lg > a .caret, #profilePage_editFieldLink .btn-group-lg > a .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, #profilePage_passwordChangeLink .btn-group-lg > a .caret, #profilePage_editFieldLink .btn-group-lg > a .caret, #addPortfolioButton .btn-group-lg > a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #profilePage_passwordChangeLink .btn-group-lg > a .caret, #profilePage_passwordChangeLink .dropup .btn-group-lg > a .caret, .dropup #profilePage_editFieldLink .btn-group-lg > a .caret, #profilePage_editFieldLink .dropup .btn-group-lg > a .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #profilePage_passwordChangeLink .btn-group-lg > a .caret, #profilePage_passwordChangeLink .dropup .btn-group-lg > a .caret, .dropup #profilePage_editFieldLink .btn-group-lg > a .caret, #profilePage_editFieldLink .dropup .btn-group-lg > a .caret, .dropup #addPortfolioButton .btn-group-lg > a .caret, #addPortfolioButton .dropup .btn-group-lg > a .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn, #profilePage_passwordChangeLink .btn-group-vertical > a, #profilePage_editFieldLink .btn-group-vertical > a,
+.btn-group-vertical > .btn, #profilePage_passwordChangeLink .btn-group-vertical > a, #profilePage_editFieldLink .btn-group-vertical > a, #addPortfolioButton .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn, #profilePage_passwordChangeLink
 .btn-group-vertical > .btn-group > a, #profilePage_editFieldLink
+.btn-group-vertical > .btn-group > a, #addPortfolioButton
 .btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
@@ -3389,44 +3410,46 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group > a, #profilePage_editFieldLink .btn-group-vertical > .btn-group > a {
+.btn-group-vertical > .btn-group > .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group > a, #profilePage_editFieldLink .btn-group-vertical > .btn-group > a, #addPortfolioButton .btn-group-vertical > .btn-group > a {
   float: none; }
 
-.btn-group-vertical > .btn + .btn, #profilePage_passwordChangeLink .btn-group-vertical > a + .btn, #profilePage_editFieldLink .btn-group-vertical > a + .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn + a, #profilePage_passwordChangeLink .btn-group-vertical > a + a, #profilePage_editFieldLink .btn-group-vertical > .btn + a, #profilePage_editFieldLink .btn-group-vertical > a + a,
+.btn-group-vertical > .btn + .btn, #profilePage_passwordChangeLink .btn-group-vertical > a + .btn, #profilePage_editFieldLink .btn-group-vertical > a + .btn, #addPortfolioButton .btn-group-vertical > a + .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn + a, #profilePage_passwordChangeLink .btn-group-vertical > a + a, #profilePage_editFieldLink .btn-group-vertical > .btn + a, #profilePage_editFieldLink .btn-group-vertical > a + a, #addPortfolioButton .btn-group-vertical > .btn + a, #addPortfolioButton .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group, #profilePage_passwordChangeLink
 .btn-group-vertical > a + .btn-group, #profilePage_editFieldLink
+.btn-group-vertical > a + .btn-group, #addPortfolioButton
 .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn, #profilePage_passwordChangeLink
 .btn-group-vertical > .btn-group + a, #profilePage_editFieldLink
+.btn-group-vertical > .btn-group + a, #addPortfolioButton
 .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), #profilePage_passwordChangeLink .btn-group-vertical > a:not(:first-child):not(:last-child), #profilePage_editFieldLink .btn-group-vertical > a:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), #profilePage_passwordChangeLink .btn-group-vertical > a:not(:first-child):not(:last-child), #profilePage_editFieldLink .btn-group-vertical > a:not(:first-child):not(:last-child), #addPortfolioButton .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child), #profilePage_passwordChangeLink .btn-group-vertical > a:first-child:not(:last-child), #profilePage_editFieldLink .btn-group-vertical > a:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), #profilePage_passwordChangeLink .btn-group-vertical > a:first-child:not(:last-child), #profilePage_editFieldLink .btn-group-vertical > a:first-child:not(:last-child), #addPortfolioButton .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child), #profilePage_passwordChangeLink .btn-group-vertical > a:last-child:not(:first-child), #profilePage_editFieldLink .btn-group-vertical > a:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), #profilePage_passwordChangeLink .btn-group-vertical > a:last-child:not(:first-child), #profilePage_editFieldLink .btn-group-vertical > a:last-child:not(:first-child), #addPortfolioButton .btn-group-vertical > a:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, #profilePage_editFieldLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, #profilePage_editFieldLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, #addPortfolioButton .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, #profilePage_editFieldLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, #profilePage_editFieldLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, #addPortfolioButton .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, #profilePage_editFieldLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #profilePage_passwordChangeLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, #profilePage_editFieldLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, #addPortfolioButton .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3435,25 +3458,28 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn, #profilePage_passwordChangeLink .btn-group-justified > a, #profilePage_editFieldLink .btn-group-justified > a,
+  .btn-group-justified > .btn, #profilePage_passwordChangeLink .btn-group-justified > a, #profilePage_editFieldLink .btn-group-justified > a, #addPortfolioButton .btn-group-justified > a,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #profilePage_editFieldLink a, #profilePage_editFieldLink .btn-group-justified > .btn-group a {
+  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #profilePage_editFieldLink a, #profilePage_editFieldLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #addPortfolioButton a, #addPortfolioButton .btn-group-justified > .btn-group a {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], #profilePage_passwordChangeLink [data-toggle="buttons"] > a input[type="radio"], #profilePage_editFieldLink [data-toggle="buttons"] > a input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], #profilePage_passwordChangeLink [data-toggle="buttons"] > a input[type="radio"], #profilePage_editFieldLink [data-toggle="buttons"] > a input[type="radio"], #addPortfolioButton [data-toggle="buttons"] > a input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"], #profilePage_passwordChangeLink
 [data-toggle="buttons"] > a input[type="checkbox"], #profilePage_editFieldLink
+[data-toggle="buttons"] > a input[type="checkbox"], #addPortfolioButton
 [data-toggle="buttons"] > a input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"], #profilePage_passwordChangeLink
 [data-toggle="buttons"] > .btn-group > a input[type="radio"], #profilePage_editFieldLink
+[data-toggle="buttons"] > .btn-group > a input[type="radio"], #addPortfolioButton
 [data-toggle="buttons"] > .btn-group > a input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], #profilePage_passwordChangeLink
 [data-toggle="buttons"] > .btn-group > a input[type="checkbox"], #profilePage_editFieldLink
+[data-toggle="buttons"] > .btn-group > a input[type="checkbox"], #addPortfolioButton
 [data-toggle="buttons"] > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3505,6 +3531,7 @@ tbody.collapse.in {
   .input-group-sm > .input-group-addon,
   .input-group-sm > .input-group-btn > .input-group-addon.btn, #profilePage_passwordChangeLink
   .input-group-sm > .input-group-btn > a.input-group-addon, #profilePage_editFieldLink
+  .input-group-sm > .input-group-btn > a.input-group-addon, #addPortfolioButton
   .input-group-sm > .input-group-btn > a.input-group-addon {
     padding: 5px 10px;
     font-size: 12px;
@@ -3513,6 +3540,7 @@ tbody.collapse.in {
   .input-group-lg > .input-group-addon,
   .input-group-lg > .input-group-btn > .input-group-addon.btn, #profilePage_passwordChangeLink
   .input-group-lg > .input-group-btn > a.input-group-addon, #profilePage_editFieldLink
+  .input-group-lg > .input-group-btn > a.input-group-addon, #addPortfolioButton
   .input-group-lg > .input-group-btn > a.input-group-addon {
     padding: 10px 16px;
     font-size: 18px;
@@ -3525,16 +3553,20 @@ tbody.collapse.in {
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn, #profilePage_passwordChangeLink
 .input-group-btn:first-child > a, #profilePage_editFieldLink
+.input-group-btn:first-child > a, #addPortfolioButton
 .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group > .btn, #profilePage_passwordChangeLink
 .input-group-btn:first-child > .btn-group > a, #profilePage_editFieldLink
+.input-group-btn:first-child > .btn-group > a, #addPortfolioButton
 .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), #profilePage_passwordChangeLink
 .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), #profilePage_editFieldLink
+.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), #addPortfolioButton
 .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, #profilePage_passwordChangeLink
 .input-group-btn:last-child > .btn-group:not(:last-child) > a, #profilePage_editFieldLink
+.input-group-btn:last-child > .btn-group:not(:last-child) > a, #addPortfolioButton
 .input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
@@ -3546,16 +3578,20 @@ tbody.collapse.in {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn, #profilePage_passwordChangeLink
 .input-group-btn:last-child > a, #profilePage_editFieldLink
+.input-group-btn:last-child > a, #addPortfolioButton
 .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group > .btn, #profilePage_passwordChangeLink
 .input-group-btn:last-child > .btn-group > a, #profilePage_editFieldLink
+.input-group-btn:last-child > .btn-group > a, #addPortfolioButton
 .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child), #profilePage_passwordChangeLink
 .input-group-btn:first-child > a:not(:first-child), #profilePage_editFieldLink
+.input-group-btn:first-child > a:not(:first-child), #addPortfolioButton
 .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, #profilePage_passwordChangeLink
 .input-group-btn:first-child > .btn-group:not(:first-child) > a, #profilePage_editFieldLink
+.input-group-btn:first-child > .btn-group:not(:first-child) > a, #addPortfolioButton
 .input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3567,16 +3603,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, #profilePage_passwordChangeLink .input-group-btn > a, #profilePage_editFieldLink .input-group-btn > a {
+  .input-group-btn > .btn, #profilePage_passwordChangeLink .input-group-btn > a, #profilePage_editFieldLink .input-group-btn > a, #addPortfolioButton .input-group-btn > a {
     position: relative; }
-    .input-group-btn > .btn + .btn, #profilePage_passwordChangeLink .input-group-btn > a + .btn, #profilePage_editFieldLink .input-group-btn > a + .btn, #profilePage_passwordChangeLink .input-group-btn > .btn + a, #profilePage_passwordChangeLink .input-group-btn > a + a, #profilePage_editFieldLink .input-group-btn > .btn + a, #profilePage_editFieldLink .input-group-btn > a + a {
+    .input-group-btn > .btn + .btn, #profilePage_passwordChangeLink .input-group-btn > a + .btn, #profilePage_editFieldLink .input-group-btn > a + .btn, #addPortfolioButton .input-group-btn > a + .btn, #profilePage_passwordChangeLink .input-group-btn > .btn + a, #profilePage_passwordChangeLink .input-group-btn > a + a, #profilePage_editFieldLink .input-group-btn > .btn + a, #profilePage_editFieldLink .input-group-btn > a + a, #addPortfolioButton .input-group-btn > .btn + a, #addPortfolioButton .input-group-btn > a + a {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, #profilePage_passwordChangeLink .input-group-btn > a:hover, #profilePage_editFieldLink .input-group-btn > a:hover, .input-group-btn > .btn:focus, #profilePage_passwordChangeLink .input-group-btn > a:focus, #profilePage_editFieldLink .input-group-btn > a:focus, .input-group-btn > .btn:active, #profilePage_passwordChangeLink .input-group-btn > a:active, #profilePage_editFieldLink .input-group-btn > a:active {
+    .input-group-btn > .btn:hover, #profilePage_passwordChangeLink .input-group-btn > a:hover, #profilePage_editFieldLink .input-group-btn > a:hover, #addPortfolioButton .input-group-btn > a:hover, .input-group-btn > .btn:focus, #profilePage_passwordChangeLink .input-group-btn > a:focus, #profilePage_editFieldLink .input-group-btn > a:focus, #addPortfolioButton .input-group-btn > a:focus, .input-group-btn > .btn:active, #profilePage_passwordChangeLink .input-group-btn > a:active, #profilePage_editFieldLink .input-group-btn > a:active, #addPortfolioButton .input-group-btn > a:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn, #profilePage_passwordChangeLink .input-group-btn:first-child > a, #profilePage_editFieldLink .input-group-btn:first-child > a,
+  .input-group-btn:first-child > .btn, #profilePage_passwordChangeLink .input-group-btn:first-child > a, #profilePage_editFieldLink .input-group-btn:first-child > a, #addPortfolioButton .input-group-btn:first-child > a,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn, #profilePage_passwordChangeLink .input-group-btn:last-child > a, #profilePage_editFieldLink .input-group-btn:last-child > a,
+  .input-group-btn:last-child > .btn, #profilePage_passwordChangeLink .input-group-btn:last-child > a, #profilePage_editFieldLink .input-group-btn:last-child > a, #addPortfolioButton .input-group-btn:last-child > a,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -3953,10 +3989,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #profilePage_passwordChangeLink .btn-group-sm > a.navbar-btn, #profilePage_editFieldLink .btn-group-sm > a.navbar-btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #profilePage_passwordChangeLink .btn-group-sm > a.navbar-btn, #profilePage_editFieldLink .btn-group-sm > a.navbar-btn, #addPortfolioButton .btn-group-sm > a.navbar-btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #profilePage_passwordChangeLink .btn-group-xs > a.navbar-btn, #profilePage_editFieldLink .btn-group-xs > a.navbar-btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #profilePage_passwordChangeLink .btn-group-xs > a.navbar-btn, #profilePage_editFieldLink .btn-group-xs > a.navbar-btn, #addPortfolioButton .btn-group-xs > a.navbar-btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4249,7 +4285,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label, #profilePage_passwordChangeLink a .label, #profilePage_editFieldLink a .label {
+  .btn .label, #profilePage_passwordChangeLink a .label, #profilePage_editFieldLink a .label, #addPortfolioButton a .label {
     position: relative;
     top: -1px; }
 
@@ -4303,12 +4339,13 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge, #profilePage_passwordChangeLink a .badge, #profilePage_editFieldLink a .badge {
+  .btn .badge, #profilePage_passwordChangeLink a .badge, #profilePage_editFieldLink a .badge, #addPortfolioButton a .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge, #profilePage_passwordChangeLink .btn-group-xs > a .badge, #profilePage_editFieldLink .btn-group-xs > a .badge,
+  .btn-xs .badge, .btn-group-xs > .btn .badge, #profilePage_passwordChangeLink .btn-group-xs > a .badge, #profilePage_editFieldLink .btn-group-xs > a .badge, #addPortfolioButton .btn-group-xs > a .badge,
   .btn-group-xs > .btn .badge, #profilePage_passwordChangeLink
   .btn-group-xs > a .badge, #profilePage_editFieldLink
+  .btn-group-xs > a .badge, #addPortfolioButton
   .btn-group-xs > a .badge {
     top: 0;
     padding: 1px 5px; }
@@ -5173,10 +5210,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn, .modal-footer #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .modal-footer a + .btn, .modal-footer #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .modal-footer a + .btn, .modal-footer #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .modal-footer .btn + a, .modal-footer #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .modal-footer a + a, .modal-footer #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .modal-footer .btn + a, .modal-footer #profilePage_editFieldLink a + a, #profilePage_editFieldLink .modal-footer a + a {
+  .modal-footer .btn + .btn, .modal-footer #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .modal-footer a + .btn, .modal-footer #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .modal-footer a + .btn, .modal-footer #addPortfolioButton a + .btn, #addPortfolioButton .modal-footer a + .btn, .modal-footer #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .modal-footer .btn + a, .modal-footer #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .modal-footer a + a, .modal-footer #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .modal-footer .btn + a, .modal-footer #profilePage_editFieldLink a + a, #profilePage_editFieldLink .modal-footer a + a, .modal-footer #addPortfolioButton .btn + a, #addPortfolioButton .modal-footer .btn + a, .modal-footer #addPortfolioButton a + a, #addPortfolioButton .modal-footer a + a {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .modal-footer .btn-group a + a, .modal-footer .btn-group #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #profilePage_editFieldLink a + a, #profilePage_editFieldLink .modal-footer .btn-group a + a {
+  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #profilePage_passwordChangeLink a + .btn, #profilePage_passwordChangeLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #profilePage_editFieldLink a + .btn, #profilePage_editFieldLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #addPortfolioButton a + .btn, #addPortfolioButton .modal-footer .btn-group a + .btn, .modal-footer .btn-group #profilePage_passwordChangeLink .btn + a, #profilePage_passwordChangeLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #profilePage_passwordChangeLink a + a, #profilePage_passwordChangeLink .modal-footer .btn-group a + a, .modal-footer .btn-group #profilePage_editFieldLink .btn + a, #profilePage_editFieldLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #profilePage_editFieldLink a + a, #profilePage_editFieldLink .modal-footer .btn-group a + a, .modal-footer .btn-group #addPortfolioButton .btn + a, #addPortfolioButton .modal-footer .btn-group .btn + a, .modal-footer .btn-group #addPortfolioButton a + a, #addPortfolioButton .modal-footer .btn-group a + a {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5586,7 +5623,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .carousel-caption a, .carousel-caption #profilePage_editFieldLink a, #profilePage_editFieldLink .carousel-caption a {
+  .carousel-caption .btn, .carousel-caption #profilePage_passwordChangeLink a, #profilePage_passwordChangeLink .carousel-caption a, .carousel-caption #profilePage_editFieldLink a, #profilePage_editFieldLink .carousel-caption a, .carousel-caption #addPortfolioButton a, #addPortfolioButton .carousel-caption a {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -5940,7 +5977,7 @@ body.page-user .block__title {
       font-size: 2.5em;
       color: #FFBF28; }
 
-#profilePage_passwordChangeLink a, #profilePage_editFieldLink a {
+#profilePage_passwordChangeLink a, #profilePage_editFieldLink a, #addPortfolioButton a {
   background: #FFBF28;
   color: #000000; }
 

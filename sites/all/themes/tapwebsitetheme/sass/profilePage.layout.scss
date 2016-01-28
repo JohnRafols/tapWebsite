@@ -197,10 +197,12 @@ body.page-user .block__title {
 }
 
 
-#profilePage_passwordChangeLink, #profilePage_editFieldLink{
+#profilePage_passwordChangeLink, #profilePage_editFieldLink, #addPortfolioButton{
     a{
         @extend .btn;
         background: $mainColor;
         color: $textColor;
     }
 }
+
+

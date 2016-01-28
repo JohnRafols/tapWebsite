@@ -1,0 +1,65 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+// Each page has a class associated with it attached to the body tag, 
+// think the css class is based on the url. So for a page with url 
+// mysite.com/mypage you could make your CSS selector more specific 
+// like: body.page-mypage #page-title { display:none };
+
+//This removes the block titles 
+// .block__title { 
+//     display:none 
+// };
+
+
+.l-main{
+    @extend .container;
+    //@extend .well;
+    //1.) This is the header region 
+    .l-region--sidebar-first{   
+        @include make-sm-column(12);
+    }
+
+
+
+    //Manage content and the second sidebar beside each other (9 and 3)
+    .l-content{
+        @include make-sm-column(12);
+        //Style the filter Section:
+        .view-filters{
+            @extend .well;
+        }
+        .description{
+            display: none;
+        }
+        #edit-submit-portfolios{
+            @extend .btn;
+            background-color: $mainColor;
+        }
+        //Style the Portfolios:
+        ul{
+            margin-left : 7%;
+            .views-row{
+                display:inline-block;
+                padding-right: 2%;                
+            }
+        }
+    }
+
+    //
+    .l-region--sidebar-second{     
+            @include make-sm-column(12);
+  
+    }         
+}
+
