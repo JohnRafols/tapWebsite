@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file multicolumncheckboxesradios.install
+ * module install/uninstall
+ */
+
+
+function multicolumncheckboxesradios_install() {
+  // Give self a very heavy weight so our #process function is the last to execute
+  db_update('system')
+    ->fields(array(
+      'weight' => 255,
+    ))
+    ->condition('type', 'module')
+    ->condition('name', 'multicolumncheckboxesradios')
+    ->execute();
+  
+}
+
+function multicolumncheckboxesradios_uninstall() {
+  // nothing, here just to make module uninstall possible
+}

@@ -223,13 +223,8 @@ th {
     page-break-after: avoid; }
   .navbar, #block-system-main-menu {
     display: none; }
-  .btn > .caret, #myAccountPage_editFieldLink a > .caret, #myAccountPage_passwordChangeLink a > .caret, #addPortfolioButton > .caret, #edit-submit > .caret, #edit-cancel > .caret,
-  .dropup > .btn > .caret, #myAccountPage_editFieldLink
-  .dropup > a > .caret, #myAccountPage_passwordChangeLink
-  .dropup > a > .caret,
-  .dropup > #addPortfolioButton > .caret,
-  .dropup > #edit-submit > .caret,
-  .dropup > #edit-cancel > .caret {
+  .btn > .caret,
+  .dropup > .btn > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -1499,24 +1494,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .l-region--footer #block-block-4 {
+.container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .l-region--footer #block-block-4:before, .container:after, .l-region--footer #block-block-4:after {
+  .container:before, .l-footer #block-block-4:before, .l-footer #block-block-11:before, .l-footer #block-block-12:before, .l-footer #block-block-13:before, .l-footer #block-block-14:before, .container:after, .l-footer #block-block-4:after, .l-footer #block-block-11:after, .l-footer #block-block-12:after, .l-footer #block-block-13:after, .l-footer #block-block-14:after {
     content: " ";
     display: table; }
-  .container:after, .l-region--footer #block-block-4:after {
+  .container:after, .l-footer #block-block-4:after, .l-footer #block-block-11:after, .l-footer #block-block-12:after, .l-footer #block-block-13:after, .l-footer #block-block-14:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .l-region--footer #block-block-4 {
+    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .l-region--footer #block-block-4 {
+    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .l-region--footer #block-block-4 {
+    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
       width: 1170px; } }
 
 .container-fluid {
@@ -2352,70 +2347,46 @@ input[type="search"] {
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
-  .input-group-sm > .input-group-btn > input[type="date"]#addPortfolioButton,
-  .input-group-sm > .input-group-btn > input[type="date"]#edit-submit,
-  .input-group-sm > .input-group-btn > input[type="date"]#edit-cancel,
   .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
-  .input-group-sm > .input-group-btn > input[type="time"]#addPortfolioButton,
-  .input-group-sm > .input-group-btn > input[type="time"]#edit-submit,
-  .input-group-sm > .input-group-btn > input[type="time"]#edit-cancel,
   .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"]#addPortfolioButton,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"]#edit-submit,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"]#edit-cancel,
   .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
-  .input-group-sm > .input-group-btn > input[type="month"]#addPortfolioButton,
-  .input-group-sm > .input-group-btn > input[type="month"]#edit-submit,
-  .input-group-sm > .input-group-btn > input[type="month"]#edit-cancel,
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
-  .input-group-lg > .input-group-btn > input[type="date"]#addPortfolioButton,
-  .input-group-lg > .input-group-btn > input[type="date"]#edit-submit,
-  .input-group-lg > .input-group-btn > input[type="date"]#edit-cancel,
   .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
-  .input-group-lg > .input-group-btn > input[type="time"]#addPortfolioButton,
-  .input-group-lg > .input-group-btn > input[type="time"]#edit-submit,
-  .input-group-lg > .input-group-btn > input[type="time"]#edit-cancel,
   .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"]#addPortfolioButton,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"]#edit-submit,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"]#edit-cancel,
   .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
-  .input-group-lg > .input-group-btn > input[type="month"]#addPortfolioButton,
-  .input-group-lg > .input-group-btn > input[type="month"]#edit-submit,
-  .input-group-lg > .input-group-btn > input[type="month"]#edit-cancel,
   .input-group-lg
   input[type="month"] {
     line-height: 46px; } }
@@ -2493,30 +2464,15 @@ fieldset[disabled]
   min-height: 34px; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, #myAccountPage_editFieldLink
-  .input-group-lg > .input-group-btn > a.form-control-static, #myAccountPage_passwordChangeLink
-  .input-group-lg > .input-group-btn > a.form-control-static,
-  .input-group-lg > .input-group-btn > .form-control-static#addPortfolioButton,
-  .input-group-lg > .input-group-btn > .form-control-static#edit-submit,
-  .input-group-lg > .input-group-btn > .form-control-static#edit-cancel, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn, #myAccountPage_editFieldLink
-  .input-group-sm > .input-group-btn > a.form-control-static, #myAccountPage_passwordChangeLink
-  .input-group-sm > .input-group-btn > a.form-control-static,
-  .input-group-sm > .input-group-btn > .form-control-static#addPortfolioButton,
-  .input-group-sm > .input-group-btn > .form-control-static#edit-submit,
-  .input-group-sm > .input-group-btn > .form-control-static#edit-cancel {
+  .input-group-sm > .input-group-btn > .form-control-static.btn {
     padding-left: 0;
     padding-right: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn, #myAccountPage_editFieldLink
-.input-group-sm > .input-group-btn > a, #myAccountPage_passwordChangeLink
-.input-group-sm > .input-group-btn > a,
-.input-group-sm > .input-group-btn > #addPortfolioButton,
-.input-group-sm > .input-group-btn > #edit-submit,
-.input-group-sm > .input-group-btn > #edit-cancel {
+.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2525,26 +2481,17 @@ fieldset[disabled]
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn,
-.input-group-sm > .input-group-btn > select#addPortfolioButton,
-.input-group-sm > .input-group-btn > select#edit-submit,
-.input-group-sm > .input-group-btn > select#edit-cancel {
+.input-group-sm > .input-group-btn > select.btn {
   height: 30px;
   line-height: 30px; }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
-.input-group-sm > .input-group-btn > textarea#addPortfolioButton,
-.input-group-sm > .input-group-btn > textarea#edit-submit,
-.input-group-sm > .input-group-btn > textarea#edit-cancel,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn,
-.input-group-sm > .input-group-btn > select[multiple]#addPortfolioButton,
-.input-group-sm > .input-group-btn > select[multiple]#edit-submit,
-.input-group-sm > .input-group-btn > select[multiple]#edit-cancel {
+.input-group-sm > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-sm .form-control {
@@ -2571,12 +2518,7 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn, #myAccountPage_editFieldLink
-.input-group-lg > .input-group-btn > a, #myAccountPage_passwordChangeLink
-.input-group-lg > .input-group-btn > a,
-.input-group-lg > .input-group-btn > #addPortfolioButton,
-.input-group-lg > .input-group-btn > #edit-submit,
-.input-group-lg > .input-group-btn > #edit-cancel {
+.input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2585,26 +2527,17 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn,
-.input-group-lg > .input-group-btn > select#addPortfolioButton,
-.input-group-lg > .input-group-btn > select#edit-submit,
-.input-group-lg > .input-group-btn > select#edit-cancel {
+.input-group-lg > .input-group-btn > select.btn {
   height: 46px;
   line-height: 46px; }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
-.input-group-lg > .input-group-btn > textarea#addPortfolioButton,
-.input-group-lg > .input-group-btn > textarea#edit-submit,
-.input-group-lg > .input-group-btn > textarea#edit-cancel,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn,
-.input-group-lg > .input-group-btn > select[multiple]#addPortfolioButton,
-.input-group-lg > .input-group-btn > select[multiple]#edit-submit,
-.input-group-lg > .input-group-btn > select[multiple]#edit-cancel {
+.input-group-lg > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-lg .form-control {
@@ -2648,12 +2581,7 @@ select[multiple].input-lg,
 
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback, #myAccountPage_editFieldLink
-.input-group-lg > .input-group-btn > a + .form-control-feedback, #myAccountPage_passwordChangeLink
-.input-group-lg > .input-group-btn > a + .form-control-feedback,
-.input-group-lg > .input-group-btn > #addPortfolioButton + .form-control-feedback,
-.input-group-lg > .input-group-btn > #edit-submit + .form-control-feedback,
-.input-group-lg > .input-group-btn > #edit-cancel + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -2662,12 +2590,7 @@ select[multiple].input-lg,
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback, #myAccountPage_editFieldLink
-.input-group-sm > .input-group-btn > a + .form-control-feedback, #myAccountPage_passwordChangeLink
-.input-group-sm > .input-group-btn > a + .form-control-feedback,
-.input-group-sm > .input-group-btn > #addPortfolioButton + .form-control-feedback,
-.input-group-sm > .input-group-btn > #edit-submit + .form-control-feedback,
-.input-group-sm > .input-group-btn > #edit-cancel + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -2846,7 +2769,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn, #myAccountPage_editFieldLink a, #myAccountPage_passwordChangeLink a, #addPortfolioButton, #edit-submit, #edit-cancel {
+.btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2866,40 +2789,26 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, #myAccountPage_editFieldLink a:focus, #myAccountPage_passwordChangeLink a:focus, #addPortfolioButton:focus, #edit-submit:focus, #edit-cancel:focus, .btn.focus, #myAccountPage_editFieldLink a.focus, #myAccountPage_passwordChangeLink a.focus, .focus#addPortfolioButton, .focus#edit-submit, .focus#edit-cancel, .btn:active:focus, #myAccountPage_editFieldLink a:active:focus, #myAccountPage_passwordChangeLink a:active:focus, #addPortfolioButton:active:focus, #edit-submit:active:focus, #edit-cancel:active:focus, .btn:active.focus, #myAccountPage_editFieldLink a:active.focus, #myAccountPage_passwordChangeLink a:active.focus, #addPortfolioButton:active.focus, #edit-submit:active.focus, #edit-cancel:active.focus, .btn.active:focus, #myAccountPage_editFieldLink a.active:focus, #myAccountPage_passwordChangeLink a.active:focus, .active#addPortfolioButton:focus, .active#edit-submit:focus, .active#edit-cancel:focus, .btn.active.focus, #myAccountPage_editFieldLink a.active.focus, #myAccountPage_passwordChangeLink a.active.focus, .active.focus#addPortfolioButton, .active.focus#edit-submit, .active.focus#edit-cancel {
+  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, #myAccountPage_editFieldLink a:hover, #myAccountPage_passwordChangeLink a:hover, #addPortfolioButton:hover, #edit-submit:hover, #edit-cancel:hover, .btn:focus, #myAccountPage_editFieldLink a:focus, #myAccountPage_passwordChangeLink a:focus, #addPortfolioButton:focus, #edit-submit:focus, #edit-cancel:focus, .btn.focus, #myAccountPage_editFieldLink a.focus, #myAccountPage_passwordChangeLink a.focus, .focus#addPortfolioButton, .focus#edit-submit, .focus#edit-cancel {
+  .btn:hover, .btn:focus, .btn.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, #myAccountPage_editFieldLink a:active, #myAccountPage_passwordChangeLink a:active, #addPortfolioButton:active, #edit-submit:active, #edit-cancel:active, .btn.active, #myAccountPage_editFieldLink a.active, #myAccountPage_passwordChangeLink a.active, .active#addPortfolioButton, .active#edit-submit, .active#edit-cancel {
+  .btn:active, .btn.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, #myAccountPage_editFieldLink a.disabled, #myAccountPage_passwordChangeLink a.disabled, .disabled#addPortfolioButton, .disabled#edit-submit, .disabled#edit-cancel, .btn[disabled], #myAccountPage_editFieldLink a[disabled], #myAccountPage_passwordChangeLink a[disabled], [disabled]#addPortfolioButton, [disabled]#edit-submit, [disabled]#edit-cancel,
-  fieldset[disabled] .btn,
-  fieldset[disabled] #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink
-  fieldset[disabled] a,
-  fieldset[disabled] #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink
-  fieldset[disabled] a,
-  fieldset[disabled] #addPortfolioButton,
-  fieldset[disabled] #edit-submit,
-  fieldset[disabled] #edit-cancel {
+  .btn.disabled, .btn[disabled],
+  fieldset[disabled] .btn {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled, #myAccountPage_editFieldLink a.disabled, #myAccountPage_passwordChangeLink a.disabled, a.disabled#addPortfolioButton, a.disabled#edit-submit, a.disabled#edit-cancel,
-fieldset[disabled] a.btn,
-fieldset[disabled] #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink
-fieldset[disabled] a,
-fieldset[disabled] #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink
-fieldset[disabled] a,
-fieldset[disabled] a#addPortfolioButton,
-fieldset[disabled] a#edit-submit,
-fieldset[disabled] a#edit-cancel {
+a.btn.disabled,
+fieldset[disabled] a.btn {
   pointer-events: none; }
 
 .btn-default {
@@ -3144,19 +3053,19 @@ fieldset[disabled] a#edit-cancel {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, #myAccountPage_editFieldLink .btn-group-lg > a, #myAccountPage_passwordChangeLink .btn-group-lg > a, .btn-group-lg > #addPortfolioButton, .btn-group-lg > #edit-submit, .btn-group-lg > #edit-cancel {
+.btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn, #myAccountPage_editFieldLink .btn-group-sm > a, #myAccountPage_passwordChangeLink .btn-group-sm > a, .btn-group-sm > #addPortfolioButton, .btn-group-sm > #edit-submit, .btn-group-sm > #edit-cancel {
+.btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn, #myAccountPage_editFieldLink .btn-group-xs > a, #myAccountPage_passwordChangeLink .btn-group-xs > a, .btn-group-xs > #addPortfolioButton, .btn-group-xs > #edit-submit, .btn-group-xs > #edit-cancel {
+.btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3334,59 +3243,20 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn, #myAccountPage_editFieldLink .btn-group > a, #myAccountPage_passwordChangeLink .btn-group > a, .btn-group > #addPortfolioButton, .btn-group > #edit-submit, .btn-group > #edit-cancel,
-  .btn-group-vertical > .btn, #myAccountPage_editFieldLink
-  .btn-group-vertical > a, #myAccountPage_passwordChangeLink
-  .btn-group-vertical > a,
-  .btn-group-vertical > #addPortfolioButton,
-  .btn-group-vertical > #edit-submit,
-  .btn-group-vertical > #edit-cancel {
+  .btn-group > .btn,
+  .btn-group-vertical > .btn {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, #myAccountPage_editFieldLink .btn-group > a:hover, #myAccountPage_passwordChangeLink .btn-group > a:hover, .btn-group > #addPortfolioButton:hover, .btn-group > #edit-submit:hover, .btn-group > #edit-cancel:hover, .btn-group > .btn:focus, #myAccountPage_editFieldLink .btn-group > a:focus, #myAccountPage_passwordChangeLink .btn-group > a:focus, .btn-group > #addPortfolioButton:focus, .btn-group > #edit-submit:focus, .btn-group > #edit-cancel:focus, .btn-group > .btn:active, #myAccountPage_editFieldLink .btn-group > a:active, #myAccountPage_passwordChangeLink .btn-group > a:active, .btn-group > #addPortfolioButton:active, .btn-group > #edit-submit:active, .btn-group > #edit-cancel:active, .btn-group > .btn.active, #myAccountPage_editFieldLink .btn-group > a.active, #myAccountPage_passwordChangeLink .btn-group > a.active, .btn-group > .active#addPortfolioButton, .btn-group > .active#edit-submit, .btn-group > .active#edit-cancel,
-    .btn-group-vertical > .btn:hover, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:hover, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:hover,
-    .btn-group-vertical > #addPortfolioButton:hover,
-    .btn-group-vertical > #edit-submit:hover,
-    .btn-group-vertical > #edit-cancel:hover,
-    .btn-group-vertical > .btn:focus, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:focus, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:focus,
-    .btn-group-vertical > #addPortfolioButton:focus,
-    .btn-group-vertical > #edit-submit:focus,
-    .btn-group-vertical > #edit-cancel:focus,
-    .btn-group-vertical > .btn:active, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:active, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:active,
-    .btn-group-vertical > #addPortfolioButton:active,
-    .btn-group-vertical > #edit-submit:active,
-    .btn-group-vertical > #edit-cancel:active,
-    .btn-group-vertical > .btn.active, #myAccountPage_editFieldLink
-    .btn-group-vertical > a.active, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a.active,
-    .btn-group-vertical > .active#addPortfolioButton,
-    .btn-group-vertical > .active#edit-submit,
-    .btn-group-vertical > .active#edit-cancel {
+    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .btn:active,
+    .btn-group-vertical > .btn.active {
       z-index: 2; }
 
-.btn-group .btn + .btn, .btn-group #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .btn-group a + .btn, .btn-group #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .btn-group a + .btn, .btn-group #addPortfolioButton + .btn, .btn-group #edit-submit + .btn, .btn-group #edit-cancel + .btn, .btn-group #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .btn-group .btn + a, .btn-group #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .btn-group a + a, .btn-group #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .btn-group #addPortfolioButton + a, .btn-group #myAccountPage_editFieldLink #edit-submit + a, #myAccountPage_editFieldLink .btn-group #edit-submit + a, .btn-group #myAccountPage_editFieldLink #edit-cancel + a, #myAccountPage_editFieldLink .btn-group #edit-cancel + a, .btn-group #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .btn-group .btn + a, .btn-group #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .btn-group a + a, .btn-group #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .btn-group #addPortfolioButton + a, .btn-group #myAccountPage_passwordChangeLink #edit-submit + a, #myAccountPage_passwordChangeLink .btn-group #edit-submit + a, .btn-group #myAccountPage_passwordChangeLink #edit-cancel + a, #myAccountPage_passwordChangeLink .btn-group #edit-cancel + a, .btn-group .btn + #addPortfolioButton, .btn-group #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .btn-group a + #addPortfolioButton, .btn-group #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .btn-group a + #addPortfolioButton, .btn-group #addPortfolioButton + #addPortfolioButton, .btn-group #edit-submit + #addPortfolioButton, .btn-group #edit-cancel + #addPortfolioButton, .btn-group .btn + #edit-submit, .btn-group #myAccountPage_editFieldLink a + #edit-submit, #myAccountPage_editFieldLink .btn-group a + #edit-submit, .btn-group #myAccountPage_passwordChangeLink a + #edit-submit, #myAccountPage_passwordChangeLink .btn-group a + #edit-submit, .btn-group #addPortfolioButton + #edit-submit, .btn-group #edit-submit + #edit-submit, .btn-group #edit-cancel + #edit-submit, .btn-group .btn + #edit-cancel, .btn-group #myAccountPage_editFieldLink a + #edit-cancel, #myAccountPage_editFieldLink .btn-group a + #edit-cancel, .btn-group #myAccountPage_passwordChangeLink a + #edit-cancel, #myAccountPage_passwordChangeLink .btn-group a + #edit-cancel, .btn-group #addPortfolioButton + #edit-cancel, .btn-group #edit-submit + #edit-cancel, .btn-group #edit-cancel + #edit-cancel,
+.btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
-.btn-group #myAccountPage_editFieldLink a + .btn-group, #myAccountPage_editFieldLink
-.btn-group a + .btn-group,
-.btn-group #myAccountPage_passwordChangeLink a + .btn-group, #myAccountPage_passwordChangeLink
-.btn-group a + .btn-group,
-.btn-group #addPortfolioButton + .btn-group,
-.btn-group #edit-submit + .btn-group,
-.btn-group #edit-cancel + .btn-group,
 .btn-group .btn-group + .btn,
-.btn-group #myAccountPage_editFieldLink .btn-group + a, #myAccountPage_editFieldLink
-.btn-group .btn-group + a,
-.btn-group #myAccountPage_passwordChangeLink .btn-group + a, #myAccountPage_passwordChangeLink
-.btn-group .btn-group + a,
-.btn-group .btn-group + #addPortfolioButton,
-.btn-group .btn-group + #edit-submit,
-.btn-group .btn-group + #edit-cancel,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -3397,25 +3267,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn, .btn-toolbar #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .btn-toolbar a, .btn-toolbar #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .btn-toolbar a, .btn-toolbar #addPortfolioButton, .btn-toolbar #edit-submit, .btn-toolbar #edit-cancel,
+  .btn-toolbar .btn,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn, #myAccountPage_editFieldLink .btn-toolbar > a, #myAccountPage_passwordChangeLink .btn-toolbar > a, .btn-toolbar > #addPortfolioButton, .btn-toolbar > #edit-submit, .btn-toolbar > #edit-cancel,
+  .btn-toolbar > .btn,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #addPortfolioButton:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #edit-submit:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #edit-cancel:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, #myAccountPage_editFieldLink .btn-group > a:first-child, #myAccountPage_passwordChangeLink .btn-group > a:first-child, .btn-group > #addPortfolioButton:first-child, .btn-group > #edit-submit:first-child, .btn-group > #edit-cancel:first-child {
+.btn-group > .btn:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #addPortfolioButton:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #edit-submit:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #edit-cancel:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), #myAccountPage_editFieldLink .btn-group > a:last-child:not(:first-child), #myAccountPage_passwordChangeLink .btn-group > a:last-child:not(:first-child), .btn-group > #addPortfolioButton:last-child:not(:first-child), .btn-group > #edit-submit:last-child:not(:first-child), .btn-group > #edit-cancel:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3423,15 +3293,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #myAccountPage_editFieldLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, #myAccountPage_passwordChangeLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .btn-group > .btn-group:not(:first-child):not(:last-child) > #addPortfolioButton, .btn-group > .btn-group:not(:first-child):not(:last-child) > #edit-submit, .btn-group > .btn-group:not(:first-child):not(:last-child) > #edit-cancel {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #myAccountPage_editFieldLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, #myAccountPage_passwordChangeLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group > .btn-group:first-child:not(:last-child) > #addPortfolioButton:last-child, .btn-group > .btn-group:first-child:not(:last-child) > #edit-submit:last-child, .btn-group > .btn-group:first-child:not(:last-child) > #edit-cancel:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #myAccountPage_editFieldLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, #myAccountPage_passwordChangeLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group > .btn-group:last-child:not(:first-child) > #addPortfolioButton:first-child, .btn-group > .btn-group:last-child:not(:first-child) > #edit-submit:first-child, .btn-group > .btn-group:last-child:not(:first-child) > #edit-cancel:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3439,11 +3309,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle, #myAccountPage_editFieldLink .btn-group > a + .dropdown-toggle, #myAccountPage_passwordChangeLink .btn-group > a + .dropdown-toggle, .btn-group > #addPortfolioButton + .dropdown-toggle, .btn-group > #edit-submit + .dropdown-toggle, .btn-group > #edit-cancel + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #myAccountPage_editFieldLink .btn-group-lg.btn-group > a + .dropdown-toggle, #myAccountPage_passwordChangeLink .btn-group-lg.btn-group > a + .dropdown-toggle, .btn-group-lg.btn-group > #addPortfolioButton + .dropdown-toggle, .btn-group-lg.btn-group > #edit-submit + .dropdown-toggle, .btn-group-lg.btn-group > #edit-cancel + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3452,24 +3322,19 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret, #myAccountPage_editFieldLink a .caret, #myAccountPage_passwordChangeLink a .caret, #addPortfolioButton .caret, #edit-submit .caret, #edit-cancel .caret {
+.btn .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, #myAccountPage_editFieldLink .btn-group-lg > a .caret, #myAccountPage_passwordChangeLink .btn-group-lg > a .caret, .btn-group-lg > #addPortfolioButton .caret, .btn-group-lg > #edit-submit .caret, .btn-group-lg > #edit-cancel .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #myAccountPage_editFieldLink .btn-group-lg > a .caret, #myAccountPage_editFieldLink .dropup .btn-group-lg > a .caret, .dropup #myAccountPage_passwordChangeLink .btn-group-lg > a .caret, #myAccountPage_passwordChangeLink .dropup .btn-group-lg > a .caret, .dropup .btn-group-lg > #addPortfolioButton .caret, .dropup .btn-group-lg > #edit-submit .caret, .dropup .btn-group-lg > #edit-cancel .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn, #myAccountPage_editFieldLink .btn-group-vertical > a, #myAccountPage_passwordChangeLink .btn-group-vertical > a, .btn-group-vertical > #addPortfolioButton, .btn-group-vertical > #edit-submit, .btn-group-vertical > #edit-cancel,
+.btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn, #myAccountPage_editFieldLink
-.btn-group-vertical > .btn-group > a, #myAccountPage_passwordChangeLink
-.btn-group-vertical > .btn-group > a,
-.btn-group-vertical > .btn-group > #addPortfolioButton,
-.btn-group-vertical > .btn-group > #edit-submit,
-.btn-group-vertical > .btn-group > #edit-cancel {
+.btn-group-vertical > .btn-group > .btn {
   display: block;
   float: none;
   width: 100%;
@@ -3482,50 +3347,40 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group > a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group > a, .btn-group-vertical > .btn-group > #addPortfolioButton, .btn-group-vertical > .btn-group > #edit-submit, .btn-group-vertical > .btn-group > #edit-cancel {
+.btn-group-vertical > .btn-group > .btn {
   float: none; }
 
-.btn-group-vertical > .btn + .btn, #myAccountPage_editFieldLink .btn-group-vertical > a + .btn, #myAccountPage_passwordChangeLink .btn-group-vertical > a + .btn, .btn-group-vertical > #addPortfolioButton + .btn, .btn-group-vertical > #edit-submit + .btn, .btn-group-vertical > #edit-cancel + .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn + a, #myAccountPage_editFieldLink .btn-group-vertical > a + a, #myAccountPage_editFieldLink .btn-group-vertical > #addPortfolioButton + a, #myAccountPage_editFieldLink .btn-group-vertical > #edit-submit + a, #myAccountPage_editFieldLink .btn-group-vertical > #edit-cancel + a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn + a, #myAccountPage_passwordChangeLink .btn-group-vertical > a + a, #myAccountPage_passwordChangeLink .btn-group-vertical > #addPortfolioButton + a, #myAccountPage_passwordChangeLink .btn-group-vertical > #edit-submit + a, #myAccountPage_passwordChangeLink .btn-group-vertical > #edit-cancel + a, .btn-group-vertical > .btn + #addPortfolioButton, #myAccountPage_editFieldLink .btn-group-vertical > a + #addPortfolioButton, #myAccountPage_passwordChangeLink .btn-group-vertical > a + #addPortfolioButton, .btn-group-vertical > #addPortfolioButton + #addPortfolioButton, .btn-group-vertical > #edit-submit + #addPortfolioButton, .btn-group-vertical > #edit-cancel + #addPortfolioButton, .btn-group-vertical > .btn + #edit-submit, #myAccountPage_editFieldLink .btn-group-vertical > a + #edit-submit, #myAccountPage_passwordChangeLink .btn-group-vertical > a + #edit-submit, .btn-group-vertical > #addPortfolioButton + #edit-submit, .btn-group-vertical > #edit-submit + #edit-submit, .btn-group-vertical > #edit-cancel + #edit-submit, .btn-group-vertical > .btn + #edit-cancel, #myAccountPage_editFieldLink .btn-group-vertical > a + #edit-cancel, #myAccountPage_passwordChangeLink .btn-group-vertical > a + #edit-cancel, .btn-group-vertical > #addPortfolioButton + #edit-cancel, .btn-group-vertical > #edit-submit + #edit-cancel, .btn-group-vertical > #edit-cancel + #edit-cancel,
-.btn-group-vertical > .btn + .btn-group, #myAccountPage_editFieldLink
-.btn-group-vertical > a + .btn-group, #myAccountPage_passwordChangeLink
-.btn-group-vertical > a + .btn-group,
-.btn-group-vertical > #addPortfolioButton + .btn-group,
-.btn-group-vertical > #edit-submit + .btn-group,
-.btn-group-vertical > #edit-cancel + .btn-group,
-.btn-group-vertical > .btn-group + .btn, #myAccountPage_editFieldLink
-.btn-group-vertical > .btn-group + a, #myAccountPage_passwordChangeLink
-.btn-group-vertical > .btn-group + a,
-.btn-group-vertical > .btn-group + #addPortfolioButton,
-.btn-group-vertical > .btn-group + #edit-submit,
-.btn-group-vertical > .btn-group + #edit-cancel,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), #myAccountPage_editFieldLink .btn-group-vertical > a:not(:first-child):not(:last-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:not(:first-child):not(:last-child), .btn-group-vertical > #addPortfolioButton:not(:first-child):not(:last-child), .btn-group-vertical > #edit-submit:not(:first-child):not(:last-child), .btn-group-vertical > #edit-cancel:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child), #myAccountPage_editFieldLink .btn-group-vertical > a:first-child:not(:last-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:first-child:not(:last-child), .btn-group-vertical > #addPortfolioButton:first-child:not(:last-child), .btn-group-vertical > #edit-submit:first-child:not(:last-child), .btn-group-vertical > #edit-cancel:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child), #myAccountPage_editFieldLink .btn-group-vertical > a:last-child:not(:first-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:last-child:not(:first-child), .btn-group-vertical > #addPortfolioButton:last-child:not(:first-child), .btn-group-vertical > #edit-submit:last-child:not(:first-child), .btn-group-vertical > #edit-cancel:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #addPortfolioButton, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #edit-submit, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #edit-cancel {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #addPortfolioButton:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #edit-submit:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #edit-cancel:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #addPortfolioButton:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #edit-submit:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #edit-cancel:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3534,35 +3389,20 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn, #myAccountPage_editFieldLink .btn-group-justified > a, #myAccountPage_passwordChangeLink .btn-group-justified > a, .btn-group-justified > #addPortfolioButton, .btn-group-justified > #edit-submit, .btn-group-justified > #edit-cancel,
+  .btn-group-justified > .btn,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #addPortfolioButton, .btn-group-justified > .btn-group #edit-submit, .btn-group-justified > .btn-group #edit-cancel {
+  .btn-group-justified > .btn-group .btn {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], #myAccountPage_editFieldLink [data-toggle="buttons"] > a input[type="radio"], #myAccountPage_passwordChangeLink [data-toggle="buttons"] > a input[type="radio"], [data-toggle="buttons"] > #addPortfolioButton input[type="radio"], [data-toggle="buttons"] > #edit-submit input[type="radio"], [data-toggle="buttons"] > #edit-cancel input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > a input[type="checkbox"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > a input[type="checkbox"],
-[data-toggle="buttons"] > #addPortfolioButton input[type="checkbox"],
-[data-toggle="buttons"] > #edit-submit input[type="checkbox"],
-[data-toggle="buttons"] > #edit-cancel input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > .btn-group > a input[type="radio"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > .btn-group > a input[type="radio"],
-[data-toggle="buttons"] > .btn-group > #addPortfolioButton input[type="radio"],
-[data-toggle="buttons"] > .btn-group > #edit-submit input[type="radio"],
-[data-toggle="buttons"] > .btn-group > #edit-cancel input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > .btn-group > a input[type="checkbox"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > .btn-group > a input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > #addPortfolioButton input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > #edit-submit input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > #edit-cancel input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -3611,23 +3451,13 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn, #myAccountPage_editFieldLink
-  .input-group-sm > .input-group-btn > a.input-group-addon, #myAccountPage_passwordChangeLink
-  .input-group-sm > .input-group-btn > a.input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon#addPortfolioButton,
-  .input-group-sm > .input-group-btn > .input-group-addon#edit-submit,
-  .input-group-sm > .input-group-btn > .input-group-addon#edit-cancel {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn, #myAccountPage_editFieldLink
-  .input-group-lg > .input-group-btn > a.input-group-addon, #myAccountPage_passwordChangeLink
-  .input-group-lg > .input-group-btn > a.input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon#addPortfolioButton,
-  .input-group-lg > .input-group-btn > .input-group-addon#edit-submit,
-  .input-group-lg > .input-group-btn > .input-group-addon#edit-cancel {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -3637,31 +3467,11 @@ tbody.collapse.in {
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > a,
-.input-group-btn:first-child > #addPortfolioButton,
-.input-group-btn:first-child > #edit-submit,
-.input-group-btn:first-child > #edit-cancel,
-.input-group-btn:first-child > .btn-group > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > .btn-group > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > .btn-group > a,
-.input-group-btn:first-child > .btn-group > #addPortfolioButton,
-.input-group-btn:first-child > .btn-group > #edit-submit,
-.input-group-btn:first-child > .btn-group > #edit-cancel,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink
-.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > #addPortfolioButton:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > #edit-submit:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > #edit-cancel:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > .btn-group:not(:last-child) > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > .btn-group:not(:last-child) > a,
-.input-group-btn:last-child > .btn-group:not(:last-child) > #addPortfolioButton,
-.input-group-btn:last-child > .btn-group:not(:last-child) > #edit-submit,
-.input-group-btn:last-child > .btn-group:not(:last-child) > #edit-cancel {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -3670,31 +3480,11 @@ tbody.collapse.in {
 
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > a,
-.input-group-btn:last-child > #addPortfolioButton,
-.input-group-btn:last-child > #edit-submit,
-.input-group-btn:last-child > #edit-cancel,
-.input-group-btn:last-child > .btn-group > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > .btn-group > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > .btn-group > a,
-.input-group-btn:last-child > .btn-group > #addPortfolioButton,
-.input-group-btn:last-child > .btn-group > #edit-submit,
-.input-group-btn:last-child > .btn-group > #edit-cancel,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child), #myAccountPage_editFieldLink
-.input-group-btn:first-child > a:not(:first-child), #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > a:not(:first-child),
-.input-group-btn:first-child > #addPortfolioButton:not(:first-child),
-.input-group-btn:first-child > #edit-submit:not(:first-child),
-.input-group-btn:first-child > #edit-cancel:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > .btn-group:not(:first-child) > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > .btn-group:not(:first-child) > a,
-.input-group-btn:first-child > .btn-group:not(:first-child) > #addPortfolioButton,
-.input-group-btn:first-child > .btn-group:not(:first-child) > #edit-submit,
-.input-group-btn:first-child > .btn-group:not(:first-child) > #edit-cancel {
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3705,16 +3495,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, #myAccountPage_editFieldLink .input-group-btn > a, #myAccountPage_passwordChangeLink .input-group-btn > a, .input-group-btn > #addPortfolioButton, .input-group-btn > #edit-submit, .input-group-btn > #edit-cancel {
+  .input-group-btn > .btn {
     position: relative; }
-    .input-group-btn > .btn + .btn, #myAccountPage_editFieldLink .input-group-btn > a + .btn, #myAccountPage_passwordChangeLink .input-group-btn > a + .btn, .input-group-btn > #addPortfolioButton + .btn, .input-group-btn > #edit-submit + .btn, .input-group-btn > #edit-cancel + .btn, #myAccountPage_editFieldLink .input-group-btn > .btn + a, #myAccountPage_editFieldLink .input-group-btn > a + a, #myAccountPage_editFieldLink .input-group-btn > #addPortfolioButton + a, #myAccountPage_editFieldLink .input-group-btn > #edit-submit + a, #myAccountPage_editFieldLink .input-group-btn > #edit-cancel + a, #myAccountPage_passwordChangeLink .input-group-btn > .btn + a, #myAccountPage_passwordChangeLink .input-group-btn > a + a, #myAccountPage_passwordChangeLink .input-group-btn > #addPortfolioButton + a, #myAccountPage_passwordChangeLink .input-group-btn > #edit-submit + a, #myAccountPage_passwordChangeLink .input-group-btn > #edit-cancel + a, .input-group-btn > .btn + #addPortfolioButton, #myAccountPage_editFieldLink .input-group-btn > a + #addPortfolioButton, #myAccountPage_passwordChangeLink .input-group-btn > a + #addPortfolioButton, .input-group-btn > #addPortfolioButton + #addPortfolioButton, .input-group-btn > #edit-submit + #addPortfolioButton, .input-group-btn > #edit-cancel + #addPortfolioButton, .input-group-btn > .btn + #edit-submit, #myAccountPage_editFieldLink .input-group-btn > a + #edit-submit, #myAccountPage_passwordChangeLink .input-group-btn > a + #edit-submit, .input-group-btn > #addPortfolioButton + #edit-submit, .input-group-btn > #edit-submit + #edit-submit, .input-group-btn > #edit-cancel + #edit-submit, .input-group-btn > .btn + #edit-cancel, #myAccountPage_editFieldLink .input-group-btn > a + #edit-cancel, #myAccountPage_passwordChangeLink .input-group-btn > a + #edit-cancel, .input-group-btn > #addPortfolioButton + #edit-cancel, .input-group-btn > #edit-submit + #edit-cancel, .input-group-btn > #edit-cancel + #edit-cancel {
+    .input-group-btn > .btn + .btn {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, #myAccountPage_editFieldLink .input-group-btn > a:hover, #myAccountPage_passwordChangeLink .input-group-btn > a:hover, .input-group-btn > #addPortfolioButton:hover, .input-group-btn > #edit-submit:hover, .input-group-btn > #edit-cancel:hover, .input-group-btn > .btn:focus, #myAccountPage_editFieldLink .input-group-btn > a:focus, #myAccountPage_passwordChangeLink .input-group-btn > a:focus, .input-group-btn > #addPortfolioButton:focus, .input-group-btn > #edit-submit:focus, .input-group-btn > #edit-cancel:focus, .input-group-btn > .btn:active, #myAccountPage_editFieldLink .input-group-btn > a:active, #myAccountPage_passwordChangeLink .input-group-btn > a:active, .input-group-btn > #addPortfolioButton:active, .input-group-btn > #edit-submit:active, .input-group-btn > #edit-cancel:active {
+    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn, #myAccountPage_editFieldLink .input-group-btn:first-child > a, #myAccountPage_passwordChangeLink .input-group-btn:first-child > a, .input-group-btn:first-child > #addPortfolioButton, .input-group-btn:first-child > #edit-submit, .input-group-btn:first-child > #edit-cancel,
+  .input-group-btn:first-child > .btn,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn, #myAccountPage_editFieldLink .input-group-btn:last-child > a, #myAccountPage_passwordChangeLink .input-group-btn:last-child > a, .input-group-btn:last-child > #addPortfolioButton, .input-group-btn:last-child > #edit-submit, .input-group-btn:last-child > #edit-cancel,
+  .input-group-btn:last-child > .btn,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -3888,29 +3678,29 @@ tbody.collapse.in {
         overflow: visible !important; }
       .navbar-collapse.in {
         overflow-y: visible; }
-      .navbar-fixed-top .navbar-collapse,
+      .navbar-fixed-top .navbar-collapse, #block-system-main-menu .navbar-collapse,
       .navbar-static-top .navbar-collapse,
       .navbar-fixed-bottom .navbar-collapse {
         padding-left: 0;
         padding-right: 0; } }
 
-.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-top .navbar-collapse, #block-system-main-menu .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 340px; }
   @media (max-device-width: 480px) and (orientation: landscape) {
-    .navbar-fixed-top .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse, #block-system-main-menu .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .l-region--footer #block-block-4 > .navbar-header,
-.container > .navbar-collapse, .l-region--footer #block-block-4 > .navbar-collapse,
+.container > .navbar-header, .l-footer #block-block-4 > .navbar-header, .l-footer #block-block-11 > .navbar-header, .l-footer #block-block-12 > .navbar-header, .l-footer #block-block-13 > .navbar-header, .l-footer #block-block-14 > .navbar-header,
+.container > .navbar-collapse, .l-footer #block-block-4 > .navbar-collapse, .l-footer #block-block-11 > .navbar-collapse, .l-footer #block-block-12 > .navbar-collapse, .l-footer #block-block-13 > .navbar-collapse, .l-footer #block-block-14 > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .l-region--footer #block-block-4 > .navbar-header,
-    .container > .navbar-collapse, .l-region--footer #block-block-4 > .navbar-collapse,
+    .container > .navbar-header, .l-footer #block-block-4 > .navbar-header, .l-footer #block-block-11 > .navbar-header, .l-footer #block-block-12 > .navbar-header, .l-footer #block-block-13 > .navbar-header, .l-footer #block-block-14 > .navbar-header,
+    .container > .navbar-collapse, .l-footer #block-block-4 > .navbar-collapse, .l-footer #block-block-11 > .navbar-collapse, .l-footer #block-block-12 > .navbar-collapse, .l-footer #block-block-13 > .navbar-collapse, .l-footer #block-block-14 > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3923,18 +3713,18 @@ tbody.collapse.in {
     .navbar-static-top {
       border-radius: 0; } }
 
-.navbar-fixed-top,
+.navbar-fixed-top, #block-system-main-menu,
 .navbar-fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
   z-index: 1030; }
   @media (min-width: 768px) {
-    .navbar-fixed-top,
+    .navbar-fixed-top, #block-system-main-menu,
     .navbar-fixed-bottom {
       border-radius: 0; } }
 
-.navbar-fixed-top {
+.navbar-fixed-top, #block-system-main-menu {
   top: 0;
   border-width: 0 0 1px; }
 
@@ -3954,7 +3744,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, #block-system-main-menu > .container .navbar-brand, .l-region--footer .navbar > #block-block-4 .navbar-brand, .l-region--footer #block-system-main-menu > #block-block-4 .navbar-brand,
+    .navbar > .container .navbar-brand, #block-system-main-menu > .container .navbar-brand, .l-footer .navbar > #block-block-4 .navbar-brand, .l-footer #block-system-main-menu > #block-block-4 .navbar-brand, .l-footer .navbar > #block-block-11 .navbar-brand, .l-footer #block-system-main-menu > #block-block-11 .navbar-brand, .l-footer .navbar > #block-block-12 .navbar-brand, .l-footer #block-system-main-menu > #block-block-12 .navbar-brand, .l-footer .navbar > #block-block-13 .navbar-brand, .l-footer #block-system-main-menu > #block-block-13 .navbar-brand, .l-footer .navbar > #block-block-14 .navbar-brand, .l-footer #block-system-main-menu > #block-block-14 .navbar-brand,
     .navbar > .container-fluid .navbar-brand, #block-system-main-menu > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
@@ -4091,10 +3881,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #myAccountPage_editFieldLink .btn-group-sm > a.navbar-btn, #myAccountPage_passwordChangeLink .btn-group-sm > a.navbar-btn, .btn-group-sm > .navbar-btn#addPortfolioButton, .btn-group-sm > .navbar-btn#edit-submit, .btn-group-sm > .navbar-btn#edit-cancel {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #myAccountPage_editFieldLink .btn-group-xs > a.navbar-btn, #myAccountPage_passwordChangeLink .btn-group-xs > a.navbar-btn, .btn-group-xs > .navbar-btn#addPortfolioButton, .btn-group-xs > .navbar-btn#edit-submit, .btn-group-xs > .navbar-btn#edit-cancel {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4387,7 +4177,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label, #myAccountPage_editFieldLink a .label, #myAccountPage_passwordChangeLink a .label, #addPortfolioButton .label, #edit-submit .label, #edit-cancel .label {
+  .btn .label {
     position: relative;
     top: -1px; }
 
@@ -4441,16 +4231,11 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge, #myAccountPage_editFieldLink a .badge, #myAccountPage_passwordChangeLink a .badge, #addPortfolioButton .badge, #edit-submit .badge, #edit-cancel .badge {
+  .btn .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge, #myAccountPage_editFieldLink .btn-group-xs > a .badge, #myAccountPage_passwordChangeLink .btn-group-xs > a .badge, .btn-group-xs > #addPortfolioButton .badge, .btn-group-xs > #edit-submit .badge, .btn-group-xs > #edit-cancel .badge,
-  .btn-group-xs > .btn .badge, #myAccountPage_editFieldLink
-  .btn-group-xs > a .badge, #myAccountPage_passwordChangeLink
-  .btn-group-xs > a .badge,
-  .btn-group-xs > #addPortfolioButton .badge,
-  .btn-group-xs > #edit-submit .badge,
-  .btn-group-xs > #edit-cancel .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge,
+  .btn-group-xs > .btn .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -4484,18 +4269,18 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .l-region--footer #block-block-4 .jumbotron,
+  .container .jumbotron, .l-footer #block-block-4 .jumbotron, .l-footer #block-block-11 .jumbotron, .l-footer #block-block-12 .jumbotron, .l-footer #block-block-13 .jumbotron, .l-footer #block-block-14 .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
-  .jumbotron .container, .jumbotron .l-region--footer #block-block-4, .l-region--footer .jumbotron #block-block-4 {
+  .jumbotron .container, .jumbotron .l-footer #block-block-4, .l-footer .jumbotron #block-block-4, .jumbotron .l-footer #block-block-11, .l-footer .jumbotron #block-block-11, .jumbotron .l-footer #block-block-12, .l-footer .jumbotron #block-block-12, .jumbotron .l-footer #block-block-13, .l-footer .jumbotron #block-block-13, .jumbotron .l-footer #block-block-14, .l-footer .jumbotron #block-block-14 {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .l-region--footer #block-block-4 .jumbotron,
+      .container .jumbotron, .l-footer #block-block-4 .jumbotron, .l-footer #block-block-11 .jumbotron, .l-footer #block-block-12 .jumbotron, .l-footer #block-block-13 .jumbotron, .l-footer #block-block-14 .jumbotron,
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
@@ -5314,10 +5099,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn, .modal-footer #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .modal-footer a + .btn, .modal-footer #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .modal-footer a + .btn, .modal-footer #addPortfolioButton + .btn, .modal-footer #edit-submit + .btn, .modal-footer #edit-cancel + .btn, .modal-footer #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .modal-footer .btn + a, .modal-footer #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .modal-footer a + a, .modal-footer #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .modal-footer #addPortfolioButton + a, .modal-footer #myAccountPage_editFieldLink #edit-submit + a, #myAccountPage_editFieldLink .modal-footer #edit-submit + a, .modal-footer #myAccountPage_editFieldLink #edit-cancel + a, #myAccountPage_editFieldLink .modal-footer #edit-cancel + a, .modal-footer #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .modal-footer .btn + a, .modal-footer #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .modal-footer a + a, .modal-footer #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .modal-footer #addPortfolioButton + a, .modal-footer #myAccountPage_passwordChangeLink #edit-submit + a, #myAccountPage_passwordChangeLink .modal-footer #edit-submit + a, .modal-footer #myAccountPage_passwordChangeLink #edit-cancel + a, #myAccountPage_passwordChangeLink .modal-footer #edit-cancel + a, .modal-footer .btn + #addPortfolioButton, .modal-footer #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .modal-footer a + #addPortfolioButton, .modal-footer #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .modal-footer a + #addPortfolioButton, .modal-footer #addPortfolioButton + #addPortfolioButton, .modal-footer #edit-submit + #addPortfolioButton, .modal-footer #edit-cancel + #addPortfolioButton, .modal-footer .btn + #edit-submit, .modal-footer #myAccountPage_editFieldLink a + #edit-submit, #myAccountPage_editFieldLink .modal-footer a + #edit-submit, .modal-footer #myAccountPage_passwordChangeLink a + #edit-submit, #myAccountPage_passwordChangeLink .modal-footer a + #edit-submit, .modal-footer #addPortfolioButton + #edit-submit, .modal-footer #edit-submit + #edit-submit, .modal-footer #edit-cancel + #edit-submit, .modal-footer .btn + #edit-cancel, .modal-footer #myAccountPage_editFieldLink a + #edit-cancel, #myAccountPage_editFieldLink .modal-footer a + #edit-cancel, .modal-footer #myAccountPage_passwordChangeLink a + #edit-cancel, #myAccountPage_passwordChangeLink .modal-footer a + #edit-cancel, .modal-footer #addPortfolioButton + #edit-cancel, .modal-footer #edit-submit + #edit-cancel, .modal-footer #edit-cancel + #edit-cancel {
+  .modal-footer .btn + .btn {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #addPortfolioButton + .btn, .modal-footer .btn-group #edit-submit + .btn, .modal-footer .btn-group #edit-cancel + .btn, .modal-footer .btn-group #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .modal-footer .btn-group a + a, .modal-footer .btn-group #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .modal-footer .btn-group #addPortfolioButton + a, .modal-footer .btn-group #myAccountPage_editFieldLink #edit-submit + a, #myAccountPage_editFieldLink .modal-footer .btn-group #edit-submit + a, .modal-footer .btn-group #myAccountPage_editFieldLink #edit-cancel + a, #myAccountPage_editFieldLink .modal-footer .btn-group #edit-cancel + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group #addPortfolioButton + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink #edit-submit + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group #edit-submit + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink #edit-cancel + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group #edit-cancel + a, .modal-footer .btn-group .btn + #addPortfolioButton, .modal-footer .btn-group #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .modal-footer .btn-group a + #addPortfolioButton, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + #addPortfolioButton, .modal-footer .btn-group #addPortfolioButton + #addPortfolioButton, .modal-footer .btn-group #edit-submit + #addPortfolioButton, .modal-footer .btn-group #edit-cancel + #addPortfolioButton, .modal-footer .btn-group .btn + #edit-submit, .modal-footer .btn-group #myAccountPage_editFieldLink a + #edit-submit, #myAccountPage_editFieldLink .modal-footer .btn-group a + #edit-submit, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + #edit-submit, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + #edit-submit, .modal-footer .btn-group #addPortfolioButton + #edit-submit, .modal-footer .btn-group #edit-submit + #edit-submit, .modal-footer .btn-group #edit-cancel + #edit-submit, .modal-footer .btn-group .btn + #edit-cancel, .modal-footer .btn-group #myAccountPage_editFieldLink a + #edit-cancel, #myAccountPage_editFieldLink .modal-footer .btn-group a + #edit-cancel, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + #edit-cancel, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + #edit-cancel, .modal-footer .btn-group #addPortfolioButton + #edit-cancel, .modal-footer .btn-group #edit-submit + #edit-cancel, .modal-footer .btn-group #edit-cancel + #edit-cancel {
+  .modal-footer .btn-group .btn + .btn {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5727,7 +5512,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .carousel-caption a, .carousel-caption #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .carousel-caption a, .carousel-caption #addPortfolioButton, .carousel-caption #edit-submit, .carousel-caption #edit-cancel {
+  .carousel-caption .btn {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -5968,15 +5753,30 @@ button.close {
 * {
   font-family: Cabin;
   text-color: #000000;
-  margin: 0;
-  padding: 0; }
+  margin: 0; }
+
+body {
+  padding-top: 50px; }
 
 #block-system-main-menu {
+  position: fixed;
   background-color: #FFBF28; }
+  #block-system-main-menu #tapLogo {
+    background: url("images/tapLogoBeta.png") no-repeat;
+    background-color: white;
+    width: 70px;
+    /* you can use % */
+    margin-left: 10px;
+    background-size: 100% 100%; }
+  #block-system-main-menu #collapseButtonCustom {
+    background: url("images/tapLogoBeta.png") no-repeat;
+    background-color: white; }
   #block-system-main-menu ul {
     margin-right: 1%;
     text-color: #333333;
     display: nowrap; }
+    #block-system-main-menu ul li {
+      border-right: 1px solid white; }
     #block-system-main-menu ul li a:visited {
       background-color: #cc9920; }
     #block-system-main-menu ul li a:active {
@@ -5990,236 +5790,46 @@ button.close {
   color: #000000;
   display: nowrap; }
 
+.navbar-fixed-top, #block-system-main-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500; }
+
 nav .block__title {
   display: none; }
 
-.registrationButtonClient, .registrationButtonFreelancer {
-  background-color: #FFBF28;
-  border: #cc9920;
-  color: #333333; }
-  .registrationButtonClient:focus, .registrationButtonFreelancer:focus {
-    background-color: #ffe530; }
-  .registrationButtonClient:hover, .registrationButtonFreelancer:hover {
-    background-color: #cc9920; }
+html, body {
+  height: 100%; }
 
-#landingPageWelcomeSection {
-  height: 500px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: #CCCCCC;
-  margin: 0 auto;
-  padding: 5%;
-  background-color: gray;
-  text-align: center;
-  background: url("images/BannerBeta.png") no-repeat;
-  background-size: 100% 100%;
-  margin-top: -20px; }
-
-#landingPageServices, #landingPage_whoAreWe,
-#landingPage_howThisWorks, #landingPage_theCreativeProcess {
-  margin-bottom: 50px;
-  margin-top: 50px; }
-
-.landingPage_whoAreWe_content {
+.l-page {
+  min-height: 100%;
   position: relative; }
-  .landingPage_whoAreWe_content .landingPage_whoAreWe_contentBorder {
-    position: absolute;
-    border-top: 2px solid #FFBF28;
-    left: 5%;
-    right: 50%;
-    margin-top: 10px; }
 
-.landingPage_howThisWorks_content {
-  text-align: center; }
-
-.landingPage_titles {
-  font-size: 1.4em;
-  text-align: left;
-  border-bottom: 1px solid #FFBF28; }
-
-.landingPage_emphasizedText {
-  font-size: 1.4em;
-  color: #FFBF28;
-  width: 60%; }
-
-#landingPageServices_description, #landingPage_theCreativeProcess_description {
-  font-size: 1.4em;
-  color: #FFBF28; }
-
-#landingPageServices {
-  text-align: center; }
-  #landingPageServices #landingPageServices_graphicDesign_Icon {
-    background: url("images/Services/GraphicDesign.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_artAndIllustration_Icon {
-    background: url("images/Services/ArtAndIllustration.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_branding_Icon {
-    background: url("images/Services/Branding.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_webAndApp_Icon {
-    background: url("images/Services/WebAndApp.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_motionGraphics_Icon {
-    background: url("images/Services/MotionGraphics.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_creativeConsulting_Icon {
-    background: url("images/Services/CreativeConsulting.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPageServices_photography_Icon {
-    background: url("images/Services/Photography.png") no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto; }
-  #landingPageServices #landingPage_viewAllServices {
-    font-size: 1.4em;
-    height: 150px;
-    line-height: 150px;
-    white-space: nowrap; }
-
-#landingPageServices_uploadYourProject_Icon {
-  background: url("images/ClientProcess/UploadYourProject.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_getMatchedToTalent_Icon {
-  background: url("images/ClientProcess/GetMatchedToTalent.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_communicate_Icon {
-  background: url("images/ClientProcess/Communicate.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_implementNewDesign_Icon {
-  background: url("images/ClientProcess/ImplementNewDesign.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_createAPortfolio_Icon {
-  background: url("images/CreativeProcess/CreateAPortfolio.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_getMatched_Icon {
-  background: url("images/CreativeProcess/GetMatched.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_startWorking_Icon {
-  background: url("images/CreativeProcess/StartWorking.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_getPaid_Icon {
-  background: url("images/CreativeProcess/GetPaid.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
-#landingPageServices_secondRow {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
-.landingPage_bulletPointList {
-  display: list-item;
-  margin-left: 30px;
-  list-style-type: disc; }
-
-.l-region--footer {
-  margin-top: 200px;
-  background: #CCCCCC;
-  padding-bottom: 60px; }
-  .l-region--footer #block-block-4 {
-    padding-top: 20px; }
-  .l-region--footer p {
-    margin: 0;
-    padding: 5px; }
-
-.l-content h1 {
-  display: hidden; }
-
-#myAccountPage_editFieldLink, #myAccountPage_passwordChangeLink {
-  color: black; }
-  #myAccountPage_editFieldLink a, #myAccountPage_passwordChangeLink a {
-    background: #FFBF28;
-    color: black; }
-
-.tabs--primary {
-  display: none; }
-  .tabs--primary li {
-    display: none; }
-    .tabs--primary li a {
-      display: none; }
-
-#addPortfolioButton {
-  background: #FFBF28;
-  color: #000000; }
+.l-main {
+  padding-bottom: 400px; }
 
 .l-footer {
-  margin-bottom: 0;
-  margin-top: 30%; }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  background: lightgray; }
+  .l-footer p {
+    margin: 0;
+    padding: 5px; }
 
 .views-label-field-first-name, .views-label-field-name, .views-label-field-add, #passwordField, #paymentDetailField {
   font-size: 1.4em;
   font-weight: bold; }
 
-#paymentDetailField {
-  display: inline-block;
-  background: rgba(233, 230, 230, 0.5);
-  color: rgba(0, 0, 0, 0.3); }
-
-#edit-submit {
-  background: #FFBF28; }
-
-#edit-cancel {
-  background: red;
-  margin-left: 5px; }
+.handle {
+  background: url("images/rsz_dragarrow.png") no-repeat !important;
+  margin: 0 !important;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  margin-top: 0px !important; }
 
 /*# sourceMappingURL=tapwebsitetheme.styles.css.map */

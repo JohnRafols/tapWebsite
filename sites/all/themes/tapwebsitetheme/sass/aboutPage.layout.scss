@@ -17,68 +17,14 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
-// 1.) Styling for the Whole Website
-
-    //Get ride of all margin and padding
-    * {
-        font-family: Cabin;
-        text-color: $textColor;
-        //Get ride of all margin and padding to make them easy to manipulate
-        margin: 0;
-        padding: 0;
-
-    }
-
-
-    //The Navigation bar styling:
-    #block-system-main-menu{       
-        @extend .navbar;
-        background-color: $mainColor;
-        ul {
-            @extend .nav;
-            @extend .navbar-nav;
-            @extend .navbar-right;
-            margin-right: 1%;
-            text-color: $text-color;
-            display: nowrap;
-            li a{
-                &:link {
-                    //background-color: ($mainColor);
-                }
-                &:visited {
-                    background-color: ($mainColor * 0.80);
-                }
-                &:active {
-                    background-color: ($mainColor * 1.20);
-
-                &:focus {
-                    background-color: ($mainColor * 1.20);
-                }
-                &:hover{
-                    background-color: ($mainColor * 0.80);
-                }
-            }
-         }
-         }
-    }
-
-     .nav.navbar-nav.navbar-right li a {
-        color: $textColor;
-        display: nowrap;
-    }
-    
-    nav .block__title{
-        display: none;
-    }
-
-
-// 2.) Home Page Styling
+// 1.) Home Page Styling
 
 //The Registration Buttons:
 .registrationButtonClient , .registrationButtonFreelancer{
     background-color: $mainColor;
     border: $mainColor * 0.80;
     color: $text-color;
+    
     //Change the color of the button when it is selected or focused.
         &:focus {
             background-color: ($mainColor * 1.20);
@@ -95,16 +41,33 @@ $grey : #CCCCCC;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: $grey;
+    //Misc:
+    position: relative;
+    color: white;
     margin: 0 auto; 
     padding: 5%;
-    background-color: gray;
     text-align: center;
     //url's are local to the css folder
     background: url('images/BannerBeta.png') no-repeat;
-    //background-size: cover;
     background-size: 100% 100%;
-    margin-top: -20px;
+
+    #landingPageWelcomeSection_border{
+        position: absolute;
+        display: inline-block;
+        border-top: 2px solid white;
+        margin-top: 10px;
+        left: 42%;
+        right: 42%;
+    }
+    #landingPageWelcomeSection_description{
+        width: 50%;
+        margin: 0 auto;
+        //margin-top: 15px;
+        padding-bottom: 15px;
+    }
+    li{
+        display: inline;
+    }
 }
 
 
@@ -118,15 +81,41 @@ $grey : #CCCCCC;
 //These are for the "Half" borders in the Who Are We section
 .landingPage_whoAreWe_content{
     position: relative;
-    //margin-bottom: 50px;
+
     .landingPage_whoAreWe_contentBorder{
         position: absolute;
         border-top: 2px solid $mainColor;
-        left: 5%;
-        right: 50%;
-        margin-top: 10px;
+        left: 3.5%;
+        right: 75%;
+        margin-top: 15px;
     }
+    .landingPage_whoAreWe_content_strongText{
+        font-size: 1.2em;
+    }
+
 }
+
+//This is not being detected by the parent.. why?
+#landingPage_whoAreWe_content_link{
+        margin-top : 50px;
+}
+
+
+
+
+
+#landingPage_creativeTalent_finalDesc{
+    font-size: 1.2em;
+    color: $mainColor;
+    width: 60%;
+}
+
+
+#landingPage_creativeTalent_clientsInNewZealand{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 
 
 .landingPage_howThisWorks_content{
@@ -140,6 +129,14 @@ $grey : #CCCCCC;
 }
 
 .landingPage_emphasizedText{
+    font-size: 1.4em;
+    color: $mainColor;
+    //width: 60%;
+}
+
+
+#landingPage_creativeTalent_title{
+    display-inline: block;
     font-size: 1.4em;
     color: $mainColor;
     width: 60%;
@@ -281,6 +278,17 @@ $grey : #CCCCCC;
     background-size: 100% 100%;
     margin: 0 auto;
 }
+#landingPageServices_NZ_Icon{
+    background: url('images/NZ-Icon.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.landingPage_titles{
+   // @extend .well; 
+}
 
 #landingPageServices_secondRow{
     display:flex;
@@ -294,33 +302,13 @@ $grey : #CCCCCC;
 }
 
 
-.l-region--footer{
-    #block-block-4{
-        @extend .container;
-        padding-top: 20px;
-    }    
-
-    margin-top:150px;
-	background: $grey;
-    p{
-
-        margin:0;
-        padding:5px;
-        
-            
-    }
-    padding-bottom:60px;
-}
-
-
-
-.l-content{
-    //@extend .container;
-    h1{
-        display:hidden;
-        //font-size: 12px;
-    }
-}
+// .l-content{
+//     //@extend .container;
+//     h1{
+//         display:hidden;
+//         //font-size: 12px;
+//     }
+// }
 
 
 

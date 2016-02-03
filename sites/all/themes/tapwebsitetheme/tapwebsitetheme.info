@@ -15,6 +15,7 @@ stylesheets[all][] = css/tapwebsitetheme.styles.css
 ; Scripts
 ; ========================================
 scripts[] = js/tapwebsitetheme.behaviors.js
+scripts[] = js/bootstrap.min.js
 
 ; ========================================
 ; Regions

@@ -5861,12 +5861,6 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-* {
-  font-family: Cabin;
-  text-color: #000000;
-  margin: 0;
-  padding: 0; }
-
 body.page-user .block__title {
   display: none; }
 
@@ -5895,18 +5889,18 @@ body.page-user .block__title {
             align-items: center; }
     .l-main .l-region--sidebar-first .views-row .views-field {
       margin-bottom: 20px; }
-  .l-main .l-region--sidebar-first .views-field-picture {
+  .l-main .l-region--sidebar-first .views-field-field-profile-picture {
     margin-right: 15px; }
-    .l-main .l-region--sidebar-first .views-field-picture img {
+    .l-main .l-region--sidebar-first .views-field-field-profile-picture img {
       border-radius: 999px;
       height: 80px;
       width: 80px;
       border: 2px solid #FFBF28; }
-  .l-main .l-region--sidebar-first .views-field-field-first-name {
+  .l-main .l-region--sidebar-first .views-field-field-user-first-name {
     font-size: 2.5em;
     margin-right: 7px;
     font-weight: bold; }
-  .l-main .l-region--sidebar-first .views-field-field-name {
+  .l-main .l-region--sidebar-first .views-field-field-user-last-name {
     font-size: 2.5em;
     font-weight: bold; }
 
@@ -5977,8 +5971,11 @@ body.page-user .block__title {
       font-size: 2.5em;
       color: #FFBF28; }
 
-#profilePage_passwordChangeLink a, #profilePage_editFieldLink a, #addPortfolioButton a {
-  background: #FFBF28;
-  color: #000000; }
+#profilePage_passwordChangeLink, #profilePage_editFieldLink, #addPortfolioButton {
+  display: inline-block;
+  margin-bottom: 10px; }
+  #profilePage_passwordChangeLink a, #profilePage_editFieldLink a, #addPortfolioButton a {
+    background: #FFBF28;
+    color: #000000; }
 
 /*# sourceMappingURL=profilePage.layout.css.map */

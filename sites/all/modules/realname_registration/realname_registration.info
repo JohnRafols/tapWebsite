@@ -1,0 +1,14 @@
+name = Realname registration 
+description = "For generating usernames based on real names."
+core = 7.x
+files[] = realname_registration.module
+files[] = realname_registration.install
+files[] = realname_registration.admin.inc
+files[] = realname_registration.tokens.inc
+configure = admin/config/people/realname_registration
+; Information added by Drupal.org packaging script on 2014-05-14
+version = "7.x-2.0"
+core = "7.x"
+project = "realname_registration"
+datestamp = "1400078329"
+

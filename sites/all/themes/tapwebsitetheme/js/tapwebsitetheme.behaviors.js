@@ -57,4 +57,35 @@
     }
   };
 
+  //Code for the Navbar:
+
+   Drupal.behaviors.navbarBehaviour = {
+    attach: function (context, settings) {
+  
+      //This is the main navigation bar on every page
+      var mainNavigationBar = $(".l-header")
+                                .find(".l-region--navigation")
+                                .find("#block-system-main-menu")
+
+      //Append the Logo
+      mainNavigationBar.prepend('<div class="navbar-header"><button type="button" class="navbar-toggle" id="collapseButtonCustom" data-toggle="collapse" data-target="#myNavbar"></button><a class="navbar-brand" id= "tapLogo" href="about">  </a></div>');
+      //mainNavigationBar.addClass('navbar-fixed-top'); 
+
+
+      //This is the list of links
+      var mainNavigationBar_Links = $(".l-header")
+                                .find(".l-region--navigation")
+                                .find("#block-system-main-menu")
+                                .find(".menu");
+
+      //State that the navigation is collapsable
+      mainNavigationBar_Links.wrap("<div class='collapse navbar-collapse' id='myNavbar'>") ;
+
+      //Footer attemp 
+      $(".l-main").append('<div class="push">')
+    } 
+  };
+
+
+
 })(jQuery);

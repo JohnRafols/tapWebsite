@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 /**
  * @file
@@ -105,8 +105,8 @@
   
 
       <?php if(($title) && drupal_get_path_alias(current_path())!="about"): ?>
-       <h1 id="testtitle">
-          <?php print $title; ?>
+        <h1 id="testtitle">
+          <?php print render($title); ?>
         </h1>
       <?php endif; ?>
       

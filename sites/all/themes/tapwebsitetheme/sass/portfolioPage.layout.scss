@@ -16,10 +16,10 @@ $grey : #CCCCCC;
 // mysite.com/mypage you could make your CSS selector more specific 
 // like: body.page-mypage #page-title { display:none };
 
-//This removes the block titles 
-.block__title { 
-    display:none 
-};
+// //This removes the block titles 
+// .block__title { 
+//     display:none 
+// };
 //block__title
 
 
@@ -51,7 +51,7 @@ $grey : #CCCCCC;
                 @include make-sm-column(4);
             }
 
-            .views-field-picture{                 
+            .views-field-field-profile-picture{                 
                 img{
                     border-radius: 999px;
                     height: 80px;
@@ -71,7 +71,7 @@ $grey : #CCCCCC;
                 margin-right:7px;
                 font-weight: bold;
             }
-            .views-field-field-name{
+            .views-field-field-user-last-name{
                  //@include make-sm-column(3); 
                 font-size: 2.0em;
                 font-weight: bold;
@@ -112,8 +112,8 @@ $grey : #CCCCCC;
                     color: $grey;
                 }
                 //Specific Fields
-                .views-field-field-skills-taxanomy{
-                    .views-label-field-skills-taxanomy{
+                .views-field-field-portfolio-project-skills{
+                    .views-label-field-portfolio-project-skills{
                         font-size: 1.4em;
                         font-weight: bold;
                         margin-bottom: 20px;

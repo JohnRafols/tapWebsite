@@ -5750,9 +5750,6 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.block__title {
-  display: none; }
-
 .l-main .l-region--sidebar-first {
   position: relative;
   min-height: 1px;
@@ -5785,29 +5782,29 @@ button.close {
       .l-main .l-region--sidebar-first .views-field-title {
         float: left;
         width: 33.33333%; } }
-  .l-main .l-region--sidebar-first .views-field-picture {
+  .l-main .l-region--sidebar-first .views-field-field-profile-picture {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
     margin-right: 15px; }
-    .l-main .l-region--sidebar-first .views-field-picture img {
+    .l-main .l-region--sidebar-first .views-field-field-profile-picture img {
       border-radius: 999px;
       height: 80px;
       width: 80px;
       border: 2px solid #FFBF28; }
     @media (min-width: 768px) {
-      .l-main .l-region--sidebar-first .views-field-picture {
+      .l-main .l-region--sidebar-first .views-field-field-profile-picture {
         margin-left: 33.33333%; } }
     @media (min-width: 768px) {
-      .l-main .l-region--sidebar-first .views-field-picture {
+      .l-main .l-region--sidebar-first .views-field-field-profile-picture {
         float: left;
         width: 8.33333%; } }
   .l-main .l-region--sidebar-first .views-field-field-first-name {
     font-size: 2.0em;
     margin-right: 7px;
     font-weight: bold; }
-  .l-main .l-region--sidebar-first .views-field-field-name {
+  .l-main .l-region--sidebar-first .views-field-field-user-last-name {
     font-size: 2.0em;
     font-weight: bold; }
 
@@ -5846,14 +5843,14 @@ button.close {
   .l-main .l-region--sidebar-second .views-row .views-field-body {
     font-size: 1.0em;
     color: #CCCCCC; }
-  .l-main .l-region--sidebar-second .views-row .views-field-field-skills-taxanomy .views-label-field-skills-taxanomy {
+  .l-main .l-region--sidebar-second .views-row .views-field-field-portfolio-project-skills .views-label-field-portfolio-project-skills {
     font-size: 1.4em;
     font-weight: bold;
     margin-bottom: 20px; }
-  .l-main .l-region--sidebar-second .views-row .views-field-field-skills-taxanomy .field-content {
+  .l-main .l-region--sidebar-second .views-row .views-field-field-portfolio-project-skills .field-content {
     font-size: 1.4em;
     color: #FFBF28; }
-    .l-main .l-region--sidebar-second .views-row .views-field-field-skills-taxanomy .field-content a {
+    .l-main .l-region--sidebar-second .views-row .views-field-field-portfolio-project-skills .field-content a {
       color: #FFBF28; }
 
 /*# sourceMappingURL=portfolioPage.layout.css.map */

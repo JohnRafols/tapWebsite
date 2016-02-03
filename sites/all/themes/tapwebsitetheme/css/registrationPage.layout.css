@@ -1525,13 +1525,13 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row {
+.row, .registrationModal_body {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .row:after {
+  .row:before, .registrationModal_body:before, .row:after, .registrationModal_body:after {
     content: " ";
     display: table; }
-  .row:after {
+  .row:after, .registrationModal_body:after {
     clear: both; }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -5752,6 +5752,70 @@ button.close {
 
 .block__title {
   display: none; }
+
+.registrationModal_header {
+  background-color: #FFBF28;
+  text-align: center; }
+
+.registrationModal_title {
+  background-color: #FFBF28;
+  text-align: center; }
+
+.registrationModal_body {
+  background-size: 100% 100%; }
+  .registrationModal_body .registrationModal_body_image {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: url("images/CreativeProcess/CreateAPortfolio.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    background-size: 100% 100%;
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      .registrationModal_body .registrationModal_body_image {
+        margin-left: 8.33333%; } }
+    @media (min-width: 768px) {
+      .registrationModal_body .registrationModal_body_image {
+        float: left;
+        width: 25%; } }
+  .registrationModal_body .registrationModal_body_thankYouMessage {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.8em;
+    color: black; }
+    @media (min-width: 768px) {
+      .registrationModal_body .registrationModal_body_thankYouMessage {
+        margin-left: 8.33333%; } }
+    @media (min-width: 768px) {
+      .registrationModal_body .registrationModal_body_thankYouMessage {
+        float: left;
+        width: 50%; } }
+  .registrationModal_body .registrationModal_body_message {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2em;
+    color: #FFBF28;
+    width: 50%;
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      .registrationModal_body .registrationModal_body_message {
+        float: left;
+        width: 100%; } }
+
+.registrationModal_Button {
+  background-color: #FFBF28;
+  border: #cc9920;
+  color: #333333; }
+  .registrationModal_Button:focus {
+    background-color: #ffe530; }
+  .registrationModal_Button:hover {
+    background-color: #cc9920; }
 
 body.node-type-portfolio img {
   max-width: 100%;

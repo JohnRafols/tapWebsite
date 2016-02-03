@@ -1,0 +1,37 @@
+
+.multicolumncheckboxesradios-table
+{
+  border-style: none;
+  margin: 0;
+  width: auto;
+}
+
+.multicolumncheckboxesradios-table tr.even,
+.multicolumncheckboxesradios-table tr.odd
+{
+  background-color: transparent;
+  border-style: none;
+}
+
+.multicolumncheckboxesradios-column,
+.multicolumncheckboxesradios-column-heading,
+.multicolumncheckboxesradios-row-heading,
+.multicolumncheckboxesradios-heading-corner
+{
+  font-weight: normal;
+  padding: 5px 0;
+  width: 10em;
+}
+
+form thead th.multicolumncheckboxesradios-column-heading,
+.multicolumncheckboxesradios-heading-corner,
+.multicolumncheckboxesradios-table tbody
+{
+  border: none;
+}
+
+.multicolumncheckboxesradios-row-heading
+{
+  text-align: right;
+  padding-right: 0.5em;
+}

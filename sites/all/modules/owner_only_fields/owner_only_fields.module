@@ -1,7 +1,6 @@
 <?php 
 
 function owner_only_fields_help($path, $arg) {
-	file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r("i got called in help2", TRUE));
 	switch ($path) {
 		case "admin/help#owner_only_fields":
 			return '<p>' . t("Lets only the profile owner see his/her personal fields.") . '</p>';
@@ -9,35 +8,27 @@ function owner_only_fields_help($path, $arg) {
 	}
 }
 
+function owner_only_fields_install() {  
+  // Find out the weight of legal module.
+  $weight = db_query("SELECT weight FROM {system} WHERE name = 'legal' AND type = 'module'")->fetchField();
+  
+  // Set our module to a weight 1 higher, so that we get access to other modules' fields, because our module is called later than theirs.
+  db_query("UPDATE {system} SET weight = :weight WHERE name = 'owner_only_fields' AND type = 'module'", array(':weight' => $weight + 1));
+}
+
 function owner_only_fields_views_pre_render(&$view){
-	file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r($view, TRUE));
-	shuffle($view->result);
 
 	global $user;
-	if($view->name == "profile_showusers" ) {
-		$uid = arg(1);
-		if( arg(0) == 'user' && is_numeric($uid)){		
-			if($user->uid==$uid){		
-				//file_put_contents('C:\Users\pc\Desktop\debug.txt', print_r($user->uid, TRUE));
-				$freelancer="freelancer";
-				$admin="administrator";
-				$user_roles = array_values($user->roles);
+	if($view->name='portfolio_header'){
+		// $view->field['FIELD_NAME']->options['exclude'] = TRUE;
+		file_put_contents('C:\Users\pc\Desktop\views_pre_render.txt', print_r($view, TRUE));
 
-				for ($i = 0; $i < count($user_roles); ++$i) {
-			        $user_roles[$i]=strtolower($user_roles[$i]);
-			    }
 
-				$editPath="";
-				if (in_array($freelancer, $user_roles)){
-  					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/freelancer">Edit Profile</a></h4>';
-				}else if (in_array($admin, $user_roles)){
-  					$editPath =$editPath.'<h4 id="profilePage_editFieldLink" style="margin-bottom: 5%;"><a href="/tapwebsite/user/'.$user->uid.'/edit/admin">Edit Profile</a></h4>';			  		
-				}
+		//['query']['pager']['display']['handler']['handlers']['field']['options']['alter']['path']
+	}
 
-				$view->attachment_before =  $editPath;
-			}
-		}
- 	}else if($view->name == "my_account"){
+	//Add fields on "My Account" page.
+	if($view->name == "account"){
  		$freelancer="freelancer";
 		$admin="administrator";
 		$user_roles = array_values($user->roles);
@@ -46,13 +37,13 @@ function owner_only_fields_views_pre_render(&$view){
 	        $user_roles[$i]=strtolower($user_roles[$i]);
 	    }
 
-		$editPath='<h4 id="myAccountPage_passwordChangeLink" style="margin-top: 0;"><a href="/tapwebsite/user/'.$user->uid.'/edit/">Change Account Settings</a></h4>';	
+		$editPath='<div id="myAccountPage_passwordChangeLink" style="margin-top: 0;"><a href="/user/'.$user->uid.'/edit/">Change Account Settings</a></div>';	
 
 		$view->attachment_before =  $editPath; 		
 
-		$view->attachment_after = "<div id=\"passwordField\">Password:</div><div>&bull;&bull;</div><div id=\"paymentDetailField\">Payment details: (Coming soon...)</div>";
+		$view->attachment_after = "<div id=\"passwordField\">Password:</div><div>&bull;&bull;</div><div id=\"paymentDetailField\">Payment details: (Coming soon...)</div><div><i>We add this field when you get your first project.</i></div><br><br><br></div><div>We’ll never give your personal details away to third parties. <br>Tap takes all reasonable measures to protect your confidential information via inscription and standard firewalls. </div>";
 	
- 	}	
+ 	}
 }
 
 	
@@ -65,34 +56,102 @@ function owner_only_fields_menu_alter(&$items) {
 
 
 function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
-	file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r($form, TRUE));	
-	$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;
+	//$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;
+	file_put_contents('C:\Users\pc\Desktop\form_alter_form_id.txt', print_r($form_id, TRUE));	
+
+	//Hide fields on account edit page.
+	if($form_id=='user_profile_form'){
+		file_put_contents('C:\Users\pc\Desktop\yes.txt', print_r($form, TRUE));	
+		hide($form['legal']);
+		hide($form['mimemail']);
+	}else if($form_id=='user_login'){
+		file_put_contents('C:\Users\pc\Desktop\form_alter_user_login.txt', print_r($form, TRUE));	
+		$form['name']['#title']='E-mail';
+		$form['name']['#description']='Enter your e-mail.';
+	}else if($form_id=='portfolio_node_form'){
+		file_put_contents('C:\Users\pc\Desktop\form_alter_portfolio_node_form.txt', print_r($form, TRUE));	
+
+		//Change field labels
+		$form['field_images']['und']['#title']='Add Images and Videos';
+		$form['field_images']['und']['#file_upload_description']='<br>Only upload high quality images and videos of your work.<br> Individual images must be maximum <b>5MB, 32 megapixels, minimum 72dpi</b>.<br>
+			First image you upload will be your cover image for this Project.<br><br>';
+		$form['field_images']['und']['#file_upload_title']='Images';
+		$form['field_portfolio_project_skills']['und']['#title']='What skills did you use here? Tick all that apply.<br>
+		This is how we match you to Client\'s Projects.';
+
+		//Change page title
+		
+	}
 
 }
 
+
 function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
+	//Hide Profile2 fields on the freelancer registration page.
 	if($form["#form_id"] != "user_profile_form"){
-		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
-		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
-		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
 		$form['profile_freelancer']['field_about_me']['#access'] = FALSE;
-		$form['profile_freelancer']['field_add']['und']['0']['locality_block']['dependent_locality']['#access'] = FALSE;
+		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
+		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
+		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
+		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;
+		//$form['profile_freelancer']['field_add']['und']['0']['locality_block']['dependent_locality']['#access'] = FALSE;
 		
-		$form['field_skills']['#disabled'] = TRUE;
-		hide($form['field_skills']);
-		unset($form['picture']);
-		file_put_contents('C:\Users\pc\Desktop\debug4.txt', print_r($form, TRUE));		
 	}
 	
 }
 
 
-function owner_only_fields_menu_local_tasks_alter(&$data, $router_item, $root_path){
-	file_put_contents('C:\Users\pc\Desktop\debug6.txt', print_r($data, TRUE));	
+function owner_only_fields_preprocess_page(&$vars, $hook) {
+	global $user;
+	//Change page title
+	if(arg(0)=='user' && arg(1)=='login'){
+		$vars['title']=t('Registered User Log In'); 
+	}else if(arg(0)=='user' && arg(1)=='password'){
+		$vars['title']=t('Request new password'); 
+	}else if(arg(0)=='user' && arg(1)==null && !user_is_logged_in()){
+		$vars['title']=t('Registered User Log In'); 
+	}else if(arg(0)=='user' && arg(2)=='edit'){
+		$vars['title']=t('Edit My Account'); 
+		if(arg(3)=='freelancer' || arg(3)=='client' || arg(3)=='admin'){
+			$vars['title']=t('Edit My Profile'); 
+		}
+	}
+
+	if(arg(0)=='node' && arg(1)=='add'){
+		if(arg(2)=='portfolio'){
+			$vars['title']=t('Create Project'); 
+		}
+	}
+
 
 }
 
-function owner_only_fields_views_pre_view(&$view, &$display_id, &$args){
-	file_put_contents('C:\Users\pc\Desktop\debug10.txt', print_r($view, TRUE));		
+function owner_only_fields_block_view_alter(&$data, $block){
+	//Adds the "Edit Profile" button to the "Add Portfolio" block
+	if($block->bid=="85" && $block->module=="block"){
+		global $user;
+		$uid = arg(1);
+		//if the user if looking at their own profile.
+		if(arg(0) == 'user' && is_numeric($uid)){		
+			if($user->uid==$uid){		
+				$freelancer="freelancer";
+				$admin="administrator";
+				$user_roles = array_values($user->roles);
 
+				//get the user's role
+				for ($i = 0; $i < count($user_roles); ++$i) {
+			        $user_roles[$i]=strtolower($user_roles[$i]);
+			    }
+
+			    //different links for different user types.
+				if (in_array($freelancer, $user_roles)){
+  					$data['content']=$data['content'].'<div id="profilePage_editFieldLink"><a href="/user/'.$user->uid.'/edit/freelancer">Edit Profile</a></div>';
+				}else if (in_array($admin, $user_roles)){
+  					$data['content']=$data['content'].'<div id="profilePage_editFieldLink"><a href="/user/'.$user->uid.'/edit/admin">Edit Profile</a></div>';
+				}
+			}
+		}
+	 	
+	 }	
 }
+

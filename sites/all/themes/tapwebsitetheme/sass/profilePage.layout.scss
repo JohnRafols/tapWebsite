@@ -11,17 +11,6 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
-// Styling for the Whole Website
-
-//Get ride of all margin and padding
-* {
-    font-family: Cabin;
-    text-color: $textColor;
-    //Get ride of all margin and padding to make them easy to manipulate
-    margin: 0;
-    padding: 0;
-}
-
 // Each page has a class associated with it attached to the body tag, 
 // think the css class is based on the url. So for a page with url 
 // mysite.com/mypage you could make your CSS selector more specific 
@@ -70,7 +59,7 @@ body.page-user .block__title {
             }
 
 
-            .views-field-picture{
+            .views-field-field-profile-picture{
 
                 img{
                     border-radius: 999px;
@@ -82,14 +71,14 @@ body.page-user .block__title {
                 margin-right:15px;
             }
 
-            .views-field-field-first-name{
+            .views-field-field-user-first-name{
                 //@include make-sm-column-offset(1);
                 //@include make-sm-column(3);
                 font-size: 2.5em;
                 margin-right:7px;
                 font-weight: bold;
             }
-            .views-field-field-name{
+            .views-field-field-user-last-name{
                 //@include make-sm-column(3);
                 font-size: 2.5em;
                 font-weight: bold;
@@ -198,6 +187,8 @@ body.page-user .block__title {
 
 
 #profilePage_passwordChangeLink, #profilePage_editFieldLink, #addPortfolioButton{
+    display: inline-block;
+    margin-bottom: 10px;
     a{
         @extend .btn;
         background: $mainColor;
