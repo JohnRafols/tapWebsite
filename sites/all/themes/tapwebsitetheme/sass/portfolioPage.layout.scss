@@ -23,13 +23,17 @@ $grey : #CCCCCC;
 //block__title
 
 
+#block-views-portfolio-header-block{
+        border-bottom: 1px solid $mainColor; 
+}
+
 .l-main{
     @extend .container;
     //1.) This is the header region 
     .l-region--sidebar-first{   
         @include make-sm-column(12);
         
-        border-bottom: 2px solid $mainColor; 
+        // border-bottom: 2px solid $mainColor; 
         margin-bottom: 30px; 
         margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
@@ -64,14 +68,14 @@ $grey : #CCCCCC;
             }
 
 
-            .views-field-field-first-name{
-                //@include make-sm-column(2);
-                //@extend .well;
-                font-size: 2.0em;
-                margin-right:7px;
-                font-weight: bold;
-            }
-            .views-field-field-user-last-name{
+            // .views-field-field-first-name{
+            //     //@include make-sm-column(2);
+            //     //@extend .well;
+            //     font-size: 2.0em;
+            //     margin-right:7px;
+            //     font-weight: bold;
+            // }
+            .views-field-name{
                  //@include make-sm-column(3); 
                 font-size: 2.0em;
                 font-weight: bold;
@@ -130,3 +134,10 @@ $grey : #CCCCCC;
     }         
 }
 
+
+#block-views-portfolio-overview-block{
+    h2{
+        margin-left: -15px;
+        font-weight: bold;
+    }
+}

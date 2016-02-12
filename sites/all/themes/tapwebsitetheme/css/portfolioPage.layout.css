@@ -5750,12 +5750,14 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+#block-views-portfolio-header-block {
+  border-bottom: 1px solid #FFBF28; }
+
 .l-main .l-region--sidebar-first {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  border-bottom: 2px solid #FFBF28;
   margin-bottom: 30px;
   margin-top: -20px;
   height: 110px; }
@@ -5800,11 +5802,7 @@ button.close {
       .l-main .l-region--sidebar-first .views-field-field-profile-picture {
         float: left;
         width: 8.33333%; } }
-  .l-main .l-region--sidebar-first .views-field-field-first-name {
-    font-size: 2.0em;
-    margin-right: 7px;
-    font-weight: bold; }
-  .l-main .l-region--sidebar-first .views-field-field-user-last-name {
+  .l-main .l-region--sidebar-first .views-field-name {
     font-size: 2.0em;
     font-weight: bold; }
 
@@ -5852,5 +5850,9 @@ button.close {
     color: #FFBF28; }
     .l-main .l-region--sidebar-second .views-row .views-field-field-portfolio-project-skills .field-content a {
       color: #FFBF28; }
+
+#block-views-portfolio-overview-block h2 {
+  margin-left: -15px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=portfolioPage.layout.css.map */

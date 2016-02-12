@@ -16,3 +16,6 @@ regions[footer]         = Footer
 
 ; Stylesheets
 stylesheets[all][] = css/registrationPage.layout.css
+
+; Scripts
+scripts[] = js/popUp.js

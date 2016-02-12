@@ -8,62 +8,50 @@ function owner_only_fields_help($path, $arg) {
 	}
 }
 
-function owner_only_fields_install() {  
-  // Find out the weight of legal module.
-  $weight = db_query("SELECT weight FROM {system} WHERE name = 'legal' AND type = 'module'")->fetchField();
-  
-  // Set our module to a weight 1 higher, so that we get access to other modules' fields, because our module is called later than theirs.
-  db_query("UPDATE {system} SET weight = :weight WHERE name = 'owner_only_fields' AND type = 'module'", array(':weight' => $weight + 1));
-}
-
 function owner_only_fields_views_pre_render(&$view){
 
 	global $user;
-	if($view->name='portfolio_header'){
-		// $view->field['FIELD_NAME']->options['exclude'] = TRUE;
-		file_put_contents('C:\Users\pc\Desktop\views_pre_render.txt', print_r($view, TRUE));
 
-
-		//['query']['pager']['display']['handler']['handlers']['field']['options']['alter']['path']
-	}
-
-	//Add fields on "My Account" page.
 	if($view->name == "account"){
- 		$freelancer="freelancer";
-		$admin="administrator";
-		$user_roles = array_values($user->roles);
 
-		for ($i = 0; $i < count($user_roles); ++$i){
-	        $user_roles[$i]=strtolower($user_roles[$i]);
-	    }
+ 	}else if($view->name=="picture_header"){
+ 		//then add some fields		
+ 	}else if($view->name=="portfolio_header"){
 
-		$editPath='<div id="myAccountPage_passwordChangeLink" style="margin-top: 0;"><a href="/user/'.$user->uid.'/edit/">Change Account Settings</a></div>';	
-
-		$view->attachment_before =  $editPath; 		
-
-		$view->attachment_after = "<div id=\"passwordField\">Password:</div><div>&bull;&bull;</div><div id=\"paymentDetailField\">Payment details: (Coming soon...)</div><div><i>We add this field when you get your first project.</i></div><br><br><br></div><div>We’ll never give your personal details away to third parties. <br>Tap takes all reasonable measures to protect your confidential information via inscription and standard firewalls. </div>";
-	
- 	}
-}
-
-	
-
-function owner_only_fields_menu_alter(&$items) {
-	file_put_contents('C:\Users\pc\Desktop\debug3.txt', print_r(current_path(), TRUE));	
-	unset($items['user/register']);
-	return $items;
+ 	}	
 }
 
 
 function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
-	//$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;
-	file_put_contents('C:\Users\pc\Desktop\form_alter_form_id.txt', print_r($form_id, TRUE));	
+	//$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;	
 
 	//Hide fields on account edit page.
 	if($form_id=='user_profile_form'){
 		file_put_contents('C:\Users\pc\Desktop\yes.txt', print_r($form, TRUE));	
 		hide($form['legal']);
 		hide($form['mimemail']);
+
+		//Add "Cancel changes" to My Account and My Profile edit forms.
+		$form['actions']['cancel_changes'] = array(
+			'#type' => 'submit',
+			'#value' => t('Cancel Changes'),
+			'#access' => TRUE,
+			'#weight' => 10,
+			'#submit' => array('user_edit_cancel', 'node_form_submit_build_node'),
+			'#limit_validation_errors' => array(),
+		);	
+	
+		//Position "Cancel Account" button under "Save" button.
+		if(arg(3)==null){
+			//Cancel account button.
+			$cancel=$form['actions']['cancel'];
+			unset($form['actions']['cancel']);
+			$cancel['#weight']=1000;
+			$cancel['#attributes'] = array('class' => array('btn', 'btn-danger'));
+			$form['cancel']=$cancel;
+		}
+
+		
 	}else if($form_id=='user_login'){
 		file_put_contents('C:\Users\pc\Desktop\form_alter_user_login.txt', print_r($form, TRUE));	
 		$form['name']['#title']='E-mail';
@@ -78,13 +66,89 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 		$form['field_images']['und']['#file_upload_title']='Images';
 		$form['field_portfolio_project_skills']['und']['#title']='What skills did you use here? Tick all that apply.<br>
 		This is how we match you to Client\'s Projects.';
-
+		
 		//Change page title
 		
+	}else if($form_id=='user_register_form'){
+		// if(strcmp(current_path(), 'client/register')==0){
+		// 	$extra='We keep your personal information private and guarantee top quality and timely services or your money back<br>';
+		// }else if(strcmp(current_path(), 'freelancer/register')==0){
+
+		// }
+		// if(isset($extra)){
+		// 	$form['legal']['legal_accept']['#title']=$extra.$form['legal']['legal_accept']['#title'];
+		// }
+	}else if($form_id=='job_node_form'){
+		hide($form['field_initial_candidates']);
+		//hide($form['field_available_candidates']);
+		hide($form['field_final_candidate']);
 	}
 
+
+	
+	//Add "Cancel changes" to node edit form.
+	if(array_key_exists('node', $form_state)){
+		$node = $form_state['node'];
+		if (!isset($node->nid) || isset($node->is_new)) {
+		// This is a new node.
+		}
+		else {
+			// This is not a new node.
+			$form['actions']['cancel_changes'] = array(
+			'#type' => 'submit',
+			'#value' => t('Cancel Changes'),
+			'#access' => TRUE,
+			'#weight' => 10,
+			'#submit' => array('node_edit_cancel', 'node_form_submit_build_node'),
+			'#limit_validation_errors' => array(),
+		);	
+		}
+	}
+	
 }
 
+
+/**
+ * Node edit form cancel button callback.
+ */
+function node_edit_cancel($form, &$form_state) {
+	// $fallback_destinaton = '<front>';
+	// If edit, use the node itself as fallback.
+	$node=node_load($form['#node']->nid);
+	$node_uri=node_uri($node);
+	$fallback_destinaton=$node_uri['path'];
+
+	// Go to destination or fallback.
+	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
+
+	drupal_set_message($node->type." changes cancelled", 'status');
+	drupal_goto($url);
+}
+
+/**
+ * User account/profile edit form cancel button callback.
+ */
+function user_edit_cancel($form, &$form_state) {
+	// $fallback_destinaton = '<front>';
+	// If edit, use the node itself as fallback.
+	$user=user_load($form['#user']->uid);
+	$user_uri=user_uri($user);
+	$fallback_destinaton=$user_uri['path'];
+
+	// Go to destination or fallback.
+	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
+
+	if(arg(3)==null){
+		drupal_set_message("Account changes cancelled", 'status');
+	}else{
+		if(in_array(strtolower(arg(3)), array_map('strtolower', user_roles()))){
+			drupal_set_message("Profile changes cancelled", 'status');
+		}
+	}
+
+	drupal_goto($url);
+	// drupal_set_message("Changes cancelled", 'status');
+}
 
 function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
 	//Hide Profile2 fields on the freelancer registration page.
@@ -103,21 +167,32 @@ function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){
 
 function owner_only_fields_preprocess_page(&$vars, $hook) {
 	global $user;
-	//Change page title
-	if(arg(0)=='user' && arg(1)=='login'){
-		$vars['title']=t('Registered User Log In'); 
-	}else if(arg(0)=='user' && arg(1)=='password'){
+	$first=arg(0);
+	$second=arg(1);
+	$third=arg(2);
+	$fourth=arg(3);
+
+	//Change block title.
+	//Not HTML title.
+	if($first=='user' && $second=='login'){
+		$vars['title']=t('Log In'); 
+	}else if($first=='user' && $second=='password'){
 		$vars['title']=t('Request new password'); 
-	}else if(arg(0)=='user' && arg(1)==null && !user_is_logged_in()){
+	}else if($first=='user' && $second==null && !user_is_logged_in()){
 		$vars['title']=t('Registered User Log In'); 
-	}else if(arg(0)=='user' && arg(2)=='edit'){
+	}
+	else if($first=='user' && $third=='edit'){
 		$vars['title']=t('Edit My Account'); 
-		if(arg(3)=='freelancer' || arg(3)=='client' || arg(3)=='admin'){
+
+		$types=array();
+		foreach(profile2_get_types() as $value){
+			array_push($types, strtolower($value->type));
+		}
+		if(in_array(strtolower($fourth), $types)){
 			$vars['title']=t('Edit My Profile'); 
 		}
-	}
 
-	if(arg(0)=='node' && arg(1)=='add'){
+	}else if($first=='node' && $second=='add'){
 		if(arg(2)=='portfolio'){
 			$vars['title']=t('Create Project'); 
 		}
@@ -126,32 +201,21 @@ function owner_only_fields_preprocess_page(&$vars, $hook) {
 
 }
 
-function owner_only_fields_block_view_alter(&$data, $block){
-	//Adds the "Edit Profile" button to the "Add Portfolio" block
-	if($block->bid=="85" && $block->module=="block"){
-		global $user;
-		$uid = arg(1);
-		//if the user if looking at their own profile.
-		if(arg(0) == 'user' && is_numeric($uid)){		
-			if($user->uid==$uid){		
-				$freelancer="freelancer";
-				$admin="administrator";
-				$user_roles = array_values($user->roles);
 
-				//get the user's role
-				for ($i = 0; $i < count($user_roles); ++$i) {
-			        $user_roles[$i]=strtolower($user_roles[$i]);
-			    }
-
-			    //different links for different user types.
-				if (in_array($freelancer, $user_roles)){
-  					$data['content']=$data['content'].'<div id="profilePage_editFieldLink"><a href="/user/'.$user->uid.'/edit/freelancer">Edit Profile</a></div>';
-				}else if (in_array($admin, $user_roles)){
-  					$data['content']=$data['content'].'<div id="profilePage_editFieldLink"><a href="/user/'.$user->uid.'/edit/admin">Edit Profile</a></div>';
-				}
-			}
-		}
-	 	
-	 }	
+function owner_only_fields_node_validate($node, $form, &$form_state){
+	file_put_contents('C:\Users\pc\Desktop\validate.txt', print_r($node, TRUE));
+	if($node->type=='job'){
+		file_put_contents('C:\Users\pc\Desktop\validate_form.txt', print_r($form, TRUE));		
+		// form_set_error("name", 'wrong');	
+	}
 }
 
+function owner_only_fields_node_presave($node){
+	file_put_contents('C:\Users\pc\Desktop\node_presave.txt', print_r($node, TRUE));	
+	if($node->type=='job'){
+		file_put_contents('C:\Users\pc\Desktop\count.txt', print_r(count($node->field_available_candidates['und']), TRUE));	
+		$data =array();
+		$data['target_id']=39;	
+		array_push($node->field_available_candidates['und'], $data);
+	}
+}

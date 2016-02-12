@@ -221,10 +221,14 @@ th {
   h2,
   h3 {
     page-break-after: avoid; }
-  .navbar, #block-system-main-menu {
+  .navbar, #block-system-main-menu, #block-system-user-menu, #block-menu-menu-secondary-nav-bar {
     display: none; }
-  .btn > .caret,
-  .dropup > .btn > .caret {
+  .btn > .caret, .page-node-add-portfolio #edit-field-images .form-submit > .caret, .page-node-add-portfolio #edit-field-images .ajax-processed > .caret, .page-node-add-portfolio #edit-actions #edit-submit > .caret, .page-node-add-portfolio #edit-actions #edit-preview > .caret,
+  .dropup > .btn > .caret, .page-node-add-portfolio #edit-field-images
+  .dropup > .form-submit > .caret, .page-node-add-portfolio #edit-field-images
+  .dropup > .ajax-processed > .caret, .page-node-add-portfolio #edit-actions
+  .dropup > #edit-submit > .caret, .page-node-add-portfolio #edit-actions
+  .dropup > #edit-preview > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -1494,35 +1498,35 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
+.container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .l-footer #block-block-4:before, .l-footer #block-block-11:before, .l-footer #block-block-12:before, .l-footer #block-block-13:before, .l-footer #block-block-14:before, .container:after, .l-footer #block-block-4:after, .l-footer #block-block-11:after, .l-footer #block-block-12:after, .l-footer #block-block-13:after, .l-footer #block-block-14:after {
+  .container:before, .container:after {
     content: " ";
     display: table; }
-  .container:after, .l-footer #block-block-4:after, .l-footer #block-block-11:after, .l-footer #block-block-12:after, .l-footer #block-block-13:after, .l-footer #block-block-14:after {
+  .container:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
+    .container {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
+    .container {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .l-footer #block-block-4, .l-footer #block-block-11, .l-footer #block-block-12, .l-footer #block-block-13, .l-footer #block-block-14 {
+    .container {
       width: 1170px; } }
 
-.container-fluid {
+.container-fluid, #block-system-main-menu, #block-system-user-menu, #block-menu-menu-secondary-nav-bar {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, .container-fluid:after {
+  .container-fluid:before, #block-system-main-menu:before, #block-system-user-menu:before, #block-menu-menu-secondary-nav-bar:before, .container-fluid:after, #block-system-main-menu:after, #block-system-user-menu:after, #block-menu-menu-secondary-nav-bar:after {
     content: " ";
     display: table; }
-  .container-fluid:after {
+  .container-fluid:after, #block-system-main-menu:after, #block-system-user-menu:after, #block-menu-menu-secondary-nav-bar:after {
     clear: both; }
 
 .row {
@@ -2346,47 +2350,103 @@ input[type="search"] {
     line-height: 34px; }
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
-  .input-group-sm > .input-group-btn > input[type="date"].btn,
+  .input-group-sm > .input-group-btn > input[type="date"].btn, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="date"].form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="date"].ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="date"]#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="date"]#edit-preview,
   .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="time"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="time"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="time"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="time"]#edit-preview,
   .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="datetime-local"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="datetime-local"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="datetime-local"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="datetime-local"]#edit-preview,
   .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="month"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > input[type="month"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="month"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > input[type="month"]#edit-preview,
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="date"].btn,
+  .input-group-lg > .input-group-btn > input[type="date"].btn, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="date"].form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="date"].ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="date"]#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="date"]#edit-preview,
   .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="time"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="time"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="time"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="time"]#edit-preview,
   .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="datetime-local"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="datetime-local"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="datetime-local"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="datetime-local"]#edit-preview,
   .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="month"].form-submit,
+  .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > input[type="month"].ajax-processed,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="month"]#edit-submit,
+  .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > input[type="month"]#edit-preview,
   .input-group-lg
   input[type="month"] {
     line-height: 46px; } }
@@ -2464,15 +2524,27 @@ fieldset[disabled]
   min-height: 34px; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > .form-control-static.form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > .form-control-static.ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > .form-control-static#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > .form-control-static#edit-preview, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn {
+  .input-group-sm > .input-group-btn > .form-control-static.btn, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > .form-control-static.form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > .form-control-static.ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > .form-control-static#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > .form-control-static#edit-preview {
     padding-left: 0;
     padding-right: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > #edit-preview {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2481,17 +2553,33 @@ fieldset[disabled]
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn {
+.input-group-sm > .input-group-btn > select.btn, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > select.form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > select.ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > select#edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > select#edit-preview {
   height: 30px;
   line-height: 30px; }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
-.input-group-sm > .input-group-btn > textarea.btn,
+.input-group-sm > .input-group-btn > textarea.btn, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > textarea.form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > textarea.ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > textarea#edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > textarea#edit-preview,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn {
+.input-group-sm > .input-group-btn > select[multiple].btn,
+.page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > select[multiple].form-submit,
+.page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > select[multiple].ajax-processed,
+.page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > select[multiple]#edit-submit,
+.page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > select[multiple]#edit-preview {
   height: auto; }
 
 .form-group-sm .form-control {
@@ -2518,7 +2606,11 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > #edit-preview {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2527,17 +2619,33 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn {
+.input-group-lg > .input-group-btn > select.btn, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > select.form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > select.ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > select#edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > select#edit-preview {
   height: 46px;
   line-height: 46px; }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
-.input-group-lg > .input-group-btn > textarea.btn,
+.input-group-lg > .input-group-btn > textarea.btn, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > textarea.form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > textarea.ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > textarea#edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > textarea#edit-preview,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn {
+.input-group-lg > .input-group-btn > select[multiple].btn,
+.page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > select[multiple].form-submit,
+.page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > select[multiple].ajax-processed,
+.page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > select[multiple]#edit-submit,
+.page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > select[multiple]#edit-preview {
   height: auto; }
 
 .form-group-lg .form-control {
@@ -2581,7 +2689,11 @@ select[multiple].input-lg,
 
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > .form-submit + .form-control-feedback, .page-node-add-portfolio #edit-field-images
+.input-group-lg > .input-group-btn > .ajax-processed + .form-control-feedback, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > #edit-submit + .form-control-feedback, .page-node-add-portfolio #edit-actions
+.input-group-lg > .input-group-btn > #edit-preview + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -2590,7 +2702,11 @@ select[multiple].input-lg,
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > .form-submit + .form-control-feedback, .page-node-add-portfolio #edit-field-images
+.input-group-sm > .input-group-btn > .ajax-processed + .form-control-feedback, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > #edit-submit + .form-control-feedback, .page-node-add-portfolio #edit-actions
+.input-group-sm > .input-group-btn > #edit-preview + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -2769,7 +2885,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn {
+.btn, .page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images .ajax-processed, .page-node-add-portfolio #edit-actions #edit-submit, .page-node-add-portfolio #edit-actions #edit-preview {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2789,26 +2905,42 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  .btn:focus, .page-node-add-portfolio #edit-field-images .form-submit:focus, .page-node-add-portfolio #edit-field-images .ajax-processed:focus, .page-node-add-portfolio #edit-actions #edit-submit:focus, .page-node-add-portfolio #edit-actions #edit-preview:focus, .btn.focus, .page-node-add-portfolio #edit-field-images .focus.form-submit, .page-node-add-portfolio #edit-field-images .focus.ajax-processed, .page-node-add-portfolio #edit-actions .focus#edit-submit, .page-node-add-portfolio #edit-actions .focus#edit-preview, .btn:active:focus, .page-node-add-portfolio #edit-field-images .form-submit:active:focus, .page-node-add-portfolio #edit-field-images .ajax-processed:active:focus, .page-node-add-portfolio #edit-actions #edit-submit:active:focus, .page-node-add-portfolio #edit-actions #edit-preview:active:focus, .btn:active.focus, .page-node-add-portfolio #edit-field-images .form-submit:active.focus, .page-node-add-portfolio #edit-field-images .ajax-processed:active.focus, .page-node-add-portfolio #edit-actions #edit-submit:active.focus, .page-node-add-portfolio #edit-actions #edit-preview:active.focus, .btn.active:focus, .page-node-add-portfolio #edit-field-images .active.form-submit:focus, .page-node-add-portfolio #edit-field-images .active.ajax-processed:focus, .page-node-add-portfolio #edit-actions .active#edit-submit:focus, .page-node-add-portfolio #edit-actions .active#edit-preview:focus, .btn.active.focus, .page-node-add-portfolio #edit-field-images .active.focus.form-submit, .page-node-add-portfolio #edit-field-images .active.focus.ajax-processed, .page-node-add-portfolio #edit-actions .active.focus#edit-submit, .page-node-add-portfolio #edit-actions .active.focus#edit-preview {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .btn:focus, .btn.focus {
+  .btn:hover, .page-node-add-portfolio #edit-field-images .form-submit:hover, .page-node-add-portfolio #edit-field-images .ajax-processed:hover, .page-node-add-portfolio #edit-actions #edit-submit:hover, .page-node-add-portfolio #edit-actions #edit-preview:hover, .btn:focus, .page-node-add-portfolio #edit-field-images .form-submit:focus, .page-node-add-portfolio #edit-field-images .ajax-processed:focus, .page-node-add-portfolio #edit-actions #edit-submit:focus, .page-node-add-portfolio #edit-actions #edit-preview:focus, .btn.focus, .page-node-add-portfolio #edit-field-images .focus.form-submit, .page-node-add-portfolio #edit-field-images .focus.ajax-processed, .page-node-add-portfolio #edit-actions .focus#edit-submit, .page-node-add-portfolio #edit-actions .focus#edit-preview {
     color: #333;
     text-decoration: none; }
-  .btn:active, .btn.active {
+  .btn:active, .page-node-add-portfolio #edit-field-images .form-submit:active, .page-node-add-portfolio #edit-field-images .ajax-processed:active, .page-node-add-portfolio #edit-actions #edit-submit:active, .page-node-add-portfolio #edit-actions #edit-preview:active, .btn.active, .page-node-add-portfolio #edit-field-images .active.form-submit, .page-node-add-portfolio #edit-field-images .active.ajax-processed, .page-node-add-portfolio #edit-actions .active#edit-submit, .page-node-add-portfolio #edit-actions .active#edit-preview {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .btn[disabled],
-  fieldset[disabled] .btn {
+  .btn.disabled, .page-node-add-portfolio #edit-field-images .disabled.form-submit, .page-node-add-portfolio #edit-field-images .disabled.ajax-processed, .page-node-add-portfolio #edit-actions .disabled#edit-submit, .page-node-add-portfolio #edit-actions .disabled#edit-preview, .btn[disabled], .page-node-add-portfolio #edit-field-images [disabled].form-submit, .page-node-add-portfolio #edit-field-images [disabled].ajax-processed, .page-node-add-portfolio #edit-actions [disabled]#edit-submit, .page-node-add-portfolio #edit-actions [disabled]#edit-preview,
+  fieldset[disabled] .btn,
+  fieldset[disabled] .page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images
+  fieldset[disabled] .form-submit,
+  fieldset[disabled] .page-node-add-portfolio #edit-field-images .ajax-processed, .page-node-add-portfolio #edit-field-images
+  fieldset[disabled] .ajax-processed,
+  fieldset[disabled] .page-node-add-portfolio #edit-actions #edit-submit, .page-node-add-portfolio #edit-actions
+  fieldset[disabled] #edit-submit,
+  fieldset[disabled] .page-node-add-portfolio #edit-actions #edit-preview, .page-node-add-portfolio #edit-actions
+  fieldset[disabled] #edit-preview {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, .page-node-add-portfolio #edit-field-images a.disabled.form-submit, .page-node-add-portfolio #edit-field-images a.disabled.ajax-processed, .page-node-add-portfolio #edit-actions a.disabled#edit-submit, .page-node-add-portfolio #edit-actions a.disabled#edit-preview,
+fieldset[disabled] a.btn,
+fieldset[disabled] .page-node-add-portfolio #edit-field-images a.form-submit, .page-node-add-portfolio #edit-field-images
+fieldset[disabled] a.form-submit,
+fieldset[disabled] .page-node-add-portfolio #edit-field-images a.ajax-processed, .page-node-add-portfolio #edit-field-images
+fieldset[disabled] a.ajax-processed,
+fieldset[disabled] .page-node-add-portfolio #edit-actions a#edit-submit, .page-node-add-portfolio #edit-actions
+fieldset[disabled] a#edit-submit,
+fieldset[disabled] .page-node-add-portfolio #edit-actions a#edit-preview, .page-node-add-portfolio #edit-actions
+fieldset[disabled] a#edit-preview {
   pointer-events: none; }
 
 .btn-default {
@@ -3053,19 +3185,19 @@ fieldset[disabled] a.btn {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .page-node-add-portfolio #edit-field-images .btn-group-lg > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-lg > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-preview {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .page-node-add-portfolio #edit-field-images .btn-group-sm > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-sm > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-sm > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-sm > #edit-preview {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn {
+.btn-xs, .btn-group-xs > .btn, .page-node-add-portfolio #edit-field-images .btn-group-xs > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-xs > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-xs > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-xs > #edit-preview {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3231,10 +3363,10 @@ tbody.collapse.in {
   margin-bottom: 2px; }
 
 @media (min-width: 768px) {
-  .navbar-right .dropdown-menu, #block-system-main-menu ul .dropdown-menu {
+  .navbar-right .dropdown-menu, #block-system-main-menu ul .dropdown-menu, #block-system-user-menu .menu .dropdown-menu, #block-menu-menu-secondary-nav-bar .menu .dropdown-menu {
     right: 0;
     left: auto; }
-  .navbar-right .dropdown-menu-left, #block-system-main-menu ul .dropdown-menu-left {
+  .navbar-right .dropdown-menu-left, #block-system-main-menu ul .dropdown-menu-left, #block-system-user-menu .menu .dropdown-menu-left, #block-menu-menu-secondary-nav-bar .menu .dropdown-menu-left {
     left: 0;
     right: auto; } }
 
@@ -3243,20 +3375,56 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview,
+  .btn-group-vertical > .btn, .page-node-add-portfolio #edit-field-images
+  .btn-group-vertical > .form-submit, .page-node-add-portfolio #edit-field-images
+  .btn-group-vertical > .ajax-processed, .page-node-add-portfolio #edit-actions
+  .btn-group-vertical > #edit-submit, .page-node-add-portfolio #edit-actions
+  .btn-group-vertical > #edit-preview {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
-    .btn-group-vertical > .btn:hover,
-    .btn-group-vertical > .btn:focus,
-    .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group > .btn:hover, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:hover, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:hover, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:hover, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:hover, .btn-group > .btn:focus, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:focus, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:focus, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:focus, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:focus, .btn-group > .btn:active, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:active, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:active, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:active, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:active, .btn-group > .btn.active, .page-node-add-portfolio #edit-field-images .btn-group > .active.form-submit, .page-node-add-portfolio #edit-field-images .btn-group > .active.ajax-processed, .page-node-add-portfolio #edit-actions .btn-group > .active#edit-submit, .page-node-add-portfolio #edit-actions .btn-group > .active#edit-preview,
+    .btn-group-vertical > .btn:hover, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .form-submit:hover, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .ajax-processed:hover, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-submit:hover, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-preview:hover,
+    .btn-group-vertical > .btn:focus, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .form-submit:focus, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .ajax-processed:focus, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-submit:focus, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-preview:focus,
+    .btn-group-vertical > .btn:active, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .form-submit:active, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .ajax-processed:active, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-submit:active, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > #edit-preview:active,
+    .btn-group-vertical > .btn.active, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .active.form-submit, .page-node-add-portfolio #edit-field-images
+    .btn-group-vertical > .active.ajax-processed, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > .active#edit-submit, .page-node-add-portfolio #edit-actions
+    .btn-group-vertical > .active#edit-preview {
       z-index: 2; }
 
-.btn-group .btn + .btn,
+.btn-group .btn + .btn, .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .btn, .page-node-add-portfolio #edit-field-images .btn-group .form-submit + .btn, .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .btn, .page-node-add-portfolio #edit-field-images .btn-group .ajax-processed + .btn, .btn-group .page-node-add-portfolio #edit-actions #edit-submit + .btn, .page-node-add-portfolio #edit-actions .btn-group #edit-submit + .btn, .btn-group .page-node-add-portfolio #edit-actions #edit-preview + .btn, .page-node-add-portfolio #edit-actions .btn-group #edit-preview + .btn, .btn-group .page-node-add-portfolio #edit-field-images .btn + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group .btn + .form-submit, .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group .form-submit + .form-submit, .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group .ajax-processed + .form-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .form-submit, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .form-submit, .page-node-add-portfolio #edit-actions .btn-group #edit-field-images #edit-submit + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group #edit-submit + .form-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .form-submit, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .form-submit, .page-node-add-portfolio #edit-actions .btn-group #edit-field-images #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group #edit-preview + .form-submit, .btn-group .page-node-add-portfolio #edit-field-images .btn + .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group .btn + .ajax-processed, .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group .form-submit + .ajax-processed, .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group .ajax-processed + .ajax-processed, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .ajax-processed, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group #edit-field-images #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group #edit-submit + .ajax-processed, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .ajax-processed, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group #edit-field-images #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group #edit-preview + .ajax-processed, .btn-group .page-node-add-portfolio #edit-actions .btn + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group .btn + #edit-submit, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-submit, .page-node-add-portfolio #edit-field-images .btn-group #edit-actions .form-submit + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group .form-submit + #edit-submit, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-field-images .btn-group #edit-actions .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group .ajax-processed + #edit-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-submit + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group #edit-submit + #edit-submit, .btn-group .page-node-add-portfolio #edit-actions #edit-preview + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group #edit-preview + #edit-submit, .btn-group .page-node-add-portfolio #edit-actions .btn + #edit-preview, .page-node-add-portfolio #edit-actions .btn-group .btn + #edit-preview, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-preview, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-preview, .page-node-add-portfolio #edit-field-images .btn-group #edit-actions .form-submit + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group .form-submit + #edit-preview, .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-preview, .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-field-images .btn-group #edit-actions .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group .ajax-processed + #edit-preview, .btn-group .page-node-add-portfolio #edit-actions #edit-submit + #edit-preview, .page-node-add-portfolio #edit-actions .btn-group #edit-submit + #edit-preview, .btn-group .page-node-add-portfolio #edit-actions #edit-preview + #edit-preview, .page-node-add-portfolio #edit-actions .btn-group #edit-preview + #edit-preview,
 .btn-group .btn + .btn-group,
+.btn-group .page-node-add-portfolio #edit-field-images .form-submit + .btn-group, .page-node-add-portfolio #edit-field-images
+.btn-group .form-submit + .btn-group,
+.btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .btn-group, .page-node-add-portfolio #edit-field-images
+.btn-group .ajax-processed + .btn-group,
+.btn-group .page-node-add-portfolio #edit-actions #edit-submit + .btn-group, .page-node-add-portfolio #edit-actions
+.btn-group #edit-submit + .btn-group,
+.btn-group .page-node-add-portfolio #edit-actions #edit-preview + .btn-group, .page-node-add-portfolio #edit-actions
+.btn-group #edit-preview + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group .page-node-add-portfolio #edit-field-images .btn-group + .form-submit, .page-node-add-portfolio #edit-field-images
+.btn-group .btn-group + .form-submit,
+.btn-group .page-node-add-portfolio #edit-field-images .btn-group + .ajax-processed, .page-node-add-portfolio #edit-field-images
+.btn-group .btn-group + .ajax-processed,
+.btn-group .page-node-add-portfolio #edit-actions .btn-group + #edit-submit, .page-node-add-portfolio #edit-actions
+.btn-group .btn-group + #edit-submit,
+.btn-group .page-node-add-portfolio #edit-actions .btn-group + #edit-preview, .page-node-add-portfolio #edit-actions
+.btn-group .btn-group + #edit-preview,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -3267,25 +3435,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn,
+  .btn-toolbar .btn, .btn-toolbar .page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images .btn-toolbar .form-submit, .btn-toolbar .page-node-add-portfolio #edit-field-images .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-toolbar .ajax-processed, .btn-toolbar .page-node-add-portfolio #edit-actions #edit-submit, .page-node-add-portfolio #edit-actions .btn-toolbar #edit-submit, .btn-toolbar .page-node-add-portfolio #edit-actions #edit-preview, .page-node-add-portfolio #edit-actions .btn-toolbar #edit-preview,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn,
+  .btn-toolbar > .btn, .page-node-add-portfolio #edit-field-images .btn-toolbar > .form-submit, .page-node-add-portfolio #edit-field-images .btn-toolbar > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-toolbar > #edit-submit, .page-node-add-portfolio #edit-actions .btn-toolbar > #edit-preview,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:first-child, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:first-child, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:first-child, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:first-child:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:first-child:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:first-child:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .page-node-add-portfolio #edit-field-images .btn-group > .form-submit:last-child:not(:first-child), .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed:last-child:not(:first-child), .page-node-add-portfolio #edit-actions .btn-group > #edit-submit:last-child:not(:first-child), .page-node-add-portfolio #edit-actions .btn-group > #edit-preview:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3293,15 +3461,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:not(:first-child):not(:last-child) > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:not(:first-child):not(:last-child) > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:not(:first-child):not(:last-child) > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:not(:first-child):not(:last-child) > #edit-preview {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:first-child:not(:last-child) > .form-submit:last-child, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:first-child:not(:last-child) > .ajax-processed:last-child, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:first-child:not(:last-child) > #edit-submit:last-child, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:first-child:not(:last-child) > #edit-preview:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:last-child:not(:first-child) > .form-submit:first-child, .page-node-add-portfolio #edit-field-images .btn-group > .btn-group:last-child:not(:first-child) > .ajax-processed:first-child, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:last-child:not(:first-child) > #edit-submit:first-child, .page-node-add-portfolio #edit-actions .btn-group > .btn-group:last-child:not(:first-child) > #edit-preview:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3309,11 +3477,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .page-node-add-portfolio #edit-field-images .btn-group > .form-submit + .dropdown-toggle, .page-node-add-portfolio #edit-field-images .btn-group > .ajax-processed + .dropdown-toggle, .page-node-add-portfolio #edit-actions .btn-group > #edit-submit + .dropdown-toggle, .page-node-add-portfolio #edit-actions .btn-group > #edit-preview + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .page-node-add-portfolio #edit-field-images .btn-group-lg.btn-group > .form-submit + .dropdown-toggle, .page-node-add-portfolio #edit-field-images .btn-group-lg.btn-group > .ajax-processed + .dropdown-toggle, .page-node-add-portfolio #edit-actions .btn-group-lg.btn-group > #edit-submit + .dropdown-toggle, .page-node-add-portfolio #edit-actions .btn-group-lg.btn-group > #edit-preview + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3322,19 +3490,23 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret {
+.btn .caret, .page-node-add-portfolio #edit-field-images .form-submit .caret, .page-node-add-portfolio #edit-field-images .ajax-processed .caret, .page-node-add-portfolio #edit-actions #edit-submit .caret, .page-node-add-portfolio #edit-actions #edit-preview .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .page-node-add-portfolio #edit-field-images .btn-group-lg > .form-submit .caret, .page-node-add-portfolio #edit-field-images .btn-group-lg > .ajax-processed .caret, .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-submit .caret, .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-preview .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .page-node-add-portfolio #edit-field-images .btn-group-lg > .form-submit .caret, .page-node-add-portfolio #edit-field-images .dropup .btn-group-lg > .form-submit .caret, .dropup .page-node-add-portfolio #edit-field-images .btn-group-lg > .ajax-processed .caret, .page-node-add-portfolio #edit-field-images .dropup .btn-group-lg > .ajax-processed .caret, .dropup .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-submit .caret, .page-node-add-portfolio #edit-actions .dropup .btn-group-lg > #edit-submit .caret, .dropup .page-node-add-portfolio #edit-actions .btn-group-lg > #edit-preview .caret, .page-node-add-portfolio #edit-actions .dropup .btn-group-lg > #edit-preview .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .btn-group > .form-submit, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .btn-group > .ajax-processed, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > .btn-group > #edit-submit, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > .btn-group > #edit-preview {
   display: block;
   float: none;
   width: 100%;
@@ -3347,40 +3519,48 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group > #edit-preview {
   float: none; }
 
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn + .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit + .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed + .btn, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit + .btn, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview + .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed + .form-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > #edit-submit + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > #edit-submit + .form-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn + .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed + .ajax-processed, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn + #edit-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > .form-submit + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > .form-submit + #edit-submit, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview + #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn + #edit-preview, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > .form-submit + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > .form-submit + #edit-preview, .page-node-add-portfolio #edit-field-images #edit-actions .btn-group-vertical > .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .btn-group-vertical > .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit + #edit-preview, .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview + #edit-preview,
+.btn-group-vertical > .btn + .btn-group, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .form-submit + .btn-group, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .ajax-processed + .btn-group, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > #edit-submit + .btn-group, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > #edit-preview + .btn-group,
+.btn-group-vertical > .btn-group + .btn, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .btn-group + .form-submit, .page-node-add-portfolio #edit-field-images
+.btn-group-vertical > .btn-group + .ajax-processed, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > .btn-group + #edit-submit, .page-node-add-portfolio #edit-actions
+.btn-group-vertical > .btn-group + #edit-preview,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit:not(:first-child):not(:last-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed:not(:first-child):not(:last-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit:not(:first-child):not(:last-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit:first-child:not(:last-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed:first-child:not(:last-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit:first-child:not(:last-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .form-submit:last-child:not(:first-child), .page-node-add-portfolio #edit-field-images .btn-group-vertical > .ajax-processed:last-child:not(:first-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-submit:last-child:not(:first-child), .page-node-add-portfolio #edit-actions .btn-group-vertical > #edit-preview:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #edit-preview {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:first-child:not(:last-child) > .form-submit:last-child, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:first-child:not(:last-child) > .ajax-processed:last-child, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:first-child:not(:last-child) > #edit-submit:last-child, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:first-child:not(:last-child) > #edit-preview:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:last-child:not(:first-child) > .form-submit:first-child, .page-node-add-portfolio #edit-field-images .btn-group-vertical > .btn-group:last-child:not(:first-child) > .ajax-processed:first-child, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:last-child:not(:first-child) > #edit-submit:first-child, .page-node-add-portfolio #edit-actions .btn-group-vertical > .btn-group:last-child:not(:first-child) > #edit-preview:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3389,20 +3569,32 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn,
+  .btn-group-justified > .btn, .page-node-add-portfolio #edit-field-images .btn-group-justified > .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-justified > .ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-justified > #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-justified > #edit-preview,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn {
+  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images .btn-group-justified > .btn-group .form-submit, .btn-group-justified > .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed, .page-node-add-portfolio #edit-field-images .btn-group-justified > .btn-group .ajax-processed, .btn-group-justified > .btn-group .page-node-add-portfolio #edit-actions #edit-submit, .page-node-add-portfolio #edit-actions .btn-group-justified > .btn-group #edit-submit, .btn-group-justified > .btn-group .page-node-add-portfolio #edit-actions #edit-preview, .page-node-add-portfolio #edit-actions .btn-group-justified > .btn-group #edit-preview {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"], .page-node-add-portfolio #edit-field-images [data-toggle="buttons"] > .form-submit input[type="radio"], .page-node-add-portfolio #edit-field-images [data-toggle="buttons"] > .ajax-processed input[type="radio"], .page-node-add-portfolio #edit-actions [data-toggle="buttons"] > #edit-submit input[type="radio"], .page-node-add-portfolio #edit-actions [data-toggle="buttons"] > #edit-preview input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .form-submit input[type="checkbox"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .ajax-processed input[type="checkbox"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > #edit-submit input[type="checkbox"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > #edit-preview input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .btn-group > .form-submit input[type="radio"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .btn-group > .ajax-processed input[type="radio"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > .btn-group > #edit-submit input[type="radio"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > .btn-group > #edit-preview input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .btn-group > .form-submit input[type="checkbox"], .page-node-add-portfolio #edit-field-images
+[data-toggle="buttons"] > .btn-group > .ajax-processed input[type="checkbox"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > .btn-group > #edit-submit input[type="checkbox"], .page-node-add-portfolio #edit-actions
+[data-toggle="buttons"] > .btn-group > #edit-preview input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -3451,13 +3643,21 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > .input-group-addon.form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-sm > .input-group-btn > .input-group-addon.ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > .input-group-addon#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-sm > .input-group-btn > .input-group-addon#edit-preview {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > .input-group-addon.form-submit, .page-node-add-portfolio #edit-field-images
+  .input-group-lg > .input-group-btn > .input-group-addon.ajax-processed, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > .input-group-addon#edit-submit, .page-node-add-portfolio #edit-actions
+  .input-group-lg > .input-group-btn > .input-group-addon#edit-preview {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -3467,11 +3667,27 @@ tbody.collapse.in {
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > #edit-preview,
+.input-group-btn:first-child > .btn-group > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .btn-group > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .btn-group > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > .btn-group > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > .btn-group > #edit-preview,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .form-submit:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .ajax-processed:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > #edit-submit:not(:last-child):not(.dropdown-toggle), .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > #edit-preview:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .btn-group:not(:last-child) > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .btn-group:not(:last-child) > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > .btn-group:not(:last-child) > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > .btn-group:not(:last-child) > #edit-preview {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -3480,11 +3696,27 @@ tbody.collapse.in {
 
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > #edit-preview,
+.input-group-btn:last-child > .btn-group > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .btn-group > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:last-child > .btn-group > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > .btn-group > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:last-child > .btn-group > #edit-preview,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+.input-group-btn:first-child > .btn:not(:first-child), .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .form-submit:not(:first-child), .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .ajax-processed:not(:first-child), .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > #edit-submit:not(:first-child), .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > #edit-preview:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .btn-group:not(:first-child) > .form-submit, .page-node-add-portfolio #edit-field-images
+.input-group-btn:first-child > .btn-group:not(:first-child) > .ajax-processed, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > .btn-group:not(:first-child) > #edit-submit, .page-node-add-portfolio #edit-actions
+.input-group-btn:first-child > .btn-group:not(:first-child) > #edit-preview {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3495,70 +3727,70 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn {
+  .input-group-btn > .btn, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview {
     position: relative; }
-    .input-group-btn > .btn + .btn {
+    .input-group-btn > .btn + .btn, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit + .btn, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed + .btn, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit + .btn, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview + .btn, .page-node-add-portfolio #edit-field-images .input-group-btn > .btn + .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit + .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed + .form-submit, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > #edit-submit + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > #edit-submit + .form-submit, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn > .btn + .ajax-processed, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed + .ajax-processed, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-actions .input-group-btn > .btn + #edit-submit, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > .form-submit + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > .form-submit + #edit-submit, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit + #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview + #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn > .btn + #edit-preview, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > .form-submit + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > .form-submit + #edit-preview, .page-node-add-portfolio #edit-field-images #edit-actions .input-group-btn > .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .input-group-btn > .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit + #edit-preview, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview + #edit-preview {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+    .input-group-btn > .btn:hover, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit:hover, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed:hover, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit:hover, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview:hover, .input-group-btn > .btn:focus, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit:focus, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed:focus, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit:focus, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview:focus, .input-group-btn > .btn:active, .page-node-add-portfolio #edit-field-images .input-group-btn > .form-submit:active, .page-node-add-portfolio #edit-field-images .input-group-btn > .ajax-processed:active, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-submit:active, .page-node-add-portfolio #edit-actions .input-group-btn > #edit-preview:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn, .page-node-add-portfolio #edit-field-images .input-group-btn:first-child > .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn:first-child > .ajax-processed, .page-node-add-portfolio #edit-actions .input-group-btn:first-child > #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn:first-child > #edit-preview,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn, .page-node-add-portfolio #edit-field-images .input-group-btn:last-child > .form-submit, .page-node-add-portfolio #edit-field-images .input-group-btn:last-child > .ajax-processed, .page-node-add-portfolio #edit-actions .input-group-btn:last-child > #edit-submit, .page-node-add-portfolio #edit-actions .input-group-btn:last-child > #edit-preview,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
 
-.nav, #block-system-main-menu ul {
+.nav, #block-system-main-menu ul, #block-system-user-menu .menu, #block-menu-menu-secondary-nav-bar .menu, .page-user-edit .tabs {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none; }
-  .nav:before, #block-system-main-menu ul:before, .nav:after, #block-system-main-menu ul:after {
+  .nav:before, #block-system-main-menu ul:before, #block-system-user-menu .menu:before, #block-menu-menu-secondary-nav-bar .menu:before, .page-user-edit .tabs:before, .nav:after, #block-system-main-menu ul:after, #block-system-user-menu .menu:after, #block-menu-menu-secondary-nav-bar .menu:after, .page-user-edit .tabs:after {
     content: " ";
     display: table; }
-  .nav:after, #block-system-main-menu ul:after {
+  .nav:after, #block-system-main-menu ul:after, #block-system-user-menu .menu:after, #block-menu-menu-secondary-nav-bar .menu:after, .page-user-edit .tabs:after {
     clear: both; }
-  .nav > li, #block-system-main-menu ul > li {
+  .nav > li, #block-system-main-menu ul > li, #block-system-user-menu .menu > li, #block-menu-menu-secondary-nav-bar .menu > li, .page-user-edit .tabs > li {
     position: relative;
     display: block; }
-    .nav > li > a, #block-system-main-menu ul > li > a {
+    .nav > li > a, #block-system-main-menu ul > li > a, #block-system-user-menu .menu > li > a, #block-menu-menu-secondary-nav-bar .menu > li > a, .page-user-edit .tabs > li > a {
       position: relative;
       display: block;
       padding: 10px 15px; }
-      .nav > li > a:hover, #block-system-main-menu ul > li > a:hover, .nav > li > a:focus, #block-system-main-menu ul > li > a:focus {
+      .nav > li > a:hover, #block-system-main-menu ul > li > a:hover, #block-system-user-menu .menu > li > a:hover, #block-menu-menu-secondary-nav-bar .menu > li > a:hover, .page-user-edit .tabs > li > a:hover, .nav > li > a:focus, #block-system-main-menu ul > li > a:focus, #block-system-user-menu .menu > li > a:focus, #block-menu-menu-secondary-nav-bar .menu > li > a:focus, .page-user-edit .tabs > li > a:focus {
         text-decoration: none;
         background-color: #eeeeee; }
-    .nav > li.disabled > a, #block-system-main-menu ul > li.disabled > a {
+    .nav > li.disabled > a, #block-system-main-menu ul > li.disabled > a, #block-system-user-menu .menu > li.disabled > a, #block-menu-menu-secondary-nav-bar .menu > li.disabled > a, .page-user-edit .tabs > li.disabled > a {
       color: #777777; }
-      .nav > li.disabled > a:hover, #block-system-main-menu ul > li.disabled > a:hover, .nav > li.disabled > a:focus, #block-system-main-menu ul > li.disabled > a:focus {
+      .nav > li.disabled > a:hover, #block-system-main-menu ul > li.disabled > a:hover, #block-system-user-menu .menu > li.disabled > a:hover, #block-menu-menu-secondary-nav-bar .menu > li.disabled > a:hover, .page-user-edit .tabs > li.disabled > a:hover, .nav > li.disabled > a:focus, #block-system-main-menu ul > li.disabled > a:focus, #block-system-user-menu .menu > li.disabled > a:focus, #block-menu-menu-secondary-nav-bar .menu > li.disabled > a:focus, .page-user-edit .tabs > li.disabled > a:focus {
         color: #777777;
         text-decoration: none;
         background-color: transparent;
         cursor: not-allowed; }
-  .nav .open > a, #block-system-main-menu ul .open > a, .nav .open > a:hover, #block-system-main-menu ul .open > a:hover, .nav .open > a:focus, #block-system-main-menu ul .open > a:focus {
+  .nav .open > a, #block-system-main-menu ul .open > a, #block-system-user-menu .menu .open > a, #block-menu-menu-secondary-nav-bar .menu .open > a, .page-user-edit .tabs .open > a, .nav .open > a:hover, #block-system-main-menu ul .open > a:hover, #block-system-user-menu .menu .open > a:hover, #block-menu-menu-secondary-nav-bar .menu .open > a:hover, .page-user-edit .tabs .open > a:hover, .nav .open > a:focus, #block-system-main-menu ul .open > a:focus, #block-system-user-menu .menu .open > a:focus, #block-menu-menu-secondary-nav-bar .menu .open > a:focus, .page-user-edit .tabs .open > a:focus {
     background-color: #eeeeee;
     border-color: #337ab7; }
-  .nav .nav-divider, #block-system-main-menu ul .nav-divider {
+  .nav .nav-divider, #block-system-main-menu ul .nav-divider, #block-system-user-menu .menu .nav-divider, #block-menu-menu-secondary-nav-bar .menu .nav-divider, .page-user-edit .tabs .nav-divider {
     height: 1px;
     margin: 9px 0;
     overflow: hidden;
     background-color: #e5e5e5; }
-  .nav > li > a > img, #block-system-main-menu ul > li > a > img {
+  .nav > li > a > img, #block-system-main-menu ul > li > a > img, #block-system-user-menu .menu > li > a > img, #block-menu-menu-secondary-nav-bar .menu > li > a > img, .page-user-edit .tabs > li > a > img {
     max-width: none; }
 
-.nav-tabs {
+.nav-tabs, .page-user-edit .tabs {
   border-bottom: 1px solid #ddd; }
-  .nav-tabs > li {
+  .nav-tabs > li, .page-user-edit .tabs > li {
     float: left;
     margin-bottom: -1px; }
-    .nav-tabs > li > a {
+    .nav-tabs > li > a, .page-user-edit .tabs > li > a {
       margin-right: 2px;
       line-height: 1.42857;
       border: 1px solid transparent;
       border-radius: 4px 4px 0 0; }
-      .nav-tabs > li > a:hover {
+      .nav-tabs > li > a:hover, .page-user-edit .tabs > li > a:hover {
         border-color: #eeeeee #eeeeee #ddd; }
-    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    .nav-tabs > li.active > a, .page-user-edit .tabs > li.active > a, .nav-tabs > li.active > a:hover, .page-user-edit .tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .page-user-edit .tabs > li.active > a:focus {
       color: #555555;
       background-color: #fff;
       border: 1px solid #ddd;
@@ -3581,39 +3813,39 @@ tbody.collapse.in {
     margin-top: 2px;
     margin-left: 0; }
 
-.nav-justified, .nav-tabs.nav-justified {
+.nav-justified, .nav-tabs.nav-justified, .page-user-edit .nav-justified.tabs {
   width: 100%; }
-  .nav-justified > li, .nav-tabs.nav-justified > li {
+  .nav-justified > li, .nav-tabs.nav-justified > li, .page-user-edit .nav-justified.tabs > li {
     float: none; }
-    .nav-justified > li > a, .nav-tabs.nav-justified > li > a {
+    .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .page-user-edit .nav-justified.tabs > li > a {
       text-align: center;
       margin-bottom: 5px; }
-  .nav-justified > .dropdown .dropdown-menu {
+  .nav-justified > .dropdown .dropdown-menu, .page-user-edit .nav-justified.tabs > .dropdown .dropdown-menu {
     top: auto;
     left: auto; }
   @media (min-width: 768px) {
-    .nav-justified > li, .nav-tabs.nav-justified > li {
+    .nav-justified > li, .nav-tabs.nav-justified > li, .page-user-edit .nav-justified.tabs > li {
       display: table-cell;
       width: 1%; }
-      .nav-justified > li > a, .nav-tabs.nav-justified > li > a {
+      .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .page-user-edit .nav-justified.tabs > li > a {
         margin-bottom: 0; } }
 
-.nav-tabs-justified, .nav-tabs.nav-justified {
+.nav-tabs-justified, .nav-tabs.nav-justified, .page-user-edit .nav-justified.tabs {
   border-bottom: 0; }
-  .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+  .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .page-user-edit .nav-justified.tabs > li > a {
     margin-right: 0;
     border-radius: 4px; }
-  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
-  .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
-  .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .page-user-edit .nav-justified.tabs > .active > a,
+  .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .page-user-edit .nav-justified.tabs > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .page-user-edit .nav-justified.tabs > .active > a:focus {
     border: 1px solid #ddd; }
   @media (min-width: 768px) {
-    .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+    .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .page-user-edit .nav-justified.tabs > li > a {
       border-bottom: 1px solid #ddd;
       border-radius: 4px 4px 0 0; }
-    .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
-    .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
-    .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+    .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .page-user-edit .nav-justified.tabs > .active > a,
+    .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .page-user-edit .nav-justified.tabs > .active > a:hover,
+    .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .page-user-edit .nav-justified.tabs > .active > a:focus {
       border-bottom-color: #fff; } }
 
 .tab-content > .tab-pane {
@@ -3622,23 +3854,23 @@ tbody.collapse.in {
 .tab-content > .active {
   display: block; }
 
-.nav-tabs .dropdown-menu {
+.nav-tabs .dropdown-menu, .page-user-edit .tabs .dropdown-menu {
   margin-top: -1px;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.navbar, #block-system-main-menu {
+.navbar, #block-system-main-menu, #block-system-user-menu, #block-menu-menu-secondary-nav-bar {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent; }
-  .navbar:before, #block-system-main-menu:before, .navbar:after, #block-system-main-menu:after {
+  .navbar:before, #block-system-main-menu:before, #block-system-user-menu:before, #block-menu-menu-secondary-nav-bar:before, .navbar:after, #block-system-main-menu:after, #block-system-user-menu:after, #block-menu-menu-secondary-nav-bar:after {
     content: " ";
     display: table; }
-  .navbar:after, #block-system-main-menu:after {
+  .navbar:after, #block-system-main-menu:after, #block-system-user-menu:after, #block-menu-menu-secondary-nav-bar:after {
     clear: both; }
   @media (min-width: 768px) {
-    .navbar, #block-system-main-menu {
+    .navbar, #block-system-main-menu, #block-system-user-menu, #block-menu-menu-secondary-nav-bar {
       border-radius: 4px; } }
 
 .navbar-header:before, .navbar-header:after {
@@ -3692,17 +3924,17 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .l-footer #block-block-4 > .navbar-header, .l-footer #block-block-11 > .navbar-header, .l-footer #block-block-12 > .navbar-header, .l-footer #block-block-13 > .navbar-header, .l-footer #block-block-14 > .navbar-header,
-.container > .navbar-collapse, .l-footer #block-block-4 > .navbar-collapse, .l-footer #block-block-11 > .navbar-collapse, .l-footer #block-block-12 > .navbar-collapse, .l-footer #block-block-13 > .navbar-collapse, .l-footer #block-block-14 > .navbar-collapse,
-.container-fluid > .navbar-header,
-.container-fluid > .navbar-collapse {
+.container > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-header, #block-system-main-menu > .navbar-header, #block-system-user-menu > .navbar-header, #block-menu-menu-secondary-nav-bar > .navbar-header,
+.container-fluid > .navbar-collapse, #block-system-main-menu > .navbar-collapse, #block-system-user-menu > .navbar-collapse, #block-menu-menu-secondary-nav-bar > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .l-footer #block-block-4 > .navbar-header, .l-footer #block-block-11 > .navbar-header, .l-footer #block-block-12 > .navbar-header, .l-footer #block-block-13 > .navbar-header, .l-footer #block-block-14 > .navbar-header,
-    .container > .navbar-collapse, .l-footer #block-block-4 > .navbar-collapse, .l-footer #block-block-11 > .navbar-collapse, .l-footer #block-block-12 > .navbar-collapse, .l-footer #block-block-13 > .navbar-collapse, .l-footer #block-block-14 > .navbar-collapse,
-    .container-fluid > .navbar-header,
-    .container-fluid > .navbar-collapse {
+    .container > .navbar-header,
+    .container > .navbar-collapse,
+    .container-fluid > .navbar-header, #block-system-main-menu > .navbar-header, #block-system-user-menu > .navbar-header, #block-menu-menu-secondary-nav-bar > .navbar-header,
+    .container-fluid > .navbar-collapse, #block-system-main-menu > .navbar-collapse, #block-system-user-menu > .navbar-collapse, #block-menu-menu-secondary-nav-bar > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3744,8 +3976,11 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, #block-system-main-menu > .container .navbar-brand, .l-footer .navbar > #block-block-4 .navbar-brand, .l-footer #block-system-main-menu > #block-block-4 .navbar-brand, .l-footer .navbar > #block-block-11 .navbar-brand, .l-footer #block-system-main-menu > #block-block-11 .navbar-brand, .l-footer .navbar > #block-block-12 .navbar-brand, .l-footer #block-system-main-menu > #block-block-12 .navbar-brand, .l-footer .navbar > #block-block-13 .navbar-brand, .l-footer #block-system-main-menu > #block-block-13 .navbar-brand, .l-footer .navbar > #block-block-14 .navbar-brand, .l-footer #block-system-main-menu > #block-block-14 .navbar-brand,
-    .navbar > .container-fluid .navbar-brand, #block-system-main-menu > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, #block-system-main-menu > .container .navbar-brand, #block-system-user-menu > .container .navbar-brand, #block-menu-menu-secondary-nav-bar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand, #block-system-main-menu > .container-fluid .navbar-brand, #block-system-user-menu > .container-fluid .navbar-brand, #block-menu-menu-secondary-nav-bar > .container-fluid .navbar-brand,
+    .navbar > #block-system-main-menu .navbar-brand, #block-system-main-menu > #block-system-main-menu .navbar-brand, #block-system-user-menu > #block-system-main-menu .navbar-brand, #block-menu-menu-secondary-nav-bar > #block-system-main-menu .navbar-brand,
+    .navbar > #block-system-user-menu .navbar-brand, #block-system-main-menu > #block-system-user-menu .navbar-brand, #block-system-user-menu > #block-system-user-menu .navbar-brand, #block-menu-menu-secondary-nav-bar > #block-system-user-menu .navbar-brand,
+    .navbar > #block-menu-menu-secondary-nav-bar .navbar-brand, #block-system-main-menu > #block-menu-menu-secondary-nav-bar .navbar-brand, #block-system-user-menu > #block-menu-menu-secondary-nav-bar .navbar-brand, #block-menu-menu-secondary-nav-bar > #block-menu-menu-secondary-nav-bar .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3772,14 +4007,14 @@ tbody.collapse.in {
     .navbar-toggle {
       display: none; } }
 
-.navbar-nav, #block-system-main-menu ul {
+.navbar-nav, #block-system-main-menu ul, #block-system-user-menu .menu, #block-menu-menu-secondary-nav-bar .menu {
   margin: 7.5px -15px; }
-  .navbar-nav > li > a, #block-system-main-menu ul > li > a {
+  .navbar-nav > li > a, #block-system-main-menu ul > li > a, #block-system-user-menu .menu > li > a, #block-menu-menu-secondary-nav-bar .menu > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px; }
   @media (max-width: 767px) {
-    .navbar-nav .open .dropdown-menu, #block-system-main-menu ul .open .dropdown-menu {
+    .navbar-nav .open .dropdown-menu, #block-system-main-menu ul .open .dropdown-menu, #block-system-user-menu .menu .open .dropdown-menu, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu {
       position: static;
       float: none;
       width: auto;
@@ -3787,20 +4022,20 @@ tbody.collapse.in {
       background-color: transparent;
       border: 0;
       box-shadow: none; }
-      .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu ul .open .dropdown-menu > li > a,
-      .navbar-nav .open .dropdown-menu .dropdown-header, #block-system-main-menu ul .open .dropdown-menu .dropdown-header {
+      .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-user-menu .menu .open .dropdown-menu > li > a, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a,
+      .navbar-nav .open .dropdown-menu .dropdown-header, #block-system-main-menu ul .open .dropdown-menu .dropdown-header, #block-system-user-menu .menu .open .dropdown-menu .dropdown-header, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu .dropdown-header {
         padding: 5px 15px 5px 25px; }
-      .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu ul .open .dropdown-menu > li > a {
+      .navbar-nav .open .dropdown-menu > li > a, #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-user-menu .menu .open .dropdown-menu > li > a, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a {
         line-height: 20px; }
-        .navbar-nav .open .dropdown-menu > li > a:hover, #block-system-main-menu ul .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, #block-system-main-menu ul .open .dropdown-menu > li > a:focus {
+        .navbar-nav .open .dropdown-menu > li > a:hover, #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-user-menu .menu .open .dropdown-menu > li > a:hover, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-user-menu .menu .open .dropdown-menu > li > a:focus, #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:focus {
           background-image: none; } }
   @media (min-width: 768px) {
-    .navbar-nav, #block-system-main-menu ul {
+    .navbar-nav, #block-system-main-menu ul, #block-system-user-menu .menu, #block-menu-menu-secondary-nav-bar .menu {
       float: left;
       margin: 0; }
-      .navbar-nav > li, #block-system-main-menu ul > li {
+      .navbar-nav > li, #block-system-main-menu ul > li, #block-system-user-menu .menu > li, #block-menu-menu-secondary-nav-bar .menu > li {
         float: left; }
-        .navbar-nav > li > a, #block-system-main-menu ul > li > a {
+        .navbar-nav > li > a, #block-system-main-menu ul > li > a, #block-system-user-menu .menu > li > a, #block-menu-menu-secondary-nav-bar .menu > li > a {
           padding-top: 15px;
           padding-bottom: 15px; } }
 
@@ -3866,12 +4101,12 @@ tbody.collapse.in {
       padding-bottom: 0;
       box-shadow: none; } }
 
-.navbar-nav > li > .dropdown-menu, #block-system-main-menu ul > li > .dropdown-menu {
+.navbar-nav > li > .dropdown-menu, #block-system-main-menu ul > li > .dropdown-menu, #block-system-user-menu .menu > li > .dropdown-menu, #block-menu-menu-secondary-nav-bar .menu > li > .dropdown-menu {
   margin-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu, .navbar-fixed-bottom #block-system-main-menu ul > li > .dropdown-menu, #block-system-main-menu .navbar-fixed-bottom ul > li > .dropdown-menu {
+.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu, .navbar-fixed-bottom #block-system-main-menu ul > li > .dropdown-menu, #block-system-main-menu .navbar-fixed-bottom ul > li > .dropdown-menu, .navbar-fixed-bottom #block-system-user-menu .menu > li > .dropdown-menu, #block-system-user-menu .navbar-fixed-bottom .menu > li > .dropdown-menu, .navbar-fixed-bottom #block-menu-menu-secondary-nav-bar .menu > li > .dropdown-menu, #block-menu-menu-secondary-nav-bar .navbar-fixed-bottom .menu > li > .dropdown-menu {
   margin-bottom: 0;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -3881,10 +4116,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .page-node-add-portfolio #edit-field-images .btn-group-sm > .navbar-btn.form-submit, .page-node-add-portfolio #edit-field-images .btn-group-sm > .navbar-btn.ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-sm > .navbar-btn#edit-submit, .page-node-add-portfolio #edit-actions .btn-group-sm > .navbar-btn#edit-preview {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .page-node-add-portfolio #edit-field-images .btn-group-xs > .navbar-btn.form-submit, .page-node-add-portfolio #edit-field-images .btn-group-xs > .navbar-btn.ajax-processed, .page-node-add-portfolio #edit-actions .btn-group-xs > .navbar-btn#edit-submit, .page-node-add-portfolio #edit-actions .btn-group-xs > .navbar-btn#edit-preview {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -3900,10 +4135,10 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important; }
-  .navbar-right, #block-system-main-menu ul {
+  .navbar-right, #block-system-main-menu ul, #block-system-user-menu .menu, #block-menu-menu-secondary-nav-bar .menu {
     float: right !important;
     margin-right: -15px; }
-    .navbar-right ~ .navbar-right, #block-system-main-menu ul ~ .navbar-right, #block-system-main-menu .navbar-right ~ ul, #block-system-main-menu ul ~ ul {
+    .navbar-right ~ .navbar-right, #block-system-main-menu ul ~ .navbar-right, #block-system-user-menu .menu ~ .navbar-right, #block-menu-menu-secondary-nav-bar .menu ~ .navbar-right, #block-system-main-menu .navbar-right ~ ul, #block-system-main-menu ul ~ ul, #block-system-user-menu #block-system-main-menu .menu ~ ul, #block-system-main-menu #block-system-user-menu .menu ~ ul, #block-menu-menu-secondary-nav-bar #block-system-main-menu .menu ~ ul, #block-system-main-menu #block-menu-menu-secondary-nav-bar .menu ~ ul, #block-system-user-menu .navbar-right ~ .menu, #block-system-main-menu #block-system-user-menu ul ~ .menu, #block-system-user-menu #block-system-main-menu ul ~ .menu, #block-system-user-menu .menu ~ .menu, #block-menu-menu-secondary-nav-bar .navbar-right ~ .menu, #block-system-main-menu #block-menu-menu-secondary-nav-bar ul ~ .menu, #block-menu-menu-secondary-nav-bar #block-system-main-menu ul ~ .menu, #block-menu-menu-secondary-nav-bar .menu ~ .menu {
       margin-right: 0; } }
 
 .navbar-default {
@@ -3916,15 +4151,15 @@ tbody.collapse.in {
       background-color: transparent; }
   .navbar-default .navbar-text {
     color: #777; }
-  .navbar-default .navbar-nav > li > a, .navbar-default #block-system-main-menu ul > li > a, #block-system-main-menu .navbar-default ul > li > a {
+  .navbar-default .navbar-nav > li > a, .navbar-default #block-system-main-menu ul > li > a, #block-system-main-menu .navbar-default ul > li > a, .navbar-default #block-system-user-menu .menu > li > a, #block-system-user-menu .navbar-default .menu > li > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu > li > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu > li > a {
     color: #777; }
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default #block-system-main-menu ul > li > a:hover, #block-system-main-menu .navbar-default ul > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default #block-system-main-menu ul > li > a:focus, #block-system-main-menu .navbar-default ul > li > a:focus {
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default #block-system-main-menu ul > li > a:hover, #block-system-main-menu .navbar-default ul > li > a:hover, .navbar-default #block-system-user-menu .menu > li > a:hover, #block-system-user-menu .navbar-default .menu > li > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu > li > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default #block-system-main-menu ul > li > a:focus, #block-system-main-menu .navbar-default ul > li > a:focus, .navbar-default #block-system-user-menu .menu > li > a:focus, #block-system-user-menu .navbar-default .menu > li > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu > li > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu > li > a:focus {
       color: #333;
       background-color: transparent; }
-  .navbar-default .navbar-nav > .active > a, .navbar-default #block-system-main-menu ul > .active > a, #block-system-main-menu .navbar-default ul > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default #block-system-main-menu ul > .active > a:hover, #block-system-main-menu .navbar-default ul > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default #block-system-main-menu ul > .active > a:focus, #block-system-main-menu .navbar-default ul > .active > a:focus {
+  .navbar-default .navbar-nav > .active > a, .navbar-default #block-system-main-menu ul > .active > a, #block-system-main-menu .navbar-default ul > .active > a, .navbar-default #block-system-user-menu .menu > .active > a, #block-system-user-menu .navbar-default .menu > .active > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .active > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default #block-system-main-menu ul > .active > a:hover, #block-system-main-menu .navbar-default ul > .active > a:hover, .navbar-default #block-system-user-menu .menu > .active > a:hover, #block-system-user-menu .navbar-default .menu > .active > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .active > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default #block-system-main-menu ul > .active > a:focus, #block-system-main-menu .navbar-default ul > .active > a:focus, .navbar-default #block-system-user-menu .menu > .active > a:focus, #block-system-user-menu .navbar-default .menu > .active > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .active > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .active > a:focus {
     color: #555;
     background-color: #e7e7e7; }
-  .navbar-default .navbar-nav > .disabled > a, .navbar-default #block-system-main-menu ul > .disabled > a, #block-system-main-menu .navbar-default ul > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default #block-system-main-menu ul > .disabled > a:hover, #block-system-main-menu .navbar-default ul > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default #block-system-main-menu ul > .disabled > a:focus, #block-system-main-menu .navbar-default ul > .disabled > a:focus {
+  .navbar-default .navbar-nav > .disabled > a, .navbar-default #block-system-main-menu ul > .disabled > a, #block-system-main-menu .navbar-default ul > .disabled > a, .navbar-default #block-system-user-menu .menu > .disabled > a, #block-system-user-menu .navbar-default .menu > .disabled > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .disabled > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default #block-system-main-menu ul > .disabled > a:hover, #block-system-main-menu .navbar-default ul > .disabled > a:hover, .navbar-default #block-system-user-menu .menu > .disabled > a:hover, #block-system-user-menu .navbar-default .menu > .disabled > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .disabled > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default #block-system-main-menu ul > .disabled > a:focus, #block-system-main-menu .navbar-default ul > .disabled > a:focus, .navbar-default #block-system-user-menu .menu > .disabled > a:focus, #block-system-user-menu .navbar-default .menu > .disabled > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .disabled > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
   .navbar-default .navbar-toggle {
@@ -3936,19 +4171,19 @@ tbody.collapse.in {
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
     border-color: #e7e7e7; }
-  .navbar-default .navbar-nav > .open > a, .navbar-default #block-system-main-menu ul > .open > a, #block-system-main-menu .navbar-default ul > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default #block-system-main-menu ul > .open > a:hover, #block-system-main-menu .navbar-default ul > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default #block-system-main-menu ul > .open > a:focus, #block-system-main-menu .navbar-default ul > .open > a:focus {
+  .navbar-default .navbar-nav > .open > a, .navbar-default #block-system-main-menu ul > .open > a, #block-system-main-menu .navbar-default ul > .open > a, .navbar-default #block-system-user-menu .menu > .open > a, #block-system-user-menu .navbar-default .menu > .open > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .open > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default #block-system-main-menu ul > .open > a:hover, #block-system-main-menu .navbar-default ul > .open > a:hover, .navbar-default #block-system-user-menu .menu > .open > a:hover, #block-system-user-menu .navbar-default .menu > .open > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .open > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default #block-system-main-menu ul > .open > a:focus, #block-system-main-menu .navbar-default ul > .open > a:focus, .navbar-default #block-system-user-menu .menu > .open > a:focus, #block-system-user-menu .navbar-default .menu > .open > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu > .open > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu > .open > a:focus {
     background-color: #e7e7e7;
     color: #555; }
   @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > li > a, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > li > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > li > a {
       color: #777; }
-      .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a:focus {
+      .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a:hover, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > li > a:hover, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > li > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > li > a:focus, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > li > a:focus, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > li > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > li > a:focus {
         color: #333;
         background-color: transparent; }
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .active > a, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .active > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a:hover, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .active > a:hover, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .active > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .active > a:focus, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .active > a:focus, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .active > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .active > a:focus {
       color: #555;
       background-color: #e7e7e7; }
-    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a:focus {
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .disabled > a, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .disabled > a, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a:hover, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .disabled > a:hover, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .disabled > a:hover, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a:hover, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-default ul .open .dropdown-menu > .disabled > a:focus, .navbar-default #block-system-user-menu .menu .open .dropdown-menu > .disabled > a:focus, #block-system-user-menu .navbar-default .menu .open .dropdown-menu > .disabled > a:focus, .navbar-default #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a:focus, #block-menu-menu-secondary-nav-bar .navbar-default .menu .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
   .navbar-default .navbar-link {
@@ -3974,15 +4209,15 @@ tbody.collapse.in {
       background-color: transparent; }
   .navbar-inverse .navbar-text {
     color: #9d9d9d; }
-  .navbar-inverse .navbar-nav > li > a, .navbar-inverse #block-system-main-menu ul > li > a, #block-system-main-menu .navbar-inverse ul > li > a {
+  .navbar-inverse .navbar-nav > li > a, .navbar-inverse #block-system-main-menu ul > li > a, #block-system-main-menu .navbar-inverse ul > li > a, .navbar-inverse #block-system-user-menu .menu > li > a, #block-system-user-menu .navbar-inverse .menu > li > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > li > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > li > a {
     color: #9d9d9d; }
-    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse #block-system-main-menu ul > li > a:hover, #block-system-main-menu .navbar-inverse ul > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse #block-system-main-menu ul > li > a:focus, #block-system-main-menu .navbar-inverse ul > li > a:focus {
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse #block-system-main-menu ul > li > a:hover, #block-system-main-menu .navbar-inverse ul > li > a:hover, .navbar-inverse #block-system-user-menu .menu > li > a:hover, #block-system-user-menu .navbar-inverse .menu > li > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > li > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse #block-system-main-menu ul > li > a:focus, #block-system-main-menu .navbar-inverse ul > li > a:focus, .navbar-inverse #block-system-user-menu .menu > li > a:focus, #block-system-user-menu .navbar-inverse .menu > li > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > li > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > li > a:focus {
       color: #fff;
       background-color: transparent; }
-  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse #block-system-main-menu ul > .active > a, #block-system-main-menu .navbar-inverse ul > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse #block-system-main-menu ul > .active > a:hover, #block-system-main-menu .navbar-inverse ul > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse #block-system-main-menu ul > .active > a:focus, #block-system-main-menu .navbar-inverse ul > .active > a:focus {
+  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse #block-system-main-menu ul > .active > a, #block-system-main-menu .navbar-inverse ul > .active > a, .navbar-inverse #block-system-user-menu .menu > .active > a, #block-system-user-menu .navbar-inverse .menu > .active > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .active > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse #block-system-main-menu ul > .active > a:hover, #block-system-main-menu .navbar-inverse ul > .active > a:hover, .navbar-inverse #block-system-user-menu .menu > .active > a:hover, #block-system-user-menu .navbar-inverse .menu > .active > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .active > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse #block-system-main-menu ul > .active > a:focus, #block-system-main-menu .navbar-inverse ul > .active > a:focus, .navbar-inverse #block-system-user-menu .menu > .active > a:focus, #block-system-user-menu .navbar-inverse .menu > .active > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .active > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .active > a:focus {
     color: #fff;
     background-color: #090909; }
-  .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse #block-system-main-menu ul > .disabled > a, #block-system-main-menu .navbar-inverse ul > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul > .disabled > a:focus {
+  .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse #block-system-main-menu ul > .disabled > a, #block-system-main-menu .navbar-inverse ul > .disabled > a, .navbar-inverse #block-system-user-menu .menu > .disabled > a, #block-system-user-menu .navbar-inverse .menu > .disabled > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .disabled > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul > .disabled > a:hover, .navbar-inverse #block-system-user-menu .menu > .disabled > a:hover, #block-system-user-menu .navbar-inverse .menu > .disabled > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .disabled > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul > .disabled > a:focus, .navbar-inverse #block-system-user-menu .menu > .disabled > a:focus, #block-system-user-menu .navbar-inverse .menu > .disabled > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .disabled > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .disabled > a:focus {
     color: #444;
     background-color: transparent; }
   .navbar-inverse .navbar-toggle {
@@ -3994,23 +4229,23 @@ tbody.collapse.in {
   .navbar-inverse .navbar-collapse,
   .navbar-inverse .navbar-form {
     border-color: #101010; }
-  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse #block-system-main-menu ul > .open > a, #block-system-main-menu .navbar-inverse ul > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse #block-system-main-menu ul > .open > a:hover, #block-system-main-menu .navbar-inverse ul > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse #block-system-main-menu ul > .open > a:focus, #block-system-main-menu .navbar-inverse ul > .open > a:focus {
+  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse #block-system-main-menu ul > .open > a, #block-system-main-menu .navbar-inverse ul > .open > a, .navbar-inverse #block-system-user-menu .menu > .open > a, #block-system-user-menu .navbar-inverse .menu > .open > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .open > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse #block-system-main-menu ul > .open > a:hover, #block-system-main-menu .navbar-inverse ul > .open > a:hover, .navbar-inverse #block-system-user-menu .menu > .open > a:hover, #block-system-user-menu .navbar-inverse .menu > .open > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .open > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse #block-system-main-menu ul > .open > a:focus, #block-system-main-menu .navbar-inverse ul > .open > a:focus, .navbar-inverse #block-system-user-menu .menu > .open > a:focus, #block-system-user-menu .navbar-inverse .menu > .open > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu > .open > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu > .open > a:focus {
     background-color: #090909;
     color: #fff; }
   @media (max-width: 767px) {
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .dropdown-header, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .dropdown-header {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .dropdown-header, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .dropdown-header, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .dropdown-header, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .dropdown-header, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .dropdown-header, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .dropdown-header {
       border-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu .divider, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu .divider, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu .divider {
+    .navbar-inverse .navbar-nav .open .dropdown-menu .divider, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu .divider, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu .divider, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu .divider, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu .divider, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu .divider, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu .divider {
       background-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > li > a, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > li > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > li > a {
       color: #9d9d9d; }
-      .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:focus {
+      .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:hover, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > li > a:hover, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > li > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > li > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > li > a:focus, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > li > a:focus, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > li > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > li > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > li > a:focus {
         color: #fff;
         background-color: transparent; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .active > a, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .active > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:hover, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .active > a:hover, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .active > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .active > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .active > a:focus, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .active > a:focus, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .active > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .active > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .active > a:focus {
       color: #fff;
       background-color: #090909; }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:focus {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .disabled > a, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .disabled > a, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:hover, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:hover, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .disabled > a:hover, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .disabled > a:hover, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a:hover, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse #block-system-main-menu ul .open .dropdown-menu > .disabled > a:focus, #block-system-main-menu .navbar-inverse ul .open .dropdown-menu > .disabled > a:focus, .navbar-inverse #block-system-user-menu .menu .open .dropdown-menu > .disabled > a:focus, #block-system-user-menu .navbar-inverse .menu .open .dropdown-menu > .disabled > a:focus, .navbar-inverse #block-menu-menu-secondary-nav-bar .menu .open .dropdown-menu > .disabled > a:focus, #block-menu-menu-secondary-nav-bar .navbar-inverse .menu .open .dropdown-menu > .disabled > a:focus {
       color: #444;
       background-color: transparent; } }
   .navbar-inverse .navbar-link {
@@ -4177,7 +4412,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label {
+  .btn .label, .page-node-add-portfolio #edit-field-images .form-submit .label, .page-node-add-portfolio #edit-field-images .ajax-processed .label, .page-node-add-portfolio #edit-actions #edit-submit .label, .page-node-add-portfolio #edit-actions #edit-preview .label {
     position: relative;
     top: -1px; }
 
@@ -4231,11 +4466,15 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge {
+  .btn .badge, .page-node-add-portfolio #edit-field-images .form-submit .badge, .page-node-add-portfolio #edit-field-images .ajax-processed .badge, .page-node-add-portfolio #edit-actions #edit-submit .badge, .page-node-add-portfolio #edit-actions #edit-preview .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge,
-  .btn-group-xs > .btn .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge, .page-node-add-portfolio #edit-field-images .btn-group-xs > .form-submit .badge, .page-node-add-portfolio #edit-field-images .btn-group-xs > .ajax-processed .badge, .page-node-add-portfolio #edit-actions .btn-group-xs > #edit-submit .badge, .page-node-add-portfolio #edit-actions .btn-group-xs > #edit-preview .badge,
+  .btn-group-xs > .btn .badge, .page-node-add-portfolio #edit-field-images
+  .btn-group-xs > .form-submit .badge, .page-node-add-portfolio #edit-field-images
+  .btn-group-xs > .ajax-processed .badge, .page-node-add-portfolio #edit-actions
+  .btn-group-xs > #edit-submit .badge, .page-node-add-portfolio #edit-actions
+  .btn-group-xs > #edit-preview .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -4269,19 +4508,19 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .l-footer #block-block-4 .jumbotron, .l-footer #block-block-11 .jumbotron, .l-footer #block-block-12 .jumbotron, .l-footer #block-block-13 .jumbotron, .l-footer #block-block-14 .jumbotron,
-  .container-fluid .jumbotron {
+  .container .jumbotron,
+  .container-fluid .jumbotron, #block-system-main-menu .jumbotron, #block-system-user-menu .jumbotron, #block-menu-menu-secondary-nav-bar .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
-  .jumbotron .container, .jumbotron .l-footer #block-block-4, .l-footer .jumbotron #block-block-4, .jumbotron .l-footer #block-block-11, .l-footer .jumbotron #block-block-11, .jumbotron .l-footer #block-block-12, .l-footer .jumbotron #block-block-12, .jumbotron .l-footer #block-block-13, .l-footer .jumbotron #block-block-13, .jumbotron .l-footer #block-block-14, .l-footer .jumbotron #block-block-14 {
+  .jumbotron .container {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .l-footer #block-block-4 .jumbotron, .l-footer #block-block-11 .jumbotron, .l-footer #block-block-12 .jumbotron, .l-footer #block-block-13 .jumbotron, .l-footer #block-block-14 .jumbotron,
-      .container-fluid .jumbotron {
+      .container .jumbotron,
+      .container-fluid .jumbotron, #block-system-main-menu .jumbotron, #block-system-user-menu .jumbotron, #block-menu-menu-secondary-nav-bar .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -4970,7 +5209,7 @@ button.list-group-item-danger {
 .embed-responsive-4by3 {
   padding-bottom: 75%; }
 
-.well {
+.well, .page-node-add-portfolio #edit-field-images .image-widget-data {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -4978,7 +5217,7 @@ button.list-group-item-danger {
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .well blockquote {
+  .well blockquote, .page-node-add-portfolio #edit-field-images .image-widget-data blockquote {
     border-color: #ddd;
     border-color: rgba(0, 0, 0, 0.15); }
 
@@ -5099,10 +5338,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn {
+  .modal-footer .btn + .btn, .modal-footer .page-node-add-portfolio #edit-field-images .form-submit + .btn, .page-node-add-portfolio #edit-field-images .modal-footer .form-submit + .btn, .modal-footer .page-node-add-portfolio #edit-field-images .ajax-processed + .btn, .page-node-add-portfolio #edit-field-images .modal-footer .ajax-processed + .btn, .modal-footer .page-node-add-portfolio #edit-actions #edit-submit + .btn, .page-node-add-portfolio #edit-actions .modal-footer #edit-submit + .btn, .modal-footer .page-node-add-portfolio #edit-actions #edit-preview + .btn, .page-node-add-portfolio #edit-actions .modal-footer #edit-preview + .btn, .modal-footer .page-node-add-portfolio #edit-field-images .btn + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn + .form-submit, .modal-footer .page-node-add-portfolio #edit-field-images .form-submit + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .form-submit + .form-submit, .modal-footer .page-node-add-portfolio #edit-field-images .ajax-processed + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .ajax-processed + .form-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .form-submit, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .form-submit, .page-node-add-portfolio #edit-actions .modal-footer #edit-field-images #edit-submit + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer #edit-submit + .form-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .form-submit, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .form-submit, .page-node-add-portfolio #edit-actions .modal-footer #edit-field-images #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer #edit-preview + .form-submit, .modal-footer .page-node-add-portfolio #edit-field-images .btn + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .btn + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-field-images .form-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .form-submit + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-field-images .ajax-processed + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .ajax-processed + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-actions .modal-footer #edit-field-images #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer #edit-submit + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-actions .modal-footer #edit-field-images #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer #edit-preview + .ajax-processed, .modal-footer .page-node-add-portfolio #edit-actions .btn + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn + #edit-submit, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-submit, .page-node-add-portfolio #edit-field-images .modal-footer #edit-actions .form-submit + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .form-submit + #edit-submit, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-field-images .modal-footer #edit-actions .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .ajax-processed + #edit-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-submit + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer #edit-submit + #edit-submit, .modal-footer .page-node-add-portfolio #edit-actions #edit-preview + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer #edit-preview + #edit-submit, .modal-footer .page-node-add-portfolio #edit-actions .btn + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer .btn + #edit-preview, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-preview, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-preview, .page-node-add-portfolio #edit-field-images .modal-footer #edit-actions .form-submit + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .form-submit + #edit-preview, .modal-footer .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-preview, .modal-footer .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-field-images .modal-footer #edit-actions .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .ajax-processed + #edit-preview, .modal-footer .page-node-add-portfolio #edit-actions #edit-submit + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer #edit-submit + #edit-preview, .modal-footer .page-node-add-portfolio #edit-actions #edit-preview + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer #edit-preview + #edit-preview {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn {
+  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .btn, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .form-submit + .btn, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .btn, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .ajax-processed + .btn, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-submit + .btn, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-submit + .btn, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-preview + .btn, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-preview + .btn, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .btn + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .btn + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .form-submit + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .form-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .ajax-processed + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .form-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-field-images #edit-submit + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer .btn-group #edit-submit + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .form-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-field-images #edit-preview + .form-submit, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer .btn-group #edit-preview + .form-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .btn + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .btn + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .form-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .form-submit + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images .ajax-processed + .ajax-processed, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group .ajax-processed + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-submit + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-field-images #edit-submit + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer .btn-group #edit-submit + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images #edit-preview + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-field-images #edit-preview + .ajax-processed, .page-node-add-portfolio #edit-field-images #edit-actions .modal-footer .btn-group #edit-preview + .ajax-processed, .modal-footer .btn-group .page-node-add-portfolio #edit-actions .btn + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn-group .btn + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group #edit-actions .form-submit + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .btn-group .form-submit + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group #edit-actions .ajax-processed + #edit-submit, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .btn-group .ajax-processed + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-submit + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-submit + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-preview + #edit-submit, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-preview + #edit-submit, .modal-footer .btn-group .page-node-add-portfolio #edit-actions .btn + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer .btn-group .btn + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .form-submit + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .form-submit + #edit-preview, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group #edit-actions .form-submit + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .btn-group .form-submit + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-field-images #edit-actions .ajax-processed + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-field-images .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-field-images .modal-footer .btn-group #edit-actions .ajax-processed + #edit-preview, .page-node-add-portfolio #edit-actions #edit-field-images .modal-footer .btn-group .ajax-processed + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-submit + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-submit + #edit-preview, .modal-footer .btn-group .page-node-add-portfolio #edit-actions #edit-preview + #edit-preview, .page-node-add-portfolio #edit-actions .modal-footer .btn-group #edit-preview + #edit-preview {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5512,7 +5751,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn {
+  .carousel-caption .btn, .carousel-caption .page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images .carousel-caption .form-submit, .carousel-caption .page-node-add-portfolio #edit-field-images .ajax-processed, .page-node-add-portfolio #edit-field-images .carousel-caption .ajax-processed, .carousel-caption .page-node-add-portfolio #edit-actions #edit-submit, .page-node-add-portfolio #edit-actions .carousel-caption #edit-submit, .carousel-caption .page-node-add-portfolio #edit-actions #edit-preview, .page-node-add-portfolio #edit-actions .carousel-caption #edit-preview {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -5762,21 +6001,21 @@ body {
   position: fixed;
   background-color: #FFBF28; }
   #block-system-main-menu #tapLogo {
-    background: url("images/tapLogoBeta.png") no-repeat;
-    background-color: white;
-    width: 70px;
-    /* you can use % */
+    background: url("images/Logo_white.png") no-repeat;
     margin-left: 10px;
-    background-size: 100% 100%; }
+    height: 48px;
+    background-size: 80% 80%;
+    background-position: 90% 60%;
+    width: 120px; }
   #block-system-main-menu #collapseButtonCustom {
-    background: url("images/tapLogoBeta.png") no-repeat;
-    background-color: white; }
+    height: 30px;
+    background-color: #6d2c54;
+    width: 30px; }
   #block-system-main-menu ul {
-    margin-right: 1%;
+    font-weight: bold;
+    margin-right: 5%;
     text-color: #333333;
     display: nowrap; }
-    #block-system-main-menu ul li {
-      border-right: 1px solid white; }
     #block-system-main-menu ul li a:visited {
       background-color: #cc9920; }
     #block-system-main-menu ul li a:active {
@@ -5786,7 +6025,7 @@ body {
       #block-system-main-menu ul li a:active:hover {
         background-color: #cc9920; }
 
-.nav.navbar-nav.navbar-right li a, #block-system-main-menu ul li a {
+.nav.navbar-nav.navbar-right li a, #block-system-main-menu ul li a, #block-system-user-menu .menu li a, #block-menu-menu-secondary-nav-bar .menu li a, .page-user-edit .navbar-nav.navbar-right.tabs li a {
   color: #000000;
   display: nowrap; }
 
@@ -5800,6 +6039,45 @@ body {
 nav .block__title {
   display: none; }
 
+#block-system-user-menu {
+  border-bottom: 2px solid #FFBF28;
+  background-color: white;
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  #block-system-user-menu .menu {
+    margin-right: 5%;
+    text-color: #333333;
+    display: nowrap;
+    font-weight: bold; }
+  #block-system-user-menu a:link {
+    color: #000000; }
+  #block-system-user-menu a:visited {
+    color: #000000; }
+  #block-system-user-menu a:hover {
+    color: #000000; }
+  #block-system-user-menu a:active {
+    color: #000000; }
+
+#block-menu-menu-secondary-nav-bar {
+  border-bottom: 1px solid #FFBF28;
+  background-color: white;
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  #block-menu-menu-secondary-nav-bar .menu {
+    margin-right: 1%;
+    text-color: #333333;
+    display: nowrap; }
+  #block-menu-menu-secondary-nav-bar a:link {
+    color: #000000; }
+  #block-menu-menu-secondary-nav-bar a:visited {
+    color: #000000; }
+  #block-menu-menu-secondary-nav-bar a:hover {
+    color: #000000; }
+  #block-menu-menu-secondary-nav-bar a:active {
+    color: #000000; }
+
 html, body {
   height: 100%; }
 
@@ -5808,17 +6086,172 @@ html, body {
   position: relative; }
 
 .l-main {
-  padding-bottom: 400px; }
+  padding-bottom: 300px; }
 
 .l-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 300px;
-  background: lightgray; }
+  height: 280px;
+  background: #6d2c54;
+  color: white;
+  white-space: nowrap;
+  overflow: auto;
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  .l-footer #block-block-4 {
+    float: left;
+    text-align: left;
+    padding-top: 25px;
+    padding-left: 10%; }
+  .l-footer #block-block-14 {
+    float: left;
+    text-align: left;
+    padding-top: 25px;
+    padding-left: 50px; }
+  .l-footer a:link {
+    color: white; }
+  .l-footer a:visited {
+    color: white; }
+  .l-footer a:hover {
+    color: white; }
+  .l-footer a:active {
+    color: white; }
   .l-footer p {
     margin: 0;
     padding: 5px; }
+
+.page-node-add-portfolio #newPortfolio_titleDiv {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* establish flex container */
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* center items vertically, in this case */
+  border-bottom: 2px solid #FFBF28; }
+  .page-node-add-portfolio #newPortfolio_titleDiv h1 {
+    font-weight: bold; }
+  .page-node-add-portfolio #newPortfolio_titleDiv #newPortfolio_Logo {
+    background: url("images/CreativeProcess/CreateAPortfolio.png") no-repeat;
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%; }
+
+.page-node-add-portfolio #newPortfolio_gutterDiv {
+  width: 60%;
+  margin: 0 auto; }
+
+.page-node-add-portfolio .fieldset-description, .page-node-add-portfolio .description {
+  font-size: 16px;
+  color: #a3a3a3;
+  margin-bottom: 10px; }
+
+.page-node-add-portfolio #edit-field-images .image-widget-data {
+  margin-bottom: 15px; }
+
+.page-node-add-portfolio #edit-field-images legend {
+  border-bottom: 0px solid #e5e5e5;
+  margin-bottom: 3px; }
+  .page-node-add-portfolio #edit-field-images legend span {
+    font-weight: bold;
+    font-size: 18px; }
+
+.page-node-add-portfolio #edit-field-images .form-submit, .page-node-add-portfolio #edit-field-images .ajax-processed {
+  margin-top: 10px;
+  background: #FFBF28;
+  color: #000000; }
+
+.page-node-add-portfolio #edit-field-images label {
+  display: none !important; }
+
+.page-node-add-portfolio #edit-field-images .description {
+  display: none !important; }
+
+.page-node-add-portfolio #edit-field-images .tabledrag-toggle-weight {
+  display: none !important; }
+
+.page-node-add-portfolio #edit-field-images table {
+  margin-top: 30px;
+  margin-bottom: 20px; }
+  .page-node-add-portfolio #edit-field-images table th, .page-node-add-portfolio #edit-field-images table td {
+    padding-left: 10px;
+    padding-right: 10px; }
+
+.page-node-add-portfolio .image-widget-data, .page-node-add-portfolio #edit-field-portfolio-project-skills, .page-node-add-portfolio #edit-field-images, .page-node-add-portfolio #edit-body, .page-node-add-portfolio .form-item-title, .page-node-add-portfolio .messages--error {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.page-node-add-portfolio .image-widget-data {
+  margin-top: 15px;
+  margin-bottom: 0px; }
+
+.page-node-add-portfolio .messages--error {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 16px; }
+
+.page-node-add-portfolio label {
+  font-size: 18px; }
+
+.page-node-add-portfolio .tips {
+  display: none !important; }
+
+.page-node-add-portfolio #edit-field-portfolio-project-skills input[type=checkbox] {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  margin-right: 5px;
+  margin-top: -4px; }
+
+.page-node-add-portfolio #edit-field-portfolio-project-skills .description {
+  margin-left: 0px; }
+
+.page-node-add-portfolio #edit-field-portfolio-project-skills .projectSkillListRow .option {
+  font-size: 16px;
+  color: #a3a3a3; }
+
+.page-node-add-portfolio #edit-actions {
+  border-top: 2px solid #FFBF28;
+  margin-bottom: 5px;
+  padding-top: 15px; }
+  .page-node-add-portfolio #edit-actions #edit-submit {
+    background: #FFBF28;
+    color: #000000; }
+  .page-node-add-portfolio #edit-actions #edit-preview {
+    background: #FFBF28;
+    margin-left: 5px;
+    color: #000000; }
+
+.page-user-edit h1 {
+  font-weight: bold; }
+
+.page-user-edit label {
+  font-size: 18px; }
+
+.page-user-edit input[type=checkbox] {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  margin-right: 5px;
+  margin-top: -4px; }
+
+.page-user-edit .tabs {
+  font-size: 18px; }
+
+.page-user-edit #block-block-7, .page-user-edit #block-block-10 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px; }
+
+.page-user-edit #block-block-8 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 18px; }
+
+.page-user-edit #user-profile-form {
+  width: 60%; }
 
 .views-label-field-first-name, .views-label-field-name, .views-label-field-add, #passwordField, #paymentDetailField {
   font-size: 1.4em;

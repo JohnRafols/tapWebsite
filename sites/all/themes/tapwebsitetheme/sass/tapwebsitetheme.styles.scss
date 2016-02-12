@@ -13,6 +13,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
+$secondaryColor: #6d2c54;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -37,20 +38,22 @@ $grey : #CCCCCC;
     #block-system-main-menu{       
         @extend .navbar;
         @extend .navbar-fixed-top;
-        position: fixed;
-
+        @extend .container-fluid;
+        position: fixed;       
         #tapLogo{
-            background: url('images/tapLogoBeta.png') no-repeat;
-            background-color: white;
-            width:70px; /* you can use % */
+            background: url('images/Logo_white.png') no-repeat;
             margin-left: 10px;
-            background-size: 100% 100%;
+            height: 48px;
+            background-size: 80% 80%;
+            background-position: 90% 60%;
+            width: 120px;             
+         }
+        #collapseButtonCustom{
+            height: 30px;
+            background-color: $secondaryColor;
+            width: 30px;   
          }
 
-         #collapseButtonCustom{
-            background: url('images/tapLogoBeta.png') no-repeat;
-            background-color: white;
-         }
 
         background-color: $mainColor;
         ul {
@@ -58,11 +61,13 @@ $grey : #CCCCCC;
             @extend .navbar-nav;
             @extend .navbar-right;
 
-            margin-right: 1%;
+            font-weight: bold;
+            margin-right: 5%;
             text-color: $text-color;
             display: nowrap;
             li{
-                border-right: 1px solid white;
+                //border-right: 1px solid white;
+                //padding-right: 5%;
             }
             li a{
                 &:link {
@@ -86,11 +91,18 @@ $grey : #CCCCCC;
       
     }
 
-     .nav.navbar-nav.navbar-right li a {
+    .nav.navbar-nav.navbar-right li a {
         color: $textColor;
         display: nowrap;
     }
-    
+      
+    //This code is for the navbar when you collapse the browser
+    .navbar-nav > li > a, 
+    #block-system-main-menu ul > li > a, 
+    #block-system-user-menu .menu > li > a{
+        //text-align: right;
+    }
+
     .navbar-fixed-top {
         position: fixed;
         top: 0;
@@ -101,6 +113,77 @@ $grey : #CCCCCC;
 
     nav .block__title{
         display: none;
+    }
+
+    //This is the secondary main menu that appears.
+     #block-system-user-menu{
+        @extend .navbar;
+        @extend .container-fluid;
+        border-bottom: 2px solid $mainColor; 
+        .menu{
+            @extend .nav;
+            @extend .navbar-nav;
+            @extend .navbar-right;
+            margin-right: 5%;
+            text-color: $text-color;
+            display: nowrap;
+            font-weight: bold;
+        }
+        //height: 50px;
+        background-color: white;
+        a:link {
+            color: $textColor ;
+        }
+
+        /* visited link */
+        a:visited {
+            color: $textColor ;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: $textColor ;
+        }
+
+        /* selected link */
+        a:active {
+            color: $textColor ;
+        }
+    }
+
+	//This is the secondary main menu that appears.
+     #block-menu-menu-secondary-nav-bar{
+        @extend .navbar;
+        @extend .container-fluid;
+        border-bottom: 1px solid $mainColor; 
+        .menu{
+            @extend .nav;
+            @extend .navbar-nav;
+            @extend .navbar-right;
+            margin-right: 1%;
+            text-color: $text-color;
+            display: nowrap;
+        }
+        //height: 50px;
+        background-color: white;
+        a:link {
+            color: $textColor ;
+        }
+
+        /* visited link */
+        a:visited {
+            color: $textColor ;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: $textColor ;
+        }
+
+        /* selected link */
+        a:active {
+            color: $textColor ;
+        }
     }
 
 //Stick Footer
@@ -117,18 +200,57 @@ html, body {
 }
 
 .l-main {
-  padding-bottom: 400px;
+  //It's slighty larger than the footer size to have a little padding between content and the footer
+  padding-bottom: 300px;
 }
 
 .l-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 300px;
-  #block-block-4, #block-block-11, #block-block-12, #block-block-13, #block-block-14{
-        @extend .container;
-  }    
-  background: lightgray;
+  height: 280px;
+  background: $secondaryColor;
+  color: white;
+  //This is Styling for the actual content of the footer
+  //text-align: center;
+  white-space: nowrap;
+  overflow: auto;
+  //The Links in the footer
+   #block-block-4{ 
+    float: left;
+    text-align: left;
+    padding-top: 25px;
+    padding-left: 10%;
+  }
+  //This block contains lines of text giving descriptions
+  #block-block-14{
+    float: left;
+    text-align: left;
+    padding-top: 25px;
+    padding-left: 50px;
+
+  }  
+  //This is styling for the hyperlinks  
+  /* unvisited link */
+      a:link {
+          color: white;
+      }
+
+      /* visited link */
+      a:visited {
+          color: white;
+      }
+
+      /* mouse over link */
+      a:hover {
+          color: white;
+      }
+
+      /* selected link */
+      a:active {
+          color: white;
+      }
+
   p{
     margin:0;
             padding:5px;      
@@ -137,31 +259,203 @@ html, body {
 
 
 
-// .l-content{
-//     //@extend .container;
-//     h1{
-//         display:hidden;
-//         //font-size: 12px;
-//     }
-// }
+//This is Styling for the new Portfolio form
+.page-node-add-portfolio{
+  //Header stuff
+  #newPortfolio_titleDiv{
+    display: flex;           /* establish flex container */
+    align-items: center;     /* center items vertically, in this case */
+    border-bottom: 2px solid $mainColor; 
+    h1{
+      font-weight: bold;
+    }
+    #newPortfolio_Logo{
+        background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
+        width: 100px;
+        height: 100px;
+        background-size: 100% 100%;
+    }
+  }
+
+  //The gutter surrounding the form
+  #newPortfolio_gutterDiv{
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  //Description Fields
+  .fieldset-description, .description{
+    font-size: 16px;
+    color: $grey*0.8;
+    margin-bottom: 10px;
+  }
+
+  //The Upload Image section
+  #edit-field-images{
+    .image-widget-data{
+      @extend .well;
+      margin-bottom: 15px;
+      //margin-left: 15px;
+      //border: 2px solid $mainColor; 
+    }
+    legend{
+      border-bottom: 0px solid #e5e5e5;
+      margin-bottom: 3px;
+      span{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .form-submit, .ajax-processed{
+      @extend .btn;
+      margin-top: 10px;
+      background: $mainColor;
+      color: $textColor;
+    }
+    //There's stuff that needs to be invisible.
+    //It shouldn't be dangerous if it was seen
+    label{
+      display: none !important;
+    }
+    .description{
+      display: none !important;
+    }
+    .tabledrag-toggle-weight{
+      display: none !important;
+    }
+    //Styling for the Image table
+    table{
+      margin-top: 30px;
+      margin-bottom: 20px;
+      th,td{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  // Margin stuff
+  .image-widget-data, #edit-field-portfolio-project-skills, #edit-field-images, #edit-body, .form-item-title, .messages--error{
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .image-widget-data{
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .messages--error{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  #edit-field-portfolio-project-skills{
+    //margin-top: -25px;
+  }
+
+  //All labels on the form
+  label{
+    font-size: 18px;
+  }
+  //Hide the tips
+  .tips{
+    display: none !important;
+  }
+
+  //The Skill List section:
+  #edit-field-portfolio-project-skills{
+    //Checkbox size
+    input[type=checkbox] {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      margin-right: 5px;
+      margin-top: -4px;
+    }
+    .description{
+      margin-left: 0px;
+    }
+    .projectSkillListRow{
+      //margin: 0 auto;
+      .option{
+        font-size: 16px;
+        color: $grey*0.8;
+      }
+    }
+
+  }
+
+  //The Submit Buttons 
+    #edit-actions{
+      border-top: 2px solid $mainColor; 
+      margin-bottom: 5px;
+      padding-top: 15px;
+        #edit-submit{
+          @extend .btn;
+          background: $mainColor;
+          color: $textColor;
+        }
+        #edit-preview{
+          @extend .btn;
+          background: $mainColor;
+          margin-left: 5px;
+          color: $textColor;
+        }
+    } 
+}
+
+
+
+//This is styling for when users edit their profile
+.page-user-edit{
+  h1{
+    font-weight: bold;
+  }
+  label{
+    font-size: 18px;
+  }
+  input[type=checkbox] {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      margin-right: 5px;
+      margin-top: -4px;
+    }
+  .tabs{
+    @extend .nav;
+    @extend .nav-tabs;
+    font-size: 18px;
+  }
+  //These are the blocks of text before and after the form
+  #block-block-7, #block-block-10{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  #block-block-8{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  //this is the width of the form itself
+  #user-profile-form{
+    width: 60%;
+  }
+  .form-wrapper{
+     // margin-top: 25px;
+     // margin-bottom: 25px;
+     // @extend .well;
+  }
+
+  //Stuff to hide:
+  .tabledrag-toggle-weight-wrapper, .fieldset-legend{
+    //display: none !important;
+  }
+}
 
 
 
 
 
 
-
-// //View and Edit tabs on my-account page.
-// .tabs--primary{
-//     display: none;
-//     li{
-//         display: none;
-//         a{
-//             display: none;
-//         }
-//     }
-
-// }
 
 .views-label-field-first-name, .views-label-field-name, .views-label-field-add, #passwordField,#paymentDetailField{
     font-size: 1.4em;
