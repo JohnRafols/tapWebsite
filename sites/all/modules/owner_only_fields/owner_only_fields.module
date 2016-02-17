@@ -1,24 +1,12 @@
 <?php 
 
+
 function owner_only_fields_help($path, $arg) {
 	switch ($path) {
 		case "admin/help#owner_only_fields":
 			return '<p>' . t("Lets only the profile owner see his/her personal fields.") . '</p>';
 		break;
 	}
-}
-
-function owner_only_fields_views_pre_render(&$view){
-
-	global $user;
-
-	if($view->name == "account"){
-
- 	}else if($view->name=="picture_header"){
- 		//then add some fields		
- 	}else if($view->name=="portfolio_header"){
-
- 	}	
 }
 
 
@@ -41,67 +29,33 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 			'#limit_validation_errors' => array(),
 		);	
 	
-		//Position "Cancel Account" button under "Save" button.
-		if(arg(3)==null){
-			//Cancel account button.
-			$cancel=$form['actions']['cancel'];
-			unset($form['actions']['cancel']);
-			$cancel['#weight']=1000;
-			$cancel['#attributes'] = array('class' => array('btn', 'btn-danger'));
-			$form['cancel']=$cancel;
-		}
-
 		
 	}else if($form_id=='user_login'){
-		file_put_contents('C:\Users\pc\Desktop\form_alter_user_login.txt', print_r($form, TRUE));	
 		$form['name']['#title']='E-mail';
 		$form['name']['#description']='Enter your e-mail.';
-	}else if($form_id=='portfolio_node_form'){
-		file_put_contents('C:\Users\pc\Desktop\form_alter_portfolio_node_form.txt', print_r($form, TRUE));	
 
-		//Change field labels
-		$form['field_images']['und']['#title']='Add Images and Videos';
-		$form['field_images']['und']['#file_upload_description']='<br>Only upload high quality images and videos of your work.<br> Individual images must be maximum <b>5MB, 32 megapixels, minimum 72dpi</b>.<br>
-			First image you upload will be your cover image for this Project.<br><br>';
-		$form['field_images']['und']['#file_upload_title']='Images';
-		$form['field_portfolio_project_skills']['und']['#title']='What skills did you use here? Tick all that apply.<br>
-		This is how we match you to Client\'s Projects.';
-		
-		//Change page title
-		
-	}else if($form_id=='user_register_form'){
-		// if(strcmp(current_path(), 'client/register')==0){
-		// 	$extra='We keep your personal information private and guarantee top quality and timely services or your money back<br>';
-		// }else if(strcmp(current_path(), 'freelancer/register')==0){
-
-		// }
-		// if(isset($extra)){
-		// 	$form['legal']['legal_accept']['#title']=$extra.$form['legal']['legal_accept']['#title'];
-		// }
 	}else if($form_id=='job_node_form'){
-		hide($form['field_initial_candidates']);
-		//hide($form['field_available_candidates']);
-		hide($form['field_final_candidate']);
+		// hide($form['field_initial_candidates']);
+		// hide($form['field_available_candidates']);
+		// hide($form['field_final_candidate']);
 	}
 
 
-	
 	//Add "Cancel changes" to node edit form.
 	if(array_key_exists('node', $form_state)){
 		$node = $form_state['node'];
 		if (!isset($node->nid) || isset($node->is_new)) {
 		// This is a new node.
-		}
-		else {
+		}else {
 			// This is not a new node.
 			$form['actions']['cancel_changes'] = array(
-			'#type' => 'submit',
-			'#value' => t('Cancel Changes'),
-			'#access' => TRUE,
-			'#weight' => 10,
-			'#submit' => array('node_edit_cancel', 'node_form_submit_build_node'),
-			'#limit_validation_errors' => array(),
-		);	
+				'#type' => 'submit',
+				'#value' => t('Cancel Changes'),
+				'#access' => TRUE,
+				'#weight' => 10,
+				'#submit' => array('node_edit_cancel', 'node_form_submit_build_node'),
+				'#limit_validation_errors' => array(),
+			);	
 		}
 	}
 	
@@ -147,7 +101,6 @@ function user_edit_cancel($form, &$form_state) {
 	}
 
 	drupal_goto($url);
-	// drupal_set_message("Changes cancelled", 'status');
 }
 
 function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
@@ -157,11 +110,8 @@ function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){
 		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
 		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
 		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
-		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;
-		//$form['profile_freelancer']['field_add']['und']['0']['locality_block']['dependent_locality']['#access'] = FALSE;
-		
-	}
-	
+		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
+	}	
 }
 
 
@@ -197,25 +147,202 @@ function owner_only_fields_preprocess_page(&$vars, $hook) {
 			$vars['title']=t('Create Project'); 
 		}
 	}
-
-
-}
-
-
-function owner_only_fields_node_validate($node, $form, &$form_state){
-	file_put_contents('C:\Users\pc\Desktop\validate.txt', print_r($node, TRUE));
-	if($node->type=='job'){
-		file_put_contents('C:\Users\pc\Desktop\validate_form.txt', print_r($form, TRUE));		
-		// form_set_error("name", 'wrong');	
-	}
 }
 
 function owner_only_fields_node_presave($node){
 	file_put_contents('C:\Users\pc\Desktop\node_presave.txt', print_r($node, TRUE));	
 	if($node->type=='job'){
-		file_put_contents('C:\Users\pc\Desktop\count.txt', print_r(count($node->field_available_candidates['und']), TRUE));	
-		$data =array();
-		$data['target_id']=39;	
-		array_push($node->field_available_candidates['und'], $data);
+		// file_put_contents('C:\Users\pc\Desktop\count.txt', print_r(count($node->field_available_candidates['und']), TRUE));	
+		// $data =array();
+		// $data['target_id']=39;	
+		// array_push($node->field_available_candidates['und'], $data);
+		file_put_contents('C:\Users\pc\Desktop\node_insert.txt', print_r($node, TRUE));
+		if($node->field_freelancer_selection_proce['und'][0]['value']=='Commission'){	
+			//load user with the given id.
+			$u=user_load($node->field_initial_candidates['und'][0]['target_id']);
+			//Email the freelancer.
+			$params['account'] = $u;
+		}else if($node->field_freelancer_selection_proce['und'][0]['value']=='Automatic match'){
+
+			$topFreelancers=getAutomaticMatchedFreelancers($node);
+			file_put_contents('C:\Users\pc\Desktop\topFreelancers.txt', print_r($topFreelancers, TRUE));
+			addInitialFreelancersToJob($topFreelancers, $node);
+			emailFreelancers($topFreelancers);
+		}
 	}
 }
+
+function owner_only_fields_node_insert($node){
+	// file_put_contents('C:\Users\pc\Desktop\node_insert.txt', print_r($node, TRUE));
+	// if($node->field_freelancer_selection_proce['und'][0]['value']=='Commission'){	
+	// 	//load user with the given id.
+	// 	$u=user_load($node->field_initial_candidates['und'][0]['target_id']);
+	// 	//Email the freelancer.
+	// 	$params['account'] = $u;
+	// }else if($node->field_freelancer_selection_proce['und'][0]['value']=='Automatic match'){
+
+	// 	$topFreelancers=getAutomaticMatchedFreelancers($node);
+	// 	file_put_contents('C:\Users\pc\Desktop\topFreelancers.txt', print_r($topFreelancers, TRUE));
+	// 	addInitialFreelancersToJob($topFreelancers, $node);
+	// 	emailFreelancers($topFreelancers);
+	// }
+}
+
+
+function owner_only_fields_mail($key, &$message, $params) {
+    $data['user'] = $params['account'];
+    $options['language'] = $message['language'];
+    user_mail_tokens($variables, $data, $options);
+    switch($key) {
+      case 'notice':
+        $langcode = $message['language']->language;
+        $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
+        $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
+        break;
+    }
+}
+
+
+
+function emailFreelancers($freelancers){
+	// drupal_mail('owner_only_fields', 'notice', $u->mail, user_preferred_language($u), $params);
+}
+
+function addInitialFreelancersToJob($freelancers, $job){
+
+	file_put_contents('C:\Users\pc\Desktop\addFreelancers.txt', print_r($freelancers, TRUE));
+	$data =array();
+	foreach($freelancers as $f){
+		$data['target_id']=$f->uid;	
+		array_push($job->field_initial_candidates['und'], $data);		
+		file_put_contents('C:\Users\pc\Desktop\pushed.txt', print_r($job, TRUE));
+	}
+}
+
+
+function sortTopFreelancersByScore(&$comments, $props)
+{
+    usort($comments, function($a, $b) use ($props) {
+        if($a->$props[0] == $b->$props[0])
+            return $a->$props[1] < $b->$props[1] ? 1 : -1;
+        return $a->$props[0] < $b->$props[0] ? 1 : -1;
+    });
+}
+
+// -----------Pseudo code for Matching candidates to jobs based on their skillset----------------//
+// 1.Get the service type (X) of the job.
+// 2.Get all freelancers.
+// 3.For each freelancer f, get a count:
+// 		jobs tagged X.
+//		projects tagged X. 		
+// 4.Maintain a collection of top freelancers i.e. highest score (jobCount+projectCount)
+// 5.Return top freelancers.
+// ----------------------------------END--------------------------------------------------------//
+function getAutomaticMatchedFreelancers($node){
+	// 1.Get service type X.
+	if($skill=$node->field_service_type['und']!=null){
+		$skill=$node->field_service_type['und'][0]['tid'];
+	}
+
+	// 2.Get all Freelancers.
+	$query = new EntityFieldQuery;
+	$query
+		->entityCondition('entity_type', 'user')
+		->addTag('role_filter');
+	$results = $query->execute();
+
+	$results=$results['user'];
+
+
+	define('TOP_THRESHOLD_COUNT', 10);
+	$topFreelancers=array(); //User objects with jobCountWithSkill property.
+
+	foreach($results as $freelancer){
+		$freelancerid=$freelancer->uid;
+
+		// 3a.Get a count of jobs that have skill X.
+		$jobCount=db_query(
+			'SELECT COUNT(nid) FROM {node} AS n ' .
+			'JOIN {field_data_field_service_type} AS s ' .
+			'ON s.entity_id = n.nid AND s.entity_type = :node ' .
+			'WHERE n.uid = :uid AND n.type = :type AND s.field_service_type_tid = :tid',
+			array(
+				':node' => 'node',
+				':uid' => $freelancerid,
+				':type' => 'job',
+				':tid' => $skill,
+			)
+		)->fetchField();
+
+		// 3b.Get a count of projects that have skill X.
+		$projectCount=db_query(
+			'SELECT COUNT(nid) FROM {node} AS n ' .
+			'JOIN {field_data_field_portfolio_project_skills} AS s ' .
+			'ON s.entity_id = n.nid AND s.entity_type = :node ' .
+			'WHERE n.uid = :uid AND n.type = :type AND s.field_portfolio_project_skills_tid = :tid',
+			array(
+				':node' => 'node',
+				':uid' => $freelancerid,
+				':type' => 'portfolio',
+				':tid' => $skill,
+			)
+		)->fetchField();
+
+		//Score calculated for a freelancer, the higher the better.
+		$score = $jobCount*3 + $projectCount;
+
+		//Asigning the score to the User object.
+		$u=user_load($freelancerid);
+		$u->score=$score;
+
+
+		//4.Maintain a collection of top freelancers.
+		//Already have top freelancers, now find if the current freelancer is stronger that the weakest in topFreelancers.
+		if(count($topFreelancers)>=TOP_THRESHOLD_COUNT){ 
+			//Find weakest.
+			$minScore=PHP_INT_MAX;
+			$weakest;
+			foreach($topFreelancers as $f){
+				if($f->score<$minScore){
+					$minScore=$f->score;
+					$weakest=$f;
+				}
+			}
+
+			//Replace only if the current freelancer is stronger than the weakest in topFreelancers.
+			if($u->score>$minScore){
+				//Remove weakest.
+				if(($key = array_search($weakest, $topFreelancers)) !== false) {
+				   unset($messages[$key]);
+				}		
+
+				//Add the stronger freelancer.
+				array_push($topFreelancers, $u);
+			}
+		}else{
+			//Simply add if topFreelancers is not yet filled.
+			array_push($topFreelancers, $u);
+		}
+	}
+	
+	return $topFreelancers;
+}
+
+
+/**
+* Implement hook_query_TAG_alter
+* Called in getAutomaticMatchedFreelancers()
+*
+* @param QueryAlterableInterface $query
+*/
+function owner_only_fields_query_role_filter_alter(QueryAlterableInterface $query){
+	$query->leftJoin('users_roles', 'r', 'users.uid = r.uid');
+	$and = db_and()
+	->condition('r.rid', array_search('Freelancer', user_roles()), '=');
+	$query
+	->condition($and);
+}
+
+
+?>
+
