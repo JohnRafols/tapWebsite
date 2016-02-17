@@ -116,10 +116,10 @@ $grey : #CCCCCC;
     }
 
     //This is the secondary main menu that appears.
-     #block-system-user-menu{
+     #block-menu-menu-secondary-nav-bar, #block-system-user-menu{
         @extend .navbar;
         @extend .container-fluid;
-        border-bottom: 2px solid $mainColor; 
+        border-bottom: 1.5px solid $mainColor; 
         .menu{
             @extend .nav;
             @extend .navbar-nav;
@@ -151,40 +151,6 @@ $grey : #CCCCCC;
         }
     }
 
-	//This is the secondary main menu that appears.
-     #block-menu-menu-secondary-nav-bar{
-        @extend .navbar;
-        @extend .container-fluid;
-        border-bottom: 1px solid $mainColor; 
-        .menu{
-            @extend .nav;
-            @extend .navbar-nav;
-            @extend .navbar-right;
-            margin-right: 1%;
-            text-color: $text-color;
-            display: nowrap;
-        }
-        //height: 50px;
-        background-color: white;
-        a:link {
-            color: $textColor ;
-        }
-
-        /* visited link */
-        a:visited {
-            color: $textColor ;
-        }
-
-        /* mouse over link */
-        a:hover {
-            color: $textColor ;
-        }
-
-        /* selected link */
-        a:active {
-            color: $textColor ;
-        }
-    }
 
 //Stick Footer
 // A "normal" sticky footer fix will not work. 
@@ -201,38 +167,75 @@ html, body {
 
 .l-main {
   //It's slighty larger than the footer size to have a little padding between content and the footer
-  padding-bottom: 300px;
+  padding-bottom: 230px;
 }
 
 .l-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 280px;
+  height: 220px;
   background: $secondaryColor;
   color: white;
-  //This is Styling for the actual content of the footer
-  //text-align: center;
+  font-size: 0px;
+  
+
+  //In the curent version of the footer, it is not dynamic for now...
   white-space: nowrap;
-  overflow: auto;
-  //The Links in the footer
-   #block-block-4{ 
-    float: left;
-    text-align: left;
-    padding-top: 25px;
-    padding-left: 10%;
+  
+  #block-block-4{ 
+    font-size: 16px;
+    height: 200px;
+    width: 20%;
+    display:inline-block; 
+    vertical-align: text-top;
+    margin-top: 0px;
+
+    padding-top: 30px;
+    padding-left: 60px;
+
   }
   //This block contains lines of text giving descriptions
   #block-block-14{
-    float: left;
-    text-align: left;
-    padding-top: 25px;
-    padding-left: 50px;
+    font-size: 16px;
+    height: 200px;
+    width: 40%;
+    display:inline-block; 
+    vertical-align: text-top;
+    margin-top: 0px;
 
+    padding-left: 30px;
+    padding-top: 30px;
   }  
+  #block-block-16, #block-block-17{
+    font-size: 16px;
+    height: 200px;
+    width: 40%;
+    display:inline-block; 
+    text-align: right; 
+    vertical-align: text-top;
+    margin-top: 0px;
+
+    padding-right: 60px;
+    padding-top: 10px;
+  }
+
+  #security_Images{
+      display: inline;
+      list-style-type: none;
+      li{
+        list-style-type: none;
+        display: inline-block;
+      } 
+    }
+    img{
+      width: 50px;
+      height: 50px;
+    }
+
   //This is styling for the hyperlinks  
   /* unvisited link */
-      a:link {
+      a:link, a {
           color: white;
       }
 
@@ -251,21 +254,106 @@ html, body {
           color: white;
       }
 
-  p{
-    margin:0;
-            padding:5px;      
+}
+
+
+
+/* 
+___________________
+
+This is Styling for the MailChimp Popup that will show in all pages.
+
+___________________
+*/
+
+#emailSignUpModal{
+    .modalEmailSignUp_header{
+        background-color: $mainColor;
+        text-align: center;
+
+
+
+    }
+
+    .modalEmailSignUp_title{
+        background: url('images/TabBetaLogoUpdated.png') no-repeat;
+        height: 50px;
+        width: 95px;
+        margin: 0 auto;
+        background-size: 100% 100%;
+        text-align: center;
+    }
+
+    .modalEmailSignUp_body{
+        background: url('images/EmailSignUp.png') no-repeat;
+        .modalEmailSignUp_footer{
+            text-align: center;
+        }
+
+        height: 220px;
+        background-size: 100% 100%;
+        background-position: 90% 90%;
+    }
+
+    .modal-footer{
+        border-top: 0px !important;
+    }
+
+    //Button
+    #edit-submit{
+        @extend .btn;
+        //@extend .btn-lg;
+        margin-left: 2px;
+        margin-bottom: 3px;
+        background-color: $mainColor;
+        border: $mainColor * 0.80;
+        color: $text-color;
+            &:focus {
+                background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
+    }
+
+}
+
+
+#mailchimp-signup-subscribe-block-client-subscribe-form{
+  text-align: left;
+  margin-left: 25px;
+  label{
+    display: inline-block;
+    font-size: 16px;
+  }
+  #edit-mergevars-email, #edit-actions, .mailchimp-newsletter-mergefields{
+    display: inline-block
   }
 }
 
 
 
-//This is Styling for the new Portfolio form
-.page-node-add-portfolio{
+
+/* 
+___________________
+
+This is Styling for the new Portfolio form
+
+___________________
+*/
+
+
+
+
+
+.page-node-add-portfolio, .page-node-edit.node-type-portfolio{
   //Header stuff
   #newPortfolio_titleDiv{
     display: flex;           /* establish flex container */
     align-items: center;     /* center items vertically, in this case */
-    border-bottom: 2px solid $mainColor; 
+    border-bottom: 1.5px solid $mainColor; 
+    width: 90%;
+    margin: 0 auto;
     h1{
       font-weight: bold;
     }
@@ -386,31 +474,129 @@ html, body {
   //The Submit Buttons 
     #edit-actions{
       border-top: 2px solid $mainColor; 
-      margin-bottom: 5px;
-      padding-top: 15px;
+      padding-top: 30px;
+      margin-bottom: 60px;
         #edit-submit{
           @extend .btn;
           background: $mainColor;
           color: $textColor;
+            &:focus {
+            background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
         }
-        #edit-preview{
+        #edit-preview, #edit-cancel-changes{
           @extend .btn;
           background: $mainColor;
           margin-left: 5px;
           color: $textColor;
+            &:focus {
+            background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
         }
-    } 
+    }
+
 }
 
 
 
-//This is styling for when users edit their profile
+//There are some inconsistencies with width for some reason on the live site...
+.page-node-add-portfolio{
+  #newPortfolio_titleDiv{
+    width: 79%;
+  }
+  #newPortfolio_gutterDiv{
+    width: 52.5%;
+  }
+}
+
+//This is the edit Portfolio Page
+
+
+.page-node-edit.node-type-portfolio{
+  .tabs.tabs--primary{
+    display: none;
+  }
+  #edit-delete{
+    @extend .btn;
+    @extend .btn-danger;
+    float: right;
+    margin-left: 5px;
+    //color: $textColor;
+  }
+
+}
+
+
+/* 
+___________________
+
+  This is styling for any pages related to deleting.
+  For now, they're kept very simple styling for the new freelancer registration page:
+
+___________________
+*/
+
+
+.page-node-cancel, .page-node-delete, .page-user-cancel{
+  .l-main{
+    @extend .container;
+    //These are some default tabs made by drupal, not very aesthetic.
+    .tabs.tabs--primary{
+      display: none;
+    }
+    //All buttons on a delete page are red
+    form{
+        #edit-submit{
+          @extend .btn;
+          @extend .btn-danger;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 5px;
+        }
+        #edit-cancel{
+          @extend .btn;
+          background: $mainColor;
+          color: $textColor;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 5px;
+            &:focus {
+            background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
+
+        }
+    }
+  }
+}
+
+
+/* 
+___________________
+
+  This is styling for when users edit their profile
+
+___________________
+*/
+
+
 .page-user-edit{
+  .l-main{
+    width: 80%;
+  }
   h1{
     font-weight: bold;
   }
   label{
-    font-size: 18px;
+    font-size: 16px;
   }
   input[type=checkbox] {
       transform: scale(1.5);
@@ -421,39 +607,205 @@ html, body {
   .tabs{
     @extend .nav;
     @extend .nav-tabs;
-    font-size: 18px;
+    font-size: 16px;
   }
   //These are the blocks of text before and after the form
   #block-block-7, #block-block-10{
     margin-top: 30px;
     margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 16px;
   }
   #block-block-8{
     margin-top: 30px;
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 30px;
+    font-size: 16px;
   }
 
+  form{
+    margin-bottom: 30px;
+  }
   //this is the width of the form itself
   #user-profile-form{
     width: 60%;
-  }
-  .form-wrapper{
-     // margin-top: 25px;
-     // margin-bottom: 25px;
-     // @extend .well;
   }
 
   //Stuff to hide:
   .tabledrag-toggle-weight-wrapper, .fieldset-legend{
     //display: none !important;
   }
+  //Buttons
+  #edit-cancel{
+    @extend .btn;
+    @extend .btn-danger;
+    float: right;
+  }
+  #edit-cancel,#edit-submit, #edit-cancel-changes{
+     margin-top: 15px;
+  }
+  #edit-cancel-changes{
+     @extend .btn;
+     margin-left: 10px;
+     background: $mainColor;
+     color: $textColor;
+        &:focus {
+            background-color: ($mainColor * 1.20);
+        }
+        &:hover{
+             background-color: ($mainColor * 0.80);
+        }
+  }
+
+}
+
+
+
+/* 
+___________________
+
+  This is styling for the new freelancer registration page:
+
+___________________
+*/
+
+.page-freelancer-register{
+  h1{
+    font-weight: bold;
+  }
+  input[type=checkbox] {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      margin-right: 5px;
+      margin-top: -4px;
+  }
+  .tabs ,.tabs--primary ,.links--inline{
+    display: none;
+  }
+  #freelancerRegistrationPage_description{
+    color: $grey;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .l-content{
+    width: 70%;
+    margin-bottom: 30px;
+  }  
+  .form-item-pass{
+    width: 100% !important;
+  }
+  #user-register-form{
+    width: 70%;
+    font-size: 16px;
+  }
+  #block-block-15{
+    width: 70%;
+  }
+
+  #registrationPage_subtitle{
+    border-bottom: 1.5px solid $mainColor;
+    font-weight: bold;
+    color: $mainColor; 
+    font-size: 16px;
+  }  
+}
+
+
+
+/* 
+___________________
+
+  This is Styling for the user login pages
+  
+___________________
+*/
+
+.page-user-login, .not-logged-in.page-user{
+  h1{
+    font-weight: bold;
+  }
+  form{
+    font-size: 16px;
+  }
+  #block-block-5{
+    font-size: 16px;
+    margin-bottom: 30px; 
+  }
+}
+
+.page-user-password{
+  h1{
+    font-weight: bold;
+  }
+  form{
+    font-size: 16px;
+    margin-bottom: 30px; 
+  }
+}
+
+/* 
+___________________
+
+  This is Styling for the Services Page
+  
+___________________
+*/
+.node-type-page.section-creative-services{
+    #servicesList{
+      width: 50%;
+    }
+    h1{
+      width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 0px;
+
+      padding-left: 15px;
+      padding-bottom: 15px;
+      
+
+    }
+    .tabs.tabs--primary{
+      display: none;
+    }
+    //Margins
+    .row{
+      margin-top: 30px;
+    }
+    .serviceName{
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .serviceDescription{
+      font-size: 16px;
+      color: $grey;
+    }
+    #introExplanation, #endExplanation{
+      font-size: 18px;
+      margin-top: 30px !important;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .l-content{
+      margin-bottom: 30px;
+    }
+
 }
 
 
 
 
+
+//This is for hiding links in the footer when logged-in
+.logged-in, .page-freelancer-register{
+  .hidefooterLink{
+    display:none;
+  }
+}
 
 
 

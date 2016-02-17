@@ -34,45 +34,22 @@ body.page-freelancer-register{
 }
 
 .registrationModal_title{
-    background-color: $mainColor;
+    background: url('images/TabBetaLogoUpdated.png') no-repeat;
+    height: 50px;
+    width: 95px;
+    margin: 0 auto;
+    background-size: 100% 100%;
     text-align: center;
 }
 
 .registrationModal_body{
-    @extend .row;
-    .registrationModal_body_image{
-       // @extend .well;
-        @include make-sm-column-offset(1);
-        @include make-sm-column(3);
-        background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-        //padding-left: 30px;
-    }
-    .registrationModal_body_thankYouMessage{
-       // @extend .well;
-        @include make-sm-column-offset(1);
-        @include make-sm-column(6);
-        font-size: 1.8em;
-        color: black;
-    }
-    .registrationModal_body_message{
-       // @extend .well;
-        @include make-sm-column(12);
-        font-size: 1.2em;
-        color: $mainColor;
-        width: 50%;
-        margin: 0 auto;
-    }
-
-	//height: 500px;
+    background: url('images/ProfilePendingApproval.png') no-repeat;
+    height: 220px;
     background-size: 100% 100%;
+    background-position: 90% 90%;
 }
-
 .registrationModal_footer{
-    //background-color: $mainColor;
+    text-align: center;
 }
 
 //Background
@@ -82,7 +59,10 @@ body.page-freelancer-register{
 }
 
 //Button
-.registrationModal_Button{
+#edit-submit{
+    @extend .btn;
+}
+#edit-submit, .registrationModal_Button{
     background-color: $mainColor;
     border: $mainColor * 0.80;
     color: $text-color;

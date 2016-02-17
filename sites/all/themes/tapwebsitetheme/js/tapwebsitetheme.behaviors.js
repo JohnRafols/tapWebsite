@@ -108,7 +108,53 @@
         //State that the navigation is collapsable (Once only!)
         mainNavigationBar_Links.once('navbarBehaviour').wrap("<div class='collapse navbar-collapse' id='myNavbar'>") ;
 
-      
+        //Contact Us is a dead link, give it the proper attribute
+        mainNavigationBar_Links.find('a:contains("Contact")')
+                                .once('navbarBehaviour')
+                                .attr('href','#contactUs')
+
+        //Any "Clients" link on the page should open up the pop up
+        mainNavigationBar_Links.find('a:contains("Clients")')
+                                .once('navbarBehaviour')
+                                .attr('data-toggle','modal')
+                                .attr('data-target','#emailSignUpModal');                               
+
+          
+        //This is for the mailchimp form
+        //It's always going to be in the navbar. 
+
+
+        //Note, this "ChimpFormExistance" is for extra assurance the code doesn't go to pages it shouldn't.
+        var ChimpFormExistance = $('.l-header')
+                                .find('.l-region--navigation')
+                                .find("#mailchimp-signup-subscribe-block-client-subscribe-form").length
+
+        if(ChimpFormExistance == 1){
+            var mailChimpForm = $('.l-header')
+                                    .find('.l-region--navigation')
+                                    .find("#mailchimp-signup-subscribe-block-client-subscribe-form").clone()
+
+            //Although the form will always be on the page, we will hide it. 
+            $('.l-header')
+                  .find('.l-region--navigation')
+                  .find("#mailchimp-signup-subscribe-block-client-subscribe-form")
+                  .remove();
+
+            //The form will be placed in the footer section of the modal         
+            var modalButtonCode = '<div class="modal-footer modalEmailSignUp_footer">' + 
+                    mailChimpForm[0].outerHTML + '</div>';
+
+            // This is HTML for creating a Bootstrap Model
+            // There are cleaner ways to do this. Such as loading the html code in a seperate file
+            var modalCode = '<div id="emailSignUpModal" class="modal fade modalEmailSignUp" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header modalEmailSignUp_header"><button type="button" class="close" data-dismiss="modal">&times;</button><div class="modal-title modalEmailSignUp_title"></div></div><div class="modal-body modalEmailSignUp_body"></div>' + 
+                     modalButtonCode +
+            '</div></div></div>';
+     
+            
+            //Add the modal to the page
+            $('.l-header').find('.l-region--navigation').append(modalCode)
+
+        }
       }
     };
 
@@ -126,15 +172,14 @@
 
 
 
-//This assures certain code is only loaded once
-var isLoaded = false;
-
+   //This assures certain code is only loaded once
+    var isLoaded = false;
    //This code is custom jQuery for the forms of the website.  
    Drupal.behaviors.createPortfolioBehaviour = {    
     attach: function (context, settings) {
       
         // //This is for the styling the "Create Portfolio" page. 
-        var createPortfolioPage = $('.page-node-add-portfolio');
+        var createPortfolioPage = $('.page-node-add-portfolio').find('.l-content');
   
 
         //The Title and image associated
@@ -184,20 +229,96 @@ var isLoaded = false;
                            .find('.description')
                            .insertBefore($('.projectSkillListRow'));
 
+        // //Create a Cancel Changes button:
+        // createPortfolioPage.find("#edit-preview")
+        //                    .once('createPortfolioBehaviour')
+        //                    .after('<a id = "edit-cancelChanges" class="btn" href="/user">Cancel Changes</a>')
+
+
       }
     };
-
 
 
 /**
     _____________________________________
         
 
-        Code for the Edit User Profile Page:    
+        Code for the edit Portfolio Page:    
     
 
     _____________________________________
 */
+
+   var isLoadedEditPortfolio = false;
+    //This assures certain code is only loaded once
+   //This code is custom jQuery for the forms of the website.  
+   Drupal.behaviors.editPortfolioBehaviour = {    
+    attach: function (context, settings) {
+      
+        // //This is for the styling the "Edit Portfolio" page. 
+        var editPortfolioPage = $('.page-node-edit.node-type-portfolio').find('.l-content');
+  
+
+        //The Title and image associated
+        editPortfolioPage.find('h1')
+                        .once('editPortfolioBehaviour')
+                        .wrap('<div class="row" id = "newPortfolio_titleDiv"><div></div></div>')
+
+        editPortfolioPage.find('#newPortfolio_titleDiv')
+                        .once('editPortfolioBehaviour')
+                        .prepend('<div id = "newPortfolio_Logo"></div>')
+
+        //editPortfolioPage.find('h1').html('Edit');
+
+        //Overview section
+        var portfolioPage_overviewBody = editPortfolioPage.find('#edit-body')
+                                                            .find('.form-textarea-wrapper')                      
+        //Move the description of the Overview above the textArea and below the label.
+        editPortfolioPage.find('#edit-body')
+                        .find('.description')
+                        .once('editPortfolioBehaviour')
+                        .insertBefore(portfolioPage_overviewBody);
+
+        //Increase the column gutter for the form:
+        editPortfolioPage.find('form').once('editPortfolioBehaviour').wrapAll('<div id= "newPortfolio_gutterDiv">')
+
+        // Get the lists of Skills
+        var skillList = editPortfolioPage
+                              .find('#edit-field-portfolio-project-skills-und')
+                              .find('.form-item');
+
+        skillList.once('editPortfolioBehaviour').wrapAll('<div class="projectSkillListRow row"></div>')
+
+        //Calculate the number of items that'll appear in each column
+        var skillsColumnSize = Math.floor(skillList.length/2) + ((skillList.length % 2)/2);
+        console.log(skillsColumnSize)
+
+        //Add em all into the columns
+        //once() isn't working here, so I used a boolean variable 
+        console.log(isLoaded)
+
+        if(!isLoadedEditPortfolio){
+          console.log("Hello world!")
+          for(var i = 0; i < skillList.length; i+=skillsColumnSize){
+            console.log("hello world!")
+             skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
+          }
+          isLoadedEditPortfolio = true;
+        }
+
+        //Move the description of the Skill List above the checkboxes and below the label
+        editPortfolioPage.find('#edit-field-portfolio-project-skills')
+                           .find('.description')
+                           .insertBefore($('.projectSkillListRow'));
+
+        // editPortfolioPage.find("#edit-preview")
+        //                 .once('editPortfolioBehaviour')
+        //                 .after('<a id = "edit-cancelChanges" class="btn" href="/user">Cancel Changes</a>')
+
+      }
+    };
+
+
 
 
 

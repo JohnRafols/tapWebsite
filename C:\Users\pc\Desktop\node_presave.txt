@@ -1,0 +1,956 @@
+stdClass Object
+(
+    [vid] => 9
+    [uid] => 1
+    [title] => About 
+    [log] => 
+    [status] => 1
+    [comment] => 1
+    [promote] => 0
+    [sticky] => 0
+    [vuuid] => ffbb0803-52bf-43fd-83e1-14e8a2307077
+    [nid] => 9
+    [type] => page
+    [language] => und
+    [created] => 1452640518
+    [changed] => 1455747618
+    [tnid] => 0
+    [translate] => 0
+    [uuid] => 718219b5-c65b-48e9-9c1d-d5722e4e3046
+    [revision_timestamp] => 1454471122
+    [revision_uid] => 1
+    [body] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [summary] => 
+                            [value] => <!-- This is where the website banner/image carousel take place -->
+<div id="landingPageWelcomeSection">&nbsp;
+<h1>Find the perfect creative professional for your project.</h1>
+
+<div id="landingPageWelcomeSection_border">&nbsp;</div>
+&nbsp;
+
+<div id="landingPageWelcomeSection_description">Collaborate with freelance designers, illustrators, photographers and motion graphic artists passionate about making beautiful work.</div>
+
+<ul>
+	<li><a class="btn btn-lg registrationButtonClient" data-toggle="modal" data-target="#emailSignUpModal">Register as a Client </a></li>
+	<li><a class="btn btn-lg registrationButtonFreelancer" href="freelancer/register">Apply as a Creative </a></li>
+</ul>
+</div>
+ 
+<!-- The container is made to separate the banner with the rest of the content -->
+
+<div class="container" id="landingPage_contentContainer"><!-- This is the first section -->
+<div class="row" id="landingPageServices">
+<div class="landingPage_titles"><strong>Services </strong></div>
+
+<div class="row">
+<div class="content col-xs-6 col-md-3">
+<div id="landingPageServices_graphicDesign_Icon">&nbsp;</div>
+Graphic Design</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_artAndIllustration_Icon">&nbsp;</div>
+Art and Illustration</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_branding_Icon">&nbsp;</div>
+Branding</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_webAndApp_Icon">&nbsp;</div>
+Web and App Design</div>
+</div>
+
+<div class="row" id="landingPageServices_secondRow">
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_motionGraphics_Icon">&nbsp;</div>
+Motion graphics</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_creativeConsulting_Icon">&nbsp;</div>
+Creative consulting</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_photography_Icon">&nbsp;</div>
+Photography</div>
+
+
+<div class="col-xs-6 col-md-3" id="landingPageServices_description">
+<a id="plusSign" href = "creative-services">+</a>
+<a href="creative-services">View All Services </a>
+</div>
+
+</div>
+
+
+</div>
+<!-- This is the second section -->
+
+<div class="row" id="landingPage_whoAreWe">
+<div class="landingPage_titles"><strong>Who should use Tap?</strong></div>
+&nbsp;
+
+<div class="landingPage_emphasizedText" style="width: 60%;">
+<p>Focus on your core business: outsource jobs to Tap when you need professional design, photography, motion graphics, and other creative services.</p>
+</div>
+&nbsp;
+
+<div class="row">
+<div class="col-sm-4 landingPage_whoAreWe_content"><br />
+<strong>Startups and young companies:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder">&nbsp;</div>
+&nbsp;
+
+<p>Pick from a generous pool of talent. Treat Tap as your in-house design team with all the skills you need.</p>
+</div>
+
+<div class="col-sm-4 landingPage_whoAreWe_content"><br />
+<strong>Urgent and one-off jobs:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder">&nbsp;</div>
+&nbsp;
+
+<p>Set the timeframe, brief, budget and select who you work with. No job is too big or too small.</p>
+</div>
+
+<div class="col-sm-4 landingPage_whoAreWe_content"><br />
+<strong>Access specialist and and niche skills:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder">&nbsp;</div>
+&nbsp;
+
+<p>Put your project to a visual communications community with a wide range of expertise.</p>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-4 landingPage_whoAreWe_content"><br />
+<strong>Businesses and Organisations</strong>
+
+<div class="landingPage_whoAreWe_contentBorder">&nbsp;</div>
+&nbsp;
+
+<p>Save money, time and gain access to a large pool of creative skills. Get matched to the right talent. Outsourcing to Tap is fast and easy</p>
+</div>
+
+<div class="col-sm-4 landingPage_whoAreWe_content"><br />
+<strong>Personal projects:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder">&nbsp;</div>
+&nbsp;
+
+<p>Collaborate with awesome artists and designers passionate about what you are up.</p>
+</div>
+
+<div class="col-sm-4 landingPage_emphasizedText" id="landingPage_whoAreWe_content_link"> <a data-toggle="modal" data-target="#emailSignUpModal">This sounds like me &gt; </a> </div>
+</div>
+</div>
+
+<div class="row" id="landingPage_howThisWorks">
+<div class="landingPage_titles"><strong>How it works</strong></div>
+&nbsp;
+
+<div class="row">
+<div class="col-sm-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_uploadYourProject_Icon">&nbsp;</div>
+Upload your jobs and requirements</div>
+
+<div class="col-sm-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_getMatchedToTalent_Icon">&nbsp;</div>
+Get Matched to top quality talent or choose freelancers</div>
+
+<div class="col-sm-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_communicate_Icon">&nbsp;</div>
+Communicate, share files, see progress online</div>
+
+<div class="col-sm-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_implementNewDesign_Icon">&nbsp;</div>
+Implement your new designs!</div>
+</div>
+</div>
+
+<div class="row" id="landingPage_creativeTalent">
+<div id="landingPage_creativeTalent_title"><strong>Tap Beta platform will be ready to get projects started with kick ass creative professionals very soon! </strong></div>
+
+<div class="landingPage_titles_creativeTalent">&nbsp;</div>
+
+<div class="col-sm-6" id="landingPage_creativeTalent_firstColumn" style="padding-left: 0px !important;">
+<div class="col-sm-12" id="landingPage_creativeTalent_finalDesc">Stay in touch to find out when you can start saving money, time and collaborating with top quality creatives online. </div>
+
+<div class="col-sm-12"><br />
+<a class="btn btn-lg registrationButtonClient" data-toggle="modal" data-target="#emailSignUpModal">Register as a Client </a></div>
+</div>
+
+<div class="col-sm-6" id="landingPage_creativeTalent_secondColumn" >
+
+
+
+<div class="col-sm-6 pull-right" id ="landingPage_creativeTalent_request">
+<div id="landingPage_creativeTalent_clientsInNewZealand"> 
+Clients in New Zealand</div>
+
+<p>Request to work with Tap Freelancers face-to-face on long term and large projects</p>
+</div>
+
+<div class="col-sm-6 pull-right" id="landingPageServices_NZ_Icon">&nbsp;</div>
+
+</div>
+</div>
+
+<div class="row" id="landingPage_theCreativeProcess">
+<div class="landingPage_titles"><strong>Creative Pros</strong></div>
+&nbsp;
+
+<div class="landingPage_emphasizedText" style="width: 60%">No contests, job applications, wishful thinking or other time wasters. Guaranteed payment for the work you do. Get jobs and find clients on Tap.</div>
+&nbsp;
+
+<div id="landingPage_theCreativeProcess_intro" style="width: 60%">Working part time, studying something new, traveling the world, keen for flexibility and exciting professional challenges? We are committed to getting the coolest projects your way while creating a top class service for clients.</div>
+&nbsp;
+
+<div class="row">
+<div class="col-sm-3" style="text-align: center">
+<div id="landingPageServices_createAPortfolio_Icon">&nbsp;</div>
+
+<div style="text-align: center; width: 80%; margin: 0 auto">Create a portfolio to showcase your work</div>
+</div>
+
+<div class="col-sm-3" style="text-align: center">
+<div id="landingPageServices_getMatched_Icon">&nbsp;</div>
+
+<div style="text-align: center; width: 80%; margin: 0 auto">Get matched to suitable jobs and accept the ones that interest you</div>
+</div>
+
+<div class="col-sm-3" style="text-align: center">
+<div id="landingPageServices_startWorking_Icon">&nbsp;</div>
+
+<div style="text-align: center; width: 85%; margin: 0 auto">Start working right away and communicate with your clients direct</div>
+</div>
+
+<div class="col-sm-3" style="text-align: center">
+<div id="landingPageServices_getPaid_Icon">&nbsp;</div>
+
+<div style="text-align: center; width: 80%; margin: 0 auto">Get paid for your skill and talent!</div>
+</div>
+</div>
+&nbsp;
+
+<div id="landingPage_theCreativeProcess_description" style="width: 60%">We are looking for an exceptional selection of talent to join our curated community of visual communications professionals. Do you have a portfolio and a good track record of getting outstanding work done on time? Become a Tap freelancer to do what you love and work on exciting projects.</div>
+<br />
+<a class="btn btn-lg registrationButtonFreelancer" href="freelancer/register">Apply as a Creative </a></div>
+</div>
+
+                            [format] => full_html
+                        )
+
+                )
+
+        )
+
+    [rdf_mapping] => Array
+        (
+            [rdftype] => Array
+                (
+                    [0] => foaf:Document
+                )
+
+            [title] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => dc:title
+                        )
+
+                )
+
+            [created] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => dc:date
+                            [1] => dc:created
+                        )
+
+                    [datatype] => xsd:dateTime
+                    [callback] => date_iso8601
+                )
+
+            [changed] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => dc:modified
+                        )
+
+                    [datatype] => xsd:dateTime
+                    [callback] => date_iso8601
+                )
+
+            [body] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => content:encoded
+                        )
+
+                )
+
+            [uid] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => sioc:has_creator
+                        )
+
+                    [type] => rel
+                )
+
+            [name] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => foaf:name
+                        )
+
+                )
+
+            [comment_count] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => sioc:num_replies
+                        )
+
+                    [datatype] => xsd:integer
+                )
+
+            [last_activity] => Array
+                (
+                    [predicates] => Array
+                        (
+                            [0] => sioc:last_activity_date
+                        )
+
+                    [datatype] => xsd:dateTime
+                    [callback] => date_iso8601
+                )
+
+        )
+
+    [path] => Array
+        (
+            [alias] => about
+            [pid] => 11
+            [source] => node/9
+            [language] => und
+            [pathauto] => 1
+        )
+
+    [name] => admin
+    [picture] => 0
+    [data] => a:7:{s:7:"overlay";i:1;s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;}
+    [date] => 2016-01-13 12:15:18 +1300
+    [revision] => 0
+    [menu] => Array
+        (
+            [enabled] => 1
+            [mlid] => 577
+            [module] => menu
+            [hidden] => 0
+            [has_children] => 0
+            [customized] => 1
+            [options] => Array
+                (
+                    [alter] => 1
+                )
+
+            [expanded] => 0
+            [parent_depth_limit] => 8
+            [link_title] => About
+            [description] => 
+            [parent] => main-menu:0
+            [weight] => -50
+            [plid] => 0
+            [menu_name] => main-menu
+        )
+
+    [additional_settings__active_tab] => edit-menu
+    [submit] => Save
+    [preview] => Preview
+    [delete] => Delete
+    [cancel_changes] => Cancel Changes
+    [form_build_id] => form-XzpzcBhUQN30H6uQ1u9VbO_vp5H4O2DrmpzgCc97PYI
+    [form_token] => WAA8SW0yaPwNPXk3WiO-Kx-RRg9hOEkm1TObVADhq5o
+    [form_id] => page_node_form
+    [op] => Save
+    [validated] => 1
+    [original] => stdClass Object
+        (
+            [vid] => 9
+            [uid] => 1
+            [title] => About 
+            [log] => 
+            [status] => 1
+            [comment] => 1
+            [promote] => 0
+            [sticky] => 0
+            [vuuid] => ffbb0803-52bf-43fd-83e1-14e8a2307077
+            [nid] => 9
+            [type] => page
+            [language] => und
+            [created] => 1452640518
+            [changed] => 1454471122
+            [tnid] => 0
+            [translate] => 0
+            [uuid] => 718219b5-c65b-48e9-9c1d-d5722e4e3046
+            [revision_timestamp] => 1454471122
+            [revision_uid] => 1
+            [body] => Array
+                (
+                    [und] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => <!-- This is where the website banner/image carousel take place -->
+<div id="landingPageWelcomeSection">
+<h1>
+Find the perfect creative professional for your project.
+</h1>
+
+<div id="landingPageWelcomeSection_border">
+</div>
+
+<br/>
+<div id="landingPageWelcomeSection_description">Collaborate with freelance designers, illustrators, photographers and motion graphic artists passionate about making beautiful work.
+</div>
+
+<ul>
+<li><a class="btn btn-primary registrationButtonClient" href="client/register">Register as a Client </a> </li>
+<li><a class="btn btn-primary registrationButtonFreelancer" href="freelancer/register"> Apply as a Creative </a> </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The container is made to separate the banner with the rest of the content -->
+<div class= "container">
+ <!-- This is the first section -->
+
+<div class="row" id="landingPageServices">
+<div class="landingPage_titles">
+<strong>
+Services 
+</strong>
+</div>
+
+<div class="row">
+<div class="content col-xs-6 col-md-3">
+<div id="landingPageServices_graphicDesign_Icon">
+	
+</div>
+Graphic Design
+</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_artAndIllustration_Icon"></div>
+Art and Illustration</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_branding_Icon"></div>
+Branding</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_webAndApp_Icon"></div>
+Web and App Design</div>
+</div>
+
+<div class="row" id="landingPageServices_secondRow">
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_motionGraphics_Icon"></div>
+Motion graphics</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_creativeConsulting_Icon"></div>
+Creative consulting</div>
+
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_photography_Icon"></div>
+Photography</div>
+
+<div class="col-xs-6 col-md-3" id="landingPageServices_description">Get your perfect creative match enjoy the ride!</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is the second section -->
+
+<div class="row" id="landingPage_whoAreWe">
+<div class="landingPage_titles"><strong>Who should use tap?</strong></div>
+<br/>
+<div class="landingPage_emphasizedText" style = "width: 60%;">
+<p>Focus on your core business: work with Tap when you need professional design, photography, motion graphics, and other creative services.</p>
+</div>
+<br/>
+<div class="row">
+<div class="col-xs-4 landingPage_whoAreWe_content"><br />
+<strong class="landingPage_whoAreWe_content_strongText">Startups and young companies:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<br/>
+<p>Pick from a generous pool of talent. Treat Tap as your in-house design team with all the skills you need.</p>
+</div>
+
+<div class="col-xs-4 landingPage_whoAreWe_content"><br />
+<strong class="landingPage_whoAreWe_content_strongText">Urgent and one-off jobs:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<br/>
+<p>Set the timeframe, brief, budget and select who you work with. No job is too big or too small.</p>
+</div>
+
+<div class="col-xs-4 landingPage_whoAreWe_content"><br />
+<strong class="landingPage_whoAreWe_content_strongText">Access specialist and and niche skills:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<br/>
+<p>Put your project to a visual communications community with a wide range of expertise.</p>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-4 landingPage_whoAreWe_content"><br />
+<strong class="landingPage_whoAreWe_content_strongText">Businesses and Organisations</strong>
+
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<br/>
+<p>Save money, time and gain access to a large pool of create talent. Get matched to the right talent as soon as you create your project.</p>
+</div>
+
+<div class="col-xs-4 landingPage_whoAreWe_content"><br />
+<strong class="landingPage_whoAreWe_content_strongText">Personal projects:</strong>
+
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<br/>
+<p>Collaborate with awesome artists and designers passionate about what you are up.</p>
+</div>
+
+<div class="col-xs-4 landingPage_emphasizedText" id="landingPage_whoAreWe_content_link">This sounds like me ></div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="landingPage_howThisWorks">
+<div class="landingPage_titles"><strong>How this works?</strong></div>
+<br/>
+<div class="row">
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_uploadYourProject_Icon"></div>
+Upload your project</div>
+
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_getMatchedToTalent_Icon"></div>
+Get Matched to Top Talent</div>
+
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_communicate_Icon"></div>
+Communication</div>
+
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_implementNewDesign_Icon"></div>
+Implement Your New Design</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row" id="landingPage_creativeTalent">
+<div id = "landingPage_creativeTalent_title">
+<strong> The Tap Beta platform will ready to get projects started with kick ass creative professionals very soon! </strong></div>
+<div class="landingPage_titles">
+</div>
+<br/>
+<div class="col-xs-6" style="padding-right: 15px;">
+<div class="col-xs-12" id="landingPage_creativeTalent_finalDesc"> Stay in touch to find out when you can start saving money, time and collaborating with top quality creatives online </div>
+<div class="col-xs-12"> <br/>
+<a class="btn btn-primary registrationButtonClient" href="client/register">Register as a client </a></div>
+</div>
+
+<div class="col-xs-6">
+<div class="col-xs-6" id="landingPageServices_NZ_Icon"></div>
+
+<div class="col-xs-6">
+
+<div id = "landingPage_creativeTalent_clientsInNewZealand"> <br/> Clients in New Zealand</div>
+<br/>
+<p> Request to work with Tap Freelancers face-to-face on long term and large projects </p>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="landingPage_theCreativeProcess">
+<div class="landingPage_titles"><strong>Creative Pros</strong></div>
+<br/>
+<div class="landingPage_emphasizedText" style="width: 60%">No contests, job applications, wishful thinking or other time wasters. Guaranteed payment for the work you do.</div>
+<br/>
+<div style="width: 60%">Working part time, studying something new, traveling the world, keen for flexibility and exciting professional challenges? We are committed to getting the coolest projects your way while creating a top class service for clients.</div>
+<br/>
+<div class="row">
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_createAPortfolio_Icon"></div>
+
+<div style="text-align: center; width: 50%; margin: 0 auto">Create a portfolio to showcase your work</div>
+</div>
+
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_getMatched_Icon"></div>
+
+<div style="text-align: center; width: 50%; margin: 0 auto">Get matched to suitable projects and accept the ones that interest you</div>
+</div>
+
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_startWorking_Icon"></div>
+
+<div style="text-align: center; width: 50%; margin: 0 auto">Start working right away and communicate with your clients direct</div>
+</div>
+
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_getPaid_Icon"></div>
+
+<div style="text-align: center; width: 50%; margin: 0 auto">Get paid for your skill and talent!</div>
+</div>
+</div>
+<br/>
+<div id="landingPage_theCreativeProcess_description" style="width: 60%">We are looking for an exceptional selection of talent to join our curated community of visual communications professionals. Do you have a portfolio and a good track record of getting outstanding work done on time? Become a Tap freelancer to do what you love and work on exciting projects.</div>
+<br/>
+<a class="btn btn-primary registrationButtonFreelancer" href="freelancer/register">Apply as a creative </a>
+</div>
+
+ 
+</div>
+                                    [summary] => 
+                                    [format] => full_html
+                                    [safe_value] => <!-- This is where the website banner/image carousel take place --><div id="landingPageWelcomeSection">
+<h1>
+Find the perfect creative professional for your project.<br /></h1>
+<div id="landingPageWelcomeSection_border">
+</div>
+<p><br /></p>
+<div id="landingPageWelcomeSection_description">Collaborate with freelance designers, illustrators, photographers and motion graphic artists passionate about making beautiful work.
+</div>
+<ul><li><a class="btn btn-primary registrationButtonClient" href="client/register">Register as a Client </a> </li>
+<li><a class="btn btn-primary registrationButtonFreelancer" href="freelancer/register"> Apply as a Creative </a> </li>
+</ul></div>
+<!-- The container is made to separate the banner with the rest of the content --><div class="container">
+<!-- This is the first section --><div class="row" id="landingPageServices">
+<div class="landingPage_titles">
+<strong><br />
+Services<br /></strong>
+</div>
+<div class="row">
+<div class="content col-xs-6 col-md-3">
+<div id="landingPageServices_graphicDesign_Icon">
+</div>
+<p>Graphic Design
+</p></div>
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_artAndIllustration_Icon"></div>
+<p>Art and Illustration</p></div>
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_branding_Icon"></div>
+<p>Branding</p></div>
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_webAndApp_Icon"></div>
+<p>Web and App Design</p></div>
+</div>
+<div class="row" id="landingPageServices_secondRow">
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_motionGraphics_Icon"></div>
+<p>Motion graphics</p></div>
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_creativeConsulting_Icon"></div>
+<p>Creative consulting</p></div>
+<div class="col-xs-6 col-md-3">
+<div id="landingPageServices_photography_Icon"></div>
+<p>Photography</p></div>
+<div class="col-xs-6 col-md-3" id="landingPageServices_description">Get your perfect creative match enjoy the ride!</div>
+</div>
+</div>
+<!-- This is the second section --><div class="row" id="landingPage_whoAreWe">
+<div class="landingPage_titles"><strong>Who should use tap?</strong></div>
+<p><br /></p>
+<div class="landingPage_emphasizedText" style="width: 60%;">
+<p>Focus on your core business: work with Tap when you need professional design, photography, motion graphics, and other creative services.</p>
+</div>
+<p><br /></p>
+<div class="row">
+<div class="col-xs-4 landingPage_whoAreWe_content">
+<strong class="landingPage_whoAreWe_content_strongText">Startups and young companies:</strong>
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<p><br /></p>
+<p>Pick from a generous pool of talent. Treat Tap as your in-house design team with all the skills you need.</p>
+</div>
+<div class="col-xs-4 landingPage_whoAreWe_content">
+<strong class="landingPage_whoAreWe_content_strongText">Urgent and one-off jobs:</strong>
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<p><br /></p>
+<p>Set the timeframe, brief, budget and select who you work with. No job is too big or too small.</p>
+</div>
+<div class="col-xs-4 landingPage_whoAreWe_content">
+<strong class="landingPage_whoAreWe_content_strongText">Access specialist and and niche skills:</strong>
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<p><br /></p>
+<p>Put your project to a visual communications community with a wide range of expertise.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-4 landingPage_whoAreWe_content">
+<strong class="landingPage_whoAreWe_content_strongText">Businesses and Organisations</strong>
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<p><br /></p>
+<p>Save money, time and gain access to a large pool of create talent. Get matched to the right talent as soon as you create your project.</p>
+</div>
+<div class="col-xs-4 landingPage_whoAreWe_content">
+<strong class="landingPage_whoAreWe_content_strongText">Personal projects:</strong>
+<div class="landingPage_whoAreWe_contentBorder"></div>
+<p><br /></p>
+<p>Collaborate with awesome artists and designers passionate about what you are up.</p>
+</div>
+<div class="col-xs-4 landingPage_emphasizedText" id="landingPage_whoAreWe_content_link">This sounds like me &gt;</div>
+</div>
+</div>
+<div class="row" id="landingPage_howThisWorks">
+<div class="landingPage_titles"><strong>How this works?</strong></div>
+<p><br /></p>
+<div class="row">
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_uploadYourProject_Icon"></div>
+<p>Upload your project</p></div>
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_getMatchedToTalent_Icon"></div>
+<p>Get Matched to Top Talent</p></div>
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_communicate_Icon"></div>
+<p>Communication</p></div>
+<div class="col-xs-3 landingPage_howThisWorks_content">
+<div id="landingPageServices_implementNewDesign_Icon"></div>
+<p>Implement Your New Design</p></div>
+</div>
+</div>
+<div class="row" id="landingPage_creativeTalent">
+<div id="landingPage_creativeTalent_title">
+<strong> The Tap Beta platform will ready to get projects started with kick ass creative professionals very soon! </strong></div>
+<div class="landingPage_titles">
+</div>
+<p><br /></p>
+<div class="col-xs-6" style="padding-right: 15px;">
+<div class="col-xs-12" id="landingPage_creativeTalent_finalDesc"> Stay in touch to find out when you can start saving money, time and collaborating with top quality creatives online </div>
+<div class="col-xs-12"> <br /><br /><a class="btn btn-primary registrationButtonClient" href="client/register">Register as a client </a></div>
+</div>
+<div class="col-xs-6">
+<div class="col-xs-6" id="landingPageServices_NZ_Icon"></div>
+<div class="col-xs-6">
+<div id="landingPage_creativeTalent_clientsInNewZealand"> <br /> Clients in New Zealand</div>
+<p><br /></p>
+<p> Request to work with Tap Freelancers face-to-face on long term and large projects </p>
+</div>
+</div>
+</div>
+<div class="row" id="landingPage_theCreativeProcess">
+<div class="landingPage_titles"><strong>Creative Pros</strong></div>
+<p><br /></p>
+<div class="landingPage_emphasizedText" style="width: 60%">No contests, job applications, wishful thinking or other time wasters. Guaranteed payment for the work you do.</div>
+<p><br /></p>
+<div style="width: 60%">Working part time, studying something new, traveling the world, keen for flexibility and exciting professional challenges? We are committed to getting the coolest projects your way while creating a top class service for clients.</div>
+<p><br /></p>
+<div class="row">
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_createAPortfolio_Icon"></div>
+<div style="text-align: center; width: 50%; margin: 0 auto">Create a portfolio to showcase your work</div>
+</div>
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_getMatched_Icon"></div>
+<div style="text-align: center; width: 50%; margin: 0 auto">Get matched to suitable projects and accept the ones that interest you</div>
+</div>
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_startWorking_Icon"></div>
+<div style="text-align: center; width: 50%; margin: 0 auto">Start working right away and communicate with your clients direct</div>
+</div>
+<div class="col-xs-3" style="text-align: center">
+<div id="landingPageServices_getPaid_Icon"></div>
+<div style="text-align: center; width: 50%; margin: 0 auto">Get paid for your skill and talent!</div>
+</div>
+</div>
+<p><br /></p>
+<div id="landingPage_theCreativeProcess_description" style="width: 60%">We are looking for an exceptional selection of talent to join our curated community of visual communications professionals. Do you have a portfolio and a good track record of getting outstanding work done on time? Become a Tap freelancer to do what you love and work on exciting projects.</div>
+<p><br /><br /><a class="btn btn-primary registrationButtonFreelancer" href="freelancer/register">Apply as a creative </a>
+</p></div>
+</div>
+
+                                    [safe_summary] => 
+                                )
+
+                        )
+
+                )
+
+            [rdf_mapping] => Array
+                (
+                    [rdftype] => Array
+                        (
+                            [0] => foaf:Document
+                        )
+
+                    [title] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => dc:title
+                                )
+
+                        )
+
+                    [created] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => dc:date
+                                    [1] => dc:created
+                                )
+
+                            [datatype] => xsd:dateTime
+                            [callback] => date_iso8601
+                        )
+
+                    [changed] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => dc:modified
+                                )
+
+                            [datatype] => xsd:dateTime
+                            [callback] => date_iso8601
+                        )
+
+                    [body] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => content:encoded
+                                )
+
+                        )
+
+                    [uid] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => sioc:has_creator
+                                )
+
+                            [type] => rel
+                        )
+
+                    [name] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => foaf:name
+                                )
+
+                        )
+
+                    [comment_count] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => sioc:num_replies
+                                )
+
+                            [datatype] => xsd:integer
+                        )
+
+                    [last_activity] => Array
+                        (
+                            [predicates] => Array
+                                (
+                                    [0] => sioc:last_activity_date
+                                )
+
+                            [datatype] => xsd:dateTime
+                            [callback] => date_iso8601
+                        )
+
+                )
+
+            [path] => Array
+                (
+                    [pathauto] => 1
+                )
+
+            [name] => admin
+            [picture] => 0
+            [data] => a:7:{s:7:"overlay";i:1;s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;}
+        )
+
+    [is_new] => 
+    [timestamp] => 1455747618
+)

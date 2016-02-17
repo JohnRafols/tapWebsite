@@ -8,8 +8,7 @@
       <?php if ($site_name || $site_slogan): ?>
         <?php if ($site_name): ?>
           <h1 class="site-name">
-<!--             <a href="<?php //print $front_page; ?>" title="<?php //print t('Home'); ?>" rel="home"><span>
-<?php// print $site_name; ?></span></a>
+<!--             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
  -->          </h1>
         <?php endif; ?>
 
@@ -32,11 +31,11 @@
     <div class="l-content" role="main">
 
       <?php print render($page['highlighted']); ?>
-<!--       <?php //print $breadcrumb; ?> -->
+<!--       <?php print $breadcrumb; ?> -->
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-<!--         <h1><?php //print $title; ?></h1>
+<!--         <h1><?php print $title; ?></h1>
  -->      <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
