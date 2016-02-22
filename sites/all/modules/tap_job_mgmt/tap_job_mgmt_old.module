@@ -1,0 +1,367 @@
+<?php 
+
+
+function tap_job_mgmt_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#tap_job_mgmt":
+			return '<p>' . t("Manage the entire job process i.e. matching & assigning freelancers to jobs, accepting/declining of jobs by freelancers.") . '</p>';
+		break;
+	}
+}
+
+function tap_job_mgmt_node_presave($node){
+	file_put_contents('C:\Users\pc\Desktop\node_presave.txt', print_r($node, TRUE));	
+	if($node->type=='job' && !property_exists($node, 'original')){
+		// file_put_contents('C:\Users\pc\Desktop\count.txt', print_r(count($node->field_available_candidates['und']), TRUE));	
+		// $data =array();
+		// $data['target_id']=39;	
+		// array_push($node->field_available_candidates['und'], $data);
+		file_put_contents('C:\Users\pc\Desktop\node_insert.txt', print_r($node, TRUE));
+
+		//"Freelancer selection type" vocabulary term id.
+		$freelancer_selection_type=$node->field_freelancer_selection_type['und'][0]['value'];
+
+
+		if($freelancer_selection_type=='match'){	
+			$topFreelancers=getMatchedFreelancers($node);
+			debugLong($topFreelancers, 'topFreelancers');
+			addInitialFreelancersToJob($topFreelancers, $node);
+			emailFreelancers($topFreelancers);
+			
+		}else if($freelancer_selection_type=='invite'){ 
+			$freelancers=$node->field_initial_candidates['und'];
+
+
+		}else if($freelancer_selection_type=='commission'){
+			//load user with the given id.
+			$u=user_load($node->field_initial_candidates['und'][0]['target_id']);	
+			//Email the freelancer.
+			$params['account'] = $u;
+
+		}else if($freelancer_selection_type=='first_candidate'){
+
+		}else if($freelancer_selection_type=='long_term'){
+
+		}
+	}
+}
+
+
+function tap_job_mgmt_mail($key, &$message, $params) {
+    $data['user'] = $params['account'];
+    $options['language'] = $message['language'];
+    user_mail_tokens($variables, $data, $options);
+    switch($key) {
+      case 'notice':
+        $langcode = $message['language']->language;
+        $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
+        $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
+        break;
+    }
+}
+
+
+
+function emailFreelancers($freelancers){
+	// drupal_mail('tap_job_mgmt', 'notice', $u->mail, user_preferred_language($u), $params);
+}
+
+function addInitialFreelancersToJob($freelancers, $job){
+
+	file_put_contents('C:\Users\pc\Desktop\addFreelancers.txt', print_r($freelancers, TRUE));
+	$data =array();
+	foreach($freelancers as $f){
+		$data['target_id']=$f->uid;	
+		array_push($job->field_initial_candidates['und'], $data);		
+		file_put_contents('C:\Users\pc\Desktop\pushed.txt', print_r($job, TRUE));
+	}
+}
+
+
+function sortTopFreelancersByScore(&$comments, $props)
+{
+    usort($comments, function($a, $b) use ($props) {
+        if($a->$props[0] == $b->$props[0])
+            return $a->$props[1] < $b->$props[1] ? 1 : -1;
+        return $a->$props[0] < $b->$props[0] ? 1 : -1;
+    });
+}
+
+// -----------Pseudo code for Matching candidates to jobs based on their skillset----------------//
+// 1.Get the service type (X) of the job.
+// 2.Get all freelancers.
+// 3.For each freelancer f, get a count:
+// 		jobs tagged X.
+//		projects tagged X. 		
+// 4.Maintain a collection of top freelancers i.e. highest score (jobCount+projectCount)
+// 5.Return top freelancers.
+// ----------------------------------END--------------------------------------------------------//
+function getMatchedFreelancers($node){
+	// 1.Get service type X.
+	if($skill=$node->field_service_type['und']!=null){
+		$skill=$node->field_service_type['und'][0]['tid'];
+	}
+
+	// 2.Get all Freelancers.
+	$query = new EntityFieldQuery;
+	$query
+		->entityCondition('entity_type', 'user')
+		->addTag('role_filter');
+	$results = $query->execute();
+
+	$results=$results['user'];
+
+
+	define('TOP_THRESHOLD_COUNT', 10);
+	$topFreelancers=array(); //User objects with jobCountWithSkill property.
+
+	foreach($results as $freelancer){
+		$freelancerid=$freelancer->uid;
+
+		// 3a.Get a count of jobs that have skill X.
+		$jobCount=db_query(
+			'SELECT COUNT(nid) FROM {node} AS n ' .
+			'JOIN {field_data_field_final_candidate} AS f ' .
+			'JOIN {field_data_field_service_type} as s ' .
+			'ON f.entity_id = n.nid AND f.entity_type = :node ' .
+			'WHERE n.type = :type AND f.field_final_candidate_target_id = :uid AND s.field_service_type_tid = :tid',
+			array(
+				':node' => 'node',
+				':uid' => $freelancerid,
+				':type' => 'job',
+				':tid' => $skill,
+			)
+		)->fetchField();
+
+		// 3b.Get a count of projects that have skill X.
+		$projectCount=db_query(
+			'SELECT COUNT(nid) FROM {node} AS n ' .
+			'JOIN {field_data_field_portfolio_project_skills} AS s ' .
+			'ON s.entity_id = n.nid AND s.entity_type = :node ' .
+			'WHERE n.uid = :uid AND n.type = :type AND s.field_portfolio_project_skills_tid = :tid',
+			array(
+				':node' => 'node',
+				':uid' => $freelancerid,
+				':type' => 'portfolio',
+				':tid' => $skill,
+			)
+		)->fetchField();
+
+		//Score calculated for a freelancer, the higher the better.
+		$score = $jobCount*3 + $projectCount;
+
+		//Asigning the score to the User object.
+		$u=user_load($freelancerid);
+		$u->score=$score;
+
+
+		//4.Maintain a collection of top freelancers.
+		//Already have top freelancers, now find if the current freelancer is stronger that the weakest in topFreelancers.
+		if(count($topFreelancers)>=TOP_THRESHOLD_COUNT){ 
+			//Find weakest.
+			$minScore=PHP_INT_MAX;
+			$weakest;
+			foreach($topFreelancers as $f){
+				if($f->score<$minScore){
+					$minScore=$f->score;
+					$weakest=$f;
+				}
+			}
+
+			//Replace only if the current freelancer is stronger than the weakest in topFreelancers.
+			if($u->score>$minScore){
+				//Remove weakest.
+				if(($key = array_search($weakest, $topFreelancers)) !== false) {
+				   unset($messages[$key]);
+				}		
+
+				//Add the stronger freelancer.
+				array_push($topFreelancers, $u);
+			}
+		}else{
+			//Simply add if topFreelancers is not yet filled.
+			array_push($topFreelancers, $u);
+		}
+	}
+	
+	return $topFreelancers;
+}
+
+
+/**
+* Implement hook_query_TAG_alter
+* Called in getMatchedFreelancers()
+*
+* @param QueryAlterableInterface $query
+*/
+function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
+	$query->leftJoin('users_roles', 'r', 'users.uid = r.uid');
+	$and = db_and()
+	->condition('r.rid', array_search('freelancer', user_roles()), '=');
+	$query
+	->condition($and);
+}
+
+
+function tap_job_mgmt_menu() {
+	debugLong('called in mgmt menu', 'called');
+	$items['jobs/%/available'] = array(
+    'title' => 'Available',
+    'page callback' => 'tap_job_mgmt_job_available',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  	);
+
+	$items['jobs/%/unavailable'] = array(
+    'title' => 'Unavailable',
+    'page callback' => 'tap_job_mgmt_job_unavailable',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  	);	
+
+	return $items;
+}
+
+function tap_job_mgmt_job_available($job='') {
+	global $user;
+
+	//Only a freelancer/approvedFreelancer can accept/decline jobs.
+  	$freelancer_rid=array_search('freelancer', user_roles());
+  	$approvedFreelancer_rid=array_search('approvedFreelancer', user_roles());
+	if(!user_has_role($freelancer_rid) && !user_has_role($approvedFreelancer_rid)){
+		drupal_access_denied();
+	}
+
+	//--------------PSEUDOCODE----------------
+	//If match, add to field_available_candidates.
+	//If commission, add to field_final_candidate.
+	//If invited, add to field_invited_candidates.
+
+	$job=node_load($job);
+	debugLong($job, "node_loaded");
+
+	$freelancer_selection_type=$job->field_freelancer_selection_type['und'][0]['value'];
+	global $user;
+
+	//Client wanted us to match freelancers to their job.
+	if(strcmp($freelancer_selection_type, 'match')==0){
+		if(empty($job->field_available_candidates)){
+			$job->field_available_candidates['und']=array();
+			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
+			field_attach_update('node', $job);
+		}else{
+			//Do not add user to field_available_candidates if they are already in it.
+			foreach ($job->field_available_candidates['und'] as $value) {
+				if($value['target_id']==$user->uid){
+					return 'You already confirmed your availability. Waiting for a decision from the client now.';
+				}
+			}
+
+			//If it didn't retun in the loop, we can this freelancer.
+			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
+			field_attach_update('node', $job);
+		}
+	
+		debugLong($job, 'newlyupdated');
+	}
+	//Client commissioned a freelancer.
+	else if(strcmp($freelancer_selection_type, 'commission')==0){
+
+	}
+	return 'I am available';
+}
+
+function tap_job_mgmt_job_unavailable($job='') {
+	debugLong($job, 'unavailable');
+	return 'I am not available';
+}
+
+function tap_job_mgmt_block_info() {
+	$blocks=array();
+	$blocks['tap block'] = array(
+		'info' => t('tap block'),
+		'cache' => DRUPAL_NO_CACHE
+	);
+
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tap_job_mgmt_block_view($block_name = ''){	
+	//Do not add this form if there is already a freelancer working on the job.
+	if(menu_get_object()->field_final_candidate!=null){
+		return;
+	}
+
+    $form = drupal_get_form('tap_job_mgmt_form');
+    $block = array(
+        'content' => $form,
+    );
+        
+    return $block;
+}
+
+/**
+ * Implements hook_form().
+ */
+function tap_job_mgmt_form($form, &$form_state){
+	if ($job = menu_get_object()){
+		//Put all available freelancers into a list from which the client will select.
+
+		if(!array_key_exists('und', $job->field_available_candidates)){
+			return;	
+		}
+
+		debugLong($job, "candidates");
+
+		$freelancers=array();
+		foreach ($job->field_available_candidates['und'] as $value) {
+			$freelancers[$value['target_id']]=user_load($value['target_id'])->name;
+		}
+
+		$form['freelancer_choice']=array(
+			'#type'=>'radios',
+			'#title'=>t('Choose the freelancer for this job:'),
+			'#options'=>$freelancers,
+		);
+
+		// now I add also a button
+	    $form['submit'] = array(
+	       '#type'=>'submit',
+	       '#value'=>t('Submit'),
+	    );
+
+	    //Assign our own function as handler of the submit event.
+	    $form['#submit'][]='tap_job_mgmt_submit_handler';
+	    return $form;	
+	}    
+}
+
+function tap_job_mgmt_submit_handler($form, &$form_state){
+	if ($job = menu_get_object()){	
+		//Get the id of the freelancer the client selected.
+		$selectedFreelancerId=$form_state['values']['freelancer_choice'];
+
+		//Make the selected freelancer the final candidate i.e. the person for the job.
+		$job->field_final_candidate['und']=array();
+		array_push($job->field_final_candidate['und'], array('target_id'=>$selectedFreelancerId));
+		field_attach_update('node', $job);		
+
+		//Notify client.
+		$user=user_load($selectedFreelancerId);
+		drupal_set_message($user->name.' is now the Creative Pro working on your project!');
+	}	    
+}
+
+function debugLong($toPrint, $filename){
+	file_put_contents('C:\Users\pc\Desktop\\'.$filename.'.txt', print_r($toPrint, TRUE));
+}
+
+function debugShort($toPrint){
+	file_put_contents('C:\Users\pc\Desktop\\'.$toPrint.'.txt', print_r($toPrint, TRUE));	
+}
+
+?>
+

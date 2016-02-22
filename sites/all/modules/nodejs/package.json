@@ -1,0 +1,17 @@
+{
+  "name": "nodejsintegration",
+  "version": "1.0.0",
+  "description": "Node.js integration ===================",
+  "main": "nodejs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  	"socket.io": "latest",
+  	"request": "latest",
+  	"express": "latest",
+  	"connect": "latest"
+  }
+}
