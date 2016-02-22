@@ -15,6 +15,7 @@
 $mainColor :  #FFBF28;
 $textColor : #000000;
 $grey : #CCCCCC;
+$secondaryColor: #6d2c54;
 
 
 // 1.) Home Page Styling
@@ -34,6 +35,10 @@ $grey : #CCCCCC;
         }
 }
 
+#landingPage_contentContainer{
+    width: 70%
+}
+
 //The Banner 
 #landingPageWelcomeSection{
     height: 500px;
@@ -45,31 +50,85 @@ $grey : #CCCCCC;
     position: relative;
     color: white;
     margin: 0 auto; 
-    padding: 5%;
+    //padding: 5%;
     text-align: center;
     //url's are local to the css folder
     background: url('images/BannerBeta.png') no-repeat;
-    background-size: 100% 100%;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 20px;
+    h1{
+        font-size: 42px;
+    }
     #landingPageWelcomeSection_border{
         position: absolute;
         display: inline-block;
         border-top: 2px solid white;
-        margin-top: 10px;
+        margin-top: 35px;
         left: 42%;
         right: 42%;
     }
     #landingPageWelcomeSection_description{
         width: 50%;
         margin: 0 auto;
-        //margin-top: 15px;
+        margin-top: 50px;
         padding-bottom: 15px;
+        font-size: 20px;
+    }
+    ul{
+        margin-top: 35px;
     }
     li{
         display: inline;
+        margin-left: 10px;
+        margin-right: 10px;
+        
     }
 }
 
+
+
+#landingPageServices_description{
+    height: 180px;
+    padding-top: 32px;
+    #plusSign{
+        font-size: 80px;
+        padding-top: 20px;
+    }
+    p{
+        font-size: 22px !important;
+        color: $mainColor !important;
+        padding-top: 10px;
+
+    }
+      a:link {
+          color: $mainColor;
+      }
+
+      /* visited link */
+      a:visited {
+          color: $mainColor;
+      }
+
+      /* mouse over link */
+      a:hover {
+          color: $mainColor;
+          //text-decoration: none;
+      }
+
+      /* selected link */
+      a:active {
+          color: $mainColor;
+          text-decoration: none;
+      }
+}
+
+
+ //Need to Check for margins...
+ #block-system-user-menu, #block-menu-menu-secondary-nav-bar{
+    margin-bottom: 0px;
+ }
 
 //The Margin for all sections
 #landingPageServices, #landingPage_whoAreWe, 
@@ -81,7 +140,6 @@ $grey : #CCCCCC;
 //These are for the "Half" borders in the Who Are We section
 .landingPage_whoAreWe_content{
     position: relative;
-
     .landingPage_whoAreWe_contentBorder{
         position: absolute;
         border-top: 2px solid $mainColor;
@@ -89,8 +147,12 @@ $grey : #CCCCCC;
         right: 75%;
         margin-top: 15px;
     }
-    .landingPage_whoAreWe_content_strongText{
-        font-size: 1.2em;
+    p{
+        font-size: 16px;
+        color: #6d2c54;
+    }
+    strong{
+        font-size: 18px;
     }
 
 }
@@ -98,18 +160,80 @@ $grey : #CCCCCC;
 //This is not being detected by the parent.. why?
 #landingPage_whoAreWe_content_link{
         margin-top : 50px;
+        font-size: 22px;
+        a, a:link, a:visited {
+            color: $mainColor;
+        }
+      /* mouse over link */
+        a:hover, a:active {
+          color: $mainColor;
+          //text-decoration: none;
+        }
 }
 
 
 
 
-
-#landingPage_creativeTalent_finalDesc{
-    font-size: 1.2em;
-    color: $mainColor;
-    width: 60%;
+#landingPage_theCreativeProcess{
+    .row{
+        font-size: 16px;
+        color: #6d2c54;
+    }
 }
 
+#landingPage_theCreativeProcess_intro{
+    font-size: 16px;
+}
+#landingPage_theCreativeProcess_description{
+    margin-bottom: 30px;
+
+}
+
+
+#landingPage_creativeTalent_firstColumn{
+    padding-top: 15px;
+    div{
+        padding: 0 !important;
+        margin: 0 !important;
+     }
+     #landingPage_creativeTalent_finalDesc{
+        font-size: 1.4em;
+        color: $mainColor;
+        //width: 60%;
+        margin-bottom: 32px !important;
+    }
+
+} 
+
+#landingPage_creativeTalent_secondColumn{
+    display: inline-block; 
+    text-align: right;
+    div{
+         text-align: left;
+         padding: 0 !important;
+         margin: 0 !important;
+    } 
+    //padding-left: 15px;
+    //background-color: grey;
+    #landingPage_creativeTalent_request{
+        color: #6d2c54;
+        #landingPage_creativeTalent_clientsInNewZealand{
+            font-size: 1.4em;
+            padding-top: 15px !important;
+            margin-bottom: 20px !important;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+} 
+
+
+
+.landingPage_titles_creativeTalent{
+    margin-top: 15px;
+    border-top: 1.5px solid #FFBF28;
+}
 
 #landingPage_creativeTalent_clientsInNewZealand{
     font-size: 1.2em;
@@ -117,15 +241,22 @@ $grey : #CCCCCC;
 }
 
 
-
+#landingPage_howThisWorks{
+    p{
+        font-size: 16px;
+        color: #6d2c54;
+    }
+}
 .landingPage_howThisWorks_content{
     text-align: center;
 }
 
 .landingPage_titles{
-    font-size: 1.4em;
+    font-size: 26px;
+    font-weight: bold;
     text-align: left;
-    border-bottom: 1px solid $mainColor; 
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid $mainColor; 
 }
 
 .landingPage_emphasizedText{
@@ -137,20 +268,25 @@ $grey : #CCCCCC;
 
 #landingPage_creativeTalent_title{
     display-inline: block;
-    font-size: 1.4em;
+    font-size: 26px;
     color: $mainColor;
-    width: 60%;
+    width: 70%;
 }
 
  #landingPageServices_description, #landingPage_theCreativeProcess_description{
     font-size: 1.4em;
     color: $mainColor;
+
  }
 
 //Icons
 #landingPageServices{
     text-align: center;
     //Services Icons:
+    p{
+        font-size: 16px;
+        color: #6d2c54;
+    }
     #landingPageServices_graphicDesign_Icon{
         background: url('images/Services/GraphicDesign.png') no-repeat;
         width: 150px;
@@ -290,10 +426,10 @@ $grey : #CCCCCC;
    // @extend .well; 
 }
 
-#landingPageServices_secondRow{
-    display:flex;
-    align-items: center;
-}
+// #landingPageServices_secondRow{
+//     display:flex;
+//     align-items: center;
+// }
 
 .landingPage_bulletPointList{
     display: list-item;

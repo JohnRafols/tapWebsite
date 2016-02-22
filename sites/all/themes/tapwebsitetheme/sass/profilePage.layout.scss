@@ -18,26 +18,25 @@ $grey : #CCCCCC;
 
 //This removes the block titles for all user pages
 body.page-user .block__title { 
-    // // display:none 
-    // margin-left:-17px;
-    // font-weight: bold;
-    // margin-bottom: 5px;
+    display:none 
 };
 
-
+//Move the header stuff just a bit..
+.l-header{
+    margin-bottom: 28px;
+}
 
 //I have arrange the regions via bootstrap-sass. It uses a 12 point grid system
 //Keep in mind, you may need to change profilePage-layout.tpl.php if you want certain regions generated before or after another.
 .l-main{
     @extend .container;
-   // @extend .well;
-
+   width: 80%;
     //1.) This is the header region for profile pages. the first sidebar as one giant column (12)
     .l-region--sidebar-first{   
         @include make-sm-column(12);
-        border-bottom: 1px solid $mainColor; 
+        border-bottom: 1.5px solid $mainColor; 
         margin-bottom: 30px; 
-        margin-top: -10px; 
+        margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
         position: relative;
         height: 110px; 
@@ -66,8 +65,8 @@ body.page-user .block__title {
 
                 img{
                     border-radius: 999px;
-                    height: 80px;
-                    width: 80px;
+                    height: 60px;
+                    width: 60px;
                     border: 2px solid $mainColor; 
                 }
                 // @include make-sm-column(2);
@@ -80,17 +79,13 @@ body.page-user .block__title {
                 font-size: 2.5em;
                 margin-right:7px;
                 font-weight: bold;
+                white-space: nowrap;
             }
             .views-field-field-user-last-name{
                 //@include make-sm-column(3);
                 font-size: 2.5em;
                 font-weight: bold;
-            }
-
-            .views-field-name{
-                //@include make-sm-column(3);
-                font-size: 2.5em;
-                font-weight: bold;
+                white-space: nowrap;
             }
     }
 
@@ -101,6 +96,7 @@ body.page-user .block__title {
         @include make-sm-column(9);
         // 2.) My Projects
         //margin-left: 20px;
+
          .views-row{
                
                 //@extend .well;
@@ -145,7 +141,7 @@ body.page-user .block__title {
                     //@extend .well;
                     //These are all the labels under the sidebar
                     //Note that I am calling out the default classes
-                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interest, .views-field-field-industry-experience-years-{
+                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interests, .views-field-field-industry-experience-years-{
                         font-size: 1.4em;
                         //margin: 20px;
                         font-weight: bold;
@@ -195,9 +191,9 @@ body.page-user .block__title {
 }
 
 
-#addProjectButton{
+#profilePage_passwordChangeLink, #profilePage_editFieldLink, #addPortfolioButton{
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     a{
         @extend .btn;
         background: $mainColor;
@@ -211,34 +207,34 @@ body.page-user .block__title {
     color: $textColor;
 }
 
-//"Tap team works hard..." block at the bottom of the page.
-#block-block-6{
-    margin-top: 100px;
-    opacity: 0.6;
-}
-
-// "Add info about your self..." block at the top of the page.
-#block-block-9{
-    margin-bottom: 50px;
-}
-
+//Content margins
 #block-views-my-portfolios-block{
+    img{
+        height: 150px;
+    }
+    .views-field-title{
+        min-height: 50px;
+    }
+    ul{
+        margin-bottom: 0px;
+    }
+}
+
+
+#addPortfolioButton{
     margin-top: 20px;
+    margin-bottom: 35px;
 }
 
-//Title of portfolio-projects shown on freelancer's profile.
-.views-field-title{
-    //Max-width will need to change to match the image's width.
-    max-width: 180px;
-    //To account for long titles.
-    min-height: 100px;
-    font-weight: bold;
+//Messages:
 
+#block-block-9{
+    font-size: 16px;
+    color: $grey;
 }
-
-//By default images are vertically aligned through "baseline", 
-//meaning the top of images does not vertically align, when titles are of different length.
-.views-row{
-    vertical-align: top;    
-    margin-right: 5% !important;
+#block-block-6{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: $grey;
 }

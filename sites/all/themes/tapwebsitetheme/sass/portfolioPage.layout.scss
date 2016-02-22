@@ -23,17 +23,19 @@ $grey : #CCCCCC;
 //block__title
 
 
-#block-views-portfolio-header-block{
-        border-bottom: 1px solid $mainColor; 
+//Move the header stuff just a bit..
+.l-header{
+    margin-bottom: 28px;
 }
 
 .l-main{
     @extend .container;
+    width: 80%;
     //1.) This is the header region 
     .l-region--sidebar-first{   
         @include make-sm-column(12);
         
-        // border-bottom: 2px solid $mainColor; 
+        border-bottom: 1.5px solid $mainColor; 
         margin-bottom: 30px; 
         margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
@@ -53,13 +55,14 @@ $grey : #CCCCCC;
                 font-size: 2.5em;
                 font-weight: bold;
                 @include make-sm-column(4);
+                 white-space: nowrap;
             }
 
             .views-field-field-profile-picture{                 
                 img{
                     border-radius: 999px;
-                    height: 80px;
-                    width: 80px;
+                    height: 60px;
+                    width: 60px;
                     border: 2px solid $mainColor; 
                 }
                 @include make-sm-column-offset(4);
@@ -68,17 +71,20 @@ $grey : #CCCCCC;
             }
 
 
-            // .views-field-field-first-name{
-            //     //@include make-sm-column(2);
-            //     //@extend .well;
-            //     font-size: 2.0em;
-            //     margin-right:7px;
-            //     font-weight: bold;
-            // }
-            .views-field-name{
+            .views-field-field-first-name{
+                //@include make-sm-column(2);
+                //@extend .well;
+                font-size: 2.0em;
+                margin-right:7px;
+                font-weight: bold;
+                //For now, no wrapping.
+                white-space: nowrap;
+            }
+            .views-field-field-user-last-name{
                  //@include make-sm-column(3); 
                 font-size: 2.0em;
                 font-weight: bold;
+                white-space: nowrap;
             }
 
 
@@ -95,14 +101,15 @@ $grey : #CCCCCC;
             height: auto;
             margin-bottom: 30px; 
         }
-
-
-
- 
-
     }
+
     .l-region--sidebar-second{
         @include make-sm-column(3);
+           #block-views-portfolio-overview-block{
+            h2{
+                margin-left: -15px;
+            }
+        }
          .views-row{
                 .views-field{
                     @include make-row();
@@ -134,10 +141,3 @@ $grey : #CCCCCC;
     }         
 }
 
-
-#block-views-portfolio-overview-block{
-    h2{
-        margin-left: -15px;
-        font-weight: bold;
-    }
-}

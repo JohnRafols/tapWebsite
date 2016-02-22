@@ -30,3 +30,69 @@ Back-end stuff I did.
 - Add a new context
 - Condition: User Page
 - Reactions: Blocks and Omeha, layout: profilePage
+
+_____
+4/feb/2016		
+
+1.) Latest code in github does not work. Had to pull from previous branch and steal the module stuff from the latest code. 
+
+2.) Needed to update registrationPage.layout.inc. It didn't save my changes?...
+
+_________
+
+8 feb
+
+1.) Changed the structure of Portfolios. 
+     - No Summary needed
+     - plain text only.
+     - Images have a desc now
+     - Skills have a desc now
+     - Move content
+
+___________
+
+1.) Cancel Buttons
+// Done (May need revision...)
+
+2.) Client Pop-up 
+// Done
+- Will need to enable on only certain pages. Glitches are appearing...?
+
+3.) Disable the Error Pages in the footer so users dont get confused
+// Done (May need revision?)
+
+4.) Contact us links to footer
+// Done
+
+5.) Services Page
+// Done
+
+6.) Some changes didn't appear (js stuff) on live site, debug why
+//Check the blocks
+
+
+1.) add special menu module
+2.) change tag of <span> to <a>
+3.) add mailchimp module
+4.) add library for mailchimp module
+_________
+
+
+// Services at top and bottom menu
+// Spelling mistake on services (UX and UI)
+Contact Page (coming soon)
+Terms and Conditions, break the link
+// Link to Portfolio, not compulsary
+Register button- Create Portfolio
+
+Under my account - Password - new password
+Admin - change password 
+Get rid of preview button
+// Add images and videos - arrange images and videos together
+
+Edit Portfolio - change h1 (Hard?)
+
+// Add margin to second par at 
+// Show second navbar on home page
+Change 403 message
+    

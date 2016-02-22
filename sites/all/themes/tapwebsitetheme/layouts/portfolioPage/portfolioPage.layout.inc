@@ -15,7 +15,7 @@ regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 
 ; Scripts
-scripts[] = js/portfolioPage.behaviors.js
+scripts[] = js/portfolioPageScripts.js
 
 ; Stylesheets
 stylesheets[all][] = css/portfolioPage.layout.css
