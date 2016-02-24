@@ -1,0 +1,619 @@
+stdClass Object
+(
+    [nid] => 
+    [vid] => 
+    [uid] => 37
+    [created] => 1456184830
+    [type] => job
+    [language] => und
+    [changed] => 
+    [title] => commission for test_user2
+    [additional_settings__active_tab] => 
+    [revision] => 
+    [log] => 
+    [name] => G_D
+    [date] => 
+    [status] => 1
+    [promote] => 0
+    [sticky] => 0
+    [submit] => Save
+    [preview] => Preview
+    [cancel_changes] => Cancel Changes
+    [field_service_type] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [tid] => 
+                        )
+
+                )
+
+        )
+
+    [field_brief_service] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_brief_audience] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_brief_message_to_audience] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_brief_existing_materials] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_brief_specific_milestones] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                            [_weight] => 0
+                        )
+
+                    [add_more] => Add another item
+                )
+
+        )
+
+    [field_brief_loved_and_hated_styl] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_product_file_formats] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_reference_files] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [_weight] => 0
+                            [fid] => 0
+                            [display] => 1
+                            [description] => 
+                            [upload_button] => Upload
+                            [remove_button] => Remove
+                            [upload] => 
+                        )
+
+                )
+
+        )
+
+    [field_budget] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_confidentiality] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_available_candidates] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 0
+                        )
+
+                    [1] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 1
+                        )
+
+                    [2] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 2
+                        )
+
+                    [3] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 3
+                        )
+
+                    [4] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 4
+                        )
+
+                    [5] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 5
+                        )
+
+                    [6] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 6
+                        )
+
+                    [7] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 7
+                        )
+
+                    [8] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 8
+                        )
+
+                    [9] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 9
+                        )
+
+                )
+
+        )
+
+    [field_final_candidate] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                        )
+
+                )
+
+        )
+
+    [field_initial_candidates] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 0
+                        )
+
+                    [add_more] => Add another item
+                )
+
+        )
+
+    [field_deadline] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 2016-02-22 23:45:00
+                            [show_todate] => 1
+                            [timezone] => Pacific/Auckland
+                            [offset] => 46800
+                            [offset2] => 46800
+                            [value2] => 2016-02-22 23:45:00
+                        )
+
+                )
+
+        )
+
+    [field_casual_or_corporate] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_accessible_or_luxury] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_colourful_or_neutral] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_playful_or_serious] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_abstract_or_straight_up] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_structured_or_organic] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_masculine_or_feminine] => Array
+        (
+            [und] => Array
+                (
+                    [item] => Array
+                        (
+                            [value] => 0
+                            [container] => Array
+                                (
+                                    [min_value] => 0
+                                    [max_value] => 100
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_brief_extras] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 
+                        )
+
+                )
+
+        )
+
+    [field_freelancer_selection_type] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => commission
+                        )
+
+                )
+
+        )
+
+    [field_n] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 0
+                        )
+
+                    [add_more] => Add another item
+                )
+
+        )
+
+    [field_chat] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [chatroom] => Array
+                                (
+                                    [chatroom_title] => 
+                                    [chatroom_public] => 0
+                                    [chatroom_cid] => 0
+                                    [chatroom_read_only_roles] => Array
+                                        (
+                                        )
+
+                                    [chatroom_write_roles] => Array
+                                        (
+                                        )
+
+                                    [chatroom_format] => filtered_html
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [field_finished] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [value] => 0
+                        )
+
+                )
+
+        )
+
+    [field_unavailable_candidates] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 0
+                        )
+
+                    [add_more] => Add another item
+                )
+
+        )
+
+    [field_invitited_candidates] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 0
+                        )
+
+                    [1] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 1
+                        )
+
+                    [2] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 2
+                        )
+
+                    [3] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 3
+                        )
+
+                    [4] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 4
+                        )
+
+                    [5] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 5
+                        )
+
+                    [6] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 6
+                        )
+
+                    [7] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 7
+                        )
+
+                    [8] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 8
+                        )
+
+                    [9] => Array
+                        (
+                            [target_id] => 
+                            [_weight] => 9
+                        )
+
+                )
+
+        )
+
+    [form_build_id] => form-Oe_W_PefweJI15quST5F8BnMFVv4UCb6spglqmwYCuM
+    [form_token] => 8mnIXJ-X6F-r8n3bOPkBeWxnTDWdWxD8ZRayrXDvakY
+    [form_id] => job_node_form
+    [menu] => Array
+        (
+            [enabled] => 0
+            [mlid] => 0
+            [module] => menu
+            [hidden] => 0
+            [has_children] => 0
+            [customized] => 0
+            [options] => Array
+                (
+                )
+
+            [expanded] => 0
+            [parent_depth_limit] => 8
+            [link_title] => 
+            [description] => 
+            [parent] => main-menu:0
+            [weight] => 0
+        )
+
+    [field_freelancer_to_commission] => test_user2
+    [path] => Array
+        (
+            [alias] => 
+            [pid] => 
+            [source] => 
+            [language] => und
+            [pathauto] => 1
+        )
+
+    [op] => Save
+)

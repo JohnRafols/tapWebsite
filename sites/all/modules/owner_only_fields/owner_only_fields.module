@@ -10,10 +10,24 @@ function owner_only_fields_help($path, $arg) {
 }
 
 function owner_only_fields_process_password_confirm($element) {
-	//Renaming password labels on user account edit form.
+	// Renaming password labels on user account edit form.
 	$element['pass1']['#title'] = t("New Password");
 	$element['pass2']['#title'] = t("Confirm New Password");
 	return $element;
+}
+
+function owner_only_fields_page_alter(&$page){
+	debugLong($page, 'page_alter');
+
+	// content system_main actions submit value
+
+	if(!empty($page['content']['system_main']['actions']['submit']['#value'])){
+		if($page['content']['system_main']['actions']['submit']['#value']=='Cancel account'){
+			debugShort('page_alter_not_empty');
+			$page['content']['system_main']['actions']['submit']['#value']='Delete account';
+			drupal_set_title('Are you sure you want to delete your account?');
+		}
+	}
 }
 
 function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
@@ -36,12 +50,20 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 			'#limit_validation_errors' => array(),
 		);	
 		
-		// Here we need to provide an extra #process handler to allow us to modify
-		// the password element that FAPI expands.
-		$element_info = element_info('password_confirm');
-		$process = $element_info['#process'];
-		$process[] = 'owner_only_fields_process_password_confirm';
-		$form['account']['pass']['#process'] =  $process;
+		if(arg(3)==null){
+			// Here we need to provide an extra #process handler to allow us to modify
+			// the password element that FAPI expands.
+			$element_info = element_info('password_confirm');
+			$process = $element_info['#process'];
+			$process[] = 'owner_only_fields_process_password_confirm';
+			$form['account']['pass']['#process'] =  $process;
+		}
+
+		if(array_key_exists('cancel', $form['actions'])){
+			$form['actions']['cancel']['#value']='Delete account';
+		}
+
+
 		
 	}else if($form_id=='user_login'){
 		$form['name']['#title']='E-mail';
@@ -54,14 +76,22 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 					
 		debugLong($form, 'job_node_form_alter');
 
-		
-
 		$form['field_freelancer_to_commission'] = array(
 			'#type' => 'textfield',
 			'#default_value' => '',
-			'#size' => 20,         // The default size is a bit large...
+			'#size' => 60,         // The default size is a bit large...
 			'#weight'=>2.5,
+			'#attributes' =>array('placeholder' => t('Start Typing Name of Creative Pro Here')),
 		);
+
+		$form['field_freelancers_to_invite'] = array(
+			'#type' => 'textfield',
+			'#default_value' => '',
+			'#size' => 60,         // The default size is a bit large...
+			'#weight'=>2.6,
+			'#attributes' =>array('placeholder' => t('Invite Creative Pros, separate usernames with a comma.')),
+		);
+
 
 	}
 
@@ -108,6 +138,7 @@ function owner_only_fields_node_validate($node, $form, &$form_state){
 	
 	debugLong($form_state, "_validate_form_state");
 	debugLong($form, "_validate_form");
+	debugLong($node, "_validate_node");
 
 	
 	if(!array_key_exists('original', $node)){ //Newly created node, not updated node.
@@ -139,6 +170,45 @@ function owner_only_fields_node_validate($node, $form, &$form_state){
 						}
 					}
 				}
+			}else if(strcmp($form_state['values']['field_freelancer_selection_type']['und'][0]['value'], 'invite')==0){
+
+
+				if(!isset($form['field_freelancers_to_invite'])){
+					form_set_error('field_freelancers_to_invite', 'Please enter at least one Creative Pro to invite');
+				}
+
+				debugLong($form_state['values']['field_freelancers_to_invite'], '_validate_freelancers_to_invite');
+				$freelancers_to_invite=explode(',', $form_state['values']['field_freelancers_to_invite']);
+
+
+				$invalid=array();
+				$notApproved=array();
+				foreach($freelancers_to_invite as $name){
+					$f=user_load_by_name(trim($name));
+					if($f==false){
+						array_push($invalid, $name);
+					}else if(!isset($f->roles[array_search('approvedFreelancer', user_roles())])){
+						array_push($notApproved, $name);
+					}
+				}
+
+				$errorMessage;
+				if(!empty($invalid)){
+					$invalidInStr=implode(', ', $invalid);
+					$errorMessage='Not creative pros: '.$invalidInStr;
+				}
+
+				if(!empty($notApproved)){
+					$notApprovedInStr=implode(', ', $notApproved);
+					$errorMessage.="<br>Creative pros not yet approved: ".$notApprovedInStr;
+				}
+
+				if(!empty($errorMessage)){
+					form_set_error('field_freelancers_to_invite', $errorMessage);
+				}
+				
+				$trimmed=array_map('trim', $freelancers_to_invite);
+				$form_state['values']['field_freelancers_to_invite']=implode(',', $trimmed);
 			}
 		}
 	}
@@ -196,17 +266,26 @@ function user_edit_cancel($form, &$form_state) {
 
 function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
 	//Hide Profile2 fields on the freelancer registration page.
+
+	debugLong($form, 'form_profile2_form_alter');
+
 	if($form["#form_id"] != "user_profile_form"){
 		$form['profile_freelancer']['field_about_me']['#access'] = FALSE;
 		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
 		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
 		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
 		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
+	}else{
+	//	$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
 	}	
+
+
 }
 
 
 function owner_only_fields_preprocess_page(&$vars, $hook) {
+
+	debugLong($vars, 'preprocess_page');
 	global $user;
 	$first=arg(0);
 	$second=arg(1);

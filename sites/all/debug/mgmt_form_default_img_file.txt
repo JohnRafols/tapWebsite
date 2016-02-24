@@ -1,0 +1,16 @@
+stdClass Object
+(
+    [fid] => 30
+    [uid] => 1
+    [filename] => icon-user-default 100x100.png
+    [uri] => public://default_images/icon-user-default 100x100_2.png
+    [filemime] => image/png
+    [filesize] => 4596
+    [status] => 1
+    [timestamp] => 1454330755
+    [uuid] => c822f61e-8a13-4991-aafb-3ba19ad43070
+    [rdf_mapping] => Array
+        (
+        )
+
+)

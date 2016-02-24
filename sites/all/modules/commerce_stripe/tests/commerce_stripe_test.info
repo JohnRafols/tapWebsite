@@ -1,0 +1,11 @@
+core = 7.x
+hidden = TRUE
+name = commerce_stripe_test
+description = Used during testing of commerce_stripe.
+
+; Information added by Drupal.org packaging script on 2016-02-10
+version = "7.x-1.2"
+core = "7.x"
+project = "commerce_stripe"
+datestamp = "1455143046"
+

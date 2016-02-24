@@ -27,8 +27,24 @@ function tap_job_mgmt_node_presave($node){
 			emailFreelancers($topFreelancers);
 			
 		}else if($freelancer_selection_type=='invite'){ 
-			$freelancers=$node->field_initial_candidates['und'];
+			$names=$node->field_freelancers_to_invite;
+			$freelancers=array();
 
+			debugLong($node->field_freelancers_to_invite, 'node_presave_invite');
+
+			$freelancers_to_invite=explode(',', $node->field_freelancers_to_invite);
+
+			foreach($freelancers_to_invite as $name){
+				$f=user_load_by_name(trim($name));
+				array_push($freelancers, $f);
+			}
+
+			debugLong($node->field_freelancers_to_invite, 'node_presave_invite_after_trim');
+
+			foreach($freelancers as $f){
+				$data =array('target_id'=>$f->uid);
+				array_push($node->field_invited_candidates['und'], $data);		
+			}
 
 		}else if($freelancer_selection_type=='commission'){
 			addInitialFreelancersToJob(array(user_load_by_name($node->field_freelancer_to_commission)), $node);
@@ -64,11 +80,9 @@ function emailFreelancers($freelancers){
 
 function addInitialFreelancersToJob($freelancers, $job){
 
-	$data =array();
 	foreach($freelancers as $f){
-		$data['target_id']=$f->uid;	
+		$data =array('target_id'=>$f->uid);
 		array_push($job->field_initial_candidates['und'], $data);		
-		
 	}
 }
 
@@ -369,62 +383,86 @@ function tap_job_mgmt_job_unavailable($job='') {
 }
 
 
-function tap_job_mgmt_block_info() {
-	$blocks=array();
-	$blocks['tap block'] = array(
-		'info' => t('tap block'),
-		'cache' => DRUPAL_NO_CACHE
-	);
+	function tap_job_mgmt_block_info() {
+		$blocks=array();
+		$blocks['tap block'] = array(
+			'info' => t('tap block'),
+			'cache' => DRUPAL_NO_CACHE
+		);
 
-	return $blocks;
-}
-
-/**
- * Implements hook_block_view().
- */
-function tap_job_mgmt_block_view($block_name = ''){	
-	//Do not add this form if there is already a freelancer working on the job.
-	if(menu_get_object()->field_final_candidate!=null){
-		return;
+		return $blocks;
 	}
 
-    $form = drupal_get_form('tap_job_mgmt_form');
-    $block = array(
-        'content' => $form,
-    );
-        
-    return $block;
-}
-
-/**
- * Implements hook_form().
- */
-function tap_job_mgmt_form($form, &$form_state){
-	if ($job = menu_get_object()){
-		//Put all available freelancers into a list from which the client will select.
-
-		//Do not do anything further if no freelancer has expressed interest.
-		if(!array_key_exists('und', $job->field_available_candidates)){
-			return;	
+	/**
+	 * Implements hook_block_view().
+	 */
+	function tap_job_mgmt_block_view($block_name = ''){	
+		//Do not add this form if there is already a freelancer working on the job.
+		if(menu_get_object()->field_final_candidate!=null){
+			return;
 		}
 
-		debugLong($job, "candidates");
+	    $form = drupal_get_form('tap_job_mgmt_form');
+	    $block = array(
+	        'content' => $form,
+	    );
+	        
+	    return $block;
+	}
 
-		$freelancers=array();
-		foreach ($job->field_available_candidates['und'] as $value) {
-			$freelancers[$value['target_id']]=user_load($value['target_id'])->name;
+	/**
+	 * Implements hook_form().
+	 */
+	function tap_job_mgmt_form($form, &$form_state){
+		if ($job = menu_get_object()){
+			//Put all available freelancers into a list from which the client will select.
+
+			//Do not do anything further if no freelancer has expressed interest.
+			if(!array_key_exists('und', $job->field_available_candidates)){
+				return;	
+			}
+
+			debugLong($job, "candidates");
+
+			$freelancers=array();
+			foreach ($job->field_available_candidates['und'] as $value) {
+				$u=user_load($value['target_id']);
+				$profile = profile2_load_by_user($value['target_id']);
+				if(!empty($profile['freelancer']->field_profile_picture['und'])){
+					// $realpath=drupal_realpath($profile['freelancer']->field_profile_picture['und'][0]['uri']);
+					$realpath=file_create_url($profile['freelancer']->field_profile_picture['und'][0]['uri']);
+					$freelancers[$value['target_id']]=
+						'<img src="'.$realpath.'" alt="Mountain View" width="50px" height="50px"><a href="/user/'.$u->uid.'">'.$u->name.'</a>';
+				}else{
+					// $pic=variable_get('user_picture_default', '');
+					
+
+					$info = field_info_field('field_profile_picture');
+					if (!empty($info) && $info['settings']['default_image'] > 0) {
+					    $default_img_fid  = $info['settings']['default_image'];
+					    $default_img_file = file_create_url(file_load($default_img_fid)->uri);
+					    $freelancers[$value['target_id']]=
+						'<img src="'.$default_img_file.'" alt="Default image" width="50px" height="50px"><a href="/user/'.$u->uid.'">'.$u->name.'</a>';	
+
+					}
+				}
+
+				
 		}
+
+		
+
 
 		$form['freelancer_choice']=array(
 			'#type'=>'radios',
-			'#title'=>t('Choose the freelancer for this job:'),
+			'#title'=>t('Choose the Creative Pro for this job:'),
 			'#options'=>$freelancers,
 		);
 
 		// now I add also a button
 	    $form['submit'] = array(
 	       '#type'=>'submit',
-	       '#value'=>t('Submit'),
+	       '#value'=>t('Confirm'),
 	    );
 
 	    //Assign our own function as handler of the submit event.
