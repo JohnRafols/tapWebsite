@@ -191,8 +191,7 @@ function owner_only_fields_node_validate($node, $form, &$form_state){
 						array_push($notApproved, $name);
 					}
 				}
-
-				$errorMessage;
+				
 				if(!empty($invalid)){
 					$invalidInStr=implode(', ', $invalid);
 					$errorMessage='Not creative pros: '.$invalidInStr;
@@ -200,7 +199,9 @@ function owner_only_fields_node_validate($node, $form, &$form_state){
 
 				if(!empty($notApproved)){
 					$notApprovedInStr=implode(', ', $notApproved);
-					$errorMessage.="<br>Creative pros not yet approved: ".$notApprovedInStr;
+					if(isset($errorMessage)) $errorMessage.="<br>Creative pros not yet approved: ".$notApprovedInStr;
+					else $errorMessage="Creative pros not yet approved: ".$notApprovedInStr;
+					
 				}
 
 				if(!empty($errorMessage)){

@@ -383,76 +383,66 @@ function tap_job_mgmt_job_unavailable($job='') {
 }
 
 
-	function tap_job_mgmt_block_info() {
-		$blocks=array();
-		$blocks['tap block'] = array(
-			'info' => t('tap block'),
-			'cache' => DRUPAL_NO_CACHE
-		);
+function tap_job_mgmt_block_info() {
+	$blocks=array();
+	$blocks['tap block'] = array(
+		'info' => t('tap block'),
+		'cache' => DRUPAL_NO_CACHE
+	);
 
-		return $blocks;
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tap_job_mgmt_block_view($block_name = ''){	
+	//Do not add this form if there is already a freelancer working on the job.
+	if(menu_get_object()->field_final_candidate!=null){
+		return;
 	}
 
-	/**
-	 * Implements hook_block_view().
-	 */
-	function tap_job_mgmt_block_view($block_name = ''){	
-		//Do not add this form if there is already a freelancer working on the job.
-		if(menu_get_object()->field_final_candidate!=null){
-			return;
+    $form = drupal_get_form('tap_job_mgmt_form');
+    $block = array(
+        'content' => $form,
+    );
+        
+    return $block;
+}
+
+/**
+ * Implements hook_form().
+ */
+function tap_job_mgmt_form($form, &$form_state){
+	if ($job = menu_get_object()){
+		//Put all available freelancers into a list from which the client will select.
+
+		//Do not do anything further if no freelancer has expressed interest.
+		if(!array_key_exists('und', $job->field_available_candidates)){
+			return;	
 		}
 
-	    $form = drupal_get_form('tap_job_mgmt_form');
-	    $block = array(
-	        'content' => $form,
-	    );
-	        
-	    return $block;
-	}
+		debugLong($job, "candidates");
 
-	/**
-	 * Implements hook_form().
-	 */
-	function tap_job_mgmt_form($form, &$form_state){
-		if ($job = menu_get_object()){
-			//Put all available freelancers into a list from which the client will select.
-
-			//Do not do anything further if no freelancer has expressed interest.
-			if(!array_key_exists('und', $job->field_available_candidates)){
-				return;	
+		$freelancers=array();
+		foreach ($job->field_available_candidates['und'] as $value) {
+			$u=user_load($value['target_id']);
+			$profile = profile2_load_by_user($value['target_id']);
+			if(!empty($profile['freelancer']->field_profile_picture['und'])){
+				$picUrl=file_create_url($profile['freelancer']->field_profile_picture['und'][0]['uri']);
+			}else{
+				$info = field_info_field('field_profile_picture');
+				if (!empty($info) && $info['settings']['default_image'] > 0) {
+				    $default_img_fid  = $info['settings']['default_image'];
+				    $picUrl=file_create_url(file_load($default_img_fid)->uri);	
+				}
 			}
 
-			debugLong($job, "candidates");
-
-			$freelancers=array();
-			foreach ($job->field_available_candidates['und'] as $value) {
-				$u=user_load($value['target_id']);
-				$profile = profile2_load_by_user($value['target_id']);
-				if(!empty($profile['freelancer']->field_profile_picture['und'])){
-					// $realpath=drupal_realpath($profile['freelancer']->field_profile_picture['und'][0]['uri']);
-					$realpath=file_create_url($profile['freelancer']->field_profile_picture['und'][0]['uri']);
-					$freelancers[$value['target_id']]=
-						'<img src="'.$realpath.'" alt="Mountain View" width="50px" height="50px"><a href="/user/'.$u->uid.'">'.$u->name.'</a>';
-				}else{
-					// $pic=variable_get('user_picture_default', '');
-					
-
-					$info = field_info_field('field_profile_picture');
-					if (!empty($info) && $info['settings']['default_image'] > 0) {
-					    $default_img_fid  = $info['settings']['default_image'];
-					    $default_img_file = file_create_url(file_load($default_img_fid)->uri);
-					    $freelancers[$value['target_id']]=
-						'<img src="'.$default_img_file.'" alt="Default image" width="50px" height="50px"><a href="/user/'.$u->uid.'">'.$u->name.'</a>';	
-
-					}
-				}
-
-				
+			$freelancers[$value['target_id']]=
+					'<a target="_blank" href="/user/'.$u->uid.'"><img src="'.$picUrl.'" id="profilePicture'.$u->uid.'" alt="Default image">'.$u->name.'</a>';				
 		}
 
-		
-
-
+	
 		$form['freelancer_choice']=array(
 			'#type'=>'radios',
 			'#title'=>t('Choose the Creative Pro for this job:'),

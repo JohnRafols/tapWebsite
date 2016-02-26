@@ -1,1 +1,0 @@
-sites/default/files/pictures/icon-user-default 100x100.png
