@@ -1495,24 +1495,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .l-main {
+.container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .l-main:before, .container:after, .l-main:after {
+  .container:before, .container:after {
     content: " ";
     display: table; }
-  .container:after, .l-main:after {
+  .container:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .l-main {
+    .container {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .l-main {
+    .container {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .l-main {
+    .container {
       width: 1170px; } }
 
 .container-fluid {
@@ -3738,15 +3738,15 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .l-main > .navbar-header,
-.container > .navbar-collapse, .l-main > .navbar-collapse,
+.container > .navbar-header,
+.container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .l-main > .navbar-header,
-    .container > .navbar-collapse, .l-main > .navbar-collapse,
+    .container > .navbar-header,
+    .container > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3790,7 +3790,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .l-main .navbar-brand,
+    .navbar > .container .navbar-brand,
     .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
@@ -4316,18 +4316,18 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .l-main .jumbotron,
+  .container .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
-  .jumbotron .container, .jumbotron .l-main {
+  .jumbotron .container {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .l-main .jumbotron,
+      .container .jumbotron,
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
@@ -5800,6 +5800,67 @@ button.close {
 .block__title {
   display: none; }
 
+/* 
+___________________
+
+  This is styling for the new freelancer registration page:
+
+___________________
+*/
+.page-freelancer-register h1 {
+  font-weight: bold;
+  margin-top: 60px; }
+
+.page-freelancer-register input[type=checkbox] {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  margin-right: 5px;
+  margin-top: -4px; }
+
+.page-freelancer-register .tabs, .page-freelancer-register .tabs--primary, .page-freelancer-register .links--inline {
+  display: none; }
+
+.page-freelancer-register #freelancerRegistrationPage_description {
+  color: #CCCCCC;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
+.page-freelancer-register .l-content {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  width: 70%; }
+
+.page-freelancer-register .form-item-pass {
+  width: 100% !important; }
+
+.page-freelancer-register #user-register-form {
+  width: 70%;
+  font-size: 16px; }
+
+.page-freelancer-register #block-block-15 {
+  color: #CCCCCC;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
+.page-freelancer-register #registrationPage_subtitle {
+  border-bottom: 1.5px solid #FFBF28;
+  font-weight: bold;
+  color: #FFBF28;
+  font-size: 16px; }
+
+.password-parent {
+  position: relative; }
+  .password-parent .password-strength {
+    position: absolute;
+    margin-left: 330px; }
+
+div.password-confirm {
+  position: absolute;
+  margin-left: 330px; }
+
 .registrationModal_header {
   background-color: #FFBF28;
   text-align: center; }
@@ -5833,11 +5894,5 @@ button.close {
 body.node-type-portfolio img {
   max-width: 100%;
   height: auto; }
-
-#quicktabs-tabpage-freelancer_jobs-1 .views-row {
-  margin-bottom: 10px; }
-
-#quicktabs-tabpage-freelancer_jobs-1 .views-field-title, #quicktabs-tabpage-freelancer_jobs-1 .views-field-php-1 {
-  display: inline; }
 
 /*# sourceMappingURL=registrationPage.layout.css.map */

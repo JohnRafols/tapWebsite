@@ -9,7 +9,7 @@
       
       //Append text to the header
       freelancerRegistrationPage.find('h1').once('freelancerRegistration').wrap('<div id = "newFreelancer_titleDiv"><div></div></div>')
-         .after('<div id = "registrationPage_subtitle" > Work on exiting projects and keep your freedom </p>')
+         .after('<div id = "registrationPage_subtitle" > Work on exciting projects and keep your freedom </p>')
 
       var passwordSection = freelancerRegistrationPage.find('#edit-account')
                                    .find('.form-item-pass')
@@ -73,7 +73,7 @@
 
                 //Add the modal to the page
                 freelancerRegistrationPage.find('form').append(modalCode);
-                freelancerRegistrationPage.find('.registrationModal_footer').find('input').attr('value', 'Edit Profile')
+                freelancerRegistrationPage.find('.registrationModal_footer').find('input').attr('value', 'Create Portfolio')
 
                 //THESE ATTRIBUTES open up the modal 
                 $(this)

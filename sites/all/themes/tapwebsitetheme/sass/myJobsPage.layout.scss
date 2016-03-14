@@ -1,0 +1,355 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$secondaryColor: #6d2c54;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+
+
+
+.l-main{
+
+    .l-content{
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 60px;
+        width: 70%;
+
+        //This is for the navigation for clients when they check job information
+        #tabsParentDiv{
+            @extend .row;
+            @extend .clearfix;
+            min-height: 75px; 
+
+            display: flex;
+            align-items: center; 
+            border-bottom: 1.5px solid $mainColor;
+            margin-top: 40px;
+
+            h1{
+                 @include make-sm-column(2);
+                font-weight: bold;
+                padding-bottom: 5px; 
+            }
+            //The tabs themselves
+             ul.quicktabs-tabs{
+                 @include make-sm-column(10);
+                text-align: right; 
+                margin-top: 10px;
+
+                //Remove some css
+                border-bottom: none; 
+                li{
+                    border: none;
+                    padding-right: 10px;
+                    a{
+                        font-size: 14px !important; 
+                    }
+                }
+                
+                //Coloring the borders:
+                $columns: 4;
+                @for $i from 1 to $columns {
+                  li:nth-child(#{$i}) {
+                    border-right: 1.5px solid $mainColor;
+                  }
+                }
+
+             }
+        }
+
+       //The block wih the full content
+        #block-quicktabs-client-jobs{
+            h2.block__title{
+                display:none;
+            }
+            div.quicktabs_main{
+                border: none; 
+            }
+        }
+
+        .view-content{
+            .views-row{
+
+                background-color: ($mainColor * 0.9);
+                min-height: 50px; 
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                display:flex;
+                align-items: center;
+
+                .views-field-title{
+                    @include make-sm-column(4);
+                    a{
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
+                .views-field-field-deadline{
+                    border-left: 1.5px solid white; 
+                    @include make-sm-column-offset(4);
+                    @include make-sm-column(4);
+                    display: inherit; 
+                    span{
+                        color: white;
+                        font-weight: bold;
+                        white-space: nowrap;
+                    }
+                }
+
+            }
+        }
+
+    }
+    
+}
+
+
+/* 
+___________________
+
+This is Styling for specific job pages.
+
+___________________
+*/
+.node-type-job{
+
+    h1{
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-top: 60px;
+      margin-bottom: 20px;
+
+      padding-left: 15px;
+      padding-bottom: 15px;
+    }
+
+
+    //This is the form when you select a specific creative
+    .block--tap-job-mgmt-tap-block{
+        .tap-job-mgmt-form{
+
+            .form-item-freelancer-choice{
+                .form-item{
+
+                    @extend .row; 
+                    background-color: white;
+                    border: 1.5px solid $mainColor; 
+
+                    min-height: 80px; 
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    display:flex;
+                    align-items: center;
+
+                    img{
+                        border-radius: 999px;
+                        height: 60px;
+                        width: 60px;
+                        //border: 2px solid $mainColor; 
+                        background-size: cover;
+                    }
+                }
+            }
+            .form-submit{
+              @extend .btn;
+              background-color: $mainColor;
+            }
+        }
+    }
+
+    //This is information on the job
+    .node--job{
+        font-size: 16px;
+
+    }
+
+}
+
+
+
+/* 
+___________________
+
+  This is Styling for the New job Page
+  
+___________________
+*/
+
+.page-node-add-job{
+ 
+  #newJob_titleDiv{
+    display: flex;           /* establish flex container */
+    align-items: center;     /* center items vertically, in this case */
+    border-bottom: 1.5px solid $mainColor; 
+    //width: 70%;
+    margin: 0 auto;
+    h1{
+      font-weight: bold;
+    }
+    #newJob_Logo{
+        background: url('images/ClientProcess/UploadYourProject.png') no-repeat;
+        width: 100px;
+        height: 100px;
+        background-size: 100% 100%;
+    }
+  }
+
+  //The gutter surrounding the form
+  .l-content{
+    form{
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+
+  //Description Fields
+  .fieldset-description, .description{
+    font-size: 16px;
+    color: $grey*0.8;
+    margin-bottom: 10px;
+  }
+
+  //The Upload Image section
+  #edit-field-images{
+    .image-widget-data{
+      @extend .well;
+      margin-bottom: 15px;
+      //margin-left: 15px;
+      //border: 2px solid $mainColor; 
+    }
+    legend{
+      border-bottom: 0px solid #e5e5e5;
+      margin-bottom: 3px;
+      span{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .form-submit, .ajax-processed{
+      @extend .btn;
+      margin-top: 10px;
+      background: $mainColor;
+      color: $textColor;
+    }
+    //There's stuff that needs to be invisible.
+    //It shouldn't be dangerous if it was seen
+    label{
+      display: none !important;
+    }
+    .description{
+      display: none !important;
+    }
+    .tabledrag-toggle-weight{
+      display: none !important;
+    }
+    //Styling for the Image table
+    table{
+      margin-top: 30px;
+      margin-bottom: 20px;
+      th,td{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  // Margin stuff
+  .image-widget-data, #edit-field-portfolio-project-skills, #edit-field-images, #edit-body, .form-item-title, .messages--error{
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .image-widget-data{
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .messages--error{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  #edit-field-portfolio-project-skills{
+    //margin-top: -25px;
+  }
+
+  //All labels on the form
+  label{
+    font-size: 18px;
+  }
+  //Hide the tips
+  .tips{
+    display: none !important;
+  }
+
+  //The Skill List section:
+  #edit-field-service-type{
+    .description{
+      margin-left: 0px;
+    }
+    .projectSkillListRow{
+      .option{
+        font-size: 16px;
+        color: $grey*0.8;
+      }
+    }
+  }
+
+  //The Fieldset
+  .field-group-fieldset{
+    margin-bottom: 30px; 
+    label{
+      text-align: center;
+      //word-spacing: 30px;
+    }
+    .sliderfield-container{
+      margin: 0 auto;
+      width: 400px !important;
+      //Default value is 50%
+    }    
+  }
+
+
+  //Radio size (Where these meant to be checkboxes?)
+  input[type=radio] {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      margin-right: 5px;
+      margin-top: -4.5px;
+  }
+
+  //The Submit Button
+    #edit-actions{
+      border-top: 2px solid $mainColor; 
+      padding-top: 30px;
+      margin-bottom: 60px;
+        #edit-submit, #edit-cancel-changes{
+          @extend .btn;
+          background: $mainColor;
+          color: $textColor;
+            &:focus {
+            background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
+        }
+        #edit-cancel-changes{
+           margin-left: 10px;
+        }
+    }
+
+}
+
+
+

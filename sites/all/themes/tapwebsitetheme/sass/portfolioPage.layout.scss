@@ -34,53 +34,58 @@ $grey : #CCCCCC;
     //1.) This is the header region 
     .l-region--sidebar-first{   
         @include make-sm-column(12);
+        @extend .clearfix;
         
         border-bottom: 1.5px solid $mainColor; 
         margin-bottom: 30px; 
         margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
-        //position: relative;
-        height: 110px; 
+        min-height: 110px; 
         //1.) The header (The user's name and profile picture go here)
              .views-row{
-                //@include make-row();
+                @extend .clearfix;
                 //position: absolute; 
-                height: 120px; 
+                min-height: 120px; 
                 display: flex;
                 align-items: center;
+                //padding-top: 20px; 
+                padding-top: 10px;
+                padding-bottom: 10px; 
             }
 
 
             .views-field-title{
                 font-size: 2.5em;
                 font-weight: bold;
-                @include make-sm-column(4);
-                 white-space: nowrap;
+                @include make-sm-column(7);
+                span{
+                    word-wrap: break-word;
+                }
             }
 
-            .views-field-field-profile-picture{                 
+            .views-field-field-profile-picture{      
                 img{
                     border-radius: 999px;
                     height: 60px;
                     width: 60px;
                     border: 2px solid $mainColor; 
+                    background-size: cover;
                 }
-                @include make-sm-column-offset(4);
+                @include make-sm-column-offset(1);
                 @include make-sm-column(1);
                 margin-right:15px;
             }
 
 
-            .views-field-field-first-name{
+            .views-field-field-first-name, .views-field-name{
                 //@include make-sm-column(2);
-                //@extend .well;
                 font-size: 2.0em;
                 margin-right:7px;
                 font-weight: bold;
                 //For now, no wrapping.
                 white-space: nowrap;
             }
-            .views-field-field-user-last-name{
+            .views-field-field-user-last-name, .views-field-php{
                  //@include make-sm-column(3); 
                 font-size: 2.0em;
                 font-weight: bold;
@@ -99,6 +104,10 @@ $grey : #CCCCCC;
         img{
             width: 100%;
             height: auto;
+            margin-bottom: 30px; 
+        }
+
+        article{
             margin-bottom: 30px; 
         }
     }

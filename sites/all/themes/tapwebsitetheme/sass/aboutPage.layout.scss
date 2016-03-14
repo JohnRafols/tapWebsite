@@ -25,13 +25,14 @@ $secondaryColor: #6d2c54;
     background-color: $mainColor;
     border: $mainColor * 0.80;
     color: $text-color;
+    margin-bottom: 10px; 
     
     //Change the color of the button when it is selected or focused.
         &:focus {
-            background-color: ($mainColor * 1.20);
+            background-color: ($mainColor * 0.80);
         }
         &:hover{
-             background-color: ($mainColor * 0.80);
+             background-color: ($mainColor * 1.20);
         }
 }
 
@@ -41,7 +42,7 @@ $secondaryColor: #6d2c54;
 
 //The Banner 
 #landingPageWelcomeSection{
-    height: 500px;
+    min-height: 490px;
     //Center everything
     display: flex;
     justify-content: center;
@@ -125,10 +126,20 @@ $secondaryColor: #6d2c54;
 }
 
 
- //Need to Check for margins...
- #block-system-user-menu, #block-menu-menu-secondary-nav-bar{
-    margin-bottom: 0px;
- }
+//These are regarding the second navbar that only appears when logged in.
+.logged-in{
+    #block-system-user-menu, #block-menu-menu-secondary-nav-bar{
+        margin-bottom: 0px;
+    }
+}
+
+.not-logged-in{
+    #block-menu-menu-secondary-nav-bar{
+        display: none !important;
+    }
+}
+
+
 
 //The Margin for all sections
 #landingPageServices, #landingPage_whoAreWe, 
@@ -149,7 +160,7 @@ $secondaryColor: #6d2c54;
     }
     p{
         font-size: 16px;
-        color: #6d2c54;
+        //color: #6d2c54;
     }
     strong{
         font-size: 18px;
@@ -174,6 +185,11 @@ $secondaryColor: #6d2c54;
 
 
 
+#landingPage_whoWeAre_secondRow{
+        margin-top: 30px;
+}
+
+
 #landingPage_theCreativeProcess{
     .row{
         font-size: 16px;
@@ -181,12 +197,21 @@ $secondaryColor: #6d2c54;
     }
 }
 
-#landingPage_theCreativeProcess_intro{
-    font-size: 16px;
-}
-#landingPage_theCreativeProcess_description{
-    margin-bottom: 30px;
 
+#landingPage_theCreativeProcess_description{
+    position: relative; 
+    margin-bottom: 30px; 
+    margin-top: 30px; 
+    .landingPage_whoAreWe_contentBorder{
+        position: absolute;
+        border-top: 2px solid $mainColor;
+        left: 3.5%;
+        right: 75%;
+    }
+    p{
+        margin-top: 20px; 
+        //font-size: 16px; 
+    }
 }
 
 
@@ -207,7 +232,7 @@ $secondaryColor: #6d2c54;
 
 #landingPage_creativeTalent_secondColumn{
     display: inline-block; 
-    text-align: right;
+    text-align: left;
     div{
          text-align: left;
          padding: 0 !important;
@@ -232,7 +257,9 @@ $secondaryColor: #6d2c54;
 
 .landingPage_titles_creativeTalent{
     margin-top: 15px;
-    border-top: 1.5px solid #FFBF28;
+    border-bottom: 1.5px solid #FFBF28;
+    font-size: 1.4em;
+    margin-bottom: 30px; 
 }
 
 #landingPage_creativeTalent_clientsInNewZealand{
@@ -255,165 +282,102 @@ $secondaryColor: #6d2c54;
     font-size: 26px;
     font-weight: bold;
     text-align: left;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     border-bottom: 1.5px solid $mainColor; 
+    text-align: center;
 }
 
-.landingPage_emphasizedText{
-    font-size: 1.4em;
-    color: $mainColor;
-    //width: 60%;
+.landingPage_emphasizedText{ 
+    font-size: 26px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px; 
 }
 
 
 #landingPage_creativeTalent_title{
-    display-inline: block;
+    //display-inline: block;
     font-size: 26px;
-    color: $mainColor;
-    width: 70%;
+    text-align: center; 
+    // color: $mainColor;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px; 
 }
 
  #landingPageServices_description, #landingPage_theCreativeProcess_description{
     font-size: 1.4em;
-    color: $mainColor;
+    //color: $mainColor;
+
 
  }
 
-//Icons
+
+//These are for the icons of the Creative Services 
+$landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndApp MotionGraphics CreativeConsulting Photography;
+
+@each $servicesIcons in $landingPageServicesIconList{
+    #landingPageServices_#{$servicesIcons}{
+        background: url(images/Services/#{$servicesIcons}.png) no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+}
+
+// Center the text for the services Icons
 #landingPageServices{
     text-align: center;
-    //Services Icons:
     p{
         font-size: 16px;
         color: #6d2c54;
     }
-    #landingPageServices_graphicDesign_Icon{
-        background: url('images/Services/GraphicDesign.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
+    .landingPage_emphasizedText{
+        p
+        {
+              font-size: 26px;
+        width: 90%;
+        text-align: center;
         margin: 0 auto;
+        margin-bottom: 30px; 
+        }
+      
     }
 
-    #landingPageServices_artAndIllustration_Icon{
-        background: url('images/Services/ArtAndIllustration.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
+}
 
-    #landingPageServices_branding_Icon{
-        background: url('images/Services/Branding.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
+//These are for the icons of features we provide for clients
+$landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Communicate ImplementNewDesign;
 
-    #landingPageServices_webAndApp_Icon{
-        background: url('images/Services/WebAndApp.png') no-repeat;
+@each $clientIcon in $landingPageServices_clientIconList{
+    #landingPageServices_#{$clientIcon}{
+        background: url(images/ClientProcess/#{$clientIcon}.png) no-repeat;
         width: 150px;
         height: 150px;
         background-size: 100% 100%;
         margin: 0 auto;
-    }
-
-    #landingPageServices_motionGraphics_Icon{
-        background: url('images/Services/MotionGraphics.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
-
-    #landingPageServices_creativeConsulting_Icon{
-        background: url('images/Services/CreativeConsulting.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
-
-    #landingPageServices_photography_Icon{
-        background: url('images/Services/Photography.png') no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-    }
-     
-    #landingPage_viewAllServices{
-        font-size: 1.4em;
-        height: 150px;
-        line-height: 150px;
-        white-space: nowrap;
     }
 }
 
-//Icons for Clients
 
-#landingPageServices_uploadYourProject_Icon{
-    background: url('images/ClientProcess/UploadYourProject.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-#landingPageServices_getMatchedToTalent_Icon{
-    background: url('images/ClientProcess/GetMatchedToTalent.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-#landingPageServices_communicate_Icon{
-    background: url('images/ClientProcess/Communicate.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-#landingPageServices_implementNewDesign_Icon{
-    background: url('images/ClientProcess/ImplementNewDesign.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-
+//These are for the icons of features we provide for freelancers
+$landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorking GetPaid;
 
 //Icons for Freelancers/Creatives
+@each $freelancerIcon in $landingPageServices_freelancerIconList{
+    #landingPageServices_#{$freelancerIcon}{
+          background: url(images/CreativeProcess/#{$freelancerIcon}.png) no-repeat;
+          width: 150px;
+          height: 150px;
+          background-size: 100% 100%;
+          margin: 0 auto;
+    }
 
-#landingPageServices_createAPortfolio_Icon{
-    background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
 }
 
-#landingPageServices_getMatched_Icon{
-    background: url('images/CreativeProcess/GetMatched.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-#landingPageServices_startWorking_Icon{
-    background: url('images/CreativeProcess/StartWorking.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
-#landingPageServices_getPaid_Icon{
-    background: url('images/CreativeProcess/GetPaid.png') no-repeat;
-    width: 150px;
-    height: 150px;
-    background-size: 100% 100%;
-    margin: 0 auto;
-}
+//This is for the New Zealand Icon
 #landingPageServices_NZ_Icon{
     background: url('images/NZ-Icon.png') no-repeat;
     width: 150px;
@@ -426,10 +390,6 @@ $secondaryColor: #6d2c54;
    // @extend .well; 
 }
 
-// #landingPageServices_secondRow{
-//     display:flex;
-//     align-items: center;
-// }
 
 .landingPage_bulletPointList{
     display: list-item;
@@ -460,16 +420,16 @@ $secondaryColor: #6d2c54;
 
 
 //View and Edit tabs on my-account page.
-.tabs--primary{
-    display: none;
-    li{
-        display: none;
-        a{
-            display: none;
-        }
-    }
+// .tabs--primary{
+//     display: none;
+//     li{
+//         display: none;
+//         a{
+//             display: none;
+//         }
+//     }
 
-}
+// }
 
  #addPortfolioButton{
    
@@ -478,3 +438,61 @@ $secondaryColor: #6d2c54;
         color: $textColor;
     
 }
+
+
+//Specifics... 
+
+
+#landingPageServices_mainContainer{
+    #landingPageServices_contentContainer{
+        width: 70%;
+
+    }
+    margin-bottom: 30px; 
+}
+
+#landingPage_whoAreWe_mainContainer{
+    background-color: $secondaryColor;
+    #landingPage_whoAreWe_contentContainer{
+        width:70%;
+        color: white;
+        .landingPage_titles{
+            border-bottom: none !important; 
+            padding-bottom: 0px !important;
+        }
+        .hr_divider{
+            border-top: 1.5px solid ($secondaryColor*1.20);
+            padding-top: 30px;
+            width: 96.5%;
+            margin: 0 auto;
+        }
+    }
+}
+
+#landingPage_howThisWorks_mainContainer{
+    #landingPage_howThisWorks_contentContainer{
+        width:70%;
+    }
+      margin-bottom: 60px; 
+}
+
+
+#landingPage_theCreativeProcess_mainContainer{
+    background-color: ($grey* 1.20);
+    margin-top: 30px; 
+    #landingPage_theCreativeProcess_contentContainer{
+        .landingPage_emphasizedText{
+            margin-bottom: 0px !important; 
+        }
+        width: 70%;
+    }
+}
+
+
+
+
+
+
+
+
+

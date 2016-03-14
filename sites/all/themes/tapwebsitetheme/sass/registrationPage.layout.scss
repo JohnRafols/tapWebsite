@@ -11,20 +11,79 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
-body.page-freelancer-register{ 
-    //@extend .container;
-};
-
 .block__title{
     display:none;
 }
 
-.l-main{
-    @extend .container;
+/* 
+___________________
+
+  This is styling for the new freelancer registration page:
+
+___________________
+*/
+
+.page-freelancer-register{
+  h1{
+      font-weight: bold; 
+      margin-top: 60px;
+  }
+
+  input[type=checkbox] {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      margin-right: 5px;
+      margin-top: -4px;
+  }
+  .tabs ,.tabs--primary ,.links--inline{
+    display: none;
+  }
+  #freelancerRegistrationPage_description{
+    color: $grey;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
+  .form-item-pass{
+    width: 100% !important;
+  }
+  #user-register-form{
+    width: 70%;
+    font-size: 16px;
+  }
+  #block-block-15{
+    color: $grey;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  #registrationPage_subtitle{
+    border-bottom: 1.5px solid $mainColor;
+    font-weight: bold;
+    color: $mainColor; 
+    font-size: 16px;
+  }  
 }
 
-
-
+//Password related margins:
+.password-parent{
+    position: relative;
+    .password-strength{
+        position: absolute;
+        margin-left: 330px;
+    }
+}
+div.password-confirm{
+    position: absolute;
+    margin-left: 330px;
+}
 
 //Modal Styling:
 
@@ -86,14 +145,4 @@ body.node-type-portfolio{
         height: auto;
     }
 
-}
-
-//Expressing availability buttons on freelancer_pending_jobs quicktabs tab.
-#quicktabs-tabpage-freelancer_jobs-1{
-    .views-row{
-        margin-bottom: 10px;
-    }
-    .views-field-title, .views-field-php-1{
-        display: inline;
-    }
 }

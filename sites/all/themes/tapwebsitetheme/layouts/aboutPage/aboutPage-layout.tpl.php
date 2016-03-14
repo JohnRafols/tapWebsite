@@ -1,5 +1,10 @@
+
+
 <div<?php print $attributes; ?>>
   <header class="l-header" role="banner">
+
+
+  
     <div class="l-branding">
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
@@ -8,8 +13,8 @@
       <?php if ($site_name || $site_slogan): ?>
         <?php if ($site_name): ?>
           <h1 class="site-name">
-<!--             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
- -->          </h1>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+          </h1>
         <?php endif; ?>
 
         <?php if ($site_slogan): ?>
@@ -26,6 +31,7 @@
 
 
   <div class="l-main">
+
     <?php print render($page['sidebar_first']); ?>
 
     <div class="l-content" role="main">

@@ -80,19 +80,119 @@ _________
 
 // Services at top and bottom menu
 // Spelling mistake on services (UX and UI)
-Contact Page (coming soon)
-Terms and Conditions, break the link
+// Contact Page (coming soon)
+// Terms and Conditions, break the link
 // Link to Portfolio, not compulsary
-Register button- Create Portfolio
+// Register button- Create Portfolio
 
 Under my account - Password - new password
-Admin - change password 
+// Admin - change password 
 Get rid of preview button
 // Add images and videos - arrange images and videos together
 
-Edit Portfolio - change h1 (Hard?)
+// Edit Portfolio - change h1 (Made a temporary solution)
 
 // Add margin to second par at 
 // Show second navbar on home page
-Change 403 message
+// Change 403 message (Temp...)
     
+______________________________
+
+// 1.) register page needs more gutter width   
+2.) fix projects to 3 columns only (low p)
+// 3.) More margin-bottom between projects 
+// 4.) Make text as one block instead
+5.) Hide log-in option in navbar when logged in
+// 6.) add margin-bottom to labels (10 px)
+// 7.) Keep gutters as consistent as possible (mostly done?...)
+8.) Remove edit project tag
+
+____________
+
+Stuff I did feb 24 2016
+
+1.) Added field Deadline for the proper view blocks
+2.) Styling styling styling!
+
+___________
+
+to be done feb 25
+
+//1. Landing page:
+“Who should use Tap” last column of first row-> says and and  + needs realignment
+
+2. Apply as a Creative
+Terms and Conditions leads to nothing
+
+//3. Landing page
+Profile photo stretched
+
+4. Creating a Project
+Limiting Project titles to  a certain number of characters so they don’t go over the image.
+
+Error messages when videos are uploaded (yey- they upload!) and cover images for videos (perhaps we take this out as an option for now so we don’t look broken?)
+
+5. My Account
+New password section should be “New password”
+
+Cancel Account should be Delete account (less important)
+
+6. Log In option
+
+Is it possible to hide it from the users when they are already logged in? Its confusing.
+
+
+
+_________
+
+
+1.) Page with all the users emails
+2.) Check if there is a way to recover info
+
+
+_________
+
+1.) No programming hours = no hours? 
+2.) Do I lose share once gone? Do I have a choice in keeping the share?
+3.) Are your shares dividents/revenue or monthly
+
+1.) Type of share
+2.) Value per share
+3.) Liability of share
+4.) I don’t want liability
+5.) In your company’s constitution what are my rights, obligations, liabilities, of the shareholders.
+
+________________
+
+8/March/2016
+
+1.) Added rule
+- Event: Content is viewed
+- Text comparison: 
+
+
+2.) Layout for my jobs pages
+
+jobs
+jobs/*
+node/add/job
+pending-jobs
+active-jobs
+
+3.) Added Deadline Field to several views related to jobs
+
+
+______________________
+
+1.) make a new view of users
+
+2.)
+-Added this to html.tpl.php in about layout
+
+
+ <meta property = "og:image:url" content="<?php print $GLOBALS['base_url'] ?>/sites/default/files/tabbetalogoupdated_0.png"/>
+
+ <meta property = "og:image:secure_url" content="<?php print $GLOBALS['base_url'] ?>/sites/default/files/tabbetalogoupdated_0.png"/>
+
+
+

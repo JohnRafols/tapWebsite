@@ -33,7 +33,22 @@ $grey : #CCCCCC;
          padding-top: 50px;
     }
 
-   
+    .btn, .editProfileLink{
+      border-radius: 30px !important; 
+    }
+    #edit-actions{
+      input{
+        border-radius: 30px !important; 
+      }
+    }
+    #addPortfolioButton{
+      a{
+        border-radius: 30px !important; 
+      }
+    }
+
+
+
     //The Navigation bar styling:
     #block-system-main-menu{       
         @extend .navbar;
@@ -41,12 +56,13 @@ $grey : #CCCCCC;
         @extend .container-fluid;
         position: fixed;       
         #tapLogo{
-            background: url('images/Logo_white.png') no-repeat;
-            margin-left: 10px;
+            background: url('images/TabBetaLogoUpdated.png') no-repeat;
+            margin-left: 15px;
             height: 48px;
             background-size: 80% 80%;
-            background-position: 90% 60%;
-            width: 120px;             
+            background-position: 90% 70%;
+            width: 92px; 
+            position: absolute;           
          }
         #collapseButtonCustom{
             height: 30px;
@@ -62,46 +78,59 @@ $grey : #CCCCCC;
             @extend .navbar-right;
 
             font-weight: bold;
-            margin-right: 5%;
+            margin-right: 15px;
             text-color: $text-color;
             display: nowrap;
-            li{
-                //border-right: 1px solid white;
-                //padding-right: 5%;
-            }
-            li a{
-                &:link {
-                    //background-color: ($mainColor);
-                }
-                &:visited {
-                    background-color: ($mainColor * 0.80);
-                }
-                &:active {
-                    background-color: ($mainColor * 1.20);
 
-                &:focus {
-                    background-color: ($mainColor * 1.20);
+            //This is due to changing the padding of the a tags
+            padding-top: 5px; 
+            //This is for the menu's half borders
+            //Note, we ignore the last menu leaf
+            li:not(.last){
+                display: flex;
+                align-items: center;
+                //This div was made via jQuery
+                .borderForMenu{
+                  border-right: 1px solid white;
+                  height: 25px;
+                  //Alternatively, we can add margin to the a tag instead... 
+                  margin-left: 15px;
+                  margin-right: 15px;
                 }
-                &:hover{
-                    background-color: ($mainColor * 0.80);
+            }
+
+            li a{
+                 padding-top: 10px;
+                 padding-bottom: 10px;
+                 border-radius: 30px;
+
+                 color: $textColor !important;
+                 display: nowrap !important;
+
+                &:hover {
+                    background-color: $mainColor !important;
+                    color: white !important;
                 }
+                &:active, &:visited, &:link {
+                    background-color: $mainColor !important;
                 }
+               
              }
          }
       
     }
 
-    .nav.navbar-nav.navbar-right li a {
-        color: $textColor;
-        display: nowrap;
-    }
+    // .nav.navbar-nav.navbar-right li a {
+    //     color: $textColor;
+    //     display: nowrap;
+    // }
       
     //This code is for the navbar when you collapse the browser
-    .navbar-nav > li > a, 
-    #block-system-main-menu ul > li > a, 
-    #block-system-user-menu .menu > li > a{
-        //text-align: right;
-    }
+    // .navbar-nav > li > a, 
+    // #block-system-main-menu ul > li > a, 
+    // #block-system-user-menu .menu > li > a{
+    //     //text-align: right;
+    // }
 
     .navbar-fixed-top {
         position: fixed;
@@ -152,6 +181,9 @@ $grey : #CCCCCC;
     }
 
 
+
+
+
 //Stick Footer
 // A "normal" sticky footer fix will not work. 
 // However I have found the following code from https://www.drupal.org/node/1136752
@@ -174,51 +206,41 @@ html, body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 220px;
+  height: 230px;
   background: $secondaryColor;
   color: white;
   font-size: 0px;
   
+  //In the curent version of the footer, it is dynamic through bootstrap.
+  .l-region--footer{
+    background: $secondaryColor;
+  }
 
-  //In the curent version of the footer, it is not dynamic for now...
-  white-space: nowrap;
-  
   #block-block-4{ 
+    @include make-sm-column-offset(1);
+    @include make-sm-column(2);
+    background: $secondaryColor;
     font-size: 16px;
-    height: 200px;
-    width: 20%;
+
     display:inline-block; 
     vertical-align: text-top;
     margin-top: 0px;
-
     padding-top: 30px;
-    padding-left: 60px;
-
+    //padding-left: 60px;
   }
   //This block contains lines of text giving descriptions
   #block-block-14{
+    @include make-sm-column(9);
+    background: $secondaryColor;
     font-size: 16px;
-    height: 200px;
-    width: 40%;
+
     display:inline-block; 
     vertical-align: text-top;
     margin-top: 0px;
-
-    padding-left: 30px;
+    //padding-left: 60px;
     padding-top: 30px;
   }  
-  #block-block-16, #block-block-17{
-    font-size: 16px;
-    height: 200px;
-    width: 40%;
-    display:inline-block; 
-    text-align: right; 
-    vertical-align: text-top;
-    margin-top: 0px;
 
-    padding-right: 60px;
-    padding-top: 10px;
-  }
 
   #security_Images{
       display: inline;
@@ -270,9 +292,6 @@ ___________________
     .modalEmailSignUp_header{
         background-color: $mainColor;
         text-align: center;
-
-
-
     }
 
     .modalEmailSignUp_title{
@@ -300,7 +319,7 @@ ___________________
     }
 
     //Button
-    #edit-submit{
+    .form-submit{
         @extend .btn;
         //@extend .btn-lg;
         margin-left: 2px;
@@ -326,7 +345,7 @@ ___________________
     display: inline-block;
     font-size: 16px;
   }
-  #edit-mergevars-email, #edit-actions, .mailchimp-newsletter-mergefields{
+  #edit-mergevars-email, .form-actions, .mailchimp-newsletter-mergefields{
     display: inline-block
   }
 }
@@ -344,18 +363,19 @@ ___________________
 
 
 
-
-
 .page-node-add-portfolio, .page-node-edit.node-type-portfolio{
   //Header stuff
   #newPortfolio_titleDiv{
     display: flex;           /* establish flex container */
     align-items: center;     /* center items vertically, in this case */
     border-bottom: 1.5px solid $mainColor; 
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     h1{
       font-weight: bold;
+      em{
+        display: none !important;
+      }
     }
     #newPortfolio_Logo{
         background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
@@ -366,10 +386,13 @@ ___________________
   }
 
   //The gutter surrounding the form
-  #newPortfolio_gutterDiv{
-    width: 60%;
-    margin: 0 auto;
+  .l-content{
+    form{
+      width: 60%;
+      margin: 0 auto;
+    }
   }
+
 
   //Description Fields
   .fieldset-description, .description{
@@ -443,6 +466,7 @@ ___________________
   //All labels on the form
   label{
     font-size: 18px;
+    margin-bottom: 10px;
   }
   //Hide the tips
   .tips{
@@ -499,25 +523,14 @@ ___________________
                  background-color: ($mainColor * 0.80);
             }
         }
+        #edit-preview{
+          display:none !important;
+        }
     }
 
 }
 
-
-
-//There are some inconsistencies with width for some reason on the live site...
-.page-node-add-portfolio{
-  #newPortfolio_titleDiv{
-    width: 79%;
-  }
-  #newPortfolio_gutterDiv{
-    width: 52.5%;
-  }
-}
-
-//This is the edit Portfolio Page
-
-
+//This is specifically for the edit Portfolio Page
 .page-node-edit.node-type-portfolio{
   .tabs.tabs--primary{
     display: none;
@@ -537,21 +550,35 @@ ___________________
 ___________________
 
   This is styling for any pages related to deleting.
-  For now, they're kept very simple styling for the new freelancer registration page:
+  For now, they're kept very simple:
 
 ___________________
 */
 
 
 .page-node-cancel, .page-node-delete, .page-user-cancel{
-  .l-main{
-    @extend .container;
-    //These are some default tabs made by drupal, not very aesthetic.
-    .tabs.tabs--primary{
+  .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
+  h1{
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-top: 60px;
+      margin-bottom: 20px;
+     // padding-left: 15px;
+      padding-bottom: 15px;
+  }
+
+  // These are some default tabs made by drupal, not very aesthetic.
+  .tabs.tabs--primary{
       display: none;
-    }
+  }
     //All buttons on a delete page are red
-    form{
+  form{
         #edit-submit{
           @extend .btn;
           @extend .btn-danger;
@@ -574,7 +601,6 @@ ___________________
             }
 
         }
-    }
   }
 }
 
@@ -589,12 +615,22 @@ ___________________
 
 
 .page-user-edit{
-  .l-main{
-    width: 80%;
-  }
+  .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
   h1{
-    font-weight: bold;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-top: 60px;
+      margin-bottom: 20px;
+     // padding-left: 15px;
+      padding-bottom: 15px;
   }
+
   label{
     font-size: 16px;
   }
@@ -625,8 +661,9 @@ ___________________
     margin-bottom: 30px;
   }
   //this is the width of the form itself
-  #user-profile-form{
-    width: 60%;
+  #user-profile-form, #block-block-7, #block-block-8{
+    width: 90%;
+    //margin: 0px auto;
   }
 
   //Stuff to hide:
@@ -659,57 +696,6 @@ ___________________
 
 
 
-/* 
-___________________
-
-  This is styling for the new freelancer registration page:
-
-___________________
-*/
-
-.page-freelancer-register{
-  h1{
-    font-weight: bold;
-  }
-  input[type=checkbox] {
-      transform: scale(1.5);
-      -webkit-transform: scale(1.5);
-      margin-right: 5px;
-      margin-top: -4px;
-  }
-  .tabs ,.tabs--primary ,.links--inline{
-    display: none;
-  }
-  #freelancerRegistrationPage_description{
-    color: $grey;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-  .l-content{
-    width: 70%;
-    margin-bottom: 30px;
-  }  
-  .form-item-pass{
-    width: 100% !important;
-  }
-  #user-register-form{
-    width: 70%;
-    font-size: 16px;
-  }
-  #block-block-15{
-    width: 70%;
-  }
-
-  #registrationPage_subtitle{
-    border-bottom: 1.5px solid $mainColor;
-    font-weight: bold;
-    color: $mainColor; 
-    font-size: 16px;
-  }  
-}
-
-
 
 /* 
 ___________________
@@ -719,9 +705,20 @@ ___________________
 ___________________
 */
 
-.page-user-login, .not-logged-in.page-user{
+.page-user-login, .not-logged-in.page-user, .page-user-password{
+   .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
   h1{
-    font-weight: bold;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      // padding-left: 15px;
+      padding-bottom: 15px;
   }
   form{
     font-size: 16px;
@@ -732,15 +729,6 @@ ___________________
   }
 }
 
-.page-user-password{
-  h1{
-    font-weight: bold;
-  }
-  form{
-    font-size: 16px;
-    margin-bottom: 30px; 
-  }
-}
 
 /* 
 ___________________
@@ -754,6 +742,7 @@ ___________________
       width: 50%;
     }
     h1{
+      
       width:70%;
       font-weight: bold;
       border-bottom: 1.5px solid $mainColor;
@@ -761,7 +750,7 @@ ___________________
       margin-right: auto;
       margin-left: auto;
       margin-top: 60px;
-      margin-bottom: 0px;
+      margin-bottom: 20px;
 
       padding-left: 15px;
       padding-bottom: 15px;
@@ -791,13 +780,233 @@ ___________________
     }
 
     .l-content{
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
 }
 
 
+/* 
+___________________
 
+  This is Styling for Contact Us Page
+  
+___________________
+*/
+.node-type-page.section-contact-us{
+    #contactUsPage{
+      width: 50%;
+    }
+    h1{
+      width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 0px;
+
+      padding-left: 15px;
+      padding-bottom: 15px;
+    }
+    .tabs.tabs--primary{
+      //display: none;
+    }
+    //Margins
+    .row{
+      margin-top: 30px;
+    }
+    .contactUsPage_label{
+      //margin: 0 auto;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 30px !important;
+    }
+
+    .workerName{
+      font-size: 16px;
+      //color: $grey;
+      display: inline-block;
+    }
+
+    #developmentTeam{
+      .row{
+        display: flex;
+        align-items: center;
+      }  
+    }
+
+    #contact_details{
+      .col-sm-12.contactUsPage_label{
+        padding-left: 0px;
+        margin-bottom: 20px !important;
+      }
+      .contact_detailsLabel{
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .email{
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    #location_details{
+      .col-sm-12.contactUsPage_label{
+        padding-left: 0px;
+      }
+      #address{
+        font-style: italic;
+      }
+    }
+
+
+    //Photos...
+    #mariyaPhoto{
+        background: url('images/DevelopmentTeam/mariya.jpg') no-repeat;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 999px;            
+        border: 2px solid $mainColor; 
+        display: inline-block;
+
+
+        //background-position: center center;
+        background-size: cover;
+    }
+    #dennyPhoto{
+        background: url('images/DevelopmentTeam/denny.png') no-repeat;
+        width: 120px;
+        height: 120px;
+        background-size: cover;
+        margin: 0 auto;
+        border-radius: 999px;            
+        border: 2px solid $mainColor; 
+        display: inline-block;
+
+    }
+    #peidePhoto{
+        background: url('images/DevelopmentTeam/peide.jpg') no-repeat;
+        width: 120px;
+        height: 120px;
+        background-size: 100% 100%;
+        margin: 0 auto;
+        border-radius: 999px;            
+        border: 2px solid $mainColor; 
+        display: inline-block;
+
+        //background-position: center center;
+        background-size: cover;
+    }
+
+    #johnPhoto{
+        background: url('images/DevelopmentTeam/john.jpg') no-repeat;
+        width: 120px;
+        height: 120px;
+        background-size: cover;
+        margin: 0 auto;
+        border-radius: 999px;            
+        border: 2px solid $mainColor; 
+        display: inline-block;
+    }
+
+    .l-content{
+      margin-bottom: 60px;
+    }
+
+}
+
+/* 
+___________________
+
+  This is Styling for Terms and Conditions Page, and the page to view all unregistered users
+  
+___________________
+*/
+
+.page-legal.section-legal, .page-legal-accept{
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
+    h1{
+      //width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 30px;
+
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+
+    //.view-all-unregistered-users{
+      .views-row{
+        @include make-sm-column(4);
+        @extend .well; 
+      } 
+      .views-field-name{
+        font-size: 16px;
+        font-weight: bold;
+        color: black !important; 
+      }
+      .views-label{
+        font-weight: bold;
+      }
+    //}
+}
+
+.page-all-unregistered-users, .page-list-of-users{
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
+    h1{
+      //width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 30px;
+
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+
+      .views-row{
+        @include make-sm-column(4);
+        @extend .well; 
+      } 
+      .views-field-name{
+        font-size: 20px;
+        font-weight: bold;
+        a{
+          color: #333; 
+        }
+      }
+      .views-label{
+        font-weight: bold;
+      }
+}
+
+
+
+
+
+
+
+//"Show row weights" for multivalue fields 
+.tabledrag-toggle-weight{ display: none; }
 
 
 //This is for hiding links in the footer when logged-in

@@ -108,16 +108,22 @@
         //State that the navigation is collapsable (Once only!)
         mainNavigationBar_Links.once('navbarBehaviour').wrap("<div class='collapse navbar-collapse' id='myNavbar'>") ;
 
-        //Contact Us is a dead link, give it the proper attribute
-        mainNavigationBar_Links.find('a:contains("Contact")')
-                                .once('navbarBehaviour')
-                                .attr('href','#contactUs')
+        // Contact Us is a dead link, give it the proper attribute
+        // mainNavigationBar_Links.find('a:contains("Contact")')
+        //                         .once('navbarBehaviour')
+        //                         .attr('href','#contactUs')
 
         //Any "Clients" link on the page should open up the pop up
         mainNavigationBar_Links.find('a:contains("Clients")')
                                 .once('navbarBehaviour')
                                 .attr('data-toggle','modal')
                                 .attr('data-target','#emailSignUpModal');                               
+
+
+        //An attempt to style to menu with borders to further match Denny's work
+        mainNavigationBar_Links.find('.leaf')
+                                .once('navbarBehaviour')
+                                .append('<div class = "borderForMenu">')
 
           
         //This is for the mailchimp form
@@ -202,9 +208,6 @@
                         .once('createPortfolioBehaviour')
                         .insertBefore(portfolioPage_overviewBody);
 
-        //Increase the column gutter for the form:
-        createPortfolioPage.find('form').once('createPortfolioBehaviour').wrapAll('<div id= "newPortfolio_gutterDiv">')
-
         // Get the lists of Skills
         var skillList = createPortfolioPage
                               .find('#edit-field-portfolio-project-skills-und')
@@ -228,12 +231,6 @@
         createPortfolioPage.find('#edit-field-portfolio-project-skills')
                            .find('.description')
                            .insertBefore($('.projectSkillListRow'));
-
-        // //Create a Cancel Changes button:
-        // createPortfolioPage.find("#edit-preview")
-        //                    .once('createPortfolioBehaviour')
-        //                    .after('<a id = "edit-cancelChanges" class="btn" href="/user">Cancel Changes</a>')
-
 
       }
     };
@@ -279,9 +276,6 @@
                         .once('editPortfolioBehaviour')
                         .insertBefore(portfolioPage_overviewBody);
 
-        //Increase the column gutter for the form:
-        editPortfolioPage.find('form').once('editPortfolioBehaviour').wrapAll('<div id= "newPortfolio_gutterDiv">')
-
         // Get the lists of Skills
         var skillList = editPortfolioPage
                               .find('#edit-field-portfolio-project-skills-und')
@@ -291,17 +285,13 @@
 
         //Calculate the number of items that'll appear in each column
         var skillsColumnSize = Math.floor(skillList.length/2) + ((skillList.length % 2)/2);
-        console.log(skillsColumnSize)
 
         //Add em all into the columns
         //once() isn't working here, so I used a boolean variable 
-        console.log(isLoaded)
 
         if(!isLoadedEditPortfolio){
-          console.log("Hello world!")
-          for(var i = 0; i < skillList.length; i+=skillsColumnSize){
-            console.log("hello world!")
-             skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
+           for(var i = 0; i < skillList.length; i+=skillsColumnSize){
+              skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
           }
           isLoadedEditPortfolio = true;
         }
@@ -311,15 +301,8 @@
                            .find('.description')
                            .insertBefore($('.projectSkillListRow'));
 
-        // editPortfolioPage.find("#edit-preview")
-        //                 .once('editPortfolioBehaviour')
-        //                 .after('<a id = "edit-cancelChanges" class="btn" href="/user">Cancel Changes</a>')
-
       }
     };
-
-
-
 
 
 })(jQuery);

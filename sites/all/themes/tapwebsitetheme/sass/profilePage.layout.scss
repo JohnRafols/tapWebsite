@@ -39,14 +39,20 @@ body.page-user .block__title {
         margin-top: -20px; 
         //When moving children around, best to make the parent relative and the children absolute. 
         position: relative;
-        height: 110px; 
+        min-height: 110px; 
+        @extend .clearfix;
         //1.) The header (The user's name and profile picture go here)
              .views-row{
-                //@include make-row();
-                position: absolute; 
-                height: 120px; 
+                @extend .clearfix;
+                padding-top: 30px; 
+                //position: absolute; 
+                min-height: 120px; 
                 display: flex;
                 align-items: center;
+
+                // padding-top: 10px;
+                // padding-bottom: 10px; 
+                
                 .views-field{
                     margin-bottom: 20px;
                     //@extend .well;
@@ -68,25 +74,33 @@ body.page-user .block__title {
                     height: 60px;
                     width: 60px;
                     border: 2px solid $mainColor; 
+                    background-size: cover;
                 }
-                // @include make-sm-column(2);
+                @include make-xs-column(12);
+                @extend .clearfix;
+                @include make-sm-column(1);
                 margin-right:15px;
             }
 
-            .views-field-field-user-first-name{
+            .views-field-field-user-first-name, .views-field-name{
                 //@include make-sm-column-offset(1);
-                //@include make-sm-column(3);
+                // @include make-xs-column(12);
+                // @extend .clearfix;
+                // @include make-sm-column(4);
                 font-size: 2.5em;
                 margin-right:7px;
                 font-weight: bold;
-                white-space: nowrap;
+                span{
+                    word-wrap: break-word;
+                }
             }
-            .views-field-field-user-last-name{
-                //@include make-sm-column(3);
+            .views-field-field-user-last-name, .views-field-php{
+                // @include make-xs-column(12);
+                // @extend .clearfix;
+                // @include make-sm-column(3);
                 font-size: 2.5em;
                 font-weight: bold;
-                white-space: nowrap;
-            }
+             }
     }
 
 
@@ -96,25 +110,28 @@ body.page-user .block__title {
         @include make-sm-column(9);
         // 2.) My Projects
         //margin-left: 20px;
-
-         .views-row{
-               
-                //@extend .well;
+         //margin-bottom: 30px;
+         .views-row{              
                 display:inline-block;
-                //margin-left: 1%;
-                margin-right: 2%;
-                //max-width: 96%;
-                
+                margin-bottom: 30px;
+
+                //Attempt to always have a 3 column..
+                @include make-sm-column(4);
+                @include make-xs-column(12);
+                padding-left: 0px !important; 
+
                 .views-field{
-                    //@include make-row();
-                    //margin-bottom: 20px;
-                    //@extend .well;
                     //These are all the labels under the sidebar
-                    //Note that I am calling out the default classes
-                     
+                    //Note that I am calling out the default classes                    
                     //This is for actual content.
                     .field-content{
-                       // margin-top: 10px;
+                       img{
+                            width: 90%;
+                            height: 90%;
+                       }
+                       a{
+                            color: #333;
+                       }
                     }
                 }
             }
@@ -124,12 +141,19 @@ body.page-user .block__title {
                        // margin-top: 10px;
                   color: $grey;
                 }
-        }  
- 
+        }
+
+        #block-block-6{
+            @extend .row; 
+            @include make-sm-column(12);
+
+        }
+
 
     }
     .l-region--sidebar-second{
         @include make-sm-column(3);
+        margin-bottom: 30px; 
 
         //3.) The side-bar (Information of the user such as about me, skills, etc.)
         .profilePage-sideBar{
@@ -233,7 +257,7 @@ body.page-user .block__title {
     color: $grey;
 }
 #block-block-6{
-    margin-top: 30px;
+    //margin-top: 30px;
     margin-bottom: 30px;
     font-size: 16px;
     color: $grey;
