@@ -73,17 +73,53 @@ ___________________
 }
 
 //Password related margins:
-.password-parent{
-    position: relative;
-    .password-strength{
-        position: absolute;
-        margin-left: 330px;
-    }
+.form-type-password-confirm.form-item-pass{
+  @extend .row;
+
+  //The first row:
+  .password-parent{
+     @extend .clearfix; 
+      .password-field{
+        @include make-sm-column(6); 
+        @include make-xs-column(12); 
+      }
+      .password-strength{
+        @include make-sm-column(6); 
+        @include make-xs-column(12); 
+        @extend .pull-right;
+      }
+
+  }
+
+  //The second row:
+  .confirm-parent{
+    @extend .clearfix; 
+      input.password-confirm{
+        @include make-sm-column(6);
+        @include make-xs-column(12); 
+ 
+      }
+      div.password-confirm{
+        @extend .pull-right;
+        @include make-sm-column(6);
+        @include make-xs-column(12); 
+      }
+  }
+
+  // div.password-confirm{
+  //     // position: absolute;
+  //     // margin-left: 330px;
+  // }
+
+
+  .password-suggestions{
+      @include make-sm-column(12); 
+  }
+
 }
-div.password-confirm{
-    position: absolute;
-    margin-left: 330px;
-}
+
+
+
 
 //Modal Styling:
 
