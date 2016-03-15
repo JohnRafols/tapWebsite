@@ -7009,17 +7009,18 @@ body {
   position: fixed;
   background-color: #FFBF28; }
   #block-system-main-menu #tapLogo {
-    background: url("images/TabBetaLogoUpdated.png") no-repeat;
-    margin-left: 15px;
-    height: 48px;
-    background-size: 80% 80%;
-    background-position: 90% 70%;
-    width: 92px;
-    position: absolute; }
+    position: relative; }
+    #block-system-main-menu #tapLogo img {
+      top: 5.5px;
+      left: 0;
+      margin-left: 38px;
+      height: 40px;
+      width: auto;
+      position: absolute; }
   #block-system-main-menu #collapseButtonCustom {
-    height: 30px;
-    background-color: #6d2c54;
-    width: 30px; }
+    border: 1px solid #6d2c54; }
+    #block-system-main-menu #collapseButtonCustom span {
+      background-color: #6d2c54; }
   #block-system-main-menu ul {
     font-weight: bold;
     margin-right: 15px;
@@ -7705,5 +7706,14 @@ ___________________
   height: 30px !important;
   padding: 0 !important;
   margin-top: 0px !important; }
+
+@media (max-width: 767px) {
+  .borderForMenu {
+    border-right: none !important; }
+  #socialLinksDiv {
+    margin-top: 30px; }
+    #socialLinksDiv li:nth-child(4) {
+      margin-top: 30px;
+      margin-bottom: 30px; } }
 
 /*# sourceMappingURL=tapwebsitetheme.styles.css.map */

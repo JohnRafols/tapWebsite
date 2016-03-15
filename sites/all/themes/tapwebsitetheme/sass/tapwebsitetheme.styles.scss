@@ -56,18 +56,26 @@ $grey : #CCCCCC;
         @extend .container-fluid;
         position: fixed;       
         #tapLogo{
-            background: url('images/TabBetaLogoUpdated.png') no-repeat;
-            margin-left: 15px;
-            height: 48px;
-            background-size: 80% 80%;
-            background-position: 90% 70%;
-            width: 92px; 
-            position: absolute;           
+            position: relative;
+            //padding-top: 48px;
+            img{
+                top:5.5px;
+                left:0;
+                margin-left: 38px;
+                height: 40px;
+                width: auto; 
+                position: absolute;
+            }         
          }
+
         #collapseButtonCustom{
-            height: 30px;
-            background-color: $secondaryColor;
-            width: 30px;   
+            // height: 30px;
+            // background-color: $secondaryColor;
+            // width: 30px;  
+            border: 1px solid $secondaryColor;
+            span{
+              background-color: $secondaryColor;
+            } 
          }
 
 
@@ -1034,3 +1042,23 @@ ___________________
     padding: 0 !important;
     margin-top:0px !important; 
  }
+
+
+//Media queries for mobile:
+//These are some margin changes when the user is on a mobile device
+
+@media (max-width: $screen-xs-max) {
+    //Change some margins when the screen is small
+    .borderForMenu{
+        border-right: none !important; 
+    }
+
+    #socialLinksDiv{
+      margin-top: 30px;
+      li:nth-child(4){
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+}
+

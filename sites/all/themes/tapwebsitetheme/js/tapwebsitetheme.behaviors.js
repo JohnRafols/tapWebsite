@@ -96,7 +96,7 @@
                                   .find("#block-system-main-menu")
 
         //Append the Logo (Once only!)
-        mainNavigationBar.once('navbarBehaviour').prepend('<div class="navbar-header"><button type="button" class="navbar-toggle" id="collapseButtonCustom" data-toggle="collapse" data-target="#myNavbar"></button><a class="navbar-brand" id= "tapLogo" href="/"></a></div>');
+        mainNavigationBar.once('navbarBehaviour').prepend('<div class="navbar-header"><button type="button" class="navbar-toggle" id="collapseButtonCustom" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" id= "tapLogo" href="/"><img alt="" src="/sites/default/files/tapCreativeImages/TabBetaLogoUpdated.png"/></a></div>');
         //mainNavigationBar.addClass('navbar-fixed-top'); 
 
         //This is the list of links

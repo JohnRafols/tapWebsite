@@ -74,7 +74,7 @@ ___________________
 
 //Password related margins:
 .form-type-password-confirm.form-item-pass{
-  @extend .row;
+ // @extend .row;
 
   //The first row:
   .password-parent{
@@ -180,5 +180,89 @@ body.node-type-portfolio{
         max-width: 100%;
         height: auto;
     }
-
 }
+
+
+
+//Media queries for mobile
+@media (max-width: $screen-xs-max) {
+      form{
+        width: 100% !important;
+      }
+      input{
+        max-width: 100%;
+      } 
+      select{
+        max-width: 60%;
+      }
+
+      .form-type-password-confirm.form-item-pass{
+          //@include container-fixed(15); 
+           //The first row:
+            .password-parent{
+                .password-strength{
+                  margin-bottom: 20px;
+                  margin-top: 0px;
+                  padding-left: 0px;
+                  padding-right: 0px;
+                }
+            }
+
+            //The second row:
+            .confirm-parent{            
+              //This is a stubborn one...   
+                div.password-confirm{
+                   display: none; 
+                }
+            }
+      }
+
+      //Some input boxes are naturally uneven..
+      //It may be caused by the back-end?
+      input.dependent-locality, input.locality{
+          max-width: 85%;
+      }
+
+      .field-type-addressfield{
+        overflow: hidden;
+      }
+  
+}
+
+
+
+
+
+
+
+// @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+//     .pull-sm-left {
+//         float: left;
+//     }
+//     .pull-sm-right {
+//         float: right;
+//     }
+// }
+
+// @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+//     .pull-md-left {
+//         float: left;
+//     }
+//     .pull-md-right {
+//         float: right;
+//     }
+// }
+
+// @media (min-width: $screen-lg-min) {
+//     .pull-lg-left {
+//         float: left;
+//     }
+//     .pull-lg-right {
+//         float: right;
+//     }
+// }
+
+//Example HTML:
+// <div class="pull-md-left pull-lg-left">
+//     this div is only floated on screen-md and screen-lg
+// </div>

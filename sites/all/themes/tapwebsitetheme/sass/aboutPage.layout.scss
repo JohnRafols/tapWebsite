@@ -319,11 +319,16 @@ $landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndAp
 
 @each $servicesIcons in $landingPageServicesIconList{
     #landingPageServices_#{$servicesIcons}{
-        background: url(images/Services/#{$servicesIcons}.png) no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
+        //Old implementation had the logos as background divs, it wasn't friendly with mobile...
+        //background: url(images/Services/#{$servicesIcons}.png) no-repeat;
+        img{
+            max-width: 150px;
+            max-height: 150px;
+            height: auto;
+            width: 100%; 
+            //background-size: 100% 100%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -353,11 +358,15 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 
 @each $clientIcon in $landingPageServices_clientIconList{
     #landingPageServices_#{$clientIcon}{
-        background: url(images/ClientProcess/#{$clientIcon}.png) no-repeat;
-        width: 150px;
-        height: 150px;
-        background-size: 100% 100%;
-        margin: 0 auto;
+    
+        img{
+            max-width: 150px;
+            max-height: 150px;
+            height: auto;
+            width: 100%; 
+            //background-size: 100% 100%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -368,11 +377,15 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
 //Icons for Freelancers/Creatives
 @each $freelancerIcon in $landingPageServices_freelancerIconList{
     #landingPageServices_#{$freelancerIcon}{
-          background: url(images/CreativeProcess/#{$freelancerIcon}.png) no-repeat;
-          width: 150px;
-          height: 150px;
-          background-size: 100% 100%;
-          margin: 0 auto;
+
+        img{
+            max-width: 150px;
+            max-height: 150px;
+            height: auto;
+            width: 100%; 
+            //background-size: 100% 100%;
+            margin: 0 auto;
+        }
     }
 
 }
@@ -490,9 +503,54 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
 
 
 
+//Media query for mobile:
+//These are some margin changes when the user is on a mobile device
+
+@media (max-width: $screen-xs-max) {
+    //Change some margins when the screen is small
+
+    #landingPageWelcomeSection_description, #landingPageServices_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer, 
+        #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title{
+        width: 100% !important; 
+    }
+
+    #landingPage_whoAreWe_contentContainer{
+        .landingPage_whoAreWe_contentBorder{
+            left: 5%;
+        }
+        .landingPage_whoAreWe_content{
+            margin-bottom: 30px !important; 
+        }
+        #landingPage_whoWeAre_secondRow{
+            margin-top: 0 !important;
+            div:nth-child(4){
+                height: 90px !important;
+            }
+        }
+    }
+
+    .landingPage_titles_creativeTalent{
+
+    }
+
+    //
+    #landingPage_theCreativeProcess_mainContainer{      
+         #landingPage_theCreativeProcess_description{
+            p{
+                padding-top: 20px; 
+            }
+        }
+     }
 
 
+    #landingPage_creativeTalent_secondColumn, #landingPage_creativeTalent_firstColumn{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
 
+    #landingPage_howThisWorks{
+        margin-bottom: 20px;
+    }
 
-
+}
 
