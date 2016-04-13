@@ -1,0 +1,111 @@
+<?php
+/**
+ * @file
+ * Rules block visibility module main file.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function rules_block_visibility_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'block_admin_configure'
+      || $form_id == 'block_add_block_form') {
+    $form['visibility']['rules'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Rules'),
+      '#group' => 'visibility',
+      '#weight' => 99,
+      '#attached' => array(
+        'js' => array(
+          'vertical-tabs' => drupal_get_path('module', 'rules_block_visibility') . "/rules_block_visibility.admin.js",
+        ),
+      ),
+    );
+
+    $rules = rules_config_load_multiple(FALSE, array('active' => 1));
+
+    $options = array();
+
+    foreach ($rules as $name => $info) {
+      $rule = rules_config_load($name);
+      if (!($rule instanceof RulesActionContainer)) {
+        continue;
+      }
+      if ($rule->status == 2
+          && in_array('block visibility example', $rule->tags)) {
+        continue;
+      }
+      $params = $rule->parameterInfo();
+      if (!isset($params['module'], $params['delta'])) {
+        continue;
+      }
+      $provided = $rule->componentProvidesVariables();
+      if (!(count($provided) == 1 && $provided[0] == 'result')) {
+        continue;
+      }
+      $options[$name] = $info->label;
+    }
+
+    $all_rules = variable_get("rules_block_visibility_rules", array());
+
+    $module = $form['module']['#value'];
+    $delta = $form['delta']['#value'];
+
+    $form['visibility']['rules']['rule'] = array(
+      '#type' => 'select',
+      '#title' => t('Rule'),
+      '#options' => $options,
+      '#empty_value' => '',
+      '#default_value' => (isset($all_rules[$module],
+                                 $all_rules[$module][$delta]) ?
+                           $all_rules[$module][$delta] : NULL),
+      '#required' => FALSE,
+      '#description' => t('Show this block only if the selected rule returns a positive value. <em>Important</em>: to be listed here, a block visibility rule must have specific parameters and return values.'),
+    );
+    $form['#submit'][] = 'rules_block_visibility_save_contexts';
+  }
+}
+
+/**
+ * Submit handler for block configuration form.
+ */
+function rules_block_visibility_save_contexts($form, $form_state) {
+
+  $module = $form_state['values']['module'];
+  $delta = $form_state['values']['delta'];
+  $rule = $form_state['values']['rule'];
+
+  $all_rules = variable_get("rules_block_visibility_rules", array());
+
+  if (!isset($all_rules[$module])) {
+    $all_rules[$module] = array();
+  }
+
+  if ($rule) {
+    $all_rules[$module][$delta] = $rule;
+  }
+  else {
+    unset($all_rules[$module][$delta]);
+  }
+
+  variable_set("rules_block_visibility_rules", $all_rules);
+}
+
+/**
+ * Implements hook_block_list_alter().
+ */
+function rules_block_visibility_block_list_alter(&$blocks) {
+  $all_rules = variable_get("rules_block_visibility_rules", array());
+
+  foreach ($blocks as $key => $block) {
+    if (isset($all_rules[$block->module], $all_rules[$block->module][$block->delta])) {
+      $result = rules_invoke_component($all_rules[$block->module][$block->delta],
+                                       $block->module,
+                                       $block->delta);
+      if (is_array($result) && !$result[0]) {
+        unset($blocks[$key]);
+      }
+    }
+  }
+}

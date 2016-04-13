@@ -7,6 +7,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
+$secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -42,7 +43,7 @@ body.page-user .block__title {
         min-height: 110px; 
         @extend .clearfix;
         //1.) The header (The user's name and profile picture go here)
-             .views-row{
+            .views-row{
                 @extend .clearfix;
                 padding-top: 30px; 
                 //position: absolute; 
@@ -101,6 +102,20 @@ body.page-user .block__title {
                 font-size: 2.5em;
                 font-weight: bold;
              }
+
+            //The header will be diffrent on smaller screens
+            @media (max-width: $screen-xs-max) {
+                .views-row{
+                    display: inline;
+                    text-align: center;
+
+                }
+                .views-field-field-profile-picture{
+                    padding-top: 20px;
+                }
+            }
+
+
     }
 
 
@@ -110,7 +125,15 @@ body.page-user .block__title {
         @include make-sm-column(9);
         // 2.) My Projects
         //margin-left: 20px;
-         //margin-bottom: 30px;
+        //margin-bottom: 30px;
+
+        //If you don't have a row, links can die on mobile apparently...
+
+        .view-portfolio-header, .view-freelancer-portfolio-projects{
+            @include make-row(0);
+            //@extend .row; 
+        }
+
          .views-row{              
                 display:inline-block;
                 margin-bottom: 30px;
@@ -144,13 +167,17 @@ body.page-user .block__title {
         }
 
         #block-block-6{
-            @extend .row; 
-            @include make-sm-column(12);
+            //@include make-row(0);
+            //@include make-sm-column(12);
 
         }
 
 
     }
+
+
+
+
     .l-region--sidebar-second{
         @include make-sm-column(3);
         margin-bottom: 30px; 

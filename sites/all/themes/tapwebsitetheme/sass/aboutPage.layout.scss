@@ -15,7 +15,7 @@
 $mainColor :  #FFBF28;
 $textColor : #000000;
 $grey : #CCCCCC;
-$secondaryColor: #6d2c54;
+$secondaryColor: #3c0f31;
 
 
 // 1.) Home Page Styling
@@ -310,12 +310,11 @@ $secondaryColor: #6d2c54;
     font-size: 1.4em;
     //color: $mainColor;
 
-
  }
 
 
 //These are for the icons of the Creative Services 
-$landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndApp MotionGraphics CreativeConsulting Photography;
+$landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndApp MotionGraphics CreativeConsulting Photography PlusSign;
 
 @each $servicesIcons in $landingPageServicesIconList{
     #landingPageServices_#{$servicesIcons}{
@@ -335,7 +334,7 @@ $landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndAp
 // Center the text for the services Icons
 #landingPageServices{
     text-align: center;
-    p{
+    p, a{
         font-size: 16px;
         color: #6d2c54;
     }
@@ -525,6 +524,11 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
             margin-top: 0 !important;
             div:nth-child(4){
                 height: 90px !important;
+                text-align: right !important;
+                padding-top: 30px !important;
+                a{
+                    position: relative !important;
+                }
             }
         }
     }
@@ -546,6 +550,16 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
     #landingPage_creativeTalent_secondColumn, #landingPage_creativeTalent_firstColumn{
         padding-left: 0px !important;
         padding-right: 0px !important;
+        #landingPageServices_NZ_Icon, #landingPage_creativeTalent_request,   #landingPage_creativeTalent_clientsInNewZealand{
+            float: none !important;
+            margin: 0px auto !important;
+            text-align: center; 
+        }
+
+        // #landingPage_creativeTalent_finalDesc{
+        //     margin-bottom: 30px !important;
+        // }
+
     }
 
     #landingPage_howThisWorks{

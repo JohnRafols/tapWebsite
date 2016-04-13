@@ -7,6 +7,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
+$secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -53,7 +54,6 @@ $grey : #CCCCCC;
                 padding-bottom: 10px; 
             }
 
-
             .views-field-title{
                 font-size: 2.5em;
                 font-weight: bold;
@@ -92,7 +92,17 @@ $grey : #CCCCCC;
                 white-space: nowrap;
             }
 
+             //The header will be diffrent on smaller screens
+            @media (max-width: $screen-xs-max) {
+                .views-row{
+                    display: inline;
+                    text-align: center;
 
+                }
+                .views-field-title{
+                    padding-top: 20px;
+                }
+            }
     }
 
 
@@ -149,4 +159,205 @@ $grey : #CCCCCC;
         }     
     }         
 }
+
+
+
+video{
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+/* 
+___________________
+
+This is Styling for adding/editing Portfolios:
+
+___________________
+*/
+
+
+// .page-node-add-portfolio, .page-node-edit.node-type-portfolio{
+//   //Header stuff
+//   #newPortfolio_titleDiv{
+//     display: flex;           /* establish flex container */
+//     align-items: center;     /* center items vertically, in this case */
+//     border-bottom: 1.5px solid $mainColor; 
+//     width: 70%;
+//     margin: 0 auto;
+//     h1{
+//       font-weight: bold;
+//       em{
+//         display: none !important;
+//       }
+//     }
+//     #newPortfolio_Logo{
+//         background: url('images/CreativeProcess/CreateAPortfolio.png') no-repeat;
+//         width: 100px;
+//         height: 100px;
+//         background-size: 100% 100%;
+//     }
+//   }
+
+//   //The gutter surrounding the form
+//   .l-content{
+//     form{
+//       width: 60%;
+//       margin: 0 auto;
+//     }
+//   }
+
+
+//   //Description Fields
+//   .fieldset-description, .description{
+//     font-size: 16px;
+//     color: $grey*0.8;
+//     margin-bottom: 10px;
+//   }
+
+//   //The Upload Image section
+//   #edit-field-images{
+//     .image-widget-data{
+//       @extend .well;
+//       margin-bottom: 15px;
+//       //margin-left: 15px;
+//       //border: 2px solid $mainColor; 
+//     }
+//     legend{
+//       border-bottom: 0px solid #e5e5e5;
+//       margin-bottom: 3px;
+//       span{
+//         font-weight: bold;
+//         font-size: 18px;
+//       }
+//     }
+//     .form-submit, .ajax-processed{
+//       @extend .btn;
+//       margin-top: 10px;
+//       background: $mainColor;
+//       color: $textColor;
+//     }
+//     //There's stuff that needs to be invisible.
+//     //It shouldn't be dangerous if it was seen
+//     label{
+//       display: none !important;
+//     }
+//     .description{
+//       display: none !important;
+//     }
+//     .tabledrag-toggle-weight{
+//       display: none !important;
+//     }
+//     //Styling for the Image table
+//     table{
+//       margin-top: 30px;
+//       margin-bottom: 20px;
+//       th,td{
+//         padding-left: 10px;
+//         padding-right: 10px;
+//       }
+//     }
+//   }
+
+//   // Margin stuff
+//   .image-widget-data, #edit-field-portfolio-project-skills, #edit-field-images, #edit-body, .form-item-title, .messages--error{
+//     margin-top: 25px;
+//     margin-bottom: 25px;
+//   }
+//   .image-widget-data{
+//     margin-top: 15px;
+//     margin-bottom: 0px;
+//   }
+//   .messages--error{
+//     margin-top: 30px;
+//     margin-bottom: 15px;
+//     font-size: 16px;
+//   }
+//   #edit-field-portfolio-project-skills{
+//     //margin-top: -25px;
+//   }
+
+//   //All labels on the form
+//   label{
+//     font-size: 18px;
+//     margin-bottom: 10px;
+//   }
+//   //Hide the tips
+//   .tips{
+//     display: none !important;
+//   }
+
+//   //The Skill List section:
+//   #edit-field-portfolio-project-skills{
+//     //Checkbox size
+//     input[type=checkbox] {
+//       transform: scale(1.5);
+//       -webkit-transform: scale(1.5);
+//       margin-right: 5px;
+//       margin-top: -4px;
+//     }
+//     .description{
+//       margin-left: 0px;
+//     }
+//     .projectSkillListRow{
+//       //margin: 0 auto;
+//       .option{
+//         font-size: 16px;
+//         color: $grey*0.8;
+//       }
+//     }
+
+//   }
+
+//   //The Submit Buttons 
+//     #edit-actions{
+//       border-top: 2px solid $mainColor; 
+//       padding-top: 30px;
+//       margin-bottom: 60px;
+//         #edit-submit{
+//           @extend .btn;
+//           background: $mainColor;
+//           color: $textColor;
+//             &:focus {
+//             background-color: ($mainColor * 1.20);
+//             }
+//             &:hover{
+//                  background-color: ($mainColor * 0.80);
+//             }
+//         }
+//         #edit-preview, #edit-cancel-changes{
+//           @extend .btn;
+//           background: $mainColor;
+//           margin-left: 5px;
+//           color: $textColor;
+//             &:focus {
+//             background-color: ($mainColor * 1.20);
+//             }
+//             &:hover{
+//                  background-color: ($mainColor * 0.80);
+//             }
+//         }
+//         #edit-preview{
+//           display:none !important;
+//         }
+//     }
+
+// }
+
+// //This is specifically for the edit Portfolio Page
+// .page-node-edit.node-type-portfolio{
+//     .tabs.tabs--primary{
+//       display: none;
+//     }
+//     #edit-delete{
+//       @extend .btn;
+//       @extend .btn-danger;
+//       float: right;
+//       margin-left: 5px;
+//       //color: $textColor;
+//     }
+// }
 

@@ -1,0 +1,337 @@
+// Import variables, abstractions, base styles and components.
+// Uncomment the next lines and adjust them to your needs.
+//@import "variables/{YOUR FILE NAME HERE}";
+//@import "abstractions/{YOUR FILE NAME HERE}";
+//@import "base/{YOUR FILE NAME HERE}";
+//@import "components/{YOUR FILE NAME HERE}";
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$secondaryColor: #3c0f31;
+$textColor : #000000;
+$grey : #CCCCCC;
+
+
+
+//All basic Pages have this:
+
+// .l-content{
+//       width: 70%;
+//       margin-bottom: 60px;
+//       margin: 0 auto;
+//       padding-left: 15px;
+// }
+// h1{
+//       font-weight: bold;
+//       border-bottom: 1.5px solid $mainColor;
+//       margin-right: auto;
+//       margin-left: auto;
+//       margin-top: 60px;
+//       margin-bottom: 30px;
+//       padding-left: 0px;
+//       padding-bottom: 15px;
+// }
+
+
+/* 
+___________________
+
+  This is styling for any pages related to deleting.
+  For now, they're kept very simple:
+
+___________________
+*/
+
+
+.page-node-cancel, .page-node-delete, .page-user-cancel{
+  .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
+  h1{
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-top: 60px;
+      margin-bottom: 20px;
+     // padding-left: 15px;
+      padding-bottom: 15px;
+  }
+
+  // These are some default tabs made by drupal, not very aesthetic.
+  .tabs.tabs--primary{
+      display: none;
+  }
+    //All buttons on a delete page are red
+  form{
+        #edit-submit{
+          @extend .btn;
+          @extend .btn-danger;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 5px;
+        }
+        #edit-cancel{
+          @extend .btn;
+          background: $mainColor;
+          color: $textColor;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 5px;
+            &:focus {
+            background-color: ($mainColor * 1.20);
+            }
+            &:hover{
+                 background-color: ($mainColor * 0.80);
+            }
+
+        }
+  }
+}
+
+
+
+/* 
+___________________
+
+  This is Styling for the Services Page
+  
+___________________
+*/
+.node-type-page.section-creative-services, .section-design-illustration-animation-creative-services{
+    #servicesList{
+      width: 50%;
+    }
+    h1{
+      
+      width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 20px;
+
+      padding-left: 15px;
+      padding-bottom: 15px;
+      
+
+    }
+    .tabs.tabs--primary{
+      display: none;
+    }
+    //Margins
+    .row{
+      margin-top: 30px;
+    }
+    .serviceName{
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .serviceDescription{
+      font-size: 16px;
+      color: $grey;
+    }
+    #introExplanation, #endExplanation{
+      font-size: 18px;
+      margin-top: 30px !important;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .l-content{
+      margin-bottom: 60px;
+    }
+
+}
+
+
+/* 
+___________________
+
+  This is Styling for Contact Us Page
+  
+___________________
+*/
+.node-type-page.section-contact-us{
+    #contactUsPage{
+      width: 50%;
+    }
+    h1{
+      width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 0px;
+
+      padding-left: 15px;
+      padding-bottom: 15px;
+    }
+    .tabs.tabs--primary{
+      //display: none;
+    }
+    //Margins
+    .row{
+      margin-top: 30px;
+    }
+    .contactUsPage_label{
+      //margin: 0 auto;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 30px !important;
+    }
+
+    .workerName{
+      font-size: 16px;
+      //color: $grey;
+      display: inline-block;
+    }
+
+    #developmentTeam{
+      .row{
+        display: flex;
+        align-items: center;
+      }  
+    }
+
+    #contact_details{
+      .col-sm-12.contactUsPage_label{
+        padding-left: 0px;
+        margin-bottom: 20px !important;
+      }
+      .contact_detailsLabel{
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .email{
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    #location_details{
+      .col-sm-12.contactUsPage_label{
+        padding-left: 0px;
+      }
+      #address{
+        font-style: italic;
+      }
+    }
+
+
+    //Photos...
+    #mariyaPhoto, #dennyPhoto, #peidePhoto, #johnPhoto{
+      img{
+          width: 120px;
+          height: 120px;
+          border-radius: 999px;            
+          border: 2px solid $mainColor; 
+          object-fit: cover;
+      } 
+    }
+   
+    .l-content{
+      margin-bottom: 60px;
+    }
+
+
+
+    //Media query for mobile:
+
+    @media (max-width: $screen-xs-max) {
+        //Change some margins when the screen is small
+        #developmentTeam{
+          .row{
+              display: inline !important;
+              text-align: center !important;
+
+          }
+        }
+
+        #contact_details{
+          div{
+              padding-left: 0px !important;
+           }
+        }
+
+    }
+
+}
+
+
+.page-list-of-users, .maintenance-page{
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
+    h1{
+      //width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 30px;
+
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+
+      .views-row{
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+
+        @extend .well; 
+      } 
+      .views-field-name{
+        font-size: 20px;
+        font-weight: bold;
+        a{
+          color: #333; 
+        }
+      }
+      .views-label{
+        font-weight: bold;
+      }
+}
+
+
+
+
+//"Show row weights" for multivalue fields 
+.tabledrag-toggle-weight{ display: none; }
+
+
+//This is for hiding links in the footer when logged-in
+.logged-in, .page-freelancer-register{
+  .hidefooterLink{
+    display:none;
+  }
+}
+
+
+
+.views-label-field-first-name, .views-label-field-name, .views-label-field-add, #passwordField,#paymentDetailField{
+    font-size: 1.4em;
+    //margin: 20px;
+    font-weight: bold;
+}
+
+
+

@@ -132,6 +132,13 @@ Limiting Project titles to  a certain number of characters so they don’t go ov
 
 Error messages when videos are uploaded (yey- they upload!) and cover images for videos (perhaps we take this out as an option for now so we don’t look broken?)
 
+____________
+
+
+
+
+
+
 5. My Account
 New password section should be “New password”
 
@@ -193,6 +200,72 @@ ______________________
  <meta property = "og:image:url" content="<?php print $GLOBALS['base_url'] ?>/sites/default/files/tabbetalogoupdated_0.png"/>
 
  <meta property = "og:image:secure_url" content="<?php print $GLOBALS['base_url'] ?>/sites/default/files/tabbetalogoupdated_0.png"/>
+
+_________________________
+
+15 March 2016:
+
+1.) Fix Services in home page for mobile
+2.) Make margin less for mobile
+3.) Maybe make the images scale smaller for a 2 grid column
+4.) More margin for each description in what is tap for
+5.) Typo: What are you up to.
+6.) Make white bars in navbar dissapear when mobile
+7.) How it works, space between logos and hr smaller when mobile
+8.) Do something about clients in nz margin when mobile
+9.) More margin with lines above paragraphs in creative talent
+10.) More space between tap creative social links and copyright and description
+
+
+
+__________
+
+16 march
+
+1.) Needed to fix why hyperlinks didn't work for mobile in projects
+2.) Need to ask if live site views been refactored (wrong names?)
+
+__________
+
+
+1.) added rule for profile page redirection (Production site only!)
+
+2.) Added PHP code to hide a block for Client Profiles...
+
+(WIP)
+
+//Original
+user/[1-9][0-9]*
+users/*
+
+//New code:
+//Still need to hide error on login page
+
+
+<?php
+
+
+	if(arg(0) == 'user' || arg(0) == 'users'){
+
+		//Get the profile page, user's information
+		$user_id = user_load(arg(1));
+
+		// Check to see if $user has the client role.
+		if (in_array('client', array_values($user_id ->roles))){
+		  return FALSE;
+		}
+		else {
+		  return TRUE;
+		}
+	}
+?>
+
+3.) New JS and css for registration
+
+4.) 
+
+
+
 
 
 

@@ -7,7 +7,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
-$secondaryColor: #6d2c54;
+$secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -134,7 +134,6 @@ ___________________
       padding-bottom: 15px;
     }
 
-
     //This is the form when you select a specific creative
     .block--tap-job-mgmt-tap-block{
         .tap-job-mgmt-form{
@@ -168,10 +167,14 @@ ___________________
         }
     }
 
+
+
+
+
     //This is information on the job
     .node--job{
         font-size: 16px;
-
+        @extend .well;
     }
 
 }

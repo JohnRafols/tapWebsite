@@ -1,7 +1,7 @@
-name = profilePage
+name = basicPage
 description = A simple 3 column layout demonstrating mobile first and Susy.
 preview = preview.png
-template = profilePage-layout
+template = basicPage-layout
 
 ; Regions
 ;regions[branding]       = Branding
@@ -14,8 +14,7 @@ regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 
-; Scripts
-scripts[] = js/profilePageScripts.js
-
 ; Stylesheets
-stylesheets[all][] = css/profilePage.layout.css
+stylesheets[all][] = css/basicPage.layout.css
+
+; Scripts

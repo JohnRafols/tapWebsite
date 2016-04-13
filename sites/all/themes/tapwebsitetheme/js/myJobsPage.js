@@ -121,6 +121,46 @@
 
 
 
+/**
+    _____________________________________
+        
+
+        Code for Specific Job Page(s):    
+    
+
+    _____________________________________
+*/
+
+
+  
+    Drupal.behaviors.specificJobPageBehavior = {    
+    attach: function (context, settings) {
+      
+        var myJobsPage = $('.node-type-page.section-jobs').find('.l-content');
+        // Align the h1 tag With the tabs
+        //myJobsPage.find('h1').wrap('<div id = "tabsParentDiv">');
+
+        var header = myJobsPage.find('h1');
+
+        myJobsPage.find('ul.quicktabs-tabs')
+                  .once('myJobsPageBehavior')
+                  .wrap('<div id = "tabsParentDiv">')
+                  .before(header);
+
+
+        //Testing AJAX load...
+        //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
+
+      
+
+
+
+      }
+    };
+
+
+
+
 
 })(jQuery);
 

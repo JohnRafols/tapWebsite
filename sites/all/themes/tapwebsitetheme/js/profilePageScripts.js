@@ -1,28 +1,25 @@
 (function ($) {
 
-
  
-//   Drupal.behaviors.backToProfile = {
-//     attach: function (context, settings) {
-//       //Lets get the user's profile information first.
-//       var profilePicture = $('.l-main')
-//                                 .find('.view-id-portfolio-header')
-//                                 .find('.views-row')
-//                                 .find('.views-field-field-profile-picture');
-//       //console.log(profilePicture);
-//     }   
-// };
+/**
+    _____________________________________
+        
+
+        Code for all profile pages
+    
+
+    _____________________________________
+*/
 
 
-
- Drupal.behaviors.changeUsernameAppearance = {
+  Drupal.behaviors.changeUsernameAppearance = {
       attach: function (context, settings) {
         //Lets get the user's profile information first.
         var profileName = $(context)
+                                  .find('.page-user')
                                   .find('.l-region--sidebar-first')
                                   .find('.views-field-name')
-                                  .find('.username');
-
+                                  .find('.field-content');
 
         var str = profileName.text();
         var userName_noUnderscores = str.replace(/_/g, " "); 
@@ -31,6 +28,5 @@
         profileName.once('changeUsernameAppearance').html(userName_noUnderscores);
       }   
   };
-
 
 })(jQuery);

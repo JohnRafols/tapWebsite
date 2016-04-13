@@ -6118,9 +6118,16 @@ button.close {
   width: 100%;
   margin: 0 auto; }
 
+#landingPageServices_PlusSign img {
+  max-width: 150px;
+  max-height: 150px;
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
 #landingPageServices {
   text-align: center; }
-  #landingPageServices p {
+  #landingPageServices p, #landingPageServices a {
     font-size: 16px;
     color: #6d2c54; }
   #landingPageServices .landingPage_emphasizedText p {
@@ -6214,7 +6221,7 @@ button.close {
     width: 70%; }
 
 #landingPage_whoAreWe_mainContainer {
-  background-color: #6d2c54; }
+  background-color: #3c0f31; }
   #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer {
     width: 70%;
     color: white; }
@@ -6222,7 +6229,7 @@ button.close {
       border-bottom: none !important;
       padding-bottom: 0px !important; }
     #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer .hr_divider {
-      border-top: 1.5px solid #833565;
+      border-top: 1.5px solid #48123b;
       padding-top: 30px;
       width: 96.5%;
       margin: 0 auto; }
@@ -6251,12 +6258,20 @@ button.close {
   #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow {
     margin-top: 0 !important; }
     #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) {
-      height: 90px !important; }
+      height: 90px !important;
+      text-align: right !important;
+      padding-top: 30px !important; }
+      #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) a {
+        position: relative !important; }
   #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_description p {
     padding-top: 20px; }
   #landingPage_creativeTalent_secondColumn, #landingPage_creativeTalent_firstColumn {
     padding-left: 0px !important;
     padding-right: 0px !important; }
+    #landingPage_creativeTalent_secondColumn #landingPageServices_NZ_Icon, #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_request, #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_clientsInNewZealand, #landingPage_creativeTalent_firstColumn #landingPageServices_NZ_Icon, #landingPage_creativeTalent_firstColumn #landingPage_creativeTalent_request, #landingPage_creativeTalent_firstColumn #landingPage_creativeTalent_clientsInNewZealand {
+      float: none !important;
+      margin: 0px auto !important;
+      text-align: center; }
   #landingPage_howThisWorks {
     margin-bottom: 20px; } }
 

@@ -13,7 +13,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
-$secondaryColor: #6d2c54;
+$secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -108,6 +108,9 @@ $grey : #CCCCCC;
             }
 
             li a{
+                 cursor: pointer;
+                 cursor: hand;
+
                  padding-top: 10px;
                  padding-bottom: 10px;
                  border-radius: 30px;
@@ -122,6 +125,8 @@ $grey : #CCCCCC;
                 &:active, &:visited, &:link {
                     background-color: $mainColor !important;
                 }
+
+
                
              }
          }
@@ -504,7 +509,7 @@ ___________________
   }
 
   //The Submit Buttons 
-    #edit-actions{
+  #edit-actions{
       border-top: 2px solid $mainColor; 
       padding-top: 30px;
       margin-bottom: 60px;
@@ -554,378 +559,9 @@ ___________________
 }
 
 
-/* 
-___________________
-
-  This is styling for any pages related to deleting.
-  For now, they're kept very simple:
-
-___________________
-*/
-
-
-.page-node-cancel, .page-node-delete, .page-user-cancel{
-  .l-content{
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 60px;
-    width: 70%;
-  }  
-  h1{
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-top: 60px;
-      margin-bottom: 20px;
-     // padding-left: 15px;
-      padding-bottom: 15px;
-  }
-
-  // These are some default tabs made by drupal, not very aesthetic.
-  .tabs.tabs--primary{
-      display: none;
-  }
-    //All buttons on a delete page are red
-  form{
-        #edit-submit{
-          @extend .btn;
-          @extend .btn-danger;
-          margin-top: 30px;
-          margin-bottom: 30px;
-          margin-left: 5px;
-        }
-        #edit-cancel{
-          @extend .btn;
-          background: $mainColor;
-          color: $textColor;
-          margin-top: 30px;
-          margin-bottom: 30px;
-          margin-left: 5px;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-
-        }
-  }
-}
-
-
-/* 
-___________________
-
-  This is styling for when users edit their profile
-
-___________________
-*/
-
-
-.page-user-edit{
-  .l-content{
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 60px;
-    width: 70%;
-  }  
-  h1{
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-top: 60px;
-      margin-bottom: 20px;
-     // padding-left: 15px;
-      padding-bottom: 15px;
-  }
-
-  label{
-    font-size: 16px;
-  }
-  input[type=checkbox] {
-      transform: scale(1.5);
-      -webkit-transform: scale(1.5);
-      margin-right: 5px;
-      margin-top: -4px;
-    }
-  .tabs{
-    @extend .nav;
-    @extend .nav-tabs;
-    font-size: 16px;
-  }
-  //These are the blocks of text before and after the form
-  #block-block-7, #block-block-10{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-  #block-block-8{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-
-  form{
-    margin-bottom: 30px;
-  }
-  //this is the width of the form itself
-  #user-profile-form, #block-block-7, #block-block-8{
-    width: 90%;
-    //margin: 0px auto;
-  }
-
-  //Stuff to hide:
-  .tabledrag-toggle-weight-wrapper, .fieldset-legend{
-    //display: none !important;
-  }
-  //Buttons
-  #edit-cancel{
-    @extend .btn;
-    @extend .btn-danger;
-    float: right;
-  }
-  #edit-cancel,#edit-submit, #edit-cancel-changes{
-     margin-top: 15px;
-  }
-  #edit-cancel-changes{
-     @extend .btn;
-     margin-left: 10px;
-     background: $mainColor;
-     color: $textColor;
-        &:focus {
-            background-color: ($mainColor * 1.20);
-        }
-        &:hover{
-             background-color: ($mainColor * 0.80);
-        }
-  }
-
-}
 
 
 
-
-/* 
-___________________
-
-  This is Styling for the user login pages
-  
-___________________
-*/
-
-.page-user-login, .not-logged-in.page-user, .page-user-password{
-   .l-content{
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 60px;
-    width: 70%;
-  }  
-  h1{
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-      margin-top: 60px;
-      margin-bottom: 20px;
-      // padding-left: 15px;
-      padding-bottom: 15px;
-  }
-  form{
-    font-size: 16px;
-  }
-  #block-block-5{
-    font-size: 16px;
-    margin-bottom: 30px; 
-  }
-}
-
-
-/* 
-___________________
-
-  This is Styling for the Services Page
-  
-___________________
-*/
-.node-type-page.section-creative-services{
-    #servicesList{
-      width: 50%;
-    }
-    h1{
-      
-      width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 20px;
-
-      padding-left: 15px;
-      padding-bottom: 15px;
-      
-
-    }
-    .tabs.tabs--primary{
-      display: none;
-    }
-    //Margins
-    .row{
-      margin-top: 30px;
-    }
-    .serviceName{
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .serviceDescription{
-      font-size: 16px;
-      color: $grey;
-    }
-    #introExplanation, #endExplanation{
-      font-size: 18px;
-      margin-top: 30px !important;
-      width: 60%;
-      margin: 0 auto;
-    }
-
-    .l-content{
-      margin-bottom: 60px;
-    }
-
-}
-
-
-/* 
-___________________
-
-  This is Styling for Contact Us Page
-  
-___________________
-*/
-.node-type-page.section-contact-us{
-    #contactUsPage{
-      width: 50%;
-    }
-    h1{
-      width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 0px;
-
-      padding-left: 15px;
-      padding-bottom: 15px;
-    }
-    .tabs.tabs--primary{
-      //display: none;
-    }
-    //Margins
-    .row{
-      margin-top: 30px;
-    }
-    .contactUsPage_label{
-      //margin: 0 auto;
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 30px !important;
-    }
-
-    .workerName{
-      font-size: 16px;
-      //color: $grey;
-      display: inline-block;
-    }
-
-    #developmentTeam{
-      .row{
-        display: flex;
-        align-items: center;
-      }  
-    }
-
-    #contact_details{
-      .col-sm-12.contactUsPage_label{
-        padding-left: 0px;
-        margin-bottom: 20px !important;
-      }
-      .contact_detailsLabel{
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-      .email{
-        font-size: 16px;
-        margin-top: 10px;
-      }
-    }
-
-    #location_details{
-      .col-sm-12.contactUsPage_label{
-        padding-left: 0px;
-      }
-      #address{
-        font-style: italic;
-      }
-    }
-
-
-    //Photos...
-    #mariyaPhoto{
-        background: url('images/DevelopmentTeam/mariya.jpg') no-repeat;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto;
-        border-radius: 999px;            
-        border: 2px solid $mainColor; 
-        display: inline-block;
-
-
-        //background-position: center center;
-        background-size: cover;
-    }
-    #dennyPhoto{
-        background: url('images/DevelopmentTeam/denny.png') no-repeat;
-        width: 120px;
-        height: 120px;
-        background-size: cover;
-        margin: 0 auto;
-        border-radius: 999px;            
-        border: 2px solid $mainColor; 
-        display: inline-block;
-
-    }
-    #peidePhoto{
-        background: url('images/DevelopmentTeam/peide.jpg') no-repeat;
-        width: 120px;
-        height: 120px;
-        background-size: 100% 100%;
-        margin: 0 auto;
-        border-radius: 999px;            
-        border: 2px solid $mainColor; 
-        display: inline-block;
-
-        //background-position: center center;
-        background-size: cover;
-    }
-
-    #johnPhoto{
-        background: url('images/DevelopmentTeam/john.jpg') no-repeat;
-        width: 120px;
-        height: 120px;
-        background-size: cover;
-        margin: 0 auto;
-        border-radius: 999px;            
-        border: 2px solid $mainColor; 
-        display: inline-block;
-    }
-
-    .l-content{
-      margin-bottom: 60px;
-    }
-
-}
 
 /* 
 ___________________
@@ -935,7 +571,7 @@ ___________________
 ___________________
 */
 
-.page-legal.section-legal, .page-legal-accept{
+.page-legal.section-legal, .page-legal-accept, .maintenance-page{
     .l-content{
       width: 70%;
       margin: 0 auto;
@@ -969,42 +605,6 @@ ___________________
         font-weight: bold;
       }
     //}
-}
-
-.page-all-unregistered-users, .page-list-of-users{
-    .l-content{
-      width: 70%;
-      margin: 0 auto;
-      padding-left: 15px;
-    }
-    h1{
-      //width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 30px;
-
-      padding-left: 0px;
-      padding-bottom: 15px;
-    }
-
-      .views-row{
-        @include make-sm-column(4);
-        @extend .well; 
-      } 
-      .views-field-name{
-        font-size: 20px;
-        font-weight: bold;
-        a{
-          color: #333; 
-        }
-      }
-      .views-label{
-        font-weight: bold;
-      }
 }
 
 
@@ -1060,5 +660,19 @@ ___________________
         margin-bottom: 30px;
       }
     }
+
+    .modalEmailSignUp_body{
+        background: url('images/EmailSignUp.png') no-repeat;
+        .modalEmailSignUp_footer{
+            text-align: center;
+            #edit-mergevars-email, .form-text{
+              max-width: 50%;
+            }
+        }       
+        height: 120px !important;
+        background-size: cover !important;
+        background-position: 20% !important;
+    }
+    
 }
 

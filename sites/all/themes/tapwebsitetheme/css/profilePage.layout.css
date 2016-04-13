@@ -1529,13 +1529,13 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row, .l-main .l-content #block-block-6 {
+.row {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .l-main .l-content #block-block-6:before, .row:after, .l-main .l-content #block-block-6:after {
+  .row:before, .row:after {
     content: " ";
     display: table; }
-  .row:after, .l-main .l-content #block-block-6:after {
+  .row:after {
     clear: both; }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -5972,6 +5972,12 @@ body.page-user .block__title {
     .l-main .l-region--sidebar-first .views-field-field-user-last-name, .l-main .l-region--sidebar-first .views-field-php {
       font-size: 2.5em;
       font-weight: bold; }
+    @media (max-width: 767px) {
+      .l-main .l-region--sidebar-first .views-row {
+        display: inline;
+        text-align: center; }
+      .l-main .l-region--sidebar-first .views-field-field-profile-picture {
+        padding-top: 20px; } }
   .l-main .l-content {
     position: relative;
     min-height: 1px;
@@ -5981,6 +5987,14 @@ body.page-user .block__title {
       .l-main .l-content {
         float: left;
         width: 75%; } }
+    .l-main .l-content .view-portfolio-header, .l-main .l-content .view-freelancer-portfolio-projects {
+      margin-left: 0;
+      margin-right: 0; }
+      .l-main .l-content .view-portfolio-header:before, .l-main .l-content .view-portfolio-header:after, .l-main .l-content .view-freelancer-portfolio-projects:before, .l-main .l-content .view-freelancer-portfolio-projects:after {
+        content: " ";
+        display: table; }
+      .l-main .l-content .view-portfolio-header:after, .l-main .l-content .view-freelancer-portfolio-projects:after {
+        clear: both; }
     .l-main .l-content .views-row {
       display: inline-block;
       margin-bottom: 30px;
@@ -6006,15 +6020,6 @@ body.page-user .block__title {
         color: #333; }
     .l-main .l-content .views-field-field-type-of-work .field-content {
       color: #CCCCCC; }
-    .l-main .l-content #block-block-6 {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 768px) {
-        .l-main .l-content #block-block-6 {
-          float: left;
-          width: 100%; } }
   .l-main .l-region--sidebar-second {
     position: relative;
     min-height: 1px;

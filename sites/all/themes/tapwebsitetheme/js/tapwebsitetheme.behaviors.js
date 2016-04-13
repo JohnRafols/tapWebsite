@@ -161,6 +161,8 @@
             $('.l-header').find('.l-region--navigation').append(modalCode)
 
         }
+
+        
       }
     };
 
@@ -170,7 +172,7 @@
     _____________________________________
         
 
-        Code for the create Portfolio Page:    
+        Code for the create/add Portfolio Page:    
     
 
     _____________________________________
@@ -184,125 +186,69 @@
    Drupal.behaviors.createPortfolioBehaviour = {    
     attach: function (context, settings) {
       
-        // //This is for the styling the "Create Portfolio" page. 
-        var createPortfolioPage = $('.page-node-add-portfolio').find('.l-content');
-  
 
-        //The Title and image associated
-        createPortfolioPage.find('h1')
-                        .once('createPortfolioBehaviour')
-                        .wrap('<div class="row" id = "newPortfolio_titleDiv"><div></div></div>')
+        // Before we run this code, we'll need to check if it is the create or add portfolio page
+        var createPortfolioPage = null;
 
-        createPortfolioPage.find('#newPortfolio_titleDiv')
-                        .once('createPortfolioBehaviour')
-                        .prepend('<div id = "newPortfolio_Logo"></div>')
-
-        createPortfolioPage.find('h1').html('New Project');
-
-        //Overview section
-        var portfolioPage_overviewBody = createPortfolioPage.find('#edit-body')
-                                                            .find('.form-textarea-wrapper')                      
-        //Move the description of the Overview above the textArea and below the label.
-        createPortfolioPage.find('#edit-body')
-                        .find('.description')
-                        .once('createPortfolioBehaviour')
-                        .insertBefore(portfolioPage_overviewBody);
-
-        // Get the lists of Skills
-        var skillList = createPortfolioPage
-                              .find('#edit-field-portfolio-project-skills-und')
-                              .find('.form-item');
-
-        skillList.once('createPortfolioBehaviour').wrapAll('<div class="projectSkillListRow row"></div>')
-
-        //Calculate the number of items that'll appear in each column
-        var skillsColumnSize = Math.floor(skillList.length/2) + ((skillList.length % 2)/2);
-
-        //Add em all into the columns
-        //once() isn't working here, so I used a boolean variable 
-        if(!isLoaded){
-          for(var i = 0; i < skillList.length; i+=skillsColumnSize){
-             skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
-          }
-          isLoaded = true;
+        //Check for the page (is it the client registration or freelancer registration?)
+        if($(context).find('body').hasClass('page-node-add-portfolio')){
+            createPortfolioPage = $('.page-node-add-portfolio').find('.l-content');
+            createPortfolioPage.find('h1').html('New Project');
         }
+        else if($(context).find('body').hasClass('page-node-edit') && 
+                $(context).find('body').hasClass('node-type-portfolio')
+        ){
+            createPortfolioPage = $('.page-node-edit.node-type-portfolio').find('.l-content');
+        };
 
-        //Move the description of the Skill List above the checkboxes and below the label
-        createPortfolioPage.find('#edit-field-portfolio-project-skills')
-                           .find('.description')
-                           .insertBefore($('.projectSkillListRow'));
+        if(createPortfolioPage != null){
 
+            //The Title and image associated
+            createPortfolioPage.find('h1')
+                            .once('createPortfolioBehaviour')
+                            .wrap('<div class="row" id = "newPortfolio_titleDiv"><div></div></div>')
+
+            createPortfolioPage.find('#newPortfolio_titleDiv')
+                            .once('createPortfolioBehaviour')
+                            .prepend('<div id = "newPortfolio_Logo"></div>')
+
+            //createPortfolioPage.find('h1').html('New Project');
+
+            //Overview section
+            var portfolioPage_overviewBody = createPortfolioPage.find('#edit-body')
+                                                                .find('.form-textarea-wrapper')                      
+            //Move the description of the Overview above the textArea and below the label.
+            createPortfolioPage.find('#edit-body')
+                            .find('.description')
+                            .once('createPortfolioBehaviour')
+                            .insertBefore(portfolioPage_overviewBody);
+
+            // Get the lists of Skills
+            var skillList = createPortfolioPage
+                                  .find('#edit-field-portfolio-project-skills-und')
+                                  .find('.form-item');
+
+            skillList.once('createPortfolioBehaviour').wrapAll('<div class="projectSkillListRow row"></div>')
+
+            //Calculate the number of items that'll appear in each column
+            var skillsColumnSize = Math.floor(skillList.length/2) + ((skillList.length % 2)/2);
+
+            //Add em all into the columns
+            //once() isn't working here, so I used a boolean variable 
+            if(!isLoaded){
+              for(var i = 0; i < skillList.length; i+=skillsColumnSize){
+                 skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
+              }
+              isLoaded = true;
+            }
+
+            //Move the description of the Skill List above the checkboxes and below the label
+            createPortfolioPage.find('#edit-field-portfolio-project-skills')
+                               .find('.description')
+                               .insertBefore($('.projectSkillListRow'));
+
+          }
       }
     };
-
-
-/**
-    _____________________________________
-        
-
-        Code for the edit Portfolio Page:    
-    
-
-    _____________________________________
-*/
-
-   var isLoadedEditPortfolio = false;
-    //This assures certain code is only loaded once
-   //This code is custom jQuery for the forms of the website.  
-   Drupal.behaviors.editPortfolioBehaviour = {    
-    attach: function (context, settings) {
-      
-        // //This is for the styling the "Edit Portfolio" page. 
-        var editPortfolioPage = $('.page-node-edit.node-type-portfolio').find('.l-content');
-  
-
-        //The Title and image associated
-        editPortfolioPage.find('h1')
-                        .once('editPortfolioBehaviour')
-                        .wrap('<div class="row" id = "newPortfolio_titleDiv"><div></div></div>')
-
-        editPortfolioPage.find('#newPortfolio_titleDiv')
-                        .once('editPortfolioBehaviour')
-                        .prepend('<div id = "newPortfolio_Logo"></div>')
-
-        //editPortfolioPage.find('h1').html('Edit');
-
-        //Overview section
-        var portfolioPage_overviewBody = editPortfolioPage.find('#edit-body')
-                                                            .find('.form-textarea-wrapper')                      
-        //Move the description of the Overview above the textArea and below the label.
-        editPortfolioPage.find('#edit-body')
-                        .find('.description')
-                        .once('editPortfolioBehaviour')
-                        .insertBefore(portfolioPage_overviewBody);
-
-        // Get the lists of Skills
-        var skillList = editPortfolioPage
-                              .find('#edit-field-portfolio-project-skills-und')
-                              .find('.form-item');
-
-        skillList.once('editPortfolioBehaviour').wrapAll('<div class="projectSkillListRow row"></div>')
-
-        //Calculate the number of items that'll appear in each column
-        var skillsColumnSize = Math.floor(skillList.length/2) + ((skillList.length % 2)/2);
-
-        //Add em all into the columns
-        //once() isn't working here, so I used a boolean variable 
-
-        if(!isLoadedEditPortfolio){
-           for(var i = 0; i < skillList.length; i+=skillsColumnSize){
-              skillList.slice(i, i+skillsColumnSize).wrapAll('<div class="col-sm-6"></div>');
-          }
-          isLoadedEditPortfolio = true;
-        }
-
-        //Move the description of the Skill List above the checkboxes and below the label
-        editPortfolioPage.find('#edit-field-portfolio-project-skills')
-                           .find('.description')
-                           .insertBefore($('.projectSkillListRow'));
-
-      }
-    };
-
 
 })(jQuery);

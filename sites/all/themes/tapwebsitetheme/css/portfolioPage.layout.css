@@ -5819,6 +5819,12 @@ button.close {
       font-size: 2.0em;
       font-weight: bold;
       white-space: nowrap; }
+    @media (max-width: 767px) {
+      .l-main .l-region--sidebar-first .views-row {
+        display: inline;
+        text-align: center; }
+      .l-main .l-region--sidebar-first .views-field-title {
+        padding-top: 20px; } }
   .l-main .l-content {
     position: relative;
     min-height: 1px;
@@ -5866,5 +5872,17 @@ button.close {
       color: #FFBF28; }
       .l-main .l-region--sidebar-second .views-row .views-field-field-portfolio-project-skills .field-content a {
         color: #FFBF28; }
+
+video {
+  width: 100%;
+  height: auto; }
+
+/* 
+___________________
+
+This is Styling for adding/editing Portfolios:
+
+___________________
+*/
 
 /*# sourceMappingURL=portfolioPage.layout.css.map */

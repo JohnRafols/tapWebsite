@@ -7,6 +7,7 @@
 
 //Colors to be used for the website:
 $mainColor :  #FFBF28;
+$secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
@@ -18,12 +19,13 @@ $grey : #CCCCCC;
 /* 
 ___________________
 
-  This is styling for the new freelancer registration page:
+  This is styling for the registration pages:
 
 ___________________
 */
 
-.page-freelancer-register{
+.page-freelancer-register, .page-client-register {
+
   h1{
       font-weight: bold; 
       margin-top: 60px;
@@ -57,7 +59,9 @@ ___________________
     width: 70%;
     font-size: 16px;
   }
-  #block-block-15{
+
+  //Gotta check the live site if the block id changed...
+  #block-block-15, #block-block-16{
     color: $grey;
     font-size: 16px;
     margin-top: 10px;
@@ -70,58 +74,54 @@ ___________________
     color: $mainColor; 
     font-size: 16px;
   }  
+
 }
+
 
 //Password related margins:
 .form-type-password-confirm.form-item-pass{
- // @extend .row;
+      // @extend .row;
+      //The first row:
+      .password-parent{
+         @extend .clearfix; 
+          .password-field{
+            @include make-sm-column(6); 
+            @include make-xs-column(12); 
+          }
+          .password-strength{
+            @include make-sm-column(6); 
+            @include make-xs-column(12); 
+            @extend .pull-right;
+          }
 
-  //The first row:
-  .password-parent{
-     @extend .clearfix; 
-      .password-field{
-        @include make-sm-column(6); 
-        @include make-xs-column(12); 
       }
-      .password-strength{
-        @include make-sm-column(6); 
-        @include make-xs-column(12); 
-        @extend .pull-right;
+
+      //The second row:
+      .confirm-parent{
+        @extend .clearfix; 
+          input.password-confirm{
+            @include make-sm-column(6);
+            @include make-xs-column(12); 
+     
+          }
+          div.password-confirm{
+            @extend .pull-right;
+            @include make-sm-column(6);
+            @include make-xs-column(12); 
+          }
       }
 
-  }
-
-  //The second row:
-  .confirm-parent{
-    @extend .clearfix; 
-      input.password-confirm{
-        @include make-sm-column(6);
-        @include make-xs-column(12); 
- 
+      // div.password-confirm{
+      //     // position: absolute;
+      //     // margin-left: 330px;
+      // }
+      .password-suggestions{
+          @include make-sm-column(12); 
       }
-      div.password-confirm{
-        @extend .pull-right;
-        @include make-sm-column(6);
-        @include make-xs-column(12); 
-      }
-  }
-
-  // div.password-confirm{
-  //     // position: absolute;
-  //     // margin-left: 330px;
-  // }
-
-
-  .password-suggestions{
-      @include make-sm-column(12); 
-  }
-
 }
 
 
-
-
-//Modal Styling:
+//Modal Styling : 
 
 .registrationModal_header{
     background-color: $mainColor;
@@ -143,15 +143,42 @@ ___________________
     background-size: 100% 100%;
     background-position: 90% 90%;
 }
+
 .registrationModal_footer{
     text-align: center;
 }
 
-//Background
-.modalRegistration{
-	//background: url('images/BannerBeta.png') no-repeat;
-    //background-size: 100% 100%;
+
+.modal-body{
+    background-size: 100% 100%;
+    background-position: 90% 90%;
+    font-size: 26px;
+    width: 90%;
+    margin: 0 auto;
+    color: $secondaryColor;
+    font-weight: bold;
+
+
+      img{
+          max-width: 100px;
+          max-height: 100px;
+          height: auto;
+          width: 100%; 
+      }
+      .col-sm-9{
+          margin-top: 10px;
+      }
+      .col-sm-12{
+          font-weight: bold;
+          color: $mainColor; 
+          font-size: 16px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+      }
 }
+
+
+
 
 //Button
 #edit-submit{
@@ -172,15 +199,131 @@ ___________________
 }
 
 
-//This is a temporary layout for portfolios
-body.node-type-portfolio{
 
-    // Portfolio Pages
-    img {
-        max-width: 100%;
-        height: auto;
+
+/* 
+___________________
+
+  This is styling for when users edit their profile
+
+___________________
+*/
+
+
+.page-user-edit{
+  .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
+  h1{
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+      margin-top: 60px;
+      margin-bottom: 20px;
+     // padding-left: 15px;
+      padding-bottom: 15px;
+  }
+
+  label{
+    font-size: 16px;
+  }
+  input[type=checkbox] {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      margin-right: 5px;
+      margin-top: -4px;
     }
+  .tabs{
+    @extend .nav;
+    @extend .nav-tabs;
+    font-size: 16px;
+  }
+  //These are the blocks of text before and after the form
+  #block-block-7, #block-block-10{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  #block-block-8{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  form{
+    margin-bottom: 30px;
+  }
+  //this is the width of the form itself
+  #user-profile-form, #block-block-7, #block-block-8{
+    width: 90%;
+    //margin: 0px auto;
+  }
+
+  //Stuff to hide:
+  .tabledrag-toggle-weight-wrapper, .fieldset-legend{
+    //display: none !important;
+  }
+  //Buttons
+  #edit-cancel{
+    @extend .btn;
+    @extend .btn-danger;
+    float: right;
+  }
+  #edit-cancel,#edit-submit, #edit-cancel-changes{
+     margin-top: 15px;
+  }
+  #edit-cancel-changes{
+     @extend .btn;
+     margin-left: 10px;
+     background: $mainColor;
+     color: $textColor;
+        &:focus {
+            background-color: ($mainColor * 1.20);
+        }
+        &:hover{
+             background-color: ($mainColor * 0.80);
+        }
+  }
+
 }
+
+
+
+
+/* 
+___________________
+
+  This is Styling for the user login pages
+  
+___________________
+*/
+
+.page-user-login, .not-logged-in.page-user, .page-user-password{
+   .l-content{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 70%;
+  }  
+  h1{
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+      margin-top: 60px;
+      margin-bottom: 20px;
+     // padding-left: 15px;
+      padding-bottom: 15px;
+  }
+  form{
+    font-size: 16px;
+  }
+  #block-block-5{
+    font-size: 16px;
+    margin-bottom: 30px; 
+  }
+}
+
 
 
 
@@ -220,19 +363,31 @@ body.node-type-portfolio{
       //Some input boxes are naturally uneven..
       //It may be caused by the back-end?
       input.dependent-locality, input.locality{
-          max-width: 85%;
+          max-width: 80%;
       }
 
       .field-type-addressfield{
-        overflow: hidden;
+          overflow: hidden;
       }
   
+
+      .registrationModal_body{
+        background: url('images/ProfilePendingApproval.png') no-repeat;
+        height: 120px !important;
+        background-size: cover !important;
+        background-position: 20% !important;
+      }
+
 }
 
 
 
 
-
+//Background
+// .modalRegistration{
+//   //background: url('images/BannerBeta.png') no-repeat;
+//     //background-size: 100% 100%;
+// }
 
 
 // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {

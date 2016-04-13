@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Rules block visibility
+ * module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function rules_block_visibility_uninstall() {
+  variable_del("rules_block_visibility_rules");
+}
