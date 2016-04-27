@@ -676,3 +676,13 @@ ___________________
     
 }
 
+//User login page
+#user-login{
+  .description{
+    display: none;
+  }
+
+  .form-item label .form-required{
+    display: none;
+  }
+}

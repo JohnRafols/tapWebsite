@@ -69,30 +69,6 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 		$form['name']['#title']='E-mail';
 		$form['name']['#description']='Enter your e-mail.';
 
-	}else if($form_id=='job_node_form'){
-		// hide($form['field_initial_candidates']);
-		// hide($form['field_available_candidates']);
-		// hide($form['field_final_candidate']);
-					
-		debugLong($form, 'job_node_form_alter');
-
-		$form['field_freelancer_to_commission'] = array(
-			'#type' => 'textfield',
-			'#default_value' => '',
-			'#size' => 60,         // The default size is a bit large...
-			'#weight'=>2.5,
-			'#attributes' =>array('placeholder' => t('Start Typing Name of Creative Pro Here')),
-		);
-
-		$form['field_freelancers_to_invite'] = array(
-			'#type' => 'textfield',
-			'#default_value' => '',
-			'#size' => 60,         // The default size is a bit large...
-			'#weight'=>2.6,
-			'#attributes' =>array('placeholder' => t('Invite Creative Pros, separate usernames with a comma.')),
-		);
-
-
 	}
 
 
@@ -134,90 +110,7 @@ function setFinalCandidate($uid, $node){
 }
 
 
-function owner_only_fields_node_validate($node, $form, &$form_state){
-	
-	debugLong($form_state, "_validate_form_state");
-	debugLong($form, "_validate_form");
-	debugLong($node, "_validate_node");
 
-	
-	if(!array_key_exists('original', $node)){ //Newly created node, not updated node.
-		//Invalidate form if no freelancer selected for the commission.
-		if(array_key_exists('field_freelancer_selection_type', $form_state['values'])){
-			if(strcmp($form_state['values']['field_freelancer_selection_type']['und'][0]['value'], 'commission')==0){
-				$username=$form_state['values']['field_freelancer_to_commission'];
-				if(empty($username)){
-					form_set_error('field_freelancer_to_commission', t('Empty freelancer username field.'));
-				}else{ //Determine if entered username is an ApprovedFreelancer
-					$freelancer=user_load_by_name($username);
-
-					if($freelancer==false){
-						form_set_error('field_freelancer_to_commission', t('Invalid username'));
-
-					}else if(isset($freelancer->roles[array_search('approvedFreelancer', user_roles())])){			
-						//Add freelancer to field_final_candidate.
-						//Email freelancer.
-						//Make the selected freelancer the final candidate i.e. the person for the job.
-						debugLong($node, 'node_validate_node');
-						debugLong($freelancer, 'node_validate_Freelancer');
-						
-
-					}else{
-						if(isset($freelancer->roles[array_search('freelancer', user_roles() ) ] ) ){
-							form_set_error('field_freelancer_to_commission', t('Freelancer has not yet been approved by Tapcreative.'));
-						}else{
-							form_set_error('field_freelancer_to_commission', t('The username is not one of a freelancer.'));
-						}
-					}
-				}
-			}else if(strcmp($form_state['values']['field_freelancer_selection_type']['und'][0]['value'], 'invite')==0){
-
-
-				if(!isset($form['field_freelancers_to_invite'])){
-					form_set_error('field_freelancers_to_invite', 'Please enter at least one Creative Pro to invite');
-				}
-
-				debugLong($form_state['values']['field_freelancers_to_invite'], '_validate_freelancers_to_invite');
-				$freelancers_to_invite=explode(',', $form_state['values']['field_freelancers_to_invite']);
-
-
-				$invalid=array();
-				$notApproved=array();
-				foreach($freelancers_to_invite as $name){
-					$f=user_load_by_name(trim($name));
-					if($f==false){
-						array_push($invalid, $name);
-					}else if(!isset($f->roles[array_search('approvedFreelancer', user_roles())])){
-						array_push($notApproved, $name);
-					}
-				}
-				
-				if(!empty($invalid)){
-					$invalidInStr=implode(', ', $invalid);
-					$errorMessage='Not creative pros: '.$invalidInStr;
-				}
-
-				if(!empty($notApproved)){
-					$notApprovedInStr=implode(', ', $notApproved);
-					if(isset($errorMessage)) $errorMessage.="<br>Creative pros not yet approved: ".$notApprovedInStr;
-					else $errorMessage="Creative pros not yet approved: ".$notApprovedInStr;
-					
-				}
-
-				if(!empty($errorMessage)){
-					form_set_error('field_freelancers_to_invite', $errorMessage);
-				}
-				
-				$trimmed=array_map('trim', $freelancers_to_invite);
-				$form_state['values']['field_freelancers_to_invite']=implode(',', $trimmed);
-			}
-		}
-	}
-
-	
-
-	debugShort('helo');
-}
 
 function node_create_cancel($form, &$form_state){
 	drupal_set_message('Changes cancelled', 'status');
@@ -320,5 +213,5 @@ function owner_only_fields_preprocess_page(&$vars, $hook) {
 	}
 }
 
-?>
 
+?>

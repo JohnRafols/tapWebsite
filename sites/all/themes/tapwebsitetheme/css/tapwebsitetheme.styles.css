@@ -6899,4 +6899,10 @@ ___________________
       .modalEmailSignUp_body .modalEmailSignUp_footer #edit-mergevars-email, .modalEmailSignUp_body .modalEmailSignUp_footer .form-text {
         max-width: 50%; } }
 
+#user-login .description {
+  display: none; }
+
+#user-login .form-item label .form-required {
+  display: none; }
+
 /*# sourceMappingURL=tapwebsitetheme.styles.css.map */
