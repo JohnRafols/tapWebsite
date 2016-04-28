@@ -138,9 +138,11 @@ body.page-user .block__title {
                 display:inline-block;
                 margin-bottom: 30px;
 
-                //Attempt to always have a 3 column..
-                @include make-sm-column(4);
                 @include make-xs-column(12);
+                //Attempt to always have a 3 column unless shrunk
+                @include make-sm-column(4);
+                @include make-md-column(4);
+                @include make-lg-column(4);
                 padding-left: 0px !important; 
 
                 .views-field{

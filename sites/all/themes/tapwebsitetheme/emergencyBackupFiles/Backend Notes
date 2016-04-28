@@ -264,8 +264,27 @@ users/*
 
 4.) 
 
+______________
+
+April 22
+
+1.) Need to add crop thumbnail option
+- Look for img crop field
+https://ftp.drupal.org/files/projects/imagefield_crop-7.x-1.1.zip
+You need this
+-scripts[] = js/jquery-migrate-1.4.0.min.js
 
 
 
+2.) Need to set up styling for articles
+
+
+
+3.) Tumblr integration?
+
+
+4.) Misc:
+https://www.drupal.org/project/nodeviewcount
+https://www.drupal.org/project/feeds
 
 

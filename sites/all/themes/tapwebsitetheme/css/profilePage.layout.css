@@ -5999,17 +5999,33 @@ body.page-user .block__title {
       display: inline-block;
       margin-bottom: 30px;
       position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
       float: left;
       width: 100%;
       min-height: 1px;
       padding-left: 15px;
       padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
       padding-left: 0px !important; }
       @media (min-width: 768px) {
+        .l-main .l-content .views-row {
+          float: left;
+          width: 33.33333%; } }
+      @media (min-width: 992px) {
+        .l-main .l-content .views-row {
+          float: left;
+          width: 33.33333%; } }
+      @media (min-width: 1200px) {
         .l-main .l-content .views-row {
           float: left;
           width: 33.33333%; } }

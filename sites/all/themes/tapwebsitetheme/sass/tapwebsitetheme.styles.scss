@@ -508,6 +508,20 @@ ___________________
 
   }
 
+  //The Thumbnail section
+
+  @media (max-width: $screen-xs-max) {
+      //Change some margins when the screen is small
+     #edit-field-thumbnail{
+        display: none;
+       // .jcrop-holder, .jcrop-tracker,  .cropbox{
+       //      width: 300px !important;
+       //  }
+     }
+  }
+
+
+
   //The Submit Buttons 
   #edit-actions{
       border-top: 2px solid $mainColor; 
@@ -609,6 +623,29 @@ ___________________
 
 
 
+//This is styling for blog posts
+
+.node-type-blog, .page-blog{
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 60px;
+      padding-left: 15px;
+    }
+    h1{
+      //width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
+
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 30px;
+
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+}
 
 
 

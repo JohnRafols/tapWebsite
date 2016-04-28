@@ -6794,6 +6794,10 @@ ___________________
   font-size: 16px;
   color: #a3a3a3; }
 
+@media (max-width: 767px) {
+  .page-node-add-portfolio #edit-field-thumbnail, .page-node-edit.node-type-portfolio #edit-field-thumbnail {
+    display: none; } }
+
 .page-node-add-portfolio #edit-actions, .page-node-edit.node-type-portfolio #edit-actions {
   border-top: 2px solid #FFBF28;
   padding-top: 30px;
@@ -6862,6 +6866,22 @@ ___________________
 
 .page-legal.section-legal .views-label, .page-legal-accept .views-label, .maintenance-page .views-label {
   font-weight: bold; }
+
+.node-type-blog .l-content, .page-blog .l-content {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding-left: 15px; }
+
+.node-type-blog h1, .page-blog h1 {
+  font-weight: bold;
+  border-bottom: 1.5px solid #FFBF28;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
 
 .tabledrag-toggle-weight {
   display: none; }

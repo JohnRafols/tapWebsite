@@ -30,7 +30,7 @@
       }
       else if($(context).find('body').hasClass('page-client-register')){
           freelancerRegistrationPage = $('.page-client-register').find('.l-content');
-          headerMessage = "We'll flick you an e-mail when you can start working with kick ass creatives on Tap!";
+          headerMessage = "Find the perfect creative match for your job.";
           modalButtonMessage = " Portfolio";
       };
 
