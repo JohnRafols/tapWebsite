@@ -6098,6 +6098,10 @@ button.close {
     display: none; }
   .l-main .l-content #block-quicktabs-client-jobs div.quicktabs_main {
     border: none; }
+  .l-main .l-content #block-quicktabs-freelancer-jobs h2.block__title {
+    display: none; }
+  .l-main .l-content #block-quicktabs-freelancer-jobs div.quicktabs_main {
+    border: none; }
   .l-main .l-content .view-content .views-row {
     background-color: #e6ac24;
     min-height: 50px;
