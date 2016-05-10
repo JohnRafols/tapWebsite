@@ -163,7 +163,7 @@ function getMatchedFreelancers($node){
 			if($u->score>$minScore){
 				//Remove weakest.
 				if(($key = array_search($weakest, $topFreelancers)) !== false) {
-				   unset($messages[$key]);
+				   unset($topFreelancers[$key]);
 				}		
 
 				//Add the stronger freelancer.

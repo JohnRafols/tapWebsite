@@ -139,18 +139,18 @@ function tap_job_mgmt_node_presave($node){
 }
 
 
-function tap_job_mgmt_mail($key, &$message, $params) {
-    $data['user'] = $params['account'];
-    $options['language'] = $message['language'];
-    user_mail_tokens($variables, $data, $options);
-    switch($key) {
-      case 'notice':
-        $langcode = $message['language']->language;
-        $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
-        $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
-        break;
-    }
-}
+// function tap_job_mgmt_mail($key, &$message, $params) {
+//     $data['user'] = $params['account'];
+//     $options['language'] = $message['language'];
+//     user_mail_tokens($variables, $data, $options);
+//     switch($key) {
+//       case 'notice':
+//         $langcode = $message['language']->language;
+//         $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
+//         $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
+//         break;
+//     }
+// }
 
 
 /**
@@ -190,10 +190,8 @@ function tap_job_mgmt_menu() {
 function tap_job_mgmt_job_available($job='') {
 	global $user;
 
-	//Only a freelancer/approvedFreelancer can accept/decline jobs.
-  	$freelancer_rid=array_search('freelancer', user_roles());
-  	$approvedFreelancer_rid=array_search('approvedFreelancer', user_roles());
-	if(!user_has_role($freelancer_rid) && !user_has_role($approvedFreelancer_rid)){
+	//Only an ApprovedFreelancer can accept jobs.
+	if(!user_has_role(8)){
 		drupal_access_denied();
 	}
 
@@ -209,7 +207,7 @@ function tap_job_mgmt_job_available($job='') {
 	global $user;
 
 	//Client wanted us to match freelancers to their job.
-	if(strcmp($freelancer_selection_type, 'match')==0){
+	if(strcmp($freelancer_selection_type, 'match')==0 || strcmp($freelancer_selection_type, 'invite')==0){
 		if(empty($job->field_available_candidates)){
 			$job->field_available_candidates['und']=array();
 			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
@@ -238,8 +236,8 @@ function tap_job_mgmt_job_available($job='') {
 	}
 	//Client commissioned a freelancer.
 	else if(strcmp($freelancer_selection_type, 'commission')==0){
-		if(isset($job->field_initial_candidates)){
-			if($user->uid==$job->field_initial_candidates['und'][0]['target_id']){
+		if(isset($job->field_commissioned_candidate)){
+			if($user->uid==$job->field_commissioned_candidate['und'][0]['target_id']){
 				// return 'I am available';
 				$job->field_final_candidate['und']=array();
 				array_push($job->field_final_candidate['und'], array('target_id'=>$user->uid));
@@ -257,20 +255,30 @@ function tap_job_mgmt_job_unavailable($job='') {
 	$job=node_load($job);
 	global $user;
 
+	//Only an ApprovedFreelancer can decline jobs.
+	if(!user_has_role(8)){
+		drupal_access_denied();
+	}
+
+
 	$isMatchedCandidate=false;
 	$isInvitedCandidate=false;
 	$isCommissionedCandidate=false;
-	foreach($job->field_matched_candidates['und'] as $f){
-		if($f['target_id']==$user->uid){
-			$isMatchedCandidate=true;
-			break;
+	if(!empty($job->field_matched_candidates)){
+		foreach($job->field_matched_candidates['und'] as $f){
+			if($f['target_id']==$user->uid){
+				$isMatchedCandidate=true;
+				break;
+			}
 		}
 	}
 	if(!$isMatchedCandidate){
-		foreach($job->field_invited_candidates['und'] as $f){
-			if($f['target_id']==$user->uid){
-				$isInvitedCandidate=true;
-				break;
+		if(!empty($job->field_invited_candidates)){
+			foreach($job->field_invited_candidates['und'] as $f){
+				if($f['target_id']==$user->uid){
+					$isInvitedCandidate=true;
+					break;
+				}
 			}
 		}
 	}
@@ -401,7 +409,7 @@ function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
 		hide($form['field_available_candidates']);
 		hide($form['field_unavailable_candidates']);
 		hide($form['field_final_candidate']);
-		// hide($form['field_finished']);
+		hide($form['field_finished']);
 
 		$node = $form_state['node'];
   		if(!isset($node->nid) || isset($node->is_new)){ 

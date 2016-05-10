@@ -11,7 +11,7 @@ function validateCommissionedFreelancer($form, $form_state){
 		if($freelancer==false){
 			form_set_error('field_freelancer_to_commission', t('Invalid username'));
 
-		}else if(isset($freelancer->roles[array_search('approvedFreelancer', user_roles())])){			
+		}else if(user_has_role(8, $freelancer)){	//Role id 8: ApprovedFreealancer.
 			//Add freelancer to field_final_candidate.
 			//Email freelancer.
 			// //Make the selected freelancer the final candidate i.e. the person for the job.
@@ -19,7 +19,7 @@ function validateCommissionedFreelancer($form, $form_state){
 			// debugLong($freelancer, 'node_validate_Freelancer');
 			
 		}else{
-			if(isset($freelancer->roles[array_search('freelancer', user_roles() ) ] ) ){
+			if(user_has_role(4, $freelancer)){ //Freelancer
 				form_set_error('field_freelancer_to_commission', t('Freelancer not yet approved by Tap.'));
 			}else{
 				form_set_error('field_freelancer_to_commission', t('The username is not one of a freelancer.'));
@@ -47,7 +47,7 @@ function validateInvitedFreelancers($form, $form_state){
 		$f=user_load_by_name(trim($name));
 		if($f==false){
 			array_push($invalid, $name);
-		}else if(!isset($f->roles[array_search('approvedFreelancer', user_roles())])){
+		}else if(!user_has_role(8, $f)){
 			array_push($notApproved, $name);
 		}
 	}
@@ -117,17 +117,18 @@ function getMatchedFreelancers($node){
 	}
 
 	// 2.Get all Freelancers.
-	$query = new EntityFieldQuery;
-	$query
-		->entityCondition('entity_type', 'user')
-		->addTag('role_filter');
-	$results = $query->execute();
+	// $query = new EntityFieldQuery;
+	// $query->entityCondition('entity_type', 'user')->addTag('role_filter');
+	// $results = $query->execute();
+	// $results=$results['user'];
 
-	$results=$results['user'];
-
+	$query = 'SELECT DISTINCT(ur.uid) FROM {users_roles} AS ur WHERE ur.rid IN (:rids)';
+	$result = db_query($query, array(':rids' => array(8))); //rid 8=ApprovedFreelancer
+	$uids = $result->fetchCol();
+	$results = user_load_multiple($uids);
 
 	define('TOP_THRESHOLD_COUNT', 20);
-	$topFreelancers=array(); //User objects with jobCountWithSkill property.
+	$topFreelancers=array(); //Users with score property.
 
 	foreach($results as $freelancer){
 		$freelancerid=$freelancer->uid;
@@ -182,7 +183,7 @@ function getMatchedFreelancers($node){
 			$minScore=PHP_INT_MAX;
 			$weakest;
 			foreach($topFreelancers as $f){
-				if($f->score<$minScore){
+				if(!empty($f) && $f->score<$minScore){
 					$minScore=$f->score;
 					$weakest=$f;
 				}
@@ -191,9 +192,9 @@ function getMatchedFreelancers($node){
 			//Replace only if the current freelancer is stronger than the weakest in topFreelancers.
 			if($u->score>$minScore){
 				//Remove weakest.
-				if(($key = array_search($weakest, $topFreelancers)) !== false) {
-				   unset($messages[$key]);
-				}		
+				// if(($key = array_search($weakest, $topFreelancers)) !== false) {
+				   unset($topFreelancers[$key]);
+				// }		
 
 				//Add the stronger freelancer.
 				array_push($topFreelancers, $u);
