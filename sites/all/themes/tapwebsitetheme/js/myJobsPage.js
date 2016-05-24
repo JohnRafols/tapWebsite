@@ -151,13 +151,45 @@
         //Testing AJAX load...
         //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
 
-      
-
-
 
       }
     };
 
+
+
+/**
+    _____________________________________
+        
+
+        Code for the Job List page:    
+    
+
+    _____________________________________
+*/
+
+
+  
+    // Drupal.behaviors.listOfJobsBehavior = {    
+    // attach: function (context, settings) {
+      
+    //     var myJobsPage = $('.page-list-of-jobs').find('.l-content');
+    //     // Align the h1 tag With the tabs
+    //     //myJobsPage.find('h1').wrap('<div id = "tabsParentDiv">');
+
+    //     var header = myJobsPage.find('h1');
+
+    //     myJobsPage.find('ul.quicktabs-tabs')
+    //               .once('myJobsPageBehavior')
+    //               .wrap('<div id = "tabsParentDiv">')
+    //               .before(header);
+
+
+    //     //Testing AJAX load...
+    //     //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
+
+
+    //   }
+    // };
 
 
 

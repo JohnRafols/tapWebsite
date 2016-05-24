@@ -286,5 +286,10 @@ You need this
 4.) Misc:
 https://www.drupal.org/project/nodeviewcount
 https://www.drupal.org/project/feeds
+______________
 
+-In url alias
+job-list/[node:title]
 
+-edit profiles quick
+http://www.metaltoad.com/blog/drupal-7-tutorial-creating-edit-content-links-views

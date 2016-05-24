@@ -380,7 +380,16 @@ ___________________
 
 }
 
+// Client stuff needed to be hide as per Boss's request.
+.page-client-register{
+  #edit-field-user-address{
+    legend, .form-item-field-user-address-und-0-country, 
+    .form-item-field-user-address-und-0-dependent-locality{
+      display: none;
+    }
+  }
 
+} 
 
 
 //Background

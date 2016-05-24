@@ -6607,6 +6607,147 @@ ___________________
     color: #333; }
   .page-gallery .views-row .views-field-field-portfolio-project-skills {
     color: #666666; }
+  .page-gallery .views-row .views-field-ops {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-gallery .views-row .views-field-ops {
+        float: left;
+        width: 50%; } }
+    .page-gallery .views-row .views-field-ops span .flag-success-message {
+      display: none; }
+  .page-gallery .views-row .views-field-addtoany-link {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-gallery .views-row .views-field-addtoany-link {
+        float: left;
+        width: 50%; } }
+
+.page-list-of-jobs .l-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 15px; }
+
+.page-list-of-jobs h1 {
+  font-weight: bold;
+  border-bottom: 1.5px solid #FFBF28;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
+
+.page-list-of-jobs .view-content .views-row {
+  background-color: #e6ac24;
+  min-height: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .page-list-of-jobs .view-content .views-row .views-field-title {
+    border-right: 1.5px solid white;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-list-of-jobs .view-content .views-row .views-field-title {
+        float: left;
+        width: 50%; } }
+    .page-list-of-jobs .view-content .views-row .views-field-title a {
+      color: white;
+      font-weight: bold; }
+  .page-list-of-jobs .view-content .views-row .views-field-field-skills {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-list-of-jobs .view-content .views-row .views-field-field-skills {
+        float: left;
+        width: 25%; } }
+    .page-list-of-jobs .view-content .views-row .views-field-field-skills span, .page-list-of-jobs .view-content .views-row .views-field-field-skills .field-content {
+      display: inline;
+      color: white;
+      font-weight: bold;
+      text-align: left; }
+  .page-list-of-jobs .view-content .views-row .views-field-created {
+    border-left: 1.5px solid white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-list-of-jobs .view-content .views-row .views-field-created {
+        float: left;
+        width: 25%; } }
+    .page-list-of-jobs .view-content .views-row .views-field-created span, .page-list-of-jobs .view-content .views-row .views-field-created .field-content {
+      display: inline;
+      color: white;
+      font-weight: bold;
+      text-align: left; }
+
+.page-node.node-type-job-listed-by-admin- .l-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 15px; }
+
+.page-node.node-type-job-listed-by-admin- h1 {
+  font-weight: bold;
+  border-bottom: 1.5px solid #FFBF28;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
+
+.page-node.node-type-job-listed-by-admin- article {
+  font-size: 16px; }
+  .page-node.node-type-job-listed-by-admin- article .field div {
+    display: inline-block; }
+    .page-node.node-type-job-listed-by-admin- article .field div a:link, .page-node.node-type-job-listed-by-admin- article .field div a:visited, .page-node.node-type-job-listed-by-admin- article .field div a:hover, .page-node.node-type-job-listed-by-admin- article .field div a:active {
+      color: #000000; }
+  .page-node.node-type-job-listed-by-admin- article .field-label {
+    font-weight: bold; }
+  .page-node.node-type-job-listed-by-admin- article .field--name-body {
+    margin-bottom: 30px;
+    margin-top: 30px; }
 
 .tabledrag-toggle-weight {
   display: none; }

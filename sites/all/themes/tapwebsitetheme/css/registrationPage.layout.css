@@ -6223,4 +6223,8 @@ ___________________
     background-size: cover !important;
     background-position: 20% !important; } }
 
+.page-client-register #edit-field-user-address legend, .page-client-register #edit-field-user-address .form-item-field-user-address-und-0-country,
+.page-client-register #edit-field-user-address .form-item-field-user-address-und-0-dependent-locality {
+  display: none; }
+
 /*# sourceMappingURL=registrationPage.layout.css.map */
