@@ -12,52 +12,7 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
-<<<<<<< Updated upstream
-.l-main{
-  @extend .container;
-  width:100%;
 
-  .l-content{
-    @include make-sm-column-offset(2);
-    @include make-sm-column(8);    
-
-    .views-field-field-images{
-      
-      .row-1{
-        @include make-sm-column(6)
-      }
-      
-      .row-2{        
-        @include make-sm-column(6)
-      }
-
-    }
-
-    .views-field-name{
-      @include make-sm-column-offset(10)
-      @include make-sm-column(2)
-    }
-
-  }
-}
-
-//featured gallery slideshow
-/* #views_slideshow_cycle_teaser_section_featured_gallery-block{
-  .views-field-title{
-    // position: absolute;
-    bottom: 10px;
-    right: 20px;
-    font-size: 20px;
-    text-align: center;
-    background-color: white;
-    opacity: 0.6;
-    
-    span a{
-      color: black;
-    }
-  }
-} */
-=======
 
 /* 
 ___________________
@@ -191,13 +146,6 @@ ___________________
   
 ___________________
 */
->>>>>>> Stashed changes
-
-#block-views-featured-gallery-block img{
-  
-    // width: 600px;
-    // height: auto;    
-}
 
 #block-views-featured-gallery-block .views-field-counter {
   background: #D2D1D4; // Or bullet background image
@@ -228,17 +176,38 @@ ___________________
 
 .views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
   width: 100px;
-<<<<<<< Updated upstream
-  margin: 0 auto; 
-}
-=======
   margin: 0 auto;
 }
 
-// .views-slideshow-cycle-main-frame-row-item.views-field-field-images.field-content a:nth-child(2){
-//   img{
-//     width: 200px;
-//     height:auto;
-//   }
-// }
->>>>>>> Stashed changes
+.views-field-field-weight-editable, .views-field-field-featured-editable{
+  background-color: lightgray;
+}
+
+.form-required, .description, .sliderfield-selectvalue-description{
+  display: none;
+}
+
+.views-field-field-featured-editable{
+  .form-type-radio{
+    display: inline-block;
+  }
+
+  .form-item{
+    margin-bottom: 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+
+//Two random Save buttons that appeared after the featured "yes no" editable field was added to projects in gallery.
+#edit-actions, #edit-actions--3{
+  display: none;
+}
+
+//So that title of projects, however long, only fits on two lines, the rest is hidden. 
+.views-field-title{
+  line-height: 1.5em;
+  height: 1.5em;
+  overflow: hidden;
+}
