@@ -12,6 +12,7 @@ $textColor : #000000;
 $grey : #CCCCCC;
 
 
+<<<<<<< Updated upstream
 .l-main{
   @extend .container;
   width:100%;
@@ -56,6 +57,141 @@ $grey : #CCCCCC;
     }
   }
 } */
+=======
+
+/* 
+___________________
+
+  This is Styling for the gallery page
+  
+___________________
+*/
+
+.page-gallery{
+    //@include basicPageFormat;
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
+
+    h1{
+      display: none;
+    }
+
+    //Filters
+    .view-filters{
+        border-bottom: 1.5px solid $mainColor;
+        padding-bottom: 15px;
+
+        margin: 0px auto !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+
+        //Skills filter
+        @include make-row();
+
+        .views-exposed-form{
+            @include make-row();
+            
+            color: $grey * 0.50;
+            //An attempt to get all of them?
+            .views-exposed-widget{
+                  @include make-xs-column(12);
+                  @include make-sm-column(6);
+                  @include make-md-column(6);
+                  @include make-lg-column(6);
+                  label{
+                      @include make-sm-column(4);
+                       text-align: left;
+                      padding-left: 0px;
+                  }
+                  .views-widget{
+                      @include make-sm-column(8);
+                      padding-left: 0px;
+                      padding-right: 0px;
+                      select, input{
+                           width: 100%;
+                           max-width: 250px;     
+                      }
+                  }
+            }
+
+            #edit-field-portfolio-project-skills-tid-wrapper{
+                .description{
+                  display: none;
+                }
+            }
+
+            //Show them when xs small
+            .views-submit-button, .views-reset-button{
+               // @include make-xs-column(6);
+
+                input{
+                    @extend .btn;
+                    border-radius: 30px !important; 
+                    background-color: $mainColor;
+                    border: $mainColor * 0.80;
+                    color: $text-color;
+                }
+                // display: none;
+            }
+             //The header will be diffrent on smaller screens
+            @media (max-width: $screen-xs-max) {
+                .views-submit-button, .views-reset-button{
+                    display: inline-block;
+                }
+            }
+      }
+
+    }
+
+    .item-list{
+      @include make-row();
+      margin-bottom: 60px;
+    }
+    
+    .view-gallery{
+      .views-row{
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        margin-bottom: 30px;
+
+        .views-field{
+            //These are all the labels under the sidebar
+            //Note that I am calling out the default classes                    
+            //This is for actual content.
+            .field-content{
+                img{
+                   width: 100%;
+                   height: 100%;
+                }
+                a{
+                   color: #333;
+                }
+            }
+        }
+
+        .views-field-field-portfolio-project-skills{
+            color: $grey * 0.50;
+        }
+      }
+    }
+}
+
+
+
+
+/* 
+___________________
+
+  This is Styling for the featured gallery
+  
+___________________
+*/
+>>>>>>> Stashed changes
 
 #block-views-featured-gallery-block img{
   
@@ -92,5 +228,17 @@ $grey : #CCCCCC;
 
 .views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
   width: 100px;
+<<<<<<< Updated upstream
   margin: 0 auto; 
 }
+=======
+  margin: 0 auto;
+}
+
+// .views-slideshow-cycle-main-frame-row-item.views-field-field-images.field-content a:nth-child(2){
+//   img{
+//     width: 200px;
+//     height:auto;
+//   }
+// }
+>>>>>>> Stashed changes
