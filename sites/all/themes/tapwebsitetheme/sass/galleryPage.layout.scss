@@ -22,7 +22,7 @@ ___________________
 ___________________
 */
 
-.page-gallery{
+.page-browseportfolios{
     //@include basicPageFormat;
     .l-content{
       width: 70%;
@@ -130,7 +130,12 @@ ___________________
         }
 
         .views-field-field-portfolio-project-skills{
-            color: $grey * 0.50;
+          color: $grey * 0.50;
+        }
+
+        //City, Country field.
+        .views-field-php{
+          color: $grey * 0.50; 
         }
       }
     }

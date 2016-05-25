@@ -15,8 +15,8 @@ function validateCommissionedFreelancer($form, $form_state){
 			//Add freelancer to field_final_candidate.
 			//Email freelancer.
 			// //Make the selected freelancer the final candidate i.e. the person for the job.
-			// debugLong($node, 'node_validate_node');
-			// debugLong($freelancer, 'node_validate_Freelancer');
+			// //debugLong($node, 'node_validate_node');
+			// //debugLong($freelancer, 'node_validate_Freelancer');
 			
 		}else{
 			if(user_has_role(4, $freelancer)){ //Freelancer
@@ -33,9 +33,9 @@ function validateInvitedFreelancers($form, $form_state){
 		form_set_error('field_freelancers_to_invite', 'Please enter at least one Creative Pro to invite');
 	}
 
-	debugLong($form_state['values']['field_freelancers_to_invite'], '_validate_freelancers_to_invite');
+	//debugLong($form_state['values']['field_freelancers_to_invite'], '_validate_freelancers_to_invite');
 	$freelancers_to_invite=explode(',', $form_state['values']['field_freelancers_to_invite']);
-	debugLong($freelancers_to_invite, '_validate_freelancers_to_invite_exploded');
+	//debugLong($freelancers_to_invite, '_validate_freelancers_to_invite_exploded');
 
 	if(empty($freelancers_to_invite[0])){
 		form_set_error('field_freelancers_to_invite', 'Enter at least one Creative Pro');
@@ -150,7 +150,7 @@ function getMatchedFreelancers($node){
 			)
 		)->fetchField();
 		
-		debugShort('jobCount '.$jobCount);
+		//debugShort('jobCount '.$jobCount);
 
 		// 3b.Get a count of freelancer's projects that have $skill.
 		$projectCount=db_query(
@@ -166,7 +166,7 @@ function getMatchedFreelancers($node){
 			)
 		)->fetchField();
 
-		debugShort('projectCount '.$projectCount);	
+		//debugShort('projectCount '.$projectCount);	
 
 		//Score calculated for a freelancer, the higher the better.
 		$score = $jobCount*3 + $projectCount;

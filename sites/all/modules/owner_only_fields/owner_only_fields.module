@@ -37,7 +37,7 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 	if($form_id=='user_profile_form'){
 		// file_put_contents('C:\Users\pc\Desktop\yes.txt', print_r($form, TRUE));	
 		debugLong($form, 'user_profile_form_alter');
-		hide($form['legal']);
+		// hide($form['legal']);
 		hide($form['mimemail']);
 
 		//Add "Cancel changes" to My Account and My Profile edit forms.

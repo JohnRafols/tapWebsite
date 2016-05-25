@@ -6326,10 +6326,10 @@ ___________________
   
 ___________________
 */
-.node-type-page.section-contact-us #contactUsPage {
+.node-type-page.section-contacttapteam #contactUsPage {
   width: 50%; }
 
-.node-type-page.section-contact-us h1 {
+.node-type-page.section-contacttapteam h1 {
   width: 70%;
   font-weight: bold;
   border-bottom: 1.5px solid #FFBF28;
@@ -6340,19 +6340,19 @@ ___________________
   padding-left: 15px;
   padding-bottom: 15px; }
 
-.node-type-page.section-contact-us .row {
+.node-type-page.section-contacttapteam .row {
   margin-top: 30px; }
 
-.node-type-page.section-contact-us .contactUsPage_label {
+.node-type-page.section-contacttapteam .contactUsPage_label {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 30px !important; }
 
-.node-type-page.section-contact-us .workerName {
+.node-type-page.section-contacttapteam .workerName {
   font-size: 16px;
   display: inline-block; }
 
-.node-type-page.section-contact-us #developmentTeam .row {
+.node-type-page.section-contacttapteam #developmentTeam .row {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6360,40 +6360,40 @@ ___________________
       -ms-flex-align: center;
           align-items: center; }
 
-.node-type-page.section-contact-us #contact_details .col-sm-12.contactUsPage_label {
+.node-type-page.section-contacttapteam #contact_details .col-sm-12.contactUsPage_label {
   padding-left: 0px;
   margin-bottom: 20px !important; }
 
-.node-type-page.section-contact-us #contact_details .contact_detailsLabel {
+.node-type-page.section-contacttapteam #contact_details .contact_detailsLabel {
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px; }
 
-.node-type-page.section-contact-us #contact_details .email {
+.node-type-page.section-contacttapteam #contact_details .email {
   font-size: 16px;
   margin-top: 10px; }
 
-.node-type-page.section-contact-us #location_details .col-sm-12.contactUsPage_label {
+.node-type-page.section-contacttapteam #location_details .col-sm-12.contactUsPage_label {
   padding-left: 0px; }
 
-.node-type-page.section-contact-us #location_details #address {
+.node-type-page.section-contacttapteam #location_details #address {
   font-style: italic; }
 
-.node-type-page.section-contact-us #mariyaPhoto img, .node-type-page.section-contact-us #dennyPhoto img, .node-type-page.section-contact-us #peidePhoto img, .node-type-page.section-contact-us #johnPhoto img {
+.node-type-page.section-contacttapteam #mariyaPhoto img, .node-type-page.section-contacttapteam #dennyPhoto img, .node-type-page.section-contacttapteam #peidePhoto img, .node-type-page.section-contacttapteam #johnPhoto img {
   width: 120px;
   height: 120px;
   border-radius: 999px;
   border: 2px solid #FFBF28;
   object-fit: cover; }
 
-.node-type-page.section-contact-us .l-content {
+.node-type-page.section-contacttapteam .l-content {
   margin-bottom: 60px; }
 
 @media (max-width: 767px) {
-  .node-type-page.section-contact-us #developmentTeam .row {
+  .node-type-page.section-contacttapteam #developmentTeam .row {
     display: inline !important;
     text-align: center !important; }
-  .node-type-page.section-contact-us #contact_details div {
+  .node-type-page.section-contacttapteam #contact_details div {
     padding-left: 0px !important; } }
 
 .page-list-of-users .l-content, .maintenance-page .l-content {

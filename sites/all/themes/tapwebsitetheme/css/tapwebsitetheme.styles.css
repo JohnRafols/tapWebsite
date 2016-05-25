@@ -6925,4 +6925,7 @@ ___________________
 #user-login .form-item label .form-required {
   display: none; }
 
+#admin-menu {
+  opacity: 0.85; }
+
 /*# sourceMappingURL=tapwebsitetheme.styles.css.map */

@@ -6,9 +6,9 @@ require 'jobHelperFunctions.php';
 
 function tap_job_mgmt_node_validate($node, $form, &$form_state){
 	
-	debugLong($form_state, "_validate_form_state");
-	debugLong($form, "_validate_form");
-	debugLong($node, "_validate_node");
+	//debugLong($form_state, "_validate_form_state");
+	//debugLong($form, "_validate_form");
+	//debugLong($node, "_validate_node");
 
 	
 	$n=$form_state['node'];
@@ -63,7 +63,7 @@ function tap_job_mgmt_help($path, $arg) {
 function tap_job_mgmt_node_presave($node){
 
 	if($node->type=='job' && !property_exists($node, 'original')){
-		debugLong($node, 'node_presave_new');
+		//debugLong($node, 'node_presave_new');
 		
 		$isMatched=false;
 		$isInvited=false;
@@ -72,13 +72,13 @@ function tap_job_mgmt_node_presave($node){
 		foreach($node->field_freelancer_selection['und'] as $type){
 			$freelancer_selection_type=$type['value'];
 
-			debugShort('node_presave_type_'+$freelancer_selection_type);
+			//debugShort('node_presave_type_'+$freelancer_selection_type);
 
 			if($freelancer_selection_type=='match'){	
 
 				$isMatched=true;
 				$topFreelancers=getMatchedFreelancers($node);
-				debugLong($topFreelancers, 'topFreelancers');
+				//debugLong($topFreelancers, 'topFreelancers');
 				addMatchedFreelancersToJob($topFreelancers, $node);
 				emailFreelancers($topFreelancers);
 				
@@ -88,7 +88,7 @@ function tap_job_mgmt_node_presave($node){
 				$names=$node->field_freelancers_to_invite;
 				$freelancers=array();
 
-				debugLong($node->field_freelancers_to_invite, 'node_presave_invite');
+				//debugLong($node->field_freelancers_to_invite, 'node_presave_invite');
 
 				$freelancers_to_invite=explode(',', $node->field_freelancers_to_invite);
 
@@ -97,7 +97,7 @@ function tap_job_mgmt_node_presave($node){
 					array_push($freelancers, $f);
 				}
 
-				debugLong($node->field_freelancers_to_invite, 'node_presave_invite_after_trim');
+				//debugLong($node->field_freelancers_to_invite, 'node_presave_invite_after_trim');
 
 				foreach($freelancers as $f){
 					$data =array('target_id'=>$f->uid);
@@ -115,7 +115,7 @@ function tap_job_mgmt_node_presave($node){
 			}
 		}
 
-		debugLong($node, 'node_presave_before_duplicate_removal');
+		//debugLong($node, 'node_presave_before_duplicate_removal');
 
 		//Remove duplicates from $job->field_initial_candidates.
 		if($isMatched && $isInvited){
@@ -133,7 +133,7 @@ function tap_job_mgmt_node_presave($node){
 		$node->field_messaging['und'][0]['chatroom']['chatroom_read_only_roles']=array(2=> 2); //Can be read by authenticated users.
 		$node->field_messaging['und'][0]['chatroom']['chatroom_write_roles']=array(5=>5, 8=>8); //Can be read by clients and approvedFreelancers.	
 	}else if($node->type=='job' && property_exists($node, 'original')){
-		debugLong($node, 'node_presave_updated');
+		//debugLong($node, 'node_presave_updated');
 
 	}
 }
@@ -169,7 +169,7 @@ function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
 
 
 function tap_job_mgmt_menu() {
-	debugLong('called in mgmt menu', 'called');
+	//debugLong('called in mgmt menu', 'called');
 	$items['jobs/%/available'] = array(
     'title' => 'Available',
     'page callback' => 'tap_job_mgmt_job_available',
@@ -201,7 +201,7 @@ function tap_job_mgmt_job_available($job='') {
 	//If invited, add to field_invited_candidates.
 
 	$job=node_load($job);
-	debugLong($job, "node_loaded");
+	//debugLong($job, "node_loaded");
 
 	$freelancer_selection_type=$job->field_freelancer_selection['und'][0]['value'];
 	global $user;
@@ -232,7 +232,7 @@ function tap_job_mgmt_job_available($job='') {
 			drupal_goto('/jobs');
 		}
 	
-		debugLong($job, 'newlyupdated');
+		//debugLong($job, 'newlyupdated');
 	}
 	//Client commissioned a freelancer.
 	else if(strcmp($freelancer_selection_type, 'commission')==0){
@@ -340,7 +340,7 @@ function tap_job_mgmt_form($form, &$form_state){
 			return;	
 		}
 
-		debugLong($job, "candidates");
+		//debugLong($job, "candidates");
 
 		$freelancers=array();
 		foreach ($job->field_available_candidates['und'] as $value) {
@@ -396,8 +396,8 @@ function tap_job_mgmt_submit_handler($form, &$form_state){
 }
 
 function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
-	debugLong($form, "form_alter_form");
-	debugLong($form_id, "form_alter_form_id");
+	//debugLong($form, "form_alter_form");
+	//debugLong($form_id, "form_alter_form_id");
 
 	if($form_id=='job_node_form'){
 
@@ -451,7 +451,7 @@ function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
 
   		
 				
-		debugLong($form, 'job_node_form_alter');
+		//debugLong($form, 'job_node_form_alter');
 	}
 }
 
@@ -464,7 +464,7 @@ function debugLong($toPrint, $filename){
 	    mkdir($dir);
 	}
 
-	file_put_contents($dir.'\\'.$filename.'.txt', print_r($toPrint, TRUE));
+	// file_put_contents($dir.'\\'.$filename.'.txt', print_r($toPrint, TRUE));
 }
 
 function debugShort($toPrint){
@@ -473,7 +473,7 @@ function debugShort($toPrint){
 	    mkdir($dir);
 	}
 
-	file_put_contents($dir.'\\'.$toPrint.'.txt', print_r($toPrint, TRUE));	
+	// file_put_contents($dir.'\\'.$toPrint.'.txt', print_r($toPrint, TRUE));	
 }
 
 ?>

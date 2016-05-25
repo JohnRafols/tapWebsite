@@ -24,7 +24,7 @@ function tap_job_mgmt_node_presave($node){
 
 		if($freelancer_selection_type=='match'){	
 			$topFreelancers=getMatchedFreelancers($node);
-			debugLong($topFreelancers, 'topFreelancers');
+			//debugLong($topFreelancers, 'topFreelancers');
 			addMatchedFreelancersToJob($topFreelancers, $node);
 			emailFreelancers($topFreelancers);
 			
@@ -195,7 +195,7 @@ function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
 
 
 function tap_job_mgmt_menu() {
-	debugLong('called in mgmt menu', 'called');
+	//debugLong('called in mgmt menu', 'called');
 	$items['jobs/%/available'] = array(
     'title' => 'Available',
     'page callback' => 'tap_job_mgmt_job_available',
@@ -229,7 +229,7 @@ function tap_job_mgmt_job_available($job='') {
 	//If invited, add to field_invited_candidates.
 
 	$job=node_load($job);
-	debugLong($job, "node_loaded");
+	//debugLong($job, "node_loaded");
 
 	$freelancer_selection_type=$job->field_freelancer_selection_type['und'][0]['value'];
 	global $user;
@@ -253,7 +253,7 @@ function tap_job_mgmt_job_available($job='') {
 			field_attach_update('node', $job);
 		}
 	
-		debugLong($job, 'newlyupdated');
+		//debugLong($job, 'newlyupdated');
 	}
 	//Client commissioned a freelancer.
 	else if(strcmp($freelancer_selection_type, 'commission')==0){
@@ -263,7 +263,7 @@ function tap_job_mgmt_job_available($job='') {
 }
 
 function tap_job_mgmt_job_unavailable($job='') {
-	debugLong($job, 'unavailable');
+	//debugLong($job, 'unavailable');
 	return 'I am not available';
 }
 
@@ -305,7 +305,7 @@ function tap_job_mgmt_form($form, &$form_state){
 			return;	
 		}
 
-		debugLong($job, "candidates");
+		//debugLong($job, "candidates");
 
 		$freelancers=array();
 		foreach ($job->field_available_candidates['und'] as $value) {
