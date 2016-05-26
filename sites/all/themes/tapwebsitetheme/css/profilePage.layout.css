@@ -5963,11 +5963,11 @@ body.page-user .block__title {
         .l-main .l-region--sidebar-first .views-field-field-profile-picture {
           float: left;
           width: 8.33333%; } }
-    .l-main .l-region--sidebar-first .views-field-field-user-first-name, .l-main .l-region--sidebar-first .views-field-name {
+    .l-main .l-region--sidebar-first .views-field-field-user-first-name, .l-main .l-region--sidebar-first .views-field-name, .l-main .l-region--sidebar-first .name {
       font-size: 2.5em;
       margin-right: 7px;
       font-weight: bold; }
-      .l-main .l-region--sidebar-first .views-field-field-user-first-name span, .l-main .l-region--sidebar-first .views-field-name span {
+      .l-main .l-region--sidebar-first .views-field-field-user-first-name span, .l-main .l-region--sidebar-first .views-field-name span, .l-main .l-region--sidebar-first .name span {
         word-wrap: break-word; }
     .l-main .l-region--sidebar-first .views-field-field-user-last-name, .l-main .l-region--sidebar-first .views-field-php {
       font-size: 2.5em;
