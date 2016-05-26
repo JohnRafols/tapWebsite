@@ -9,6 +9,16 @@ function owner_only_fields_help($path, $arg) {
 	}
 }
 
+function owner_only_fields_menu_alter(&$items) {
+    // Change the title of user profile pages to the user's name.  Gak.
+    $items['user/%user']['title callback'] = 'owner_only_fields_user_page_title';
+}
+
+//Change page title on user profile page.
+function owner_only_fields_user_page_title() {
+    return "My Portfolio";
+}
+
 function owner_only_fields_process_password_confirm($element) {
 	// Renaming password labels on user account edit form.
 	$element['pass1']['#title'] = t("New Password");
