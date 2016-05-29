@@ -1,4 +1,3 @@
-
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 //@import "compass";
 @import "variables";
@@ -11,7 +10,7 @@ $secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
-
+$darkgrey : rgb(128, 127, 128);
 
 
 /* 
@@ -25,6 +24,7 @@ ___________________
 .page-browseportfolios{
     //@include basicPageFormat;
     .l-content{
+      @extend .container-fluid;
       width: 70%;
       margin: 0 auto;
       padding-left: 15px;
@@ -45,24 +45,45 @@ ___________________
 
         //Skills filter
         @include make-row();
-
+ 
         .views-exposed-form{
-            @include make-row();
-            
             color: $grey * 0.50;
+
+            .views-exposed-widgets{
+                @extend .clearfix;
+                @include make-row();
+            }
+
+
             //An attempt to get all of them?
-            .views-exposed-widget{
+
+            #edit-field-portfolio-project-skills-tid-wrapper,
+            #edit-keywords-wrapper,
+            #edit-name-wrapper,
+            #edit-field-user-address-locality-wrapper,
+            #edit-field-user-address-country-wrapper{
+
+            // }
+            //.views-exposed-widget{ 
+                   height: 45px;
                   @include make-xs-column(12);
                   @include make-sm-column(6);
                   @include make-md-column(6);
                   @include make-lg-column(6);
+
                   label{
+                      @include make-xs-column(4);
                       @include make-sm-column(4);
-                       text-align: left;
+                      @include make-md-column(4);
+                      @include make-lg-column(4);
+                      text-align: left;
                       padding-left: 0px;
                   }
                   .views-widget{
+                      @include make-xs-column(8);
                       @include make-sm-column(8);
+                      @include make-md-column(8);
+                      @include make-lg-column(8);
                       padding-left: 0px;
                       padding-right: 0px;
                       select, input{
@@ -70,7 +91,8 @@ ___________________
                            max-width: 250px;     
                       }
                   }
-            }
+          }
+
 
             #edit-field-portfolio-project-skills-tid-wrapper{
                 .description{
@@ -80,7 +102,10 @@ ___________________
 
             //Show them when xs small
             .views-submit-button, .views-reset-button{
-               // @include make-xs-column(6);
+               // @include make-xs-column(2);
+               // @include make-sm-column(2);
+              // @extend .well;
+              display: inline-block;
 
                 input{
                     @extend .btn;
@@ -88,16 +113,22 @@ ___________________
                     background-color: $mainColor;
                     border: $mainColor * 0.80;
                     color: $text-color;
+                    margin-top: -5px;
                 }
                 // display: none;
             }
-             //The header will be diffrent on smaller screens
+
+            .views-submit-button{
+                margin-left: 15px;
+            }           
+
+            //The header will be diffrent on smaller screens
             @media (max-width: $screen-xs-max) {
                 .views-submit-button, .views-reset-button{
                     display: inline-block;
                 }
             }
-      }
+          }
 
     }
 
@@ -144,6 +175,12 @@ ___________________
 
 
 
+
+
+
+
+
+
 /* 
 ___________________
 
@@ -152,37 +189,232 @@ ___________________
 ___________________
 */
 
-#block-views-featured-gallery-block .views-field-counter {
-  background: #D2D1D4; // Or bullet background image
-  float: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  margin-top: 10px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.2s linear;
+
+#block-views-featured-block{
+    @include make-row();
+    @extend .clearfix;
+    // height: auto;
+
+
+    // #views_slideshow_cycle_main_featured-block{
+    //   @include make-row();
+    //   @extend .clearfix;
+
+
+    //   .views-slideshow-cycle-main-frame-row-item{
+    //       @extend .clearfix;
+    //       @include make-row();
+
+
+
+          //1.) This is the skills row
+          .views-field-field-portfolio-project-skills{
+             @include make-xs-column(12);
+             @include make-sm-column(12);
+             @include make-md-column(12);
+             @include make-lg-column(12);
+             @extend .clearfix;
+
+
+             margin-top: 20px;
+             margin-bottom: 42px;
+            span{
+                color: $darkgrey;
+             }
+             div{
+                font-size: 18px;
+                font-weight: bold;
+             }
+          }
+
+          // Images will go into a 9 column
+          // The Big image, and two subsequent images are seperate fields...
+
+          //2.) This is the big image
+          .views-field-field-images{
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            @include make-lg-column(6);
+            @extend .clearfix;
+
+            .field-content{
+              @include make-row();
+              //max-height: 360px;
+
+              img{
+                @include img-responsive($display: block);
+                  width: 100%;
+                  height: 100%;
+               }
+            }
+          }
+
+
+          //3.) This is the subsequent two images
+          .views-field-field-images-1{
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            @extend .clearfix;
+
+            .field-content{
+              @include make-row();
+              @extend .clearfix;
+              //max-height: 180px;
+
+              img{
+                @include make-xs-column(12);
+                @include make-sm-column(12);
+                @include make-md-column(12);
+                @include make-lg-column(12);
+                @extend .clearfix;
+                @include img-responsive($display: block);
+
+                width: 100%;
+                height: 100%;
+
+              }
+            }
+          }
+
+
+          //4.) This is rest of the information
+          .views-field-nothing{
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            @extend .clearfix;
+
+            #infoColumn{
+              @extend .clearfix;
+
+              #name{
+                  border-bottom: 1.5px solid $mainColor;
+                  margin-bottom: 10px;
+                  padding-bottom: 10px;
+                  font-size: 18px;
+                  font-weight: bold;
+                  color: $textColor;
+                  a:link, a:visited, a:hover, a:active{
+                      color: $textColor;
+                  }
+              }
+              #aboutMe{
+                color: $darkgrey;
+              }
+              #viewProfileLink{
+                  font-size: 18px;
+                  font-weight: bold;
+                  margin-top: 30px;
+                  color: $mainColor;
+                  a:link, a:visited, a:hover, a:active{
+                      color: $mainColor;
+                  }
+              }
+
+            }
+
+          }
+  //     }      
+  // }
+
+
+  .views-slideshow-controls-bottom{
+      @include make-row();
+      @extend .clearfix;
+    
+      margin-top: 15px;
+      border-bottom: 1.5px solid $mainColor;
+      text-align: center;
+
+      margin-bottom: 20px;
+      padding-bottom: 40px;
+
+      .views-slideshow-pager-field-item{
+          display: inline-block;
+          border-radius: 50%;
+          background-color: rgb(217, 217, 217);
+          width: 20px;
+          height: 20px;
+          margin-left: 1.5px;
+          margin-right: 1.5px;
+      }
+
+      .active{
+        background-color: rgb(179, 179, 179);
+      }
+
+      .views-content-counter{
+            display: none;
+      }
+
+   }
+
+   .form-submit{
+    display: none;
+   }
+
 }
 
-#block-views-featured-gallery-block .active .views-field-counter {
-  background: #606061; // Or bullet background image
-  width: 15px;
-  height: 15px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.2s linear;
+
+// We need the slideshow's width be responsive...
+.views-slideshow-cycle-main-frame-row, .views-slideshow-cycle-main-frame {
+    width: 100% !important;
+    //height: 100% !important;
+    @extend .clearfix;
+    margin: 0 auto;
+
 }
 
-#block-views-featured-gallery-block .views-content-counter{
-  display: none;
-}
 
-.views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
-  width: 100px;
-  margin: 0 auto;
-}
+
+// .views_slideshow_cycle_main {                                                      
+//   width: 100%;    
+//   position: relative !important;
+                                                                 
+//  .views-slideshow-cycle-main-frame {width: 100% !important; height: auto !important;}         
+//  .views-slideshow-cycle-main-frame-row {width: 100% !important; height: auto !important;}     
+//  .field-content { max-width: 100%; width: 100%;}                                   
+//  .field-content img { max-width: 100%; width: 100%; height: auto; margin: 0; padding:0;} 
+// }   
+
+// #block-views-featured-gallery-block .views-field-counter {
+//   background: #D2D1D4; // Or bullet background image
+//   float: left;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 5px;
+//   margin-top: 10px;
+//   -moz-border-radius: 50%;
+//   -webkit-border-radius: 50%;
+//   border-radius: 50%;
+//   transition: all 0.2s linear;
+// }
+
+// #block-views-featured-gallery-block .active .views-field-counter {
+//   background: #606061; // Or bullet background image
+//   width: 15px;
+//   height: 15px;
+//   -moz-border-radius: 50%;
+//   -webkit-border-radius: 50%;
+//   border-radius: 50%;
+//   transition: all 0.2s linear;
+// }
+
+// #block-views-featured-gallery-block .views-content-counter{
+//   display: none;
+// }
+
+// .views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
+//   width: 100px;
+//   margin: 0 auto;
+// }
+
+
+
 
 .views-field-field-weight-editable, .views-field-field-featured-editable{
   background-color: lightgray;
@@ -201,6 +433,7 @@ ___________________
     margin-bottom: 0;
   }
 }
+
 
 //----------------------------------------------------------------------------------------------
 

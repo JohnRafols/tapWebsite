@@ -1516,15 +1516,15 @@ pre {
     .container {
       width: 1170px; } }
 
-.container-fluid {
+.container-fluid, .page-browseportfolios .l-content {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, .container-fluid:after {
+  .container-fluid:before, .page-browseportfolios .l-content:before, .container-fluid:after, .page-browseportfolios .l-content:after {
     content: " ";
     display: table; }
-  .container-fluid:after {
+  .container-fluid:after, .page-browseportfolios .l-content:after {
     clear: both; }
 
 .row {
@@ -3790,15 +3790,15 @@ tbody.collapse.in {
 
 .container > .navbar-header,
 .container > .navbar-collapse,
-.container-fluid > .navbar-header,
-.container-fluid > .navbar-collapse {
+.container-fluid > .navbar-header, .page-browseportfolios .l-content > .navbar-header,
+.container-fluid > .navbar-collapse, .page-browseportfolios .l-content > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
     .container > .navbar-header,
     .container > .navbar-collapse,
-    .container-fluid > .navbar-header,
-    .container-fluid > .navbar-collapse {
+    .container-fluid > .navbar-header, .page-browseportfolios .l-content > .navbar-header,
+    .container-fluid > .navbar-collapse, .page-browseportfolios .l-content > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3841,7 +3841,8 @@ tbody.collapse.in {
     display: block; }
   @media (min-width: 768px) {
     .navbar > .container .navbar-brand,
-    .navbar > .container-fluid .navbar-brand {
+    .navbar > .container-fluid .navbar-brand, .page-browseportfolios
+    .navbar > .l-content .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -4368,7 +4369,7 @@ a.badge:hover, a.badge:focus {
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
   .container .jumbotron,
-  .container-fluid .jumbotron {
+  .container-fluid .jumbotron, .page-browseportfolios .l-content .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
@@ -4379,7 +4380,7 @@ a.badge:hover, a.badge:focus {
       padding-top: 48px;
       padding-bottom: 48px; }
       .container .jumbotron,
-      .container-fluid .jumbotron {
+      .container-fluid .jumbotron, .page-browseportfolios .l-content .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -5635,11 +5636,11 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:before, #block-views-featured-block:before, #block-views-featured-block .views-field-field-portfolio-project-skills:before, #block-views-featured-block .views-field-field-images:before, #block-views-featured-block .views-field-field-images-1:before, #block-views-featured-block .views-field-field-images-1 .field-content:before, #block-views-featured-block .views-field-field-images-1 .field-content img:before, #block-views-featured-block .views-field-nothing:before, #block-views-featured-block .views-field-nothing #infoColumn:before, #block-views-featured-block .views-slideshow-controls-bottom:before, .views-slideshow-cycle-main-frame-row:before, .views-slideshow-cycle-main-frame:before, .clearfix:after, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after, #block-views-featured-block:after, #block-views-featured-block .views-field-field-portfolio-project-skills:after, #block-views-featured-block .views-field-field-images:after, #block-views-featured-block .views-field-field-images-1:after, #block-views-featured-block .views-field-field-images-1 .field-content:after, #block-views-featured-block .views-field-field-images-1 .field-content img:after, #block-views-featured-block .views-field-nothing:after, #block-views-featured-block .views-field-nothing #infoColumn:after, #block-views-featured-block .views-slideshow-controls-bottom:after, .views-slideshow-cycle-main-frame-row:after, .views-slideshow-cycle-main-frame:after {
   content: " ";
   display: table; }
 
-.clearfix:after {
+.clearfix:after, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after, #block-views-featured-block:after, #block-views-featured-block .views-field-field-portfolio-project-skills:after, #block-views-featured-block .views-field-field-images:after, #block-views-featured-block .views-field-field-images-1:after, #block-views-featured-block .views-field-field-images-1 .field-content:after, #block-views-featured-block .views-field-field-images-1 .field-content img:after, #block-views-featured-block .views-field-nothing:after, #block-views-featured-block .views-field-nothing #infoColumn:after, #block-views-featured-block .views-slideshow-controls-bottom:after, .views-slideshow-cycle-main-frame-row:after, .views-slideshow-cycle-main-frame:after {
   clear: both; }
 
 .center-block {
@@ -5877,15 +5878,21 @@ ___________________
   .page-browseportfolios .view-filters:after {
     clear: both; }
   .page-browseportfolios .view-filters .views-exposed-form {
-    margin-left: -15px;
-    margin-right: -15px;
     color: #666666; }
-    .page-browseportfolios .view-filters .views-exposed-form:before, .page-browseportfolios .view-filters .views-exposed-form:after {
-      content: " ";
-      display: table; }
-    .page-browseportfolios .view-filters .views-exposed-form:after {
-      clear: both; }
-    .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget {
+    .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets {
+      margin-left: -15px;
+      margin-right: -15px; }
+      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:before, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after {
+        content: " ";
+        display: table; }
+      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after {
+        clear: both; }
+    .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
+    .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
+    .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
+    .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
+    .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
+      height: 45px;
       position: relative;
       float: left;
       width: 100%;
@@ -5905,18 +5912,48 @@ ___________________
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 768px) {
-        .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget {
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
           float: left;
           width: 50%; } }
       @media (min-width: 992px) {
-        .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget {
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
           float: left;
           width: 50%; } }
       @media (min-width: 1200px) {
-        .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget {
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
           float: left;
           width: 50%; } }
-      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget label {
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
+        position: relative;
+        float: left;
+        width: 33.33333%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
         position: relative;
         min-height: 1px;
         padding-left: 15px;
@@ -5924,10 +5961,48 @@ ___________________
         text-align: left;
         padding-left: 0px; }
         @media (min-width: 768px) {
-          .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget label {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
             float: left;
             width: 33.33333%; } }
-      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget .views-widget {
+        @media (min-width: 992px) {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
+            float: left;
+            width: 33.33333%; } }
+        @media (min-width: 1200px) {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
+            float: left;
+            width: 33.33333%; } }
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
+      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
+        position: relative;
+        float: left;
+        width: 66.66667%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
         position: relative;
         min-height: 1px;
         padding-left: 15px;
@@ -5935,19 +6010,52 @@ ___________________
         padding-left: 0px;
         padding-right: 0px; }
         @media (min-width: 768px) {
-          .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget .views-widget {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
             float: left;
             width: 66.66667%; } }
-        .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget .views-widget select, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widget .views-widget input {
+        @media (min-width: 992px) {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
+            float: left;
+            width: 66.66667%; } }
+        @media (min-width: 1200px) {
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
+          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
+            float: left;
+            width: 66.66667%; } }
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget select, .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget input,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget select,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget input,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget select,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget input,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget select,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget input,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget select,
+        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget input {
           width: 100%;
           max-width: 250px; }
     .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .description {
       display: none; }
-    .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input {
-      border-radius: 30px !important;
-      background-color: #FFBF28;
-      border: #cc9920;
-      color: #333333; }
+    .page-browseportfolios .view-filters .views-exposed-form .views-submit-button, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button {
+      display: inline-block; }
+      .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input {
+        border-radius: 30px !important;
+        background-color: #FFBF28;
+        border: #cc9920;
+        color: #333333;
+        margin-top: -5px; }
+    .page-browseportfolios .view-filters .views-exposed-form .views-submit-button {
+      margin-left: 15px; }
     @media (max-width: 767px) {
       .page-browseportfolios .view-filters .views-exposed-form .views-submit-button, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button {
         display: inline-block; } }
@@ -6011,28 +6119,251 @@ ___________________
   
 ___________________
 */
-#block-views-featured-gallery-block .views-field-counter {
-  background: #D2D1D4;
-  float: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  margin-top: 10px;
-  border-radius: 50%;
-  transition: all 0.2s linear; }
+#block-views-featured-block {
+  margin-left: -15px;
+  margin-right: -15px; }
+  #block-views-featured-block:before, #block-views-featured-block:after {
+    content: " ";
+    display: table; }
+  #block-views-featured-block:after {
+    clear: both; }
+  #block-views-featured-block .views-field-field-portfolio-project-skills {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    margin-bottom: 42px; }
+    @media (min-width: 768px) {
+      #block-views-featured-block .views-field-field-portfolio-project-skills {
+        float: left;
+        width: 100%; } }
+    @media (min-width: 992px) {
+      #block-views-featured-block .views-field-field-portfolio-project-skills {
+        float: left;
+        width: 100%; } }
+    @media (min-width: 1200px) {
+      #block-views-featured-block .views-field-field-portfolio-project-skills {
+        float: left;
+        width: 100%; } }
+    #block-views-featured-block .views-field-field-portfolio-project-skills span {
+      color: #807f80; }
+    #block-views-featured-block .views-field-field-portfolio-project-skills div {
+      font-size: 18px;
+      font-weight: bold; }
+  #block-views-featured-block .views-field-field-images {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      #block-views-featured-block .views-field-field-images {
+        float: left;
+        width: 50%; } }
+    @media (min-width: 992px) {
+      #block-views-featured-block .views-field-field-images {
+        float: left;
+        width: 50%; } }
+    @media (min-width: 1200px) {
+      #block-views-featured-block .views-field-field-images {
+        float: left;
+        width: 50%; } }
+    #block-views-featured-block .views-field-field-images .field-content {
+      margin-left: -15px;
+      margin-right: -15px; }
+      #block-views-featured-block .views-field-field-images .field-content:before, #block-views-featured-block .views-field-field-images .field-content:after {
+        content: " ";
+        display: table; }
+      #block-views-featured-block .views-field-field-images .field-content:after {
+        clear: both; }
+      #block-views-featured-block .views-field-field-images .field-content img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        height: 100%; }
+  #block-views-featured-block .views-field-field-images-1 {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      #block-views-featured-block .views-field-field-images-1 {
+        float: left;
+        width: 25%; } }
+    @media (min-width: 992px) {
+      #block-views-featured-block .views-field-field-images-1 {
+        float: left;
+        width: 25%; } }
+    @media (min-width: 1200px) {
+      #block-views-featured-block .views-field-field-images-1 {
+        float: left;
+        width: 25%; } }
+    #block-views-featured-block .views-field-field-images-1 .field-content {
+      margin-left: -15px;
+      margin-right: -15px; }
+      #block-views-featured-block .views-field-field-images-1 .field-content:before, #block-views-featured-block .views-field-field-images-1 .field-content:after {
+        content: " ";
+        display: table; }
+      #block-views-featured-block .views-field-field-images-1 .field-content:after {
+        clear: both; }
+      #block-views-featured-block .views-field-field-images-1 .field-content img {
+        position: relative;
+        float: left;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        height: 100%; }
+        @media (min-width: 768px) {
+          #block-views-featured-block .views-field-field-images-1 .field-content img {
+            float: left;
+            width: 100%; } }
+        @media (min-width: 992px) {
+          #block-views-featured-block .views-field-field-images-1 .field-content img {
+            float: left;
+            width: 100%; } }
+        @media (min-width: 1200px) {
+          #block-views-featured-block .views-field-field-images-1 .field-content img {
+            float: left;
+            width: 100%; } }
+  #block-views-featured-block .views-field-nothing {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      #block-views-featured-block .views-field-nothing {
+        float: left;
+        width: 25%; } }
+    @media (min-width: 992px) {
+      #block-views-featured-block .views-field-nothing {
+        float: left;
+        width: 25%; } }
+    @media (min-width: 1200px) {
+      #block-views-featured-block .views-field-nothing {
+        float: left;
+        width: 25%; } }
+    #block-views-featured-block .views-field-nothing #infoColumn #name {
+      border-bottom: 1.5px solid #FFBF28;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000000; }
+      #block-views-featured-block .views-field-nothing #infoColumn #name a:link, #block-views-featured-block .views-field-nothing #infoColumn #name a:visited, #block-views-featured-block .views-field-nothing #infoColumn #name a:hover, #block-views-featured-block .views-field-nothing #infoColumn #name a:active {
+        color: #000000; }
+    #block-views-featured-block .views-field-nothing #infoColumn #aboutMe {
+      color: #807f80; }
+    #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #FFBF28; }
+      #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:link, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:visited, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:hover, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:active {
+        color: #FFBF28; }
+  #block-views-featured-block .views-slideshow-controls-bottom {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 15px;
+    border-bottom: 1.5px solid #FFBF28;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 40px; }
+    #block-views-featured-block .views-slideshow-controls-bottom:before, #block-views-featured-block .views-slideshow-controls-bottom:after {
+      content: " ";
+      display: table; }
+    #block-views-featured-block .views-slideshow-controls-bottom:after {
+      clear: both; }
+    #block-views-featured-block .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #d9d9d9;
+      width: 20px;
+      height: 20px;
+      margin-left: 1.5px;
+      margin-right: 1.5px; }
+    #block-views-featured-block .views-slideshow-controls-bottom .active {
+      background-color: #b3b3b3; }
+    #block-views-featured-block .views-slideshow-controls-bottom .views-content-counter {
+      display: none; }
+  #block-views-featured-block .form-submit {
+    display: none; }
 
-#block-views-featured-gallery-block .active .views-field-counter {
-  background: #606061;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  transition: all 0.2s linear; }
-
-#block-views-featured-gallery-block .views-content-counter {
-  display: none; }
-
-.views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block {
-  width: 100px;
+.views-slideshow-cycle-main-frame-row, .views-slideshow-cycle-main-frame {
+  width: 100% !important;
   margin: 0 auto; }
 
 .views-field-field-weight-editable, .views-field-field-featured-editable {
