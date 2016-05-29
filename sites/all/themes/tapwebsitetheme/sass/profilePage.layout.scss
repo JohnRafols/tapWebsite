@@ -95,13 +95,6 @@ body.page-user .block__title {
                     word-wrap: break-word;
                 }
             }
-            .views-field-field-user-last-name, .views-field-php{
-                // @include make-xs-column(12);
-                // @extend .clearfix;
-                // @include make-sm-column(3);
-                font-size: 2.5em;
-                font-weight: bold;
-             }
 
             //The header will be diffrent on smaller screens
             @media (max-width: $screen-xs-max) {
