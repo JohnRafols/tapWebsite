@@ -6867,22 +6867,6 @@ ___________________
 .page-legal.section-legal .views-label, .page-legal-accept .views-label, .maintenance-page .views-label {
   font-weight: bold; }
 
-.node-type-blog .l-content, .page-blog .l-content {
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  padding-left: 15px; }
-
-.node-type-blog h1, .page-blog h1 {
-  font-weight: bold;
-  border-bottom: 1.5px solid #FFBF28;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  padding-left: 0px;
-  padding-bottom: 15px; }
-
 .tabledrag-toggle-weight {
   display: none; }
 

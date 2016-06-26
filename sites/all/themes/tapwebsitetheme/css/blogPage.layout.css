@@ -223,10 +223,8 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input > .caret, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input > .caret,
-  .dropup > .btn > .caret, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .dropup > input > .caret, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .dropup > input > .caret {
+  .btn > .caret,
+  .dropup > .btn > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -1516,15 +1514,15 @@ pre {
     .container {
       width: 1170px; } }
 
-.container-fluid, .page-browseportfolios .l-content {
+.container-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, .page-browseportfolios .l-content:before, .container-fluid:after, .page-browseportfolios .l-content:after {
+  .container-fluid:before, .container-fluid:after {
     content: " ";
     display: table; }
-  .container-fluid:after, .page-browseportfolios .l-content:after {
+  .container-fluid:after {
     clear: both; }
 
 .row {
@@ -2348,75 +2346,47 @@ input[type="search"] {
     line-height: 34px; }
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
-  .input-group-sm > .input-group-btn > input[type="date"].btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input[type="date"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input[type="date"],
+  .input-group-sm > .input-group-btn > input[type="date"].btn,
   .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input[type="time"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input[type="time"],
   .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input[type="datetime-local"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input[type="datetime-local"],
   .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input[type="month"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input[type="month"],
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="date"].btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input[type="date"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input[type="date"],
+  .input-group-lg > .input-group-btn > input[type="date"].btn,
   .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input[type="time"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input[type="time"],
   .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input[type="datetime-local"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input[type="datetime-local"],
   .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
-  .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input[type="month"],
-  .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input[type="month"],
   .input-group-lg
   input[type="month"] {
     line-height: 46px; } }
@@ -2494,21 +2464,15 @@ fieldset[disabled]
   min-height: 34px; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input.form-control-static, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input.form-control-static, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input.form-control-static, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input.form-control-static {
+  .input-group-sm > .input-group-btn > .form-control-static.btn {
     padding-left: 0;
     padding-right: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-sm > .input-group-btn > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-sm > .input-group-btn > input {
+.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2554,9 +2518,7 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-lg > .input-group-btn > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-lg > .input-group-btn > input {
+.input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2619,9 +2581,7 @@ select[multiple].input-lg,
 
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-lg > .input-group-btn > input + .form-control-feedback, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-lg > .input-group-btn > input + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -2630,9 +2590,7 @@ select[multiple].input-lg,
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-sm > .input-group-btn > input + .form-control-feedback, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-sm > .input-group-btn > input + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -2811,7 +2769,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input {
+.btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2831,23 +2789,19 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:focus, .btn.focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.focus, .btn:active:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:active:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:active:focus, .btn:active.focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:active.focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:active.focus, .btn.active:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.active:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.active:focus, .btn.active.focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.active.focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.active.focus {
+  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:hover, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:hover, .btn:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:focus, .btn.focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.focus {
+  .btn:hover, .btn:focus, .btn.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input:active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input:active, .btn.active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.active {
+  .btn:active, .btn.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input.disabled, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input.disabled, .btn[disabled], .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input[disabled], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input[disabled],
-  fieldset[disabled] .btn,
-  fieldset[disabled] .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  fieldset[disabled] input,
-  fieldset[disabled] .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  fieldset[disabled] input {
+  .btn.disabled, .btn[disabled],
+  fieldset[disabled] .btn {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
@@ -3099,19 +3053,19 @@ fieldset[disabled] a.btn {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-lg > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-lg > input {
+.btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-sm > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-sm > input {
+.btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-xs > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-xs > input {
+.btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3289,38 +3243,20 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input,
-  .btn-group-vertical > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .btn-group-vertical > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .btn-group-vertical > input {
+  .btn-group > .btn,
+  .btn-group-vertical > .btn {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:hover, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:hover, .btn-group > .btn:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:focus, .btn-group > .btn:active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:active, .btn-group > .btn.active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input.active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input.active,
-    .btn-group-vertical > .btn:hover, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-    .btn-group-vertical > input:hover, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-    .btn-group-vertical > input:hover,
-    .btn-group-vertical > .btn:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-    .btn-group-vertical > input:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-    .btn-group-vertical > input:focus,
-    .btn-group-vertical > .btn:active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-    .btn-group-vertical > input:active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-    .btn-group-vertical > input:active,
-    .btn-group-vertical > .btn.active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-    .btn-group-vertical > input.active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-    .btn-group-vertical > input.active {
+    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .btn:active,
+    .btn-group-vertical > .btn.active {
       z-index: 2; }
 
-.btn-group .btn + .btn, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group input + .btn, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group input + .btn, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group .btn + input, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group .views-submit-button input + input, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group .views-reset-button input + input, .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group input + input,
+.btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
-.btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + .btn-group, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.btn-group input + .btn-group,
-.btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + .btn-group, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.btn-group input + .btn-group,
 .btn-group .btn-group + .btn,
-.btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.btn-group .btn-group + input,
-.btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.btn-group .btn-group + input,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -3331,25 +3267,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn, .btn-toolbar .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-toolbar input, .btn-toolbar .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-toolbar input,
+  .btn-toolbar .btn,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-toolbar > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-toolbar > input,
+  .btn-toolbar > .btn,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:first-child {
+.btn-group > .btn:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:first-child:not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input:last-child:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3357,15 +3293,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > .btn-group:not(:first-child):not(:last-child) > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > .btn-group:not(:first-child):not(:last-child) > input {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > .btn-group:first-child:not(:last-child) > input:last-child, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > .btn-group:first-child:not(:last-child) > input:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > .btn-group:last-child:not(:first-child) > input:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > .btn-group:last-child:not(:first-child) > input:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3373,11 +3309,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group > input + .dropdown-toggle, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group > input + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-lg.btn-group > input + .dropdown-toggle, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-lg.btn-group > input + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3386,21 +3322,19 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input .caret, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input .caret {
+.btn .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-lg > input .caret, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-lg > input .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-lg > input .caret, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .dropup .btn-group-lg > input .caret, .dropup .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-lg > input .caret, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .dropup .btn-group-lg > input .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input,
+.btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.btn-group-vertical > .btn-group > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.btn-group-vertical > .btn-group > input {
+.btn-group-vertical > .btn-group > .btn {
   display: block;
   float: none;
   width: 100%;
@@ -3413,44 +3347,40 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > .btn-group > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > .btn-group > input {
+.btn-group-vertical > .btn-group > .btn {
   float: none; }
 
-.btn-group-vertical > .btn + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input + input,
-.btn-group-vertical > .btn + .btn-group, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.btn-group-vertical > input + .btn-group, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.btn-group-vertical > input + .btn-group,
-.btn-group-vertical > .btn-group + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.btn-group-vertical > .btn-group + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.btn-group-vertical > .btn-group + input,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input:not(:first-child):not(:last-child), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input:first-child:not(:last-child), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > input:last-child:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > input:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > .btn-group:first-child:not(:last-child) > input:last-child, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > .btn-group:first-child:not(:last-child) > input:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-vertical > .btn-group:last-child:not(:first-child) > input:first-child, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-vertical > .btn-group:last-child:not(:first-child) > input:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3459,26 +3389,20 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-justified > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-justified > input,
+  .btn-group-justified > .btn,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-justified > .btn-group input, .btn-group-justified > .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-justified > .btn-group input {
+  .btn-group-justified > .btn-group .btn {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], .page-browseportfolios .view-filters .views-exposed-form .views-submit-button [data-toggle="buttons"] > input input[type="radio"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button [data-toggle="buttons"] > input input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"], .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-[data-toggle="buttons"] > input input[type="checkbox"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-[data-toggle="buttons"] > input input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-[data-toggle="buttons"] > .btn-group > input input[type="radio"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-[data-toggle="buttons"] > .btn-group > input input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-[data-toggle="buttons"] > .btn-group > input input[type="checkbox"], .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-[data-toggle="buttons"] > .btn-group > input input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -3527,17 +3451,13 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-sm > .input-group-btn > input.input-group-addon, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-sm > .input-group-btn > input.input-group-addon {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .input-group-lg > .input-group-btn > input.input-group-addon, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .input-group-lg > .input-group-btn > input.input-group-addon {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -3547,19 +3467,11 @@ tbody.collapse.in {
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:first-child > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:first-child > input,
-.input-group-btn:first-child > .btn-group > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:first-child > .btn-group > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:first-child > .btn-group > input,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:last-child > input:not(:last-child):not(.dropdown-toggle), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:last-child > input:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:last-child > .btn-group:not(:last-child) > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:last-child > .btn-group:not(:last-child) > input {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -3568,19 +3480,11 @@ tbody.collapse.in {
 
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:last-child > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:last-child > input,
-.input-group-btn:last-child > .btn-group > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:last-child > .btn-group > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:last-child > .btn-group > input,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:first-child > input:not(:first-child), .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:first-child > input:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-.input-group-btn:first-child > .btn-group:not(:first-child) > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-.input-group-btn:first-child > .btn-group:not(:first-child) > input {
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3591,16 +3495,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input {
+  .input-group-btn > .btn {
     position: relative; }
-    .input-group-btn > .btn + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input + input {
+    .input-group-btn > .btn + .btn {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input:hover, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input:hover, .input-group-btn > .btn:focus, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input:focus, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input:focus, .input-group-btn > .btn:active, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn > input:active, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn > input:active {
+    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn:first-child > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn:first-child > input,
+  .input-group-btn:first-child > .btn,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .input-group-btn:last-child > input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .input-group-btn:last-child > input,
+  .input-group-btn:last-child > .btn,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -3790,15 +3694,15 @@ tbody.collapse.in {
 
 .container > .navbar-header,
 .container > .navbar-collapse,
-.container-fluid > .navbar-header, .page-browseportfolios .l-content > .navbar-header,
-.container-fluid > .navbar-collapse, .page-browseportfolios .l-content > .navbar-collapse {
+.container-fluid > .navbar-header,
+.container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
     .container > .navbar-header,
     .container > .navbar-collapse,
-    .container-fluid > .navbar-header, .page-browseportfolios .l-content > .navbar-header,
-    .container-fluid > .navbar-collapse, .page-browseportfolios .l-content > .navbar-collapse {
+    .container-fluid > .navbar-header,
+    .container-fluid > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3841,8 +3745,7 @@ tbody.collapse.in {
     display: block; }
   @media (min-width: 768px) {
     .navbar > .container .navbar-brand,
-    .navbar > .container-fluid .navbar-brand, .page-browseportfolios
-    .navbar > .l-content .navbar-brand {
+    .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3978,10 +3881,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-sm > input.navbar-btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-sm > input.navbar-btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-xs > input.navbar-btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-xs > input.navbar-btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4274,7 +4177,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input .label, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input .label {
+  .btn .label {
     position: relative;
     top: -1px; }
 
@@ -4328,13 +4231,11 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input .badge, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input .badge {
+  .btn .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn-group-xs > input .badge, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn-group-xs > input .badge,
-  .btn-group-xs > .btn .badge, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button
-  .btn-group-xs > input .badge, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button
-  .btn-group-xs > input .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge,
+  .btn-group-xs > .btn .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -4369,7 +4270,7 @@ a.badge:hover, a.badge:focus {
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
   .container .jumbotron,
-  .container-fluid .jumbotron, .page-browseportfolios .l-content .jumbotron {
+  .container-fluid .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
@@ -4380,7 +4281,7 @@ a.badge:hover, a.badge:focus {
       padding-top: 48px;
       padding-bottom: 48px; }
       .container .jumbotron,
-      .container-fluid .jumbotron, .page-browseportfolios .l-content .jumbotron {
+      .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -5198,10 +5099,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer input + .btn, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer input + .btn, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .btn + input, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .views-submit-button input + input, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .views-reset-button input + input, .modal-footer .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer input + input {
+  .modal-footer .btn + .btn {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .btn-group input + .btn, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + .btn, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .btn-group input + .btn, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .btn-group .btn + input, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .btn-group input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .btn-group .views-submit-button input + input, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .btn-group .btn + input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .modal-footer .btn-group .views-reset-button input + input, .modal-footer .btn-group .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input + input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .modal-footer .btn-group input + input {
+  .modal-footer .btn-group .btn + .btn {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5611,7 +5512,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-submit-button .carousel-caption input, .carousel-caption .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button .carousel-caption input {
+  .carousel-caption .btn {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -5636,11 +5537,11 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:before, #block-views-featured-block:before, #block-views-featured-block .views-field-field-portfolio-project-skills:before, #block-views-featured-block .views-field-field-images:before, #block-views-featured-block .views-field-field-images-1:before, #block-views-featured-block .views-field-field-images-1 .field-content:before, #block-views-featured-block .views-field-field-images-1 .field-content img:before, #block-views-featured-block .views-field-nothing:before, #block-views-featured-block .views-field-nothing #infoColumn:before, #block-views-featured-block .views-slideshow-controls-bottom:before, .views-slideshow-cycle-main-frame-row:before, .views-slideshow-cycle-main-frame:before, .clearfix:after, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after, #block-views-featured-block:after, #block-views-featured-block .views-field-field-portfolio-project-skills:after, #block-views-featured-block .views-field-field-images:after, #block-views-featured-block .views-field-field-images-1:after, #block-views-featured-block .views-field-field-images-1 .field-content:after, #block-views-featured-block .views-field-field-images-1 .field-content img:after, #block-views-featured-block .views-field-nothing:after, #block-views-featured-block .views-field-nothing #infoColumn:after, #block-views-featured-block .views-slideshow-controls-bottom:after, .views-slideshow-cycle-main-frame-row:after, .views-slideshow-cycle-main-frame:after {
+.clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after, #block-views-featured-block:after, #block-views-featured-block .views-field-field-portfolio-project-skills:after, #block-views-featured-block .views-field-field-images:after, #block-views-featured-block .views-field-field-images-1:after, #block-views-featured-block .views-field-field-images-1 .field-content:after, #block-views-featured-block .views-field-field-images-1 .field-content img:after, #block-views-featured-block .views-field-nothing:after, #block-views-featured-block .views-field-nothing #infoColumn:after, #block-views-featured-block .views-slideshow-controls-bottom:after, .views-slideshow-cycle-main-frame-row:after, .views-slideshow-cycle-main-frame:after {
+.clearfix:after {
   clear: both; }
 
 .center-block {
@@ -5849,623 +5750,42 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/* 
-___________________
-
-  This is Styling for the gallery page
-  
-___________________
-*/
-.page-browseportfolios .l-content {
+.node-type-blog .l-content, .page-blog .l-content {
   width: 70%;
   margin: 0 auto;
-  padding-left: 15px; }
+  margin-bottom: 60px; }
 
-.page-browseportfolios h1 {
-  display: none; }
-
-.page-browseportfolios .view-filters {
+.node-type-blog h1, .page-blog h1 {
+  font-weight: bold;
   border-bottom: 1.5px solid #FFBF28;
-  padding-bottom: 15px;
-  margin: 0px auto !important;
-  margin-top: 30px !important;
-  margin-bottom: 30px !important;
-  margin-left: -15px;
-  margin-right: -15px; }
-  .page-browseportfolios .view-filters:before, .page-browseportfolios .view-filters:after {
-    content: " ";
-    display: table; }
-  .page-browseportfolios .view-filters:after {
-    clear: both; }
-  .page-browseportfolios .view-filters .views-exposed-form {
-    color: #666666; }
-    .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets {
-      margin-left: -15px;
-      margin-right: -15px; }
-      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:before, .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after {
-        content: " ";
-        display: table; }
-      .page-browseportfolios .view-filters .views-exposed-form .views-exposed-widgets:after {
-        clear: both; }
-    .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
-    .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
-    .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
-    .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
-    .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
-      height: 45px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 768px) {
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
-          float: left;
-          width: 50%; } }
-      @media (min-width: 992px) {
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
-          float: left;
-          width: 50%; } }
-      @media (min-width: 1200px) {
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper {
-          float: left;
-          width: 50%; } }
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
-        position: relative;
-        float: left;
-        width: 33.33333%;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: left;
-        padding-left: 0px; }
-        @media (min-width: 768px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
-            float: left;
-            width: 33.33333%; } }
-        @media (min-width: 992px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
-            float: left;
-            width: 33.33333%; } }
-        @media (min-width: 1200px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper label,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper label {
-            float: left;
-            width: 33.33333%; } }
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
-        position: relative;
-        float: left;
-        width: 66.66667%;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-left: 0px;
-        padding-right: 0px; }
-        @media (min-width: 768px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
-            float: left;
-            width: 66.66667%; } }
-        @media (min-width: 992px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
-            float: left;
-            width: 66.66667%; } }
-        @media (min-width: 1200px) {
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget,
-          .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget {
-            float: left;
-            width: 66.66667%; } }
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget select, .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .views-widget input,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget select,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper .views-widget input,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget select,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper .views-widget input,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget select,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper .views-widget input,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget select,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper .views-widget input {
-          width: 100%;
-          max-width: 250px; }
-    .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper .description {
-      display: none; }
-    .page-browseportfolios .view-filters .views-exposed-form .views-submit-button, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button {
-      display: inline-block;
-      float: right;
-      width: 65px; }
-      .page-browseportfolios .view-filters .views-exposed-form .views-submit-button input, .page-browseportfolios .view-filters .views-exposed-form .views-reset-button input {
-        border-radius: 30px !important;
-        background-color: #FFBF28;
-        border: #cc9920;
-        color: #333333;
-        margin-top: -5px;
-        width: inherit; }
-    .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer {
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 768px) {
-        .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer {
-          float: left;
-          width: 50%; } }
-      @media (min-width: 992px) {
-        .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer {
-          float: left;
-          width: 50%; } }
-      @media (min-width: 1200px) {
-        .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer {
-          float: left;
-          width: 50%; } }
-    .page-browseportfolios .view-filters .views-exposed-form .views-submit-button {
-      margin-left: 5px; }
-    @media (max-width: 767px) {
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper,
-      .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper,
-      .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer {
-        margin: 0px auto; }
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-portfolio-project-skills-tid-wrapper div,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-keywords-wrapper div,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-name-wrapper div,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-locality-wrapper div,
-        .page-browseportfolios .view-filters .views-exposed-form #edit-field-user-address-country-wrapper div,
-        .page-browseportfolios .view-filters .views-exposed-form #filterButtonsContainer div {
-          float: right; } }
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
 
-.page-browseportfolios .item-list {
+.node-type-blog article, .page-blog article {
   margin-left: -15px;
   margin-right: -15px;
-  margin-bottom: 60px; }
-  .page-browseportfolios .item-list:before, .page-browseportfolios .item-list:after {
+  margin-left: 0px;
+  margin-right: 0px; }
+  .node-type-blog article:before, .node-type-blog article:after, .page-blog article:before, .page-blog article:after {
     content: " ";
     display: table; }
-  .page-browseportfolios .item-list:after {
+  .node-type-blog article:after, .page-blog article:after {
     clear: both; }
-
-.page-browseportfolios .view-gallery .views-row {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 30px; }
-  @media (min-width: 768px) {
-    .page-browseportfolios .view-gallery .views-row {
-      float: left;
-      width: 50%; } }
-  @media (min-width: 992px) {
-    .page-browseportfolios .view-gallery .views-row {
-      float: left;
-      width: 33.33333%; } }
-  @media (min-width: 1200px) {
-    .page-browseportfolios .view-gallery .views-row {
-      float: left;
-      width: 33.33333%; } }
-  .page-browseportfolios .view-gallery .views-row .views-field .field-content img {
-    width: 100%;
-    height: 100%; }
-  .page-browseportfolios .view-gallery .views-row .views-field .field-content a {
-    color: #333; }
-  .page-browseportfolios .view-gallery .views-row .views-field-field-portfolio-project-skills {
-    color: #666666; }
-  .page-browseportfolios .view-gallery .views-row .views-field-php {
-    color: #666666; }
-
-/* 
-___________________
-
-  This is Styling for the featured gallery
-  
-___________________
-*/
-#block-views-featured-block {
-  margin-left: -15px;
-  margin-right: -15px; }
-  #block-views-featured-block:before, #block-views-featured-block:after {
-    content: " ";
-    display: table; }
-  #block-views-featured-block:after {
-    clear: both; }
-  #block-views-featured-block .views-field-field-portfolio-project-skills {
+  .node-type-blog article header, .node-type-blog article footer, .node-type-blog article .node__content, .node-type-blog article ul, .page-blog article header, .page-blog article footer, .page-blog article .node__content, .page-blog article ul {
     position: relative;
     float: left;
     width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 20px;
-    margin-bottom: 42px; }
-    @media (min-width: 768px) {
-      #block-views-featured-block .views-field-field-portfolio-project-skills {
-        float: left;
-        width: 100%; } }
-    @media (min-width: 992px) {
-      #block-views-featured-block .views-field-field-portfolio-project-skills {
-        float: left;
-        width: 100%; } }
-    @media (min-width: 1200px) {
-      #block-views-featured-block .views-field-field-portfolio-project-skills {
-        float: left;
-        width: 100%; } }
-    #block-views-featured-block .views-field-field-portfolio-project-skills span {
-      color: #807f80; }
-    #block-views-featured-block .views-field-field-portfolio-project-skills div {
-      font-size: 18px;
-      font-weight: bold; }
-  #block-views-featured-block .views-field-field-images {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 768px) {
-      #block-views-featured-block .views-field-field-images {
-        float: left;
-        width: 50%; } }
-    @media (min-width: 992px) {
-      #block-views-featured-block .views-field-field-images {
-        float: left;
-        width: 50%; } }
-    @media (min-width: 1200px) {
-      #block-views-featured-block .views-field-field-images {
-        float: left;
-        width: 50%; } }
-    #block-views-featured-block .views-field-field-images .field-content {
-      margin-left: -15px;
-      margin-right: -15px; }
-      #block-views-featured-block .views-field-field-images .field-content:before, #block-views-featured-block .views-field-field-images .field-content:after {
-        content: " ";
-        display: table; }
-      #block-views-featured-block .views-field-field-images .field-content:after {
-        clear: both; }
-      #block-views-featured-block .views-field-field-images .field-content img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        width: 100%;
-        height: 100%; }
-  #block-views-featured-block .views-field-field-images-1 {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 768px) {
-      #block-views-featured-block .views-field-field-images-1 {
-        float: left;
-        width: 25%; } }
-    @media (min-width: 992px) {
-      #block-views-featured-block .views-field-field-images-1 {
-        float: left;
-        width: 25%; } }
-    @media (min-width: 1200px) {
-      #block-views-featured-block .views-field-field-images-1 {
-        float: left;
-        width: 25%; } }
-    #block-views-featured-block .views-field-field-images-1 .field-content {
-      margin-left: -15px;
-      margin-right: -15px; }
-      #block-views-featured-block .views-field-field-images-1 .field-content:before, #block-views-featured-block .views-field-field-images-1 .field-content:after {
-        content: " ";
-        display: table; }
-      #block-views-featured-block .views-field-field-images-1 .field-content:after {
-        clear: both; }
-      #block-views-featured-block .views-field-field-images-1 .field-content img {
-        position: relative;
-        float: left;
-        width: 100%;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 40px;
-        width: 100%;
-        height: 100%; }
-        @media (min-width: 768px) {
-          #block-views-featured-block .views-field-field-images-1 .field-content img {
-            float: left;
-            width: 100%; } }
-        @media (min-width: 992px) {
-          #block-views-featured-block .views-field-field-images-1 .field-content img {
-            float: left;
-            width: 100%; } }
-        @media (min-width: 1200px) {
-          #block-views-featured-block .views-field-field-images-1 .field-content img {
-            float: left;
-            width: 100%; } }
-  #block-views-featured-block .views-field-nothing {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 768px) {
-      #block-views-featured-block .views-field-nothing {
-        float: left;
-        width: 25%; } }
-    @media (min-width: 992px) {
-      #block-views-featured-block .views-field-nothing {
-        float: left;
-        width: 25%; } }
-    @media (min-width: 1200px) {
-      #block-views-featured-block .views-field-nothing {
-        float: left;
-        width: 25%; } }
-    #block-views-featured-block .views-field-nothing #infoColumn #name {
-      border-bottom: 1.5px solid #FFBF28;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #000000; }
-      #block-views-featured-block .views-field-nothing #infoColumn #name a:link, #block-views-featured-block .views-field-nothing #infoColumn #name a:visited, #block-views-featured-block .views-field-nothing #infoColumn #name a:hover, #block-views-featured-block .views-field-nothing #infoColumn #name a:active {
-        color: #000000; }
-    #block-views-featured-block .views-field-nothing #infoColumn #aboutMe {
-      color: #807f80; }
-    #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 30px;
-      color: #FFBF28; }
-      #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:link, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:visited, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:hover, #block-views-featured-block .views-field-nothing #infoColumn #viewProfileLink a:active {
-        color: #FFBF28; }
-  #block-views-featured-block .views-field-field-weight-editable,
-  #block-views-featured-block .views-field-field-featured-editable {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 768px) {
-      #block-views-featured-block .views-field-field-weight-editable,
-      #block-views-featured-block .views-field-field-featured-editable {
-        float: left;
-        width: 100%; } }
-    @media (min-width: 992px) {
-      #block-views-featured-block .views-field-field-weight-editable,
-      #block-views-featured-block .views-field-field-featured-editable {
-        float: left;
-        width: 100%; } }
-    @media (min-width: 1200px) {
-      #block-views-featured-block .views-field-field-weight-editable,
-      #block-views-featured-block .views-field-field-featured-editable {
-        float: left;
-        width: 100%; } }
-  #block-views-featured-block .views-slideshow-controls-bottom {
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-top: 15px;
-    border-bottom: 1.5px solid #FFBF28;
-    text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 40px; }
-    #block-views-featured-block .views-slideshow-controls-bottom:before, #block-views-featured-block .views-slideshow-controls-bottom:after {
-      content: " ";
-      display: table; }
-    #block-views-featured-block .views-slideshow-controls-bottom:after {
-      clear: both; }
-    #block-views-featured-block .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
-      display: inline-block;
-      border-radius: 50%;
-      background-color: #d9d9d9;
-      width: 20px;
-      height: 20px;
-      margin-left: 1.5px;
-      margin-right: 1.5px; }
-    #block-views-featured-block .views-slideshow-controls-bottom .active {
-      background-color: #b3b3b3; }
-    #block-views-featured-block .views-slideshow-controls-bottom .views-content-counter {
-      display: none; }
-  #block-views-featured-block #edit-actions--2, #block-views-featured-block #edit-submit--2 {
-    display: none; }
+    padding-left: 0px;
+    padding-right: 0px; }
+  .node-type-blog article img, .page-blog article img {
+    max-width: 100%;
+    height: auto; }
 
-.views-slideshow-cycle-main-frame-row, .views-slideshow-cycle-main-frame {
-  width: 100% !important;
-  margin: 0 auto; }
-
-.views-field-field-weight-editable, .views-field-field-featured-editable {
-  background-color: lightgray; }
-
-.form-required, .description, .sliderfield-selectvalue-description {
-  display: none; }
-
-.views-field-field-featured-editable .form-type-radio {
-  display: inline-block; }
-
-.views-field-field-featured-editable .form-item {
-  margin-bottom: 0; }
-
-#edit-actions, #edit-actions--3 {
-  display: none; }
-
-.views-field-title {
-  line-height: 1.5em;
-  height: 1.5em;
-  overflow: hidden; }
-
-/*# sourceMappingURL=galleryPage.layout.css.map */
+/*# sourceMappingURL=blogPage.layout.css.map */

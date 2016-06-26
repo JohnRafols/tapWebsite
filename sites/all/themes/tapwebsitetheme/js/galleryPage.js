@@ -13,21 +13,16 @@
  Drupal.behaviors.galleryPageBehaviour = {
       attach: function (context, settings) {
 
-        // //Lets get the featured list block
-        //var featuredBlock = $(context).find('#views-form-featured-block')
+      
+
+        var galleryPage = $(".page-browseportfolios").find('.l-content');
+
+        //I'm having trouble with the submit and reset buttons in the gallery page..
+        galleryPage.find('.views-submit-button, .views-reset-button')
+                   .once('galleryPageBehaviour')
+                   .wrapAll('<div id="filterButtonsContainer"></div>');
 
 
-        // var imageField = featuredBlock.find('.views-field-field-images')
-        //                               .find('.field-content');
-
-        // //This is too help styling the featured bloack
-        // imageField.find('a:nth-child(1)').wrapAll('<div id="primaryImage">');
-        // imageField.find('a').not('a:nth-child(1)').wrapAll('<div id="otherImages">');
-
-        // featuredBlock.find('.views-slideshow-controls-bottom')
-        //             $(context)
-        //              .find('.views-content-counter')
-        //              .once('galleryPageBehaviour').html('');
  
         //Thanks to [#26] at https://www.drupal.org/node/1510526
 

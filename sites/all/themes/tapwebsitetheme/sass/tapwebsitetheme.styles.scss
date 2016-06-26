@@ -623,29 +623,51 @@ ___________________
 
 
 
-//This is styling for blog posts
+// //This is styling for blog posts
 
-.node-type-blog, .page-blog{
-    .l-content{
-      width: 70%;
-      margin: 0 auto;
-      margin-bottom: 60px;
-      padding-left: 15px;
-    }
-    h1{
-      //width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
+// .node-type-blog, .page-blog{
+//     .l-content{
+//       width: 70%;
+//       margin: 0 auto;
+//       margin-bottom: 60px;
+//       padding-left: 15px;
+//     }
+//     h1{
+//       //width:70%;
+//       font-weight: bold;
+//       border-bottom: 1.5px solid $mainColor;
 
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 30px;
+//       margin-right: auto;
+//       margin-left: auto;
+//       margin-top: 60px;
+//       margin-bottom: 30px;
 
-      padding-left: 0px;
-      padding-bottom: 15px;
-    }
-}
+//       padding-left: 0px;
+//       padding-bottom: 15px;
+//     }
+
+//     //These are the actual articles...
+//     article{
+//       @include make-row();
+//       margin-left: 0px; 
+//       margin-right: 0px; 
+
+//       //Let everthing into their own giant column...
+//       header, footer, .node__content, ul{
+//         @include make-xs-column(12);
+//         padding-left: 0px;
+//         padding-right: 0px;
+//       }
+
+
+//       //Make sure images in blogs don't go out of proportion
+//       img{
+//         max-width: 100%;
+//         height: auto;
+//       }
+//     }
+  
+// }
 
 
 
