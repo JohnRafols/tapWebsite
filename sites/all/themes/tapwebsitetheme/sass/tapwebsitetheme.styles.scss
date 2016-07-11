@@ -253,8 +253,14 @@ html, body {
     //padding-left: 60px;
     padding-top: 30px;
   }  
-
-
+#block-block-14 {
+  float: none;
+  padding-bottom: 30px;
+}
+block-block-4 {
+  float: none;
+  padding-bottom: 30px;
+}
   #security_Images{
       display: inline;
       list-style-type: none;
@@ -290,7 +296,6 @@ html, body {
       }
 
 }
-
 
 
 /* 
@@ -623,51 +628,29 @@ ___________________
 
 
 
-// //This is styling for blog posts
+//This is styling for blog posts
 
-// .node-type-blog, .page-blog{
-//     .l-content{
-//       width: 70%;
-//       margin: 0 auto;
-//       margin-bottom: 60px;
-//       padding-left: 15px;
-//     }
-//     h1{
-//       //width:70%;
-//       font-weight: bold;
-//       border-bottom: 1.5px solid $mainColor;
+.node-type-blog, .page-blog{
+    .l-content{
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 60px;
+      padding-left: 15px;
+    }
+    h1{
+      //width:70%;
+      font-weight: bold;
+      border-bottom: 1.5px solid $mainColor;
 
-//       margin-right: auto;
-//       margin-left: auto;
-//       margin-top: 60px;
-//       margin-bottom: 30px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 60px;
+      margin-bottom: 30px;
 
-//       padding-left: 0px;
-//       padding-bottom: 15px;
-//     }
-
-//     //These are the actual articles...
-//     article{
-//       @include make-row();
-//       margin-left: 0px; 
-//       margin-right: 0px; 
-
-//       //Let everthing into their own giant column...
-//       header, footer, .node__content, ul{
-//         @include make-xs-column(12);
-//         padding-left: 0px;
-//         padding-right: 0px;
-//       }
-
-
-//       //Make sure images in blogs don't go out of proportion
-//       img{
-//         max-width: 100%;
-//         height: auto;
-//       }
-//     }
-  
-// }
+      padding-left: 0px;
+      padding-bottom: 15px;
+    }
+}
 
 
 
@@ -748,4 +731,119 @@ ___________________
 
 #admin-menu{
   opacity: 0.85;
+}
+
+
+
+
+#footer_contentContainer{
+    background-color: #3f0d32;
+    #footer_contentContainer{
+        width:70%;
+        margin-bottom: 30px;
+    }
+ 
+}
+#footer_row{
+    p{
+    font-size:24px;
+    margin-top: 44px;
+    }
+}
+
+.footerLine {
+    border: #6e2a54 solid 1px;
+    width: 90%;
+    margin: auto;
+}
+
+.footer_logos{
+    text-align: center;
+    padding:30px;
+}
+
+#footer_PropellerStudios img{
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footer_VictoriaUniversity img{
+    max-width: 230px;
+    max-height: 150px;
+    height: auto;
+    width: 122%;
+    margin: 0 auto;
+}
+
+#footer_NeatPlaces img{
+    max-width: 61px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footer_ecoPortal img{
+    max-width: 222px;
+    max-height: 150px;
+    height: auto;
+    width: 122%;
+    margin: 0 auto;
+}
+
+#footer_irfd img{
+    max-width: 100px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footerButtom{
+      text-align: center;
+
+    ul{
+      margin-top: 35px;
+      }
+
+    li{
+      display: inline;
+      margin-left: 10px;
+      margin-right: 10px;   
+    }
+}
+
+#footerButtom a {
+    color:#434547;
+}
+
+//The Registration Buttons:
+#registrationButtonClient , #registrationButtonFreelancer{
+    background-color: $mainColor;
+    border: solid 3px #FFBF28;
+    padding: 8px 16px;
+    color: #434547;
+    margin-bottom: 10px; 
+    
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($mainColor * 0.80);
+        }
+        &:hover{
+             background-color: rgba(255, 255, 255, 0.0);
+             border: solid 3px #FFBF28;
+             color: #FFBF28;
+        }
+}
+
+.landingPage_emphasizedText {
+    font-size: 26px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: #6e2a54;
 }
