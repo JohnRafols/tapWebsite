@@ -63,7 +63,7 @@ $secondaryColor: #3c0f31;
     width: 100%;
     padding-bottom: 20px;
     }
-    
+
     #landingPageWelcomeSection h1{
         font-size: 49px;
         font-family:Cabin Bold;
@@ -296,55 +296,36 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 //These are for Freelance Creatives section3######################
  .landingPageFreelance_iconFrame{
     width:195px;
-    height:312px;
+    height:302px;
     margin: auto;
+    padding: 6px;
     -webkit-box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
     -moz-box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
     box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
  }
 
-#landingPageFreelance_iconBk1, #landingPageFreelance_iconBk2, #landingPageFreelance_iconBk3{
-    width: 195px;
+#landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img{
+    width: 100%;
     height: 116px;
-    background-size:100% 100%;
-    background-position:left 0px top 0px;
-    background-repeat: no-repeat;
+    //margin-left: -15px;
 } 
 
-#landingPageFreelance_ProfileBk1, #landingPageFreelance_ProfileBk2, #landingPageFreelance_ProfileBk3{
+#landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img{
     border: solid 2px #FFBF28;
     width: 50px;
     height: 50px;
     border-radius: 100px;
-    background-size: 50px 50px;
-    background-position: bottom 0px left 0px;
-    background-repeat: no-repeat;
-}
-
-#landingPageFreelance_iconBk1{
-    background: url("sites/files/tapCreativeImages/BoM_Artwork.jpg");
 }
 
 #landingPageFreelance_ProfileBk1 {
-    background: url("sites/files/tapCreativeImages/BoM_Profile.jpg");
     margin: -26px 0px -36px 15px;
 }
 
-#landingPageFreelance_iconBk2 {
-    background: url("sites/files/tapCreativeImages/IsabelleM_Artwork.jpg");
-}
-
 #landingPageFreelance_ProfileBk2 {
-    background: url("sites/files/tapCreativeImages/IsabelleM_Profile.jpg");
     margin: -26px 0px -36px 8px;
 }
 
-#landingPageFreelance_iconBk3 {
-    background: url("sites/files/tapCreativeImages/SaraF_Artwork.jpg");
-}
-
 #landingPageFreelance_ProfileBk3 {
-    background: url("sites/files/tapCreativeImages/SaraF_Profile.jpg");
     margin: -26px 0px -36px 15px;
 }
 
@@ -354,9 +335,9 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 }
 
 .landingPageFreelance_iconFrame p{
-    font-size: 10px;
+    font-size: 11px;
+    padding: inherit;
     text-align: left;
-    padding: 0px 12px 0px 22px
 }
 
 .Icon_border_Freelance{
