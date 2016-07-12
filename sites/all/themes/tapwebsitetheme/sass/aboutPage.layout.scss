@@ -260,29 +260,29 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     top:0; 
 }
 
-#featured_CreativeTalent {
+#featured{
     position: relative;
     width: 100%;
 }
 
-#featured_CreativeTalent, #landingPage_CreativeTalent_slides {
+#featured, #landingPage_CreativeTalent_slides {
     width: 100%;
     overflow: hidden; 
 }
-#featured_CreativeTalent section {
+#featured section {
     position: relative;
     width: 1000px;
 }
-#featured_CreativeTalent section img {
+#featured section img {
     position: absolute;
     width: 100%;
 }
 /* hide slides when js is disabled */
-#featured_CreativeTalent #slide-2,
-#featured_CreativeTalent #slide-3,
-#featured_CreativeTalent #slide-4,
-#featured_CreativeTalent #slide-5,
-#featured_CreativeTalent #slide-6 {
+#featured #slide-2,
+#featured #slide-3,
+#featured #slide-4,
+#featured #slide-5,
+#featured #slide-6 {
     display: none;
 }
 
@@ -296,7 +296,7 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 //These are for Freelance Creatives section3######################
  .landingPageFreelance_iconFrame{
     width:195px;
-    height:302px;
+    height:323px;
     margin: auto;
     padding: 6px;
     -webkit-box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
@@ -372,7 +372,7 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     padding:30px;
 }
 #landingPage_howThisWorks_LargeImage img {
-    height: 308px;
+    max-height: 308px;
     width: 100%;
     margin: 0 auto
 }
