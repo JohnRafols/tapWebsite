@@ -391,6 +391,16 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     margin: 0 auto;
     position: relative; 
     height: 150px;
+
+    ul {
+        text-align:center;
+    }
+
+    li{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
 }
 
 .landingPage_whoAreWe img {
