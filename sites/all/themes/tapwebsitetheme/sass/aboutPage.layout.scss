@@ -117,11 +117,10 @@ $secondaryColor: #3c0f31;
 }
 
 .landingPageLeft_description p{
-    font-size: 24px !important;
+    font-size: 24px;
     color: #FFBF28 !important;
     padding-top: 10px;
     text-align: left;
-    width:300px;
     margin-bottom: 40px;
 }
 
@@ -183,11 +182,11 @@ $secondaryColor: #3c0f31;
 }
 
 .landingPageRight_description p{
-    font-size: 22px ;
+    font-size: 20px;
     color: #FFBF28;
     padding-top: 10px;
     text-align: left;
-    width: 270px;
+    width: 235px;
     margin-bottom: 40px;
 }
 
@@ -267,6 +266,7 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 
 #featured, #landingPage_CreativeTalent_slides {
     width: 100%;
+    height: 300px;
     overflow: hidden; 
 }
 #featured section {
@@ -288,17 +288,17 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 
 
 #landingPage_CreativeTalent_slides img{
-    height: 308px;
+    height: 300px;
     width: 100%;
     margin: 0 auto
 }
 
 //These are for Freelance Creatives section3######################
  .landingPageFreelance_iconFrame{
-    width:195px;
-    height:323px;
-    margin: auto;
-    padding: 6px;
+    width: 235px;
+    height: 304px;
+    margin: 6px auto;
+    /* padding: 4px; */
     -webkit-box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
     -moz-box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
     box-shadow: 0px 0px 46px -6px rgba(176,174,176,0.3);
@@ -610,6 +610,7 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
 
 .landingPageLeft_description p {
     width: 100%;
+    font-size:20px;
 }
 
 }
