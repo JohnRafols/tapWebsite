@@ -217,6 +217,7 @@ ___________________
 #block-views-featured-block{
     @include make-row();
     @extend .clearfix;
+    margin-top: 25px;
     // height: auto;
 
 
