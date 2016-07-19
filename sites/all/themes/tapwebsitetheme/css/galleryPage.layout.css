@@ -6004,6 +6004,15 @@ ___________________
   .page-browseportfolios .view-gallery .views-row .views-field-php {
     color: #666666; }
 
+.page-browseportfolios .views-field-addtoany-link {
+  float: left; }
+
+.page-browseportfolios .views-field-ops {
+  float: left;
+  width: 32px;
+  line-height: 32px;
+  border-radius: 4px; }
+
 /* 
 ___________________
 
