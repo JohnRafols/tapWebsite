@@ -685,57 +685,7 @@ ___________________
     margin-top:0px !important; 
  }
 
-
-//Media queries for mobile:
-//These are some margin changes when the user is on a mobile device
-
-@media (max-width: $screen-xs-max) {
-    //Change some margins when the screen is small
-    .borderForMenu{
-        border-right: none !important; 
-    }
-
-    #socialLinksDiv{
-      margin-top: 30px;
-      li:nth-child(4){
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-    }
-
-    .modalEmailSignUp_body{
-        background: url('images/EmailSignUp.png') no-repeat;
-        .modalEmailSignUp_footer{
-            text-align: center;
-            #edit-mergevars-email, .form-text{
-              max-width: 50%;
-            }
-        }       
-        height: 120px !important;
-        background-size: cover !important;
-        background-position: 20% !important;
-    }
-    
-}
-
-//User login page
-#user-login{
-  .description{
-    display: none;
-  }
-
-  .form-item label .form-required{
-    display: none;
-  }
-}
-
-#admin-menu{
-  opacity: 0.85;
-}
-
-
-
-
+//displaying logos company section
 #footer_contentContainer{
     background-color: #3f0d32;
     #footer_contentContainer{
@@ -787,7 +737,7 @@ ___________________
 }
 
 #footer_ecoPortal img{
-    max-width: 222px;
+    max-width: 250px;
     max-height: 150px;
     height: auto;
     width: 122%;
@@ -795,13 +745,20 @@ ___________________
 }
 
 #footer_irfd img{
-    max-width: 100px;
+    max-width: 88px;
     max-height: 150px;
     height: auto;
     width: 100%;
     margin: 0 auto;
 }
 
+#neatPlaces_logos {
+  margin-left:19px;
+}
+
+#ecoPortal_logos {
+  margin-top:3px;
+}
 
 //The Registration Buttons:
 #registrationButtonClient , #registrationButtonFreelancer{
@@ -829,4 +786,58 @@ ___________________
     margin: 0 auto;
     margin-bottom: 30px;
     color: #6e2a54;
+}
+
+//Media queries for mobile:
+//These are some margin changes when the user is on a mobile device
+
+@media (max-width: $screen-xs-max) {
+    //Change some margins when the screen is small
+    .borderForMenu{
+        border-right: none !important; 
+    }
+
+    #socialLinksDiv{
+      margin-top: 30px;
+      li:nth-child(4){
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .modalEmailSignUp_body{
+        background: url('images/EmailSignUp.png') no-repeat;
+        .modalEmailSignUp_footer{
+            text-align: center;
+            #edit-mergevars-email, .form-text{
+              max-width: 50%;
+            }
+        }       
+        height: 120px !important;
+        background-size: cover !important;
+        background-position: 20% !important;
+    }
+#neatPlaces_logos {
+  margin-left:0px;
+}
+
+#ecoPortal_logos {
+  margin-top:0px;
+}
+    
+}
+
+//User login page
+#user-login{
+  .description{
+    display: none;
+  }
+
+  .form-item label .form-required{
+    display: none;
+  }
+}
+
+#admin-menu{
+  opacity: 0.85;
 }
