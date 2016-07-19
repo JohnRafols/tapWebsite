@@ -8,7 +8,8 @@
 .addtoany_list > a,
 .addtoany_list a img,
 .addtoany_list a > span {
-	vertical-align: middle;
+	/*Modified*/
+	/*vertical-align: middle;*/
 }
 .addtoany_list > a {
 	display: inline-block;
@@ -16,7 +17,8 @@
 	padding: 0 4px;
 }
 .addtoany_list.a2a_kit_size_32 > a {
-	font-size: 32px;
+	/*Modified*/
+	/*font-size: 32px;*/
 }
 .addtoany_list .a2a_counter img {
   float: left;
@@ -37,7 +39,7 @@
 	height: 32px;
 	line-height: 32px;
 	opacity: 1;
-	width: 32px;
+	width: 32px;	
 }
 .addtoany_list a:hover:hover img,
 .addtoany_list a:hover span {
