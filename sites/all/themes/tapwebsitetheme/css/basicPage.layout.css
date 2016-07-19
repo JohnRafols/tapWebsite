@@ -6628,12 +6628,12 @@ ___________________
         float: left;
         width: 50%; } }
 
-.page-list-of-jobs .l-content {
+.page-creativejobsnz .l-content {
   width: 70%;
   margin: 0 auto;
   padding-left: 15px; }
 
-.page-list-of-jobs h1 {
+.page-creativejobsnz h1 {
   font-weight: bold;
   border-bottom: 1.5px solid #FFBF28;
   margin-right: auto;
@@ -6643,7 +6643,7 @@ ___________________
   padding-left: 0px;
   padding-bottom: 15px; }
 
-.page-list-of-jobs .view-content .views-row {
+.page-creativejobsnz .view-content .views-row {
   background-color: #e6ac24;
   min-height: 50px;
   margin-top: 30px;
@@ -6654,7 +6654,7 @@ ___________________
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
-  .page-list-of-jobs .view-content .views-row .views-field-title {
+  .page-creativejobsnz .view-content .views-row .views-field-title {
     border-right: 1.5px solid white;
     text-align: center;
     position: relative;
@@ -6668,13 +6668,13 @@ ___________________
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 768px) {
-      .page-list-of-jobs .view-content .views-row .views-field-title {
+      .page-creativejobsnz .view-content .views-row .views-field-title {
         float: left;
         width: 50%; } }
-    .page-list-of-jobs .view-content .views-row .views-field-title a {
+    .page-creativejobsnz .view-content .views-row .views-field-title a {
       color: white;
       font-weight: bold; }
-  .page-list-of-jobs .view-content .views-row .views-field-field-skills {
+  .page-creativejobsnz .view-content .views-row .views-field-field-skills {
     margin-top: 8px;
     margin-bottom: 8px;
     text-align: center;
@@ -6689,15 +6689,15 @@ ___________________
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 768px) {
-      .page-list-of-jobs .view-content .views-row .views-field-field-skills {
+      .page-creativejobsnz .view-content .views-row .views-field-field-skills {
         float: left;
         width: 25%; } }
-    .page-list-of-jobs .view-content .views-row .views-field-field-skills span, .page-list-of-jobs .view-content .views-row .views-field-field-skills .field-content {
+    .page-creativejobsnz .view-content .views-row .views-field-field-skills span, .page-creativejobsnz .view-content .views-row .views-field-field-skills .field-content {
       display: inline;
       color: white;
       font-weight: bold;
       text-align: left; }
-  .page-list-of-jobs .view-content .views-row .views-field-created {
+  .page-creativejobsnz .view-content .views-row .views-field-created {
     border-left: 1.5px solid white;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -6713,10 +6713,10 @@ ___________________
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 768px) {
-      .page-list-of-jobs .view-content .views-row .views-field-created {
+      .page-creativejobsnz .view-content .views-row .views-field-created {
         float: left;
         width: 25%; } }
-    .page-list-of-jobs .view-content .views-row .views-field-created span, .page-list-of-jobs .view-content .views-row .views-field-created .field-content {
+    .page-creativejobsnz .view-content .views-row .views-field-created span, .page-creativejobsnz .view-content .views-row .views-field-created .field-content {
       display: inline;
       color: white;
       font-weight: bold;
