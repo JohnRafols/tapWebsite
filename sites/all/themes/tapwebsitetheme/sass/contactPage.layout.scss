@@ -1,0 +1,136 @@
+// Import variables, abstractions, base styles and components.
+// Uncomment the next lines and adjust them to your needs.
+//@import "variables/{YOUR FILE NAME HERE}";
+//@import "abstractions/{YOUR FILE NAME HERE}";
+//@import "base/{YOUR FILE NAME HERE}";
+//@import "components/{YOUR FILE NAME HERE}";
+
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$mainColor :  #FFBF28;
+$textColor : #000000;
+$grey : #f7f4f6;
+$secondaryColor: #3c0f31;
+
+//These are contact######################
+
+ #contactPage_mainContainer{
+      #contactPage_contentContainer{
+        width: 70%;
+    }
+    margin-bottom: 30px; 
+}
+
+.contactPage_titles{
+    font-size: 38px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid $mainColor; 
+    text-align: center;
+    color: #6e2a54;
+    font-family:Cabin Bold;
+}
+
+.contactPage_emphasizedText{ 
+    font-size: 16px;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: #6e2a54;
+}
+
+.contactPage_content img {
+  max-width: 100px;
+  max-height: 100px;
+  height: auto;
+  width: 100%;
+  border-radius: 100px;
+  border: solid 2px $mainColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;  
+  } 
+
+#contactPage_content {
+	margin-top:30px;
+	margin-bottom:30px;	
+}
+
+.contactPage_content h3 {
+    font-size:18px;
+    margin-top: 8px;
+    text-align: center;
+    color: #6e2a54;
+}
+
+.contactPage_content h4 {
+    //font-size:16px;
+    margin-top: 8px;
+    text-align: center;
+    color: #6e2a54;
+}
+
+.contactPage_content p {
+    font-size:14px;
+    text-align: center;
+    color:#fbbf20;
+}
+
+
+.contactPage_content_paragraph {
+    margin-left: 75px;
+    margin-right: 85px;
+}
+
+.Icon_border_contact{
+    border-top: #FFBF28 solid 2px;
+    padding-top: 8px;
+    width: 25%;
+    margin: 0 auto;
+}
+.contactUsPage_label {
+	font-size:18px;
+    margin-bottom: 20px!important;
+    margin-top: 20px!important;
+}
+
+#location_details .address {
+    font-style: italic;
+}
+
+.paragraph_quote {
+	height: 243px;
+}
+.paragraph_quote p{
+	font-size:20px;
+}
+
+//Media query for mobile:
+@media (max-width: $screen-xs-max) {
+
+#contactPage_contentContainer, .contactPage_emphasizedText, #contactPage_titles, #contact_details {
+	width: 100% !important;
+}
+
+.contactPage_content img {
+  //max-height: 100px; 
+} 
+
+.contactPage_content a{
+	font-size:10px;
+}
+}
+
+@media(max-width:768px){
+	#contactPage_contentContainer, .contactPage_emphasizedText, #contactPage_titles, #contact_details {
+	width: 100% !important;
+}
+}
