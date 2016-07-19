@@ -14,5 +14,8 @@ regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 
+; Scripts
+scripts[] = js/galleryPage.js
+
 ; Stylesheets
 stylesheets[all][] = css/galleryPage.layout.css

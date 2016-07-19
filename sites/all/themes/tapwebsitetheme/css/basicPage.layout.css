@@ -6379,7 +6379,7 @@ ___________________
 .node-type-page.section-contacttapteam #location_details #address {
   font-style: italic; }
 
-.node-type-page.section-contacttapteam #mariyaPhoto img, .node-type-page.section-contacttapteam #dennyPhoto img, .node-type-page.section-contacttapteam #peidePhoto img, .node-type-page.section-contacttapteam #johnPhoto img {
+.node-type-page.section-contacttapteam .teamPhoto img {
   width: 120px;
   height: 120px;
   border-radius: 999px;
@@ -6643,6 +6643,25 @@ ___________________
   padding-left: 0px;
   padding-bottom: 15px; }
 
+.page-creativejobsnz h1 {
+  border-bottom: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+
+.page-creativejobsnz .view-header #jobList_searchCreativeJobs {
+  border-bottom: 1.5px solid #FFBF28;
+  font-weight: bold;
+  color: #FFBF28;
+  font-size: 16px;
+  margin-top: 6px;
+  padding-bottom: 10px; }
+
+.page-creativejobsnz .view-header #jobList_registerOnTap {
+  color: #CCCCCC;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
 .page-creativejobsnz .view-content .views-row {
   background-color: #e6ac24;
   min-height: 50px;
@@ -6654,8 +6673,7 @@ ___________________
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
-  .page-creativejobsnz .view-content .views-row .views-field-title {
-    border-right: 1.5px solid white;
+  .page-creativejobsnz .view-content .views-row .views-field-nothing {
     text-align: center;
     position: relative;
     min-height: 1px;
@@ -6666,15 +6684,43 @@ ___________________
     width: 100%;
     min-height: 1px;
     padding-left: 15px;
-    padding-right: 15px; }
+    padding-right: 15px;
+    color: white;
+    font-weight: bold; }
     @media (min-width: 768px) {
-      .page-creativejobsnz .view-content .views-row .views-field-title {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing {
         float: left;
-        width: 50%; } }
-    .page-creativejobsnz .view-content .views-row .views-field-title a {
+        width: 25%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing a {
       color: white;
       font-weight: bold; }
-  .page-creativejobsnz .view-content .views-row .views-field-field-skills {
+  .page-creativejobsnz .view-content .views-row .views-field-nothing-2 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-left: 1.5px solid white;
+    border-right: 1.5px solid white; }
+    @media (min-width: 768px) {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing-2 {
+        float: left;
+        width: 50%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-2 a, .page-creativejobsnz .view-content .views-row .views-field-nothing-2 div {
+      text-align: center;
+      color: white; }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-2 #skillsWanted {
+      font-weight: bold; }
+  .page-creativejobsnz .view-content .views-row .views-field-nothing-1 {
     margin-top: 8px;
     margin-bottom: 8px;
     text-align: center;
@@ -6689,11 +6735,10 @@ ___________________
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 768px) {
-      .page-creativejobsnz .view-content .views-row .views-field-field-skills {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing-1 {
         float: left;
         width: 25%; } }
-    .page-creativejobsnz .view-content .views-row .views-field-field-skills span, .page-creativejobsnz .view-content .views-row .views-field-field-skills .field-content {
-      display: inline;
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-1 span, .page-creativejobsnz .view-content .views-row .views-field-nothing-1 .field-content {
       color: white;
       font-weight: bold;
       text-align: left; }

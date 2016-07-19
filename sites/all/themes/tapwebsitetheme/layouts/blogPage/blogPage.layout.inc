@@ -1,7 +1,7 @@
-name = aboutPage
+name = blogPage
 description = A simple 3 column layout demonstrating mobile first and Susy.
 preview = preview.png
-template = aboutPage-layout
+template = blogPage-layout
 
 ; Regions
 ;regions[branding]       = Branding
@@ -15,7 +15,6 @@ regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 
 ; Stylesheets
-stylesheets[all][] = css/aboutPage.layout.css
+stylesheets[all][] = css/blogPage.layout.css
 
 ; Scripts
-scripts[] = js/SlideShow.js
