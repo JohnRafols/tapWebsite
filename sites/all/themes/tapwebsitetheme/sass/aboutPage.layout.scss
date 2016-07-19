@@ -46,22 +46,22 @@ $secondaryColor: #3c0f31;
 
 //The Banner 
 #landingPageWelcomeSection{
-    min-height:  540px;
-    //Center everything
+    min-height: 600px;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-direction: column;
     flex-direction: column;
-    //Misc:
     position: relative;
     color: white;
-    margin: 0 auto; 
-    //padding: 5%;
+    margin: auto;
+    top: 20px;
     text-align: center;
-    //url's are local to the css folder
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     }
 
     #landingPageWelcomeSection h1{
@@ -85,7 +85,7 @@ $secondaryColor: #3c0f31;
 
     }
   #landingPageWelcomeSection  ul{
-        margin-top: 35px;
+        margin-top: 54px;
     }
  #landingPageWelcomeSection   li{
         display: inline;
@@ -116,12 +116,21 @@ $secondaryColor: #3c0f31;
     }
 }
 
+.landingPageLeft_description {
+    max-height: 412px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .landingPageLeft_description p{
-    font-size: 24px;
+    font-size: 23px;
     color: #FFBF28 !important;
-    padding-top: 10px;
+    //padding-top: 10px;
+    max-height: 412px;
+    width: 100%;
+    margin: 0 auto;
     text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .landingPageLeft_description{
@@ -182,11 +191,11 @@ $secondaryColor: #3c0f31;
 }
 
 .landingPageRight_description p{
-    font-size: 20px;
+    font-size: 23px;
     color: #FFBF28;
-    padding-top: 10px;
+    //padding-top: 10px;
     text-align: left;
-    width: 235px;
+    width: 250px;
     margin-bottom: 40px;
 }
 
@@ -267,7 +276,8 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 #featured, #landingPage_CreativeTalent_slides {
     width: 100%;
     height: 300px;
-    overflow: hidden; 
+    overflow: hidden;
+    margin-bottom:40px; 
 }
 #featured section {
     position: relative;
@@ -295,7 +305,7 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 
 //These are for Freelance Creatives section3######################
  .landingPageFreelance_iconFrame{
-    width: 235px;
+    //width: 235px;
     height: 304px;
     margin: 6px auto;
     /* padding: 4px; */
@@ -335,8 +345,8 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 }
 
 .landingPageFreelance_iconFrame p{
-    font-size: 11px;
-    padding: inherit;
+    font-size: 10px;
+    //padding: inherit;
     text-align: left;
 }
 
@@ -371,8 +381,8 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     text-align: center;
     padding:30px;
 }
-#landingPage_howThisWorks_LargeImage img {
-    max-height: 308px;
+#landingPage_howThisWorks_video video {
+    max-height: 412px;
     width: 100%;
     margin: 0 auto
 }
@@ -427,7 +437,10 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     color:#fbbf20;
 }
 
-
+.whoAreWe_paragraph {
+    margin-left: 75px;
+    margin-right: 85px;
+}
 
 
 //These are regarding the second navbar that only appears when logged in.
@@ -560,7 +573,7 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
 @media (max-width: $screen-xs-max) {
     //Change some margins when the screen is small
 
-    #landingPageWelcomeSection_description, #landingPageServices_contentContainer, #landingPageFreelance_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer,  #landingPage_CreativeTalent_contentContainer, #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title{
+    #landingPageWelcomeSection_description, #landingPageServices_contentContainer, #landingPageFreelance_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer,  #landingPage_CreativeTalent_contentContainer,landingPageFreelance_contentContainer #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title{
         width: 100% !important; 
     }
 
@@ -611,6 +624,146 @@ $landingPageServices_freelancerIconList: CreateAPortfolio GetMatched StartWorkin
 .landingPageLeft_description p {
     width: 100%;
     font-size:20px;
+}
+
+.whoAreWe_paragraph {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+}
+
+@media(max-width:1280px){
+
+}
+@media(max-width:1024px){
+
+
+}
+
+@media(max-width:768px){
+
+.landingPageFreelance_iconFrame {
+    width: 50%;
+    height: 424px;
+}
+
+#landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img{
+    width: 100%;
+    height: 100%;
+    //margin-left: -15px;
+} 
+
+#landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img{
+    width: 70px;
+    height: 70px;
+}
+.landingPageFreelance_iconFrame h3 {
+    font-size: 26px;
+}
+.landingPageFreelance_iconFrame p{
+    font-size: 17px;
+}
+
+.landingPageRight_description p {
+    font-size: 34px;
+    width: 327px;
+}
+
+#landingPageFreelance_ProfileBk1 {
+    margin: -42px 0px -36px 15px;
+}
+
+#landingPageFreelance_ProfileBk2 {
+    margin: -40px 0px -36px 12px;
+}
+
+#landingPageFreelance_ProfileBk3 {
+    margin: -42px 0px -36px 15px;
+}
+
+#whoAreWe_Urgent {
+    width:100%;
+}
+
+}
+
+@media(max-width:640px){    
+
+
+}
+
+@media(max-width:480px){
+
+.landingPageFreelance_iconFrame {
+    width: 100%;
+    height: 404px;
+}
+
+.landingPageFreelance_iconFrame h3 {
+    font-size: 20px;
+}
+
+.landingPageFreelance_iconFrame p{
+    font-size: 16px;
+}
+
+#landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img{
+    width: 100%;
+    height: 100%;
+    //margin-left: -15px;
+} 
+
+#landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img{
+    width: 70px;
+    height: 70px;
+}
+
+#landingPageFreelance_ProfileBk1 {
+    margin: -42px 0px -36px 15px;
+}
+
+#landingPageFreelance_ProfileBk2 {
+    margin: -40px 0px -36px 12px;
+}
+
+#landingPageFreelance_ProfileBk3 {
+    margin: -42px 0px -36px 15px;
+}
+
+.landingPageRight_description p {
+    width: 285px;
+    font-size: 20px;
+}
+
+#whoAreWe_Urgent {
+    width:100%;
+}
+
+}
+
+
+@media(max-width:320px){
+
+.landingPageFreelance_iconFrame {
+    width: 100%;
+    height: 354px;
+}
+
+.landingPageFreelance_iconFrame h3 {
+    font-size: 18px;
+}
+
+.landingPageFreelance_iconFrame p{
+    font-size: 14px;
+}
+
+.landingPageRight_description p {
+    font-size: 20px;
+    width: 245px;
+}
+
+#whoAreWe_Urgent {
+    width:100%;
 }
 
 }
