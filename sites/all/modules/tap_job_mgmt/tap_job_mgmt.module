@@ -402,7 +402,7 @@ function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
 	if($form_id=='job_node_form'){
 
 		//Hide all these whether node is new or edited.
-		hide($form['field_messaging']);
+		// hide($form['field_messaging']);
 		hide($form['field_invited_candidates']);
 		hide($form['field_matched_candidates']);
 		hide($form['field_commissioned_candidate']);
