@@ -305,11 +305,9 @@ https://gist.github.com/anthonyholmes/b397e8a95ce2aca71f8e
 
 _________
 
-- Added new fields, working files and final files,
-- Placed everything into a View, makes HTML easier
-
-
-
+- Placed workroom into a View, makes HTML easier.
+- Installed https://www.drupal.org/project/views_block_area.
+- Hidden all of the fields in the structure Job. Will depend on views
 
 
 
