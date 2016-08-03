@@ -14,7 +14,6 @@ $grey : #CCCCCC;
 
 
 
-
 .l-main{
 
     .l-content{
@@ -23,102 +22,99 @@ $grey : #CCCCCC;
         margin-bottom: 60px;
         width: 70%;
 
-        //This is for the navigation for clients when they check job information
-        #tabsParentDiv{
-            @extend .row;
-            @extend .clearfix;
-            min-height: 75px; 
+        //Only for the job pages...
+        #block-quicktabs-freelancer-jobs, #block-quicktabs-client-jobs{
+                //This is for the navigation for clients when they check job information
+                #tabsParentDiv{
+                    @extend .row;
+                    @extend .clearfix;
+                    min-height: 75px; 
 
-            display: flex;
-            align-items: center; 
-            border-bottom: 1.5px solid $mainColor;
-            margin-top: 40px;
+                    display: flex;
+                    align-items: center; 
+                    border-bottom: 1.5px solid $mainColor;
+                    margin-top: 40px;
 
-            h1{
-                 @include make-sm-column(2);
-                font-weight: bold;
-                padding-bottom: 5px; 
-            }
-            //The tabs themselves
-             ul.quicktabs-tabs{
-                 @include make-sm-column(10);
-                text-align: right; 
-                margin-top: 10px;
-
-                //Remove some css
-                border-bottom: none; 
-                li{
-                    border: none;
-                    padding-right: 10px;
-                    a{
-                        font-size: 14px !important; 
-                    }
-                }
-                
-                //Coloring the borders:
-                $columns: 4;
-                @for $i from 1 to $columns {
-                  li:nth-child(#{$i}) {
-                    border-right: 1.5px solid $mainColor;
-                  }
-                }
-
-             }
-        }
-
-       //The block wih the full content
-        #block-quicktabs-client-jobs{
-            h2.block__title{
-                display:none;
-            }
-            div.quicktabs_main{
-                border: none; 
-            }
-        }
-
-        #block-quicktabs-freelancer-jobs{
-            h2.block__title{
-                display:none;
-            }
-            div.quicktabs_main{
-                border: none; 
-            }
-        }        
-
-        .view-content{
-            .views-row{
-
-                background-color: ($mainColor * 0.9);
-                min-height: 50px; 
-                margin-top: 30px;
-                margin-bottom: 30px;
-
-                display:flex;
-                align-items: center;
-
-                .views-field-title{
-                    @include make-sm-column(4);
-                    a{
-                        color: white;
+                    h1{
+                         @include make-sm-column(2);
                         font-weight: bold;
+                        padding-bottom: 5px; 
                     }
+                    //The tabs themselves
+                    ul.quicktabs-tabs{
+                         @include make-sm-column(10);
+                        text-align: right; 
+                        margin-top: 10px;
+
+                        //Remove some css
+                        border-bottom: none; 
+                        li{
+                            border: none;
+                            padding-right: 10px;
+                            a{
+                                font-size: 14px !important; 
+                            }
+                        }
+                        
+                        //Coloring the borders:
+                        $columns: 4;
+                        @for $i from 1 to $columns {
+                          li:nth-child(#{$i}) {
+                            border-right: 1.5px solid $mainColor;
+                          }
+                        }
+
+                     }
                 }
-                .views-field-field-deadline{
-                    border-left: 1.5px solid white; 
-                    @include make-sm-column-offset(4);
-                    @include make-sm-column(4);
-                    display: inherit; 
-                    span{
-                        color: white;
-                        font-weight: bold;
-                        white-space: nowrap;
+
+               //The block wih the full content
+               //#block-quicktabs-client-jobs, #block-quicktabs-freelancer-jobs{
+                    h2.block__title{
+                        display:none;
+                    }
+                    div.quicktabs_main{
+                        border: none; 
+                    }
+                //}        
+
+
+
+                .view-content{
+                    .views-row{
+
+                        background-color: ($mainColor * 0.9);
+                        min-height: 50px; 
+                        margin-top: 30px;
+                        margin-bottom: 30px;
+
+                        display:flex;
+                        align-items: center;
+
+                        .views-field-title{
+                            @include make-sm-column(4);
+                            a{
+                                color: white;
+                                font-weight: bold;
+                            }
+                        }
+                        .views-field-field-deadline{
+                            border-left: 1.5px solid white; 
+                            @include make-sm-column-offset(4);
+                            @include make-sm-column(4);
+                            display: inherit; 
+                            span{
+                                color: white;
+                                font-weight: bold;
+                                white-space: nowrap;
+                            }
+                        }
+
                     }
                 }
 
             }
-        }
 
-    }
+      }
     
 }
 
@@ -130,6 +126,7 @@ This is Styling for specific job pages.
 
 ___________________
 */
+
 .node-type-job{
 
     h1{
@@ -362,6 +359,176 @@ ___________________
     }
 
 }
+
+
+
+/* 
+___________________
+
+      
+      This is Styling for the Workroom
+
+___________________
+*/
+
+#block-views-jobwithchatroom-block{
+  border: 1px solid lightgrey;
+
+  .block__title{
+      font-size: 20px;
+      background-color: $secondaryColor;
+      padding: 15px;
+      padding-left: 25px;
+      color: white;
+      margin: 0px;
+  }
+
+  .views-row{
+    @include make-row();
+
+    .views-field-field-messaging{
+        @include make-sm-column(6);
+        height: 600px;
+        overflow-y: auto;
+
+        //Styling the actual chatbox..
+        .chatroom-board{
+          height: 500px;
+          border: none;
+          .chatroom-msg{
+            padding-left: 10px;
+            background-color: transparent !important;
+              .chatroom-message-date{
+                  display: none;
+              }
+          }
+        }
+       
+        //The chatroom textarea and submit button:
+
+        .chatroom-irc-buttons{
+            form >div{
+               display: flex;
+              align-items: center;
+            }
+           
+
+            .form-type-textarea{
+                @include make-sm-column(10);        
+                padding-left: 15px;
+                padding-right: 15px;
+        
+                textarea { 
+                  resize: none;              
+                  border: none;
+                  height: 60px;
+                }
+                .grippie{
+                  display: none;
+                }
+            }
+            .form-submit{
+                @include make-sm-column(2);
+                padding-left: 0px;
+                padding-right: 0px;
+
+
+                @extend .btn;
+                border-radius: 30px !important; 
+                background-color: $mainColor;
+                border: $mainColor * 0.80;
+                color: white;
+                margin-top: -15px;
+
+                width: inherit;
+
+
+            }
+
+            
+        }
+
+
+
+
+    }
+
+    //div containing the project's information
+    .views-field-nothing{
+        @include make-sm-column(6);
+        height: 600px;
+        overflow-y: auto;
+        .label{
+              font-size: 18px;
+              padding-left: 0px;
+              padding-bottom: 10px;
+              padding-top: 12px;
+              color: $mainColor;
+              display: block;
+              text-align: left;
+        }
+
+        #budgetDeadline{
+          @include make-row();
+          #budget, #deadline{
+            @include make-sm-column(6);
+          }
+        }
+    }
+
+    //div containing the working files of the project
+
+    .views-field-nothing-1{
+        @include make-sm-column(12);
+        height: 200px;
+        margin-top: 20px;
+
+        .label{
+              font-size: 18px;
+              padding-left: 0px;
+              padding-bottom: 10px;
+              padding-top: 12px;
+              color: $mainColor;
+              display: block;
+              text-align: left;
+        }
+        #referenceFiles{
+            @include make-sm-column(4);
+            height: 200px;
+            overflow-y: auto;
+            
+            border-right: 1px solid lightgrey;
+            border-top: 1px solid lightgrey;
+        }
+        #workingFiles{
+            @include make-sm-column(4);
+            height: 200px;
+            overflow-y: auto;
+
+            border-top: 1px solid lightgrey;
+        }
+        #finalFiles{
+            @include make-sm-column(4);
+            height: 200px;
+            overflow-y: auto;
+
+            border-top: 1px solid lightgrey;
+            border-left: 1px solid lightgrey;
+
+        }
+
+    }
+
+
+  }
+}
+
+.field--name-field-casual-or-corporate, .field--name-field-accessible-or-luxury, .field--name-field-colourful-or-neutral, .field--name-field-playful-or-serious, .field--name-field-abstract-or-straight-up, .field--name-field-structured-or-organic, .field--name-field-masculine-or-feminine {
+      
+      display: none;
+
+}
+
 
 
 
