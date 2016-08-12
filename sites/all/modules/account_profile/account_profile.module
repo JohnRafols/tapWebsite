@@ -1,0 +1,167 @@
+<?php
+/**
+ * @file
+ * Support for profiles in account page.
+ */
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * Disable profile tabs if they are marked to be shown in accounts form
+ */
+function account_profile_menu_alter(&$items) {
+  $types = profile2_get_types();
+
+  /* We disable tabs for profiles marked as to
+  be shown as part of account form.*/
+  foreach ($types as $type) {
+    // @var $type ProfileType
+    if (isset($type->data['use_one_page']) && $type->data['use_one_page']) {
+      $items['user/%user_category/edit/' . $type->type]['access callback'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Attach selected profiles to user edit form.
+ */
+function account_profile_form_user_profile_form_alter(&$form, &$form_state) {
+
+  $types = profile2_get_types();
+
+  // We take care of profiles weights.
+  usort($types, 'account_profile_sort_profile_by_weight');
+
+  foreach ($types as $type) {
+
+    // @var $type ProfileType
+    if (isset($type->data['use_one_page']) && $type->data['use_one_page']) {
+
+      $profile = profile2_load_by_user($form['#user'], $type->type);
+
+      if (empty($profile)) {
+        $profile = profile_create(array('type' => $type->type, 'uid' => $form['#user']->uid));
+      }
+
+      if (profile2_access('edit', $profile, $form['#user'])) {
+
+        if (!isset($form_state["profiles"])) {
+          $form_state["profiles"] = array();
+        }
+
+        $form_state['profiles'][$profile->type] = $profile;
+        profile2_attach_form($form, $form_state);
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alter for user_admin_settings()
+ */
+function account_profile_form_user_admin_settings_alter(&$form, &$form_state) {
+  $form['account_profile'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Profile2 one page'),
+    '#weight' => 0,
+  );
+
+  $form['account_profile']['account_profile_wrap_account'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Wrap account form in a fieldset.'),
+    '#default_value' => variable_get('account_profile_wrap_account', FALSE),
+  );
+
+  $form['account_profile']['account_profile_wrap_account_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Fieldset title'),
+    '#default_value' => variable_get('account_profile_wrap_account_title', t("User account")),
+  );
+
+}
+
+/**
+ * Helper to sort profiles based on weight prop.
+ *
+ * @param ProfileType $a
+ *   a profile
+ * @param ProfileType $b
+ *   a profile
+ *
+ * @return bool
+ *   int
+ *
+ * Example usage:
+ * @code
+ * $types = profile2_get_types();
+ * usort($types, '_sort_profile_by_weight');
+ * @endcode
+ */
+function account_profile_sort_profile_by_weight($a, $b) {
+  return $a->weight == $b->weight ? 0 : ($a->weight > $b->weight) ? 1 : -1;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * for the profile2 type form.
+ */
+function account_profile_form_profile2_type_form_alter(&$form, &$form_state) {
+
+  $type = $form_state['profile2_type'];
+
+  $form['data']['use_one_page'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show this profile as part of user account form.'),
+    '#default_value' => !empty($type->is_new) || !empty($type->data['use_one_page']),
+  );
+  $form['data']['#tree'] = TRUE;
+}
+
+/**
+ * Implements hook_profile2_type_insert().
+ */
+function account_profile_profile2_type_insert(ProfileType $type) {
+  // Do not directly issue menu rebuilds here to avoid potentially multiple
+  // rebuilds. Instead, let menu_get_item() issue the rebuild on the next page.
+  if (!empty($type->data['use_one_page'])) {
+    variable_set('menu_rebuild_needed', TRUE);
+  }
+}
+
+/**
+ * Implements hook_profile2_type_update().
+ */
+function account_profile_profile2_type_update(ProfileType $type) {
+  // Rebuild the menu if use_one_page or the type name has been changed.
+  // @see profile2_page_profile2_type_insert()
+  if (empty($type->data['use_one_page']) != empty($type->original->data['use_one_page']) || ($type->data['use_one_page'] && $type->type != $type->original->type)) {
+    variable_set('menu_rebuild_needed', TRUE);
+  }
+}
+
+/**
+ * Implements hook_profile2_type_delete().
+ */
+function account_profile_profile2_type_delete($type) {
+  // Do not directly issue menu rebuilds here to avoid potentially multiple
+  // rebuilds. Instead, let menu_get_item() issue the rebuild on the next page.
+  if (!empty($type->data['use_one_page'])) {
+    variable_set('menu_rebuild_needed', TRUE);
+  }
+}
+
+/**
+ * Implements hook_form_profile2_form_alter().
+ */
+function account_profile_form_profile2_form_alter(&$form, &$form_state) {
+  if (variable_get('account_profile_wrap_account', FALSE)) {
+    $form["account"]["#type"] = "fieldset";
+    $form["account"]["#title"] = variable_get('account_profile_wrap_account_title', "");
+  }
+}

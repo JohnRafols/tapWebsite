@@ -171,21 +171,22 @@ function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
 function tap_job_mgmt_menu() {
 	//debugLong('called in mgmt menu', 'called');
 	$items['jobs/%/available'] = array(
-    'title' => 'Available',
-    'page callback' => 'tap_job_mgmt_job_available',
-    'page arguments' => array(1),
-    'access callback' => TRUE,
+	    'title' => 'Available',
+	    'page callback' => 'tap_job_mgmt_job_available',
+	    'page arguments' => array(1),
+	    'access callback' => TRUE,
   	);
 
 	$items['jobs/%/unavailable'] = array(
-    'title' => 'Unavailable',
-    'page callback' => 'tap_job_mgmt_job_unavailable',
-    'page arguments' => array(1),
-    'access callback' => TRUE,
+	    'title' => 'Unavailable',
+	    'page callback' => 'tap_job_mgmt_job_unavailable',
+	    'page arguments' => array(1),
+	    'access callback' => TRUE,
   	);	
 
 	return $items;
 }
+
 
 function tap_job_mgmt_job_available($job='') {
 	global $user;
@@ -316,6 +317,11 @@ function tap_job_mgmt_block_info() {
  */
 function tap_job_mgmt_block_view($block_name = ''){	
 	//Do not add this form if there is already a freelancer working on the job.
+
+	if(!menu_get_object()){
+		return;
+	}
+
 	if(menu_get_object()->field_final_candidate!=null){
 		return;
 	}
