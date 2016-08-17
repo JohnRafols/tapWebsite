@@ -14,7 +14,7 @@ $purple: #6e2a54;
 
 // General #################
 //The Registration Buttons:
-.registrationButtonClient {
+.registrationButtonClient , .registrationButtonFreelancer {
     background-color: $orange;
     border: solid 3px $orange;
     padding: 8px 16px;
@@ -61,6 +61,7 @@ $purple: #6e2a54;
 .howItWorks_titlesBorder {
     width:33%;
     border:solid 2px $orange;
+    height: 0px;
 }
 
 .howItWorks_headingText p{ 
@@ -133,12 +134,13 @@ em {
         font-size: 42px;
     }
     #banner_howItWorks_border{
-        position: absolute;
+        position: relative;
         display: inline-block;
         border-top: 2px solid white;
-        margin-top: 35px;
-        left: 42%;
-        right: 42%;
+        width: 25%;
+        margin: 0px auto;
+        margin-top: 30px;
+        margin-bottom: -30px;
     }
     #banner_howItWorks_links{
         width: 56%;
@@ -413,6 +415,7 @@ em {
     width: 33%;
     margin: auto;
     border:solid 2px $orange;
+    height: 0px;
 }
 
 .matchCompanies_emphasizedText {

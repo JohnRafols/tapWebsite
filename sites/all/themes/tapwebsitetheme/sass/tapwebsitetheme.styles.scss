@@ -38,8 +38,22 @@ $grey : #CCCCCC;
     }
     #edit-actions{
       input{
-        border-radius: 30px !important; 
+        border-radius: 30px !important;
+        background-color: $mainColor;
+        border: solid 3px #FFBF28;
+        padding: 8px 16px;
+        color: #434547;
+        margin-bottom: 10px; 
       }
+        #edit-submit:focus {
+            background-color: ($mainColor * 0.80);
+        }
+        #edit-submit:hover{
+             background-color: rgba(255, 255, 255, 0.0);
+             border: solid 3px #FFBF28;
+             color: #FFBF28;
+        }
+
     }
     #addPortfolioButton{
       a{
@@ -632,24 +646,59 @@ ___________________
 
 .node-type-blog, .page-blog{
     .l-content{
-      width: 70%;
+      width: 80%;
       margin: 0 auto;
+      display: -webkit-flex;
+      display: table;
       margin-bottom: 60px;
       padding-left: 15px;
     }
     h1{
       //width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 30px;
-
-      padding-left: 0px;
-      padding-bottom: 15px;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid #ffbf28;
+    text-align: center;
+    color: #6e2a54;
+    //font-family: Cabin\ bold;
     }
+
+}
+
+.node__title a{
+  font-size: 25px !important;
+}
+.node-teaser {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  height: 300px;
+  margin-bottom: 0px;
+}
+
+.node-teaser img{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.node-teaser p {
+  width: 77%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    //border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
 }
 
 

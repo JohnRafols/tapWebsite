@@ -22,7 +22,7 @@ $secondaryColor: #3c0f31;
 // 1.) Home Page Styling
 
 //The Registration Buttons:
-.registrationButtonClient , .registrationButtonFreelancer{
+.registrationButtonClient, .registrationButtonFreelancer{
     background-color: $mainColor;
     border: solid 3px #FFBF28;
     padding: 8px 16px;
@@ -64,17 +64,16 @@ $secondaryColor: #3c0f31;
         font-family:Cabin Bold;
     }
     #landingPageWelcomeSection_border{
-        position: absolute;
+        position: relative;
         display: inline-block;
         border-top: 2px solid white;
-        margin-top: 35px;
-        left: 42%;
-        right: 42%;
+        width: 25%;
+        margin: 0px auto;
+        margin-top: 30px;
     }
 #landingPageWelcomeSection_description{
         width: 50%;
         margin: 0 auto;
-        margin-top: 50px;
         padding-bottom: 15px;
         font-size: 19px;
 
@@ -218,6 +217,7 @@ $landingPageServicesIconList: GraphicDesign ArtAndIllustration Branding WebAndAp
 // Center the text for the services Icons
 .landingPageServices_RightContent p{
     text-align: center;
+    color:#6e2a54;
 }
 #landingPageServices{
     text-align: center;
@@ -324,15 +324,15 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
 }
 
 #landingPageFreelance_ProfileBk1 {
-    margin: -40px 0px -36px 15px;
+    margin: -40px 0px -36px 18px;
 }
 
 #landingPageFreelance_ProfileBk2 {
-    margin: -40px 0px -36px 8px;
+    margin: -40px 0px -36px 18px;
 }
 
 #landingPageFreelance_ProfileBk3 {
-    margin: -40px 0px -36px 15px;
+    margin: -40px 0px -36px 18px;
 }
 
 .landingPageFreelance_iconFrame h3 {
@@ -344,6 +344,7 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     font-size: 11px;
     padding: 0px 8px 0px 18px;
     text-align: left;
+    color:#6e2a54;
 }
 
 .Icon_border_Freelance{
@@ -377,6 +378,11 @@ $landingPageServices_clientIconList: UploadYourProject GetMatchedToTalent Commun
     text-align: center;
     padding:30px;
 }
+
+.landingPage_howThisWorks_content p{
+    color:#6e2a54;
+}
+
 #landingPage_howThisWorks_video video {
     max-height: 412px;
     width: 100%;
