@@ -143,15 +143,50 @@
         var header = myJobsPage.find('h1');
 
         myJobsPage.find('ul.quicktabs-tabs')
-                  .once('myJobsPageBehavior')
+                  .once('specificJobPageBehavior')
                   .wrap('<div id = "tabsParentDiv">')
                   .before(header);
-
 
         //Testing AJAX load...
         //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
 
 
+
+
+
+
+        //This is code for the first half of the workroom (Freelance info, etc)
+        var freelancerInfo = $('#block-tap-job-mgmt-tap-block')
+                                .find('.form-item-freelancer-choice')
+                                .find('#edit-freelancer-choice')
+
+        
+        var input = freelancerInfo.find(".form-radio");
+        var options = freelancerInfo.find(".option");
+
+        //Add input button to the right side:
+        input.each(function(index){
+                $(options[index]).once('specificJobPageBehavior')
+                      .after($(input[index]));
+        });
+
+        //Add div wrappers
+        freelancerInfo.find('.form-item-freelancer-choice')
+                      .once('specificJobPageBehavior')
+                      .wrap('<div class="parentColumn">')
+
+      
+        //Add a borderline between the button and freelancerInfo
+        freelancerInfo.once('specificJobPageBehavior')
+                      .after('<div id = "borderfreelancerInfo">')
+
+        //Remove underscores
+        // freelancerInfo.find('a').each(function(index){
+        //     var $this = $(this);
+        //     $this.text($this.text().replace(/_/g, ' '));
+        // })
+
+ 
       }
     };
 
