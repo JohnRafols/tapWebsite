@@ -68,7 +68,7 @@ body.page-user .block__title {
             }
 
 
-            .views-field-field-profile-picture{
+            .views-field-field-profile-picture, .views-field-views-conditional{
 
                 img{
                     border-radius: 999px;
@@ -178,7 +178,7 @@ body.page-user .block__title {
         margin-bottom: 30px; 
 
         //3.) The side-bar (Information of the user such as about me, skills, etc.)
-        .profilePage-sideBar{
+        .profilePage-sideBar, .view-client-profile{
 
             .views-row{
                 .views-field{
@@ -187,7 +187,7 @@ body.page-user .block__title {
                     //@extend .well;
                     //These are all the labels under the sidebar
                     //Note that I am calling out the default classes
-                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interests, .views-field-field-industry-experience-years-{
+                    .views-label-field-about-me,  .views-label-field-skills, .views-label-field-qualifications, .views-label-field-interests, .views-field-field-industry-experience-years-, .views-label-field-company-name{
                         font-size: 1.4em;
                         //margin: 20px;
                         font-weight: bold;

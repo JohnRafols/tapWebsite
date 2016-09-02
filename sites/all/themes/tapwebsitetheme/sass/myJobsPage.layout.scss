@@ -635,5 +635,20 @@ ___________________
 }
 
 
+//page navigation buttons for multi-step job form.
+// #edit-next, #edit-skip, #edit-previous{
+//   @extend .btn;
+//   margin-top: 30px;
+//   margin-bottom: 30px;
+//   margin-left: 5px;
+// }
+
+//Invite collaborators button
+#invite_collaborators{
+  @extend .btn;
+  background-color: $mainColor;
+  color: black;
+}
+
 
 

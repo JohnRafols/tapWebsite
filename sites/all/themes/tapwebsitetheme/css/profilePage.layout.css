@@ -5695,11 +5695,11 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .l-main .l-region--sidebar-first:before, .l-main .l-region--sidebar-first .views-row:before, .l-main .l-region--sidebar-first .views-field-field-profile-picture:before, .clearfix:after, .l-main .l-region--sidebar-first:after, .l-main .l-region--sidebar-first .views-row:after, .l-main .l-region--sidebar-first .views-field-field-profile-picture:after {
+.clearfix:before, .l-main .l-region--sidebar-first:before, .l-main .l-region--sidebar-first .views-row:before, .l-main .l-region--sidebar-first .views-field-field-profile-picture:before, .l-main .l-region--sidebar-first .views-field-views-conditional:before, .clearfix:after, .l-main .l-region--sidebar-first:after, .l-main .l-region--sidebar-first .views-row:after, .l-main .l-region--sidebar-first .views-field-field-profile-picture:after, .l-main .l-region--sidebar-first .views-field-views-conditional:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .l-main .l-region--sidebar-first:after, .l-main .l-region--sidebar-first .views-row:after, .l-main .l-region--sidebar-first .views-field-field-profile-picture:after {
+.clearfix:after, .l-main .l-region--sidebar-first:after, .l-main .l-region--sidebar-first .views-row:after, .l-main .l-region--sidebar-first .views-field-field-profile-picture:after, .l-main .l-region--sidebar-first .views-field-views-conditional:after {
   clear: both; }
 
 .center-block {
@@ -5941,7 +5941,7 @@ body.page-user .block__title {
               align-items: center; }
       .l-main .l-region--sidebar-first .views-row .views-field {
         margin-bottom: 20px; }
-    .l-main .l-region--sidebar-first .views-field-field-profile-picture {
+    .l-main .l-region--sidebar-first .views-field-field-profile-picture, .l-main .l-region--sidebar-first .views-field-views-conditional {
       position: relative;
       float: left;
       width: 100%;
@@ -5953,14 +5953,14 @@ body.page-user .block__title {
       padding-left: 15px;
       padding-right: 15px;
       margin-right: 15px; }
-      .l-main .l-region--sidebar-first .views-field-field-profile-picture img {
+      .l-main .l-region--sidebar-first .views-field-field-profile-picture img, .l-main .l-region--sidebar-first .views-field-views-conditional img {
         border-radius: 999px;
         height: 60px;
         width: 60px;
         border: 2px solid #FFBF28;
         background-size: cover; }
       @media (min-width: 768px) {
-        .l-main .l-region--sidebar-first .views-field-field-profile-picture {
+        .l-main .l-region--sidebar-first .views-field-field-profile-picture, .l-main .l-region--sidebar-first .views-field-views-conditional {
           float: left;
           width: 8.33333%; } }
     .l-main .l-region--sidebar-first .views-field-field-user-first-name, .l-main .l-region--sidebar-first .views-field-name, .l-main .l-region--sidebar-first .name {
@@ -6043,33 +6043,33 @@ body.page-user .block__title {
       .l-main .l-region--sidebar-second {
         float: left;
         width: 25%; } }
-    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field {
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field {
       margin-left: -15px;
       margin-right: -15px;
       margin-bottom: 20px; }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:before, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:before, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field:before, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field:after {
         content: " ";
         display: table; }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field:after, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field:after {
         clear: both; }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-about-me, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-skills, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-qualifications, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-interests, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-field-field-industry-experience-years- {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-about-me, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-skills, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-qualifications, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-interests, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-field-field-industry-experience-years-, .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .views-label-field-company-name, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-label-field-about-me, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-label-field-skills, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-label-field-qualifications, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-label-field-interests, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-field-field-industry-experience-years-, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .views-label-field-company-name {
         font-size: 1.4em;
         font-weight: bold; }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .field-content {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field .field-content, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field .field-content {
         margin-top: 10px;
         color: #CCCCCC; }
-    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-skills .field-content {
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-skills .field-content, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field-field-skills .field-content {
       font-size: 1.4em;
       font-weight: bold;
       color: #FFBF28; }
-    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- {
+    .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years-, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field-field-industry-experience-years- {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years-, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
         font-weight: bold;
         font-size: 1.4em;
         position: relative;
@@ -6077,10 +6077,10 @@ body.page-user .block__title {
         padding-left: 0;
         padding-right: 0; }
         @media (min-width: 768px) {
-          .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
+          .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years-, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field-field-industry-experience-years- .views-label-field-industry-experience-years- {
             float: left;
             width: 41.66667%; } }
-      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .field-content {
+      .l-main .l-region--sidebar-second .profilePage-sideBar .views-row .views-field-field-industry-experience-years- .field-content, .l-main .l-region--sidebar-second .view-client-profile .views-row .views-field-field-industry-experience-years- .field-content {
         margin-bottom: 10px;
         margin-left: 5px;
         font-size: 2.5em;

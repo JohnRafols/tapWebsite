@@ -6227,4 +6227,10 @@ ___________________
 .page-client-register #edit-field-user-address .form-item-field-user-address-und-0-dependent-locality {
   display: none; }
 
+.page-node-edit.node-type-job .l-main .l-content {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  width: 70%; }
+
 /*# sourceMappingURL=registrationPage.layout.css.map */

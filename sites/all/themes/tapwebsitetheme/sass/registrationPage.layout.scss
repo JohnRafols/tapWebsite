@@ -24,7 +24,7 @@ ___________________
 ___________________
 */
 
-.page-freelancer-register, .page-client-register {
+.page-freelancer-register, .page-client-register {  
 
   h1{
       font-weight: bold; 
@@ -430,3 +430,16 @@ ___________________
 // <div class="pull-md-left pull-lg-left">
 //     this div is only floated on screen-md and screen-lg
 // </div>
+
+
+// Job edit page
+.page-node-edit.node-type-job{
+  .l-main{
+    .l-content{
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 60px;
+      width: 70%;
+    }
+  }
+}

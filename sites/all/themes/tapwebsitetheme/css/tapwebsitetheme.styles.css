@@ -6484,7 +6484,20 @@ body {
   border-radius: 30px !important; }
 
 #edit-actions input {
-  border-radius: 30px !important; }
+  border-radius: 30px !important;
+  background-color: #FFBF28;
+  border: solid 3px #FFBF28;
+  padding: 8px 16px;
+  color: #434547;
+  margin-bottom: 10px; }
+
+#edit-actions #edit-submit:focus {
+  background-color: #cc9920; }
+
+#edit-actions #edit-submit:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border: solid 3px #FFBF28;
+  color: #FFBF28; }
 
 #addPortfolioButton a {
   border-radius: 30px !important; }
@@ -6874,20 +6887,50 @@ ___________________
   font-weight: bold; }
 
 .node-type-blog .l-content, .page-blog .l-content {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+  display: -webkit-flex;
+  display: table;
   margin-bottom: 60px;
   padding-left: 15px; }
 
 .node-type-blog h1, .page-blog h1 {
+  font-size: 38px;
   font-weight: bold;
-  border-bottom: 1.5px solid #FFBF28;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  padding-left: 0px;
-  padding-bottom: 15px; }
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid #ffbf28;
+  text-align: center;
+  color: #6e2a54; }
+
+.node__title a {
+  font-size: 25px !important; }
+
+.node-teaser {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  height: 300px;
+  margin-bottom: 0px; }
+
+.node-teaser img {
+  max-width: 100%;
+  width: 100%;
+  height: auto; }
+
+.node-teaser p {
+  width: 77%; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%; }
+
+th, td {
+  border: none;
+  text-align: left;
+  padding: 8px; }
 
 .tabledrag-toggle-weight {
   display: none; }
@@ -6907,35 +6950,8 @@ ___________________
   padding: 0 !important;
   margin-top: 0px !important; }
 
-@media (max-width: 767px) {
-  .borderForMenu {
-    border-right: none !important; }
-  #socialLinksDiv {
-    margin-top: 30px; }
-    #socialLinksDiv li:nth-child(4) {
-      margin-top: 30px;
-      margin-bottom: 30px; }
-  .modalEmailSignUp_body {
-    background: url("images/EmailSignUp.png") no-repeat;
-    height: 120px !important;
-    background-size: cover !important;
-    background-position: 20% !important; }
-    .modalEmailSignUp_body .modalEmailSignUp_footer {
-      text-align: center; }
-      .modalEmailSignUp_body .modalEmailSignUp_footer #edit-mergevars-email, .modalEmailSignUp_body .modalEmailSignUp_footer .form-text {
-        max-width: 50%; } }
-
-#user-login .description {
-  display: none; }
-
-#user-login .form-item label .form-required {
-  display: none; }
-
-#admin-menu {
-  opacity: 0.85; }
-
 #footer_contentContainer {
-  background-color: #3f0d32; }
+  background-color: #3c0f31; }
   #footer_contentContainer #footer_contentContainer {
     width: 70%;
     margin-bottom: 30px; }
@@ -6975,18 +6991,24 @@ ___________________
   margin: 0 auto; }
 
 #footer_ecoPortal img {
-  max-width: 222px;
+  max-width: 250px;
   max-height: 150px;
   height: auto;
   width: 122%;
   margin: 0 auto; }
 
 #footer_irfd img {
-  max-width: 100px;
+  max-width: 88px;
   max-height: 150px;
   height: auto;
   width: 100%;
   margin: 0 auto; }
+
+#neatPlaces_logos {
+  margin-left: 19px; }
+
+#ecoPortal_logos {
+  margin-top: 3px; }
 
 #registrationButtonClient, #registrationButtonFreelancer {
   background-color: #FFBF28;
@@ -7008,5 +7030,36 @@ ___________________
   margin: 0 auto;
   margin-bottom: 30px;
   color: #6e2a54; }
+
+@media (max-width: 767px) {
+  .borderForMenu {
+    border-right: none !important; }
+  #socialLinksDiv {
+    margin-top: 30px; }
+    #socialLinksDiv li:nth-child(4) {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+  .modalEmailSignUp_body {
+    background: url("images/EmailSignUp.png") no-repeat;
+    height: 120px !important;
+    background-size: cover !important;
+    background-position: 20% !important; }
+    .modalEmailSignUp_body .modalEmailSignUp_footer {
+      text-align: center; }
+      .modalEmailSignUp_body .modalEmailSignUp_footer #edit-mergevars-email, .modalEmailSignUp_body .modalEmailSignUp_footer .form-text {
+        max-width: 50%; }
+  #neatPlaces_logos {
+    margin-left: 0px; }
+  #ecoPortal_logos {
+    margin-top: 0px; } }
+
+#user-login .description {
+  display: none; }
+
+#user-login .form-item label .form-required {
+  display: none; }
+
+#admin-menu {
+  opacity: 0.85; }
 
 /*# sourceMappingURL=tapwebsitetheme.styles.css.map */

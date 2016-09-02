@@ -223,11 +223,8 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret, #myAccountPage_editFieldLink a > .caret, #myAccountPage_passwordChangeLink a > .caret, #addPortfolioButton > .caret,
-  .dropup > .btn > .caret, #myAccountPage_editFieldLink
-  .dropup > a > .caret, #myAccountPage_passwordChangeLink
-  .dropup > a > .caret,
-  .dropup > #addPortfolioButton > .caret {
+  .btn > .caret,
+  .dropup > .btn > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -2350,54 +2347,46 @@ input[type="search"] {
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
-  .input-group-sm > .input-group-btn > input[type="date"]#addPortfolioButton,
   .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
-  .input-group-sm > .input-group-btn > input[type="time"]#addPortfolioButton,
   .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"]#addPortfolioButton,
   .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
-  .input-group-sm > .input-group-btn > input[type="month"]#addPortfolioButton,
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
-  .input-group-lg > .input-group-btn > input[type="date"]#addPortfolioButton,
   .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
-  .input-group-lg > .input-group-btn > input[type="time"]#addPortfolioButton,
   .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"]#addPortfolioButton,
   .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
-  .input-group-lg > .input-group-btn > input[type="month"]#addPortfolioButton,
   .input-group-lg
   input[type="month"] {
     line-height: 46px; } }
@@ -2475,24 +2464,15 @@ fieldset[disabled]
   min-height: 34px; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, #myAccountPage_editFieldLink
-  .input-group-lg > .input-group-btn > a.form-control-static, #myAccountPage_passwordChangeLink
-  .input-group-lg > .input-group-btn > a.form-control-static,
-  .input-group-lg > .input-group-btn > .form-control-static#addPortfolioButton, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn, #myAccountPage_editFieldLink
-  .input-group-sm > .input-group-btn > a.form-control-static, #myAccountPage_passwordChangeLink
-  .input-group-sm > .input-group-btn > a.form-control-static,
-  .input-group-sm > .input-group-btn > .form-control-static#addPortfolioButton {
+  .input-group-sm > .input-group-btn > .form-control-static.btn {
     padding-left: 0;
     padding-right: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn, #myAccountPage_editFieldLink
-.input-group-sm > .input-group-btn > a, #myAccountPage_passwordChangeLink
-.input-group-sm > .input-group-btn > a,
-.input-group-sm > .input-group-btn > #addPortfolioButton {
+.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2501,20 +2481,17 @@ fieldset[disabled]
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn,
-.input-group-sm > .input-group-btn > select#addPortfolioButton {
+.input-group-sm > .input-group-btn > select.btn {
   height: 30px;
   line-height: 30px; }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
-.input-group-sm > .input-group-btn > textarea#addPortfolioButton,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn,
-.input-group-sm > .input-group-btn > select[multiple]#addPortfolioButton {
+.input-group-sm > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-sm .form-control {
@@ -2541,10 +2518,7 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn, #myAccountPage_editFieldLink
-.input-group-lg > .input-group-btn > a, #myAccountPage_passwordChangeLink
-.input-group-lg > .input-group-btn > a,
-.input-group-lg > .input-group-btn > #addPortfolioButton {
+.input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2553,20 +2527,17 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn,
-.input-group-lg > .input-group-btn > select#addPortfolioButton {
+.input-group-lg > .input-group-btn > select.btn {
   height: 46px;
   line-height: 46px; }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
-.input-group-lg > .input-group-btn > textarea#addPortfolioButton,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn,
-.input-group-lg > .input-group-btn > select[multiple]#addPortfolioButton {
+.input-group-lg > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-lg .form-control {
@@ -2610,10 +2581,7 @@ select[multiple].input-lg,
 
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback, #myAccountPage_editFieldLink
-.input-group-lg > .input-group-btn > a + .form-control-feedback, #myAccountPage_passwordChangeLink
-.input-group-lg > .input-group-btn > a + .form-control-feedback,
-.input-group-lg > .input-group-btn > #addPortfolioButton + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -2622,10 +2590,7 @@ select[multiple].input-lg,
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback, #myAccountPage_editFieldLink
-.input-group-sm > .input-group-btn > a + .form-control-feedback, #myAccountPage_passwordChangeLink
-.input-group-sm > .input-group-btn > a + .form-control-feedback,
-.input-group-sm > .input-group-btn > #addPortfolioButton + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -2804,7 +2769,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn, #myAccountPage_editFieldLink a, #myAccountPage_passwordChangeLink a, #addPortfolioButton {
+.btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2824,36 +2789,26 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, #myAccountPage_editFieldLink a:focus, #myAccountPage_passwordChangeLink a:focus, #addPortfolioButton:focus, .btn.focus, #myAccountPage_editFieldLink a.focus, #myAccountPage_passwordChangeLink a.focus, .focus#addPortfolioButton, .btn:active:focus, #myAccountPage_editFieldLink a:active:focus, #myAccountPage_passwordChangeLink a:active:focus, #addPortfolioButton:active:focus, .btn:active.focus, #myAccountPage_editFieldLink a:active.focus, #myAccountPage_passwordChangeLink a:active.focus, #addPortfolioButton:active.focus, .btn.active:focus, #myAccountPage_editFieldLink a.active:focus, #myAccountPage_passwordChangeLink a.active:focus, .active#addPortfolioButton:focus, .btn.active.focus, #myAccountPage_editFieldLink a.active.focus, #myAccountPage_passwordChangeLink a.active.focus, .active.focus#addPortfolioButton {
+  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, #myAccountPage_editFieldLink a:hover, #myAccountPage_passwordChangeLink a:hover, #addPortfolioButton:hover, .btn:focus, #myAccountPage_editFieldLink a:focus, #myAccountPage_passwordChangeLink a:focus, #addPortfolioButton:focus, .btn.focus, #myAccountPage_editFieldLink a.focus, #myAccountPage_passwordChangeLink a.focus, .focus#addPortfolioButton {
+  .btn:hover, .btn:focus, .btn.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, #myAccountPage_editFieldLink a:active, #myAccountPage_passwordChangeLink a:active, #addPortfolioButton:active, .btn.active, #myAccountPage_editFieldLink a.active, #myAccountPage_passwordChangeLink a.active, .active#addPortfolioButton {
+  .btn:active, .btn.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, #myAccountPage_editFieldLink a.disabled, #myAccountPage_passwordChangeLink a.disabled, .disabled#addPortfolioButton, .btn[disabled], #myAccountPage_editFieldLink a[disabled], #myAccountPage_passwordChangeLink a[disabled], [disabled]#addPortfolioButton,
-  fieldset[disabled] .btn,
-  fieldset[disabled] #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink
-  fieldset[disabled] a,
-  fieldset[disabled] #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink
-  fieldset[disabled] a,
-  fieldset[disabled] #addPortfolioButton {
+  .btn.disabled, .btn[disabled],
+  fieldset[disabled] .btn {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled, #myAccountPage_editFieldLink a.disabled, #myAccountPage_passwordChangeLink a.disabled, a.disabled#addPortfolioButton,
-fieldset[disabled] a.btn,
-fieldset[disabled] #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink
-fieldset[disabled] a,
-fieldset[disabled] #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink
-fieldset[disabled] a,
-fieldset[disabled] a#addPortfolioButton {
+a.btn.disabled,
+fieldset[disabled] a.btn {
   pointer-events: none; }
 
 .btn-default {
@@ -3098,19 +3053,19 @@ fieldset[disabled] a#addPortfolioButton {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, #myAccountPage_editFieldLink .btn-group-lg > a, #myAccountPage_passwordChangeLink .btn-group-lg > a, .btn-group-lg > #addPortfolioButton {
+.btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn, #myAccountPage_editFieldLink .btn-group-sm > a, #myAccountPage_passwordChangeLink .btn-group-sm > a, .btn-group-sm > #addPortfolioButton {
+.btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn, #myAccountPage_editFieldLink .btn-group-xs > a, #myAccountPage_passwordChangeLink .btn-group-xs > a, .btn-group-xs > #addPortfolioButton {
+.btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3288,45 +3243,20 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn, #myAccountPage_editFieldLink .btn-group > a, #myAccountPage_passwordChangeLink .btn-group > a, .btn-group > #addPortfolioButton,
-  .btn-group-vertical > .btn, #myAccountPage_editFieldLink
-  .btn-group-vertical > a, #myAccountPage_passwordChangeLink
-  .btn-group-vertical > a,
-  .btn-group-vertical > #addPortfolioButton {
+  .btn-group > .btn,
+  .btn-group-vertical > .btn {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, #myAccountPage_editFieldLink .btn-group > a:hover, #myAccountPage_passwordChangeLink .btn-group > a:hover, .btn-group > #addPortfolioButton:hover, .btn-group > .btn:focus, #myAccountPage_editFieldLink .btn-group > a:focus, #myAccountPage_passwordChangeLink .btn-group > a:focus, .btn-group > #addPortfolioButton:focus, .btn-group > .btn:active, #myAccountPage_editFieldLink .btn-group > a:active, #myAccountPage_passwordChangeLink .btn-group > a:active, .btn-group > #addPortfolioButton:active, .btn-group > .btn.active, #myAccountPage_editFieldLink .btn-group > a.active, #myAccountPage_passwordChangeLink .btn-group > a.active, .btn-group > .active#addPortfolioButton,
-    .btn-group-vertical > .btn:hover, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:hover, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:hover,
-    .btn-group-vertical > #addPortfolioButton:hover,
-    .btn-group-vertical > .btn:focus, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:focus, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:focus,
-    .btn-group-vertical > #addPortfolioButton:focus,
-    .btn-group-vertical > .btn:active, #myAccountPage_editFieldLink
-    .btn-group-vertical > a:active, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a:active,
-    .btn-group-vertical > #addPortfolioButton:active,
-    .btn-group-vertical > .btn.active, #myAccountPage_editFieldLink
-    .btn-group-vertical > a.active, #myAccountPage_passwordChangeLink
-    .btn-group-vertical > a.active,
-    .btn-group-vertical > .active#addPortfolioButton {
+    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .btn:active,
+    .btn-group-vertical > .btn.active {
       z-index: 2; }
 
-.btn-group .btn + .btn, .btn-group #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .btn-group a + .btn, .btn-group #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .btn-group a + .btn, .btn-group #addPortfolioButton + .btn, .btn-group #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .btn-group .btn + a, .btn-group #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .btn-group a + a, .btn-group #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .btn-group #addPortfolioButton + a, .btn-group #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .btn-group .btn + a, .btn-group #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .btn-group a + a, .btn-group #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .btn-group #addPortfolioButton + a, .btn-group .btn + #addPortfolioButton, .btn-group #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .btn-group a + #addPortfolioButton, .btn-group #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .btn-group a + #addPortfolioButton, .btn-group #addPortfolioButton + #addPortfolioButton,
+.btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
-.btn-group #myAccountPage_editFieldLink a + .btn-group, #myAccountPage_editFieldLink
-.btn-group a + .btn-group,
-.btn-group #myAccountPage_passwordChangeLink a + .btn-group, #myAccountPage_passwordChangeLink
-.btn-group a + .btn-group,
-.btn-group #addPortfolioButton + .btn-group,
 .btn-group .btn-group + .btn,
-.btn-group #myAccountPage_editFieldLink .btn-group + a, #myAccountPage_editFieldLink
-.btn-group .btn-group + a,
-.btn-group #myAccountPage_passwordChangeLink .btn-group + a, #myAccountPage_passwordChangeLink
-.btn-group .btn-group + a,
-.btn-group .btn-group + #addPortfolioButton,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -3337,25 +3267,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn, .btn-toolbar #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .btn-toolbar a, .btn-toolbar #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .btn-toolbar a, .btn-toolbar #addPortfolioButton,
+  .btn-toolbar .btn,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn, #myAccountPage_editFieldLink .btn-toolbar > a, #myAccountPage_passwordChangeLink .btn-toolbar > a, .btn-toolbar > #addPortfolioButton,
+  .btn-toolbar > .btn,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #addPortfolioButton:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, #myAccountPage_editFieldLink .btn-group > a:first-child, #myAccountPage_passwordChangeLink .btn-group > a:first-child, .btn-group > #addPortfolioButton:first-child {
+.btn-group > .btn:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #addPortfolioButton:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), #myAccountPage_editFieldLink .btn-group > a:last-child:not(:first-child), #myAccountPage_passwordChangeLink .btn-group > a:last-child:not(:first-child), .btn-group > #addPortfolioButton:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3363,15 +3293,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, #myAccountPage_editFieldLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, #myAccountPage_passwordChangeLink .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .btn-group > .btn-group:not(:first-child):not(:last-child) > #addPortfolioButton {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, #myAccountPage_editFieldLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, #myAccountPage_passwordChangeLink .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group > .btn-group:first-child:not(:last-child) > #addPortfolioButton:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, #myAccountPage_editFieldLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, #myAccountPage_passwordChangeLink .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group > .btn-group:last-child:not(:first-child) > #addPortfolioButton:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3379,11 +3309,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle, #myAccountPage_editFieldLink .btn-group > a + .dropdown-toggle, #myAccountPage_passwordChangeLink .btn-group > a + .dropdown-toggle, .btn-group > #addPortfolioButton + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, #myAccountPage_editFieldLink .btn-group-lg.btn-group > a + .dropdown-toggle, #myAccountPage_passwordChangeLink .btn-group-lg.btn-group > a + .dropdown-toggle, .btn-group-lg.btn-group > #addPortfolioButton + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3392,22 +3322,19 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret, #myAccountPage_editFieldLink a .caret, #myAccountPage_passwordChangeLink a .caret, #addPortfolioButton .caret {
+.btn .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, #myAccountPage_editFieldLink .btn-group-lg > a .caret, #myAccountPage_passwordChangeLink .btn-group-lg > a .caret, .btn-group-lg > #addPortfolioButton .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup #myAccountPage_editFieldLink .btn-group-lg > a .caret, #myAccountPage_editFieldLink .dropup .btn-group-lg > a .caret, .dropup #myAccountPage_passwordChangeLink .btn-group-lg > a .caret, #myAccountPage_passwordChangeLink .dropup .btn-group-lg > a .caret, .dropup .btn-group-lg > #addPortfolioButton .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn, #myAccountPage_editFieldLink .btn-group-vertical > a, #myAccountPage_passwordChangeLink .btn-group-vertical > a, .btn-group-vertical > #addPortfolioButton,
+.btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn, #myAccountPage_editFieldLink
-.btn-group-vertical > .btn-group > a, #myAccountPage_passwordChangeLink
-.btn-group-vertical > .btn-group > a,
-.btn-group-vertical > .btn-group > #addPortfolioButton {
+.btn-group-vertical > .btn-group > .btn {
   display: block;
   float: none;
   width: 100%;
@@ -3420,46 +3347,40 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group > a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group > a, .btn-group-vertical > .btn-group > #addPortfolioButton {
+.btn-group-vertical > .btn-group > .btn {
   float: none; }
 
-.btn-group-vertical > .btn + .btn, #myAccountPage_editFieldLink .btn-group-vertical > a + .btn, #myAccountPage_passwordChangeLink .btn-group-vertical > a + .btn, .btn-group-vertical > #addPortfolioButton + .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn + a, #myAccountPage_editFieldLink .btn-group-vertical > a + a, #myAccountPage_editFieldLink .btn-group-vertical > #addPortfolioButton + a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn + a, #myAccountPage_passwordChangeLink .btn-group-vertical > a + a, #myAccountPage_passwordChangeLink .btn-group-vertical > #addPortfolioButton + a, .btn-group-vertical > .btn + #addPortfolioButton, #myAccountPage_editFieldLink .btn-group-vertical > a + #addPortfolioButton, #myAccountPage_passwordChangeLink .btn-group-vertical > a + #addPortfolioButton, .btn-group-vertical > #addPortfolioButton + #addPortfolioButton,
-.btn-group-vertical > .btn + .btn-group, #myAccountPage_editFieldLink
-.btn-group-vertical > a + .btn-group, #myAccountPage_passwordChangeLink
-.btn-group-vertical > a + .btn-group,
-.btn-group-vertical > #addPortfolioButton + .btn-group,
-.btn-group-vertical > .btn-group + .btn, #myAccountPage_editFieldLink
-.btn-group-vertical > .btn-group + a, #myAccountPage_passwordChangeLink
-.btn-group-vertical > .btn-group + a,
-.btn-group-vertical > .btn-group + #addPortfolioButton,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), #myAccountPage_editFieldLink .btn-group-vertical > a:not(:first-child):not(:last-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:not(:first-child):not(:last-child), .btn-group-vertical > #addPortfolioButton:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child), #myAccountPage_editFieldLink .btn-group-vertical > a:first-child:not(:last-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:first-child:not(:last-child), .btn-group-vertical > #addPortfolioButton:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child), #myAccountPage_editFieldLink .btn-group-vertical > a:last-child:not(:first-child), #myAccountPage_passwordChangeLink .btn-group-vertical > a:last-child:not(:first-child), .btn-group-vertical > #addPortfolioButton:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #addPortfolioButton {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #addPortfolioButton:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, #myAccountPage_editFieldLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, #myAccountPage_passwordChangeLink .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #addPortfolioButton:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3468,29 +3389,20 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn, #myAccountPage_editFieldLink .btn-group-justified > a, #myAccountPage_passwordChangeLink .btn-group-justified > a, .btn-group-justified > #addPortfolioButton,
+  .btn-group-justified > .btn,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #addPortfolioButton {
+  .btn-group-justified > .btn-group .btn {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], #myAccountPage_editFieldLink [data-toggle="buttons"] > a input[type="radio"], #myAccountPage_passwordChangeLink [data-toggle="buttons"] > a input[type="radio"], [data-toggle="buttons"] > #addPortfolioButton input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > a input[type="checkbox"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > a input[type="checkbox"],
-[data-toggle="buttons"] > #addPortfolioButton input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > .btn-group > a input[type="radio"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > .btn-group > a input[type="radio"],
-[data-toggle="buttons"] > .btn-group > #addPortfolioButton input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], #myAccountPage_editFieldLink
-[data-toggle="buttons"] > .btn-group > a input[type="checkbox"], #myAccountPage_passwordChangeLink
-[data-toggle="buttons"] > .btn-group > a input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > #addPortfolioButton input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -3539,19 +3451,13 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn, #myAccountPage_editFieldLink
-  .input-group-sm > .input-group-btn > a.input-group-addon, #myAccountPage_passwordChangeLink
-  .input-group-sm > .input-group-btn > a.input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon#addPortfolioButton {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn, #myAccountPage_editFieldLink
-  .input-group-lg > .input-group-btn > a.input-group-addon, #myAccountPage_passwordChangeLink
-  .input-group-lg > .input-group-btn > a.input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon#addPortfolioButton {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -3561,23 +3467,11 @@ tbody.collapse.in {
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > a,
-.input-group-btn:first-child > #addPortfolioButton,
-.input-group-btn:first-child > .btn-group > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > .btn-group > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > .btn-group > a,
-.input-group-btn:first-child > .btn-group > #addPortfolioButton,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), #myAccountPage_editFieldLink
-.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > #addPortfolioButton:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > .btn-group:not(:last-child) > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > .btn-group:not(:last-child) > a,
-.input-group-btn:last-child > .btn-group:not(:last-child) > #addPortfolioButton {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -3586,23 +3480,11 @@ tbody.collapse.in {
 
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > a,
-.input-group-btn:last-child > #addPortfolioButton,
-.input-group-btn:last-child > .btn-group > .btn, #myAccountPage_editFieldLink
-.input-group-btn:last-child > .btn-group > a, #myAccountPage_passwordChangeLink
-.input-group-btn:last-child > .btn-group > a,
-.input-group-btn:last-child > .btn-group > #addPortfolioButton,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child), #myAccountPage_editFieldLink
-.input-group-btn:first-child > a:not(:first-child), #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > a:not(:first-child),
-.input-group-btn:first-child > #addPortfolioButton:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn, #myAccountPage_editFieldLink
-.input-group-btn:first-child > .btn-group:not(:first-child) > a, #myAccountPage_passwordChangeLink
-.input-group-btn:first-child > .btn-group:not(:first-child) > a,
-.input-group-btn:first-child > .btn-group:not(:first-child) > #addPortfolioButton {
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3613,16 +3495,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, #myAccountPage_editFieldLink .input-group-btn > a, #myAccountPage_passwordChangeLink .input-group-btn > a, .input-group-btn > #addPortfolioButton {
+  .input-group-btn > .btn {
     position: relative; }
-    .input-group-btn > .btn + .btn, #myAccountPage_editFieldLink .input-group-btn > a + .btn, #myAccountPage_passwordChangeLink .input-group-btn > a + .btn, .input-group-btn > #addPortfolioButton + .btn, #myAccountPage_editFieldLink .input-group-btn > .btn + a, #myAccountPage_editFieldLink .input-group-btn > a + a, #myAccountPage_editFieldLink .input-group-btn > #addPortfolioButton + a, #myAccountPage_passwordChangeLink .input-group-btn > .btn + a, #myAccountPage_passwordChangeLink .input-group-btn > a + a, #myAccountPage_passwordChangeLink .input-group-btn > #addPortfolioButton + a, .input-group-btn > .btn + #addPortfolioButton, #myAccountPage_editFieldLink .input-group-btn > a + #addPortfolioButton, #myAccountPage_passwordChangeLink .input-group-btn > a + #addPortfolioButton, .input-group-btn > #addPortfolioButton + #addPortfolioButton {
+    .input-group-btn > .btn + .btn {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, #myAccountPage_editFieldLink .input-group-btn > a:hover, #myAccountPage_passwordChangeLink .input-group-btn > a:hover, .input-group-btn > #addPortfolioButton:hover, .input-group-btn > .btn:focus, #myAccountPage_editFieldLink .input-group-btn > a:focus, #myAccountPage_passwordChangeLink .input-group-btn > a:focus, .input-group-btn > #addPortfolioButton:focus, .input-group-btn > .btn:active, #myAccountPage_editFieldLink .input-group-btn > a:active, #myAccountPage_passwordChangeLink .input-group-btn > a:active, .input-group-btn > #addPortfolioButton:active {
+    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn, #myAccountPage_editFieldLink .input-group-btn:first-child > a, #myAccountPage_passwordChangeLink .input-group-btn:first-child > a, .input-group-btn:first-child > #addPortfolioButton,
+  .input-group-btn:first-child > .btn,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn, #myAccountPage_editFieldLink .input-group-btn:last-child > a, #myAccountPage_passwordChangeLink .input-group-btn:last-child > a, .input-group-btn:last-child > #addPortfolioButton,
+  .input-group-btn:last-child > .btn,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -3999,10 +3881,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, #myAccountPage_editFieldLink .btn-group-sm > a.navbar-btn, #myAccountPage_passwordChangeLink .btn-group-sm > a.navbar-btn, .btn-group-sm > .navbar-btn#addPortfolioButton {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, #myAccountPage_editFieldLink .btn-group-xs > a.navbar-btn, #myAccountPage_passwordChangeLink .btn-group-xs > a.navbar-btn, .btn-group-xs > .navbar-btn#addPortfolioButton {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4295,7 +4177,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label, #myAccountPage_editFieldLink a .label, #myAccountPage_passwordChangeLink a .label, #addPortfolioButton .label {
+  .btn .label {
     position: relative;
     top: -1px; }
 
@@ -4349,14 +4231,11 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge, #myAccountPage_editFieldLink a .badge, #myAccountPage_passwordChangeLink a .badge, #addPortfolioButton .badge {
+  .btn .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge, #myAccountPage_editFieldLink .btn-group-xs > a .badge, #myAccountPage_passwordChangeLink .btn-group-xs > a .badge, .btn-group-xs > #addPortfolioButton .badge,
-  .btn-group-xs > .btn .badge, #myAccountPage_editFieldLink
-  .btn-group-xs > a .badge, #myAccountPage_passwordChangeLink
-  .btn-group-xs > a .badge,
-  .btn-group-xs > #addPortfolioButton .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge,
+  .btn-group-xs > .btn .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -5220,10 +5099,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn, .modal-footer #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .modal-footer a + .btn, .modal-footer #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .modal-footer a + .btn, .modal-footer #addPortfolioButton + .btn, .modal-footer #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .modal-footer .btn + a, .modal-footer #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .modal-footer a + a, .modal-footer #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .modal-footer #addPortfolioButton + a, .modal-footer #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .modal-footer .btn + a, .modal-footer #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .modal-footer a + a, .modal-footer #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .modal-footer #addPortfolioButton + a, .modal-footer .btn + #addPortfolioButton, .modal-footer #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .modal-footer a + #addPortfolioButton, .modal-footer #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .modal-footer a + #addPortfolioButton, .modal-footer #addPortfolioButton + #addPortfolioButton {
+  .modal-footer .btn + .btn {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group #myAccountPage_editFieldLink a + .btn, #myAccountPage_editFieldLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + .btn, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + .btn, .modal-footer .btn-group #addPortfolioButton + .btn, .modal-footer .btn-group #myAccountPage_editFieldLink .btn + a, #myAccountPage_editFieldLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #myAccountPage_editFieldLink a + a, #myAccountPage_editFieldLink .modal-footer .btn-group a + a, .modal-footer .btn-group #myAccountPage_editFieldLink #addPortfolioButton + a, #myAccountPage_editFieldLink .modal-footer .btn-group #addPortfolioButton + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink .btn + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group .btn + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + a, .modal-footer .btn-group #myAccountPage_passwordChangeLink #addPortfolioButton + a, #myAccountPage_passwordChangeLink .modal-footer .btn-group #addPortfolioButton + a, .modal-footer .btn-group .btn + #addPortfolioButton, .modal-footer .btn-group #myAccountPage_editFieldLink a + #addPortfolioButton, #myAccountPage_editFieldLink .modal-footer .btn-group a + #addPortfolioButton, .modal-footer .btn-group #myAccountPage_passwordChangeLink a + #addPortfolioButton, #myAccountPage_passwordChangeLink .modal-footer .btn-group a + #addPortfolioButton, .modal-footer .btn-group #addPortfolioButton + #addPortfolioButton {
+  .modal-footer .btn-group .btn + .btn {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5633,7 +5512,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption #myAccountPage_editFieldLink a, #myAccountPage_editFieldLink .carousel-caption a, .carousel-caption #myAccountPage_passwordChangeLink a, #myAccountPage_passwordChangeLink .carousel-caption a, .carousel-caption #addPortfolioButton {
+  .carousel-caption .btn {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -5875,7 +5754,7 @@ button.close {
   background-color: #FFBF28;
   border: solid 3px #FFBF28;
   padding: 8px 16px;
-  color: #434547;
+  color: #3c0f31;
   margin-bottom: 10px; }
   .registrationButtonClient:focus, .registrationButtonFreelancer:focus {
     background-color: #cc9920; }
@@ -5884,338 +5763,228 @@ button.close {
     border: solid 3px #FFBF28;
     color: #FFBF28; }
 
-#landingPageWelcomeSection {
-  min-height: 600px;
-  display: -ms-flexbox;
+.logged-in #block-system-user-menu, .logged-in #block-menu-menu-secondary-nav-bar {
+  margin-bottom: 0px; }
+
+.not-logged-in #block-menu-menu-secondary-nav-bar {
+  display: none !important; }
+
+.howItWorksLeft_description {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 40px; }
+
+.howItWorks_titles {
+  font-size: 42px;
+  font-weight: bold;
+  text-align: left;
+  color: #6e2a54; }
+
+.howItWorks_titlesBorder {
+  width: 33%;
+  border: solid 2px #FFBF28;
+  height: 0px; }
+
+.howItWorks_headingText p {
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #6e2a54; }
+
+.howItWorks_middelText p {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #969696; }
+
+.howItWorks_bottomText p {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #FFBF28; }
+
+em {
+  color: #FFBF28;
+  font-style: normal; }
+
+#connect_mainContainer, #uploadProject_mainContainer, #getMatched_mainContainer, #finaliseDetails_mainContainer, #purchase_mainContainer, #workRemotely_mainContainer, #qualityAssurance_mainContainer, #workface-to-face_mainContainer, #project_mainContainer, #matchCompanies_mainContainer {
+  margin-top: 60px;
+  margin-bottom: 60px; }
+  #connect_mainContainer #connect_contentContainer, #connect_mainContainer #uploadProject_contentContainer, #connect_mainContainer #getMatched_contentContainer, #connect_mainContainer #finaliseDetails_contentContainer, #connect_mainContainer #purchase_contentContainer, #connect_mainContainer #workRemotely_contentContainer,
+  #connect_mainContainer #qualityAssurance_contentContainer, #connect_mainContainer #workface-to-face_contentContainer, #connect_mainContainer #project_contentContainer, #connect_mainContainer #matchCompanies_contentContainer, #uploadProject_mainContainer #connect_contentContainer, #uploadProject_mainContainer #uploadProject_contentContainer, #uploadProject_mainContainer #getMatched_contentContainer, #uploadProject_mainContainer #finaliseDetails_contentContainer, #uploadProject_mainContainer #purchase_contentContainer, #uploadProject_mainContainer #workRemotely_contentContainer,
+  #uploadProject_mainContainer #qualityAssurance_contentContainer, #uploadProject_mainContainer #workface-to-face_contentContainer, #uploadProject_mainContainer #project_contentContainer, #uploadProject_mainContainer #matchCompanies_contentContainer, #getMatched_mainContainer #connect_contentContainer, #getMatched_mainContainer #uploadProject_contentContainer, #getMatched_mainContainer #getMatched_contentContainer, #getMatched_mainContainer #finaliseDetails_contentContainer, #getMatched_mainContainer #purchase_contentContainer, #getMatched_mainContainer #workRemotely_contentContainer,
+  #getMatched_mainContainer #qualityAssurance_contentContainer, #getMatched_mainContainer #workface-to-face_contentContainer, #getMatched_mainContainer #project_contentContainer, #getMatched_mainContainer #matchCompanies_contentContainer, #finaliseDetails_mainContainer #connect_contentContainer, #finaliseDetails_mainContainer #uploadProject_contentContainer, #finaliseDetails_mainContainer #getMatched_contentContainer, #finaliseDetails_mainContainer #finaliseDetails_contentContainer, #finaliseDetails_mainContainer #purchase_contentContainer, #finaliseDetails_mainContainer #workRemotely_contentContainer,
+  #finaliseDetails_mainContainer #qualityAssurance_contentContainer, #finaliseDetails_mainContainer #workface-to-face_contentContainer, #finaliseDetails_mainContainer #project_contentContainer, #finaliseDetails_mainContainer #matchCompanies_contentContainer, #purchase_mainContainer #connect_contentContainer, #purchase_mainContainer #uploadProject_contentContainer, #purchase_mainContainer #getMatched_contentContainer, #purchase_mainContainer #finaliseDetails_contentContainer, #purchase_mainContainer #purchase_contentContainer, #purchase_mainContainer #workRemotely_contentContainer,
+  #purchase_mainContainer #qualityAssurance_contentContainer, #purchase_mainContainer #workface-to-face_contentContainer, #purchase_mainContainer #project_contentContainer, #purchase_mainContainer #matchCompanies_contentContainer, #workRemotely_mainContainer #connect_contentContainer, #workRemotely_mainContainer #uploadProject_contentContainer, #workRemotely_mainContainer #getMatched_contentContainer, #workRemotely_mainContainer #finaliseDetails_contentContainer, #workRemotely_mainContainer #purchase_contentContainer, #workRemotely_mainContainer #workRemotely_contentContainer,
+  #workRemotely_mainContainer #qualityAssurance_contentContainer, #workRemotely_mainContainer #workface-to-face_contentContainer, #workRemotely_mainContainer #project_contentContainer, #workRemotely_mainContainer #matchCompanies_contentContainer, #qualityAssurance_mainContainer #connect_contentContainer, #qualityAssurance_mainContainer #uploadProject_contentContainer, #qualityAssurance_mainContainer #getMatched_contentContainer, #qualityAssurance_mainContainer #finaliseDetails_contentContainer, #qualityAssurance_mainContainer #purchase_contentContainer, #qualityAssurance_mainContainer #workRemotely_contentContainer,
+  #qualityAssurance_mainContainer #qualityAssurance_contentContainer, #qualityAssurance_mainContainer #workface-to-face_contentContainer, #qualityAssurance_mainContainer #project_contentContainer, #qualityAssurance_mainContainer #matchCompanies_contentContainer, #workface-to-face_mainContainer #connect_contentContainer, #workface-to-face_mainContainer #uploadProject_contentContainer, #workface-to-face_mainContainer #getMatched_contentContainer, #workface-to-face_mainContainer #finaliseDetails_contentContainer, #workface-to-face_mainContainer #purchase_contentContainer, #workface-to-face_mainContainer #workRemotely_contentContainer,
+  #workface-to-face_mainContainer #qualityAssurance_contentContainer, #workface-to-face_mainContainer #workface-to-face_contentContainer, #workface-to-face_mainContainer #project_contentContainer, #workface-to-face_mainContainer #matchCompanies_contentContainer, #project_mainContainer #connect_contentContainer, #project_mainContainer #uploadProject_contentContainer, #project_mainContainer #getMatched_contentContainer, #project_mainContainer #finaliseDetails_contentContainer, #project_mainContainer #purchase_contentContainer, #project_mainContainer #workRemotely_contentContainer,
+  #project_mainContainer #qualityAssurance_contentContainer, #project_mainContainer #workface-to-face_contentContainer, #project_mainContainer #project_contentContainer, #project_mainContainer #matchCompanies_contentContainer, #matchCompanies_mainContainer #connect_contentContainer, #matchCompanies_mainContainer #uploadProject_contentContainer, #matchCompanies_mainContainer #getMatched_contentContainer, #matchCompanies_mainContainer #finaliseDetails_contentContainer, #matchCompanies_mainContainer #purchase_contentContainer, #matchCompanies_mainContainer #workRemotely_contentContainer,
+  #matchCompanies_mainContainer #qualityAssurance_contentContainer, #matchCompanies_mainContainer #workface-to-face_contentContainer, #matchCompanies_mainContainer #project_contentContainer, #matchCompanies_mainContainer #matchCompanies_contentContainer {
+    width: 80%; }
+
+#price_mainContainer, #speed_mainContainer, #projectSize_mainContainer {
+  background-color: #f7f4f6;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  #price_mainContainer #price_contentContainer, #price_mainContainer #speed_contentContainer, #price_mainContainer #projectSize_contentContainer, #speed_mainContainer #price_contentContainer, #speed_mainContainer #speed_contentContainer, #speed_mainContainer #projectSize_contentContainer, #projectSize_mainContainer #price_contentContainer, #projectSize_mainContainer #speed_contentContainer, #projectSize_mainContainer #projectSize_contentContainer {
+    width: 80%; }
+
+#banner_howItWorks {
+  min-height: 490px;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+      -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-direction: column;
   -webkit-flex-direction: column;
+      -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
   color: white;
-  margin: auto;
-  top: 20px;
+  margin: 0 auto;
   text-align: center;
+  background: url("images/BannerBeta.png") no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%; }
-
-#landingPageWelcomeSection h1 {
-  font-size: 42px;
-  font-family: Cabin Bold; }
-
-#landingPageWelcomeSection_border {
-  position: relative;
-  display: inline-block;
-  border-top: 2px solid white;
-  width: 25%;
-  margin: 0px auto;
-  margin-top: 30px; }
-
-#landingPageWelcomeSection_description {
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 15px;
-  font-size: 19px; }
-
-#landingPageWelcomeSection ul {
-  margin-top: 54px; }
-
-#landingPageWelcomeSection li {
-  display: inline;
-  margin-left: 10px;
-  margin-right: 10px; }
-
-#landingPageServices_mainContainer, #landingPage_CreativeTalent_mainContainer, #landingPageFreelance_mainContainer, #landingPage_whoAreWe_mainContainer, #landingPage_howThisWorks_mainContainer {
-  margin-bottom: 30px; }
-  #landingPageServices_mainContainer #landingPageServices_contentContainer, #landingPageServices_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPageServices_mainContainer #landingPageFreelance_contentContainer, #landingPageServices_mainContainer #landingPage_whoAreWe_contentContainer, #landingPageServices_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPageServices_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPageFreelance_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_howThisWorks_contentContainer, #landingPageFreelance_mainContainer #landingPageServices_contentContainer, #landingPageFreelance_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPageFreelance_mainContainer #landingPageFreelance_contentContainer, #landingPageFreelance_mainContainer #landingPage_whoAreWe_contentContainer, #landingPageFreelance_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_whoAreWe_mainContainer #landingPageServices_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_whoAreWe_mainContainer #landingPageFreelance_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_howThisWorks_mainContainer #landingPageServices_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_howThisWorks_mainContainer #landingPageFreelance_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_howThisWorks_contentContainer {
-    width: 80%; }
-
-#landingPage_theCreativeProcess_mainContainer {
-  background-color: white;
-  margin-top: 30px; }
-  #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer {
-    width: 70%; }
-    #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer .landingPage_emphasizedText {
-      margin-bottom: 0px !important; }
-
-.landingPageLeft_description {
-  max-height: 412px;
   width: 100%;
-  margin: 0 auto; }
+  padding-bottom: 20px; }
+  #banner_howItWorks h1 {
+    font-size: 42px; }
+  #banner_howItWorks #banner_howItWorks_border {
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid white;
+    width: 25%;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: -30px; }
+  #banner_howItWorks #banner_howItWorks_links {
+    width: 56%;
+    margin: 0 auto;
+    /* margin-top: 50px; */
+    line-height: 43px;
+    padding-bottom: 15px;
+    font-size: 20px; }
+  #banner_howItWorks ul {
+    margin-top: 35px; }
+  #banner_howItWorks li {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px; }
 
-.landingPageLeft_description p {
-  font-size: 24px;
-  color: #FFBF28 !important;
-  max-height: 412px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 10px; }
+#banner_howItWorks_links a {
+  color: #FFFFFF; }
 
-.landingPageLeft_description {
-  /* visited link */
-  /* mouse over link */
-  /* selected link */ }
-  .landingPageLeft_description a:link {
-    /*color: $mainColor;*/ }
-  .landingPageLeft_description a:visited {
-    /*color: $mainColor;*/ }
-  .landingPageLeft_description a:hover {
-    color: #FFBF28; }
-  .landingPageLeft_description a:active {
-    color: #FFBF28;
-    text-decoration: none; }
+#banner_howItWorks_links a:hover {
+  text-decoration: underline;
+  color: #FFBF28; }
 
-#landingPageServices, #landingPage_whoAreWe,
-#landingPage_howThisWorks, #landingPage_theCreativeProcess {
-  margin-top: 60px; }
+#banner_howItWorks_links a:visit {
+  text-decoration: underline; }
 
-.landingPage_Icon_border {
-  border-top: #FFBF28 solid 2px;
-  padding-top: 30px;
-  width: 50%;
-  margin: 0 auto; }
-
-.landingPage_titles {
-  font-size: 38px;
-  font-weight: bold;
-  text-align: left;
-  padding-bottom: 20px;
-  border-bottom: 1.5px solid #FFBF28;
-  text-align: center;
-  color: #6e2a54;
-  font-family: Cabin Bold; }
-
-.landingPage_emphasizedText {
-  font-size: 26px;
-  width: 90%;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  color: #6e2a54; }
-
-.landingPageRight_description p {
-  font-size: 23px;
-  color: #FFBF28;
-  text-align: left;
-  width: 250px;
-  margin-bottom: 40px; }
-
-#landingPageServices_GraphicDesign img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_ArtAndIllustration img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_Branding img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_WebAndApp img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_MotionGraphics img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_CreativeConsulting img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_Photography img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_PlusSign img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-.landingPageServices_RightContent p {
-  text-align: center;
-  color: #6e2a54; }
-
-#landingPageServices {
-  text-align: center; }
-  #landingPageServices #landingPageServices_ButtonClient {
-    text-align: -webkit-left; }
-  #landingPageServices .CreativeServices_Content p, #landingPageServices a {
-    text-align: center; }
-
-#landingPageServices_UploadYourProject img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_GetMatchedToTalent img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_Communicate img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_ImplementNewDesign img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-.fadein {
-  position: relative;
-  height: 302px;
-  width: 500px; }
-
-.fadein section {
-  position: absolute;
-  left: 0;
-  top: 0; }
-
-#featured {
-  position: relative;
-  width: 100%; }
-
-#featured, #landingPage_CreativeTalent_slides {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  margin-bottom: 40px; }
-
-#featured section {
-  position: relative;
-  width: 1000px; }
-
-#featured section img {
-  position: absolute;
-  width: 100%; }
-
-/* hide slides when js is disabled */
-#featured #slide-2,
-#featured #slide-3,
-#featured #slide-4,
-#featured #slide-5,
-#featured #slide-6 {
-  display: none; }
-
-#landingPage_CreativeTalent_slides img {
-  height: 300px;
-  width: 100%;
-  margin: 0 auto; }
-
-.landingPageFreelance_iconFrame {
-  height: 308px;
-  margin: 6px auto; }
-
-.box-shadow {
-  box-shadow: 0px 0px 46px -6px rgba(176, 174, 176, 0.3);
-  height: inherit; }
-
-#landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
-  width: 100%;
-  height: 130px; }
-
-#landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
-  border: solid 2px #FFBF28;
-  width: 60px;
-  height: 60px;
-  border-radius: 100px; }
-
-#landingPageFreelance_ProfileBk1 {
-  margin: -40px 0px -36px 18px; }
-
-#landingPageFreelance_ProfileBk2 {
-  margin: -40px 0px -36px 18px; }
-
-#landingPageFreelance_ProfileBk3 {
-  margin: -40px 0px -36px 18px; }
-
-.landingPageFreelance_iconFrame h3 {
-  font-size: 15px;
+#connect {
   text-align: center; }
 
-.landingPageFreelance_iconFrame p {
-  font-size: 11px;
-  padding: 0px 8px 0px 18px;
-  text-align: left;
-  color: #6e2a54; }
-
-.Icon_border_Freelance {
-  border-top: #FFBF28 solid 2px;
-  width: 83%;
-  margin: 0 auto; }
-
-#landingPage_Freelance_button {
-  padding: 0px 7px;
-  font-size: 12px;
-  color: #ffffff; }
-
-#landingPage_Freelance_button:hover {
-  color: #434547; }
-
-#landingPageFreelance_ButtonClient {
-  text-align: -webkit-left; }
-
-#landingPage_howThisWorks_mainContainer {
-  background-color: #f7f4f6; }
-
-.landingPage_howThisWorks_content {
-  text-align: center;
-  padding: 30px; }
-
-.landingPage_howThisWorks_content p {
-  color: #6e2a54; }
-
-#landingPage_howThisWorks_video video {
-  max-height: 412px;
+.connectImages img {
+  max-width: 176px;
+  max-height: 202px;
+  height: auto;
   width: 100%;
   margin: 0 auto; }
 
-#landingPage_whoWeAre_secondRow {
-  margin-top: 30px;
-  width: 80%;
-  margin: auto; }
+#uploadProject {
+  text-align: center; }
 
-#landingPage_whoAreWe_button {
+.uploadProjectImages {
+  margin-top: -14px; }
+
+.uploadProjectImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#getMatched {
+  text-align: center; }
+
+.getMatchedImages {
+  margin-top: -14px; }
+
+.getMatchedImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#finaliseDetails {
+  text-align: center; }
+
+.finaliseDetailstImages {
+  margin-top: -21px; }
+
+.finaliseDetailstImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#purchase {
+  text-align: center; }
+
+.purchaseImages {
+  margin-top: -14px; }
+
+.purchaseImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#workRemotely {
+  text-align: center; }
+
+.workRemotelyImages {
+  margin-top: -14px; }
+
+.workRemotelyImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#qualityAssurance {
+  text-align: center; }
+
+.qualityAssuranceImages {
+  margin-top: -14px; }
+
+.qualityAssuranceImages img {
+  height: auto;
+  width: 70%;
+  margin: 0 auto; }
+
+#workface-to-face {
+  text-align: center; }
+
+.workface-to-faceImages {
+  margin-top: -14px; }
+
+.workface-to-faceImages img {
+  height: auto;
+  width: 100%;
+  margin: 0 auto; }
+
+#project {
+  text-align: center; }
+
+.projectImages {
+  margin-top: 15px;
+  padding-bottom: 25px; }
+
+.projectImages img {
+  height: auto;
+  width: 70%;
+  margin: 0 auto; }
+
+#howItWorks_project_button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6227,15 +5996,53 @@ button.close {
           justify-content: center;
   margin: 0 auto;
   position: relative;
-  height: 150px; }
-  #landingPage_whoAreWe_button ul {
+  height: 100px; }
+  #howItWorks_project_button ul {
     text-align: center; }
-  #landingPage_whoAreWe_button li {
+  #howItWorks_project_button li {
     display: inline;
     margin-left: 10px;
     margin-right: 10px; }
 
-.landingPage_whoAreWe img {
+#price {
+  text-align: center; }
+
+.priceImages {
+  margin-top: 80px; }
+
+.priceImages img {
+  height: auto;
+  width: 85%;
+  margin: 0 auto; }
+
+#speed {
+  text-align: center; }
+
+.speedImages img {
+  height: auto;
+  width: 70%;
+  margin: 0 auto; }
+
+#projectSize {
+  text-align: center; }
+
+.projectSizeImages {
+  margin-top: 80px; }
+
+.projectSizeImages img {
+  height: auto;
+  width: 85%;
+  margin: 0 auto; }
+
+#matchCompanies {
+  text-align: center; }
+
+#matchCompanies_secondRow {
+  margin-top: 30px;
+  width: 80%;
+  margin: auto; }
+
+.matchCompanies img {
   max-width: 100px;
   max-height: 150px;
   height: auto;
@@ -6249,189 +6056,54 @@ button.close {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
-  border-bottom: 2px solid #FFBF28; }
+  margin: 0 auto; }
 
-.landingPage_whoAreWe h3 {
+#startWorking {
+  padding-top: 6px; }
+
+#saveMoney {
+  padding-top: 10px; }
+
+#fastEasy {
+  padding-top: 32px; }
+
+.matchCompanies h3 {
   font-size: 18px;
   text-align: center;
   color: #6e2a54; }
 
-.landingPage_whoAreWe p {
-  font-size: 14px;
+.image_Border {
+  width: 33%;
+  margin: auto;
+  border: solid 2px #FFBF28;
+  height: 0px; }
+
+.matchCompanies_emphasizedText {
+  font-size: 26px;
+  width: 70%;
   text-align: center;
-  color: #fbbf20; }
-
-.whoAreWe_paragraph {
-  margin-left: 60px;
-  margin-right: 50px; }
-
-.logged-in #block-system-user-menu, .logged-in #block-menu-menu-secondary-nav-bar {
-  margin-bottom: 0px; }
-
-.not-logged-in #block-menu-menu-secondary-nav-bar {
-  display: none !important; }
-
-#landingPage_whoAreWe_content_link {
-  margin-top: 50px;
-  font-size: 22px; }
-  #landingPage_whoAreWe_content_link a, #landingPage_whoAreWe_content_link a:link, #landingPage_whoAreWe_content_link a:visited {
-    color: #FFBF28; }
-  #landingPage_whoAreWe_content_link a:hover, #landingPage_whoAreWe_content_link a:active {
-    color: #FFBF28; }
-
-#landingPage_theCreativeProcess .row {
-  font-size: 16px;
-  color: #6d2c54; }
-
-#landingPage_theCreativeProcess_description {
-  position: relative;
+  margin: 0 auto;
   margin-bottom: 30px;
-  margin-top: 30px; }
-  #landingPage_theCreativeProcess_description .landingPage_whoAreWe_contentBorder {
-    position: absolute;
-    border-top: 2px solid #FFBF28;
-    left: 3.5%;
-    right: 75%; }
-  #landingPage_theCreativeProcess_description p {
-    margin-top: 20px; }
-
-#landingPageServices_CreateAPortfolio img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_GetMatched img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_StartWorking img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-#landingPageServices_GetPaid img {
-  max-width: 150px;
-  max-height: 150px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto; }
-
-.landingPage_bulletPointList {
-  display: list-item;
-  margin-left: 30px;
-  list-style-type: disc; }
-
-#myAccountPage_editFieldLink, #myAccountPage_passwordChangeLink {
-  color: black; }
-  #myAccountPage_editFieldLink a, #myAccountPage_passwordChangeLink a {
-    background: #FFBF28;
-    color: black; }
-
-#addPortfolioButton {
-  background: #FFBF28;
-  color: #000000; }
+  color: #FFBF28; }
 
 @media (max-width: 767px) {
-  #landingPageWelcomeSection_description, #landingPageServices_contentContainer, #landingPageFreelance_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer, #landingPage_CreativeTalent_contentContainer, landingPageFreelance_contentContainer #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title {
+  #connect_contentContainer, #uploadProject_contentContainer, #getMatched_contentContainer, #finaliseDetails_contentContainer, #purchase_contentContainer, #workRemotely_contentContainer,
+  #qualityAssurance_contentContainer, #workface-to-face_contentContainer, #project_contentContainer, #price_contentContainer, #speed_contentContainer, #projectSize_contentContainer, #matchCompanies_contentContainer, .howItWorksLeft_description {
     width: 100% !important; }
-  #landingPage_whoAreWe_contentContainer .landingPage_whoAreWe_contentBorder {
-    left: 5%; }
-  #landingPage_whoAreWe_contentContainer .landingPage_whoAreWe_content {
-    margin-bottom: 30px !important; }
-  #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow {
-    margin-top: 0 !important;
+  .howItWorks_titles {
+    font-size: 30px; }
+  .projectImages img {
     width: 100%; }
-    #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) {
-      height: 90px !important;
-      text-align: right !important;
-      padding-top: 30px !important; }
-      #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) a {
-        position: relative !important; }
-  #landingPage_howThisWorks {
-    margin-bottom: 20px; }
-  #landingPageWelcomeSection h1 {
-    font-size: 2em; }
-  .landingPageLeft_description p {
-    width: 100%;
-    font-size: 20px; }
-  .whoAreWe_paragraph {
-    margin-left: 0px;
-    margin-right: 0px; } }
+  #saveMoney {
+    width: 100%; } }
 
 @media (max-width: 768px) {
-  .landingPageFreelance_iconFrame {
-    width: 50%;
-    height: 424px; }
-  #landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
-    width: 100%;
-    height: 100%; }
-  #landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
-    width: 70px;
-    height: 70px; }
-  .landingPageFreelance_iconFrame h3 {
-    font-size: 26px; }
-  .landingPageFreelance_iconFrame p {
-    font-size: 17px; }
-  .landingPageRight_description p {
-    font-size: 34px;
-    width: 327px; }
-  #landingPageFreelance_ProfileBk1 {
-    margin: -42px 0px -36px 15px; }
-  #landingPageFreelance_ProfileBk2 {
-    margin: -40px 0px -36px 12px; }
-  #landingPageFreelance_ProfileBk3 {
-    margin: -42px 0px -36px 15px; }
-  #whoAreWe_Urgent {
+  #connect_contentContainer, #uploadProject_contentContainer, #getMatched_contentContainer, #finaliseDetails_contentContainer, #purchase_contentContainer, #workRemotely_contentContainer,
+  #qualityAssurance_contentContainer, #workface-to-face_contentContainer, #project_contentContainer, #price_contentContainer, #speed_contentContainer, #projectSize_contentContainer, #matchCompanies_contentContainer, .howItWorksLeft_description {
+    width: 100% !important; }
+  .projectImages img {
     width: 100%; }
-  #landingPage_whoWeAre_secondRow {
+  #saveMoney {
     width: 100%; } }
 
-@media (max-width: 480px) {
-  .landingPageFreelance_iconFrame {
-    width: 100%;
-    height: 404px; }
-  .landingPageFreelance_iconFrame h3 {
-    font-size: 20px; }
-  .landingPageFreelance_iconFrame p {
-    font-size: 16px; }
-  #landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
-    width: 100%;
-    height: 100%; }
-  #landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
-    width: 70px;
-    height: 70px; }
-  #landingPageFreelance_ProfileBk1 {
-    margin: -42px 0px -36px 15px; }
-  #landingPageFreelance_ProfileBk2 {
-    margin: -40px 0px -36px 12px; }
-  #landingPageFreelance_ProfileBk3 {
-    margin: -42px 0px -36px 15px; }
-  .landingPageRight_description p {
-    width: 285px;
-    font-size: 20px; }
-  #whoAreWe_Urgent {
-    width: 100%; } }
-
-@media (max-width: 320px) {
-  .landingPageFreelance_iconFrame {
-    width: 100%;
-    height: 354px; }
-  .landingPageFreelance_iconFrame h3 {
-    font-size: 18px; }
-  .landingPageFreelance_iconFrame p {
-    font-size: 14px; }
-  .landingPageRight_description p {
-    font-size: 20px;
-    width: 245px; }
-  #whoAreWe_Urgent {
-    width: 100%; } }
-
-/*# sourceMappingURL=aboutPage.layout.css.map */
+/*# sourceMappingURL=howItWorksPage.layout.css.map */
