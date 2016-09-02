@@ -139,11 +139,16 @@ function tap_job_invite_invite_validate($form, &$form_state){
         return;
     }
 
+    global $user;
+    if($user->uid != $form['uid']['#value']){ // Only a the job creator can invite people.
+        drupal_access_denied();
+    }
+
     if(array_key_exists("collaborators", $form_state['input'])){
         $arr=$form_state['input']['collaborators'];
         $index=1;
         foreach($arr as $elem){
-            if(!isset($elem)){ //Ignore empty textfields
+            if(isset($elem)){ //Ignore empty textfields
                 $name=$elem['name'];
                 $openBrackPos=strpos($name, '(');
                 $closeBrackPos=strpos($name, ')');
@@ -229,6 +234,9 @@ function tap_job_invite_invite_submit($form, &$form_state){
 
     // debug($node);
     //redirect user back to job page.
+    drupal_set_message("Co-Workers have been notified.");
+    drupal_goto("/node/".$nid);
+
 }   
 
 function emailCollaborators($ids, $node){

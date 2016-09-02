@@ -15,7 +15,12 @@ function owner_only_fields_menu_alter(&$items) {
 }
 
 function owner_only_fields_user_page_title(){
-    return "My Portfolio";
+	if(user_has_role(4) or user_has_role(8) or user_has_role(9)){ //Role Freelancer or ApprovedFreelancer or TestFreelancer
+		return "My Portfolio";
+	}else if(user_has_role(5)){
+		return "My Profile";
+	}
+    return "User";
 }
 
 function owner_only_fields_process_password_confirm($element) {
