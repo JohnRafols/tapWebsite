@@ -150,11 +150,6 @@
         //Testing AJAX load...
         //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
 
-
-
-
-
-
         //This is code for the first half of the workroom (Freelance info, etc)
         var freelancerInfo = $('#block-tap-job-mgmt-tap-block')
                                 .find('.form-item-freelancer-choice')
@@ -181,11 +176,24 @@
                       .after('<div id = "borderfreelancerInfo">')
 
         //Remove underscores
-        // freelancerInfo.find('a').each(function(index){
-        //     var $this = $(this);
-        //     $this.text($this.text().replace(/_/g, ' '));
-        // })
+        // http://stackoverflow.com/questions/5232862/jquery-change-inner-text-but-preserve-html
 
+        var link = freelancerInfo.find('a');
+        var image = freelancerInfo.find('a').find('img');
+        
+        link.each(function(index){
+            var str = $(link[index]).text();
+            var userName_noUnderscores = str.replace(/_/g, " "); 
+            $(link[index]).html(userName_noUnderscores);
+            $(link[index]).prepend($(image[index]));
+        })
+
+        if($('#freelancerInfoHeader_title').length){
+            $('#freelancerInfoHeader_title').once('specificJobPageBehavior').html($('h1'));
+        }
+
+
+     
  
       }
     };
