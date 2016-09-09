@@ -48,11 +48,11 @@ $grey : #CCCCCC;
         #edit-submit:focus {
             background-color: ($mainColor * 0.80);
         }
-        #edit-submit:hover{
-             background-color: rgba(255, 255, 255, 0.0);
-             border: solid 3px #FFBF28;
-             color: #FFBF28;
-        }
+        // #edit-submit:hover{
+        //      background-color: rgba(255, 255, 255, 0.0);
+        //      border: solid 3px #FFBF28;
+        //      color: #FFBF28;
+        // }
 
     }
     #addPortfolioButton{
@@ -542,37 +542,37 @@ ___________________
 
 
   //The Submit Buttons 
-  #edit-actions{
-      border-top: 2px solid $mainColor; 
-      padding-top: 30px;
-      margin-bottom: 60px;
-        #edit-submit{
-          @extend .btn;
-          background: $mainColor;
-          color: $textColor;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-        }
-        #edit-preview, #edit-cancel-changes{
-          @extend .btn;
-          background: $mainColor;
-          margin-left: 5px;
-          color: $textColor;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-        }
-        #edit-preview{
-          display:none !important;
-        }
-    }
+  // #edit-actions{
+  //     border-top: 2px solid $mainColor; 
+  //     padding-top: 30px;
+  //     margin-bottom: 60px;
+  //       #edit-submit{
+  //         @extend .btn;
+  //         background: $mainColor;
+  //         color: $textColor;
+  //           &:focus {
+  //           background-color: ($mainColor * 1.20);
+  //           }
+  //           &:hover{
+  //                background-color: ($mainColor * 0.80);
+  //           }
+  //       }
+        // #edit-preview, #edit-cancel-changes{
+        //   @extend .btn;
+        //   background: $mainColor;
+        //   margin-left: 5px;
+        //   color: $textColor;
+        //     &:focus {
+        //     background-color: ($mainColor * 1.20);
+        //     }
+        //     &:hover{
+        //          background-color: ($mainColor * 0.80);
+        //     }
+        // }
+        // #edit-preview{
+        //   display:none !important;
+        // }
+    // }
 
 }
 

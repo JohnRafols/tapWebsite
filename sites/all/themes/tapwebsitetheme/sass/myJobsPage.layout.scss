@@ -337,8 +337,10 @@ ___________________
   }
 
   //All labels on the form
-  label{
+  label, .fieldset-legend{
     font-size: 18px;
+    font-weight: bold;
+    color: $secondaryColor;
   }
   //Hide the tips
   .tips{
@@ -353,7 +355,7 @@ ___________________
     .projectSkillListRow{
       .option{
         font-size: 16px;
-        color: $grey*0.8;
+        color: $secondaryColor;
       }
     }
   }
@@ -362,7 +364,7 @@ ___________________
   .field-group-fieldset{
     margin-bottom: 30px; 
     label{
-      text-align: center;
+      // text-align: center;
       //word-spacing: 30px;
     }
     .sliderfield-container{
@@ -382,25 +384,25 @@ ___________________
   }
 
   //The Submit Button
-    #edit-actions{
-      border-top: 2px solid $mainColor; 
-      padding-top: 30px;
-      margin-bottom: 60px;
-        #edit-submit, #edit-cancel-changes{
-          @extend .btn;
-          background: $mainColor;
-          color: $textColor;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-        }
-        #edit-cancel-changes{
-           margin-left: 10px;
-        }
-    }
+    // #edit-actions{
+    //   border-top: 2px solid $mainColor; 
+    //   padding-top: 30px;
+    //   margin-bottom: 60px;
+    //     #edit-submit, #edit-cancel-changes{
+    //       @extend .btn;
+    //       background: $mainColor;
+    //       color: $textColor;
+    //         &:focus {
+    //         background-color: ($mainColor * 1.20);
+    //         }
+    //         &:hover{
+    //              background-color: ($mainColor * 0.80);
+    //         }
+    //     }
+    //     #edit-cancel-changes{
+    //        margin-left: 10px;
+    //     }
+    // }
 
 }
 
@@ -421,7 +423,7 @@ ___________________
     display: flex;
     align-items: center;
   }
-    .views-field-field-profile-picture{
+    .views-field-field-client-profile-picture{
         img{ 
             border-radius: 999px;
             height: 60px;
@@ -687,12 +689,64 @@ ___________________
   }
 }
 
-.field--name-field-casual-or-corporate, .field--name-field-accessible-or-luxury, .field--name-field-colourful-or-neutral, .field--name-field-playful-or-serious, .field--name-field-abstract-or-straight-up, .field--name-field-structured-or-organic, .field--name-field-masculine-or-feminine {
+.field--name-field-casual-or-corporate, .field--name-field-accessible-or-luxury, .field--name-field-colourful-or-neutral, 
+.field--name-field-playful-or-serious, .field--name-field-abstract-or-straight-up, .field--name-field-structured-or-organic, 
+.field--name-field-masculine-or-feminine {
       
       display: none;
 
 }
 
+#contactSupportButton, #inviteCoWorkersButton{
+  background-color: $mainColor;
+  color: $textColor;
+}
 
+#contactSupportButton{
+  margin-right: 15px;
+}
 
+.contactSupportInviteCoWorkers{
+  float: right;
+}
 
+// Next button and save button for multi-step job node form.
+#edit-next, #edit-submit{
+  float: right;
+}
+
+// Job edit page.
+.job-node-form{
+  #edit-field-confidentiality-und label, #edit-field-freelancer-selection-und label{
+   font-weight: bold;
+   font-size: 16px;
+  }
+
+  #edit-field-confidentiality-und label{
+    color: $grey*0.8; 
+    font-size: 16px;
+  }
+
+  .creative-pro-type-help-text{
+    color: $grey*0.8; 
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .step-format{
+    h3{
+      color: $grey*0.8;
+      display: inline-block;     
+    }
+
+    .description{
+      color: $mainColor;
+      display: inline-block;
+    }
+  }
+}
+
+// Overflow onto next line. 
+.chatroom-board{
+  overflow-wrap: break-word;
+}
