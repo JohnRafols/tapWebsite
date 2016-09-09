@@ -10,11 +10,6 @@ require 'jobHelperFunctions.php';
 
 function tap_job_mgmt_node_validate($node, $form, &$form_state){
 	
-	debugLoo($form_state, "_validate_form_state");
-	debugLoo($form, "_validate_form");
-	debugLoo($node, "_validate_node");
-
-
 	// if(property_exists($node, 'previous')){
 	// 	return;
 	// }
@@ -499,7 +494,7 @@ function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
   		}else{	//On the Job edit page
   			
   			// hide($form['field_freelancer_selection']);
-  			hide($form['field_service_type']);
+  			// hide($form['field_service_type']);
 
 
   			//-----Style field group-----//
@@ -600,20 +595,6 @@ function debugShort($toPrint){
 
 	// file_put_contents($dir.'\\'.$toPrint.'.txt', print_r($toPrint, TRUE));	
 }
-
-function tap_job_mgmt_node_view($node, $view_mode, $langcode) {
-
-	if($node->type == 'job'){
-		global $user;
-		if($user->uid == $node->uid){ //Only job creator can invite.
-			$node->content['invite-collaborators'] = array(
-				'#markup' => '<a id="invite_collaborators" href="/job/'.$node->nid.'/invite">Invite collaborators</a>',
-				'#weight' => -1000,
-			);
-		}
-	}
-}
-
 
 
 ?>

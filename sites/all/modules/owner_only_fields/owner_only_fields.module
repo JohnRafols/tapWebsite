@@ -10,7 +10,7 @@ function owner_only_fields_help($path, $arg) {
 }
 
 function owner_only_fields_menu_alter(&$items) {
-    // Change the title of user profile pages to the user's name.  Gak.
+    // Change the title of user profile page.
     $items['user/%user']['title callback'] = 'owner_only_fields_user_page_title';
 }
 
@@ -45,19 +45,16 @@ function owner_only_fields_page_alter(&$page){
 }
 
 function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
-	//$form['profile-freelancer-field-about-me-add-more-wrapper']['#access'] = FALSE;	
 
-	//Hide fields on account edit page.
+	//Hide fields on My Account edit page.
 	if($form_id=='user_profile_form'){
-		// file_put_contents('C:\Users\pc\Desktop\yes.txt', print_r($form, TRUE));	
-		debugLong($form, 'user_profile_form_alter');
 		// hide($form['legal']);
 		hide($form['mimemail']);
 
-		//Add "Cancel changes" to My Account and My Profile edit forms.
+		//Add "Cancel" to My Account and My Profile edit forms.
 		$form['actions']['cancel_changes'] = array(
 			'#type' => 'submit',
-			'#value' => t('Cancel Changes'),
+			'#value' => t('Cancel'),
 			'#access' => TRUE,
 			'#weight' => 10,
 			'#submit' => array('user_edit_cancel', 'node_form_submit_build_node'),
@@ -76,25 +73,22 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 		if(array_key_exists('cancel', $form['actions'])){
 			$form['actions']['cancel']['#value']='Delete account';
 		}
-
-
 		
 	}else if($form_id=='user_login'){
 		$form['name']['#title']='E-mail';
 		$form['name']['#description']='Enter your e-mail.';
-
 	}
 
 
 	//Add "Cancel changes" to node edit form.
-	if(array_key_exists('node', $form_state)){
+	if(array_key_exists('node', $form_state) && (array_key_exists('#node', $form) && ($form['#node']->type != 'job'))){
 		$node = $form_state['node'];
 		if (!isset($node->nid) || isset($node->is_new)) {
 		// This is a new node.
 			//Add "Cancel changes" to My Account and My Profile edit forms.
 			$form['actions']['cancel_changes'] = array(
 				'#type' => 'submit',
-				'#value' => t('Cancel Changes'),
+				'#value' => t('Cancel'),
 				'#access' => TRUE,
 				'#weight' => 10,
 				'#submit' => array('node_create_cancel', 'node_form_submit_build_node'),
@@ -104,7 +98,7 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 			// This is not a new node.
 			$form['actions']['cancel_changes'] = array(
 				'#type' => 'submit',
-				'#value' => t('Cancel Changes'),
+				'#value' => t('Cancel'),
 				'#access' => TRUE,
 				'#weight' => 10,
 				'#submit' => array('node_edit_cancel', 'node_form_submit_build_node'),
@@ -112,31 +106,23 @@ function owner_only_fields_form_alter(&$form, &$form_state, $form_id){
 			);	
 		}
 	}
-	
+
+	// Renaming form Save button on Job page.
+	if($form_id == 'job_node_form'){
+	$form['actions']['submit']['#value'] = t('Submit');	
+	}	
 }
-
-function setFinalCandidate($uid, $node){
-	if(isset($uid) && isset($node)){
-		$node->field_final_candidate['und']=array();
-		array_push($node->field_final_candidate['und'], array('target_id'=>$uid));
-		field_attach_update('node', $node);		
-	}
-}
-
-
-
 
 function node_create_cancel($form, &$form_state){
-	drupal_set_message('Changes cancelled', 'status');
-	drupal_goto('user');
+	// drupal_set_message('Edit cancelled', 'status');
+	// drupal_goto('user');
 }
 
 /**
  * Node edit form cancel button callback.
  */
 function node_edit_cancel($form, &$form_state) {
-	// $fallback_destinaton = '<front>';
-	// If edit, use the node itself as fallback.
+	// Use the node itself as fallback.
 	$node=node_load($form['#node']->nid);
 	$node_uri=node_uri($node);
 	$fallback_destinaton=$node_uri['path'];
@@ -144,7 +130,7 @@ function node_edit_cancel($form, &$form_state) {
 	// Go to destination or fallback.
 	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
 
-	drupal_set_message($node->type." changes cancelled", 'status');
+	// drupal_set_message($node->type." changes cancelled", 'status');
 	drupal_goto($url);
 }
 
@@ -152,8 +138,7 @@ function node_edit_cancel($form, &$form_state) {
  * User account/profile edit form cancel button callback.
  */
 function user_edit_cancel($form, &$form_state) {
-	// $fallback_destinaton = '<front>';
-	// If edit, use the node itself as fallback.
+	// Use the node itself as fallback.
 	$user=user_load($form['#user']->uid);
 	$user_uri=user_uri($user);
 	$fallback_destinaton=$user_uri['path'];
@@ -162,10 +147,10 @@ function user_edit_cancel($form, &$form_state) {
 	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
 
 	if(arg(3)==null){
-		drupal_set_message("Account changes cancelled", 'status');
+		// drupal_set_message("Account changes cancelled", 'status');
 	}else{
 		if(in_array(strtolower(arg(3)), array_map('strtolower', user_roles()))){
-			drupal_set_message("Profile changes cancelled", 'status');
+			// drupal_set_message("Profile changes cancelled", 'status');
 		}
 	}
 
@@ -173,18 +158,19 @@ function user_edit_cancel($form, &$form_state) {
 }
 
 function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){	
+
 	//Hide Profile2 fields on the freelancer registration page.
-
-	debugLong($form, 'form_profile2_form_alter');
-
 	if($form["#form_id"] != "user_profile_form"){
 		$form['profile_freelancer']['field_about_me']['#access'] = FALSE;
 		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
 		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
 		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
 		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
+		$form['profile_client']['field_client_profile_picture']['#access'] = FALSE;		
+		$form['profile_client']['field_company_profile']['#access'] = FALSE;		
+		$form['profile_client']['field_client_about_me']['#access'] = FALSE;		
+		$form['profile_client']['field_client_interests']['#access'] = FALSE;		
 	}else{
-	//	$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
 	}	
 
 
@@ -193,7 +179,6 @@ function owner_only_fields_form_profile2_form_alter(&$form, &$form_state){
 
 function owner_only_fields_preprocess_page(&$vars, $hook) {
 
-	debugLong($vars, 'preprocess_page');
 	global $user;
 	$first=arg(0);
 	$second=arg(1);
@@ -203,7 +188,7 @@ function owner_only_fields_preprocess_page(&$vars, $hook) {
 	//Change block title.
 	//Not HTML title.
 	if($first=='user' && $second=='login'){
-		$vars['title']=t('Log In'); 
+		$vars['title']=t('Registered User Log In'); 
 	}else if($first=='user' && $second=='password'){
 		$vars['title']=t('Request new password'); 
 	}else if($first=='user' && $second==null && !user_is_logged_in()){

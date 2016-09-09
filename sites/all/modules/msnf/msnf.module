@@ -1183,6 +1183,8 @@ function _msnf_form_attach_buttons(&$form, &$form_state) {
       '#value' => $step_settings['buttons']['previous'],
       '#weight' => 4,
       '#name' => 'previous',
+      '#submit' => array(),
+      '#limit_validation_errors' => array(),
     );
   }
 
