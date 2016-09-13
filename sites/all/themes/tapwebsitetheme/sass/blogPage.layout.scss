@@ -21,7 +21,7 @@ $grey : #CCCCCC;
 
 @mixin basicPageFormat{
    .l-content{
-      width: 70%;
+      width: 80%;
       margin: 0 auto;
       margin-bottom: 60px;
     }
@@ -69,5 +69,19 @@ $grey : #CCCCCC;
   
 }
 
+article.node-teaser {
+  height: auto !important;
+}
 
+.page-blog article img {
+    max-width: 100%;
+    height: auto;
+}
 
+th, td {
+    padding: 0px;
+}
+
+.node-teaser p {
+    width: 100%;
+}
