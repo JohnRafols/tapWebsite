@@ -172,7 +172,7 @@ ___________________
 
                         // This is where the name, profile pic, etc. is
                         label{
-                           @include make-sm-column(10); 
+                           @include make-sm-column(10);
                         } 
                         // This is where the radio button is
                         input{
@@ -193,6 +193,22 @@ ___________________
                             background-size: cover;
                             margin-right: 8px;
                       
+                        }
+
+                        .profile-picture{
+                          float: left
+                        }
+
+                        .user-name{
+                          color: $secondaryColor;
+                        }
+
+                        .view-profile-link{
+                          color: $mainColor;
+                        }
+
+                        .view-profile-link{
+                          font-size: small;
                         }
                     }
 
@@ -697,16 +713,8 @@ ___________________
 
 }
 
-#contactSupportButton, #inviteCoWorkersButton{
-  background-color: $mainColor;
-  color: $textColor;
-}
-
-#contactSupportButton{
-  margin-right: 15px;
-}
-
-.contactSupportInviteCoWorkers{
+//contact support and invite co-workers
+.view-job-client-and-author-information .views-field-views-conditional{
   float: right;
 }
 
@@ -749,4 +757,23 @@ ___________________
 // Overflow onto next line. 
 .chatroom-board{
   overflow-wrap: break-word;
+}
+
+#edit-field-accessible-to-luxury-und, #edit-field-casual-to-corporate-und, #edit-field-colourful-to-neutral-und,
+#edit-field-playful-to-serious-und, #edit-field-abstract-to-straight-up-und, #edit-field-structured-to-organic-und,
+#edit-field-feminine-or-masculine-und{
+  .form-item{
+    float: left;
+    margin-right: 15px;
+
+    label{
+      float: left;
+      display: none;
+    }
+  }
+
+}
+
+.group-styles .fieldset-wrapper .field-type-list-integer{
+  display: flex;
 }

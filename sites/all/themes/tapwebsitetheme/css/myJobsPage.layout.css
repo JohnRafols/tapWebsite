@@ -6168,6 +6168,14 @@ ___________________
           border: 1px solid #FFBF28;
           background-size: cover;
           margin-right: 8px; }
+        .node-type-job #block-tap-job-mgmt-tap-block #edit-freelancer-choice .parentColumn .form-item .profile-picture {
+          float: left; }
+        .node-type-job #block-tap-job-mgmt-tap-block #edit-freelancer-choice .parentColumn .form-item .user-name {
+          color: #3c0f31; }
+        .node-type-job #block-tap-job-mgmt-tap-block #edit-freelancer-choice .parentColumn .form-item .view-profile-link {
+          color: #FFBF28; }
+        .node-type-job #block-tap-job-mgmt-tap-block #edit-freelancer-choice .parentColumn .form-item .view-profile-link {
+          font-size: small; }
   .node-type-job #block-tap-job-mgmt-tap-block #borderfreelancerInfo {
     border-bottom: 1.5px solid #FFBF28; }
   .node-type-job #block-tap-job-mgmt-tap-block .form-submit {
@@ -6613,14 +6621,7 @@ ___________________
 .field--name-field-masculine-or-feminine {
   display: none; }
 
-#contactSupportButton, #inviteCoWorkersButton {
-  background-color: #FFBF28;
-  color: #000000; }
-
-#contactSupportButton {
-  margin-right: 15px; }
-
-.contactSupportInviteCoWorkers {
+.view-job-client-and-author-information .views-field-views-conditional {
   float: right; }
 
 #edit-next, #edit-submit {
@@ -6649,5 +6650,21 @@ ___________________
 
 .chatroom-board {
   overflow-wrap: break-word; }
+
+#edit-field-accessible-to-luxury-und .form-item, #edit-field-casual-to-corporate-und .form-item, #edit-field-colourful-to-neutral-und .form-item,
+#edit-field-playful-to-serious-und .form-item, #edit-field-abstract-to-straight-up-und .form-item, #edit-field-structured-to-organic-und .form-item,
+#edit-field-feminine-or-masculine-und .form-item {
+  float: left;
+  margin-right: 15px; }
+  #edit-field-accessible-to-luxury-und .form-item label, #edit-field-casual-to-corporate-und .form-item label, #edit-field-colourful-to-neutral-und .form-item label,
+  #edit-field-playful-to-serious-und .form-item label, #edit-field-abstract-to-straight-up-und .form-item label, #edit-field-structured-to-organic-und .form-item label,
+  #edit-field-feminine-or-masculine-und .form-item label {
+    float: left;
+    display: none; }
+
+.group-styles .fieldset-wrapper .field-type-list-integer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 /*# sourceMappingURL=myJobsPage.layout.css.map */

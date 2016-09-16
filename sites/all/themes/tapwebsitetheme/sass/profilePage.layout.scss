@@ -239,7 +239,7 @@ body.page-user .block__title {
 }
 
 
-#profilePage_passwordChangeLink, #profilePage_editFieldLink, #addPortfolioButton{
+#profilePage_passwordChangeLink{
     display: inline-block;
     margin-bottom: 10px;
     a{
@@ -247,13 +247,6 @@ body.page-user .block__title {
         background: $mainColor;
         color: $textColor;
     }
-}
-
-// Buttons: Post Job, Get a Quote, and Edit Profile
-#editProfileButton, #listJobLink, #getQuote, #addProjectButton{
-    @extend .btn;
-    background: $mainColor;
-    color: $textColor;
 }
 
 //Content margins
@@ -269,11 +262,6 @@ body.page-user .block__title {
     }
 }
 
-
-#addPortfolioButton{
-    margin-top: 20px;
-    margin-bottom: 35px;
-}
 
 //Messages:
 

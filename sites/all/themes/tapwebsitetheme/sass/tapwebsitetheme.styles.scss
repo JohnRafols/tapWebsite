@@ -33,34 +33,25 @@ $grey : #CCCCCC;
          padding-top: 50px;
     }
 
-    .btn, .editProfileLink{
-      border-radius: 30px !important; 
-    }
+    
     #edit-actions{
       input{
+        @extend .btn;
         border-radius: 30px !important;
-        background-color: $mainColor;
-        border: solid 3px #FFBF28;
-        padding: 8px 16px;
-        color: #434547;
-        margin-bottom: 10px; 
-      }
-        #edit-submit:focus {
-            background-color: ($mainColor * 0.80);
+        background-color: $mainColor;        
+        // padding: 8px 16px;
+        // margin-bottom: 10px; 
+
+        &:focus, &:hover{
+          background-color: ($mainColor * 0.80);
         }
-        // #edit-submit:hover{
-        //      background-color: rgba(255, 255, 255, 0.0);
-        //      border: solid 3px #FFBF28;
-        //      color: #FFBF28;
-        // }
+      }
 
-    }
-    #addPortfolioButton{
-      a{
-        border-radius: 30px !important; 
+      #edit-delete{
+        @extend .btn;
+        @extend .btn-danger;
       }
     }
-
 
 
     //The Navigation bar styling:
@@ -538,42 +529,6 @@ ___________________
        //  }
      }
   }
-
-
-
-  //The Submit Buttons 
-  // #edit-actions{
-  //     border-top: 2px solid $mainColor; 
-  //     padding-top: 30px;
-  //     margin-bottom: 60px;
-  //       #edit-submit{
-  //         @extend .btn;
-  //         background: $mainColor;
-  //         color: $textColor;
-  //           &:focus {
-  //           background-color: ($mainColor * 1.20);
-  //           }
-  //           &:hover{
-  //                background-color: ($mainColor * 0.80);
-  //           }
-  //       }
-        // #edit-preview, #edit-cancel-changes{
-        //   @extend .btn;
-        //   background: $mainColor;
-        //   margin-left: 5px;
-        //   color: $textColor;
-        //     &:focus {
-        //     background-color: ($mainColor * 1.20);
-        //     }
-        //     &:hover{
-        //          background-color: ($mainColor * 0.80);
-        //     }
-        // }
-        // #edit-preview{
-        //   display:none !important;
-        // }
-    // }
-
 }
 
 //This is specifically for the edit Portfolio Page
@@ -816,6 +771,7 @@ th, td {
     padding: 8px 16px;
     color: #434547;
     margin-bottom: 10px; 
+    border-radius: 60px;
     
     //Change the color of the button when it is selected or focused.
         &:focus {
@@ -890,3 +846,15 @@ th, td {
 #admin-menu{
   opacity: 0.85;
 }
+
+// Standardised yellow buttons of default boostrap size (btn-md).
+.default-button{
+  border-radius: 30px !important;
+  background-color: $mainColor;  
+  color: $textColor;
+
+  &:focus, &:hover{
+    background-color: ($mainColor * 0.80);
+  }
+}
+

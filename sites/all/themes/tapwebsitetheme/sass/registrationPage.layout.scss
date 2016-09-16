@@ -184,7 +184,8 @@ ___________________
 #edit-submit{
     @extend .btn;
 }
-#edit-submit, .registrationModal_Button{
+
+.registrationModal_Button{
     background-color: $mainColor;
     border: $mainColor * 0.80;
     color: $text-color;

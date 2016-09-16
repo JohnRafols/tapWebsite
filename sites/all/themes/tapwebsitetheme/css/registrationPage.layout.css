@@ -6100,13 +6100,13 @@ ___________________
     margin-top: 15px;
     margin-bottom: 15px; }
 
-#edit-submit, .registrationModal_Button {
+.registrationModal_Button {
   background-color: #FFBF28;
   border: #cc9920;
   color: #333333; }
-  #edit-submit:focus, .registrationModal_Button:focus {
+  .registrationModal_Button:focus {
     background-color: #ffe530; }
-  #edit-submit:hover, .registrationModal_Button:hover {
+  .registrationModal_Button:hover {
     background-color: #cc9920; }
 
 /* 
