@@ -1,0 +1,336 @@
+// Import variables, abstractions, base styles and components.
+// Uncomment the next lines and adjust them to your needs.
+//@import "variables/{YOUR FILE NAME HERE}";
+//@import "abstractions/{YOUR FILE NAME HERE}";
+//@import "base/{YOUR FILE NAME HERE}";
+//@import "components/{YOUR FILE NAME HERE}";
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$orange :  #FFBF28;
+$textColor : #3c0f31;
+$greybk : #f7f4f6;
+$grey-text:#969696;
+$purple: #6e2a54;
+
+
+// General #################
+//The Registration Buttons:
+.registrationButtonClient , .registrationButtonFreelancer {
+    background-color: $orange;
+    border: solid 3px $orange;
+    padding: 8px 16px;
+    color: $textColor;
+    margin-bottom: 10px; 
+    
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($orange * 0.80);
+        }
+        &:hover{
+             background-color: rgba(255, 255, 255, 0.0);
+             border: solid 3px $orange;
+             color: $orange;
+        }
+}
+
+//These are regarding the second navbar that only appears when logged in.
+.logged-in{
+    #block-system-user-menu, #block-menu-menu-secondary-nav-bar{
+        margin-bottom: 0px;
+    }
+}
+
+.not-logged-in{
+    #block-menu-menu-secondary-nav-bar{
+        display: none !important;
+    }
+}
+
+#whatYouGet_mainContainer, #services_mainContainer, #allServices_mainContainer, #payment_mainContainer {
+    
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+  #whatYouGet_contentContainer, #services_contentContainer, #allServices_contentContainer, #payment_contentContainer {
+    width: 70%;
+  }
+}      
+
+
+//The Banner ###############
+#banner_prices {
+    min-height: 200px;
+    //Center everything
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    //Misc:
+    position: relative;
+    color: white;
+    margin: 0 auto; 
+    text-align: center;
+    //url's are local to the css folder
+    background-color: #3c0f31;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 20px;
+    h1{
+        font-size: 42px;
+    }
+    #banner_prices_border{
+        position: relative;
+        display: inline-block;
+        border-top: 2px solid white;
+        width: 10%;
+        margin: 0px auto;
+    }
+}
+
+// section1 What You Get ################## 
+#whatYouGet, #payment {
+  ul{
+    padding-top:20px;
+    list-style: inherit;
+  }
+  li {
+    color: $purple;
+  }
+  p{
+    color: $orange;
+    font-size: 19px; 
+  }
+}
+
+
+#whatYouGet_titles, #payment_titles{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    color:$purple;
+}
+
+// section2 services ##################
+#services_titles{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid $orange; 
+    text-align: center;
+    color: $purple;
+    font-family:Cabin Bold;
+}
+
+// .slideshow-container {
+//   width: 70%;
+//   position: relative;
+//   margin: auto;
+//   margin-bottom: 30px;
+//   margin-top: 30px;
+// }
+
+/* The dots/bullets/indicators */
+#services_button{ 
+  text-align:center;
+  width: 100%; 
+  padding-top: 50px; 
+  padding-bottom: 60px;
+  margin: auto;
+}
+
+.dot {
+  cursor: pointer;
+  height: 50px;
+  width: 288px;
+  margin: 0 -1px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  padding-top: 10px;
+  display: inline-block;
+  transition: background-color .6s ease;
+}
+
+.actives, .dot:hover {
+  background-color: #6e2a54;
+  color: #ffffff;
+  border: 1px solid #6e2a54;
+}
+
+span:active {
+  color: #ffffff;
+}
+
+.dot {
+  color: #FFBF28;
+  font-size: 20px;
+}
+
+/* Fading animation */
+.fadey {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadey {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fadey {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .slprev, .slnext,.text {font-size: 11px}
+}
+#Services_button{
+    display:flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative; 
+    height: 150px;
+
+    ul {
+        text-align:center;
+    }
+
+    li{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+}
+
+// section3 All services ##################
+#allServices{
+    text-align: center;
+}
+
+#allServices_titles{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    color:$purple;
+}
+
+#allServices_titles_border{
+    position: relative;
+    display: inline-block;
+    border-top: 3px solid $orange;
+    width: 25%;
+    margin: 0px auto;
+}
+
+#allServicesImages {
+    margin-top:-21px;
+}
+
+#allServicesImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#allServicesRight_description {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+#allServices_text p{ 
+    font-size: 19px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color:$orange; 
+}
+
+.allServices_iconFrame{
+  height: 350px;
+  width: 50%;
+  float: left;
+ }
+#commission {
+  border-right: 1px solid #bbb
+}
+
+.box-shadow_commission{
+    -webkit-box-shadow:  -10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:  -10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    box-shadow:  -10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    height: inherit;
+}
+.box-shadow_review{
+    -webkit-box-shadow:  10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:  10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    box-shadow:  10px 15px 60px -22px rgba(0, 0, 0, 0.3);
+    height: inherit;
+}
+
+#allServices_commission img, #allServices_review img{
+    width: 100%;
+    height: 150px;
+} 
+
+.allServices_iconFrame h3 {
+    font-size: 22px;
+    text-align: center;
+    color:$purple;  
+}
+
+.allServices_iconFrame p{
+    font-size: 15px;
+    padding: 0px 22px 0px 28px;
+    text-align: left;
+    color:$orange;
+}
+
+.Icon_border_allServices{
+    border-top: #FFBF28 solid 2px;
+    //padding-top: 8px;
+    width: 83%;
+    margin: 0 auto;
+}
+
+// section4 What happens to payment ##################
+#payment {
+  padding-top: 30px;
+  ul{
+    padding:15px 0px 5px 20px;
+  }
+  p {
+    padding-top: 10px;
+  }
+
+}
+
+
+//Media query for mobile:
+@media(max-width: $screen-xs-max) {
+  //Change some margins when the screen is small
+
+  #whatYouGet_contentContainer, #services_contentContainer, #allServices_contentContainer, #payment_contentContainer {
+    width: 100% !important;
+  }
+  
+  #allServices_text p {
+    font-size: 18px;
+  }
+}
+@media(max-width:480px){
+  .allServices_iconFrame p {
+    font-size: 10px;
+}
+}
