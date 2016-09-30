@@ -1,0 +1,187 @@
+<?php 
+
+require 'jobHelperFunctions.php';
+
+function tap_job_mgmt_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#tap_job_mgmt":
+			return t("Invites and matches Creative Pros to Jobs.");
+		break;
+	}
+}
+
+function tap_job_mgmt_node_validate($node, $form, &$form_state){
+
+	// if(property_exists($node, 'previous')){
+	// 	return;
+	// }
+
+	// $n=$form_state['node'];
+	// if(!isset($n->nid) || isset($n->is_new)){ //Only do this for new jobs, not edited jobs.
+		
+	// 	if(array_key_exists('field_freelancer_selection', $form_state['values'])){
+
+	// 		$invalidCombo='Invalid combination of freelancer selection. The only valid combination is:<br>&nbsp;&nbsp;&nbsp;&nbsp;  Be matched and invite';
+
+	// 		//Invalidate if wrong combination is selected
+	// 		if(count($form_state['values']['field_freelancer_selection']['und'])==2){
+	// 			foreach($form_state['values']['field_freelancer_selection']['und'] as $type){
+	// 				if(strcmp($type['value'], 'match')!=0 && strcmp($type['value'], 'invite')!=0){
+	// 					form_set_error('field_freelancer_selection', t($invalidCombo));
+	// 				}
+
+	// 				if(strcmp($type['value'], 'invite')==0){
+	// 					validateInvitedFreelancers($form, $form_state);
+	// 				}
+	// 			}
+	// 		}else if(count($form_state['values']['field_freelancer_selection']['und'])==1){
+
+	// 			$type=$form_state['values']['field_freelancer_selection']['und'][0]['value'];
+
+	// 			if(strcmp($type, 'commission')==0){
+	// 				validateCommissionedFreelancer($form, $form_state);
+	// 			}else if(strcmp($type, 'invite')==0){
+	// 				validateInvitedFreelancers($form, $form_state);
+	// 			}else if(strcmp($type, 'long_term')==0){
+	// 				form_set_error('field_freelancer_selection', t('This option is not yet available.'));
+	// 			}
+	// 		}else{
+	// 			form_set_error('field_freelancer_selection', t($invalidCombo));
+	// 		}	
+
+	// 		tap_job_mgmt_node_presave($node);
+	// 	}
+	// }else{
+		
+	// }
+}
+
+
+
+//By the time this hook is called, the freelancer selection combo has been validated (in hook_node_validate).
+function tap_job_mgmt_node_presave($node){
+	// debugLoo($node, "_node_presave2");
+
+	if($node->type=='job'){
+		if(!property_exists($node, 'original')){ //A new node
+			// debugLong($node, 'node_presave_new');
+			
+			$isMatched=false;
+			$isInvited=false;
+
+			//Maximum of two loops.
+			foreach($node->field_freelancer_selection['und'] as $type){
+				$freelancer_selection_type=$type['value'];
+
+				//debugShort('node_presave_type_'+$freelancer_selection_type);
+
+				if($freelancer_selection_type=='match'){	
+
+					$isMatched=true;
+					$topFreelancers=getMatchedFreelancers($node);
+					//debugLong($topFreelancers, 'topFreelancers');
+					addMatchedFreelancersToJob($topFreelancers, $node);
+					emailFreelancers($topFreelancers);
+					
+				}else if($freelancer_selection_type=='invite'){ 
+
+		// 			$isInvited=true;
+		// 			$names=$node->to_invite;
+		// 			$freelancers=array();
+
+		// 			$freelancers_to_invite=explode(',', $node->to_invite);
+
+		// 			foreach($freelancers_to_invite as $name){
+		// 				$f=user_load_by_name(trim($name));
+		// 				array_push($freelancers, $f);
+		// 			}
+
+		// 			foreach($freelancers as $f){
+		// 				$data =array('target_id'=>$f->uid);
+		// 				array_push($node->field_invited_candidates['und'], $data);		
+		// 			}
+
+				}else if($freelancer_selection_type=='commission'){
+		// 			// debugLoo(user_load_by_name($node->to_commission), 'commissioned_candidate');
+		// 			$u_id = addCommissionedFreelancerToJob(user_load_by_name($node->to_commission), $node);
+		// 			// debugLoo($u_id, "commissioned_candidate_after");
+		// 			// unset($node->to_commission);
+
+				}else if($freelancer_selection_type=='first_candidate'){
+
+				}else if($freelancer_selection_type=='long_term'){
+
+				}
+			}
+
+		// 	//debugLong($node, 'node_presave_before_duplicate_removal');
+
+		// 	//Remove duplicates from $job->field_initial_candidates.
+			if($isMatched && $isInvited){
+		// 		foreach($node->field_invited_candidates['und'] as $invited){
+		// 			foreach($node->field_matched_candidates['und'] as $key=>$matched){
+		// 				if($matched['target_id']==$invited['target_id']){
+		// 					unset($node->field_matched_candidates['und'][$key]);
+		// 				}
+		// 			}
+		// 		}
+			}
+
+			//Configure chatroom
+			$node->field_messaging['und'][0]['chatroom']['chatroom_read_only_roles']=array(2=> 2); //Can be read by authenticated users.
+			$node->field_messaging['und'][0]['chatroom']['chatroom_write_roles']=array(5=>5, 8=>8); //Can be read by clients and approvedFreelancers.	
+
+			// debugLoo($node, "node_presave_new_job");
+			
+		}else{ //Editing an existing node.			
+
+			// debugLoo($node, "node_presave_existing_job_before");
+
+			// $node->field_messaging['und'][0]['chatroom'] is an objects when saving job node after invitng co-workers.
+			if(array_key_exists('und', $node->field_messaging) && is_array($node->field_messaging['und'][0]['chatroom'])){
+				$node->field_messaging['und'][0]['chatroom']['chatroom_cid'] = $node->original->field_messaging['und'][0]['cid'];
+				$node->field_messaging['und'][0]['chatroom']['chatroom_public'] = 0;
+				$node->field_messaging['und'][0]['chatroom']['chatroom_delete'] = 0;
+	            $node->field_messaging['und'][0]['chatroom']['chatroom_archived'] = 0;
+	            $node->field_messaging['und'][0]['chatroom']['chatroom_format'] = 'plain_text';
+
+	            //Configure chatroom
+				$node->field_messaging['und'][0]['chatroom']['chatroom_read_only_roles']=array(2=> 2);
+				$node->field_messaging['und'][0]['chatroom']['chatroom_write_roles']=array(5=>5, 8=>8);
+
+	            // debugLoo($node, "node_presave_existing_job");
+
+        	}
+		}		
+	}
+}
+
+
+// function tap_job_mgmt_mail($key, &$message, $params) {
+//     $data['user'] = $params['account'];
+//     $options['language'] = $message['language'];
+//     user_mail_tokens($variables, $data, $options);
+//     switch($key) {
+//       case 'notice':
+//         $langcode = $message['language']->language;
+//         $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
+//         $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
+//         break;
+//     }
+// }
+
+
+/**
+* Implement hook_query_TAG_alter
+* Called in getMatchedFreelancers()
+*
+* @param QueryAlterableInterface $query
+*/
+function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
+	$query->leftJoin('users_roles', 'r', 'users.uid = r.uid');
+	$and = db_and()
+	->condition('r.rid', array_search('approvedFreelancer', user_roles()), '=');
+	$query
+	->condition($and);
+}
+

@@ -1,15 +1,15 @@
 <?php
 
 function validateCommissionedFreelancer($form, $form_state){
-	$username=$form_state['values']['to_commission'];
+	$username=$form_state['values']['field_freelancer_to_commission'];
 
 	if(empty($username)){
-		form_set_error('to_commission', t('Enter the username of the Creative Pro you want to commission.'));
+		form_set_error('field_freelancer_to_commission', t('Enter the username of the Creative Pro you want to commission.'));
 	}else{ //Determine if entered username is an ApprovedFreelancer
 		$freelancer=user_load_by_name($username);
 
 		if($freelancer==false){
-			form_set_error('to_commission', t('Invalid username'));
+			form_set_error('field_freelancer_to_commission', t('Invalid username'));
 
 		}else if(user_has_role(8, $freelancer)){	//Role id 8: ApprovedFreealancer.
 			//Add freelancer to field_final_candidate.
@@ -20,25 +20,25 @@ function validateCommissionedFreelancer($form, $form_state){
 			
 		}else{
 			if(user_has_role(4, $freelancer)){ //Freelancer
-				form_set_error('to_commission', t('Freelancer not yet approved by Tap.'));
+				form_set_error('field_freelancer_to_commission', t('Freelancer not yet approved by Tap.'));
 			}else{
-				form_set_error('to_commission', t('The username is not one of a freelancer.'));
+				form_set_error('field_freelancer_to_commission', t('The username is not one of a freelancer.'));
 			}
 		}
 	}
 }
 
 function validateInvitedFreelancers($form, $form_state){
-	if(!isset($form['to_invite'])){
-		form_set_error('to_invite', 'Please enter at least one Creative Pro to invite');
+	if(!isset($form['field_freelancers_to_invite'])){
+		form_set_error('field_freelancers_to_invite', 'Please enter at least one Creative Pro to invite');
 	}
 
-	//debugLong($form_state['values']['to_invite'], '_validate_freelancers_to_invite');
-	$freelancers_to_invite=explode(',', $form_state['values']['to_invite']);
+	//debugLong($form_state['values']['field_freelancers_to_invite'], '_validate_freelancers_to_invite');
+	$freelancers_to_invite=explode(',', $form_state['values']['field_freelancers_to_invite']);
 	//debugLong($freelancers_to_invite, '_validate_freelancers_to_invite_exploded');
 
 	if(empty($freelancers_to_invite[0])){
-		form_set_error('to_invite', 'Enter at least one Creative Pro');
+		form_set_error('field_freelancers_to_invite', 'Enter at least one Creative Pro');
 	}
 
 	$invalid=array();
@@ -65,11 +65,11 @@ function validateInvitedFreelancers($form, $form_state){
 	}
 
 	if(!empty($errorMessage)){
-		form_set_error('to_invite', $errorMessage);
+		form_set_error('field_freelancers_to_invite', $errorMessage);
 	}
 	
 	$trimmed=array_map('trim', $freelancers_to_invite);
-	$form_state['values']['to_invite']=implode(',', $trimmed);
+	$form_state['values']['field_freelancers_to_invite']=implode(',', $trimmed);
 }
 
 
@@ -86,9 +86,9 @@ function addMatchedFreelancersToJob($freelancers, $job){
 }
 
 function addCommissionedFreelancerToJob($freelancer, $job){
+
 	$data =array('target_id'=>$freelancer->uid);
-	array_push($job->field_commissioned_candidate['und'], $data);	
-	return $freelancer->uid;
+	array_push($job->field_commissioned_candidate['und'], $data);			
 }
 
 

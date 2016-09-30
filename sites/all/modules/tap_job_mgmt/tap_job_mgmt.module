@@ -2,125 +2,47 @@
 
 require 'jobHelperFunctions.php';
 
-
-// function tap_job_mgmt_form_submit($form, &$form_state){
-// 	debugLoo($form, "tap_job_mgmt_form_submit_form");
-// 	debugLoo($form_state, "tap_job_mgmt_form_submit_form_state");
-// }
-
-function tap_job_mgmt_node_validate($node, $form, &$form_state){
-	
-	// if(property_exists($node, 'previous')){
-	// 	return;
-	// }
-
-	// $n=$form_state['node'];
-	// if(!isset($n->nid) || isset($n->is_new)){ //Only do this for new jobs, not edited jobs.
-		
-	// 	if(array_key_exists('field_freelancer_selection', $form_state['values'])){
-
-	// 		$invalidCombo='Invalid combination of freelancer selection. The only valid combination is:<br>&nbsp;&nbsp;&nbsp;&nbsp;  Be matched and invite';
-
-	// 		//Invalidate if wrong combination is selected
-	// 		if(count($form_state['values']['field_freelancer_selection']['und'])==2){
-	// 			foreach($form_state['values']['field_freelancer_selection']['und'] as $type){
-	// 				if(strcmp($type['value'], 'match')!=0 && strcmp($type['value'], 'invite')!=0){
-	// 					form_set_error('field_freelancer_selection', t($invalidCombo));
-	// 				}
-
-	// 				if(strcmp($type['value'], 'invite')==0){
-	// 					validateInvitedFreelancers($form, $form_state);
-	// 				}
-	// 			}
-	// 		}else if(count($form_state['values']['field_freelancer_selection']['und'])==1){
-
-	// 			$type=$form_state['values']['field_freelancer_selection']['und'][0]['value'];
-
-	// 			if(strcmp($type, 'commission')==0){
-	// 				validateCommissionedFreelancer($form, $form_state);
-	// 			}else if(strcmp($type, 'invite')==0){
-	// 				validateInvitedFreelancers($form, $form_state);
-	// 			}else if(strcmp($type, 'long_term')==0){
-	// 				form_set_error('field_freelancer_selection', t('This option is not yet available.'));
-	// 			}
-	// 		}else{
-	// 			form_set_error('field_freelancer_selection', t($invalidCombo));
-	// 		}	
-
-	// 		tap_job_mgmt_node_presave($node);
-	// 	}
-	// }else{
-		
-	// }
-}
-
-
 function tap_job_mgmt_help($path, $arg) {
 	switch ($path) {
 		case "admin/help#tap_job_mgmt":
-			return '<p>' . t("Manage the entire job process i.e. matching & assigning freelancers to jobs, accepting/declining of jobs by freelancers.") . '</p>';
+			return t("Invites and matches Creative Pros to Jobs.");
 		break;
 	}
 }
 
+function tap_job_mgmt_node_validate($node, $form, &$form_state){}
 
-//By the time this hook is called, the freelancer selection combo has been validated (in hook_node_validate).
+
 function tap_job_mgmt_node_presave($node){
-	debugLoo($node, "_node_presave2");
 
 	if($node->type=='job'){
-		if(!property_exists($node, 'original')){ //A new node
-			// debugLong($node, 'node_presave_new');
+		if(!property_exists($node, 'original')){ // A new Job.
 			
 			$isMatched=false;
 			$isInvited=false;
 
-			//Maximum of two loops.
+			// Should be a maximum of two loops, because the only possible combination is Invite Candidates + Get Matched.
 			foreach($node->field_freelancer_selection['und'] as $type){
-				$freelancer_selection_type=$type['value'];
-
-				//debugShort('node_presave_type_'+$freelancer_selection_type);
+				$freelancer_selection_type=$type['value'];		
 
 				if($freelancer_selection_type=='match'){	
 
 					$isMatched=true;
 					$topFreelancers=getMatchedFreelancers($node);
-					//debugLong($topFreelancers, 'topFreelancers');
+		
 					addMatchedFreelancersToJob($topFreelancers, $node);
 					emailFreelancers($topFreelancers);
 					
 				}else if($freelancer_selection_type=='invite'){ 
 
-		// 			$isInvited=true;
-		// 			$names=$node->to_invite;
-		// 			$freelancers=array();
-
-		// 			$freelancers_to_invite=explode(',', $node->to_invite);
-
-		// 			foreach($freelancers_to_invite as $name){
-		// 				$f=user_load_by_name(trim($name));
-		// 				array_push($freelancers, $f);
-		// 			}
-
-		// 			foreach($freelancers as $f){
-		// 				$data =array('target_id'=>$f->uid);
-		// 				array_push($node->field_invited_candidates['und'], $data);		
-		// 			}
-
 				}else if($freelancer_selection_type=='commission'){
-		// 			debugLoo(user_load_by_name($node->to_commission), 'commissioned_candidate');
-		// 			$u_id = addCommissionedFreelancerToJob(user_load_by_name($node->to_commission), $node);
-		// 			debugLoo($u_id, "commissioned_candidate_after");
-		// 			// unset($node->to_commission);
-
+		
 				}else if($freelancer_selection_type=='first_candidate'){
 
 				}else if($freelancer_selection_type=='long_term'){
 
 				}
 			}
-
-		// 	//debugLong($node, 'node_presave_before_duplicate_removal');
 
 		// 	//Remove duplicates from $job->field_initial_candidates.
 			if($isMatched && $isInvited){
@@ -133,16 +55,14 @@ function tap_job_mgmt_node_presave($node){
 		// 		}
 			}
 
-			//Configure chatroom
+			//Configure chatroom write and read permissions.
 			$node->field_messaging['und'][0]['chatroom']['chatroom_read_only_roles']=array(2=> 2); //Can be read by authenticated users.
 			$node->field_messaging['und'][0]['chatroom']['chatroom_write_roles']=array(5=>5, 8=>8); //Can be read by clients and approvedFreelancers.	
 
-			debugLoo($node, "node_presave_new_job");
 			
-		}else{ //Editing an existing node.			
+		}else{ // Editing an existing Job.			
 
-			debugLoo($node, "node_presave_existing_job_before");
-
+			//---------Need to do reassign otherwise chatroom gets reset and all messages get deleted.---------//
 			// $node->field_messaging['und'][0]['chatroom'] is an objects when saving job node after invitng co-workers.
 			if(array_key_exists('und', $node->field_messaging) && is_array($node->field_messaging['und'][0]['chatroom'])){
 				$node->field_messaging['und'][0]['chatroom']['chatroom_cid'] = $node->original->field_messaging['und'][0]['cid'];
@@ -151,30 +71,14 @@ function tap_job_mgmt_node_presave($node){
 	            $node->field_messaging['und'][0]['chatroom']['chatroom_archived'] = 0;
 	            $node->field_messaging['und'][0]['chatroom']['chatroom_format'] = 'plain_text';
 
-	            //Configure chatroom
+	            //Configure chatroom write and read permissions.
 				$node->field_messaging['und'][0]['chatroom']['chatroom_read_only_roles']=array(2=> 2);
 				$node->field_messaging['und'][0]['chatroom']['chatroom_write_roles']=array(5=>5, 8=>8);
-
-	            debugLoo($node, "node_presave_existing_job");
-
         	}
+        	//---------------------------------------------------------------------------------------------//
 		}		
 	}
 }
-
-
-// function tap_job_mgmt_mail($key, &$message, $params) {
-//     $data['user'] = $params['account'];
-//     $options['language'] = $message['language'];
-//     user_mail_tokens($variables, $data, $options);
-//     switch($key) {
-//       case 'notice':
-//         $langcode = $message['language']->language;
-//         $message['subject'] = t('Notification from !site', $variables, array('langcode' => $langcode));
-//         $message['body'][] = t("Dear !username\n\nThere is new content available on the site.", $variables, array('langcode' => $langcode));
-//         break;
-//     }
-// }
 
 
 /**
@@ -191,410 +95,3 @@ function tap_job_mgmt_query_role_filter_alter(QueryAlterableInterface $query){
 	->condition($and);
 }
 
-
-function tap_job_mgmt_menu() {
-	//debugLong('called in mgmt menu', 'called');
-	$items['jobs/%/available'] = array(
-	    'title' => 'Available',
-	    'page callback' => 'tap_job_mgmt_job_available',
-	    'page arguments' => array(1),
-	    'access callback' => TRUE,
-  	);
-
-	$items['jobs/%/unavailable'] = array(
-	    'title' => 'Unavailable',
-	    'page callback' => 'tap_job_mgmt_job_unavailable',
-	    'page arguments' => array(1),
-	    'access callback' => TRUE,
-  	);	
-
-	return $items;
-}
-
-
-function tap_job_mgmt_job_available($job='') {
-	global $user;
-
-	//Only an ApprovedFreelancer can accept jobs.
-	if(!user_has_role(8)){
-		drupal_access_denied();
-	}
-
-	//--------------PSEUDOCODE----------------
-	//If match, add to field_available_candidates.
-	//If commission, add to field_final_candidate.
-	//If invited, add to field_invited_candidates.
-
-	$job=node_load($job);
-	//debugLong($job, "node_loaded");
-
-	$freelancer_selection_type=$job->field_freelancer_selection['und'][0]['value'];
-	global $user;
-
-	//Client wanted us to match freelancers to their job.
-	if(strcmp($freelancer_selection_type, 'match')==0 || strcmp($freelancer_selection_type, 'invite')==0){
-		if(empty($job->field_available_candidates)){
-			$job->field_available_candidates['und']=array();
-			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
-			field_attach_update('node', $job);
-			drupal_set_message("You have been added to the Client's list. You will be notified.");
-			drupal_goto('/jobs');
-		}else{
-			//Do not add user to field_available_candidates if they are already in it.
-			foreach ($job->field_available_candidates['und'] as $value) {
-				if($value['target_id']==$user->uid){
-					// return 'You already confirmed your availability. Waiting to hear from the client now.';
-					drupal_set_message("You already confirmed your availability. Wait to hear from the client now.");
-					drupal_goto('/jobs');
-					break;
-				}
-			}
-
-			//If it didn't retun in the loop, we can add this freelancer.
-			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
-			field_attach_update('node', $job);
-			drupal_set_message("Client has been notified. Wait to hear weather you are selected for the job.");
-			drupal_goto('/jobs');
-		}
-	
-		//debugLong($job, 'newlyupdated');
-	}
-	//Client commissioned a freelancer.
-	else if(strcmp($freelancer_selection_type, 'commission')==0){
-		if(isset($job->field_commissioned_candidate)){
-			if($user->uid==$job->field_commissioned_candidate['und'][0]['target_id']){
-				// return 'I am available';
-				$job->field_final_candidate['und']=array();
-				array_push($job->field_final_candidate['und'], array('target_id'=>$user->uid));
-				field_attach_update('node', $job);
-
-				drupal_set_message("You are now the Creative Pro for the job. Go to the job page to contact the client.");
-				drupal_goto('/jobs');
-			}
-		}
-	}
-	
-}
-
-function tap_job_mgmt_job_unavailable($job='') {
-	$job=node_load($job);
-	global $user;
-
-	//Only an ApprovedFreelancer can decline jobs.
-	if(!user_has_role(8)){
-		drupal_access_denied();
-	}
-
-	$isMatchedCandidate=false;
-	$isInvitedCandidate=false;
-	$isCommissionedCandidate=false;
-	if(!empty($job->field_matched_candidates)){
-		foreach($job->field_matched_candidates['und'] as $f){
-			if($f['target_id']==$user->uid){
-				$isMatchedCandidate=true;
-				break;
-			}
-		}
-	}
-	if(!$isMatchedCandidate){
-		if(!empty($job->field_invited_candidates)){
-			foreach($job->field_invited_candidates['und'] as $f){
-				if($f['target_id']==$user->uid){
-					$isInvitedCandidate=true;
-					break;
-				}
-			}
-		}
-	}
-	if(!empty($job->field_commissioned_candidate) && $job->field_commissioned_candidate['und'][0]['target_id']==$user->uid){
-		$isCommissionedCandidate=true;
-	}
-
-	if($isMatchedCandidate || $isInvitedCandidate || $isCommissionedCandidate){
-		//Add user to the unavailable candidates field.
-		if(!array_key_exists('und', $job->field_unavailable_candidates)){
-			$job->field_unavailable_candidates['und']=array();				
-		}
-		array_push($job->field_unavailable_candidates['und'], array('target_id'=>$user->uid));
-
-		//Remove user from available candidates field, if they are in it.
-		if(array_key_exists('und', $job->field_available_candidates)){
-			foreach($job->field_available_candidates['und'] as $i => $f){
-				if($f['target_id'] == $user->uid){
-					unset($job->field_available_candidates['und'][$i]);
-				}
-			}
-		}
-
-		field_attach_update('node', $job);
-		drupal_set_message("You have been removed from the client's list.");
-		drupal_goto('/jobs');
-	}else{
-		drupal_set_message("Invalid.");
-		drupal_goto('/jobs');
-	}
-}
-
-
-function tap_job_mgmt_block_info() {
-	$blocks=array();
-	$blocks['tap block'] = array(
-		'info' => t('tap block'),
-		'cache' => DRUPAL_NO_CACHE
-	);
-
-	return $blocks;
-}
-
-/**
- * Implements hook_block_view().
- */
-function tap_job_mgmt_block_view($block_name = ''){	
-	//Do not add this form if there is already a freelancer working on the job.
-
-	if(!menu_get_object()){
-		return;
-	}
-
-	if(menu_get_object()->field_final_candidate!=null){
-		return;
-	}
-
-    $form = drupal_get_form('tap_job_mgmt_form');
-    $block = array(
-        'content' => $form,
-    );
-        
-    return $block;
-}
-
-/**
- * Implements hook_form().
- */
-function tap_job_mgmt_form($form, &$form_state){
-	if ($job = menu_get_object()){
-		//Put all available freelancers into a list from which the client will select.
-
-		//Do not do anything further if no freelancer has expressed interest.
-		if(!array_key_exists('und', $job->field_available_candidates)){
-			return;	
-		}
-
-		//debugLong($job, "candidates");
-
-		$freelancers=array();
-		foreach ($job->field_available_candidates['und'] as $value) {
-			$u=user_load($value['target_id']);
-			$profile = profile2_load_by_user($value['target_id']);
-			if(!empty($profile['freelancer']->field_profile_picture['und'])){
-				$picUrl=file_create_url($profile['freelancer']->field_profile_picture['und'][0]['uri']);
-			}else{
-				$info = field_info_field('field_profile_picture');
-				if (!empty($info) && $info['settings']['default_image'] > 0) {
-				    $default_img_fid  = $info['settings']['default_image'];
-				    $picUrl=file_create_url(file_load($default_img_fid)->uri);	
-				}
-			}
-
-			$freelancers[$value['target_id']]=
-					'<a target="_blank" href="/user/'.$u->uid.'"><img src="'.$picUrl.'" id="profilePicture'.$u->uid.'" alt="Default image">'.$u->name.'</a>';				
-		}
-
-	
-		$form['freelancer_choice']=array(
-			'#type'=>'radios',
-			'#title'=>t('Choose the Creative Pro for this job:'),
-			'#options'=>$freelancers,
-		);
-
-		// now I add also a button
-	    $form['submit'] = array(
-	       '#type'=>'submit',
-	       '#value'=>t('Confirm'),
-	    );
-
-	    //Assign our own function as handler of the submit event.
-	    $form['#submit'][]='tap_job_mgmt_submit_handler';
-	    return $form;	
-	}    
-}
-
-function tap_job_mgmt_submit_handler($form, &$form_state){
-	if ($job = menu_get_object()){	
-		//Get the id of the freelancer the client selected.
-		$selectedFreelancerId=$form_state['values']['freelancer_choice'];
-
-		//Make the selected freelancer the final candidate i.e. the person for the job.
-		$job->field_final_candidate['und']=array();
-		array_push($job->field_final_candidate['und'], array('target_id'=>$selectedFreelancerId));
-		field_attach_update('node', $job);		
-
-		//Notify client.
-		$user=user_load($selectedFreelancerId);
-		drupal_set_message($user->name.' has been notified and is now the Creative Pro working on your project!');
-	}	    
-}
-
-function tap_job_mgmt_form_alter(&$form, &$form_state, $form_id){
-	//debugLong($form, "form_alter_form");
-	debugLoo($form, "form_alter_form_id");	
-	// debugdebug(	$form, "form_alter_form");
-
-	
-
-	if($form_id=='job_node_form'){
-
-		//Hide all these whether node is new or edited.
-		// hide($form['field_messaging']);
-		// hide($form['field_invited_candidates']);
-		hide($form['field_matched_candidates']);
-		// hide($form['field_commissioned_candidate']);
-		// hide($form['field_available_candidates']);
-		// hide($form['field_unavailable_candidates']);
-		// hide($form['field_final_candidate']);
-		hide($form['field_finished']);
-
-		$node = $form_state['node'];
-  		if(!isset($node->nid) || isset($node->is_new)){ 
-
-  			// $form['#submit'][] = 'tap_job_mgmt_form_submit';
-
-  			//Add text fields for clients to enter username of Creative/s they want to commission/invite.
-  	// 		$form['field_freelancer_to_commission'] = array(
-			// 	'#type' => 'textfield',
-			// 	'#default_value' => '',
-			// 	'#size' => 60,         // The default size is a bit large...
-			// 	'#weight'=>2.5,			//Exact weight calculated so to be placed after the Freelancer selection field.
-			// 	'#attributes' =>array('placeholder' => t('Commission a Creative Pro, enter their username.')),
-			// );
-
-			// $form['field_freelancers_to_invite'] = array(
-			// 	'#type' => 'textfield',
-			// 	'#default_value' => '',
-			// 	'#size' => 60,         // The default size is a bit large...
-			// 	'#weight'=>2.6,			//Exact weight calculated so to be placed after the Freelancer selection field.
-			// 	'#attributes' =>array('placeholder' => t('Invite Creative Pros, separate usernames with a comma.')),
-			// );
-
-			// $form['to_commission'] = array(
-			// 	'#type' => 'textfield',
-			// 	'#default_value' => '',
-			// 	'#size' => 60,         // The default size is a bit large...
-			// 	'#weight'=>2.5,			//Exact weight calculated so to be placed after the Freelancer selection field.
-			// 	'#attributes' =>array('placeholder' => t('Commission a Creative Pro, enter their username.'))		
-			// );	
-
-			// $form['to_invite'] = array(
-			// 	'#type' => 'textfield',
-			// 	'#default_value' => '',
-			// 	'#size' => 60,         // The default size is a bit large...
-			// 	'#weight'=>2.6,			//Exact weight calculated so to be placed after the Freelancer selection field.
-			// 	'#attributes' =>array('placeholder' => t('Invite Creative Pros, separate usernames with a comma.'))
-			// );	
-  		}else{	//On the Job edit page
-  			
-  			// hide($form['field_freelancer_selection']);
-  			// hide($form['field_service_type']);
-
-
-  			//-----Style field group-----//
-  	 		//unset($form['#groups']['group_styles']);
-			// unset($form['#fieldgroups']['group_styles']);
-  			// hide($form['field_accessible_or_luxury']);
-  			// hide($form['field_casual_or_corporate']);
-  			// hide($form['field_colourful_or_neutral']);
-  			// hide($form['field_playful_or_serious']);
-  			// hide($form['field_abstract_or_straight_up']);
-  			// hide($form['field_structured_or_organic']);
-  			// hide($form['field_masculine_or_feminine']);
-
-  		}
-
-  		
-				
-		//debugLong($form, 'job_node_form_alter');
-	}
-}
-
-// function tap_job_mgmt_node_view($node, $view_mode, $langcode) {
-// 	debugLoo($node, "node_view");
-// 	switch ($node->type) {
-// 		case 'form':
-// 			$node->content['commission_and_invite'] = array(
-// 				array(
-// 					'#type' => 'textfield',
-// 					'#default_value' => '',
-// 					'#size' => 60,         // The default size is a bit large...
-// 					'#weight'=>2.5,			//Exact weight calculated so to be placed after the Freelancer selection field.
-// 					'#attributes' =>array('placeholder' => t('Commission a Creative Pro, enter their username.')),
-// 				),
-// 				array(
-// 					'#type' => 'textfield',
-// 					'#default_value' => '',
-// 					'#size' => 60,         // The default size is a bit large...
-// 					'#weight'=>2.6,			//Exact weight calculated so to be placed after the Freelancer selection field.
-// 					'#attributes' =>array('placeholder' => t('Invite Creative Pros, separate usernames with a comma.')),
-// 				)
-// 			);
-			
-// 			break;
-// 	}
-// }
-
-// function tap_job_mgmt_field_extra_fields() {
-//   // The levels of the array that we return correspond to the
-//   // entity type, bundle and then either 'display' or 'form'.
-//   // In this case, we apply to 'page' nodes, when we display them.
-//   $extra['node']['job']['form'] = array(
-//     // The keys here must correspond to the keys of the items
-//     // that we add in our hook_node_view() or similar function.
-//     // Prefix it with our module name to ensure it doesn't clash
-//     // with anything from other modules.
-//     'to_commission' => array(
-//       'label' => t('To commission'),
-//       'description' => t('Commission field on job form'),
-//       'weight' => 10,
-//     ), 
-//     'to_invite' => array(
-//       'label' => t('To invite'),
-//       'description' => t('Invite field on job form'),
-//       'weight' => 10,
-//     )
-//   );
-//   return $extra;
-// }
-
-
-function debugLoo($toPrint, $filename){
-	$dir=DRUPAL_ROOT.'\sites\all\debug';
-	if( is_dir($dir) === false){
-	    mkdir($dir);
-	}
-
-	file_put_contents($dir.'\\'.$filename.'.txt', print_r($toPrint, TRUE));
-
-	// $myfile = fopen($dir.'\\'.$filename.'.txt', "w") or die("Unable to open file!");
-	// fwrite($myfile, $toPrint);
-	// fclose($myfile);
-}
-
-function debugLong($toPrint, $filename){
-	$dir=DRUPAL_ROOT.'\sites\all\debug';
-	if( is_dir($dir) === false){
-	    mkdir($dir);
-	}
-
-	// file_put_contents($dir.'\\'.$filename.'.txt', print_r($toPrint, TRUE));
-}
-
-function debugShort($toPrint){
-	$dir=DRUPAL_ROOT.'\sites\all\debug';
-	if( is_dir($dir) === false){
-	    mkdir($dir);
-	}
-
-	// file_put_contents($dir.'\\'.$toPrint.'.txt', print_r($toPrint, TRUE));	
-}
-
-
-?>

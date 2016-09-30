@@ -1,0 +1,8 @@
+name = Tap Job Action
+description = Manages job related actions by Creative Pros e.g. accepting/declining Jobs and submiting Job when it is completed.
+package = Other
+core = 7.x
+files[] = tap_job_action.module
+version = "7.x-1.1"
+core = "7.x"
+project = "tap_job_action"

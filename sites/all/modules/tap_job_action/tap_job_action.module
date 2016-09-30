@@ -1,0 +1,221 @@
+<?php 
+
+function tap_job_action_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#tap_job_action":
+			return t("Manages job related actions by Creative Pros e.g. accepting/declining Jobs and submiting Job when it is completed.");
+		break;
+	}
+}
+
+function tap_job_action_menu(){
+	
+	// When a selected Creative Pro is available for a Job.
+	$items['jobs/%/available'] = array(
+	    'title' => 'Available',
+	    'page callback' => 'tap_job_action_job_available',
+	    'page arguments' => array(1),
+	    'access callback' => TRUE,
+  	);
+
+	// When a selected Creative Pro is NOT available for a Job.
+	$items['jobs/%/unavailable'] = array(
+	    'title' => 'Unavailable',
+	    'page callback' => 'tap_job_action_job_unavailable',
+	    'page arguments' => array(1),
+	    'access callback' => TRUE,
+  	);	
+
+	// When the final Creative Pro of a Job completes a Job.
+  	$items['job/%/submit_project'] = array(
+	    'title' => 'Submit Project',
+	    'page callback' => 'drupal_get_form',
+	    'page arguments'    => array('tap_job_action_submit_job_form_builder', 1),
+	    'access callback' => TRUE,
+  	);	
+
+	return $items;
+}
+
+function notifyClient(){
+
+}
+
+/*
+ * Save the updated Job (with new available Creative Pros) to the DB and notify client.
+ */
+function tap_job_action_save_updated_job($job, $toNotify, $msg){
+	field_attach_update('node', $job); // Save updated node to DB.
+
+	if($toNotify){
+		notifyClient($job);	
+	}
+	
+	drupal_set_message($msg);
+	drupal_goto('/jobs');
+}
+
+/*
+ * The menu page callback for when a selected Creative Pro is available for a Job. 
+ */
+function tap_job_action_job_available($job=-1){
+
+	global $user;
+
+	//Only an ApprovedFreelancer can accept jobs.
+	if(!user_has_role(8)){
+		drupal_access_denied();
+	}
+
+	//--------------PSEUDOCODE----------------
+	//If match, add to field_available_candidates.
+	//If commission, add to field_final_candidate.
+	//If invited, add to field_invited_candidates.
+
+	$job = node_load($job);
+
+	if($job == NULL){
+		return;
+	}
+
+	$freelancer_selection_type = $job->field_freelancer_selection['und'][0]['value'];
+
+	// Add the Creative Pro to the Job's field_available_candidates field and save to DB.
+	if(strcmp($freelancer_selection_type, 'match') == 0 || strcmp($freelancer_selection_type, 'invite') == 0){
+		if(empty($job->field_available_candidates)){
+			$job->field_available_candidates['und'] = array();
+			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
+			tap_job_action_save_updated_job($job, true, "You have been recorded as Available for the Job. The client is notified.");
+		}else{
+			//Do not add user to field_available_candidates if they are already in it.
+			foreach ($job->field_available_candidates['und'] as $value) {
+				if($value['target_id'] == $user->uid){
+					drupal_set_message("You already confirmed your availability.");
+					drupal_goto('/jobs');
+					break;
+				}
+			}
+
+			//If it didn't return in the loop, we can add this freelancer.
+			array_push($job->field_available_candidates['und'], array('target_id'=>$user->uid));
+			tap_job_action_save_updated_job($job, true, "You have been recorded as Available for the Job. The client is notified.");
+		}
+	}else if(strcmp($freelancer_selection_type, 'commission') == 0){
+		if(isset($job->field_commissioned_candidate)){
+			if($user->uid == $job->field_commissioned_candidate['und'][0]['target_id']){
+				$job->field_final_candidate['und'] = array();
+				array_push($job->field_final_candidate['und'], array('target_id' => $user->uid));
+				tap_job_action_save_updated_job($job, true, "You are now the Creative Pro for the Job. ".
+					"The client is notified. Click on the job under the Active tab to access the Workroom.");
+			}
+		}
+	}
+	
+}
+
+
+/*
+ * The menu page callback for when a selected Creative Pro is NOT available for a Job. 
+ */
+function tap_job_action_job_unavailable($job=-1){
+
+	global $user;
+
+	//Only an ApprovedFreelancer can accept jobs.
+	if(!user_has_role(8)){
+		drupal_access_denied();
+	}
+
+	$job=node_load($job);
+
+	if($job == NULL){
+		return;
+	}
+
+	$isMatchedCandidate=false;
+	$isInvitedCandidate=false;
+	$isCommissionedCandidate=false;
+	if(!empty($job->field_matched_candidates)){
+		foreach($job->field_matched_candidates['und'] as $f){
+			if($f['target_id']==$user->uid){
+				$isMatchedCandidate=true;
+				break;
+			}
+		}
+	}
+	if(!$isMatchedCandidate){
+		if(!empty($job->field_invited_candidates)){
+			foreach($job->field_invited_candidates['und'] as $f){
+				if($f['target_id']==$user->uid){
+					$isInvitedCandidate=true;
+					break;
+				}
+			}
+		}
+	}
+	if(!empty($job->field_commissioned_candidate) && $job->field_commissioned_candidate['und'][0]['target_id']==$user->uid){
+		$isCommissionedCandidate=true;
+	}
+
+	// Proceed only if the Creative Pro is affiliated with the Job.
+	if($isMatchedCandidate || $isInvitedCandidate || $isCommissionedCandidate){
+		//Add user to the field_unavailable_candidates field.
+		if(!array_key_exists('und', $job->field_unavailable_candidates)){
+			$job->field_unavailable_candidates['und'] = array();				
+		}
+		array_push($job->field_unavailable_candidates['und'], array('target_id' => $user->uid));
+
+		//Remove user from field_available_candidates field, if they are in it.
+		if(array_key_exists('und', $job->field_available_candidates)){
+			foreach($job->field_available_candidates['und'] as $i => $f){
+				if($f['target_id'] == $user->uid){
+					unset($job->field_available_candidates['und'][$i]);
+				}
+			}
+		}
+
+		tap_job_action_save_updated_job($job, false, "You have been recorded as Unavailable for the Job.");
+	}else{
+		drupal_set_message("Invalid.");
+		drupal_goto('/jobs');
+	}
+}
+
+/*
+ * The confirm form for the Creative Pro of a job to submit the Job.
+ */
+function tap_job_action_submit_job_form_builder($form, &$form_state, $jobid=-1){
+	global $user;
+	$node = node_load((int) $jobid);
+
+	if($node == NULL){
+		return;
+	}
+
+	if(!empty($node->field_final_candidate)){
+		if($node->field_final_candidate['und'][0]['target_id'] != $user->uid){
+			drupal_access_denied();
+		}	
+		
+	}else{
+		drupal_access_denied();
+	}
+
+	return confirm_form($form, 'Do you want to submit this project?', drupal_get_path_alias("/node/$jobid"), 
+		'I completed the project. It\'s top quality work compliant with the Brief.', 'Yes', 'No');
+}
+
+/*
+ * The Job field_finished value is updated to 1 (True).
+ */
+function tap_job_action_submit_job_form_builder_submit($form, &$form_state){
+	$nid = (int) $form_state['build_info']['args'][0];
+	$node = node_load($nid);
+
+	$node->field_finished['und'][0]['value'] = 1;
+	node_save($node);
+
+	drupal_set_message("Project is submitted.");
+	drupal_goto("/node/$nid");
+}
+
