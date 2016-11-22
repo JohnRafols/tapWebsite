@@ -1,0 +1,305 @@
+<?php 
+
+function tap_job_invite_help($path, $arg) {
+    switch ($path) {
+        case "admin/help#tap_job_invite":
+            return '<p>' . t("Invite Co-Workers/Collaborators to jobs.") . '</p>';
+        break;
+    }
+}
+
+function tap_job_invite_menu(){
+    
+    //Form to invite collabotors to a job/workroom.
+    $items['job/%/invite'] = array(
+        'title'             => 'Invite Co-Workers/Collaborators on Tap',
+        'description'       => t('Invite co-workers/Collaborators.'),
+        'access callback'   => 'user_access',
+        'access arguments'  => array('access content'),
+        'page callback'     => 'drupal_get_form',
+        'page arguments'    => array('tap_job_invite_invite', 1),
+    );
+
+    //Autocomplete of the names of collaborators to invite.
+    $items['collaborator/autocomplete'] = array(
+        'title' => 'Autocomplete for collaborators',
+        'page callback' => '_tap_job_invite_autocomplete',
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK
+    );
+        
+    return $items;
+}
+
+function _tap_job_invite_autocomplete($string=''){
+    $matches = array();
+
+    //first name
+    $query = db_select('field_data_field_user_first_name', 'fn')
+        ->fields('fn', array('entity_id', 'field_user_first_name_value'))
+        ->condition('field_user_first_name_value', '%' . db_like($string) . '%', 'LIKE');
+
+    //last name
+    $query->join('field_data_field_user_last_name', 'ln', 'fn.entity_id = ln.entity_id');
+    $query->fields('ln', array('field_user_last_name_value'));
+
+    //only users of role Client.
+    $query->join('users_roles', 'r', 'r.uid = fn.entity_id');
+    $query->condition('r.rid', 5);
+
+    //Get pid (Profile2 primary key) of Client or authenticated_user (in cases where the admin creates the client user account)
+    $query->join('profile', 'p', 'p.uid = fn.entity_id');
+    $db_or = db_or();
+    $db_or->condition('p.type', 'client', '=');
+    // $db_or->condition('p.type', 'authenticated_user', '=');  
+    $query->fields('p', array('pid'))
+        ->condition($db_or);
+
+    //Use pid to get the client's company_name.
+    $query->leftJoin('field_data_field_company_name', 'c','p.pid = c.entity_id');
+    $query->fields('c', array('field_company_name_value'));
+
+    $joined = $query->execute();
+
+    // save the query to matches
+    foreach ($joined as $row) {
+        $fn=ucfirst(check_plain($row->field_user_first_name_value));
+        $ln=ucfirst(check_plain($row->field_user_last_name_value));
+        $co=check_plain($row->field_company_name_value);
+
+        // $matches[$row->entity_id] = "<b>{$fn} {$ln}</b> from <b>{$co}</b>";
+        $matches["{$fn} {$ln} ({$row->entity_id})"] = "<b>{$fn} {$ln}</b> from <b>{$co}</b>";
+    }
+
+    drupal_json_output($matches);
+}
+
+function tap_job_invite_invite($form, &$form_state, $jobid=''){
+    $form_state['storage']['collaborators'] =
+    isset($form_state['storage']['collaborators']) ? $form_state['storage']['collaborators'] : 0;
+
+    $form = array();
+
+    $form['submit'] = array(
+        '#type'         => 'submit',
+        '#value'        => t('Submit'),
+        '#weight'       => 10000,
+    );
+
+    $form['collaborators'] = array(
+        '#type' => 'container',
+        '#tree' => TRUE,
+        '#prefix' => '<div id="collaborators">',
+        '#suffix' => '</div>',
+    );
+
+    if ($form_state['storage']['collaborators']) {
+        for ($i = 1; $i <= $form_state['storage']['collaborators']; $i++) {
+            $form['collaborators'][$i] = array(
+                '#type' => 'fieldset',
+                '#tree' => TRUE,
+            );
+
+            $form['collaborators'][$i]['name'] = array(
+                '#id' => "collaborator{$i}",
+                '#type' => 'textfield',
+                '#autocomplete_path' => 'collaborator/autocomplete',
+                // '#attributes' =>array('placeholder' => t('username'))
+
+            );
+        }
+    }
+
+    $form['add_collaborator'] = array(
+        '#type' => 'button',
+        '#value' => t('Add a collaborator'),
+        '#href' => '',
+        '#ajax' => array(
+            'callback' => 'custom_registration_ajax_add_collaborator',
+            'wrapper' => 'collaborators',
+        ),
+    );
+
+    $form_state['storage']['collaborators']++;
+
+    return $form;
+}
+
+
+function custom_registration_ajax_add_collaborator($form, $form_state) {
+    return $form['collaborators'];
+}
+
+/**
+* Form validation callback
+*/
+function tap_job_invite_invite_validate($form, &$form_state){
+    // dpm($form_state);
+    if(drupal_is_front_page()){
+        return;
+    }
+
+    if(array_key_exists("collaborators", $form_state['input'])){
+        $arr=$form_state['input']['collaborators'];
+        $index=1;
+        foreach($arr as $elem){
+            if(isset($elem)){ //Ignore empty textfields
+                $name=$elem['name'];
+                $openBrackPos=strpos($name, '(');
+                $closeBrackPos=strpos($name, ')');
+                $id=(int) substr($name, $openBrackPos+1, $closeBrackPos-$openBrackPos-1);
+
+                //Check that this person is a Client.
+                if(!isClient($id)){
+                    form_set_error("collaborators[{$index}][name]", "invalid user {$id}");
+                }
+            }
+            $index++;
+        }
+    }
+
+
+    
+    // form_set_error("names", $message="wrong");
+    // print var_export($form,true);
+
+
+    //Check who has already been added.
+}
+
+function isClient($id){
+    $query=db_select('users_roles', 'r')
+        ->fields('r', array('rid', 'uid'))
+        ->condition('r.uid', $id, '=');
+
+
+    $result=$query->execute();
+
+    foreach($result as $row){
+        if($row->rid==5){
+           return true;
+        }
+    }
+
+    return false;
+     
+};
+
+/**
+* Form submission callback
+*/
+function tap_job_invite_invite_submit($form, &$form_state){
+    $nid=(int)$form_state['build_info']['args'][0];
+    $node=node_load($nid);
+
+    if(array_key_exists("collaborators", $form_state['input'])){
+        
+        $arr=$form_state['input']['collaborators'];
+        $ids=array();
+        foreach($arr as $elem){
+            if(isset($elem)){ //Ignore empty textfields
+                $name=$elem['name'];
+                $openBrackPos=strpos($name, '(');
+                $closeBrackPos=strpos($name, ')');
+                $id=(int) substr($name, $openBrackPos+1, $closeBrackPos-$openBrackPos-1);
+                array_push($ids, $id);
+            }
+        }
+
+        //Remove duplicate collaborators
+        $ids=array_unique($ids, SORT_NUMERIC);
+
+        if(!empty($node->field_co_workers)){
+            foreach($ids as $id){                    
+                $uidArr=array('uid'=>$id);
+                array_push($node->field_co_workers['und'], $uidArr);
+            }                
+        }else{
+            $node->field_co_workers['und']=array();
+            foreach($ids as $id){                    
+                $uidArr=array('uid'=>$id);
+                array_push($node->field_co_workers['und'], $uidArr);
+            }                
+        }
+
+        //Save invited collaborators to DB.
+        node_save($node);
+        emailCollaborators($ids, $node);
+    }
+
+    // debug($node);
+    //redirect user back to job page.
+    drupal_set_message("Co-Workers have been notified.");
+    drupal_goto("/node/".$nid);
+
+}   
+
+function emailCollaborators($ids, $node){
+    $query=db_select('users', 'u')    
+        ->condition('uid', $ids)
+        ->fields('u', array('name', 'mail'));
+
+    $result=$query->execute();
+
+    foreach($result as $row){
+        // $module = 'tap_job_invite';
+        // $key = 'invite_key';
+        // $to = $row->mail;
+        // $language = language_default();
+
+        $options = array('absolute' => TRUE);
+        $jobPath=url('node/' . $node->nid, $options);
+        $jobTitle=$node->title;
+        // $body="You have been invited as a Collaborator to the job";
+        // $subject="Job Invitation on Tap";
+        // $params = array(
+        //     'body' => $body,
+        //     'subject' => $subject
+        // );
+        // $from = variable_get('site_mail', ini_get('sendmail_from'));
+        // $send = FALSE;
+        // $message=drupal_mail($module, $key, $to, $language, array(), $from, $send);
+
+        // $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+        // $sentMessage = array();
+        // $sentMessage[] = 'Line1..........';
+        // $sentMessage[] = 'Line2..........';
+
+        // $message['body'] = implode('<br/>', $sentMessage);
+
+        // $message['result'] = $system->mail($message);
+
+
+        global $user;
+        $inviter=$user->name;
+
+        $module = 'tap_job_invite';
+        $key = 'key';
+        $email = $row->mail;
+        $language = language_default();
+        $params = array();
+        $from = NULL;
+        $send = FALSE;
+        $message = drupal_mail($module, $key, $email, $language, $params, $from, $send);
+
+        $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+
+        $message['subject'] = "Collaborator invitation at Tap";
+        $message['body'] = array();
+        $message['body'][] = "You have invited as a Collaborator by {$inviter} to the job <a href=\"{$jobPath}\">{$jobTitle}</a>. ";
+        $message['body'][] = "Log in to join the workroom.";
+
+        // Retrieve the responsible implementation for this message.
+        $system = drupal_mail_system($module, $key);
+
+        // Format the message body.
+        $message = $system->format($message);
+
+        // Send e-mail.
+        $message['result'] = $system->mail($message);
+
+    }
+}
+
+
+?>

@@ -1,0 +1,11 @@
+name = Account Profile
+description = Merges Profile2 forms into user account form.
+core = 7.x
+dependencies[] = profile2
+package = Profile2 (contrib)
+; Information added by drupal.org packaging script on 2013-07-09
+version = "7.x-2.0"
+core = "7.x"
+project = "account_profile"
+datestamp = "1373393452"
+

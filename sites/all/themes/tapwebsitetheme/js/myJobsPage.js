@@ -143,21 +143,96 @@
         var header = myJobsPage.find('h1');
 
         myJobsPage.find('ul.quicktabs-tabs')
-                  .once('myJobsPageBehavior')
+                  .once('specificJobPageBehavior')
                   .wrap('<div id = "tabsParentDiv">')
                   .before(header);
-
 
         //Testing AJAX load...
         //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
 
+        //This is code for the first half of the workroom (Freelance info, etc)
+        var freelancerInfo = $('#block-tap-job-mgmt-tap-block')
+                                .find('.form-item-freelancer-choice')
+                                .find('#edit-freelancer-choice')
+
+        
+        var input = freelancerInfo.find(".form-radio");
+        var options = freelancerInfo.find(".option");
+
+        //Add input button to the right side:
+        input.each(function(index){
+                $(options[index]).once('specificJobPageBehavior')
+                      .after($(input[index]));
+        });
+
+        //Add div wrappers
+        freelancerInfo.find('.form-item-freelancer-choice')
+                      .once('specificJobPageBehavior')
+                      .wrap('<div class="parentColumn">')
+
       
+        //Add a borderline between the button and freelancerInfo
+        freelancerInfo.once('specificJobPageBehavior')
+                      .after('<div id = "borderfreelancerInfo">')
+
+        //Remove underscores
+        // http://stackoverflow.com/questions/5232862/jquery-change-inner-text-but-preserve-html
+
+        var link = freelancerInfo.find('a');
+        var image = freelancerInfo.find('a').find('img');
+        
+        link.each(function(index){
+            var str = $(link[index]).text();
+            var userName_noUnderscores = str.replace(/_/g, " "); 
+            $(link[index]).html(userName_noUnderscores);
+            $(link[index]).prepend($(image[index]));
+        })
+
+        if($('#freelancerInfoHeader_title').length){
+            $('#freelancerInfoHeader_title').once('specificJobPageBehavior').html($('h1'));
+        }
 
 
-
+     
+ 
       }
     };
 
+
+
+/**
+    _____________________________________
+        
+
+        Code for the Job List page:    
+    
+
+    _____________________________________
+*/
+
+
+  
+    // Drupal.behaviors.listOfJobsBehavior = {    
+    // attach: function (context, settings) {
+      
+    //     var myJobsPage = $('.page-list-of-jobs').find('.l-content');
+    //     // Align the h1 tag With the tabs
+    //     //myJobsPage.find('h1').wrap('<div id = "tabsParentDiv">');
+
+    //     var header = myJobsPage.find('h1');
+
+    //     myJobsPage.find('ul.quicktabs-tabs')
+    //               .once('myJobsPageBehavior')
+    //               .wrap('<div id = "tabsParentDiv">')
+    //               .before(header);
+
+
+    //     //Testing AJAX load...
+    //     //myJobsPage.load("/sites/all/themes/tapwebsitetheme/js/CustomHTML/PopUps.html");
+
+
+    //   }
+    // };
 
 
 

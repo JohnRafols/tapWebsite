@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * Implementation of hook_help();
+ */
+function tap_final_candidate_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#tap_final_candidate":
+			return t('tap_final_candidate displays a block of Creative Pro candidates on the Job page from which the Client chooses the final candidate they want to work on their project.');
+			break;
+	}
+}
+
+
+function tap_final_candidate_block_info() {
+	$blocks=array();
+	$blocks['tap_final_candidate'] = array(
+		'info' => t('tap_final_candidate'),
+		'cache' => DRUPAL_NO_CACHE
+	);
+
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tap_final_candidate_block_view($block_name = ''){ 
+
+	//Do not add this form if there is already a Creative Pro working on the job.
+	if(!menu_get_object() || menu_get_object()->field_final_candidate!=null){
+		return;
+	}
+
+	$form = drupal_get_form('tap_final_candidate_form');
+	$block = array(
+		'content' => $form
+	);
+
+	return $block;
+	}
+
+
+/**
+ * Implements hook_form().
+ */
+function tap_final_candidate_form($form, &$form_state){
+  
+	if($job = menu_get_object()){
+
+	    //Put all available freelancers into a list from which the client will select.
+
+	    //Do not do anything further if no Creative Pro has expressed interest.
+	    if(!array_key_exists('und', $job->field_available_candidates)){
+			return; 
+	    }
+
+	    // Creative Pros who have expressed interest in the Job.
+		$freelancers = array();
+		foreach($job->field_available_candidates['und'] as $value){
+			$u = user_load($value['target_id']);
+			$profile = profile2_load_by_user($value['target_id']);
+			if(!empty($profile['freelancer']->field_profile_picture['und'])){ // Creative Pro has their own profile picture.
+				$picUrl = file_create_url($profile['freelancer']->field_profile_picture['und'][0]['uri']);
+			}else{ // Use default picture.
+				$info = field_info_field('field_profile_picture');
+				if (!empty($info) && $info['settings']['default_image'] > 0) {
+					$default_img_fid  = $info['settings']['default_image'];
+					$picUrl = file_create_url(file_load($default_img_fid)->uri);  
+				}
+			}
+
+			$freelancers[$value['target_id']] =
+			"<div class='profile-picture'><img src='{$picUrl}' id='profilePicture{$u->uid}' alt='Default image'></div>".
+			"<div><span class='user-name'>{$u->name}</span><br><a class='view-profile-link' target='_blank' href='/user/{$u->uid}'>View full profile ></a></div>";
+		}
+
+		// Total count of Creative Pros interested in the Job.
+		$final_cand_count = !empty($job->field_available_candidates) ? count($job->field_available_candidates['und']) : 0;
+
+		$form['freelancer_choice'] = array(
+		'#type' => 'radios',
+		'#title' => "<div id='tap-block-desc'>See the candidates' full Portfolios. Chat. ".
+			"Select your collaborator(s). Start the job.</div>".
+			"<div id='keen-creative-pros-desc'>{$final_cand_count} ".
+			"Creative Pros with the right skills are keen and avaliable to collaborate with you on this job.</div>",
+		'#options' => $freelancers,
+		);
+
+		$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => t('Start Job'),
+		);
+
+		//Assign our own function as handler of the submit event.
+		$form['#submit'][] = 'tap_final_candidate_submit_handler';
+		return $form; 
+	}    
+}
+
+/*
+ * Submit handler for when the Client chooses which Creative Pro gets to work on the Job.
+ */
+function tap_final_candidate_submit_handler($form, &$form_state){
+
+	if ($job = menu_get_object()){  
+
+		//Get the uid of the Creative Pro (final candidate) the client selected.
+		$uid = $form_state['values']['freelancer_choice'];
+		$finalCandidate = user_load($uid);
+
+		if(user_has_role(8, $finalCandidate)){ // Final candidate is an Approved Creative Pro.
+
+	    //Make the selected freelancer the final candidate i.e. the person for the Job.
+		    $job->field_final_candidate['und'] = array();
+		    array_push($job->field_final_candidate['und'], array('target_id' => $uid));
+		    field_attach_update('node', $job);    
+		
+			notifySelectedCreativePro($finalCandidate);
+		    drupal_set_message($user->name.' has been notified and is now the Creative Pro working on your project!');
+		}else{
+			drupal_set_message("Invalid Creative Pro selected.");
+		}
+	}      
+}
+
+function notifySelectedCreativePro($finalCandidate){
+	// Email them.
+
+}

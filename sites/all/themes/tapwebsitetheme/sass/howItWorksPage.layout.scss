@@ -1,0 +1,468 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+//@import "compass";
+@import "variables";
+@import "bootstrap";
+//@import "theme";
+
+//Colors to be used for the website:
+$orange :  #FFBF28;
+$textColor : #3c0f31;
+$greybk : #f7f4f6;
+$grey-text:#969696;
+$purple: #6e2a54;
+
+
+// General #################
+//The Registration Buttons:
+.registrationButtonClient , .registrationButtonFreelancer {
+    background-color: $orange;
+    border: solid 3px $orange;
+    padding: 8px 16px;
+    color: $textColor;
+    margin-bottom: 10px; 
+    
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($orange * 0.80);
+        }
+        &:hover{
+             background-color: rgba(255, 255, 255, 0.0);
+             border: solid 3px $orange;
+             color: $orange;
+        }
+}
+
+//These are regarding the second navbar that only appears when logged in.
+.logged-in{
+    #block-system-user-menu, #block-menu-menu-secondary-nav-bar{
+        margin-bottom: 0px;
+    }
+}
+
+.not-logged-in{
+    #block-menu-menu-secondary-nav-bar{
+        display: none !important;
+    }
+}
+
+.howItWorksLeft_description {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.howItWorks_titles{
+    font-size: 42px;
+    font-weight: bold;
+    text-align: left;
+    color:$purple;
+}
+
+.howItWorks_titlesBorder {
+    width:33%;
+    border:solid 2px $orange;
+    height: 0px;
+}
+
+.howItWorks_headingText p{ 
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color:$purple; 
+}
+
+.howItWorks_middelText p{ 
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+    color:$grey-text; 
+}
+
+.howItWorks_bottomText p{ 
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+    color:$orange; 
+}
+
+em {
+    color :$orange;
+    font-style:normal;
+}
+
+#connect_mainContainer, #uploadProject_mainContainer, #getMatched_mainContainer, #finaliseDetails_mainContainer, #purchase_mainContainer, #workRemotely_mainContainer, #qualityAssurance_mainContainer, #workface-to-face_mainContainer, #project_mainContainer, #matchCompanies_mainContainer {
+    
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+	#connect_contentContainer, #uploadProject_contentContainer, #getMatched_contentContainer, #finaliseDetails_contentContainer, #purchase_contentContainer, #workRemotely_contentContainer,
+    #qualityAssurance_contentContainer, #workface-to-face_contentContainer, #project_contentContainer, #matchCompanies_contentContainer {
+		width: 80%;
+	}
+}      
+
+#price_mainContainer, #speed_mainContainer, #projectSize_mainContainer{
+    background-color:$greybk;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    #price_contentContainer, #speed_contentContainer, #projectSize_contentContainer {
+        width: 80%;
+    }
+}
+
+//The Banner ###############
+#banner_howItWorks {
+    min-height: 490px;
+    //Center everything
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    //Misc:
+    position: relative;
+    color: white;
+    margin: 0 auto; 
+    text-align: center;
+    //url's are local to the css folder
+    background: url('images/BannerBeta.png') no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 20px;
+    h1{
+        font-size: 42px;
+    }
+    #banner_howItWorks_border{
+        position: relative;
+        display: inline-block;
+        border-top: 2px solid white;
+        width: 25%;
+        margin: 0px auto;
+        margin-top: 30px;
+        margin-bottom: -30px;
+    }
+    #banner_howItWorks_links{
+        width: 56%;
+        margin: 0 auto;
+        /* margin-top: 50px; */
+        line-height: 43px;
+        padding-bottom: 15px;
+        font-size: 20px;
+    }
+    ul{
+        margin-top: 35px;
+    }
+    li{
+        display: inline;
+        margin-left: 10px;
+        margin-right: 10px; 
+    }
+}
+
+#banner_howItWorks_links{
+    a{
+        color:  #FFFFFF;
+    }
+    a:hover{
+        text-decoration: underline;
+        color:  $orange;  
+    }
+    a:visit{
+        text-decoration: underline;
+    }
+}
+
+
+
+// section1 Connect ##################  
+#connect{
+    text-align: center;
+}
+
+.connectImages img{
+    max-width: 176px;
+    max-height: 202px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+// section2 uploadProject ################## 
+#uploadProject{
+    text-align: center;
+}
+
+.uploadProjectImages {
+    margin-top:-14px;
+}
+
+.uploadProjectImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+// section3 Get Matched ################## 
+#getMatched{
+    text-align: center;
+}
+.getMatchedImages {
+    margin-top:-14px;
+}
+
+.getMatchedImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+// section4 FinaliseDetails ################## 
+#finaliseDetails{
+    text-align: center;
+}
+
+.finaliseDetailstImages {
+    margin-top:-21px;
+}
+
+.finaliseDetailstImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// section5 Purchase ################## 
+#purchase{
+    text-align: center;
+}
+.purchaseImages {
+    margin-top:-14px;
+}
+
+.purchaseImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// section6 workRemotely ################## 
+#workRemotely{
+    text-align: center;
+}
+
+.workRemotelyImages {
+    margin-top:-14px;
+}
+
+.workRemotelyImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// section7 quality Assurance ################## 
+#qualityAssurance{
+    text-align: center;
+}
+.qualityAssuranceImages {
+    margin-top:-14px;
+}
+
+.qualityAssuranceImages img{
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+}
+
+// section8 workface-to-face ################## 
+#workface-to-face{
+    text-align: center;
+}
+
+.workface-to-faceImages {
+    margin-top:-14px;
+}
+
+.workface-to-faceImages img{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// section9 project ################## 
+#project{
+    text-align: center;
+}
+.projectImages {
+    margin-top:15px;
+    padding-bottom: 25px;
+}
+
+.projectImages img{
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#howItWorks_project_button{
+    display:flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative; 
+    height: 100px;
+
+    ul {
+        text-align:center;
+    }
+
+    li{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+}
+
+// section10 price ################## 
+#price{
+    text-align: center;
+}
+.priceImages {
+    margin-top: 80px;
+}
+
+.priceImages img{
+    height: auto;
+    width: 85%;
+    margin: 0 auto;
+}
+
+// section11 Speed ################## 
+#speed{
+    text-align: center;
+}
+
+.speedImages img{
+    height: auto;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+// section12 project Size ################## 
+#projectSize{
+    text-align: center;
+}
+.projectSizeImages {
+    margin-top: 80px;
+}
+
+.projectSizeImages img{
+    height: auto;
+    width: 85%;
+    margin: 0 auto;
+}
+
+//section13 match Companies(last section)######################
+
+#matchCompanies{
+    text-align: center;
+}
+
+#matchCompanies_secondRow{
+    margin-top: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+.matchCompanies img {
+  max-width: 100px;
+  max-height: 150px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+}
+
+#startWorking {
+    padding-top:6px;
+}
+
+#saveMoney {
+    padding-top:10px;
+}
+
+#fastEasy {
+    padding-top:32px;
+}
+
+.matchCompanies h3 {
+    font-size:18px;
+    text-align: center;
+    color: $purple;
+}
+
+.image_Border {
+    width: 33%;
+    margin: auto;
+    border:solid 2px $orange;
+    height: 0px;
+}
+
+.matchCompanies_emphasizedText {
+    font-size: 26px;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: $orange;
+}
+
+// mobile query ################## 
+@media (max-width: $screen-xs-max) {
+    //Change some margins when the screen is small
+
+#connect_contentContainer, #uploadProject_contentContainer, #getMatched_contentContainer, #finaliseDetails_contentContainer, #purchase_contentContainer, #workRemotely_contentContainer,
+#qualityAssurance_contentContainer, #workface-to-face_contentContainer, #project_contentContainer, #price_contentContainer, #speed_contentContainer, #projectSize_contentContainer, #matchCompanies_contentContainer, .howItWorksLeft_description {
+    width: 100% !important; 
+}
+
+.howItWorks_titles{
+    font-size: 30px;
+}
+
+.projectImages img{
+    width: 100%;
+}
+
+#saveMoney {
+    width:100%;
+}
+}
+
+@media(max-width:768px){ 
+
+#connect_contentContainer, #uploadProject_contentContainer, #getMatched_contentContainer, #finaliseDetails_contentContainer, #purchase_contentContainer, #workRemotely_contentContainer,
+#qualityAssurance_contentContainer, #workface-to-face_contentContainer, #project_contentContainer, #price_contentContainer, #speed_contentContainer, #projectSize_contentContainer, #matchCompanies_contentContainer, .howItWorksLeft_description {
+    width: 100% !important; 
+}
+
+.projectImages img{
+width: 100%;
+}
+
+#saveMoney {
+    width:100%;
+}
+
+}
+

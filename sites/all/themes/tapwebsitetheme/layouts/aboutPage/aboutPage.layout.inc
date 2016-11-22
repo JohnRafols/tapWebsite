@@ -16,3 +16,6 @@ regions[footer]         = Footer
 
 ; Stylesheets
 stylesheets[all][] = css/aboutPage.layout.css
+
+; Scripts
+scripts[] = js/SlideShow.js

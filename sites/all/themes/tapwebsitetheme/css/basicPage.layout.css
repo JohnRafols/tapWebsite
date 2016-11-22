@@ -6326,10 +6326,10 @@ ___________________
   
 ___________________
 */
-.node-type-page.section-contact-us #contactUsPage {
+.node-type-page.section-contacttapteam #contactUsPage {
   width: 50%; }
 
-.node-type-page.section-contact-us h1 {
+.node-type-page.section-contacttapteam h1 {
   width: 70%;
   font-weight: bold;
   border-bottom: 1.5px solid #FFBF28;
@@ -6340,19 +6340,19 @@ ___________________
   padding-left: 15px;
   padding-bottom: 15px; }
 
-.node-type-page.section-contact-us .row {
+.node-type-page.section-contacttapteam .row {
   margin-top: 30px; }
 
-.node-type-page.section-contact-us .contactUsPage_label {
+.node-type-page.section-contacttapteam .contactUsPage_label {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 30px !important; }
 
-.node-type-page.section-contact-us .workerName {
+.node-type-page.section-contacttapteam .workerName {
   font-size: 16px;
   display: inline-block; }
 
-.node-type-page.section-contact-us #developmentTeam .row {
+.node-type-page.section-contacttapteam #developmentTeam .row {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6360,40 +6360,40 @@ ___________________
       -ms-flex-align: center;
           align-items: center; }
 
-.node-type-page.section-contact-us #contact_details .col-sm-12.contactUsPage_label {
+.node-type-page.section-contacttapteam #contact_details .col-sm-12.contactUsPage_label {
   padding-left: 0px;
   margin-bottom: 20px !important; }
 
-.node-type-page.section-contact-us #contact_details .contact_detailsLabel {
+.node-type-page.section-contacttapteam #contact_details .contact_detailsLabel {
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px; }
 
-.node-type-page.section-contact-us #contact_details .email {
+.node-type-page.section-contacttapteam #contact_details .email {
   font-size: 16px;
   margin-top: 10px; }
 
-.node-type-page.section-contact-us #location_details .col-sm-12.contactUsPage_label {
+.node-type-page.section-contacttapteam #location_details .col-sm-12.contactUsPage_label {
   padding-left: 0px; }
 
-.node-type-page.section-contact-us #location_details #address {
+.node-type-page.section-contacttapteam #location_details #address {
   font-style: italic; }
 
-.node-type-page.section-contact-us #mariyaPhoto img, .node-type-page.section-contact-us #dennyPhoto img, .node-type-page.section-contact-us #peidePhoto img, .node-type-page.section-contact-us #johnPhoto img {
+.node-type-page.section-contacttapteam .teamPhoto img {
   width: 120px;
   height: 120px;
   border-radius: 999px;
   border: 2px solid #FFBF28;
   object-fit: cover; }
 
-.node-type-page.section-contact-us .l-content {
+.node-type-page.section-contacttapteam .l-content {
   margin-bottom: 60px; }
 
 @media (max-width: 767px) {
-  .node-type-page.section-contact-us #developmentTeam .row {
+  .node-type-page.section-contacttapteam #developmentTeam .row {
     display: inline !important;
     text-align: center !important; }
-  .node-type-page.section-contact-us #contact_details div {
+  .node-type-page.section-contacttapteam #contact_details div {
     padding-left: 0px !important; } }
 
 .page-list-of-users .l-content, .maintenance-page .l-content {
@@ -6607,6 +6607,192 @@ ___________________
     color: #333; }
   .page-gallery .views-row .views-field-field-portfolio-project-skills {
     color: #666666; }
+  .page-gallery .views-row .views-field-ops {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-gallery .views-row .views-field-ops {
+        float: left;
+        width: 50%; } }
+    .page-gallery .views-row .views-field-ops span .flag-success-message {
+      display: none; }
+  .page-gallery .views-row .views-field-addtoany-link {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-gallery .views-row .views-field-addtoany-link {
+        float: left;
+        width: 50%; } }
+
+.page-creativejobsnz .l-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 15px; }
+
+.page-creativejobsnz h1 {
+  font-weight: bold;
+  border-bottom: 1.5px solid #FFBF28;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
+
+.page-creativejobsnz h1 {
+  border-bottom: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+
+.page-creativejobsnz .view-header #jobList_searchCreativeJobs {
+  border-bottom: 1.5px solid #FFBF28;
+  font-weight: bold;
+  color: #FFBF28;
+  font-size: 16px;
+  margin-top: 6px;
+  padding-bottom: 10px; }
+
+.page-creativejobsnz .view-header #jobList_registerOnTap {
+  color: #CCCCCC;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
+.page-creativejobsnz .view-content .views-row {
+  background-color: #e6ac24;
+  min-height: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .page-creativejobsnz .view-content .views-row .views-field-nothing {
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-weight: bold; }
+    @media (min-width: 768px) {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing {
+        float: left;
+        width: 25%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing a {
+      color: white;
+      font-weight: bold; }
+  .page-creativejobsnz .view-content .views-row .views-field-nothing-2 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-left: 1.5px solid white;
+    border-right: 1.5px solid white; }
+    @media (min-width: 768px) {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing-2 {
+        float: left;
+        width: 50%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-2 a, .page-creativejobsnz .view-content .views-row .views-field-nothing-2 div {
+      text-align: center;
+      color: white; }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-2 #skillsWanted {
+      font-weight: bold; }
+  .page-creativejobsnz .view-content .views-row .views-field-nothing-1 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-creativejobsnz .view-content .views-row .views-field-nothing-1 {
+        float: left;
+        width: 25%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-nothing-1 span, .page-creativejobsnz .view-content .views-row .views-field-nothing-1 .field-content {
+      color: white;
+      font-weight: bold;
+      text-align: left; }
+  .page-creativejobsnz .view-content .views-row .views-field-created {
+    border-left: 1.5px solid white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      .page-creativejobsnz .view-content .views-row .views-field-created {
+        float: left;
+        width: 25%; } }
+    .page-creativejobsnz .view-content .views-row .views-field-created span, .page-creativejobsnz .view-content .views-row .views-field-created .field-content {
+      display: inline;
+      color: white;
+      font-weight: bold;
+      text-align: left; }
+
+.page-node.node-type-job-listed-by-admin- .l-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 15px; }
+
+.page-node.node-type-job-listed-by-admin- h1 {
+  font-weight: bold;
+  border-bottom: 1.5px solid #FFBF28;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-bottom: 15px; }
+
+.page-node.node-type-job-listed-by-admin- article {
+  font-size: 16px; }
+  .page-node.node-type-job-listed-by-admin- article .field div {
+    display: inline-block; }
+    .page-node.node-type-job-listed-by-admin- article .field div a:link, .page-node.node-type-job-listed-by-admin- article .field div a:visited, .page-node.node-type-job-listed-by-admin- article .field div a:hover, .page-node.node-type-job-listed-by-admin- article .field div a:active {
+      color: #000000; }
+  .page-node.node-type-job-listed-by-admin- article .field-label {
+    font-weight: bold; }
+  .page-node.node-type-job-listed-by-admin- article .field--name-body {
+    margin-bottom: 30px;
+    margin-top: 30px; }
 
 .tabledrag-toggle-weight {
   display: none; }

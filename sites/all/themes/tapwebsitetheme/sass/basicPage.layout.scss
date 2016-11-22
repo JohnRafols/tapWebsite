@@ -99,6 +99,7 @@ ___________________
             }
 
         }
+
   }
 }
 
@@ -167,7 +168,7 @@ ___________________
   
 ___________________
 */
-.node-type-page.section-contact-us{
+.node-type-page.section-contacttapteam{
     #contactUsPage{
       width: 50%;
     }
@@ -238,7 +239,7 @@ ___________________
 
 
     //Photos...
-    #mariyaPhoto, #dennyPhoto, #peidePhoto, #johnPhoto{
+    .teamPhoto{
       img{
           width: 120px;
           height: 120px;
@@ -414,13 +415,175 @@ ___________________
                 }
             }
         }
-
         .views-field-field-portfolio-project-skills{
             color: $grey * 0.50;
+        }
+        //This is for the favorite button and 
+        .views-field-ops{
+            @include make-sm-column(6);
+            span .flag-success-message{
+              display: none;
+            }
+        }
+        .views-field-addtoany-link{
+            @include make-sm-column(6);
         }
     }
 }
 
+
+
+//This is for the jobs posted by the admin
+//Will need to remove this soon.
+
+.page-creativejobsnz{
+  @include basicPageFormat();
+  h1{
+    border-bottom: none;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .view-header{
+    #jobList_searchCreativeJobs{
+      border-bottom: 1.5px solid $mainColor;
+      font-weight: bold;
+      color: $mainColor; 
+      font-size: 16px;
+      margin-top: 6px;
+      padding-bottom: 10px;
+    }
+    #jobList_registerOnTap{
+      color: $grey;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
+        .view-content{
+            .views-row{
+
+                background-color: ($mainColor * 0.9);
+                min-height: 50px; 
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                display:flex;
+                align-items: center;
+
+
+
+
+                .views-field-nothing{
+                  text-align: center;
+                    @include make-sm-column(3);
+                    @include make-xs-column(12);
+
+                    
+                    color: white;
+                    font-weight: bold;
+                   a{
+                     color: white;
+                    font-weight: bold;
+                   }
+                }
+
+
+                .views-field-nothing-2{
+                    @include make-sm-column(6);
+                    @include make-xs-column(12);
+
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+
+                    border-left: 1.5px solid white; 
+                    border-right: 1.5px solid white; 
+
+                    a, div{
+                      text-align: center;
+                      color: white;
+                     }
+
+                    #skillsWanted{
+                      font-weight: bold;
+                    } 
+                }
+
+
+                .views-field-nothing-1{
+                   // border-left: 1.5px solid white; 
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                    text-align: center;
+
+                    @include make-sm-column(3);
+                    @include make-xs-column(12);
+
+          
+                    span, .field-content{
+                        //display: inline;
+                        color: white;
+                        font-weight: bold;
+                        text-align: left;
+                    }
+                }
+
+
+
+                .views-field-created{
+                    border-left: 1.5px solid white; 
+
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                    text-align: center;
+
+                    @include make-sm-column(3);
+                    @include make-xs-column(12);
+
+          
+                    span, .field-content{
+                        display: inline;
+                        color: white;
+                        font-weight: bold;
+                        text-align: left;
+                    }
+                }
+
+
+
+            }
+        }
+}
+
+
+.page-node.node-type-job-listed-by-admin-{
+    @include basicPageFormat();
+
+    article{
+      font-size: 16px;
+      .field{
+        div{
+          display: inline-block;
+          a{
+             // pointer-events: none;
+             // cursor: default;
+          }
+          a:link,  a:visited ,a:hover , a:active {
+            color: $textColor;
+          }
+        }
+      }
+      .field-label{
+        font-weight: bold;
+      }
+      .field--name-body{
+          margin-bottom: 30px;
+          margin-top: 30px;
+      }
+    }
+}
 
 
 
@@ -444,6 +607,4 @@ ___________________
     //margin: 20px;
     font-weight: bold;
 }
-
-
 

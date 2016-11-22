@@ -1,4 +1,3 @@
-
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 //@import "compass";
 @import "variables";
@@ -11,86 +10,492 @@ $secondaryColor: #3c0f31;
 $textColor : #000000;
 $grey : #CCCCCC;
 
+$darkgrey : rgb(128, 127, 128);
 
-.l-main{
-  @extend .container;
-  width:100%;
 
-  .l-content{
-    @include make-sm-column-offset(2);
-    @include make-sm-column(8);    
+/* 
+___________________
 
-    .views-field-field-images{
-      
-      .row-1{
-        @include make-sm-column(6)
-      }
-      
-      .row-2{        
-        @include make-sm-column(6)
-      }
-
-    }
-
-    .views-field-name{
-      @include make-sm-column-offset(10)
-      @include make-sm-column(2)
-    }
-
-  }
-}
-
-//featured gallery slideshow
-/* #views_slideshow_cycle_teaser_section_featured_gallery-block{
-  .views-field-title{
-    // position: absolute;
-    bottom: 10px;
-    right: 20px;
-    font-size: 20px;
-    text-align: center;
-    background-color: white;
-    opacity: 0.6;
-    
-    span a{
-      color: black;
-    }
-  }
-} */
-
-#block-views-featured-gallery-block img{
+  This is Styling for the gallery page
   
-    // width: 600px;
-    // height: auto;    
+___________________
+*/
+
+.page-browseportfolios{
+    //@include basicPageFormat;
+    .l-content{
+      @extend .container-fluid;
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 15px;
+    }
+
+    h1{
+      display: none;
+    }
+
+    //Filters
+    .view-filters{
+        border-bottom: 1.5px solid $mainColor;
+        padding-bottom: 15px;
+
+        margin: 0px auto !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+
+        //Skills filter
+        @include make-row();
+ 
+        .views-exposed-form{
+            color: $grey * 0.50;
+
+            .views-exposed-widgets{
+                @extend .clearfix;
+                @include make-row();
+            }
+
+
+            //An attempt to get all of them?
+
+            #edit-field-portfolio-project-skills-tid-wrapper,
+            #edit-keywords-wrapper,
+            #edit-name-wrapper,
+            #edit-field-user-address-locality-wrapper,
+            #edit-field-user-address-country-wrapper
+            {
+
+            // }
+            //.views-exposed-widget{ 
+                   height: 45px;
+                  @include make-xs-column(12);
+                  @include make-sm-column(6);
+                  @include make-md-column(6);
+                  @include make-lg-column(6);
+
+                  label{
+                      @include make-xs-column(4);
+                      @include make-sm-column(4);
+                      @include make-md-column(4);
+                      @include make-lg-column(4);
+                      text-align: left;
+                      padding-left: 0px;
+                  }
+                  .views-widget{
+                      @include make-xs-column(8);
+                      @include make-sm-column(8);
+                      @include make-md-column(8);
+                      @include make-lg-column(8);
+                      padding-left: 0px;
+                      padding-right: 0px;
+                      select, input{
+                           width: 100%;
+                           max-width: 250px;     
+                      }
+                  }
+          }
+
+
+            #edit-field-portfolio-project-skills-tid-wrapper{
+                .description{
+                  display: none;
+                }
+            }
+
+            //Show them when xs small
+            .views-submit-button, .views-reset-button{
+               // @include make-xs-column(2);
+               // @include make-sm-column(2);
+              // @extend .well;
+              display: inline-block;
+              float: right;
+              width: 65px;
+
+                input{
+                    @extend .btn;
+                    border-radius: 30px !important; 
+                    background-color: $mainColor;
+                    border: $mainColor * 0.80;
+                    color: $text-color;
+                    margin-top: -5px;
+                    width: inherit;
+                }
+                // display: none;
+            }
+
+            
+
+            //This container was added with jquery...
+            #filterButtonsContainer{
+              @include make-xs-column(12);
+              @include make-sm-column(6);
+              @include make-md-column(6);
+              @include make-lg-column(6);
+            }
+
+            .views-submit-button{
+                // margin-right: 2%;
+                margin-left: 5px;
+            }           
+
+            //The header will be diffrent on smaller screens
+            @media (max-width: $screen-xs-max) {
+                #edit-field-portfolio-project-skills-tid-wrapper,
+                #edit-keywords-wrapper,
+                #edit-name-wrapper,
+                #edit-field-user-address-locality-wrapper,
+                #edit-field-user-address-country-wrapper,
+                #filterButtonsContainer
+                {
+                  margin: 0px auto;
+                  div{
+                     float: right;
+                  }
+                }
+            }
+          }
+
+    }
+
+    .item-list{
+      @include make-row();
+      margin-bottom: 60px;
+    }
+    
+    .view-gallery{
+      .views-row{
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        margin-bottom: 30px;
+
+        .views-field{
+            //These are all the labels under the sidebar
+            //Note that I am calling out the default classes                    
+            //This is for actual content.
+            .field-content{
+                img{
+                   width: 100%;
+                   height: 100%;
+                }
+                a{
+                   color: #333;
+                }
+            }
+        }
+
+        .views-field-field-portfolio-project-skills{
+          color: $grey * 0.50;
+        }
+
+        //City, Country field.
+        .views-field-php{
+          color: $grey * 0.50; 
+        }
+      }
+    }
+
+    //The share button under each project.
+    .views-field-addtoany-link{
+      float: left;      
+    }
+
+    //The like/unlike button under each thumbnail.
+    .views-field-ops{
+      float: left;
+      width: 32px;
+      line-height: 32px;
+      border-radius: 4px;
+    }
 }
 
-#block-views-featured-gallery-block .views-field-counter {
-  background: #D2D1D4; // Or bullet background image
-  float: left;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  margin-top: 10px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.2s linear;
+
+
+
+
+
+
+
+
+
+/* 
+___________________
+
+  This is Styling for the featured gallery
+  
+___________________
+*/
+
+
+#block-views-featured-block{
+    @include make-row();
+    @extend .clearfix;
+    margin-top: 25px;
+    // height: auto;
+
+
+    // #views_slideshow_cycle_main_featured-block{
+    //   @include make-row();
+    //   @extend .clearfix;
+
+
+    //   .views-slideshow-cycle-main-frame-row-item{
+    //       @extend .clearfix;
+    //       @include make-row();
+
+
+
+          //1.) This is the skills row
+          .views-field-field-portfolio-project-skills{
+             @include make-xs-column(12);
+             @include make-sm-column(12);
+             @include make-md-column(12);
+             @include make-lg-column(12);
+             @extend .clearfix;
+
+
+             margin-top: 20px;
+             margin-bottom: 42px;
+            span{
+                color: $darkgrey;
+             }
+             div{
+                font-size: 18px;
+                font-weight: bold;
+             }
+          }
+
+          // Images will go into a 9 column
+          // The Big image, and two subsequent images are seperate fields...
+
+          //2.) This is the big image
+          .views-field-field-images{
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            @include make-lg-column(6);
+            @extend .clearfix;
+
+            .field-content{
+              @include make-row();
+              //max-height: 360px;
+
+              img{
+                @include img-responsive($display: block);
+                  width: 100%;
+                  height: 100%;
+               }
+            }
+          }
+
+
+          //3.) This is the subsequent two images
+          .views-field-field-images-1{
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            @extend .clearfix;
+
+            .field-content{
+              @include make-row();
+              @extend .clearfix;
+              //max-height: 180px;
+
+              img{
+                @include make-xs-column(12);
+                @include make-sm-column(12);
+                @include make-md-column(12);
+                @include make-lg-column(12);
+                @extend .clearfix;
+                @include img-responsive($display: block);
+                margin-bottom: 40px;
+                width: 100%;
+                height: 100%;
+
+              }
+            }
+          }
+
+
+          //4.) This is rest of the information
+          .views-field-nothing{
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            @extend .clearfix;
+
+            #infoColumn{
+              @extend .clearfix;
+
+              #name{
+                  border-bottom: 1.5px solid $mainColor;
+                  margin-bottom: 10px;
+                  padding-bottom: 10px;
+                  font-size: 18px;
+                  font-weight: bold;
+                  color: $textColor;
+                  a:link, a:visited, a:hover, a:active{
+                      color: $textColor;
+                  }
+              }
+              #aboutMe{
+                color: $darkgrey;
+              }
+              #viewProfileLink{
+                  font-size: 18px;
+                  font-weight: bold;
+                  margin-top: 30px;
+                  color: $mainColor;
+                  a:link, a:visited, a:hover, a:active{
+                      color: $mainColor;
+                  }
+              }
+
+            }
+
+          }
+
+          //5.) featured options
+
+          .views-field-field-weight-editable, 
+          .views-field-field-featured-editable{
+             @include make-xs-column(12);
+             @include make-sm-column(12);
+             @include make-md-column(12);
+             @include make-lg-column(12);
+          }
+
+
+  //     }      
+  // }
+
+
+  .views-slideshow-controls-bottom{
+      @include make-row();
+      @extend .clearfix;
+    
+      margin-top: 15px;
+      border-bottom: 1.5px solid $mainColor;
+      text-align: center;
+
+      margin-bottom: 20px;
+      padding-bottom: 40px;
+
+      .views-slideshow-pager-field-item{
+          display: inline-block;
+          border-radius: 50%;
+          background-color: rgb(217, 217, 217);
+          width: 20px;
+          height: 20px;
+          margin-left: 1.5px;
+          margin-right: 1.5px;
+      }
+
+      .active{
+        background-color: rgb(179, 179, 179);
+      }
+
+      .views-content-counter{
+            display: none;
+      }
+
+   }
+
+   #edit-actions--2, #edit-submit--2{
+     display: none;
+   }
+
 }
 
-#block-views-featured-gallery-block .active .views-field-counter {
-  background: #606061; // Or bullet background image
-  width: 15px;
-  height: 15px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.2s linear;
+
+// We need the slideshow's width be responsive...
+.views-slideshow-cycle-main-frame-row, .views-slideshow-cycle-main-frame {
+    width: 100% !important;
+    //height: 100% !important;
+    @extend .clearfix;
+    margin: 0 auto;
+
 }
 
-#block-views-featured-gallery-block .views-content-counter{
+
+
+// .views_slideshow_cycle_main {                                                      
+//   width: 100%;    
+//   position: relative !important;
+                                                                 
+//  .views-slideshow-cycle-main-frame {width: 100% !important; height: auto !important;}         
+//  .views-slideshow-cycle-main-frame-row {width: 100% !important; height: auto !important;}     
+//  .field-content { max-width: 100%; width: 100%;}                                   
+//  .field-content img { max-width: 100%; width: 100%; height: auto; margin: 0; padding:0;} 
+// }   
+
+// #block-views-featured-gallery-block .views-field-counter {
+//   background: #D2D1D4; // Or bullet background image
+//   float: left;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 5px;
+//   margin-top: 10px;
+//   -moz-border-radius: 50%;
+//   -webkit-border-radius: 50%;
+//   border-radius: 50%;
+//   transition: all 0.2s linear;
+// }
+
+// #block-views-featured-gallery-block .active .views-field-counter {
+//   background: #606061; // Or bullet background image
+//   width: 15px;
+//   height: 15px;
+//   -moz-border-radius: 50%;
+//   -webkit-border-radius: 50%;
+//   border-radius: 50%;
+//   transition: all 0.2s linear;
+// }
+
+// #block-views-featured-gallery-block .views-content-counter{
+//   display: none;
+// }
+
+// .views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
+//   width: 100px;
+//   margin: 0 auto;
+// }
+
+
+
+
+.views-field-field-weight-editable, .views-field-field-featured-editable{
+  background-color: lightgray;
+}
+
+.form-required, .description, .sliderfield-selectvalue-description{
   display: none;
 }
 
-.views-slideshow-controls-bottom #widget_pager_bottom_featured_gallery-block{
-  width: 100px;
-  margin: 0 auto; 
+.views-field-field-featured-editable{
+  .form-type-radio{
+    display: inline-block;
+  }
+
+  .form-item{
+    margin-bottom: 0;
+  }
+}
+
+
+//----------------------------------------------------------------------------------------------
+
+
+//Two random Save buttons that appeared after the featured "yes no" editable field was added to projects in gallery.
+#edit-actions, #edit-actions--3{
+  display: none;
+}
+
+//So that title of projects, however long, only fits on two lines, the rest is hidden. 
+.views-field-title{
+  line-height: 1.5em;
+  height: 1.5em;
+  overflow: hidden;
 }

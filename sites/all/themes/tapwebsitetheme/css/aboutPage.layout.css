@@ -5873,201 +5873,138 @@ button.close {
 
 .registrationButtonClient, .registrationButtonFreelancer {
   background-color: #FFBF28;
-  border: #cc9920;
-  color: #333333;
+  border: solid 3px #FFBF28;
+  padding: 8px 16px;
+  color: #434547;
   margin-bottom: 10px; }
   .registrationButtonClient:focus, .registrationButtonFreelancer:focus {
     background-color: #cc9920; }
   .registrationButtonClient:hover, .registrationButtonFreelancer:hover {
-    background-color: #ffe530; }
-
-#landingPage_contentContainer {
-  width: 70%; }
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 3px #FFBF28;
+    color: #FFBF28; }
 
 #landingPageWelcomeSection {
-  min-height: 490px;
-  display: -webkit-flex;
+  min-height: 600px;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -ms-flex-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-direction: column;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
   color: white;
-  margin: 0 auto;
+  margin: auto;
+  top: 20px;
   text-align: center;
-  background: url("images/BannerBeta.png") no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
-  padding-bottom: 20px; }
-  #landingPageWelcomeSection h1 {
-    font-size: 42px; }
-  #landingPageWelcomeSection #landingPageWelcomeSection_border {
-    position: absolute;
-    display: inline-block;
-    border-top: 2px solid white;
-    margin-top: 35px;
-    left: 42%;
-    right: 42%; }
-  #landingPageWelcomeSection #landingPageWelcomeSection_description {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding-bottom: 15px;
-    font-size: 20px; }
-  #landingPageWelcomeSection ul {
-    margin-top: 35px; }
-  #landingPageWelcomeSection li {
-    display: inline;
-    margin-left: 10px;
-    margin-right: 10px; }
+  width: 100%; }
 
-#landingPageServices_description {
-  height: 180px;
-  padding-top: 32px;
+#landingPageWelcomeSection h1 {
+  font-size: 42px;
+  font-family: Cabin Bold; }
+
+#landingPageWelcomeSection_border {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid white;
+  width: 25%;
+  margin: 0px auto;
+  margin-top: 30px; }
+
+#landingPageWelcomeSection_description {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  font-size: 19px; }
+
+#landingPageWelcomeSection ul {
+  margin-top: 54px; }
+
+#landingPageWelcomeSection li {
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+#landingPageServices_mainContainer, #landingPage_CreativeTalent_mainContainer, #landingPageFreelance_mainContainer, #landingPage_whoAreWe_mainContainer, #landingPage_howThisWorks_mainContainer {
+  margin-bottom: 30px; }
+  #landingPageServices_mainContainer #landingPageServices_contentContainer, #landingPageServices_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPageServices_mainContainer #landingPageFreelance_contentContainer, #landingPageServices_mainContainer #landingPage_whoAreWe_contentContainer, #landingPageServices_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPageServices_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPageFreelance_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_CreativeTalent_mainContainer #landingPage_howThisWorks_contentContainer, #landingPageFreelance_mainContainer #landingPageServices_contentContainer, #landingPageFreelance_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPageFreelance_mainContainer #landingPageFreelance_contentContainer, #landingPageFreelance_mainContainer #landingPage_whoAreWe_contentContainer, #landingPageFreelance_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_whoAreWe_mainContainer #landingPageServices_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_whoAreWe_mainContainer #landingPageFreelance_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_whoAreWe_mainContainer #landingPage_howThisWorks_contentContainer, #landingPage_howThisWorks_mainContainer #landingPageServices_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_CreativeTalent_contentContainer, #landingPage_howThisWorks_mainContainer #landingPageFreelance_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_mainContainer #landingPage_howThisWorks_contentContainer {
+    width: 80%; }
+
+#landingPage_theCreativeProcess_mainContainer {
+  background-color: white;
+  margin-top: 30px; }
+  #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer {
+    width: 70%; }
+    #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer .landingPage_emphasizedText {
+      margin-bottom: 0px !important; }
+
+.landingPageLeft_description {
+  max-height: 412px;
+  width: 100%;
+  margin: 0 auto; }
+
+.landingPageLeft_description p {
+  font-size: 24px;
+  color: #FFBF28 !important;
+  max-height: 412px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px; }
+
+.landingPageLeft_description {
   /* visited link */
   /* mouse over link */
   /* selected link */ }
-  #landingPageServices_description #plusSign {
-    font-size: 80px;
-    padding-top: 20px; }
-  #landingPageServices_description p {
-    font-size: 22px !important;
-    color: #FFBF28 !important;
-    padding-top: 10px; }
-  #landingPageServices_description a:link {
+  .landingPageLeft_description a:link {
+    /*color: $mainColor;*/ }
+  .landingPageLeft_description a:visited {
+    /*color: $mainColor;*/ }
+  .landingPageLeft_description a:hover {
     color: #FFBF28; }
-  #landingPageServices_description a:visited {
-    color: #FFBF28; }
-  #landingPageServices_description a:hover {
-    color: #FFBF28; }
-  #landingPageServices_description a:active {
+  .landingPageLeft_description a:active {
     color: #FFBF28;
     text-decoration: none; }
 
-.logged-in #block-system-user-menu, .logged-in #block-menu-menu-secondary-nav-bar {
-  margin-bottom: 0px; }
-
-.not-logged-in #block-menu-menu-secondary-nav-bar {
-  display: none !important; }
-
 #landingPageServices, #landingPage_whoAreWe,
 #landingPage_howThisWorks, #landingPage_theCreativeProcess {
-  margin-bottom: 50px;
-  margin-top: 50px; }
+  margin-top: 60px; }
 
-.landingPage_whoAreWe_content {
-  position: relative; }
-  .landingPage_whoAreWe_content .landingPage_whoAreWe_contentBorder {
-    position: absolute;
-    border-top: 2px solid #FFBF28;
-    left: 3.5%;
-    right: 75%;
-    margin-top: 15px; }
-  .landingPage_whoAreWe_content p {
-    font-size: 16px; }
-  .landingPage_whoAreWe_content strong {
-    font-size: 18px; }
-
-#landingPage_whoAreWe_content_link {
-  margin-top: 50px;
-  font-size: 22px;
-  /* mouse over link */ }
-  #landingPage_whoAreWe_content_link a, #landingPage_whoAreWe_content_link a:link, #landingPage_whoAreWe_content_link a:visited {
-    color: #FFBF28; }
-  #landingPage_whoAreWe_content_link a:hover, #landingPage_whoAreWe_content_link a:active {
-    color: #FFBF28; }
-
-#landingPage_whoWeAre_secondRow {
-  margin-top: 30px; }
-
-#landingPage_theCreativeProcess .row {
-  font-size: 16px;
-  color: #6d2c54; }
-
-#landingPage_theCreativeProcess_description {
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: 30px; }
-  #landingPage_theCreativeProcess_description .landingPage_whoAreWe_contentBorder {
-    position: absolute;
-    border-top: 2px solid #FFBF28;
-    left: 3.5%;
-    right: 75%; }
-  #landingPage_theCreativeProcess_description p {
-    margin-top: 20px; }
-
-#landingPage_creativeTalent_firstColumn {
-  padding-top: 15px; }
-  #landingPage_creativeTalent_firstColumn div {
-    padding: 0 !important;
-    margin: 0 !important; }
-  #landingPage_creativeTalent_firstColumn #landingPage_creativeTalent_finalDesc {
-    font-size: 1.4em;
-    color: #FFBF28;
-    margin-bottom: 32px !important; }
-
-#landingPage_creativeTalent_secondColumn {
-  display: inline-block;
-  text-align: left; }
-  #landingPage_creativeTalent_secondColumn div {
-    text-align: left;
-    padding: 0 !important;
-    margin: 0 !important; }
-  #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_request {
-    color: #6d2c54; }
-    #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_request #landingPage_creativeTalent_clientsInNewZealand {
-      font-size: 1.4em;
-      padding-top: 15px !important;
-      margin-bottom: 20px !important; }
-    #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_request p {
-      font-size: 16px; }
-
-.landingPage_titles_creativeTalent {
-  margin-top: 15px;
-  border-bottom: 1.5px solid #FFBF28;
-  font-size: 1.4em;
-  margin-bottom: 30px; }
-
-#landingPage_creativeTalent_clientsInNewZealand {
-  font-size: 1.2em;
-  font-weight: bold; }
-
-#landingPage_howThisWorks p {
-  font-size: 16px;
-  color: #6d2c54; }
-
-.landingPage_howThisWorks_content {
-  text-align: center; }
+.landingPage_Icon_border {
+  border-top: #FFBF28 solid 2px;
+  padding-top: 30px;
+  width: 50%;
+  margin: 0 auto; }
 
 .landingPage_titles {
-  font-size: 26px;
+  font-size: 38px;
   font-weight: bold;
   text-align: left;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   border-bottom: 1.5px solid #FFBF28;
-  text-align: center; }
+  text-align: center;
+  color: #6e2a54;
+  font-family: Cabin Bold; }
 
 .landingPage_emphasizedText {
   font-size: 26px;
   width: 90%;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  color: #6e2a54; }
 
-#landingPage_creativeTalent_title {
-  font-size: 26px;
-  text-align: center;
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 30px; }
-
-#landingPageServices_description, #landingPage_theCreativeProcess_description {
-  font-size: 1.4em; }
+.landingPageRight_description p {
+  font-size: 23px;
+  color: #FFBF28;
+  text-align: left;
+  width: 250px;
+  margin-bottom: 40px; }
 
 #landingPageServices_GraphicDesign img {
   max-width: 150px;
@@ -6125,17 +6062,16 @@ button.close {
   width: 100%;
   margin: 0 auto; }
 
+.landingPageServices_RightContent p {
+  text-align: center;
+  color: #6e2a54; }
+
 #landingPageServices {
   text-align: center; }
-  #landingPageServices p, #landingPageServices a {
-    font-size: 16px;
-    color: #6d2c54; }
-  #landingPageServices .landingPage_emphasizedText p {
-    font-size: 26px;
-    width: 90%;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 30px; }
+  #landingPageServices #landingPageServices_ButtonClient {
+    text-align: -webkit-left; }
+  #landingPageServices .CreativeServices_Content p, #landingPageServices a {
+    text-align: center; }
 
 #landingPageServices_UploadYourProject img {
   max-width: 150px;
@@ -6165,6 +6101,201 @@ button.close {
   width: 100%;
   margin: 0 auto; }
 
+.fadein {
+  position: relative;
+  height: 302px;
+  width: 500px; }
+
+.fadein section {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#featured {
+  position: relative;
+  width: 100%; }
+
+#featured, #landingPage_CreativeTalent_slides {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 40px; }
+
+#featured section {
+  position: relative;
+  width: 1000px; }
+
+#featured section img {
+  position: absolute;
+  width: 100%; }
+
+/* hide slides when js is disabled */
+#featured #slide-2,
+#featured #slide-3,
+#featured #slide-4,
+#featured #slide-5,
+#featured #slide-6 {
+  display: none; }
+
+#landingPage_CreativeTalent_slides img {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto; }
+
+.landingPageFreelance_iconFrame {
+  height: 308px;
+  margin: 6px auto; }
+
+.box-shadow {
+  box-shadow: 0px 0px 46px -6px rgba(176, 174, 176, 0.3);
+  height: inherit; }
+
+#landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
+  width: 100%;
+  height: 130px; }
+
+#landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
+  border: solid 2px #FFBF28;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px; }
+
+#landingPageFreelance_ProfileBk1 {
+  margin: -40px 0px -36px 18px; }
+
+#landingPageFreelance_ProfileBk2 {
+  margin: -40px 0px -36px 18px; }
+
+#landingPageFreelance_ProfileBk3 {
+  margin: -40px 0px -36px 18px; }
+
+.landingPageFreelance_iconFrame h3 {
+  font-size: 15px;
+  text-align: center; }
+
+.landingPageFreelance_iconFrame p {
+  font-size: 11px;
+  padding: 0px 8px 0px 18px;
+  text-align: left;
+  color: #6e2a54; }
+
+.Icon_border_Freelance {
+  border-top: #FFBF28 solid 2px;
+  width: 83%;
+  margin: 0 auto; }
+
+#landingPage_Freelance_button {
+  padding: 0px 7px;
+  font-size: 12px;
+  color: #ffffff; }
+
+#landingPage_Freelance_button:hover {
+  color: #434547; }
+
+#landingPageFreelance_ButtonClient {
+  text-align: -webkit-left; }
+
+#landingPage_howThisWorks_mainContainer {
+  background-color: #f7f4f6; }
+
+.landingPage_howThisWorks_content {
+  text-align: center;
+  padding: 30px; }
+
+.landingPage_howThisWorks_content p {
+  color: #6e2a54; }
+
+#landingPage_howThisWorks_video video {
+  max-height: 412px;
+  width: 100%;
+  margin: 0 auto; }
+
+#landingPage_whoWeAre_secondRow {
+  margin-top: 30px;
+  width: 80%;
+  margin: auto; }
+
+#landingPage_whoAreWe_button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  height: 150px; }
+  #landingPage_whoAreWe_button ul {
+    text-align: center; }
+  #landingPage_whoAreWe_button li {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px; }
+
+.landingPage_whoAreWe img {
+  max-width: 100px;
+  max-height: 150px;
+  height: auto;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  border-bottom: 2px solid #FFBF28; }
+
+.landingPage_whoAreWe h3 {
+  font-size: 18px;
+  text-align: center;
+  color: #6e2a54; }
+
+.landingPage_whoAreWe p {
+  font-size: 14px;
+  text-align: center;
+  color: #fbbf20; }
+
+.whoAreWe_paragraph {
+  margin-left: 60px;
+  margin-right: 50px; }
+
+.logged-in #block-system-user-menu, .logged-in #block-menu-menu-secondary-nav-bar {
+  margin-bottom: 0px; }
+
+.not-logged-in #block-menu-menu-secondary-nav-bar {
+  display: none !important; }
+
+#landingPage_whoAreWe_content_link {
+  margin-top: 50px;
+  font-size: 22px; }
+  #landingPage_whoAreWe_content_link a, #landingPage_whoAreWe_content_link a:link, #landingPage_whoAreWe_content_link a:visited {
+    color: #FFBF28; }
+  #landingPage_whoAreWe_content_link a:hover, #landingPage_whoAreWe_content_link a:active {
+    color: #FFBF28; }
+
+#landingPage_theCreativeProcess .row {
+  font-size: 16px;
+  color: #6d2c54; }
+
+#landingPage_theCreativeProcess_description {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 30px; }
+  #landingPage_theCreativeProcess_description .landingPage_whoAreWe_contentBorder {
+    position: absolute;
+    border-top: 2px solid #FFBF28;
+    left: 3.5%;
+    right: 75%; }
+  #landingPage_theCreativeProcess_description p {
+    margin-top: 20px; }
+
 #landingPageServices_CreateAPortfolio img {
   max-width: 150px;
   max-height: 150px;
@@ -6193,13 +6324,6 @@ button.close {
   width: 100%;
   margin: 0 auto; }
 
-#landingPageServices_NZ_Icon {
-  background: url("images/NZ-Icon.png") no-repeat;
-  width: 150px;
-  height: 150px;
-  background-size: 100% 100%;
-  margin: 0 auto; }
-
 .landingPage_bulletPointList {
   display: list-item;
   margin-left: 30px;
@@ -6215,64 +6339,99 @@ button.close {
   background: #FFBF28;
   color: #000000; }
 
-#landingPageServices_mainContainer {
-  margin-bottom: 30px; }
-  #landingPageServices_mainContainer #landingPageServices_contentContainer {
-    width: 70%; }
-
-#landingPage_whoAreWe_mainContainer {
-  background-color: #3c0f31; }
-  #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer {
-    width: 70%;
-    color: white; }
-    #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer .landingPage_titles {
-      border-bottom: none !important;
-      padding-bottom: 0px !important; }
-    #landingPage_whoAreWe_mainContainer #landingPage_whoAreWe_contentContainer .hr_divider {
-      border-top: 1.5px solid #48123b;
-      padding-top: 30px;
-      width: 96.5%;
-      margin: 0 auto; }
-
-#landingPage_howThisWorks_mainContainer {
-  margin-bottom: 60px; }
-  #landingPage_howThisWorks_mainContainer #landingPage_howThisWorks_contentContainer {
-    width: 70%; }
-
-#landingPage_theCreativeProcess_mainContainer {
-  background-color: whitesmoke;
-  margin-top: 30px; }
-  #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer {
-    width: 70%; }
-    #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_contentContainer .landingPage_emphasizedText {
-      margin-bottom: 0px !important; }
-
 @media (max-width: 767px) {
-  #landingPageWelcomeSection_description, #landingPageServices_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer,
-  #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title {
+  #landingPageWelcomeSection_description, #landingPageServices_contentContainer, #landingPageFreelance_contentContainer, .landingPage_emphasizedText, #landingPage_whoAreWe_contentContainer, #landingPage_howThisWorks_contentContainer, #landingPage_CreativeTalent_contentContainer, landingPageFreelance_contentContainer #landingPage_theCreativeProcess_contentContainer, #landingPage_creativeTalent_title {
     width: 100% !important; }
   #landingPage_whoAreWe_contentContainer .landingPage_whoAreWe_contentBorder {
     left: 5%; }
   #landingPage_whoAreWe_contentContainer .landingPage_whoAreWe_content {
     margin-bottom: 30px !important; }
   #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow {
-    margin-top: 0 !important; }
+    margin-top: 0 !important;
+    width: 100%; }
     #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) {
       height: 90px !important;
       text-align: right !important;
       padding-top: 30px !important; }
       #landingPage_whoAreWe_contentContainer #landingPage_whoWeAre_secondRow div:nth-child(4) a {
         position: relative !important; }
-  #landingPage_theCreativeProcess_mainContainer #landingPage_theCreativeProcess_description p {
-    padding-top: 20px; }
-  #landingPage_creativeTalent_secondColumn, #landingPage_creativeTalent_firstColumn {
-    padding-left: 0px !important;
-    padding-right: 0px !important; }
-    #landingPage_creativeTalent_secondColumn #landingPageServices_NZ_Icon, #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_request, #landingPage_creativeTalent_secondColumn #landingPage_creativeTalent_clientsInNewZealand, #landingPage_creativeTalent_firstColumn #landingPageServices_NZ_Icon, #landingPage_creativeTalent_firstColumn #landingPage_creativeTalent_request, #landingPage_creativeTalent_firstColumn #landingPage_creativeTalent_clientsInNewZealand {
-      float: none !important;
-      margin: 0px auto !important;
-      text-align: center; }
   #landingPage_howThisWorks {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+  #landingPageWelcomeSection h1 {
+    font-size: 2em; }
+  .landingPageLeft_description p {
+    width: 100%;
+    font-size: 20px; }
+  .whoAreWe_paragraph {
+    margin-left: 0px;
+    margin-right: 0px; } }
+
+@media (max-width: 768px) {
+  .landingPageFreelance_iconFrame {
+    width: 50%;
+    height: 424px; }
+  #landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
+    width: 100%;
+    height: 100%; }
+  #landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
+    width: 70px;
+    height: 70px; }
+  .landingPageFreelance_iconFrame h3 {
+    font-size: 26px; }
+  .landingPageFreelance_iconFrame p {
+    font-size: 17px; }
+  .landingPageRight_description p {
+    font-size: 34px;
+    width: 327px; }
+  #landingPageFreelance_ProfileBk1 {
+    margin: -42px 0px -36px 15px; }
+  #landingPageFreelance_ProfileBk2 {
+    margin: -40px 0px -36px 12px; }
+  #landingPageFreelance_ProfileBk3 {
+    margin: -42px 0px -36px 15px; }
+  #whoAreWe_Urgent {
+    width: 100%; }
+  #landingPage_whoWeAre_secondRow {
+    width: 100%; } }
+
+@media (max-width: 480px) {
+  .landingPageFreelance_iconFrame {
+    width: 100%;
+    height: 404px; }
+  .landingPageFreelance_iconFrame h3 {
+    font-size: 20px; }
+  .landingPageFreelance_iconFrame p {
+    font-size: 16px; }
+  #landingPageFreelance_iconBk1 img, #landingPageFreelance_iconBk2 img, #landingPageFreelance_iconBk3 img {
+    width: 100%;
+    height: 100%; }
+  #landingPageFreelance_ProfileBk1 img, #landingPageFreelance_ProfileBk2 img, #landingPageFreelance_ProfileBk3 img {
+    width: 70px;
+    height: 70px; }
+  #landingPageFreelance_ProfileBk1 {
+    margin: -42px 0px -36px 15px; }
+  #landingPageFreelance_ProfileBk2 {
+    margin: -40px 0px -36px 12px; }
+  #landingPageFreelance_ProfileBk3 {
+    margin: -42px 0px -36px 15px; }
+  .landingPageRight_description p {
+    width: 285px;
+    font-size: 20px; }
+  #whoAreWe_Urgent {
+    width: 100%; } }
+
+@media (max-width: 320px) {
+  .landingPageFreelance_iconFrame {
+    width: 100%;
+    height: 354px; }
+  .landingPageFreelance_iconFrame h3 {
+    font-size: 18px; }
+  .landingPageFreelance_iconFrame p {
+    font-size: 14px; }
+  .landingPageRight_description p {
+    font-size: 20px;
+    width: 245px; }
+  #whoAreWe_Urgent {
+    width: 100%; } }
 
 /*# sourceMappingURL=aboutPage.layout.css.map */

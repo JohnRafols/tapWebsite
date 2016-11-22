@@ -24,7 +24,7 @@ ___________________
 ___________________
 */
 
-.page-freelancer-register, .page-client-register {
+.page-freelancer-register, .page-client-register {  
 
   h1{
       font-weight: bold; 
@@ -184,7 +184,8 @@ ___________________
 #edit-submit{
     @extend .btn;
 }
-#edit-submit, .registrationModal_Button{
+
+.registrationModal_Button{
     background-color: $mainColor;
     border: $mainColor * 0.80;
     color: $text-color;
@@ -380,7 +381,16 @@ ___________________
 
 }
 
+// Client stuff needed to be hide as per Boss's request.
+.page-client-register{
+  #edit-field-user-address{
+    legend, .form-item-field-user-address-und-0-country, 
+    .form-item-field-user-address-und-0-dependent-locality{
+      display: none;
+    }
+  }
 
+} 
 
 
 //Background
@@ -421,3 +431,16 @@ ___________________
 // <div class="pull-md-left pull-lg-left">
 //     this div is only floated on screen-md and screen-lg
 // </div>
+
+
+// Job edit page
+.page-node-edit.node-type-job{
+  .l-main{
+    .l-content{
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 60px;
+      width: 70%;
+    }
+  }
+}

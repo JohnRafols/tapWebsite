@@ -33,20 +33,25 @@ $grey : #CCCCCC;
          padding-top: 50px;
     }
 
-    .btn, .editProfileLink{
-      border-radius: 30px !important; 
-    }
+    
     #edit-actions{
       input{
-        border-radius: 30px !important; 
-      }
-    }
-    #addPortfolioButton{
-      a{
-        border-radius: 30px !important; 
-      }
-    }
+        @extend .btn;
+        border-radius: 30px !important;
+        background-color: $mainColor;        
+        // padding: 8px 16px;
+        // margin-bottom: 10px; 
 
+        &:focus, &:hover{
+          background-color: ($mainColor * 0.80);
+        }
+      }
+
+      #edit-delete{
+        @extend .btn;
+        @extend .btn-danger;
+      }
+    }
 
 
     //The Navigation bar styling:
@@ -253,8 +258,14 @@ html, body {
     //padding-left: 60px;
     padding-top: 30px;
   }  
-
-
+#block-block-14 {
+  float: none;
+  padding-bottom: 30px;
+}
+block-block-4 {
+  float: none;
+  padding-bottom: 30px;
+}
   #security_Images{
       display: inline;
       list-style-type: none;
@@ -290,7 +301,6 @@ html, body {
       }
 
 }
-
 
 
 /* 
@@ -519,42 +529,6 @@ ___________________
        //  }
      }
   }
-
-
-
-  //The Submit Buttons 
-  #edit-actions{
-      border-top: 2px solid $mainColor; 
-      padding-top: 30px;
-      margin-bottom: 60px;
-        #edit-submit{
-          @extend .btn;
-          background: $mainColor;
-          color: $textColor;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-        }
-        #edit-preview, #edit-cancel-changes{
-          @extend .btn;
-          background: $mainColor;
-          margin-left: 5px;
-          color: $textColor;
-            &:focus {
-            background-color: ($mainColor * 1.20);
-            }
-            &:hover{
-                 background-color: ($mainColor * 0.80);
-            }
-        }
-        #edit-preview{
-          display:none !important;
-        }
-    }
-
 }
 
 //This is specifically for the edit Portfolio Page
@@ -627,24 +601,59 @@ ___________________
 
 .node-type-blog, .page-blog{
     .l-content{
-      width: 70%;
+      width: 80%;
       margin: 0 auto;
+      display: -webkit-flex;
+      display: table;
       margin-bottom: 60px;
       padding-left: 15px;
     }
     h1{
       //width:70%;
-      font-weight: bold;
-      border-bottom: 1.5px solid $mainColor;
-
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: 30px;
-
-      padding-left: 0px;
-      padding-bottom: 15px;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid #ffbf28;
+    text-align: center;
+    color: #6e2a54;
+    //font-family: Cabin\ bold;
     }
+
+}
+
+.node__title a{
+  font-size: 25px !important;
+}
+.node-teaser {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  height: 300px;
+  margin-bottom: 0px;
+}
+
+.node-teaser img{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.node-teaser p {
+  width: 77%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    //border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
 }
 
 
@@ -680,6 +689,109 @@ ___________________
     margin-top:0px !important; 
  }
 
+//displaying logos company section
+#footer_contentContainer{
+    background-color: #3c0f31;
+    #footer_contentContainer{
+        width:70%;
+        margin-bottom: 30px;
+    }
+ 
+}
+#footer_row{
+    p{
+    font-size:24px;
+    margin-top: 44px;
+    }
+}
+
+.footerLine {
+    border: #6e2a54 solid 1px;
+    width: 90%;
+    margin: auto;
+}
+
+.footer_logos{
+    text-align: center;
+    padding:30px;
+}
+
+#footer_PropellerStudios img{
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footer_VictoriaUniversity img{
+    max-width: 230px;
+    max-height: 150px;
+    height: auto;
+    width: 122%;
+    margin: 0 auto;
+}
+
+#footer_NeatPlaces img{
+    max-width: 61px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footer_ecoPortal img{
+    max-width: 250px;
+    max-height: 150px;
+    height: auto;
+    width: 122%;
+    margin: 0 auto;
+}
+
+#footer_irfd img{
+    max-width: 88px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#neatPlaces_logos {
+  margin-left:19px;
+}
+
+#ecoPortal_logos {
+  margin-top:3px;
+}
+
+//The Registration Buttons:
+#registrationButtonClient , #registrationButtonFreelancer{
+    background-color: $mainColor;
+    border: solid 3px #FFBF28;
+    padding: 8px 16px;
+    color: #434547;
+    margin-bottom: 10px; 
+    border-radius: 60px;
+    
+    //Change the color of the button when it is selected or focused.
+        &:focus {
+            background-color: ($mainColor * 0.80);
+        }
+        &:hover{
+             background-color: rgba(255, 255, 255, 0.0);
+             border: solid 3px #FFBF28;
+             color: #FFBF28;
+        }
+}
+
+.landingPage_emphasizedText {
+    font-size: 26px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: #6e2a54;
+}
 
 //Media queries for mobile:
 //These are some margin changes when the user is on a mobile device
@@ -710,6 +822,13 @@ ___________________
         background-size: cover !important;
         background-position: 20% !important;
     }
+#neatPlaces_logos {
+  margin-left:0px;
+}
+
+#ecoPortal_logos {
+  margin-top:0px;
+}
     
 }
 
@@ -723,3 +842,19 @@ ___________________
     display: none;
   }
 }
+
+#admin-menu{
+  opacity: 0.85;
+}
+
+// Standardised yellow buttons of default boostrap size (btn-md).
+.default-button{
+  border-radius: 30px !important;
+  background-color: $mainColor;  
+  color: $textColor;
+
+  &:focus, &:hover{
+    background-color: ($mainColor * 0.80);
+  }
+}
+

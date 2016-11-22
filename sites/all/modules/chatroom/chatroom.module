@@ -918,14 +918,17 @@ function chatroom_irc_buttons_form($form, &$form_state, $chatroom) {
   );
   $form['chatroom_message_entry_box_' . $chatroom->get('cid')] = array(
     '#type' => 'textarea',
-    '#title' => t('Enter your message text here'),
+    // '#title' => t('Enter your message text here'),
     '#size' => 50,
     '#rows' => 1,
     '#maxlength' => variable_get('chatroom_max_message_size', 1000),
+    '#attributes' => array(
+        'placeholder' => t('Type your message'),
+      ),
   );
   $form['chatroom_message_entry_submit_' . $chatroom->get('cid')] = array(
     '#type' => 'submit',
-    '#value' => t('Chat'),
+    '#value' => t('Send'),
   );
   return $form;
 }

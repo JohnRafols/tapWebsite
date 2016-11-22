@@ -1,0 +1,234 @@
+<?php 
+
+
+function tap_general_alter_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#tap_general_alter":
+			return t("Alters and hides texts on forms and pages.");
+		break;
+	}
+}
+
+<<<<<<< HEAD:sites/all/modules/owner_only_fields/owner_only_fields.module
+function owner_only_fields_menu_alter(&$items) {
+    // Change the title of user profile pages to the user's name.  Gak.
+    $items['user/%user']['title callback'] = 'owner_only_fields_user_page_title';
+}
+
+//Change page title on user profile page.
+function owner_only_fields_user_page_title() {
+    return "My Portfolio";
+}
+
+function owner_only_fields_process_password_confirm($element) {
+=======
+function tap_general_alter_menu_alter(&$items) {
+    // Change the title of user profile pages to the user's name.
+    $items['user/%user']['title callback'] = 'tap_general_alter_user_page_title';
+}
+
+function tap_general_alter_user_page_title(){
+    if(user_has_role(4) || user_has_role(8) || user_has_role(9)){ //Role Freelancer or ApprovedFreelancer or TestFreelancer
+		return "My Portfolio";
+	}else if(user_has_role(5)){
+		return "My Profile";
+	}
+    return "User";
+}
+
+function tap_general_alter_process_password_confirm($element) {
+>>>>>>> 8ea9a72c54b4587c205e31b7e220d445b147cfba:sites/all/modules/tap_general_alter/tap_general_alter.module
+	// Renaming password labels on user account edit form.
+	$element['pass1']['#title'] = t("New Password");
+	$element['pass2']['#title'] = t("Confirm New Password");
+	return $element;
+}
+
+function tap_general_alter_page_alter(&$page){
+
+	// content system_main actions submit value
+
+	if(!empty($page['content']['system_main']['actions']['submit']['#value'])){
+		if($page['content']['system_main']['actions']['submit']['#value'] == 'Cancel account'){
+			$page['content']['system_main']['actions']['submit']['#value'] = 'Delete account';
+			drupal_set_title('Are you sure you want to delete your account?');
+		}
+	}
+}
+
+function tap_general_alter_form_alter(&$form, &$form_state, $form_id){
+
+	//Hide fields on account edit page.
+	if($form_id == 'user_profile_form'){
+
+		// hide($form['legal']);
+		hide($form['mimemail']);
+
+		//Add "Cancel changes" to My Account and My Profile edit forms.
+		$form['actions']['cancel_changes'] = array(
+			'#type' => 'submit',
+			'#value' => t('Cancel'),
+			'#access' => TRUE,
+			'#weight' => 10,
+			'#submit' => array('user_edit_cancel', 'node_form_submit_build_node'),
+			'#limit_validation_errors' => array(),
+		);	
+		
+		if(arg(3) == null){
+			// Here we need to provide an extra #process handler to allow us to modify
+			// the password element that FAPI expands.
+			$element_info = element_info('password_confirm');
+			$process = $element_info['#process'];
+			$process[] = 'tap_general_alter_process_password_confirm';
+			$form['account']['pass']['#process'] =  $process;
+		}
+
+		if(array_key_exists('cancel', $form['actions'])){
+			$form['actions']['cancel']['#value'] = 'Delete account';
+		}
+
+
+		
+	}else if($form_id == 'user_login'){
+		$form['name']['#title'] = 'E-mail';
+		$form['name']['#description'] = 'Enter your e-mail.';
+
+	}
+
+
+	//Add "Cancel changes" to node edit form.
+	if(array_key_exists('node', $form_state) && (array_key_exists('#node', $form) && ($form['#node']->type != 'job'))){
+		$node = $form_state['node'];
+		if (!isset($node->nid) || isset($node->is_new)) {
+		// This is a new node.
+			//Add "Cancel changes" to My Account and My Profile edit forms.
+			$form['actions']['cancel_changes'] = array(
+				'#type' => 'submit',
+				'#value' => t('Cancel'),
+				'#access' => TRUE,
+				'#weight' => 10,
+				'#submit' => array('node_create_cancel', 'node_form_submit_build_node'),
+				'#limit_validation_errors' => array(),
+			);	
+		}else {
+			// This is not a new node.
+			$form['actions']['cancel_changes'] = array(
+				'#type' => 'submit',
+				'#value' => t('Cancel'),
+				'#access' => TRUE,
+				'#weight' => 10,
+				'#submit' => array('node_edit_cancel', 'node_form_submit_build_node'),
+				'#limit_validation_errors' => array(),
+			);	
+		}
+	}
+	
+	// Renaming form Save button on Job page.
+	if($form_id == 'job_node_form'){
+	$form['actions']['submit']['#value'] = t('Submit');	
+	}
+}
+
+function setFinalCandidate($uid, $node){
+	if(isset($uid) && isset($node)){
+		$node->field_final_candidate['und'] = array();
+		array_push($node->field_final_candidate['und'], array('target_id' => $uid));
+		field_attach_update('node', $node);		
+	}
+}
+
+
+
+
+function node_create_cancel($form, &$form_state){
+	drupal_set_message('Changes cancelled', 'status');
+	drupal_goto('user');
+}
+
+/**
+ * Node edit form cancel button callback.
+ */
+function node_edit_cancel($form, &$form_state) {
+	// $fallback_destinaton = '<front>';
+	// If edit, use the node itself as fallback.
+	$node = node_load($form['#node']->nid);
+	$node_uri = node_uri($node);
+	$fallback_destinaton = $node_uri['path'];
+
+	// Go to destination or fallback.
+	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
+
+	drupal_set_message($node->type." changes cancelled", 'status');
+	drupal_goto($url);
+}
+
+/**
+ * User account/profile edit form cancel button callback.
+ */
+function user_edit_cancel($form, &$form_state) {
+	// $fallback_destinaton = '<front>';
+	// If edit, use the node itself as fallback.
+	$user = user_load($form['#user']->uid);
+	$user_uri = user_uri($user);
+	$fallback_destinaton = $user_uri['path'];
+
+	// Go to destination or fallback.
+	$url = isset($_GET['destination']) ? $_GET['destination'] : $fallback_destinaton;
+
+	if(arg(3) == null){
+		drupal_set_message("Account changes cancelled", 'status');
+	}else{
+		if(in_array(strtolower(arg(3)), array_map('strtolower', user_roles()))){
+			drupal_set_message("Profile changes cancelled", 'status');
+		}
+	}
+
+	drupal_goto($url);
+}
+
+function tap_general_alter_form_profile2_form_alter(&$form, &$form_state){	
+	
+	//Hide Profile2 fields on the freelancer registration page.
+	if($form["#form_id"] != "user_profile_form"){
+		$form['profile_freelancer']['field_about_me']['#access'] = FALSE;
+		$form['profile_freelancer']['field_skills']['#access'] = FALSE;
+		$form['profile_freelancer']['field_interests']['#access'] = FALSE;
+		$form['profile_freelancer']['field_qualifications']['#access'] = FALSE;
+		$form['profile_freelancer']['field_profile_picture']['#access'] = FALSE;		
+	}
+}
+
+
+function tap_general_alter_preprocess_page(&$vars, $hook) {
+
+	global $user;
+	$first = arg(0);
+	$second = arg(1);
+	$third = arg(2);
+	$fourth = arg(3);
+
+	//Change blocks' title.
+	if($first == 'user' && $second == 'login'){
+		$vars['title'] = t('Log In'); 
+	}else if($first == 'user' && $second == 'password'){
+		$vars['title'] = t('Request new password'); 
+	}else if($first == 'user' && $second == null && !user_is_logged_in()){
+		$vars['title'] = t('Registered User Log In'); 
+	}
+	else if($first == 'user' && $third == 'edit'){
+		$vars['title'] = t('Edit My Account'); 
+
+		$types = array();
+		foreach(profile2_get_types() as $value){
+			array_push($types, strtolower($value->type));
+		}
+		if(in_array(strtolower($fourth), $types)){
+			$vars['title'] = t('Edit My Profile'); 
+		}
+
+	}else if($first == 'node' && $second == 'add'){
+		if(arg(2) == 'portfolio'){
+			$vars['title'] = t('Create Project'); 
+		}
+	}
+}
