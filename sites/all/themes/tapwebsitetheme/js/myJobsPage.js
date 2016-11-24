@@ -118,7 +118,97 @@
     _____________________________________
 */
 
+Drupal.behaviors.creativeProSelectionBehaviour = {
+    attach: function (context, settings) {
 
+        // Checkboxes.
+        var inviteCheckbox = $('#edit-field-freelancer-selection-und-invite');
+        var commissionCheckbox = $('#edit-field-freelancer-selection-und-commission');        
+        var matchCheckbox = $('#edit-field-freelancer-selection-und-match');
+        var firstCandCheckbox = $('#edit-field-freelancer-selection-und-first-candidate');
+        var longTermProjChechbox = $('#edit-field-freelancer-selection-und-long-term');
+
+        // Textboxes.
+        var inviteTextbox = $('#edit-field-invited-candidates');
+        var commissionTextbox = $('#edit-field-commissioned-candidate');
+
+        // Hide both textboxes initially.
+        inviteTextbox.once("creativeProSelectionBehaviour").hide();
+        commissionTextbox.once("creativeProSelectionBehaviour").hide();
+
+        var matchAndInviteCallback = function() {
+            console.log("callback");
+            if(matchCheckbox.is(':checked') || inviteCheckbox.is(':checked')){
+                disableAllCheckboxes();
+                matchCheckbox.attr('disabled', false);
+                inviteCheckbox.attr('disabled', false);
+
+                commissionTextbox.hide();
+
+                if(inviteCheckbox.is(':checked')){
+                    inviteTextbox.appendTo(".form-item-field-freelancer-selection-und-invite");
+                    inviteTextbox.show();    
+                }                
+                
+            }else{
+                inviteTextbox.hide();
+                enableAllCheckboxes();
+            }
+        };
+
+        inviteCheckbox.once("creativeProSelectionBehaviour").change(matchAndInviteCallback);
+        matchCheckbox.once("creativeProSelectionBehaviour").change(matchAndInviteCallback);
+
+        commissionCheckbox.once("creativeProSelectionBehaviour").change(function() {
+            console.log("this.checked: " + this.checked);
+            if(this.checked){
+                disableAllCheckboxes();
+                commissionCheckbox.attr('disabled', false);
+                commissionTextbox.appendTo(".form-item-field-freelancer-selection-und-commission");
+                commissionTextbox.show();
+                inviteTextbox.hide();
+            }else{
+                commissionTextbox.hide();
+                enableAllCheckboxes();
+            }
+        });    
+
+        firstCandCheckbox.once("creativeProSelectionBehaviour").change(function(){
+            if(this.checked){
+                disableAllCheckboxes();
+                firstCandCheckbox.attr("disabled", false);
+            }else{
+                enableAllCheckboxes();
+            }
+        });
+
+        longTermProjChechbox.once("creativeProSelectionBehaviour").change(function(){
+            if(this.checked){
+                disableAllCheckboxes();
+                longTermProjChechbox.attr("disabled", false);
+            }else{
+                enableAllCheckboxes();
+            }
+        });
+
+        var enableAllCheckboxes = function(){
+            inviteCheckbox.attr('disabled', false);
+            commissionCheckbox.attr('disabled', false);
+            matchCheckbox.attr('disabled', false);
+            firstCandCheckbox.attr('disabled', false);
+            longTermProjChechbox.attr('disabled', false);
+        };
+
+        var disableAllCheckboxes = function(){
+            inviteCheckbox.attr('disabled', true);
+            commissionCheckbox.attr('disabled', true);
+            matchCheckbox.attr('disabled', true);
+            firstCandCheckbox.attr('disabled', true);
+            longTermProjChechbox.attr('disabled', true);
+        };
+
+    }
+};
 
 
 /**
