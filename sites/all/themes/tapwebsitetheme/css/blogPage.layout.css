@@ -5751,7 +5751,7 @@ button.close {
     display: none !important; } }
 
 .node-type-blog .l-content, .page-blog .l-content {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 60px; }
 
@@ -5787,5 +5787,18 @@ button.close {
   .node-type-blog article img, .page-blog article img {
     max-width: 100%;
     height: auto; }
+
+article.node-teaser {
+  height: auto !important; }
+
+.page-blog article img {
+  max-width: 100%;
+  height: auto; }
+
+th, td {
+  padding: 0px; }
+
+.node-teaser p {
+  width: 100%; }
 
 /*# sourceMappingURL=blogPage.layout.css.map */

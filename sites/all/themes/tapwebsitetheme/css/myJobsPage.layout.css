@@ -6289,6 +6289,66 @@ ___________________
   margin-right: 5px;
   margin-top: -4.5px; }
 
+.page-node-add-job #edit-field-accessible-vs-luxury, .page-node-add-job #edit-field-casual-vs-corporate {
+  clear: both; }
+
+.page-node-add-job .group-styles .form-type-radio {
+  margin: 1em;
+  float: left; }
+
+.page-node-add-job .group-styles label {
+  display: none; }
+
+.page-node-add-job .group-styles div::before {
+  width: 70px; }
+
+.page-node-add-job .group-styles div::before, .page-node-add-job .group-styles div::after {
+  display: inline-block;
+  float: left;
+  margin: 1em; }
+
+.page-node-add-job .group-styles #edit-field-accessible-vs-luxury-und::before {
+  content: "Accessible"; }
+
+.page-node-add-job .group-styles #edit-field-accessible-vs-luxury-und::after {
+  content: "Luxury"; }
+
+.page-node-add-job .group-styles #edit-field-casual-vs-corporate::before {
+  content: "Casual"; }
+
+.page-node-add-job .group-styles #edit-field-casual-vs-corporate::after {
+  content: "Corporate"; }
+
+.page-node-add-job .group-styles #edit-field-colourful-vs-neutral::before {
+  content: "Colourful"; }
+
+.page-node-add-job .group-styles #edit-field-colourful-vs-neutral::after {
+  content: "Neutral"; }
+
+.page-node-add-job .group-styles #edit-field-playful-vs-serious::before {
+  content: "Playful"; }
+
+.page-node-add-job .group-styles #edit-field-playful-vs-serious::after {
+  content: "Serious"; }
+
+.page-node-add-job .group-styles #edit-field-abstract-vs-straight-up::before {
+  content: "Abstract"; }
+
+.page-node-add-job .group-styles #edit-field-abstract-vs-straight-up::after {
+  content: "Straight Up"; }
+
+.page-node-add-job .group-styles #edit-field-structured-vs-organic::before {
+  content: "Structured"; }
+
+.page-node-add-job .group-styles #edit-field-structured-vs-organic::after {
+  content: "Organic"; }
+
+.page-node-add-job .group-styles #edit-field-feminine-vs-masculine::before {
+  content: "Feminine"; }
+
+.page-node-add-job .group-styles #edit-field-feminine-vs-masculine::after {
+  content: "Masculine"; }
+
 /* 
 ___________________
 

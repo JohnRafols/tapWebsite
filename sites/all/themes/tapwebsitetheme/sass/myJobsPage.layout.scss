@@ -420,6 +420,101 @@ ___________________
     //     }
     // }
 
+ 
+
+  #edit-field-accessible-vs-luxury, #edit-field-casual-vs-corporate{
+    clear: both;
+  }
+
+  .group-styles{
+    .form-type-radio{
+      margin: 1em;
+      float: left;
+    }
+
+    label{
+      display: none;
+    }
+
+    div::before{
+      width: 70px;
+    }
+
+    div::before, div::after{
+      display: inline-block;
+      float: left;
+      margin: 1em;
+    }
+
+    #edit-field-accessible-vs-luxury-und::before{
+      content: "Accessible";
+    }
+
+    #edit-field-accessible-vs-luxury-und::after{
+      content: "Luxury";
+    }
+
+    #edit-field-casual-vs-corporate::before{
+      content: "Casual";
+    }
+
+    #edit-field-casual-vs-corporate::after{
+      content: "Corporate";
+    }
+
+    #edit-field-colourful-vs-neutral::before{
+      content: "Colourful";
+    }
+
+    #edit-field-colourful-vs-neutral::after{
+      content: "Neutral";
+    }
+
+    #edit-field-playful-vs-serious::before{
+      content: "Playful";
+    }
+
+    #edit-field-playful-vs-serious::after{
+      content: "Serious";
+    }
+
+    #edit-field-abstract-vs-straight-up::before{
+      content: "Abstract";
+    }
+
+    #edit-field-abstract-vs-straight-up::after{
+      content: "Straight Up";
+    }
+
+    #edit-field-structured-vs-organic::before{
+      content: "Structured";
+    }
+
+    #edit-field-structured-vs-organic::after{
+      content: "Organic";
+    }
+
+    #edit-field-feminine-vs-masculine::before{
+      content: "Feminine";
+    }
+
+    #edit-field-feminine-vs-masculine::after{
+      content: "Masculine";
+    }
+  }
+
+  // #edit-field-accessible-vs-luxury-und::before, #edit-field-accessible-vs-luxury-und::after, 
+  // #edit-field-casual-vs-corporate::before, #edit-field-casual-vs-corporate::after,
+  // #edit-field-colourful-vs-neutral::before, #edit-field-colourful-vs-neutral::after,
+  // #edit-field-playful-vs-serious::before, #edit-field-playful-vs-serious::after,
+  // #edit-field-abstract-vs-straight-up::before, #edit-field-abstract-vs-straight-up::after,
+  // #edit-field-structured-vs-organic::before, #edit-field-structured-vs-organic::after,
+  // #edit-field-feminine-vs-masculine::before, #edit-field-feminine-vs-masculine::after{
+  //   display: inline-block;
+  //   float: left;
+  //   margin: 1em;
+  // }
+
 }
 
 /* 
